@@ -42,7 +42,7 @@ To optimize Github Pages build times (we were getting timeouts) we have moved th
 	cp index.htm docs-test/cm/api/
 	```
 
-1. Replace the content of the ```https://github.com/akanadocs/api-docs``` variable in ```_includes/unsorted-pages-apioverview``` in your **docs-test** repo, with the contents of the same variable taken from ```_site/cm/api/Ref_API_Reference.htm```, or any of the Ref docs in your **temp** repo - now in docs-test too.
+1. Replace the content of the ```unsorted_pages_prod_cat``` variable in ```_includes/unsorted-pages-apioverview``` in your **docs-test** repo, with the contents of the same variable taken from ```_site/cm/api/Ref_API_Reference.htm```, or any of the Ref docs in your **temp** repo - now in docs-test too.
 
 	> NOTE: this step is essential for maintaining the navigation structure of the API Docs.
 
