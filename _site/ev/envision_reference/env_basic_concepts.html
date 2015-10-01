@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		            <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Basic Concepts</title>
+            <link href="http://akana.com/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+            <link rel="stylesheet" href="http://akana.com/css/compiled/bootstrap-overrides.css" type="text/css" />
+            <link rel="stylesheet" type="text/css" href="http://akana.com/css/compiled/theme.css" />
+            <link rel="stylesheet" href="/api-docs/style/reset.css" type="text/css">
+            <link rel="stylesheet" href="/api-docs/style/base.css" type="text/css">
+            <link rel="stylesheet" href="/api-docs/style/style.css" type="text/css">
+            <link rel="stylesheet" href="/api-docs/style/document.css" type="text/css">
+	          <link rel="stylesheet" href="/api-docs/style/pygments.css" type="text/css">
+
+            <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
+            <!-- <link rel="icon" type="image/png" href="http://akana.com/favicon.ico"> -->
+
+
+            <!-- <link rel="stylesheet" href="/api-docs/style/site.min.css" type="text/css" media="screen" /> -->
+            <!--[if lt IE 10]><link rel="stylesheet" href="style/ie.css" type="text/css"><![endif]-->
+            <!--[if lt IE 9]><link rel="stylesheet" href="style/ie8.css" type="text/css"><![endif]-->
+          
+            <script src="/api-docs/js/soadocs.min.js"></script>
+
+            <script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-333097-1']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+            </script>
+            <script type="text/javascript">
+              adroll_adv_id = "DV6Z3DM2IVAT5P6URKK3RO";
+              adroll_pix_id = "WORRISBFGNASNPUS72EOCQ";
+              (function () {
+              var oldonload = window.onload;
+              window.onload = function(){
+                 __adroll_loaded=true;
+                 var scr = document.createElement("script");
+                 var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+                 scr.setAttribute('async', 'true');
+                 scr.type = "text/javascript";
+                 scr.src = host + "/j/roundtrip.js";
+                 ((document.getElementsByTagName('head') || [null])[0] ||
+                  document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+                 if(oldonload){oldonload()}};
+              }());
+            </script>
+
+
+		<!-- filtered pages for product and category list script -->
+<script>
+	
+	var unsorted_pages_prod_cat = { p: 'ev', c: 'learn', pages: [ 
+		{ t: 'Appendix', nt: 'Appendix', w: '8', ty: 'page', u: '/ev/envision_reference/env_appendix.html', d: 'Provides a list of chart properties used in the Envision Dashboard.', nn: '', nc: '', sn: '', sc: ''} , { t: 'Basic Concepts', nt: 'Basic Concepts', w: '2', ty: 'page', u: '/ev/envision_reference/env_basic_concepts.html', d: 'Provides a technical overview of the Envision product.', nn: '', nc: '', sn: '', sc: ''} , { t: 'Creating a Chart', nt: 'Creating a Chart', w: '6', ty: 'page', u: '/ev/envision_reference/env_create_chart.html', d: 'Learn how to create a chart with Envision and configure datasets, use chart options, and preview charts in Live Mode.', nn: '', nc: '', sn: '', sc: ''} , { t: 'Creating a Dashboard', nt: 'Creating a Dashboard', w: '7', ty: 'page', u: '/ev/envision_reference/env_create_dashboard.html', d: 'Learn how add and reposition charts on an Envision Dashboard and display in Live Mode.', nn: '', nc: '', sn: '', sc: ''} , { t: 'Creating a Data Set', nt: 'Creating a Data Set', w: '5', ty: 'pagedura', u: '/ev/envision_reference/env_create_dataset.html', d: 'Learn how to create an Envision data set and configure dimensions and metrics.', nn: '', nc: '', sn: '', sc: ''} , { t: 'Data Set Collection and Aggregation', nt: 'Data Set Collection and Aggregation', w: '4', ty: 'page', u: '/ev/envision_reference/env_data_collection_aggregation.html', d: 'Learn how Envision performs data collection and data aggregation.', nn: '', nc: '', sn: '', sc: ''} , { t: 'Introduction to Data Sets', nt: 'Introduction to Data Sets', w: '3', ty: 'page', u: '/ev/envision_reference/env_intro_data_sets.html', d: 'Learn about Envision data sets, metrics, and dimensions.', nn: '', nc: '', sn: '', sc: ''} , { t: 'Envision Reference', nt: 'Envision Reference', w: '1', ty: 'page', u: '/ev/envision_reference/env_toc.html', d: 'Reference guide for the Envison analytics platform.', nn: 'true', nc: 'true', sn: '', sc: ''} , { t: 'Learning about Envision', nt: 'Learning', w: '5', ty: '', u: '/ev/learning.html', d: 'Envision landing page', nn: 'true', nc: 'true', sn: '', sc: ''} ,  
+		]};
+</script>
+<!-- end filtered pages for product and category list script -->
+		<!-- left nav script -->
+<script>
+	function leftnav()
+    {
+        var i = 0, snClasses = [];
+        var pages = unsorted_pages_prod_cat.pages.filter(function(a) {
+            return (a.nn != 'true' && a.nn != 'api' && a.sc == '');
+        }).sort(function CustomSort(a, b) {
+            if ( ! a["w"] ) { a["w"] = 1000 ;}
+            if ( ! b["w"] ) { b["w"] = 1000 ;}
+            var weighta = a['w'];
+            var weightb = b['w'];
+            if(weighta != weightb){
+                return (weighta - weightb);
+            }
+            else{
+                return (a.nt.localeCompare(b.nt));
+            }
+        });
+        var snpages = unsorted_pages_prod_cat.pages.filter(function(a) {
+            return (a.nn != 'true' && a.nn != 'api' && a.sc != '');
+        }).sort(function CustomSort(a, b) {
+            if ( ! a["w"] ) { a["w"] = 1000 ;}
+            if ( ! b["w"] ) { b["w"] = 1000 ;}
+            var weighta = a['w'];
+            var weightb = b['w'];
+            if(weighta != weightb){
+                return (weighta - weightb);
+            }
+            else{
+                return (a.nt.localeCompare(b.nt));
+            }
+        });
+
+        // Get the value of the sc query string (if present)
+        var scParam = $.url().param('sc') || 'null';
+
+        if (snpages.length == 0) {
+            var ObjUl = $('<ul></ul>').hide();
+            ObjUl.addClass("soa-ui-dc-container-main-left-nav");
+
+            for (i = 0; i < pages.length; i++)
+            {
+                var Objli = $('<li></li>');
+                var Obja = $('<a></a>');
+                var Objp = $('<p></p>');
+
+                Objli.attr("role", "menuitem");
+
+                if ( pages[i].u == '/ev/envision_reference/env_basic_concepts.html' ) {
+                    Obja.addClass("soa-ui-dc-container-main-left-nav-item-selected soa-ui-dc-container-main-left-nav-item-link");
+                } else {
+                    Obja.addClass("soa-ui-dc-container-main-left-nav-item-link");
+                }
+
+                if ( "/api-docs" ) {
+                    Obja.attr("href", "/api-docs".concat(pages[i].u) );
+                } else {
+                    Obja.attr("href", pages[i].u );
+                }
+                if ( pages[i].ty == 'pdf' ) {
+                    Obja.attr("target", "_blank");
+                }
+                if (pages[i].nt) {
+                    Obja.html(pages[i].nt.replace("&amp;nbsp;", " "));
+                } else {
+                    Obja.html(pages[i].t.replace("&amp;nbsp;", " "));
+                }
+
+                Objli.addClass("soa-ui-dc-container-main-left-nav-item");
+                Objli.append(Obja);
+
+                ObjUl.append(Objli);
+            }
+            $('.soa-ui-dc-container-main-left').append(ObjUl);
+        } else {
+            for (; i < snpages.length; i++) {
+                if (snClasses.indexOf(snpages[i].sc) < 0) {
+                    snClasses.push(snpages[i].sc);
+                }
+            }
+            snClasses.sort();
+
+            var ObjUl = $('<ul></ul>').hide();
+            ObjUl.addClass("soa-ui-dc-container-main-left-nav");
+
+            // Iterate through the sub-nav-classes
+            for (i = 0; i < snClasses.length; i++)
+            {
+                // Get the subnav for this class
+                var classsnpages = snpages.filter(function(a) {
+                    return (a.sc == snClasses[i]);
+                });
+
+                var ObjInnerUl = $('<ul></ul>');
+                ObjInnerUl.addClass("soa-ui-dc-container-main-left-nav soa-ui-dc-container-main-left-nav-inner");
+                for (j = 0; j < classsnpages.length; j++)
+                {
+                    var ObjInnerli = $('<li></li>');
+                    var ObjInnera = $('<a></a>');
+                    var ObjInnerp = $('<p></p>');
+
+                    ObjInnerli.attr("role", "menuitem");
+
+                    if ( classsnpages[j].u == '/ev/envision_reference/env_basic_concepts.html' ) {
+                        ObjInnera.addClass("soa-ui-dc-container-main-left-nav-item-selected soa-ui-dc-container-main-left-nav-item-link");
+                    } else {
+                        ObjInnera.addClass("soa-ui-dc-container-main-left-nav-item-link");
+                    }
+
+                    if ( "/api-docs" ) {
+                        ObjInnera.attr("href", "/api-docs".concat(classsnpages[j].u) );
+                    } else {
+                        ObjInnera.attr("href", classsnpages[j].u );
+                    }
+                    if ( classsnpages[j].ty == 'pdf' ) {
+                        ObjInnera.attr("target", "_blank");
+                    }
+                    if (classsnpages[j].nt) {
+                        ObjInnera.html(classsnpages[j].nt.replace("&amp;nbsp;", " "));
+                    } else {
+                        ObjInnera.html(classsnpages[j].t.replace("&amp;nbsp;", " "));
+                    }
+
+                    ObjInnerli.addClass("soa-ui-dc-container-main-left-nav-item");
+                    ObjInnerli.append(ObjInnera);
+                    ObjInnerUl.append(ObjInnerli);          
+                }
+
+                var Objli = $('<li></li>');
+                var Obja = $('<a></a>');
+                var Objp = $('<p></p>');
+
+                if ( ('' == snClasses[i]) || (scParam == snClasses[i]) ) {
+                    Objli.addClass("soa-ui-dc-container-main-left-nav-item-selected");
+                }
+
+                Obja.addClass("soa-ui-dc-container-main-left-nav-item-link");
+
+                // Construct the URL for the subnav heading entry link
+                var subnavLink = "";
+
+                // Start with the product
+                if ( "/api-docs" ) {
+                    subnavLink = "/api-docs/".concat('ev');
+                } else {
+                    subnavLink = "/".concat('ev');
+                }
+                // Add the category
+                switch ( 'learn' ) {
+                    case "gs":
+                        subnavLink += "/getting-started.html";
+                        break;
+                    case "learn":
+                        subnavLink += "/learning.html";
+                        break;
+                    case "ref":
+                        subnavLink += "/reference.html";
+                        break;
+                }
+                // And put the subnav-class as a query param
+                subnavLink += "?sc=" + snClasses[i];
+                Obja.attr("href", subnavLink);
+
+                Obja.html(snClasses[i]);
+
+                Objli.addClass("soa-ui-dc-container-main-left-nav-item");
+
+                Objli.append(Obja);
+
+                if (classsnpages.length > 0) {
+                    Objli.append(ObjInnerUl);
+                }
+
+                ObjUl.append(Objli);
+            }
+            // And now add the miscellaneous (uncategorized) entries
+            var ObjInnerUl = $('<ul></ul>');
+            ObjInnerUl.addClass("soa-ui-dc-container-main-left-nav soa-ui-dc-container-main-left-nav-inner");
+            for (j = 0; j < pages.length; j++)
+            {
+                var ObjInnerli = $('<li></li>');
+                var ObjInnera = $('<a></a>');
+                var ObjInnerp = $('<p></p>');
+
+                ObjInnerli.attr("role", "menuitem");
+
+                if ( pages[j].u == '/ev/envision_reference/env_basic_concepts.html' ) {
+                    ObjInnera.addClass("soa-ui-dc-container-main-left-nav-item-selected soa-ui-dc-container-main-left-nav-item-link");
+                } else {
+                    ObjInnera.addClass("soa-ui-dc-container-main-left-nav-item-link");
+                }
+
+                if ( "/api-docs" ) {
+                    ObjInnera.attr("href", "/api-docs".concat(pages[j].u) );
+                } else {
+                    ObjInnera.attr("href", pages[j].u );
+                }
+                if ( pages[j].ty == 'pdf' ) {
+                    ObjInnera.attr("target", "_blank");
+                }
+                if (pages[j].nt) {
+                    ObjInnera.html(pages[j].nt.replace("&amp;nbsp;", " "));
+                } else {
+                    ObjInnera.html(pages[j].t.replace("&amp;nbsp;", " "));
+                }
+
+                ObjInnerli.addClass("soa-ui-dc-container-main-left-nav-item");
+                ObjInnerli.append(ObjInnera);
+                ObjInnerUl.append(ObjInnerli);          
+            }
+
+            var Objli = $('<li></li>');
+            var Obja = $('<a></a>');
+            var Objp = $('<p></p>');
+
+            if ( ('' == '' && 'page' == 'page') ||
+                (scParam == "undefined") ) {
+                Objli.addClass("soa-ui-dc-container-main-left-nav-item-selected");
+            }
+
+            Obja.addClass("soa-ui-dc-container-main-left-nav-item-link");
+
+            // Construct the URL for the subnav heading entry link
+            var subnavLink = "";
+
+            // Start with the product
+            if ( "/api-docs" ) {
+                subnavLink = "/api-docs/".concat('ev');
+            } else {
+                subnavLink = "/".concat('ev');
+            }
+            // Add the category
+            switch ( 'learn' ) {
+                case "gs":
+                    subnavLink += "/getting-started.html";
+                    break;
+                case "learn":
+                    subnavLink += "/learning.html";
+                    break;
+                case "ref":
+                    subnavLink += "/reference.html";
+                    break;
+            }
+            // And put the subnav-class as a query param
+            subnavLink += "?sc=" + snClasses[i];
+            Obja.attr("href", subnavLink);
+
+            Obja.html("Miscellaneous");
+
+            Objli.addClass("soa-ui-dc-container-main-left-nav-item");
+
+            Objli.append(Obja);
+
+            if (pages.length > 0) {
+                Objli.append(ObjInnerUl);
+            }
+
+            ObjUl.append(Objli);
+
+            $('.soa-ui-dc-container-main-left').append(ObjUl);
+        }
+    }
+    $(document).ready(function() {
+        leftnav();
+        $(".soa-ui-dc-container-main-left").find("ul").first().show();
+        $(".soa-ui-dc-container-main").removeClass("soa-ui-dc-before-load");
+    });
+</script>
+<!-- End left nav script -->
+	</head>
+	<body>
+		<div class="soa-ui-dc-top-bar-wrapper">
+	<div class="top-bar">
+
+					<h2 class="soa-ui-dc-logo-container">
+				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
+					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
+				</a><!-- logo link, replace href -->
+			</h2>
+
+
+		<div class="soa-ui-dc-topnav-wrapper">
+			<div class="soa-ui-dc-topnav-container">
+				<!-- top nav starts here -->
+				<ul class="soa-ui-dc-topnav soa-ui-dc-clearthis">
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/api-docs/sp/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-soaplatform"><span class="soa-ui-dc-topnav-item-link-firstword">DEPLOYMENT</span> PLATFORM</a><!-- replace href -->
+					</li>					
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/api-docs/cm/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-communitymanager"><span class="soa-ui-dc-topnav-item-link-firstword">COMMUNITY</span> MANAGER</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/api-docs/ag/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-apigateway"><span class="soa-ui-dc-topnav-item-link-firstword">API</span> GATEWAY</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-topnav-item soa-ui-dc-topnav-item-active">
+						<a href="/api-docs/ev/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-envision"><span style="padding-top: 7px;" class="soa-ui-dc-topnav-item-link-firstword">ENVISION</span></a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-topnav-item ">
+						<a href="/api-docs/lm/index.html" class="soa-ui-dc-topnav-item-link soa-ui-dc-icon soa-ui-dc-topnav-item-link-lifecyclemanager"><span class="soa-ui-dc-topnav-item-link-firstword">LIFECYCLE</span> MANAGER</a><!-- replace href -->
+					</li>
+				</ul>
+				<!-- top nav ends here -->
+			</div>
+			<div class="soa-ui-dc-subnav-container">
+				<!-- sub nav starts here -->
+				<ul class="soa-ui-dc-subnav soa-ui-dc-clearthis">
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/api-docs/ev/getting-started.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark">Getting Started</a>
+					</li>
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/api-docs/ev/learning.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark soa-ui-dc-subnav-item-link-active">Learning</a><!-- replace href -->
+					</li>
+					<li class="soa-ui-dc-subnav-item">
+						<a href="/api-docs/ev/reference.html" class="soa-ui-dc-subnav-item-link soa-ui-dc-icon soa-ui-dc-icon-action-dark">Reference</a><!-- replace href -->
+					</li>
+				</ul>
+				<!-- sub nav ends here -->
+			</div>
+		</div>
+
+					<div class="soa-ui-dc-topsearch-container">
+				<form class="soa-ui-dc-topsearch">
+					<label for="soa-control-dc-search" class="soa-ui-dc-label soa-ui-dc-label-hidden">Enter Search Text</label>
+					<input type="text" id="soa-control-dc-search-query" name="q" placeholder="Search" autocomplete="off" class="soa-ui-dc-topsearch-input">
+					<button class="soa-ui-dc-topsearch-button soa-ui-dc-icon-imgtxt soa-ui-dc-icon-magnifying-glass" type="button">Search</button>
+				</form>
+				<div id="soa-control-dc-search-results" class="soa-ui-dc-inline-search-div soa-ui-dc-icon" style="display: none;">
+					<ul class="soa-ui-dc-buttons">
+						<li>
+							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
+						</li>
+					</ul>
+					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<div id="soa-control-dc-search-result-entries">
+					</div>
+				</div>
+			</div>
+
+		    
+		    <script id="soa-control-dc-search-results-template" type="text/x-handlebars-template">
+				{{#entries}}
+					<div class="soa-ui-dc-content-catalog">
+						<ul class="soa-ui-dc-content-catalog-items">
+							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
+								<div class="soa-ui-dc-avatar-box">
+									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									Document
+									</h4>
+								</div>
+								<div class="soa-ui-dc-details-box">
+									<div class="soa-ui-dc-section">
+										<h3 class="soa-ui-dc-section-header">
+											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
+										</h3>
+										<p class="soa-ui-dc-section-paragraph">
+										{{ description }}
+										</p>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				{{/entries}}
+		    </script>
+		    
+		
+	</div>
+</div>
+		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
+			<!-- left nav -->
+			<div class="soa-ui-dc-container-main-left">
+				<h3 class="soa-ui-dc-container-main-left-header">
+					
+					<a href="/api-docs/ev/learning.html" class="soa-ui-dc-container-main-left-header-link">Learning</a>
+								
+				</h3>
+
+			</div>
+<!-- End left nav -->
+			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
+				<div class="documentation supportContent">
+					<h2 id="toc_0">Basic Concepts</h2>
+
+<p>Provides a technical overview of the Envision product.</p>
+
+<p><a href="env_toc.html" class="button secondary">Envision Reference (Main Topic)</a>  <a href="../envision_install/installing_envision.htm" class="button secondary">Installing Envision 1.0</a>
+<h5 class="stamp">Supported Platforms: 8.0</h5>  <h5 class="stamp">Supported Envision Versions: 1.0</h5><br></p>
+
+<div class = "divider1"></div>
+
+<h3 name="top" style="color: grey;">Table of Contents</h3>
+
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#capabilities">Capabilities</a></li>
+<li><a href="#data-definition">Data Definition</a></li>
+<li><a href="#data-storage">Data Storage</a></li>
+<li><a href="#data-analysis">Data Analysis</a></li>
+<li><a href="#data-aggregation">Data Aggregation</a></li>
+</ol>
+
+<div class = "divider1"></div>
+
+<h3 id="toc_1"><a id="introduction"></a>Introduction</h3>
+
+<p>Envision is an analytics platform that allows you to slice and dice your data to analyze every aspect of your business and digital strategy. It can help you collect data and identify patterns, trends, violations, baselines, or historical context. The domain of the data you wish to analyze is open ended. You may wish to analyze:</p>
+
+<p>General API operations such as:</p>
+
+<ul>
+<li>API usage patterns by apps, by geographic region, users, etc.</li>
+<li>API performance patterns and trends by examining load, throughput, and latency</li>
+<li>SLA violations</li>
+</ul>
+
+<p>Business specific transactions such as:</p>
+
+<ul>
+<li>Sales trends based on model in different regions</li>
+<li>Channel partner effectiveness by examining sales volumes</li>
+<li>Effectiveness of sales mediums</li>
+<li>Effectiveness of different apps</li>
+</ul>
+
+<p>Or business operations such as:</p>
+
+<ul>
+<li>API/microservice lifecycle and bottlenecks</li>
+<li>Time to market trends for client apps</li>
+<li>Popularity of APIs</li>
+<li>Customer satisfaction trends</li>
+</ul>
+
+<p>The Envision product does not require any prior understanding of what the data it analyzes represents. It does not require any business understanding. It can analyze data from any business domain because it works using general analytical concepts.</p>
+
+<p><a href="#top">back to top</a></p>
+
+<h3 id="toc_2"><a id="capabilities"></a>Capabilities</h3>
+
+<p>Envision’s capabilities can be broken down into different four categories, data definition, data enrichment &amp; storage, data aggregation, and data analysis</p>
+
+<p><img src="images/env_intro1.jpg" alt="Envision" title="Envision Capabilities Chart"></p>
+
+<p><a href="#top">back to top</a></p>
+
+<h3 id="toc_3"><a id="data-definition"></a>Data Definition</h3>
+
+<p>The foundation for analytics is understanding and defining what data you have to work with and what you want to do with that data. This is what is done with the data definition capabilities of Envision. </p>
+
+<p>Then the data must be collected. Envision at its core does not reach out to different business systems to collect data. Instead it provides a data storage API for clients to push the data into a highly scalable Envision data store. Connectors are then provided that are domain specific to extract data from different business systems and use the Envision data storage API.  One such connector is provided by Akana Policy Manager which enables the extraction of business specific data from payload and stores it for future analysis.  The use of the Envision data storage API is optional. Alternatively data can be saved directly to the Envision data store if access is permitted. </p>
+
+<p><a href="#top">back to top</a></p>
+
+<h3 id="toc_4"><a id="data-storage"></a>Data Storage</h3>
+
+<p>Envision also supports data enrichment during the storage process. This is the amending, or altering, of data before it is persisted based on information obtained from a different source. For example the business system might be just collecting the user-agent field but for proper charting the corresponding browser/OS/device may be what is persisted instead. Enrichment is performed by plugins invoked by the data storage API prior to persisting the data or by scheduled jobs to manipulate data not persisted through the API.</p>
+
+<p><a href="#top">back to top</a></p>
+
+<h3 id="toc_5"><a id="data-analysis"></a>Data Analysis</h3>
+
+<p>Based on the data definition raw business data must be transformed into metrics that can be compared, charted, and trended. This is done by organizing, or grouping, the data in ways that can be queried with the proper granularity and purpose, and performing aggregating calculations on the data according to those groupings. For example calculating the average sales figures of each channel partner on a quarterly basis. This is what the Envision data aggregation capabilities provide.</p>
+
+<p><a href="#top">back to top</a></p>
+
+<h3 id="toc_6"><a id="data-aggregation"></a>Data Aggregation</h3>
+
+<p>Finally users of Envision want to view the aggregated data in ways that easily depict the trends, patterns, and violations they are looking for. Envision provides analysis capabilities for the user to do this. Envision does this through a highly tailorable charting and dashboard generation portal. It can also support the extraction of data through the use of an API so that third party visualization tools can be used.</p>
+
+<p>The following illustration shows how Envision would interact with users and other systems.</p>
+
+<p><img src="images/env_intro2.jpg" alt="Envision" title="Envision Interaction with Users / Other Systems"></p>
+
+<p>Envision stores all data in a NoSQL database. Connectors extract data from business systems and call Envision API’s that store the data in the NoSQL database. Envision performs the needed aggregations on the data in the NoSQL database. The data is then available for viewing in a browser using the Envision web application in user designed dashboards and charts. Alternatively a Third  Party reporting product can query the data from Envision.</p>
+
+<p><a href="#top">back to top</a></p>
+
+				</div>
+				<!-- main content ends here -->
+			</div>
+			</div>			
+</div>			
+			<!-- starts footer -->
+
+			<footer id="footer">
+			  <div class="container">
+			    <div class="row" id="div0">
+			      <div class="col-sm-3 top48">
+			        <div class="wrapper" id="div1">
+			          <ul id="ul0">
+			            <li><strong>Solutions</strong></li>
+			            <li><a href="http://www.akana.com/solution/api-management">API Management</a></li>
+			            <li><a href="http://www.akana.com/solution/cloud-integration">Cloud Integration</a></li>
+			            <li><a href="http://www.akana.com/solutions/microservices">Microservices</a></li>
+			            <li><a href="http://www.akana.com/solutions/api-security">API Security</a></li>
+			            <li><a href="http://www.akana.com/solution/business-analytics-and-reporting">API Analytics</a></li>
+			            <li><a href="http://www.akana.com/solutions/integrated_soa_governance">Integrated SOA Governance</a></li>
+			            <li><a href="http://www.akana.com/solutions/microsoft_and_soa_software">Microsoft APIs &amp; SOA</a></li>
+			            <li><a href="http://www.akana.com/solutions/ibm_datapower_governance">IBM APIs &amp; SOA</a></li>
+			            <li><a href="http://www.akana.com/solutions/sola/enterprise_soa_and_the_mainframe_solutions">Mainframe APIs &amp; SOA</a></li>
+			            <li><a href="http://www.akana.com/solutions/semantics-management">Metadata Management</a></li>
+			          </ul>
+			        </div>
+			      </div>
+			      <div class="col-sm-3 top48">
+			        <div class="wrapper" id="div2">
+			          <ul id="ul1">
+			            <li><strong>Products</strong></li>
+			 	    <li><a href="http://akana.com/solutions/api-gateway">API Gateway</a></li>
+			            <li><a href="http://akana.com/products/community-manager">Community Manager</a></li>
+			            <li><a href="http://akana.com/products/lifecycle_manager">Lifecycle Manager</a></li>
+			            <li><a href="http://akana.com/products/policy_manager">Policy Manager</a></li>
+			            <li><a href="http://akana.com/products/oauth-server">OAuth Server</a></li>
+			          </ul>
+			        </div>
+			      </div>
+			      <div class="col-sm-2 top48">
+			        <div class="wrapper" id="div3">
+			          <ul id="ul2">
+			            <li><strong>Resources</strong></li>
+			            <li><a href="http://resource.akana.com/">Resource Center</a></li>
+			            <li><a href="http://resource.akana.com/resource/whitepaper/ebook-building-successful-apis">API eBook</a></li>
+			            <li><a href="http://resource.akana.com/resource/White-Papers">White Papers</a></li>
+			            <li><a href="http://resource.akana.com/resource/datasheets">Datasheets</a></li>
+			            <li><a href="http://resource.akana.com/resource/Videos">Videos</a></li>
+			            <li><a href="http://docs.akana.com" rel="external">Documentation</a></li>
+
+			                                               <li class="partners-footer-holder"><strong>Support</strong></li>
+									<li><a href="http://support.akana.com">Customer Support</a></li>
+								
+			          </ul>
+			        </div>
+			      </div>
+			      <div class="col-sm-2 top48">
+			        <div class="wrapper" id="div4">
+			          <ul id="ul3">
+			            <li><strong>News &amp; Events</strong></li>
+			            <li><a href="http://akana.com/news/press-releases">Press releases</a></li>
+			            <li><a href="http://akana.com/news/in_the_news">In the News</a></li>
+			               
+
+			 <li class="partners-footer-holder"><strong>Partners</strong></li>
+			            <li><a href="http://akana.com/partners/soa_software_partners">Partner program</a></li>
+			            <li><a href="http://akana.com/partners/partners_distribute_resell_consult">Distributors and Resellers</a></li>
+			</ul>
+
+
+
+			        </div>
+			      </div>
+
+
+
+
+			      <div class="col-sm-2 top48">
+			        <div class="wrapper" id="div5">
+			          <ul id="ul4">
+			            <li><strong>Company</strong></li>
+			            <li><a href="http://akana.com/company/executive_list">Executive Team</a></li>
+			            <li><a href="http://akana.com/company/board_list">Board of Directors</a></li>
+			            <li><a href="http://akana.com/company/customers">Customers</a></li>
+			            <li><a href="http://akana.com/company/awards">Awards</a></li>
+			            <li><a href="http://akana.com/company/careers">Careers</a></li>
+			            <li><a href="http://akana.com/company/contact_us">Contact Us</a></li>
+			            <li><a href="http://blog.akana.com/">Blog</a></li>
+			          </ul>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="row credits" id="div6">
+			    <div class="col-md-12">
+			      <div class="row social">
+			        <div class="col-md-12"> <a href="https://www.facebook.com/SOASoftware" class="facebook"> <span class="socialicons ico1"></span> </a> <a href="https://twitter.com/AkanaInc" class="twitter"> <span class="socialicons ico2"></span> </a>  <a href="https://www.linkedin.com/company/soa-software" class="pinterest"> <span class="socialicons ico5"></span> </a>  <a href="http://www.youtube.com/soasoftware" class="behance"> <span class="socialicons ico7"></span> </a> </div>
+			      </div>
+			      <div class="row copyright" id="div7">
+			       
+			        <div class="col-md-12"> &copy; 2015 Akana, Inc. All rights reserved </div>
+			      </div>
+			    </div>
+			  </div>
+			</footer>
+			<!-- Scripts -->
+
+			<script>								
+
+
+			/* do we need this script below? */
+			$(".balls").click(function(e) {
+			    $("html, body").bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(){
+			       $('html, body').stop();
+			   });
+			    var elem;
+			    e.preventDefault();
+			    var id = $(this).attr("id");
+			    if(id == "scrollBtn1") {
+			        elem = "#box-top";
+			 }else if(id == "scrollBtn2"){
+			     elem = "#box-middle";
+			 }else if(id == "scrollBtn3"){
+			     elem = "#box-bottom";
+			     
+			 }
+			 $('html, body').animate({
+			        scrollTop: $(elem).offset().top - 96
+			    }, 1500);
+			    return false;
+			});
+
+
+			</script>
+			<!--
+			<script type="text/javascript"> 
+			var debugMode=true;
+			var bt_config_project_id = 114;
+			var bt_config_default_location = "Home Page";
+			var bt_config_btn_placement = "topLeft";
+			var bt_config_btn_style = "trans";
+			</script>
+			<script type="text/javascript" src="http://bugtracker.ripemedia.com/widget/js/embed.js"></script> -->
+			<!-- RipeTracker Button END -->
+			<div id="soa-control-dc-overlay" class="soa-ui-dc-overlay"></div>
+			<script type="text/javascript">
+				$(function() {
+					$('#soa-control-dc-search-query').lunrSearch({
+						indexUrl: '/api-docs/search.json',
+						results:  '#soa-control-dc-search-results',
+						entries:  '#soa-control-dc-search-result-entries',
+						template: '#soa-control-dc-search-results-template'
+					});
+					$("#soa-control-dc-close-results").click(function(e){
+						e.preventDefault();
+						$('#soa-control-dc-search-results').hide();
+						$('#soa-control-dc-overlay').removeClass('soa-ui-dc-overlay-visible');
+					});
+					$("#soa-control-dc-overlay").click(function(e){
+						e.preventDefault();
+						$('#soa-control-dc-search-results').hide();
+						$('#soa-control-dc-overlay').removeClass('soa-ui-dc-overlay-visible');
+					});
+					$(".soa-ui-dc-container-main-left-nav-item-link").click(function(e){
+						if ( ! $(this).closest(".soa-ui-dc-container-main-left-nav-inner").length ) {
+							$(".soa-ui-dc-container-main-left-nav-item").removeClass('soa-ui-dc-container-main-left-nav-item-selected');
+							$(this).parent().addClass('soa-ui-dc-container-main-left-nav-item-selected');
+							// $(this).addClass('soa-ui-dc-container-main-left-nav-item-selected');
+						}
+					});
+				});
+			</script>
+
+		</div>
+	</body>
+</html>
