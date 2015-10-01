@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: List Versions | Apps Service | Enterprise API Platform API
-description: Returns app version information, including the <a href="../_ref/Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a>, based on the Identity value provided. This operation provides a bridge so that if you have the Identity value you can retrieve the AppVersionID, which is used by most of the operations in the Apps service. With the AppVersionID you can run other operations in the service. For a full list of operations and their signatures see <a href="../_index/index_apps.htm">Apps Service- Overview</a>.
+description: Returns app version information, including the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a>, based on the Identity value provided. This operation provides a bridge so that if you have the Identity value you can retrieve the AppVersionID, which is used by most of the operations in the Apps service. With the AppVersionID you can run other operations in the service. For a full list of operations and their signatures see <a href="../aaindex/index_apps.htm">Apps Service- Overview</a>.
 product: cm
 category: ref
 nav-title: List Versions 
@@ -17,8 +17,8 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_listVersions_apps.lbi" -->Returns app version information, including the <a href="../_ref/Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a>, based on the Identity value provided.<!-- #EndLibraryItem --> This operation provides a bridge so that if you have the Identity value you can retrieve the AppVersionID, which is used by most of the operations in the Apps service. With the AppVersionID you can run other operations in the service. For a full list of operations and their signatures see <a href="../_index/index_apps.htm">Apps Service: Overview</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../_ref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../_ref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong>or <a href="../_ref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<p><!-- #BeginLibraryItem "/library/desc_listVersions_apps.lbi" -->Returns app version information, including the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a>, based on the Identity value provided.<!-- #EndLibraryItem --> This operation provides a bridge so that if you have the Identity value you can retrieve the AppVersionID, which is used by most of the operations in the Apps service. With the AppVersionID you can run other operations in the service. For a full list of operations and their signatures see <a href="../aaindex/index_apps.htm">Apps Service: Overview</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong>or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -69,7 +69,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -79,7 +79,7 @@ no-catalog: true
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -200,7 +200,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -210,7 +210,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -245,19 +245,19 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         <p>A second category for the   &quot;uddi:soa.com:tag&quot; domain is provided for each tag assigned to the app   version. </p>
         <p>A third category for the &quot;uddi:soa.com:application.state&quot;   domain is provided with the value representing the version's state.</p>
         <p>There is also a name/value pair for each tag assigned to the app version. </p>
-        <p>For information regarding app state, refer to <a href="../_ref/Ref_DeterminingtheStateValueofanApp.htm">Determining the State Value of an App</a>.</p></td>
+        <p>For information regarding app state, refer to <a href="../aaref/Ref_DeterminingtheStateValueofanApp.htm">Determining the State Value of an App</a>.</p></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">guid</a></td>
+      <td><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">guid</a></td>
       <td>App version ID.</td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_RSSChannelsOnThePlatform.htm#rss_pubdate">pubDate</a></td>
+      <td><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_pubdate">pubDate</a></td>
       <td>A date/time stamp identifying when the app version was last updated.</td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_RSSChannelsOnThePlatform.htm#rss_entityreferences">EntityReference</a></td>
-      <td>Reference to the app for which versions are being retrieved: Title, which is the app name, <a href="../_ref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a>, the unique AppID, and Category indicating the resource type is <strong>app</strong>.</td>
+      <td><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_entityreferences">EntityReference</a></td>
+      <td>Reference to the app for which versions are being retrieved: Title, which is the app name, <a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a>, the unique AppID, and Category indicating the resource type is <strong>app</strong>.</td>
     </tr>
   </tbody>
 </table>
@@ -275,19 +275,19 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
       <th width="80%">Value</th>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
       <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../_ref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/library/desc_executeWorkflowAction_groups.lbi" -->Executes an action that is available for a given membership request. The two possible actions are to approve or disapprove the request.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>This operation doesn't require any specific role; in theory, anyone can invoke the operation. However, the workflow action itself has requirements regarding who can execute it. The user invoking the operation must be authorized to execute the specific workflow action, or the operation will fail. For example, an app administrator can request an API contract for his/her own app, but not for another app. For more information, see <a href="../_ref/Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>This operation doesn't require any specific role; in theory, anyone can invoke the operation. However, the workflow action itself has requirements regarding who can execute it. The user invoking the operation must be authorized to execute the specific workflow action, or the operation will fail. For example, an app administrator can request an API contract for his/her own app, but not for another app. For more information, see <a href="../aaref/Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
 <p><!-- #BeginLibraryItem "/library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -75,7 +75,7 @@ Content-Type: application/json; charset=UTF-8
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -85,16 +85,16 @@ Content-Type: application/json; charset=UTF-8
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../_ref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
+      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
     </tr>
     </tbody>
 </table>
@@ -116,7 +116,7 @@ Content-Type: application/json; charset=UTF-8
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_membershiprequestid">MembershipRequestID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_membershiprequestid">MembershipRequestID</a></td>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
@@ -127,7 +127,7 @@ Content-Type: application/json; charset=UTF-8
       <td>Body</td>
       <td><a href="../obj/o_workflow_Action.htm">Action</a></td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/library/o_workflow_Action.lbi" -->Contains information about an action performed on a resource as part of a <a href="../_ref/Ref_ExecutingWorkflowActions.htm">workflow-related activity</a>.<!-- #EndLibraryItem -->For information on possible values, see <a href="../_ref/Ref_Values.htm#values_workflowactions_groups_all">All Groups: Valid Workflow Actions</a>. <strong>ActionName</strong> is required.</td>
+      <td><!-- #BeginLibraryItem "/library/o_workflow_Action.lbi" -->Contains information about an action performed on a resource as part of a <a href="../aaref/Ref_ExecutingWorkflowActions.htm">workflow-related activity</a>.<!-- #EndLibraryItem -->For information on possible values, see <a href="../aaref/Ref_Values.htm#values_workflowactions_groups_all">All Groups: Valid Workflow Actions</a>. <strong>ActionName</strong> is required.</td>
     </tr>
     </tbody>
 </table>
@@ -158,7 +158,7 @@ Atmo-Renew-Token: renew</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -172,7 +172,7 @@ Atmo-Renew-Token: renew</pre>
       <td><!-- #BeginLibraryItem "/library/hdrrsp_atmo-renew-token.lbi" --> <strong>renew</strong>. This is a custom response header used when the action of the method causes a change in a value  that's stored in the token. The token includes information on the user's apps, APIs, and groups, so actions such as adding an app or accepting an invitation to join an app team require update of the token. A value of <strong>renew</strong> means that the operation has changed some information that's stored in the token, and you must therefore renew the token using the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
@@ -193,7 +193,7 @@ Atmo-Renew-Token: renew</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_membershiprequestid">MembershipRequestID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_membershiprequestid">MembershipRequestID</a></td>
       <td>string</td>
       <td>The  unique ID assigned by the platform to the team membership request.</td>
     </tr>
@@ -213,31 +213,31 @@ Atmo-Renew-Token: renew</pre>
       <th width="80%">Value</th>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
       <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
       <td>The resource could not be found.</td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
       <td><!-- #BeginLibraryItem "/library/http_405.lbi" --> Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header.<!-- #EndLibraryItem --><!-- Actually: had PUT&nbsp;instead of GET&nbsp;for the HTTP verb, and no Content-Type specified, as well, when this code occurred--></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http409">409</a> </td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http409">409</a> </td>
       <td>Invalid action for current resource state: the action attempted was not valid for the team member's current state.</td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
     </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../_ref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

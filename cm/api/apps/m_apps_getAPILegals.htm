@@ -72,7 +72,7 @@ Accept: application/json, text/javascript, */*; q=0.01
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -82,7 +82,7 @@ Accept: application/json, text/javascript, */*; q=0.01
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -105,14 +105,14 @@ Accept: application/json, text/javascript, */*; q=0.01
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a></td>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
       <td><!-- #BeginLibraryItem "/library/o_ID_AppVersionID.lbi" --> The unique ID for a specific app version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a></td>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
@@ -123,7 +123,7 @@ Accept: application/json, text/javascript, */*; q=0.01
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td>If a state is specified, only legal documents in that state are returned. Possible values: com.soa.status.active, com.soa.status.inactive. For more information, see <a href="../_ref/Ref_Values.htm#values_legaldocumentstate">Legal Document State</a>.</td>
+      <td>If a state is specified, only legal documents in that state are returned. Possible values: com.soa.status.active, com.soa.status.inactive. For more information, see <a href="../aaref/Ref_Values.htm#values_legaldocumentstate">Legal Document State</a>.</td>
     </tr>
     <tr>
       <td>Federation</td>
@@ -254,7 +254,7 @@ Content-Type: application/json</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -264,7 +264,7 @@ Content-Type: application/json</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -315,15 +315,15 @@ The response body is in the form of an RSS channel, and includes the items liste
 </ul>      </td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">guid</a></td>
+      <td><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">guid</a></td>
       <td>GUID for the legal agreement.</td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_RSSChannelsOnThePlatform.htm#rss_entityreferences">EntityReferences</a></td>
+      <td><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_entityreferences">EntityReferences</a></td>
       <td><p>One or more entity references. Each includes:</p>
         <ul class="apidoctable_ul">
           <li>Title</li>
-          <li><a href="../_ref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a>: GUID for the API version the legal agreement relates to.</li>
+          <li><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a>: GUID for the API version the legal agreement relates to.</li>
           <li>Category</li>
         </ul></td>
     </tr>
@@ -343,19 +343,19 @@ The response body is in the form of an RSS channel, and includes the items liste
       <th width="80%">Value</th>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
       <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../_ref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

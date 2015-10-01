@@ -19,8 +19,8 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/library/desc_addAPIVersion.lbi" -->Adds an additional API version to an existing API.<!-- #EndLibraryItem --></p>
 <p>You can also add an API version by using the <span class="apidoc_code"><a href="m_apis_updateAPIVersion.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}</a></span> operation with a new API version object as part of the request, and including the applicable APIID. However, using <span class="apidoc_code">POST&nbsp;/api/apis/{APIID}/versions</span> is the recommended method.</p>
 <p class="apidoc_note"><strong>Note</strong>: The initial API version is added as part of the <span class="apidoc_code"><a href="m_apis_addAPI.htm">POST&nbsp;apis</a></span> operation when adding the API.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to modify the API; an <a href="../_ref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../_ref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
-<p id="id_notes_workflow"><strong>Workflow</strong>: There is no default workflow for new API versions. However, a custom workflow might be in place. There is only one initial action valid for Community Manager workflows relating to API versions, the  @Create initial action. For more information on workflow, see <a href="../_ref/Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to modify the API; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="id_notes_workflow"><strong>Workflow</strong>: There is no default workflow for new API versions. However, a custom workflow might be in place. There is only one initial action valid for Community Manager workflows relating to API versions, the  @Create initial action. For more information on workflow, see <a href="../aaref/Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
 <p><!-- #BeginLibraryItem "/library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -388,7 +388,7 @@ xmlns:ns5=&quot;http://soa.com/xsd/legals/1.0&quot;&gt;
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -398,16 +398,16 @@ xmlns:ns5=&quot;http://soa.com/xsd/legals/1.0&quot;&gt;
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../_ref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
+      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
     </tr>
     </tbody>
 </table>
@@ -429,7 +429,7 @@ xmlns:ns5=&quot;http://soa.com/xsd/legals/1.0&quot;&gt;
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_apiid">APIID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiid">APIID</a></td>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
@@ -776,7 +776,7 @@ xmlns:ns5="http://soa.com/xsd/legals/1.0"&gt;
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -786,11 +786,11 @@ xmlns:ns5="http://soa.com/xsd/legals/1.0"&gt;
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_appxml_or_appjson.lbi" --><strong>application/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
       <td><strong>renew</strong></td>
     </tr>
     </tbody>
@@ -813,7 +813,7 @@ xmlns:ns5="http://soa.com/xsd/legals/1.0"&gt;
     <tr>
       <td>ApiVersion</td>
       <td><a href="../obj/o_apis_APIVersion.htm">ApiVersion</a></td>
-      <td><!-- #BeginLibraryItem "/library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --> The response includes the unique <a href="../_ref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a> assigned to the API version that was added.</td>
+      <td><!-- #BeginLibraryItem "/library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --> The response includes the unique <a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a> assigned to the API version that was added.</td>
     </tr>
   </tbody>
 </table>
@@ -831,28 +831,28 @@ xmlns:ns5="http://soa.com/xsd/legals/1.0"&gt;
       <th width="80%">Value</th>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
       <td>Bad request: Returned if the client sends invalid parameters or body content.
         For example, you might get this response if you send malformed XML in your request, or if there is a typo in the URL.</td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
       <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
       <td>The resource could not be found. For example, you might get this if you include an invalid APIID in the request.</td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call.</td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../_ref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

@@ -74,7 +74,7 @@ Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -84,7 +84,7 @@ Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -111,15 +111,15 @@ Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></
       <td>Query</td>
       <td>string</td>
       <td>Required</td>
-      <td><p>The type of legal agreement to be returned in the response. For valid values, refer to <a href="../_ref/Ref_Values.htm#values_legalagreementtype">Legal Agreement Types</a>.</p>
+      <td><p>The type of legal agreement to be returned in the response. For valid values, refer to <a href="../aaref/Ref_Values.htm#values_legalagreementtype">Legal Agreement Types</a>.</p>
         <p>Required unless ResourceID parameter is present.</p></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_resourceid">ResourceID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_resourceid">ResourceID</a></td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><p><!-- #BeginLibraryItem "/library/o_ID_ResourceID.lbi" -->The unique ID for a specific resource; for example, the <a href="../_ref/Ref_IDsOnThePlatform.htm#id_scopeid">ScopeID</a> or the <a href="../_ref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>.<!-- #EndLibraryItem -->In this case it is the <a href="../_ref/Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a> for a specific legal agreement document.</p>
+      <td><p><!-- #BeginLibraryItem "/library/o_ID_ResourceID.lbi" -->The unique ID for a specific resource; for example, the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_scopeid">ScopeID</a> or the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>.<!-- #EndLibraryItem -->In this case it is the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a> for a specific legal agreement document.</p>
         <p>Required if AgreementType parameter is not present.</p></td>
     </tr>
     </tbody>
@@ -207,7 +207,7 @@ xmlns:ns10="http://soa.com/xsd/api/1.0" xmlns:ns11="http://soa.com/xsd/board/1.0
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -217,7 +217,7 @@ xmlns:ns10="http://soa.com/xsd/api/1.0" xmlns:ns11="http://soa.com/xsd/board/1.0
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -262,15 +262,15 @@ The response body is in the form of an RSS channel, and includes the items liste
 <ul class="apidoctable_ul">
   <li><strong>Resource type</strong>: uddi:soa.com:resourcetype</li>
   <li><strong>Document type</strong>: uddi:soa.com:documenttype</li>
-  <li><strong>Document State</strong>: uddi:soa.com:state (for values, see <a href="../_ref/Ref_Values.htm#values_legaldocumentstate">Legal Document States</a>).</li>
+  <li><strong>Document State</strong>: uddi:soa.com:state (for values, see <a href="../aaref/Ref_Values.htm#values_legaldocumentstate">Legal Document States</a>).</li>
   <li><strong>Filename</strong>: uddi:soa.com:filename</li>
   <li><strong>Version</strong>: uddi:soa.com:version</li>
   <li><strong>Document path</strong>: uddi:soa.com:docpath</li>
 </ul>      </td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">guid</a></td>
-      <td>GUID for the legal agreement; the <a href="../_ref/Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a>.</td>
+      <td><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">guid</a></td>
+      <td>GUID for the legal agreement; the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a>.</td>
     </tr>
   </tbody>
 </table>
@@ -290,18 +290,18 @@ The response body is in the form of an RSS channel, and includes the items liste
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
       <td>Bad request: Returned if the client sends invalid parameters or body content.
         For example, you might get this response if you don't include a parameter; either the <strong>AgreementType</strong> or <strong>ResourceID</strong> parameter must be present.</td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../_ref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

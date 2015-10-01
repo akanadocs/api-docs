@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Change Signup State | Users Service | Enterprise API Platform API
-description: Changes the <a href="../_ref/Ref_Values.htm#values_usersignupstate">signup state</a> for the specified user. This operation allows the site administrator to activate a new user's account by changing the user's signup state from <strong>pending_validation</strong> to <strong>registered</strong>. This completes the user registration process without the user having to complete signup using the activation code.
+description: Changes the <a href="../aaref/Ref_Values.htm#values_usersignupstate">signup state</a> for the specified user. This operation allows the site administrator to activate a new user's account by changing the user's signup state from <strong>pending_validation</strong> to <strong>registered</strong>. This completes the user registration process without the user having to complete signup using the activation code.
 product: cm
 category: ref
 nav-title: Change Signup State 
@@ -16,10 +16,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_changeSignupState.lbi" -->Changes the <a href="../_ref/Ref_Values.htm#values_usersignupstate">signup state</a> for the specified user.<!-- #EndLibraryItem --> This operation allows the site administrator to activate a new user's account by changing the user's signup state from <strong>pending_validation</strong> to <strong>registered</strong>. This completes the user registration process without the user having to complete signup using the activation code.</p>
+<p><!-- #BeginLibraryItem "/library/desc_changeSignupState.lbi" -->Changes the <a href="../aaref/Ref_Values.htm#values_usersignupstate">signup state</a> for the specified user.<!-- #EndLibraryItem --> This operation allows the site administrator to activate a new user's account by changing the user's signup state from <strong>pending_validation</strong> to <strong>registered</strong>. This completes the user registration process without the user having to complete signup using the activation code.</p>
 <p class="apidoc_note"><strong>Note</strong>: This operation is only for initial account activation. To make further changes to a user's account once it's been activated, such as to disable it or to re-enable it, use the <span class="apidoc_code"><a href="m_users_changeStatus.htm">PUT&nbsp;/api/users/{UserID}/status</a></span> operation.</p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../_ref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> only.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> only.</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -75,7 +75,7 @@ Content-Type: application/json; charset=UTF-8
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -85,16 +85,16 @@ Content-Type: application/json; charset=UTF-8
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../_ref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
+      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
     </tr>
   </tbody>
 </table>
@@ -116,7 +116,7 @@ Content-Type: application/json; charset=UTF-8
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_userid">UserID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_userid">UserID</a></td>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
@@ -199,7 +199,7 @@ Content-Type: application/xml</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -209,7 +209,7 @@ Content-Type: application/xml</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -250,20 +250,20 @@ Content-Type: application/xml</pre>
       <th width="80%">Value</th>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
       <td><p><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></p>
         <p>You would also get this response if you hadn't completed login before running the operation, or if you were not a Site Admin.</p></td>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../_ref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

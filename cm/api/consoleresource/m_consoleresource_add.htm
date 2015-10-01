@@ -19,7 +19,7 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/library/desc_consoleresource_add.lbi" -->Adds a folder to the console /resources/ folder structure.<!-- #EndLibraryItem --></p>
 <p>You can also use this operation to create a file and provide the content of the file in a Form parameter. However, if you want to upload an existing file, use the upload operation (<span class="apidoc_code"><a href="m_consoleresource_upload.htm">POST&nbsp;/resources/{path:.*}</a></span> with Content-Type of multipart/form-data).</p>
 <p class="apidoc_note"><strong>Note</strong>: You can only add a new folder one level down. The new folder is only added if the parent folder already exists.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../_ref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> only.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> only.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -73,7 +73,7 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -83,16 +83,16 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_accept_any.lbi" -->Any value that matches text/plain is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../_ref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
+      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
     </tr>
   </tbody>
 </table>
@@ -168,7 +168,7 @@ Expires: Wed, 23 Sep 2015 15:35:40 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -178,7 +178,7 @@ Expires: Wed, 23 Sep 2015 15:35:40 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
@@ -206,22 +206,22 @@ Expires: Wed, 23 Sep 2015 15:35:40 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
       <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
       <td><p>The resource could not be found.</p>
         For example, you might get this if the Content-Type header is set to a wrong value.</td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../_ref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

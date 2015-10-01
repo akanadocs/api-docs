@@ -73,7 +73,7 @@ Accept: text/plain
 
 <!-- InstanceBeginEditable name="Request Headers" -->
 <h3 id="requestheaders">Request Headers</h3>
-<p>For general information on request header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -83,16 +83,16 @@ Accept: text/plain
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_accept_any.lbi" -->Any value that matches text/plain is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../_ref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
+      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
     </tr>
   </tbody>
 </table>
@@ -114,7 +114,7 @@ Accept: text/plain
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_alertid">AlertID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_alertid">AlertID</a></td>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
@@ -156,7 +156,7 @@ Expires: Tue, 12 May 2015 20:05:14 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Headers" -->
 <h3 id="responseheaders">Response Headers</h3>
-<p>For general information on response header values, refer to <a href="../_ref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -166,7 +166,7 @@ Expires: Tue, 12 May 2015 20:05:14 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -187,7 +187,7 @@ Expires: Tue, 12 May 2015 20:05:14 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_commentid">CommentID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_commentid">CommentID</a></td>
       <td>string</td>
       <td>The unique ID for the comment that was added.</td>
     </tr>
@@ -209,22 +209,22 @@ Expires: Tue, 12 May 2015 20:05:14 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
       <td>Bad request: Returned if the client sends invalid parameters or body content.
         For example, you might get this response if you send an incorrect JSON object in the request, or specified the wrong media type in the Content-Type header.</td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
       <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../_ref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../_ref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

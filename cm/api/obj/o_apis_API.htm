@@ -35,7 +35,7 @@ Includes information about an API.<!-- #EndLibraryItem --></p>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_apiid">APIID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiid">APIID</a></td>
       <td>string</td>
       <td><!-- #BeginLibraryItem "/library/o_ID_APIID.lbi" -->The unique ID for a specific API.<!-- #EndLibraryItem --><strong>Required</strong> except when adding an API.</td>
   </tr>
@@ -52,10 +52,10 @@ Includes information about an API.<!-- #EndLibraryItem --></p>
     <tr>
       <td>Visibility</td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/parm_Visibility_all.lbi" --> The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../_ref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/parm_Visibility_all.lbi" --> The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_latestversionid">LatestVersionID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_latestversionid">LatestVersionID</a></td>
       <td>string</td>
       <td><p>The unique ID for the latest version of the API.</p>
         <p>When the API object is received in a response message, LatestVersionID is ID for the latest version of the API the user is authorized to see, based on the user's status and the API's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting. If the app is Private, the user must be logged in and msut be an API Administrator or API Context Group member.</p></td>
@@ -91,13 +91,13 @@ Includes information about an API.<!-- #EndLibraryItem --></p>
         </ul>        </td>
   </tr>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_pictureid">PictureID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_pictureid">PictureID</a></td>
       <td>long</td>
       <td><p>The unique Dropbox ID for the picture uploaded for the API, if applicable.</p>
         <p>Used only in request messages when a picture is uploaded as part of adding or updating.</p></td>
   </tr>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_admingroupid">AdminGroupID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_admingroupid">AdminGroupID</a></td>
       <td>string</td>
       <td><!-- #BeginLibraryItem "/library/o_ID_AdminGroupID.lbi" -->
 The unique ID for the Admin Group associated with a specific resource, such as an API or business, comprised of all administrators associated with that resource. Only used in response messages. <!--Example usage: &lt;span class=&quot;code&quot;&gt;getAPIAdministrators&lt;/span&gt; returns a list of administrators. Alternatively you can use the groupID and invoke the group API, getMembers operation. Or if you want to add an administrator you can get the groupID and invoke the inviteMemberToGroup operation.In the group API you would use it as the group ID. We return the team ID of the app and use it to manage the app team members using the group API. AdminGroupID is always applicable to an API group.--><!-- #EndLibraryItem --></td>

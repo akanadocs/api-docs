@@ -20,7 +20,7 @@ Information about a legal agreement document.<!-- #EndLibraryItem --></p>
 <ul>
   <li><span class="apidoc_code"><a href="../apis/m_apis_createNewAgreement.htm">POST&nbsp;/api/apis/versions/{APIVersionID}/legals</a></span> (<!-- #BeginLibraryItem "/library/desc_createNewAgreement_api.lbi" -->Adds information about a new legal agreement for the specified API version.<!-- #EndLibraryItem -->)</li>
   <li><span class="apidoc_code"><a href="../apis/m_apis_modifyLegalDetails.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/legals/{LegalDocumentID}/details</a></span> (<!-- #BeginLibraryItem "/library/desc_modifyLegalDetails.lbi" -->Modifies information about a legal document for the specified API (name or description).<!-- #EndLibraryItem --></li>
-  <li><span class="apidoc_code"><a href="../apis/m_apis_modifyLegalState.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/legals/{LegalDocumentID}/state</a></span> (<!-- #BeginLibraryItem "/library/desc_modifyLegalState_apis.lbi" --> Modifies the <a href="../_ref/Ref_Values.htm#values_legaldocumentstate">State</a> of a legal document associated with a specified API version.<!-- #EndLibraryItem -->)</li>
+  <li><span class="apidoc_code"><a href="../apis/m_apis_modifyLegalState.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/legals/{LegalDocumentID}/state</a></span> (<!-- #BeginLibraryItem "/library/desc_modifyLegalState_apis.lbi" --> Modifies the <a href="../aaref/Ref_Values.htm#values_legaldocumentstate">State</a> of a legal document associated with a specified API version.<!-- #EndLibraryItem -->)</li>
 </ul>
 <p><strong>Platform:</strong></p>
 <ul>
@@ -46,7 +46,7 @@ Information about a legal agreement document.<!-- #EndLibraryItem --></p>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../_ref/Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a></td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a></td>
       <td>string</td>
       <td>Required</td>
       <td><!-- #BeginLibraryItem "/library/o_ID_LegalDocumentID.lbi" -->The unique ID for the association of a specific legal document with a resource such as an API version, license, or the platform.<!-- #EndLibraryItem --> Required when updating.</td>
@@ -67,7 +67,7 @@ Information about a legal agreement document.<!-- #EndLibraryItem --></p>
       <td>AgreementType</td>
       <td>string</td>
       <td>Required</td>
-      <td>The type of legal agreement; for example, <strong>com.soa.atmosphere.legals.eula</strong>. For valid values, see <a href="../_ref/Ref_Values.htm#values_legalagreementtype">Legal Agreement Types</a>.</td>
+      <td>The type of legal agreement; for example, <strong>com.soa.atmosphere.legals.eula</strong>. For valid values, see <a href="../aaref/Ref_Values.htm#values_legalagreementtype">Legal Agreement Types</a>.</td>
   </tr>
     <tr>
       <td>ResourceID</td>
@@ -121,7 +121,7 @@ Information about a legal agreement document.<!-- #EndLibraryItem --></p>
       <td>DocumentState</td>
       <td>string</td>
       <td>Optional</td>
-      <td>The current activation state of the legal document; for example, com.soa.status.draft. For valid values, see <a href="../_ref/Ref_Values.htm#values_legaldocumentstate">Legal Document State</a>. Required for <span class="apidoc_code"><a href="../apis/m_apis_modifyLegalState.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/legals/{LegalDocumentID}/state</a></span>, otherwise optional.</td>
+      <td>The current activation state of the legal document; for example, com.soa.status.draft. For valid values, see <a href="../aaref/Ref_Values.htm#values_legaldocumentstate">Legal Document State</a>. Required for <span class="apidoc_code"><a href="../apis/m_apis_modifyLegalState.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/legals/{LegalDocumentID}/state</a></span>, otherwise optional.</td>
   </tr>
     <tr>
       <td>FileName</td>
