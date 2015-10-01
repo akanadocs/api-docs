@@ -24,7 +24,7 @@ no-catalog: true
 
 <h3><a name="legalagreement_platform"></a>Platform Signup Legal Agreement</h3>
 <p> The platform allows only one end-user signup legal agreement.</p>
-<p>You will first need to upload the legal agreement using the Content API, and then make it the default platform legal agreement using the <a href="../aaindex/index_legals.htm">Legals</a> service.</p>
+<p>You will first need to upload the legal agreement using the Content API, and then make it the default platform legal agreement using the <a href="../index_legals.htm">Legals</a> service.</p>
 <p>For detailed instructions, refer to <span class="apidoc_code"><a href="../legals/m_legals_createNewAgreement.htm">POST&nbsp;/api/legals</a></span>. For an example, refer to <a href="../aaex/Ref_Ex_AddingAPlatformSignupLegalAgreement.htm">Example: Adding a Platform Signup Legal Agreement</a>.</p>
 
 
@@ -38,10 +38,10 @@ no-catalog: true
 <h5>To set up a legal agreement for an API</h5>
 <ol>
   <li><strong>Create</strong> the legal agreement in the legals folder of the filesystem for your API on the platform.
-    <p>Operation: <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/{path}</a></span> in the <a href="../aaindex/index_content.htm">Content service</a> (you could also use <span class="apidoc_code"><a href="../content/m_content_upload.htm">POST&nbsp;/content/upload</a></span>).</p>
+    <p>Operation: <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/{path}</a></span> in the <a href="../index_content.htm">Content service</a> (you could also use <span class="apidoc_code"><a href="../content/m_content_upload.htm">POST&nbsp;/content/upload</a></span>).</p>
 <p class="apidoc_note"><strong>Note</strong>: your legal agreement should go in the /legals folder for your API. The content path should be something like: <strong>/api/{APIID}/legal/eula.txt</strong>. <a href="../content/m_content_add.htm#contentadd_legalagreement">See an example</a>.</p></li>
   <li><strong>Publish</strong> the legal agreement. This adds it to the Table of Contents for the folder. In the user interface, you cannot activate the legal agreement until you publish it by clicking the <strong>Publish</strong> button in the File Manager.
-<p>Operation: <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/{path}</a></span> in the <a href="../aaindex/index_content.htm">Content service</a>. Send the updated TOC JSON file in the body. For example:</p>
+<p>Operation: <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/{path}</a></span> in the <a href="../index_content.htm">Content service</a>. Send the updated TOC JSON file in the body. For example:</p>
   <pre>Content: {"toc":["eula.txt"],"sequence":["eula.txt","EULA_draft.txt"],"displayNames":{}}</pre>
   <p>In the above example, two EULA versions were uploaded, but only eula.txt was published.</p>
   </li>

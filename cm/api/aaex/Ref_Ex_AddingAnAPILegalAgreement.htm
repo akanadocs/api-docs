@@ -46,14 +46,14 @@ no-catalog: true
       </li>
     </ul>
   </li>
-  <li><strong>Create</strong> the legal agreement in the legals folder of the filesystem for your API on the platform, using the  <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/{path}</a></span> operation in the <a href="../aaindex/index_content.htm">Content service</a>.
+  <li><strong>Create</strong> the legal agreement in the legals folder of the filesystem for your API on the platform, using the  <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/{path}</a></span> operation in the <a href="../index_content.htm">Content service</a>.
     <ul>
       <li>HTTP method: POST</li>
       <li>URL: <strong>https://{hostname}/content/api/{APIID}/legal/eula.txt?body=End-user%20license%20agreement</strong>.</li>
       <li>Content-Type header: <strong>application/x-www-form-urlencoded</strong></li>
     </ul>
   </li>
-  <li><strong>Publish</strong> the <strong>eula.txt</strong> legal agreement. This creates or updates a Table of Contents for the folder and makes the legal agreement available for activation. Use the <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/{path}</a></span> in the <a href="../aaindex/index_content.htm">Content service</a>, with the updated TOC JSON file in the body. See below.
+  <li><strong>Publish</strong> the <strong>eula.txt</strong> legal agreement. This creates or updates a Table of Contents for the folder and makes the legal agreement available for activation. Use the <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/{path}</a></span> in the <a href="../index_content.htm">Content service</a>, with the updated TOC JSON file in the body. See below.
     <ul>
       <li>HTTP method: POST</li>
       <li>URL: <strong>https://{hostname}/content/api/{APIID}/legal/toc.{APIVersionID}.json?body=%7B%22toc%22%3A%5B%22eula.txt%22%5D%2C%22sequence%22%3A%5B%22eula.txt%22%5D%2C%22displayNames%22%3A%7B%7D%7D</strong></li>

@@ -55,7 +55,7 @@ no-catalog: true
 
 
 <a id="authenticating_as_logged_in_user"></a><h3>Authenticating as a logged-in user</h3>
-<p>Before running API operations that require login, you'll need to perform a one-time signup via the user interface or API. To complete the signup process, sign up using the developer portal or the <a href="aaindex/index_users.htm">Users service</a>.</p>
+<p>Before running API operations that require login, you'll need to perform a one-time signup via the user interface or API. To complete the signup process, sign up using the developer portal or the <a href="index_users.htm">Users service</a>.</p>
 <p>Once you've completed that process, you'll be able to use your user ID and password to log in via the API using the <span class="apidoc_code"><a href="login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation.</p>
 <p>When you run the <span class="apidoc_code"><a href="login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation, you'll need to get the session cookie from the response and then include it in the request headers for subsequent operations. For more information, see <a href="#session_cookie">The session cookie</a> below. In many cases, technologies used in applications automatically remember the cookie received in the Login response and include it in subsequent requests.</p>
 <p>You'll need to have additional roles to run certain operations; for per-operation authentication requirements, refer to the <strong>Authorization Roles/Permissions</strong> section in the documentation for each operation. For general information about roles, see <a href="#operations_additional_roles">Operations that require additional authorization roles / permissions</a> below.</p>
