@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Add License | Licenses Service | Enterprise API Platform API
+title: Add License | Licenses Service | Akana API Platform API
 description: Adds a license.
 product: cm
 category: ref
@@ -64,30 +64,39 @@ Accept: application/json
 Content-Type: application/json; charset=UTF-8
 <!-- #BeginLibraryItem "/library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
-<pre>
-{
+<pre>{
   "Environment":[
     "Sandbox",
     "Production"
   ],
   "Visibility":"Limited",
   "SandboxAccessAutoApproved":"true",
-  "ProductionAccessAutoApproved":"true",
+  "ProductionAccessAutoApproved":"false",
   "Active":true,
-  "AgreementDetails":{
-    "AgreementDocument":[
+  &quot;AgreementDetails&quot;:{
+    &quot;AgreementDocument&quot;:[
       {
-        "Name":"AcmePaymentsCorp Legal Agreement",
-        "Description":"Legal agreement for use with Platinum license",
-        "ContentPath":"business/tenantbusiness.acmepaymentscorp/legal/legalagreement.txt",
-        "AgreementType":"com.soa.atmosphere.legals.eula"
+        &quot;Name&quot;:&quot;AcmePaymentsCorp Legal Agreement&quot;,
+        &quot;Description&quot;:&quot;Legal agreement for use with Platinum license&quot;,
+        &quot;ContentPath&quot;:&quot;business/tenantbusiness.acmepaymentscorp/legal/legalagreement.txt&quot;,
+        &quot;AgreementType&quot;:&quot;com.soa.atmosphere.legals.eula&quot;
       }
     ]
   },
-  "Name":"Platinum",
-  "Description":"Top tier with unlimited throughput",
+  &quot;Name&quot;:&quot;Platinum&quot;,
+  &quot;Description&quot;:&quot;Top tier with unlimited throughput&quot;,
   "LicenseParts":{
     "LicensePart":[
+      {
+        "ResourceID":[
+          "b7a419cd-2de3-4fdc-a9a6-ed1c44e62b3c.acmepaymentscorp",
+          "cadddffa-cd7c-40ed-9d8b-30a0f7778563.acmepaymentscorp",
+          "1a7b757f-af2c-4cf5-8e6a-a36111f92a48.acmepaymentscorp"
+        ],
+        "PolicyKey":[
+
+        ]
+      }
     ]
   },
   "BusinessID":"tenantbusiness.acmepaymentscorp"
@@ -163,7 +172,7 @@ Content-Type: application/json; charset=UTF-8
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Tue, 16 Jun 2015 20:31:12 GMT
+Date: Tue, 27 Oct 2015 14:06:07 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
@@ -173,9 +182,14 @@ Content-Type: application/json</pre>
   "Visibility" : "Limited",
   "SandboxAccessAutoApproved" : true,
   "ProductionAccessAutoApproved" : true,
-  "LicenseParts" : {
-    "LicensePart" : [ ]
-  },
+  &quot;LicenseParts&quot;:{
+    &quot;LicensePart&quot;:[
+      {
+        &quot;ResourceID&quot;:[
+          &quot;b7a419cd-2de3-4fdc-a9a6-ed1c44e62b3c.acmepaymentscorp&quot;,
+          &quot;cadddffa-cd7c-40ed-9d8b-30a0f7778563.acmepaymentscorp&quot;,
+          &quot;1a7b757f-af2c-4cf5-8e6a-a36111f92a48.acmepaymentscorp&quot;
+        ],
   "BusinessID" : "tenantbusiness.acmepaymentscorp",
   "Active" : true,
   "Environment" : [ "Sandbox", "Production" ],
@@ -300,7 +314,8 @@ xmlns:ns3="http://soa.com/xsd/dnmodel/1.0" xmlns:ns4="http://soa.com/xsd/api/1.0
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

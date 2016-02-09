@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: TransactionInfo Object | Shared Service, Performance | Enterprise API Platform API
+title: TransactionInfo Object | Shared Service, Performance | Akana API Platform API
 description: A set of information about a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_transaction">transaction</a>. The transaction log includes all the information listed below. This object is used by two services- <a href="../index_apps.htm">apps</a> and <a href="../index_apis.htm">apis</a>.
 product: cm
 category: ref
@@ -80,6 +80,66 @@ The unique ID for a specific app version.<!-- #EndLibraryItem --></td>
       <td>ResponseStatusCode</td>
       <td>unsignedInt</td>
       <td>The status code for the response.</td>
+    </tr>
+    <tr>
+      <td>ClientHost</td>
+      <td>string</td>
+      <td>The client host for the transaction.</td>
+    </tr>
+    <tr>
+      <td>APIVersionName</td>
+      <td>string</td>
+      <td>The name of the API version the transaction relates to.</td>
+    </tr>
+    <tr>
+      <td>MethodKey</td>
+      <td>string</td>
+      <td>The name of the operation invoked in the transaction.</td>
+    </tr>
+    <tr>
+      <td>AppVersionName</td>
+      <td>string</td>
+      <td>The name of the app version the transaction relates to.</td>
+    </tr>
+    <tr>
+      <td>AppRuntimeID</td>
+      <td>string</td>
+      <td>The app's Runtime ID.</td>
+    </tr>
+    <tr>
+      <td>ResponseTime</td>
+      <td>duration</td>
+      <td>The response time for the message.</td>
+    </tr>
+    <tr>
+      <td>RequestMessageSize</td>
+      <td>unsignedLong</td>
+      <td>Request message size in bytes.</td>
+      </tr>
+    <tr>
+      <td>ResponseMessageSize</td>
+      <td>unsignedLong</td>
+      <td>Response message size in bytes.</td>
+      </tr>
+    <tr>
+      <td>ResponseErrorMessage</td>
+      <td>string</td>
+      <td>Response error message, if any.</td>
+      </tr>
+    <tr>
+      <td>APIResponseTime</td>
+      <td>duration</td>
+      <td>Response time for the API.</td>
+      </tr>
+    <tr>
+      <td>APIURL</td>
+      <td>string</td>
+      <td>URL for the API.</td>
+    </tr>
+    <tr>
+      <td>HttpVerb</td>
+      <td>string</td>
+      <td>The HTTP verb for the operation.</td>
     </tr>
     </tbody>
 </table>

@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Get Legals | APIs Service | Enterprise API Platform API
+title: Get Legals | APIs Service | Akana API Platform API
 description: Retrieves a summary of information about active legal documents for the specified API version.
 product: cm
 category: ref
@@ -80,7 +80,7 @@ Content-Type: application/x-www-form-urlencoded
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_textxml.lbi" --><strong>text/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -217,11 +217,11 @@ Content-Type: application/json</pre>
   },
   "version" : "1.0"
 }</pre>
-<p><strong>Sample response headers: text/XML</strong></p>
+<p><strong>Sample response headers: text/xml</strong></p>
 <pre>HTTP/1.1 200 OK
 Date: Fri, 25 Apr 2014 13:37:36 GMT
 Content-Type: application/json</pre>
-<p><a id="rss_agreementdocuments_textxml"></a><strong>Sample response body: text/XML</strong></p>
+<p><a id="rss_agreementdocuments_textxml"></a><strong>Sample response body: text/xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/rss/1.0" xmlns:ns4="http://soa.com/xsd/user/1.0" 
 xmlns:ns5="http://soa.com/xsd/comment/1.0" xmlns:ns6="http://a9.com/-/spec/opensearch/1.1/" xmlns:ns7="http://soa.com/xsd/resource/1.0" 
@@ -284,7 +284,7 @@ xmlns:ns11="http://soa.com/xsd/board/1.0" xmlns:ns12="http://soa.com/xsd/search/
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_textxml.lbi" --><strong>text/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -372,7 +372,8 @@ The response body is in the form of an RSS channel, and includes the items liste
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

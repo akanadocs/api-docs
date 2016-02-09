@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: ApplicationVersion Object | Apps Service | Enterprise API Platform API
+title: ApplicationVersion Object | Apps Service | Akana API Platform API
 description: Contains information about a version of an app.
 product: cm
 category: ref
@@ -125,7 +125,9 @@ When adding an app version, you can specify a custom identity name for the app v
     <tr>
       <td>SharedSecret</td>
       <td>string</td>
-      <td>The Shared Secret value for the app, if applicable.</td>
+      <td><p>The Shared Secret value for the app, if applicable.</p>
+        <p><strong>Note</strong>: If the app has a user-defined App Identity that includes a domain, the platform does not collect, regenerate, return, or display the Shared Secret value. In this scenario, the user manages it in the external identity domain, which must be a valid domain set up in the platform. The platform takes the Shared Secret value that the user provides and validates it with the external identity domain.</p>
+        <p>For this to occur, the platform's App Settings must allow user-defined identity (this includes ID and Shared Secret), and the user identity must be set to a value of {LoginDomain}\{LoginDomain-UserName}, where {login-domain} is the platform's ID for a valid login domain set up on the platform, LoginDomain-UserName is a valid account on that login domain, and they are separated by a backslash. The platform validates the LoginDomain ID and does nothing with the Shared Secret value except validate it at runtime when it's provided by the user.</p></td>
     </tr>
     <tr>
       <td>EncryptedSharedSecret</td>

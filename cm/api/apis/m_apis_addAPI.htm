@@ -1,7 +1,7 @@
 ---
 layout: apipage
-title: Add API | APIs Service | Enterprise API Platform API
-description:  Adds a new API to the platform, and also adds the first API version.&nbsp;This operation sends the new API info in JSON or XML format. The platform assigns the APIID and returns the full API info in the response.
+title: Add API | APIs Service | Akana API Platform API
+description: Adds a new API to the platform, and also adds the first API version; or, creates an API definition on the platform from an existing virtual service defined in Policy Manager.
 product: cm
 category: ref
 nav-title: Add API 
@@ -16,9 +16,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_addAPI.lbi" --> Adds a new API to the platform, and also adds the first API version.<!-- #EndLibraryItem -->&nbsp;This operation sends the new API info in JSON or XML format. The platform assigns the APIID and returns the full API info in the response.</p>
+<p><!-- #BeginLibraryItem "/library/desc_addAPI.lbi" -->Adds a new API to the platform, and also adds the first API version; or, creates an API definition on the platform from an existing virtual service defined in Policy Manager.<!-- #EndLibraryItem --></p>
+<p>This operation sends the API definition in JSON or XML format. The platform assigns the APIID and returns the full API info in the response.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/library/roles_user.lbi" -->To complete this operation successfully, a user must be logged in.<!-- #EndLibraryItem -->&nbsp;The user who adds the API automatically becomes the first API Administrator.</p>
-<p id="id_notes_workflow"><strong>Workflow</strong>: There is no default workflow for new APIs. However, a custom workflow might be in place. There is only one initial action valid for Community Manager workflows relating to APIs, the  @Create initial action. For more information on workflow, see <a href="../aaref/Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
+<p id="id_notes_workflow"><strong>Workflow</strong>: There is no default workflow for new APIs. However, a custom workflow might be in place. There is only one initial action valid for Akana API Platform workflows relating to APIs, the  @Create initial action. For more information on workflow, see <a href="../aaref/Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
 <p><!-- #BeginLibraryItem "/library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -55,8 +56,8 @@ no-catalog: true
 
 
 <!-- InstanceBeginEditable name="Sample Request" -->
-<h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The example below adds an API named <strong>acmepaymentscorp</strong>.</p>
+<h3 id="samplerequest">Sample Request #1: API with New Service</h3>
+<p id="id_samplerequest">The example below adds an API that references the Swagger petstore API for testing purposes.</p>
 <p><strong>Request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis</pre>
 <p><strong>Sample request headers</strong></p>
@@ -66,329 +67,272 @@ Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 <!-- #BeginLibraryItem "/library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body: application/json</strong></p>
-<pre>{ 
-  "Name":"ACME Payments API",
-  "Description":"Payments API for ACME customers.",
+<pre>{
+  "Name":"aaa_Swagger_Production",
+  "Description":"Swagger API on the developer portal",
   "Visibility":"Public",
   "PictureID":"",
-  "APIVersion":{ 
+  "APIVersion":{
     "Visibility":"Public",
-    "Name":"1",
+    "Name":"1.0",
     "ResourceLevelPermissionsSupported":true,
     "Description":"First version",
-    "TargetAPI":{ 
-      "Endpoints":{ 
-        "Endpoint":[ 
-          { 
-            "Uri":"http://www.acmepayments.com/apisb",
-            "Category":"Sandbox"
-          },
-          { 
-            "Uri":"http://www.acmepayments.com/api",
+    "TargetAPI":{
+      "Endpoints":{
+        "Endpoint":[
+          {
+            "Uri":"http://petstore.swagger.io/v2/",
             "Category":"Production"
           }
         ]
       },
       "Type":"shttp",
-      "Operations":{ 
-        "Operation":[ 
-          { 
+      "Operations":{
+        "Operation":[
+          {
             "Method":"GET",
-            "Path":"/payments/{paymentid}",
-            "Input":[ 
-              { 
-                "Name":"paymentid",
+            "Path":"/get /pet/{petId}",
+            "Input":[
+              {
+                "Name":"petId",
                 "Type":"path"
               }
             ],
             "InputContentType":"*/*",
             "OutputContentType":"*/*",
             "FaultContentType":"*/*",
-            "Name":"getPayment"
+            "Name":"getPetById"
           },
-          { 
-            "Method":"GET",
-            "Path":"/payments/payments",
-            "Input":[ 
-
-            ],
-            "InputContentType":"*/*",
-            "OutputContentType":"*/*",
-            "FaultContentType":"*/*",
-            "Name":"listPayments"
-          },
-          { 
+          {
             "Method":"POST",
-            "Path":"/payments",
-            "Input":[ 
+            "Path":"/pet",
+            "Input":[
 
             ],
             "InputContentType":"*/*",
             "OutputContentType":"*/*",
             "FaultContentType":"*/*",
-            "Name":"addPayment"
-          },
-          { 
-            "Method":"DELETE",
-            "Path":"/payments/{paymentid}",
-            "Input":[ 
-              { 
-                "Name":"paymentid",
-                "Type":"path"
-              }
-            ],
-            "InputContentType":"*/*",
-            "OutputContentType":"*/*",
-            "FaultContentType":"*/*",
-            "Name":"deletePayment"
+            "Name":"addPet"
           }
         ]
       },
-      "Policies":{ 
-        "Policy":[ 
+      "Policies":{
+        "Policy":[
 
         ]
       },
       "DefaultProfile":"Any in and out"
     },
-    "Endpoints":{ 
-      "Endpoint":[ 
-        { 
-          "Uri":"http://acme-payments-api.10.1.20.137:9901/",
+    "Endpoints":{
+      "Endpoint":[
+        {
+          "Uri":"http://www.acmepaymentscorp.com/api/swag",
           "Category":"Production",
-          "CName":"acme-payments-api.10.1.20.137",
-          "DeploymentZoneRule":"1b16623b-1609-4664-9900-06f8441bdefault-http0"
-        },
-        { 
-          "Uri":"http://acme-payments-api.10.1.20.137:9901/",
-          "Category":"Sandbox",
-          "CName":"acme-payments-api.10.1.20.137",
-          "DeploymentZoneRule":"1b16623b-1609-4664-9900-06f8441bdefault-http0"
+          "CName":"www.acmepaymentscorp.com",
+          "DeploymentZoneRule":"8c06bf74-5d31-4f7a-9a84-e842ab50default-http0"
         }
       ]
     },
-    "Operations":{ 
-      "Operation":[ 
-        { 
+    "Operations":{
+      "Operation":[
+        {
           "Method":"GET",
-          "Path":"/payments/{paymentid}",
-          "Input":[ 
-            { 
-              "Name":"paymentid",
+          "Path":"/get /pet/{petId}",
+          "Input":[
+            {
+              "Name":"petId",
               "Type":"path"
             }
           ],
           "InputContentType":"*/*",
           "OutputContentType":"*/*",
           "FaultContentType":"*/*",
-          "Name":"getPayment"
+          "Name":"getPetById"
         },
-        { 
-          "Method":"GET",
-          "Path":"/payments/payments",
-          "Input":[ 
-
-          ],
-          "InputContentType":"*/*",
-          "OutputContentType":"*/*",
-          "FaultContentType":"*/*",
-          "Name":"listPayments"
-        },
-        { 
+        {
           "Method":"POST",
-          "Path":"/payments",
-          "Input":[ 
+          "Path":"/pet",
+          "Input":[
 
           ],
           "InputContentType":"*/*",
           "OutputContentType":"*/*",
           "FaultContentType":"*/*",
-          "Name":"addPayment"
-        },
-        { 
-          "Method":"DELETE",
-          "Path":"/{path:.+|}",
-          "Input":[ 
-            { 
-              "Name":"path",
-              "Type":"path"
-            }
-          ],
-          "InputContentType":"*/*",
-          "OutputContentType":"*/*",
-          "FaultContentType":"*/*",
-          "Name":"deletePayment"
+          "Name":"addPet"
         }
       ]
     },
     "Type":"shttp",
-    "ProductionEndpoint":"http://acme-payments-api.10.1.20.137:9901/",
-    "SandboxEndpoint":"http://acme-payments-api.10.1.20.137:9901/",
-    "Tag":[ 
-      "ACME",
-      "payments",
-      ""
+    "ProductionEndpoint":"http://www.acmepaymentscorp.com/api/swag",
+    "SandboxEndpoint":null,
+    "Tag":[
+      "swagger",
+      "test",
+      "api"
     ],
-    "Policies":{ 
-      "Policy":[ 
-
+    "Policies":{
+      "Policy":[
+        {
+          "PolicyKey":"10001-AtmosphereApplicationSecurityPolicy",
+          "PolicyType":"Operational Policy"
+        },
+        {
+          "PolicyKey":"10001-CORSAllowAll",
+          "PolicyType":"Operational Policy"
+        },
+        {
+          "PolicyKey":"10001-DetailedAuditing",
+          "PolicyType":"Operational Policy"
+        }
       ]
     },
     "DefaultProfile":"Any in and out",
     "ProductionAnonymousAccessAllowed":false,
     "SandboxAnonymousAccessAllowed":false,
-    "ProductionEndpointAccessAutoApproved":false,
+    "ProductionEndpointAccessAutoApproved":true,
     "SandboxEndpointAccessAutoApproved":true
   }
 }</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
 <p><strong>Sample request body: application/xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;API xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/business/1.0" 
 xmlns:ns3="http://soa.com/xsd/legals/1.0" xmlns:ns4="http://soa.com/xsd/dnmodel/1.0" 
 xmlns:ns5="http://soa.com/xsd/resource/1.0"&gt;
-  &lt;Name&gt;ACME Payments API3&lt;/Name&gt;
-  &lt;Description&gt;Payments API for ACME customers.&lt;/Description&gt;
+  &lt;Name&gt;aaa_Swagger_Production&lt;/Name&gt;
+  &lt;Description&gt;Swagger API on the developer portal&lt;/Description&gt;
   &lt;Visibility&gt;Public&lt;/Visibility&gt;
   &lt;PictureID&gt;&lt;/PictureID&gt;
   &lt;APIVersion&gt;
     &lt;Visibility&gt;Public&lt;/Visibility&gt;
-    &lt;Name&gt;1&lt;/Name&gt;
+    &lt;Name&gt;1.0&lt;/Name&gt;
     &lt;ResourceLevelPermissionsSupported&gt;true&lt;/ResourceLevelPermissionsSupported&gt;
     &lt;Description&gt;First version&lt;/Description&gt;
     &lt;TargetAPI&gt;
-      &lt;Type&gt;shttp&lt;/Type&gt;
-      &lt;DefaultProfile&gt;Any in and out&lt;/DefaultProfile&gt;
       &lt;Endpoints&gt;
         &lt;Endpoint&gt;
-          &lt;Category&gt;Sandbox&lt;/Category&gt;
-          &lt;Uri&gt;http://www.acmepayments.com/apisb&lt;/Uri&gt;
-        &lt;/Endpoint&gt;
-        &lt;Endpoint&gt;
+          &lt;Uri&gt;http://petstore.swagger.io/v2/&lt;/Uri&gt;
           &lt;Category&gt;Production&lt;/Category&gt;
-          &lt;Uri&gt;http://www.acmepayments.com/api&lt;/Uri&gt;
         &lt;/Endpoint&gt;
       &lt;/Endpoints&gt;
+      &lt;Type&gt;shttp&lt;/Type&gt;
       &lt;Operations&gt;
         &lt;Operation&gt;
-          &lt;Name&gt;getPayment&lt;/Name&gt;
           &lt;Method&gt;GET&lt;/Method&gt;
-          &lt;Path&gt;/payments/{paymentid}&lt;/Path&gt;
-          &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-          &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-          &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
+          &lt;Path&gt;/get /pet/{petId}&lt;/Path&gt;
           &lt;Input&gt;
-            &lt;Name&gt;paymentid&lt;/Name&gt;
+            &lt;Name&gt;petId&lt;/Name&gt;
             &lt;Type&gt;path&lt;/Type&gt;
           &lt;/Input&gt;
-          &lt;WsdlOperationName&gt;getPayment&lt;/WsdlOperationName&gt;
-        &lt;/Operation&gt;
-        &lt;Operation&gt;
-          &lt;Name&gt;listPayments&lt;/Name&gt;
-          &lt;Method&gt;GET&lt;/Method&gt;
-          &lt;Path&gt;/payments/payments&lt;/Path&gt;
           &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
           &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
           &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-          &lt;WsdlOperationName&gt;listPayments&lt;/WsdlOperationName&gt;
+          &lt;Name&gt;getPetById&lt;/Name&gt;
         &lt;/Operation&gt;
         &lt;Operation&gt;
-          &lt;Name&gt;addPayment&lt;/Name&gt;
           &lt;Method&gt;POST&lt;/Method&gt;
-          &lt;Path&gt;/payments&lt;/Path&gt;
+          &lt;Path&gt;/pet&lt;/Path&gt;
           &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
           &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
           &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-          &lt;WsdlOperationName&gt;addPayment&lt;/WsdlOperationName&gt;
-        &lt;/Operation&gt;
-        &lt;Operation&gt;
-          &lt;Name&gt;deletePayment&lt;/Name&gt;
-          &lt;Method&gt;DELETE&lt;/Method&gt;
-          &lt;Path&gt;/payments/{paymentid}&lt;/Path&gt;
-          &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-          &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-          &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-          &lt;Input&gt;
-            &lt;Name&gt;paymentid&lt;/Name&gt;
-            &lt;Type&gt;path&lt;/Type&gt;
-          &lt;/Input&gt;
-          &lt;WsdlOperationName&gt;deletePayment&lt;/WsdlOperationName&gt;
+          &lt;Name&gt;addPet&lt;/Name&gt;
         &lt;/Operation&gt;
       &lt;/Operations&gt;
-      &lt;Policies /&gt;
+      &lt;Policies&gt;&lt;/Policies&gt;
+      &lt;DefaultProfile&gt;Any in and out&lt;/DefaultProfile&gt;
     &lt;/TargetAPI&gt;
     &lt;Endpoints&gt;
       &lt;Endpoint&gt;
+        &lt;Uri&gt;http://www.acmepaymentscorp.com/api/swag&lt;/Uri&gt;
         &lt;Category&gt;Production&lt;/Category&gt;
-        &lt;Uri&gt;http://acme-payments-api.10.1.20.137:9901/&lt;/Uri&gt;
-        &lt;CName&gt;acme-payments-api.10.1.20.137&lt;/CName&gt;
-      &lt;/Endpoint&gt;
-      &lt;Endpoint&gt;
-        &lt;Category&gt;Sandbox&lt;/Category&gt;
-        &lt;Uri&gt;http://acme-payments-api.10.1.20.137:9901/&lt;/Uri&gt;
-        &lt;CName&gt;acme-payments-api.10.1.20.137&lt;/CName&gt;
+        &lt;CName&gt;www.acmepaymentscorp.com&lt;/CName&gt;
+        &lt;DeploymentZoneRule&gt;8c06bf74-5d31-4f7a-9a84-e842ab50default-http0&lt;/DeploymentZoneRule&gt;
       &lt;/Endpoint&gt;
     &lt;/Endpoints&gt;
     &lt;Operations&gt;
       &lt;Operation&gt;
-        &lt;Name&gt;getPayment&lt;/Name&gt;
         &lt;Method&gt;GET&lt;/Method&gt;
-        &lt;Path&gt;/payments/{paymentid}&lt;/Path&gt;
-        &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-        &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-        &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
+        &lt;Path&gt;/get /pet/{petId}&lt;/Path&gt;
         &lt;Input&gt;
-          &lt;Name&gt;paymentid&lt;/Name&gt;
+          &lt;Name&gt;petId&lt;/Name&gt;
           &lt;Type&gt;path&lt;/Type&gt;
         &lt;/Input&gt;
-        &lt;WsdlOperationName&gt;getPayment&lt;/WsdlOperationName&gt;
-      &lt;/Operation&gt;
-      &lt;Operation&gt;
-        &lt;Name&gt;listPayments&lt;/Name&gt;
-        &lt;Method&gt;GET&lt;/Method&gt;
-        &lt;Path&gt;/payments/payments&lt;/Path&gt;
         &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
         &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
         &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-        &lt;WsdlOperationName&gt;listPayments&lt;/WsdlOperationName&gt;
+        &lt;Name&gt;getPetById&lt;/Name&gt;
       &lt;/Operation&gt;
       &lt;Operation&gt;
-        &lt;Name&gt;addPayment&lt;/Name&gt;
         &lt;Method&gt;POST&lt;/Method&gt;
-        &lt;Path&gt;/payments&lt;/Path&gt;
+        &lt;Path&gt;/pet&lt;/Path&gt;
         &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
         &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
         &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-        &lt;WsdlOperationName&gt;addPayment&lt;/WsdlOperationName&gt;
-      &lt;/Operation&gt;
-      &lt;Operation&gt;
-        &lt;Name&gt;deletePayment&lt;/Name&gt;
-        &lt;Method&gt;DELETE&lt;/Method&gt;
-        &lt;Path&gt;/{path:.+|}&lt;/Path&gt;
-        &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-        &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-        &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-        &lt;Input&gt;
-          &lt;Name&gt;path&lt;/Name&gt;
-          &lt;Type&gt;path&lt;/Type&gt;
-        &lt;/Input&gt;
-        &lt;WsdlOperationName&gt;deletePayment&lt;/WsdlOperationName&gt;
+        &lt;Name&gt;addPet&lt;/Name&gt;
       &lt;/Operation&gt;
     &lt;/Operations&gt;
     &lt;Type&gt;shttp&lt;/Type&gt;
-    &lt;ProductionEndpoint&gt;http://acme-payments-api.10.1.20.137:9901/&lt;/ProductionEndpoint&gt;
-    &lt;SandboxEndpoint&gt;http://acme-payments-api.10.1.20.137:9901/&lt;/SandboxEndpoint&gt;
-    &lt;Tag&gt;ACME&lt;/Tag&gt;
-    &lt;Tag&gt;payments&lt;/Tag&gt;
-    &lt;Tag&gt;&lt;/Tag&gt;
-    &lt;Policies /&gt;
+    &lt;ProductionEndpoint&gt;http://www.acmepaymentscorp.com/api/swag&lt;/ProductionEndpoint&gt;
+    &lt;SandboxEndpoint /&gt;
+    &lt;Tag&gt;swagger&lt;/Tag&gt;
+    &lt;Tag&gt;test&lt;/Tag&gt;
+    &lt;Tag&gt;api&lt;/Tag&gt;
+    &lt;Policies&gt;
+      &lt;Policy&gt;
+        &lt;PolicyKey&gt;10001-AtmosphereApplicationSecurityPolicy&lt;/PolicyKey&gt;
+        &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
+      &lt;/Policy&gt;
+      &lt;Policy&gt;
+        &lt;PolicyKey&gt;10001-CORSAllowAll&lt;/PolicyKey&gt;
+        &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
+      &lt;/Policy&gt;
+      &lt;Policy&gt;
+        &lt;PolicyKey&gt;10001-DetailedAuditing&lt;/PolicyKey&gt;
+        &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
+      &lt;/Policy&gt;
+    &lt;/Policies&gt;
     &lt;DefaultProfile&gt;Any in and out&lt;/DefaultProfile&gt;
     &lt;ProductionAnonymousAccessAllowed&gt;false&lt;/ProductionAnonymousAccessAllowed&gt;
     &lt;SandboxAnonymousAccessAllowed&gt;false&lt;/SandboxAnonymousAccessAllowed&gt;
-    &lt;ProductionEndpointAccessAutoApproved&gt;false&lt;/ProductionEndpointAccessAutoApproved&gt;
+    &lt;ProductionEndpointAccessAutoApproved&gt;true&lt;/ProductionEndpointAccessAutoApproved&gt;
     &lt;SandboxEndpointAccessAutoApproved&gt;true&lt;/SandboxEndpointAccessAutoApproved&gt;
   &lt;/APIVersion&gt;
 &lt;/API&gt;</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<h3 id="samplerequest_2">Sample Request #2: API with Existing Service</h3>
+<p id="id_samplerequest_2">The example below adds an API by referencing an existing API already set up in Policy Manager.</p>
+<p><strong>Request URL</strong></p>
+<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>
+POST /api/apis HTTP/1.1
+Host: {hostname}
+Accept: application/json, text/javascript, */*; q=0.01
+Content-Type: application/json; charset=UTF-8
+AtmoAuthToken_acmepaymentscorp={TokenID_Content}
+<!-- #BeginLibraryItem "/library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
+<p><strong>Sample request body: application/json</strong></p>
+<pre>{
+  "APIVersion":{
+    "Type":"shttp",
+    "Visibility":"com.soa.visibility.registered.users",
+    "ProductionEndpointAccessAutoApproved":"true",
+    "SandboxEndpointAccessAutoApproved":"true",
+    "SandboxAnonymousAccessAllowed":"false",
+    "ProductionAnonymousAccessAllowed":"false",
+    "ResourceLevelPermissionsSupported":"false",
+    "Name":"1.0",
+    "Description":"First version",
+    "Tag":[
+      ""
+    ],
+    "ProductionServiceKey":"uddi:058d20ff-c5dc-11e5-b708-e23f6b2a9732"
+  },
+  "Name":"PM_SwaggerDelete_API",
+  "Description":"PM_SwaggerDelete_API",
+  "PictureID":""
+}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -406,11 +350,11 @@ xmlns:ns5="http://soa.com/xsd/resource/1.0"&gt;
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_textxml.lbi" --><strong>text/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_textxml.lbi" --><strong>text/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -441,7 +385,7 @@ xmlns:ns5="http://soa.com/xsd/resource/1.0"&gt;
       <td><a href="../obj/o_apis_API.htm">API</a></td>
       <td>Required</td>
       <td><p><!-- #BeginLibraryItem "/library/o_apis_API.lbi" --> Includes information about an API.<!-- #EndLibraryItem --> </p>
-        <p>The request API object does not include APIID or APIVersionID, or other unique IDs that are assigned when the API is added.</p></td>
+        <p>The request API object does not include APIID or APIVersionID, or other unique IDs that are assigned when the API is added (such as <strong>InterfaceQName</strong> for operations).</p></td>
     </tr>
   </tbody>
 </table>
@@ -457,331 +401,271 @@ xmlns:ns5="http://soa.com/xsd/resource/1.0"&gt;
 
 
 <!-- InstanceBeginEditable name="Sample Response" -->
-<h3 id="sampleresponse">Sample Response</h3>
-<p id="id_sampleresponse">The sample response below shows the information for the <strong>acmepaymentscorp</strong> API, in the form of a JSON object as specified in the sample request.</p>
+<h3 id="sampleresponse">Sample Response #1: API with New Service</h3>
+<p id="id_sampleresponse">The example below shows the response for the request shown in <a href="#samplerequest">Sample Request #1: API with New Service</a>.</p>
 
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Tue, 15 Jan 2013 16:02:42 GMT
+Date: Wed, 07 Oct 2015 15:30:26 GMT
 Content-Type: application/json
 Atmo-Renew-Token: renew</pre>
 
-<p><strong>Sample response body: application/json</strong></p>
+<p><strong>Sample response body: API with New Service: application/json</strong></p>
 <pre>{
-  "APIID" : "2dafaaef-aba2-4acf-9e94-8818ded543ea.acmepaymentscorp",
-  "Name" : "ACME Payments API",
-  "Description" : "Payments API for ACME customers.",
-  "Visibility" : "Public",
-  "Tag" : [ ],
-  "APIVersion" : {
-    "APIVersionID" : "dffd2e67-21c9-42e0-95c0-bceb2643aa1c.acmepaymentscorp",
-    "APIID" : "2dafaaef-aba2-4acf-9e94-8818ded543ea.acmepaymentscorp",
-    "Name" : "1",
-    "Description" : "First version",
-    "Type" : "shttp",
-    "DefaultProfile" : "Any in and out",
-    "Tag" : [ "ACME", "payments", "" ],
-    "ProductionEndpoint" : "http://acme-payments-api.10.1.20.137:9901/",
-    "SandboxEndpoint" : "http://acme-payments-api.10.1.20.137:9901/",
-    "Operations" : {
-      "Operation" : [ {
-        "Name" : "getPayment",
-        "Method" : "GET",
-        "Path" : "/payments/{paymentid}",
-        "InputContentType" : "*/*",
-        "OutputContentType" : "*/*",
-        "FaultContentType" : "*/*",
-        "Input" : [ {
-          "Name" : "paymentid",
-          "Type" : "path"
-        } ],
-        "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_dffd2e67-21c9-42e0-95c0-bceb2643aa1c.acmepaymentscorp.sandbox",
-        "WsdlOperationName" : "getPayment"
-      }, {
-        "Name" : "listPayments",
-        "Method" : "GET",
-        "Path" : "/payments/payments",
-        "InputContentType" : "*/*",
-        "OutputContentType" : "*/*",
-        "FaultContentType" : "*/*",
-        "Input" : [ ],
-        "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_dffd2e67-21c9-42e0-95c0-bceb2643aa1c.acmepaymentscorp.sandbox",
-        "WsdlOperationName" : "listPayments"
-      }, {
-        "Name" : "addPayment",
-        "Method" : "POST",
-        "Path" : "/payments",
-        "InputContentType" : "*/*",
-        "OutputContentType" : "*/*",
-        "FaultContentType" : "*/*",
-        "Input" : [ ],
-        "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_dffd2e67-21c9-42e0-95c0-bceb2643aa1c.acmepaymentscorp.sandbox",
-        "WsdlOperationName" : "addPayment"
-      }, {
-        "Name" : "deletePayment",
-        "Method" : "DELETE",
-        "Path" : "/{path:.+|}",
-        "InputContentType" : "*/*",
-        "OutputContentType" : "*/*",
-        "FaultContentType" : "*/*",
-        "Input" : [ {
-          "Name" : "path",
-          "Type" : "path"
-        } ],
-        "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_dffd2e67-21c9-42e0-95c0-bceb2643aa1c.acmepaymentscorp.sandbox",
-        "WsdlOperationName" : "deletePayment"
-      } ]
+  "APIID":"44d187c6-7aa0-492d-bb41-fa5b9c16b450.acmepaymentscorp",
+  "Name":"aaa_Swagger_Production",
+  "Description":"Swagger Testing API",
+  "Visibility":"Public",
+  "Tag":[
+
+  ],
+  "APIVersion":{
+    "APIVersionID":"f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp",
+    "APIID":"44d187c6-7aa0-492d-bb41-fa5b9c16b450.acmepaymentscorp",
+    "Name":"1.0",
+    "Description":"First version",
+    "Type":"shttp",
+    "DefaultProfile":"Any in and out",
+    "Tag":[
+
+    ],
+    "ProductionEndpoint":"http://www.acmepaymentscorp.com/api/",
+    "Operations":{
+      "Operation":[
+        {
+          "Name":"getPetById",
+          "Method":"GET",
+          "Path":"/pet/{path:.+|}",
+          "InputContentType":"*/*",
+          "OutputContentType":"*/*",
+          "FaultContentType":"*/*",
+          "Input":[
+            {
+              "Name":"path",
+              "Type":"path"
+            }
+          ],
+          "InterfaceQName":"{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
+          "WsdlOperationName":"getPetById"
+        }
+      ]
     },
-    "Endpoints" : {
-      "Endpoint" : [ {
-        "CName" : "acme-payments-api.10.1.20.137",
-        "Category" : "Production",
-        "Uri" : "http://acme-payments-api.10.1.20.137:9901/",
-        "DeploymentZoneRule" : "1b16623b-1609-4664-9900-06f8441bdefault-http0",
-        "ConnectionProperties" : [ ]
-      }, {
-        "CName" : "acme-payments-api.10.1.20.137",
-        "Category" : "Sandbox",
-        "Uri" : "http://acme-payments-api.10.1.20.137:9901/",
-        "DeploymentZoneRule" : "1b16623b-1609-4664-9900-06f8441bdefault-http0",
-        "ConnectionProperties" : [ ]
-      } ]
+    "Endpoints":{
+      "Endpoint":[
+        {
+          "CName":"www.acmepaymentscorp.com",
+          "Category":"Production",
+          "Uri":"http://www.acmepaymentscorp.com/api/",
+          "DeploymentZoneRule":"0dc4dce5-a255-4bdc-99cb-cd1ec000default-http0",
+          "ConnectionProperties":[
+
+          ]
+        }
+      ]
     },
-    "Policies" : {
-      "Policy" : [ ]
+    "Policies":{
+      "Policy":[
+        {
+          "PolicyKey":"10001-DetailedAuditing",
+          "PolicyType":"Operational Policy"
+        }
+      ]
     },
-    "TargetAPI" : {
-      "Type" : "shttp",
-      "DefaultProfile" : "Any in and out",
-      "Endpoints" : {
-        "Endpoint" : [ {
-          "Category" : "Sandbox",
-          "Uri" : "http://www.acmepayments.com/apisb",
-          "ConnectionProperties" : [ ]
-        }, {
-          "Category" : "Production",
-          "Uri" : "http://www.acmepayments.com/api",
-          "ConnectionProperties" : [ ]
-        } ]
+    "TargetAPI":{
+      "Type":"shttp",
+      "DefaultProfile":"Any in and out",
+      "Endpoints":{
+        "Endpoint":[
+          {
+            "Category":"Production",
+            "Uri":"http://petstore.swagger.io/",
+            "ConnectionProperties":[
+
+            ]
+          }
+        ]
       },
-      "Operations" : {
-        "Operation" : [ {
-          "Name" : "getPayment",
-          "Method" : "GET",
-          "Path" : "/payments/{paymentid}",
-          "InputContentType" : "*/*",
-          "OutputContentType" : "*/*",
-          "FaultContentType" : "*/*",
-          "Input" : [ {
-            "Name" : "paymentid",
-            "Type" : "path"
-          } ],
-          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_dffd2e67-21c9-42e0-95c0-bceb2643aa1c.acmepaymentscorp.sandbox",
-          "WsdlOperationName" : "getPayment"
-        }, {
-          "Name" : "listPayments",
-          "Method" : "GET",
-          "Path" : "/payments/payments",
-          "InputContentType" : "*/*",
-          "OutputContentType" : "*/*",
-          "FaultContentType" : "*/*",
-          "Input" : [ ],
-          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_dffd2e67-21c9-42e0-95c0-bceb2643aa1c.acmepaymentscorp.sandbox",
-          "WsdlOperationName" : "listPayments"
-        }, {
-          "Name" : "addPayment",
-          "Method" : "POST",
-          "Path" : "/payments",
-          "InputContentType" : "*/*",
-          "OutputContentType" : "*/*",
-          "FaultContentType" : "*/*",
-          "Input" : [ ],
-          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_dffd2e67-21c9-42e0-95c0-bceb2643aa1c.acmepaymentscorp.sandbox",
-          "WsdlOperationName" : "addPayment"
-        }, {
-          "Name" : "deletePayment",
-          "Method" : "DELETE",
-          "Path" : "/payments/{paymentid}",
-          "InputContentType" : "*/*",
-          "OutputContentType" : "*/*",
-          "FaultContentType" : "*/*",
-          "Input" : [ {
-            "Name" : "paymentid",
-            "Type" : "path"
-          } ],
-          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_dffd2e67-21c9-42e0-95c0-bceb2643aa1c.acmepaymentscorp.sandbox",
-          "WsdlOperationName" : "deletePayment"
-        } ]
+      "Operations":{
+        "Operation":[
+          {
+            "Name":"getPetById",
+            "Method":"GET",
+            "Path":"/pet/{path:.+|}",
+            "InputContentType":"*/*",
+            "OutputContentType":"*/*",
+            "FaultContentType":"*/*",
+            "Input":[
+              {
+                "Name":"path",
+                "Type":"path"
+              }
+            ],
+            "InterfaceQName":"{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
+            "WsdlOperationName":"getPetById"
+          }
+        ]
       },
-      "Policies" : {
-        "Policy" : [ ]
+      "Policies":{
+        "Policy":[
+
+        ]
       }
     },
-    "Visibility" : "Public",
-    "ProductionEndpointAccessAutoApproved" : false,
-    "SandboxEndpointAccessAutoApproved" : true,
-    "SandboxAnonymousAccessAllowed" : false,
-    "ProductionAnonymousAccessAllowed" : false,
-    "ResourceLevelPermissionsSupported" : true
+    "Visibility":"Public",
+    "ProductionEndpointAccessAutoApproved":true,
+    "SandboxEndpointAccessAutoApproved":true,
+    "SandboxAnonymousAccessAllowed":false,
+    "ProductionAnonymousAccessAllowed":true,
+    "ResourceLevelPermissionsSupported":false
   }
 }</pre>
-<p><strong>Sample response body: application/xml</strong></p>
+<p><strong>Sample response body: API with New Service: application/xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;API xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/business/1.0" 
-xmlns:ns3="http://soa.com/xsd/legals/1.0" xmlns:ns4="http://soa.com/xsd/dnmodel/1.0" 
-xmlns:ns5="http://soa.com/xsd/resource/1.0"&gt;
-  &lt;APIID&gt;6378c0cf-bedc-4465-a236-d1b702ad2a1c.acmepaymentscorp&lt;/APIID&gt;
-  &lt;Name&gt;ACME Payments API4_xml&lt;/Name&gt;
-  &lt;Description&gt;Payments API for ACME customers.&lt;/Description&gt;
+&lt;API xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/legals/1.0" 
+xmlns:ns4="http://soa.com/xsd/dnmodel/1.0" xmlns:ns5="http://soa.com/xsd/resource/1.0"&gt;
+  &lt;APIID&gt;114f7e50-083f-4249-9e85-d3a1e89f3710.acmepaymentscorp&lt;/APIID&gt;
+  &lt;Name&gt;aaa_Swagger_Production&lt;/Name&gt;
+  &lt;Description&gt;Swagger API on the developer portal&lt;/Description&gt;
   &lt;Visibility&gt;Public&lt;/Visibility&gt;
   &lt;APIVersion&gt;
-    &lt;APIVersionID&gt;491dbfb2-24c7-44c0-bd48-0167829f6eb2.acmepaymentscorp&lt;/APIVersionID&gt;
-    &lt;APIID&gt;6378c0cf-bedc-4465-a236-d1b702ad2a1c.acmepaymentscorp&lt;/APIID&gt;
-    &lt;Name&gt;1&lt;/Name&gt;
+    &lt;APIVersionID&gt;107624b8-fca3-4d80-88b7-94ea84d388c9.acmepaymentscorp&lt;/APIVersionID&gt;
+    &lt;APIID&gt;114f7e50-083f-4249-9e85-d3a1e89f3710.acmepaymentscorp&lt;/APIID&gt;
+    &lt;Name&gt;1.0&lt;/Name&gt;
     &lt;Description&gt;First version&lt;/Description&gt;
     &lt;Type&gt;shttp&lt;/Type&gt;
     &lt;DefaultProfile&gt;Any in and out&lt;/DefaultProfile&gt;
-    &lt;Tag&gt;ACME&lt;/Tag&gt;
-    &lt;Tag&gt;payments&lt;/Tag&gt;
-    &lt;Tag&gt;&lt;/Tag&gt;
-    &lt;ProductionEndpoint&gt;http://acme-payments-api.10.1.20.137:9901/&lt;/ProductionEndpoint&gt;
-    &lt;SandboxEndpoint&gt;http://acme-payments-api.10.1.20.137:9901/&lt;/SandboxEndpoint&gt;
+    &lt;Tag&gt;swagger&lt;/Tag&gt;
+    &lt;Tag&gt;test&lt;/Tag&gt;
+    &lt;Tag&gt;api&lt;/Tag&gt;
+    &lt;ProductionEndpoint&gt;http://acmepaymentscorp.com/api/swag&lt;/ProductionEndpoint&gt;
     &lt;Operations&gt;
       &lt;Operation&gt;
-        &lt;Name&gt;getPayment&lt;/Name&gt;
+        &lt;Name&gt;getPetById&lt;/Name&gt;
         &lt;Method&gt;GET&lt;/Method&gt;
-        &lt;Path&gt;/payments/{paymentid}&lt;/Path&gt;
+        &lt;Path&gt;/get /pet/{petId}&lt;/Path&gt;
         &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
         &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
         &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
         &lt;Input&gt;
-          &lt;Name&gt;paymentid&lt;/Name&gt;
+          &lt;Name&gt;petId&lt;/Name&gt;
           &lt;Type&gt;path&lt;/Type&gt;
         &lt;/Input&gt;
-        &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_491dbfb2-24c7-44c0-bd48-0167829f6eb2.acmepaymentscorp.sandbox&lt;/InterfaceQName&gt;
-        &lt;WsdlOperationName&gt;getPayment&lt;/WsdlOperationName&gt;
+        &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_107624b8-fca3-4d80-88b7-94ea84d388c9.acmepaymentscorp.production&lt;/InterfaceQName&gt;
+        &lt;WsdlOperationName&gt;getPetById&lt;/WsdlOperationName&gt;
       &lt;/Operation&gt;
       &lt;Operation&gt;
-        &lt;Name&gt;listPayments&lt;/Name&gt;
-        &lt;Method&gt;GET&lt;/Method&gt;
-        &lt;Path&gt;/payments/payments&lt;/Path&gt;
-        &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-        &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-        &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-        &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_491dbfb2-24c7-44c0-bd48-0167829f6eb2.acmepaymentscorp.sandbox&lt;/InterfaceQName&gt;
-        &lt;WsdlOperationName&gt;listPayments&lt;/WsdlOperationName&gt;
-      &lt;/Operation&gt;
-      &lt;Operation&gt;
-        &lt;Name&gt;addPayment&lt;/Name&gt;
+        &lt;Name&gt;addPet&lt;/Name&gt;
         &lt;Method&gt;POST&lt;/Method&gt;
-        &lt;Path&gt;/payments&lt;/Path&gt;
+        &lt;Path&gt;/pet&lt;/Path&gt;
         &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
         &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
         &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-        &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_491dbfb2-24c7-44c0-bd48-0167829f6eb2.acmepaymentscorp.sandbox&lt;/InterfaceQName&gt;
-        &lt;WsdlOperationName&gt;addPayment&lt;/WsdlOperationName&gt;
-      &lt;/Operation&gt;
-      &lt;Operation&gt;
-        &lt;Name&gt;deletePayment&lt;/Name&gt;
-        &lt;Method&gt;DELETE&lt;/Method&gt;
-        &lt;Path&gt;/{path:.+|}&lt;/Path&gt;
-        &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-        &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-        &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-        &lt;Input&gt;
-          &lt;Name&gt;path&lt;/Name&gt;
-          &lt;Type&gt;path&lt;/Type&gt;
-        &lt;/Input&gt;
-        &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_491dbfb2-24c7-44c0-bd48-0167829f6eb2.acmepaymentscorp.sandbox&lt;/InterfaceQName&gt;
-        &lt;WsdlOperationName&gt;deletePayment&lt;/WsdlOperationName&gt;
+        &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_107624b8-fca3-4d80-88b7-94ea84d388c9.acmepaymentscorp.production&lt;/InterfaceQName&gt;
+        &lt;WsdlOperationName&gt;addPet&lt;/WsdlOperationName&gt;
       &lt;/Operation&gt;
     &lt;/Operations&gt;
     &lt;Endpoints&gt;
       &lt;Endpoint&gt;
         &lt;Category&gt;Production&lt;/Category&gt;
-        &lt;Uri&gt;http://acme-payments-api.10.1.20.137:9901/&lt;/Uri&gt;
-        &lt;CName&gt;acme-payments-api.10.1.20.137&lt;/CName&gt;
-      &lt;/Endpoint&gt;
-      &lt;Endpoint&gt;
-        &lt;Category&gt;Sandbox&lt;/Category&gt;
-        &lt;Uri&gt;http://acme-payments-api.10.1.20.137:9901/&lt;/Uri&gt;
-        &lt;CName&gt;acme-payments-api.10.1.20.137&lt;/CName&gt;
+        &lt;Uri&gt;http://acmepaymentscorp.com/api/swag&lt;/Uri&gt;
+        &lt;CName&gt;acmepaymentscorp.com/api&lt;/CName&gt;
+        &lt;DeploymentZoneRule&gt;8c06bf74-5d31-4f7a-9a84-e842ab50default-http0&lt;/DeploymentZoneRule&gt;
       &lt;/Endpoint&gt;
     &lt;/Endpoints&gt;
-    &lt;Policies /&gt;
+    &lt;Policies&gt;
+      &lt;Policy&gt;
+        &lt;PolicyKey&gt;10001-AtmosphereApplicationSecurityPolicy&lt;/PolicyKey&gt;
+        &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
+      &lt;/Policy&gt;
+      &lt;Policy&gt;
+        &lt;PolicyKey&gt;10001-CORSAllowAll&lt;/PolicyKey&gt;
+        &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
+      &lt;/Policy&gt;
+      &lt;Policy&gt;
+        &lt;PolicyKey&gt;10001-DetailedAuditing&lt;/PolicyKey&gt;
+        &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
+      &lt;/Policy&gt;
+    &lt;/Policies&gt;
     &lt;TargetAPI&gt;
       &lt;Type&gt;shttp&lt;/Type&gt;
       &lt;DefaultProfile&gt;Any in and out&lt;/DefaultProfile&gt;
       &lt;Endpoints&gt;
         &lt;Endpoint&gt;
-          &lt;Category&gt;Sandbox&lt;/Category&gt;
-          &lt;Uri&gt;http://www.acmepayments.com/apisb&lt;/Uri&gt;
-        &lt;/Endpoint&gt;
-        &lt;Endpoint&gt;
           &lt;Category&gt;Production&lt;/Category&gt;
-          &lt;Uri&gt;http://www.acmepayments.com/api&lt;/Uri&gt;
+          &lt;Uri&gt;http://petstore.swagger.io/v2/&lt;/Uri&gt;
         &lt;/Endpoint&gt;
       &lt;/Endpoints&gt;
       &lt;Operations&gt;
         &lt;Operation&gt;
-          &lt;Name&gt;getPayment&lt;/Name&gt;
+          &lt;Name&gt;getPetById&lt;/Name&gt;
           &lt;Method&gt;GET&lt;/Method&gt;
-          &lt;Path&gt;/payments/{paymentid}&lt;/Path&gt;
+          &lt;Path&gt;/get /pet/{petId}&lt;/Path&gt;
           &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
           &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
           &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
           &lt;Input&gt;
-            &lt;Name&gt;paymentid&lt;/Name&gt;
+            &lt;Name&gt;petId&lt;/Name&gt;
             &lt;Type&gt;path&lt;/Type&gt;
           &lt;/Input&gt;
-          &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_491dbfb2-24c7-44c0-bd48-0167829f6eb2.acmepaymentscorp.sandbox&lt;/InterfaceQName&gt;
-          &lt;WsdlOperationName&gt;getPayment&lt;/WsdlOperationName&gt;
+          &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_107624b8-fca3-4d80-88b7-94ea84d388c9.acmepaymentscorp.production&lt;/InterfaceQName&gt;
+          &lt;WsdlOperationName&gt;getPetById&lt;/WsdlOperationName&gt;
         &lt;/Operation&gt;
         &lt;Operation&gt;
-          &lt;Name&gt;listPayments&lt;/Name&gt;
-          &lt;Method&gt;GET&lt;/Method&gt;
-          &lt;Path&gt;/payments/payments&lt;/Path&gt;
-          &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-          &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-          &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-          &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_491dbfb2-24c7-44c0-bd48-0167829f6eb2.acmepaymentscorp.sandbox&lt;/InterfaceQName&gt;
-          &lt;WsdlOperationName&gt;listPayments&lt;/WsdlOperationName&gt;
-        &lt;/Operation&gt;
-        &lt;Operation&gt;
-          &lt;Name&gt;addPayment&lt;/Name&gt;
+          &lt;Name&gt;addPet&lt;/Name&gt;
           &lt;Method&gt;POST&lt;/Method&gt;
-          &lt;Path&gt;/payments&lt;/Path&gt;
+          &lt;Path&gt;/pet&lt;/Path&gt;
           &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
           &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
           &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-          &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_491dbfb2-24c7-44c0-bd48-0167829f6eb2.acmepaymentscorp.sandbox&lt;/InterfaceQName&gt;
-          &lt;WsdlOperationName&gt;addPayment&lt;/WsdlOperationName&gt;
-        &lt;/Operation&gt;
-        &lt;Operation&gt;
-          &lt;Name&gt;deletePayment&lt;/Name&gt;
-          &lt;Method&gt;DELETE&lt;/Method&gt;
-          &lt;Path&gt;/payments/{paymentid}&lt;/Path&gt;
-          &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-          &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-          &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-          &lt;Input&gt;
-            &lt;Name&gt;paymentid&lt;/Name&gt;
-            &lt;Type&gt;path&lt;/Type&gt;
-          &lt;/Input&gt;
-          &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_491dbfb2-24c7-44c0-bd48-0167829f6eb2.acmepaymentscorp.sandbox&lt;/InterfaceQName&gt;
-          &lt;WsdlOperationName&gt;deletePayment&lt;/WsdlOperationName&gt;
+          &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_107624b8-fca3-4d80-88b7-94ea84d388c9.acmepaymentscorp.production&lt;/InterfaceQName&gt;
+          &lt;WsdlOperationName&gt;addPet&lt;/WsdlOperationName&gt;
         &lt;/Operation&gt;
       &lt;/Operations&gt;
       &lt;Policies /&gt;
     &lt;/TargetAPI&gt;
     &lt;Visibility&gt;Public&lt;/Visibility&gt;
-    &lt;ProductionEndpointAccessAutoApproved&gt;false&lt;/ProductionEndpointAccessAutoApproved&gt;
+    &lt;ProductionEndpointAccessAutoApproved&gt;true&lt;/ProductionEndpointAccessAutoApproved&gt;
     &lt;SandboxEndpointAccessAutoApproved&gt;true&lt;/SandboxEndpointAccessAutoApproved&gt;
     &lt;SandboxAnonymousAccessAllowed&gt;false&lt;/SandboxAnonymousAccessAllowed&gt;
     &lt;ProductionAnonymousAccessAllowed&gt;false&lt;/ProductionAnonymousAccessAllowed&gt;
     &lt;ResourceLevelPermissionsSupported&gt;true&lt;/ResourceLevelPermissionsSupported&gt;
   &lt;/APIVersion&gt;
 &lt;/API&gt;</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<h3 id="sampleresponse_2">Sample Response #2: API with Existing Service</h3>
+<p id="id_sampleresponse_2">The example below shows the response for the request shown in <a href="#samplerequest_2">Sample Request #2: API with Existing Service</a>.</p>
+<p><strong>Sample response headers</strong> (ellipses indicate abbreviation for display purposes)</p>
+<pre>HTTP/1.1 200 OK
+Date: Thu, 28 Jan 2016 16:30:14 GMT
+Content-Type: application/json
+Atmo-Renew-Token: renew
+Set-Cookie: Csrf-Token_acmepaymentscorp=TokenID%3D68b24a75-c5dc- ...
+AtmoAuthToken_acmepaymentscorp=TokenID%3D68b24a75-c5dc-11e5-b708-...
+</pre>
+<p><strong>Sample response body: API with Existing Service: application/json</strong></p>
+<pre>{
+  "APIID" : "e5cbd91a-f23d-49ea-b600-a99b3dfb47b7.acmepaymentscorp",
+  "Name" : "PM_SwaggerDelete_API",
+  "Description" : "PM_SwaggerDelete_API",
+  "Visibility" : "com.soa.visibility.registered.users",
+  "Tag" : [ ],
+  "APIVersion" : {
+    "APIVersionID" : "02e8e50d-d629-465e-868f-0d0771d90806.acmepaymentscorp",
+    "APIID" : "e5cbd91a-f23d-49ea-b600-a99b3dfb47b7.acmepaymentscorp",
+    "Name" : "1.0",
+    "Description" : "First version",
+    "Type" : "shttp",
+    "Tag" : [ "" ],
+    "Visibility" : "com.soa.visibility.registered.users",
+    "ProductionEndpointAccessAutoApproved" : true,
+    "SandboxEndpointAccessAutoApproved" : true,
+    "SandboxAnonymousAccessAllowed" : false,
+    "ProductionAnonymousAccessAllowed" : false,
+    "ResourceLevelPermissionsSupported" : false,
+    "ProductionServiceKey" : "uddi:058d20ff-c5dc-11e5-b708-e23f6b2a9732"
+  }
+}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -799,7 +683,7 @@ xmlns:ns5="http://soa.com/xsd/resource/1.0"&gt;
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_textxml.lbi" --><strong>text/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
@@ -854,6 +738,10 @@ xmlns:ns5="http://soa.com/xsd/resource/1.0"&gt;
       <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
+      <td>The resource could not be found. For example, you might get this if you have a typo in the URL.</td>
+    </tr>
+    <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
       <td><!-- #BeginLibraryItem "/library/http_405.lbi" --> Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header.<!-- #EndLibraryItem --></td>
     </tr>
@@ -864,7 +752,8 @@ xmlns:ns5="http://soa.com/xsd/resource/1.0"&gt;
     </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

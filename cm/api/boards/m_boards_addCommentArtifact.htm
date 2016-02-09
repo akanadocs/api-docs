@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Add Comment Artifact (Subsequent) | Boards Service | Enterprise API Platform API
+title: Add Comment Artifact (Subsequent) | Boards Service | Akana API Platform API
 description: Adds an artifact, such as an uploaded image or file, to be used in the markdown for a comment that is being edited (subsequent artifact, after the first).
 product: cm
 category: ref
@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/library/desc_addCommentArtifact.lbi" -->Adds an artifact, such as an uploaded image or file, to be used in the markdown for a comment that is being edited (subsequent artifact, after the first).<!-- #EndLibraryItem --></p>
-<p><strong>Authorization Roles/Permissions: </strong>Must be a user logged in to the platform, with visibility of the Board. For more information about how authorization and visibility work for Board operations, see <a href="../aaref/Ref_BoardsInThePortal.htm">Boards in the Community Manager Portal</a>.</p>
+<p><strong>Authorization Roles/Permissions: </strong>Must be a user logged in to the platform, with visibility of the Board. For more information about how authorization and visibility work for Board operations, see <a href="../aaref/Ref_BoardsInThePortal.htm">Boards in the developer portal</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,7 +56,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows adding a subsequent artifact to a new comment.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->boards/items/comments/c23c3cb9-3da0-4448-b584-2fef489d3ddf.acmepaymentscorp/artifacts?wrapInHTML=true</pre>
+<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->boards/items/comments/c23c3cb9-3da0-4448-b584-2fef489d3ddf.acmepaymentscorp/artifacts</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST http://{hostname}/api/boards/items/comments/c23c3cb9-3da0-4448-b584-2fef489d3ddf.acmepaymentscorp/artifacts?wrapInHTML=true HTTP/1.0
 Host: {hostname}
@@ -220,7 +220,8 @@ Expires: Tue, 09 Jun 2015 17:25:01 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

@@ -1,7 +1,7 @@
 ---
 layout: apipage
-title: IDs on the Platform | Reference Material | Enterprise API Platform API
-description: The&nbsp;Enterprise API Platform&nbsp;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.
+title: IDs on the Platform | Reference Material | Akana API Platform API
+description: The&nbsp; Akana API Platform&nbsp;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.
 product: cm
 category: ref
 nav-title: IDs on the Platform 
@@ -12,13 +12,19 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>IDs on the Platform</h2>
-<p>The&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
+<p>The&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
 <p>These IDs are essentially simple strings. However, they generally have a two-part construction, such as:</p>
-<pre>&lt;uniqueid for object/tenant&gt;.&lt;tenant name&gt;</pre>
-<p>For example, a unique UserID for a user on&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;might be <strong>user10011.<!-- #BeginLibraryItem "/library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong>. In this example:</p>
+<ul>
+  <li><strong>{uniqueid for object/tenant}.{tenant name}</strong></li>
+</ul>
+<p>For example, a unique UserID for a user on&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+  Akana API Platform<!-- #EndLibraryItem -->&nbsp;might be <strong>user10011.<!-- #BeginLibraryItem "/library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong>. In this example:</p>
 <ul>
   <li><strong>user</strong> indicates that this is a user ID.</li>
-  <li><strong>10011</strong> is unique to&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, so the unique user record can be located in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;database.</li>
+  <li><strong>10011</strong> is unique to&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->, so the unique user record can be located in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;database.</li>
   <li><strong><!-- #BeginLibraryItem "/library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong> indicates the tenant name. Including the tenant name after the period increases the usefulness of the object, because even if two tenants both have a user10011, each ID is unique across the entirety of the platform in a federated scenario where there might be many tenants.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -298,6 +304,11 @@ The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_b
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><a id="id_logopictureid"></a>LogoPictureID</td>
+      <td>A unique Dropbox ID for the logo to be assigned on an app's public profile.</td>
+      <td>1553</td>
+    </tr>
+    <tr>
       <td><a id="id_membershiprequestid"></a>MembershipRequestID</td>
       <td><!-- #BeginLibraryItem "/library/o_ID_MembershipRequestID.lbi" -->
 The unique Board Item ID for a specific group membership request.<!-- #EndLibraryItem --></td>
@@ -346,7 +357,7 @@ The ID of the third party providing validation for the user, such as Facebook&re
         <p>Usage examples:</p>
         <ul class="apidoctable_ul">
           <li>The <span class="apidoc_code"><a href="../users/m_users_getUserRoles.htm">GET&nbsp;/api/users/{UserID}/roles</a></span> operation references a <a href="#id_userid">UserID</a> as a resource ID</li>
-          <li>The <span class="apidoc_code"><a href="../apis/m_apis_getOperationResources.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/resources</a></span> response message references a <a href="#id_scopeid">ScopeID</a> as a resourceID.</li>
+          <li>The <span class="apidoc_code"><a href="../apis/m_apis_getTxLogsForOperation.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/resources</a></span> response message references a <a href="#id_scopeid">ScopeID</a> as a resourceID.</li>
         </ul>
         <p>The ResourceID could also be an <a href="#id_alertid">AlertID</a>, <a href="#id_discussionid">DiscussionID</a>, <a href="#id_ticketid">TicketID</a>, <a href="#id_reviewid">ReviewID</a>, or <a href="#id_commentid">CommentID</a>.</p></td>
       <td><p>user13967.<!-- #BeginLibraryItem "/library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></p>

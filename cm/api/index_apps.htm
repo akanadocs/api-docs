@@ -1,7 +1,7 @@
 ---
 layout: apipage
-title: Apps Service | Overview | Enterprise API Platform API
-description:  The Apps service provides a REST interface and a set of operations for managing apps in the&nbsp;Enterprise API Platform. This service incluces operations to support complete app lifecycle management, including such activities as creating, modifying, and deleting apps and app versions, managing app teams, and creating, modifying, and deleting the app security mechanism.
+title: Apps Service | Overview | Akana API Platform API
+description:  The Apps service provides a REST interface and a set of operations for managing apps in the&nbsp;%|%Akana API Platform. This service incluces operations to support complete app lifecycle management, including such activities as creating, modifying, and deleting apps and app versions, managing app teams, and creating, modifying, and deleting the app security mechanism.
 product: cm
 category: ref
 nav-title: Apps Service 
@@ -13,7 +13,8 @@ no-catalog: false
 
 <h2><a name="top"></a>Apps Service: Overview</h2>
 <p><!-- #BeginLibraryItem "/library/descsvc_apps.lbi" -->
-The Apps service provides a REST interface and a set of operations for managing apps in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. This service incluces operations to support complete app lifecycle management, including such activities as creating, modifying, and deleting apps and app versions, managing app teams, and creating, modifying, and deleting the app security mechanism.<!-- #EndLibraryItem --></p>
+The Apps service provides a REST interface and a set of operations for managing apps in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->. This service incluces operations to support complete app lifecycle management, including such activities as creating, modifying, and deleting apps and app versions, managing app teams, and creating, modifying, and deleting the app security mechanism.<!-- #EndLibraryItem --></p>
 <p>If you want to generate a list of apps for a specific user, that operation is part of the Users service: <span class="apidoc_code"><a href="users/m_users_getApps.htm">GET&nbsp;/api/users/{UserID}/apps</a></span>.</p>
 <p class="apidoc_note"><strong>Note</strong>: For more information about managing apps and app versions, see <a href="aaref/Ref_ManagingAppVersions.htm">Managing App Versions</a>.</p>
 <p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps</span></p>
@@ -105,7 +106,12 @@ Returns information about an app.<!-- #EndLibraryItem --></td>
   <tr>
     <td>get app OAuth client properties</td>
     <td><a href="apps/m_apps_getAppOAuthClientProperties.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/oauthclient</a></td>
-    <td><!-- #BeginLibraryItem "/library/desc_getAppOAuthClientProperties.lbi" -->Returns the OAuth Client properties for the specified app version, if any exist.<!-- #EndLibraryItem --></td>
+    <td><!-- #BeginLibraryItem "/library/desc_getAppOAuthClientProperties.lbi" -->Returns information about the OAuth Profile for a specific app version.<!-- #EndLibraryItem --></td>
+  </tr>
+  <tr>
+    <td>get app OAuth profile choices</td>
+    <td><a href="apps/m_apps_getAppOAuthProfileChoices.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/oauthprofile/choices</a></td>
+    <td><!-- #BeginLibraryItem "/library/desc_getAppOAuthProfileChoices.lbi" --> Returns information about the choices available for a specific app, for the app's OAuth Profile. These are the options that are available for the app developer to choose from.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>get app public profile</td>
@@ -135,8 +141,7 @@ Returns information about an app.<!-- #EndLibraryItem --></td>
   <tr>
     <td>Get app versions (from Runtime Identity)</td>
     <td><a href="apps/m_apps_getAppVersions.htm">GET&nbsp;/api/apps/versions?Identity={identity}</a></td>
-    <td><!-- #BeginLibraryItem "/library/desc_getAppVersions.lbi" -->
-Returns information about app versions, for the ID specified in the required Identity parameter. You can use this operation to get the AppID or AppVersionID if you only have the AppID specified on the App Details Page in the user interface.<!-- #EndLibraryItem --></td>
+    <td><!-- #BeginLibraryItem "/library/desc_getAppVersions.lbi" --> Returns information about app versions, for the ID specified in the required Identity parameter. You can use this operation to get the AppID or AppVersionID if you only have the AppID specified on the App Details Page in the user interface.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>get avatar</td>
@@ -206,8 +211,7 @@ Retrieves a summary of the ratings for a resource.<!-- #EndLibraryItem --></td>
   <tr>
     <td>get shared secret</td>
     <td><a href="apps/m_apps_getSharedSecret.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/secret</a></td>
-    <td><!-- #BeginLibraryItem "/library/desc_getSharedSecret.lbi" -->
-Returns the Shared Secret for the app version.<!-- #EndLibraryItem --></td>
+    <td><!-- #BeginLibraryItem "/library/desc_getSharedSecret.lbi" -->Returns the Shared Secret for the app version. Valid if the Shared Secret is stored on the platform. Not valid for apps that have a user-defined app identity referencing an external identity domain.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>get team members</td>
@@ -263,33 +267,16 @@ Returns a list of Board items for the specified app version.<!-- #EndLibraryItem
     <td><!-- #BeginLibraryItem "/library/desc_modifyApp.lbi" -->
 Changes one or more values for an app (Name and/or Description).<!-- #EndLibraryItem --></td>
   </tr>
-<!--  <tr>
-    <td>modify app security</td>
-    <td>PUT&nbsp;/api/apps/versions/{AppVersionID}/securitymechanisms</td>
-    <td>&nbsp;</td>
-  </tr>-->
-<!--  <tr>
-    <td>modify app version governing workflow</td>
-    <td>PUT&nbsp;/api/apps/versions/{AppVersionID}/governingworkflow</td>
-    <td>&nbsp;</td>
-  </tr>
--->
   <tr>
     <td>modify version</td>
     <td><a href="apps/m_apps_modifyVersion.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}</a></td>
     <td><!-- #BeginLibraryItem "/library/desc_modifyVersion.lbi" -->
 Changes one or more values associated with an app version.<!-- #EndLibraryItem --></td>
   </tr>
-<!--  <tr>
-    <td>previewavatar is out</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>-->
   <tr>
     <td>regenerate shared secret</td>
     <td><a href="apps/m_apps_regenerateSharedSecret.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}/secret</a></td>
-    <td><!-- #BeginLibraryItem "/library/desc_regenerateSharedSecretdesc_.lbi" -->
-Regenerates the <a href="Ref_Glossary_CommunityPlatform.htm#gl_sharedsecret">shared secret</a> value for the specified app.<!-- #EndLibraryItem --></td>
+    <td><!-- #BeginLibraryItem "/library/desc_regenerateSharedSecretdesc_.lbi" -->Regenerates the <a href="Ref_Glossary_CommunityPlatform.htm#gl_sharedsecret">shared secret</a> value for the specified app version. Valid if the Shared Secret is stored on the platform. Not valid for apps that have a user-defined app identity referencing an external identity domain.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>remove key info</td>
@@ -304,7 +291,7 @@ Regenerates the <a href="Ref_Glossary_CommunityPlatform.htm#gl_sharedsecret">sha
   <tr>
     <td>save app OAuth client properties</td>
     <td><a href="apps/m_apps_saveAppOAuthClientProperties.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}/oauthclient</a></td>
-    <td><!-- #BeginLibraryItem "/library/desc_saveAppOAuthClientProperties.lbi" -->Changes one or more OAuth client properties.<!-- #EndLibraryItem --></td>
+    <td><!-- #BeginLibraryItem "/library/desc_saveAppOAuthClientProperties.lbi" -->Updates information about the OAuth Profile for a specific app version.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>save app public profile</td>

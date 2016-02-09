@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Get Version | Apps Service | Enterprise API Platform API
+title: Get Version | Apps Service | Akana API Platform API
 description: Returns a version of an app.
 product: cm
 category: ref
@@ -83,7 +83,7 @@ Host:<!-- #BeginLibraryItem "/library/_endpointhost.lbi" -->{hostname}<!-- #EndL
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -185,6 +185,7 @@ Date: Fri, 31 May 2013 18:24:07 GMT</pre>
   },
   &quot;Identity&quot; : &quot;acmepaymentscorp-4iXro2Uxs2h4LviCshR9pK9w&quot;
 }</pre>
+
 <p><strong>Sample response body #2</strong></p>
 <p><strong>IncludeSettings</strong> parameter was set to <strong>true</strong> in the request, so app version settings are included in the response.</p>
 <pre>{
@@ -218,6 +219,33 @@ Date: Fri, 31 May 2013 18:24:07 GMT</pre>
     &quot;SimultaneousSandboxProductAccessSupport&quot; : &quot;com.soa.feature.enabled&quot;
   }
 }</pre>
+
+<p><strong>Sample response body #3: domain included in user-defined Identity field</strong></p>
+<p>In the example below, the app has a user-defined App Identity that includes a domain. In this scenario, the platform does not collect, regenerate, return, or display the Shared Secret value. The user manages it in the external identity domain, which must be a valid domain set up in the platform. The platform takes the Shared Secret value that the user provides and validates it with the external identity domain.</p>
+
+<pre>{
+  "RuntimeID" : "80pQCDO3KJUYSWNfcxjcf4YI.acmepaymentscorp",
+  "AppID" : "07eeda74-8681-4e4a-8e04-7d7229f8d4db.acmepaymentscorp",
+  "Name" : "v1",
+  "Description" : "Version 1.0",
+  "Visibility" : "Public",
+  "InitialEnvironment" : "Sandbox",
+  "CurrentEnvironment" : "Sandbox",
+  "Tag" : [ ],
+  "HasKeyInfo" : false,
+  "Created" : "2015-10-02T16:59:45.619Z",
+  "Updated" : "2015-10-02T16:59:45.619Z",
+  "State" : "com.soa.app.state.initial",
+  "SecurityMechanisms" : [ "com.soa.security.mechanism.sharedsecret" ],
+  "RatingSummary" : {
+    "Five" : 0,
+    "Four" : 0,
+    "Three" : 0,
+    "Two" : 0,
+    "One" : 0
+  },
+  "Identity" : "LdapAutomation1\\myuserid"
+}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p id="id_sampleresponse">&nbsp;</p>
 <!-- InstanceEndEditable -->
@@ -236,7 +264,7 @@ Date: Fri, 31 May 2013 18:24:07 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -296,7 +324,8 @@ Date: Fri, 31 May 2013 18:24:07 GMT</pre>
     </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

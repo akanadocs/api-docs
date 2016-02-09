@@ -1,7 +1,7 @@
 ---
 layout: apipage
-title: APIs Service | Overview | Enterprise API Platform API
-description:  The APIs service provides a REST interface and a set of operations for managing APIs in the&nbsp;Enterprise API Platform. This API includes operations to support complete API lifecycle management, including creating and managing APIs and API versions, managing API OAuth details, managing legal agreements and the API Board, API monitoring and documentation, and relationships between APIs and apps.
+title: APIs Service | Overview | Akana API Platform API
+description:  The APIs service provides a REST interface and a set of operations for managing APIs in the&nbsp;%|%Akana API Platform. This API includes operations to support complete API lifecycle management, including creating and managing APIs and API versions, managing API OAuth details, managing legal agreements and the API Board, API monitoring and documentation, and relationships between APIs and apps.
 product: cm
 category: ref
 nav-title: APIs Service 
@@ -13,7 +13,8 @@ no-catalog: false
 
 <h2><a name="top"></a>APIs Service: Overview</h2>
 <p><!-- #BeginLibraryItem "/library/descsvc_apis.lbi" -->
-The APIs service provides a REST interface and a set of operations for managing APIs in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. This API includes operations to support complete API lifecycle management, including creating and managing APIs and API versions, managing API OAuth details, managing legal agreements and the API Board, API monitoring and documentation, and relationships between APIs and apps.<!-- #EndLibraryItem --></p>
+The APIs service provides a REST interface and a set of operations for managing APIs in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->. This API includes operations to support complete API lifecycle management, including creating and managing APIs and API versions, managing API OAuth details, managing legal agreements and the API Board, API monitoring and documentation, and relationships between APIs and apps.<!-- #EndLibraryItem --></p>
 <p>If you want to generate a list of APIs for a specific user, that operation is part of the Users service: <span class="apidoc_code"><a href="users/m_users_getApis.htm">GET&nbsp;/api/users/{UserID}/apis</a></span>.</p>
 <p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis</span></p>
 <p>This overview includes two sections:</p>
@@ -34,8 +35,7 @@ The APIs service provides a REST interface and a set of operations for managing 
    <tr>
      <td>add API</td>
      <td><a href="apis/m_apis_addAPI.htm">POST&nbsp;/api/apis</a></td>
-     <td><!-- #BeginLibraryItem "/library/desc_addAPI.lbi" -->
-Adds a new API to the platform, and also adds the first API version.<!-- #EndLibraryItem --></td>
+     <td><!-- #BeginLibraryItem "/library/desc_addAPI.lbi" -->Adds a new API to the platform, and also adds the first API version; or, creates an API definition on the platform from an existing virtual service defined in Policy Manager.<!-- #EndLibraryItem --></td>
    </tr>
    <tr>
      <td>Add API Administrator</td>
@@ -106,6 +106,12 @@ Exports the transaction log for the specified API version to a <a href="Ref_Glos
       <td><!-- #BeginLibraryItem "/library/desc_getAPIAutoConnectSettings.lbi" -->Returns the <a href="Ref_Glossary_CommunityPlatform.htm#gl_autoconnect">auto-connect</a> settings for the specified API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
+      <td>get API document</td>
+      <td><a href="apis/m_apis_getAPIDocument.htm">GET&nbsp;/api/apis/versions/{ApiVersionID}/definition/{Specification} or GET&nbsp;/api/apis/versions/{ApiVersionID}/definition/{Specification}/{IncludeDocId}</a></td>
+      <td><!-- #BeginLibraryItem "/library/desc_getAPIDocument.lbi" -->
+Returns generated API definition document for the specified API version. With the optional <strong>IncludeDocId</strong> parameter, returns the generated API definition document in the specified format.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
       <td>get API implementations</td>
       <td><a href="apis/m_apis_getAPIImplementations.htm">GET&nbsp;/api/apis/services</a></td>
       <td><!-- #BeginLibraryItem "/library/desc_getAPIImplementations.lbi" -->
@@ -154,11 +160,6 @@ Returns the specified API version.<!-- #EndLibraryItem --></td>
       <td><!-- #BeginLibraryItem "/library/desc_getAPIVersionSettings.lbi" -->
 Returns a list of settings for the specified API version.<!-- #EndLibraryItem --></td>
     </tr>
-<!--    <tr>
-      <td>get auto-connected API versions</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>-->
     <tr>
       <td>get avatar</td>
       <td><a href="resource/m_getAvatar.htm">GET&nbsp;/api/apis/{APIID}/avatars/{AvatarVersionID}.png</a></td>
@@ -210,9 +211,15 @@ Returns information about the users who are following the specified API.<!-- #En
 Returns a set of metric information for the specified API version, in JSON or XML format, that can be used to create a chart.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
+      <td>get  metrics for operation</td>
+      <td><a href="apis/m_apis_getMetricsForOperation.htm">GET&nbsp;/api/apis/versions/{ApiVersionID}/environments/{Environment}/operations/{OperationName}/metrics</a></td>
+      <td><!-- #BeginLibraryItem "/library/getMetricsForOperation.lbi" -->
+Returns a set of metric information for the specified operation in the specified environment that can be used to create a chart.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
       <td>get operation resources</td>
-      <td><a href="apis/m_apis_getOperationResources.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/resources</a></td>
-      <td><!-- #BeginLibraryItem "/library/desc_getOperationResources.lbi" -->Returns information about operation-specific scope mapping for an API version.<!-- #EndLibraryItem --></td>
+      <td><a href="apis/m_apis_getTxLogsForOperation.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/resources</a></td>
+      <td><!-- #BeginLibraryItem "/library/desc_getTxLogsForOperation.lbi" -->Returns transaction logs for the specified operation in the specified environment.<!-- #EndLibraryItem --></td>
       </tr>
     <tr>
       <td>get private viewer scope</td>
@@ -264,6 +271,11 @@ Returns the automatically-generated <a href="Ref_Glossary_CommunityPlatform.htm#
       <td><!-- #BeginLibraryItem "/library/desc_getTxLogs_apis.lbi" -->Returns up to 1000 transaction logs for the specified API version. If no count parameters specified, returns 100 transactions.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
+      <td>get transaction logs for operation</td>
+      <td><a href="apis/m_apis_getTxLogsForOperation.htm">GET&nbsp;/api/apis/versions/{ApiVersionID}/environments/{Environment}/operations/{OperationName}/txlogs</a></td>
+      <td><!-- #BeginLibraryItem "/library/desc_getTxLogsForOperation.lbi" -->Returns transaction logs for the specified operation in the specified environment.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
       <td>get version board</td>
       <td><a href="apis/m_apis_getVersionBoard.htm">GET&nbsp;/api/apis/{APIVersionID}/board</a></td>
       <td><!-- #BeginLibraryItem "/library/desc_getVersionBoard_apis.lbi" -->Returns a list of Board items for the specified API version.<!-- #EndLibraryItem --></td>
@@ -292,11 +304,6 @@ Invites a group to have visibility of an API version, with visibility limited to
       <td><!-- #BeginLibraryItem "/library/desc_listAPIVersions.lbi" -->
 Returns information about API versions for all APIs, in the form of an RSS channel.<!-- #EndLibraryItem --></td>
     </tr>
-<!--    <tr>
-      <td>modify API version governing workflow</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>-->
     <tr>
       <td>list all API versions</td>
       <td><a href="apis/m_apis_listAllAPIVersions.htm">GET&nbsp;/api/apis/versions</a></td>
@@ -324,11 +331,6 @@ Modifies the <a href="aaref/Ref_Values.htm#values_legaldocumentstate">State</a> 
       <td>DELETE&nbsp;/api/apis/{APIID}/administrators/{UserID} is deprecated; use <a href="groups/m_groups_removeMemberFromGroup.htm">DELETE&nbsp;/api/groups/{GroupID}/members/{UserID}</a></td>
       <td><!-- #BeginLibraryItem "/library/desc_removeAPIAdministrator.lbi" --> Removes the specified user from the Administrator role for the specified API.<!-- #EndLibraryItem --></td>
     </tr>
-<!--  <tr>
-        <td>previewavatar is out</td>
-        <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>-->
     <tr>
       <td>save API auto-connect settings</td>
       <td><a href="apis/m_apis_saveAPIAutoConnectSettings.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/autosettings</a></td>
@@ -377,7 +379,8 @@ Adds or updates a specific user's rating for a resource. If the rating doesn't e
 
 
 <h3><a name="apis_operationcategories"></a>APIs Service: Operation Categories</h3>
-<p>The operations in the APIs service can be divided into the logical groupings listed below. Each of these groups addresses adding, changing, retrieving, or deleting various resources relating to APIs in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->.</p>
+<p>The operations in the APIs service can be divided into the logical groupings listed below. Each of these groups addresses adding, changing, retrieving, or deleting various resources relating to APIs in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->.</p>
 
 
 
@@ -530,7 +533,7 @@ Adds or updates a specific user's rating for a resource. If the rating doesn't e
 <p>These operations allow you to manage scopes assocated with the API, if the API is using the Licenses feature.</p>
 <ul>
   <li>Get API scope visible to user: <a href="apis/m_apis_getAPIScopeVisibleToUser.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/scope</a></li>
-  <li>Get operation resources: <a href="apis/m_apis_getOperationResources.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/resources</a></li>
+  <li>Get operation resources: <a href="apis/m_apis_getTxLogsForOperation.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/resources</a></li>
   <li>Get private viewer scope: <a href="apis/m_apis_getPrivateViewerScope.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}/scope</a></li>
   <li>Invite  private viewer with scope: <a href="apis/m_apis_invitePrivateViewerWithScope.htm">POST&nbsp;/api/apis/versions/{APIVersionID}/viewers</a></li>
   <li>Save operation resources: <a href="apis/m_apis_saveOperationResources.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/resources</a></li>

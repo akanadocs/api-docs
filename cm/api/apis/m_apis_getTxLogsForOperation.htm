@@ -1,0 +1,408 @@
+---
+layout: apipage
+title: Get Transaction Logs for Operation | APIs Service | Akana API Platform API
+description: Returns transaction logs for the specified operation in the specified environment.
+product: cm
+category: ref
+nav-title: Get Transaction Logs for
+no-nav: api
+sub-nav: true
+sub-nav-class: apis
+no-catalog: true
+---
+
+<!-- InstanceBeginEditable name="Heading" -->
+<h2><a name="top" id="top"></a>GET&nbsp;/api/apis/versions/{ApiVersionID}/environments/{Environment}/operations/{OperationName}/txlogs</h2><!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/library/desc_getTxLogsForOperation.lbi" -->Returns transaction logs for the specified operation in the specified environment.<!-- #EndLibraryItem --></p>
+<p>Optional parameters allow you to further narrow down a transaction range; for example, by date range.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be a user with Monitor permission for the API; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
+<p class="httpverb">GET</p>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/{ApiVersionID}/environments/{Environment}/operations/{OperationName}/txlogs[?]
+&amp;[StartDate={StartDate}]&amp;[EndDate={EndDate}]&amp;[TimeZone={TimeZone}]&amp;[Duration={Duration}]&amp;[start={start}][&amp;count={count}]</pre><!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<!-- InstanceBeginEditable name="Sample Request" -->
+<h3 id="samplerequest">Sample Request</h3>
+<p id="id_samplerequest">The example below shows a request for the first five transactions for the specified environment/operation.</p>
+<p><strong>Request URL</strong></p>
+<p>In the example below, a line break was added for display purposes.</p>
+<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/0f14e2b3-671a-49e4-98ac-eef610a58a81.acmepaymentscorp/environments/
+Production/operations/getPetById/txlogs?count=2</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>Accept: application/json</pre>
+<p><strong>Sample request body</strong></p>
+<p>Not applicable.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Headers" -->
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Parameters" -->
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a></td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>Environment</td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td>The environment (Sandbox or Production).</td>
+    </tr>
+    <tr>
+      <td>OperationName</td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td>The specific operation for which metrics should be returned.</td>
+    </tr>
+    <tr>
+      <td>StartDate</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/library/parm_StartDate.lbi" -->
+        The beginning point for the date range of metric information requested. If StartDate is not specified, the operation uses EndDate minus Duration. If both StartDate and EndDate are unspecified, the operation returns information for the Duration value, and if Duration is also unspecified it returns default Duration value of 2 hours.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>EndDate</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/library/parm_EndDate.lbi" -->The ending point for the date range of metric information requested. If not specified, defaults to the current date/time of the API call. <!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>TimeZone</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/library/parm_TimeZone.lbi" -->The time zone for the information. If a time zone isn't specified, the information is returned in GMT. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>Duration</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/library/parm_Duration.lbi" -->The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>start</td>
+      <td>Query</td>
+      <td>int</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/library/parm_start.lbi" --> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>count</td>
+      <td>Query</td>
+      <td>int</td>
+      <td>Optional</td>
+      <td>The count of log items. Max: 1000. Default: 100.</td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Description" -->
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the transaction logs.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Sample Response" -->
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response belows shows the transaction logs for specific API version. In the JSON example, the first two transactions have been requested (see example request above). The XML example includes three transactions.</p>
+<p><strong>Sample response headers: application/json</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/json
+Date: Wed, 30 Dec 2015 17:49:10 GMT</pre>
+<p><strong>Sample response body: application/json</strong></p>
+<pre>{
+  "TransactionInfo" : [ {
+    "TransactionID" : "eccf145f-af1b-11e5-b10b-bd5e99870074",
+    "APIID" : "77486534-f920-4c20-9b80-be5b5f239caf.acmepaymentscorp",
+    "APIName" : "SwaggerAPI_Both",
+    "APIVersionID" : "3808a7eb-cda3-4ef2-b6c9-45cd7afc05cb.acmepaymentscorp",
+    "MethodName" : "getPetById",
+    "AppID" : "e76fee30-0e41-4e83-a864-6a9c0378ecf5.acmepaymentscorp",
+    "AppName" : "__SwaggerApp_prod",
+    "AppVersionID" : "8NIpdvkgDKjcUSRTSYHntRP9.acmepaymentscorp",
+    "RequestDateTime" : "2015-12-30T17:36:57Z",
+    "ResponseStatusCode" : 200,
+    "ClientHost" : "10.1.22.242",
+    "APIVersionName" : "1.0",
+    "MethodKey" : "eccf145f-af1b-11e5-b10b-bd5e99870074",
+    "AppVersionName" : "1.0",
+    "AppRuntimeID" : "8NIpdvkgDKjcUSRTSYHntRP9",
+    "ResponseTime" : "P0Y0M0DT0H0M0.254S",
+    "RequestMessageSize" : 0,
+    "ResponseMessageSize" : 155,
+    "APIResponseTime" : "P0Y0M0DT0H0M0.069S",
+    "APIURL" : "http://www.acmepaymentscorp.com/prod/pet/1451489108665",
+    "HttpVerb" : "GET"
+  }, {
+    "TransactionID" : "c3db2f0d-af1a-11e5-b10b-bd5e99870074",
+    "APIID" : "77486534-f920-4c20-9b80-be5b5f239caf.acmepaymentscorp",
+    "APIName" : "SwaggerAPI_Both",
+    "APIVersionID" : "3808a7eb-cda3-4ef2-b6c9-45cd7afc05cb.acmepaymentscorp",
+    "MethodName" : "getPetById",
+    "AppID" : "e76fee30-0e41-4e83-a864-6a9c0378ecf5.acmepaymentscorp",
+    "AppName" : "__SwaggerApp_prod",
+    "AppVersionID" : "8NIpdvkgDKjcUSRTSYHntRP9.acmepaymentscorp",
+    "RequestDateTime" : "2015-12-30T17:28:39Z",
+    "ResponseStatusCode" : 200,
+    "ClientHost" : "10.1.22.242",
+    "APIVersionName" : "1.0",
+    "MethodKey" : "c3db2f0d-af1a-11e5-b10b-bd5e99870074",
+    "AppVersionName" : "1.0",
+    "AppRuntimeID" : "8NIpdvkgDKjcUSRTSYHntRP9",
+    "ResponseTime" : "P0Y0M0DT0H0M1.272S",
+    "RequestMessageSize" : 0,
+    "ResponseMessageSize" : 155,
+    "APIResponseTime" : "P0Y0M0DT0H0M0.068S",
+    "APIURL" : "http://www.acmepaymentscorp.com/prod/pet/1451489108665",
+    "HttpVerb" : "GET"
+  } ]
+}</pre>
+<p><strong>Sample response headers: application/xml</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/xml
+Date:  Wed, 06 Jan 2016 18:16:51 GMT</pre>
+<p><strong>Sample response body: application/xml</strong></p>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;TransactionsInfo xmlns="http://soa.com/xsd/performance/1.0" xmlns:ns2="http://soa.com/xsd/business/1.0" 
+xmlns:ns3="http://soa.com/xsd/contract/1.0" xmlns:ns4="http://soa.com/xsd/api/1.0" 
+xmlns:ns5="http://soa.com/xsd/app/1.0" xmlns:ns6="http://soa.com/xsd/legals/1.0" 
+xmlns:ns7="http://soa.com/xsd/dnmodel/1.0" xmlns:ns8="http://soa.com/xsd/resource/1.0"&gt;
+  &lt;TransactionInfo&gt;
+    &lt;TransactionID&gt;5c90f9df-b4a0-11e5-867b-832f054c50dc&lt;/TransactionID&gt;
+    &lt;APIID&gt;93e5dfba-3b21-43f7-8553-e3cfe952c02c.acmepaymentscorp&lt;/APIID&gt;
+    &lt;APIName&gt;SwaggerAPI_Both&lt;/APIName&gt;
+    &lt;APIVersionID&gt;c984f021-eea6-4aa8-a14e-4c6ff3aebfe5.acmepaymentscorp&lt;/APIVersionID&gt;
+    &lt;MethodName&gt;getPetById&lt;/MethodName&gt;
+    &lt;AppID&gt;4249e762-7385-4434-9e34-e053ed27ecfd.acmepaymentscorp&lt;/AppID&gt;
+    &lt;AppName&gt;__SwaggerApp_prod&lt;/AppName&gt;
+    &lt;AppVersionID&gt;8f79KOC5hVjat8oaR8WKs5Uu.acmepaymentscorp&lt;/AppVersionID&gt;
+    &lt;RequestDateTime&gt;2016-01-06T18:07:34Z&lt;/RequestDateTime&gt;
+    &lt;ResponseStatusCode&gt;200&lt;/ResponseStatusCode&gt;
+    &lt;ClientHost&gt;10.1.22.242&lt;/ClientHost&gt;
+    &lt;APIVersionName&gt;1.0&lt;/APIVersionName&gt;
+    &lt;MethodKey&gt;5c90f9df-b4a0-11e5-867b-832f054c50dc&lt;/MethodKey&gt;
+    &lt;AppVersionName&gt;1.0&lt;/AppVersionName&gt;
+    &lt;AppRuntimeID&gt;8f79KOC5hVjat8oaR8WKs5Uu&lt;/AppRuntimeID&gt;
+    &lt;ResponseTime&gt;P0Y0M0DT0H0M0.075S&lt;/ResponseTime&gt;
+    &lt;RequestMessageSize&gt;0&lt;/RequestMessageSize&gt;
+    &lt;ResponseMessageSize&gt;160&lt;/ResponseMessageSize&gt;
+    &lt;APIResponseTime&gt;P0Y0M0DT0H0M0.068S&lt;/APIResponseTime&gt;
+    &lt;APIURL&gt;http://www.acmepaymentscorp.com/prod/pet/1452103486957&lt;/APIURL&gt;
+    &lt;HttpVerb&gt;GET&lt;/HttpVerb&gt;
+  &lt;/TransactionInfo&gt;
+  &lt;TransactionInfo&gt;
+    &lt;TransactionID&gt;5c2abdfd-b4a0-11e5-867b-832f054c50dc&lt;/TransactionID&gt;
+    &lt;APIID&gt;93e5dfba-3b21-43f7-8553-e3cfe952c02c.acmepaymentscorp&lt;/APIID&gt;
+    &lt;APIName&gt;SwaggerAPI_Both&lt;/APIName&gt;
+    &lt;APIVersionID&gt;c984f021-eea6-4aa8-a14e-4c6ff3aebfe5.acmepaymentscorp&lt;/APIVersionID&gt;
+    &lt;MethodName&gt;getPetById&lt;/MethodName&gt;
+    &lt;AppID&gt;4249e762-7385-4434-9e34-e053ed27ecfd.acmepaymentscorp&lt;/AppID&gt;
+    &lt;AppName&gt;__SwaggerApp_prod&lt;/AppName&gt;
+    &lt;AppVersionID&gt;8f79KOC5hVjat8oaR8WKs5Uu.acmepaymentscorp&lt;/AppVersionID&gt;
+    &lt;RequestDateTime&gt;2016-01-06T18:07:33Z&lt;/RequestDateTime&gt;
+    &lt;ResponseStatusCode&gt;200&lt;/ResponseStatusCode&gt;
+    &lt;ClientHost&gt;10.1.22.242&lt;/ClientHost&gt;
+    &lt;APIVersionName&gt;1.0&lt;/APIVersionName&gt;
+    &lt;MethodKey&gt;5c2abdfd-b4a0-11e5-867b-832f054c50dc&lt;/MethodKey&gt;
+    &lt;AppVersionName&gt;1.0&lt;/AppVersionName&gt;
+    &lt;AppRuntimeID&gt;8f79KOC5hVjat8oaR8WKs5Uu&lt;/AppRuntimeID&gt;
+    &lt;ResponseTime&gt;P0Y0M0DT0H0M0.087S&lt;/ResponseTime&gt;
+    &lt;RequestMessageSize&gt;0&lt;/RequestMessageSize&gt;
+    &lt;ResponseMessageSize&gt;160&lt;/ResponseMessageSize&gt;
+    &lt;APIResponseTime&gt;P0Y0M0DT0H0M0.068S&lt;/APIResponseTime&gt;
+    &lt;APIURL&gt;http://www.acmepaymentscorp.com/prod/pet/1452103486957&lt;/APIURL&gt;
+    &lt;HttpVerb&gt;GET&lt;/HttpVerb&gt;
+  &lt;/TransactionInfo&gt;
+  &lt;TransactionInfo&gt;
+    &lt;TransactionID&gt;448baef8-b4a0-11e5-867b-832f054c50dc&lt;/TransactionID&gt;
+    &lt;APIID&gt;93e5dfba-3b21-43f7-8553-e3cfe952c02c.acmepaymentscorp&lt;/APIID&gt;
+    &lt;APIName&gt;SwaggerAPI_Both&lt;/APIName&gt;
+    &lt;APIVersionID&gt;c984f021-eea6-4aa8-a14e-4c6ff3aebfe5.acmepaymentscorp&lt;/APIVersionID&gt;
+    &lt;MethodName&gt;getPetById&lt;/MethodName&gt;
+    &lt;AppID&gt;4249e762-7385-4434-9e34-e053ed27ecfd.acmepaymentscorp&lt;/AppID&gt;
+    &lt;AppName&gt;__SwaggerApp_prod&lt;/AppName&gt;
+    &lt;AppVersionID&gt;8f79KOC5hVjat8oaR8WKs5Uu.acmepaymentscorp&lt;/AppVersionID&gt;
+    &lt;RequestDateTime&gt;2016-01-06T18:06:54Z&lt;/RequestDateTime&gt;
+    &lt;ResponseStatusCode&gt;200&lt;/ResponseStatusCode&gt;
+    &lt;ClientHost&gt;10.1.22.242&lt;/ClientHost&gt;
+    &lt;APIVersionName&gt;1.0&lt;/APIVersionName&gt;
+    &lt;MethodKey&gt;448baef8-b4a0-11e5-867b-832f054c50dc&lt;/MethodKey&gt;
+    &lt;AppVersionName&gt;1.0&lt;/AppVersionName&gt;
+    &lt;AppRuntimeID&gt;8f79KOC5hVjat8oaR8WKs5Uu&lt;/AppRuntimeID&gt;
+    &lt;ResponseTime&gt;P0Y0M0DT0H0M0.782S&lt;/ResponseTime&gt;
+    &lt;RequestMessageSize&gt;0&lt;/RequestMessageSize&gt;
+    &lt;ResponseMessageSize&gt;167&lt;/ResponseMessageSize&gt;
+    &lt;APIResponseTime&gt;P0Y0M0DT0H0M0.141S&lt;/APIResponseTime&gt;
+    &lt;APIURL&gt;http://www.acmepaymentscorp.com/prod/pet/1452087586438&lt;/APIURL&gt;
+    &lt;HttpVerb&gt;GET&lt;/HttpVerb&gt;
+  &lt;/TransactionInfo&gt;
+&lt;/TransactionsInfo&gt;
+</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Headers" -->
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Body" -->
+<h3 id="responsebody">Response Body</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Name</th>
+      <th width="15%">Type</th>
+      <th width="65%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TransactionsInfo</td>
+      <td><a href="../obj/o_performance_TransactionsInfo.htm">TransactionsInfo</a>[ ]</td>
+      <td>Contains information about one or more transactions for the API, with details for each.</td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+    </tr>
+  </tbody>
+</table>
+<!-- InstanceEndEditable -->
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<table width="700" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

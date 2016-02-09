@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Get Script Version Key | UI Application Service | Enterprise API Platform API
+title: Get Script Version Key | UI Application Service | Akana API Platform API
 description: Returns the current <a href="../aaref/Ref_IDsOnThePlatform.htm#id_scriptversionkey">script version key</a> value.
 product: cm
 category: ref
@@ -54,9 +54,18 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The example below shows a request for the Script Version Key for the specified platform version.</p>
-<p><strong>Request URL</strong></p>
-<pre>http://www.acmepaymentscorp.com/ui/apps/acmepaymentscorp/scriptversionkey</pre>
+<p id="id_samplerequest">The examples below show a requests for the Script Version Key.</p>
+<p><strong>Request URL #1</strong></p>
+<p>Returns ScriptVersionKey for Default Theme (default name is used).</p>
+<pre>http://www.acmepaymentscorp.com/ui/apps/acmepaymentscorp/scriptversionkey?property.theme=default</pre>
+
+<p><strong>Request URL #2</strong></p>
+<p>ReturnsScriptVersionKey for Simple Dev theme.</p>
+<pre>http://www.acmepaymentscorp.com/ui/apps/acmepaymentscorp/scriptversionkey?property.theme=simpledev</pre>
+
+<p><strong>Request URL #3</strong></p>
+<p>Returns ScriptVersionKey for OAuth Provider.</p>
+<pre>http://www.acmepaymentscorp.com/ui/apps/oauthauz/scriptversionkey</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: text/plain
 </pre>
@@ -107,6 +116,17 @@ no-catalog: true
       <td>Optional</td>
       <td>The theme for which the script version is being requested. Valid values are the theme names set up for the platform.</td>
     </tr>
+    <tr>
+      <td>property.theme </td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><p>Depends on the value of the <strong>application</strong> parameter:</p>
+        <ul class="apidoctable_ul">
+          <li>If the value for <strong>application</strong> is <strong>oauthauz</strong>, property.theme is not needed.</li>
+          <li> If the value for <strong>application</strong> is <strong>atmosphere</strong>, use property.theme  with the theme for which you want to get the script version key. Use the theme names as they were set up for your installation. For example: <strong>property.theme=default</strong> or <strong>property.theme=simpledev</strong>.</li>
+        </ul>        </td>
+    </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -124,7 +144,8 @@ no-catalog: true
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Accept: text/plain</pre>
+<pre>Accept: text/plain
+Expires: Wed, 04 Nov 2015 13:51:02 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <pre>UVmTjU1aOKmfek07sZrsKA</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -192,7 +213,8 @@ no-catalog: true
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

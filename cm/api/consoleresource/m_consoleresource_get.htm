@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Get | Console Resource Service | Enterprise API Platform API
+title: Get | Console Resource Service | Akana API Platform API
 description: Returns the platform resource, such as a CSS file, specified in the path. Can also return a folder and its contents in a ZIP file.
 product: cm
 category: ref
@@ -18,6 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/library/desc_consoleresource_get.lbi" -->Returns the platform resource, such as a CSS file, specified in the path. Can also return a folder and its contents in a ZIP file.<!-- #EndLibraryItem --></p>
 <p>The response is cached for one hour unless the ResourceVersionKey in the resource path changes.</p>
+<p class="apidoc_note"><strong>Note</strong>: There is another operation you can use to retrieve platform resources: in the UI Application service: <span class="apidoc_code"><a href="../uiapplication/m_uiapps_getPathBasedResource.htm">GET&nbsp;/ui/apps/{application}/{version}/{path:resources/.*}</a></span>. We recommend using that operation rather than this one. The functionality is essentially the same. Content retrieved using this API is cached for 1 hour; content retrieved using the UI Application service is cached for 1 month.</p>
 <p><strong>Authorization Roles/Permissions: </strong>No permission needed. Anyone can run this operation.</p>
 <p class="apidoc_note"><strong>Note</strong>: The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csrf_header">CSRF header</a> is never required for this operation, regardless of platform settings.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
@@ -208,7 +209,8 @@ a,</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

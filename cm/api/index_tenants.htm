@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Tenant Administration Service | Overview | Enterprise API Platform API
+title: Tenant Administration Service | Overview | Akana API Platform API
 description: The Tenant Administration service includes operations relating to creating and managing a platform tenant.
 product: cm
 category: ref
@@ -23,13 +23,18 @@ no-catalog: false
       <th width="20%">Endpoint</th>
       <th width="60%">Description</th>
     </tr>
-    <tr>
-      <td>get tenant country codes</td>
-      <td><a href="tenants/m_tenants_getTenantCountyCodes.htm">GET&nbsp;/api/tenants/{TenantFedMemberID}/countrycodes</a></td>
-      <td><!-- #BeginLibraryItem "/library/desc_getTenantCountryCodes.lbi" -->Returns a list of telephone country codes for the tenant.<!-- #EndLibraryItem --></td>
-    </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>get tenant country codes</td>
+      <td><a href="tenants/m_tenants_getTenantCountryCodes.htm">GET&nbsp;/api/tenants/{TenantFedMemberID}/countrycodes</a></td>
+      <td><!-- #BeginLibraryItem "/library/desc_getTenantCountryCodes.lbi" -->Returns a list of telephone country codes for the tenant.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>save tenant country codes</td>
+      <td><a href="tenants/m_tenants_saveTenantCountryCodes.htm">PUT&nbsp;/api/tenants/{TenantFedMemberID}/countrycodes</a></td>
+      <td><!-- #BeginLibraryItem "/library/desc_saveTenantCountryCodes.lbi" -->Adds or updates the list of telephone country codes that will be supported for telephone numbers in user profiles.<!-- #EndLibraryItem --></td>
+    </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

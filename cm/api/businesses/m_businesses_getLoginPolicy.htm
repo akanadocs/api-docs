@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Get Login Policy | Businesses Service | Enterprise API Platform API
+title: Get Login Policy | Businesses Service | Akana API Platform API
 description:  Returns information about the login policy settings for a business on the platform.
 product: cm
 category: ref
@@ -133,20 +133,21 @@ X-Csrf-Token_acmepaymentscorp: &lt;TokenID&gt;
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Expires: Mon, 22 Dec 2014 15:09:27 GMT</pre>
+Expires: Tue, 15 Dec 2015 16:00:00 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
   "MaxSequentialFailureAttemptsAllowed" : 3,
   "AttemptsPeriod" : 1,
   "SuspensionMinutes" : 1,
   "AutoLoginExternalDomain" : "com.soa.feature.enabled",
-  "LoginSessionTimeout" : 0
+  &quot;ActiveSessionTimeout&quot; : 30
+  &quot;InactiveSessionTimeout&quot; : 30
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p><strong>Sample response headers: application/xml</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/xml
-Expires: Mon, 22 Dec 2014 15:17:07 GMT</pre>
+Expires: Tue, 15 Dec 2015 16:00:00 GMT</pre>
 <p><strong>Sample response body: application/xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;LoginPolicy xmlns="http://soa.com/xsd/business/1.0" xmlns:ns2="http://soa.com/xsd/legals/1.0" xmlns:ns3="http://soa.com/xsd/dnmodel/1.0" xmlns:ns4="http://soa.com/xsd/api/1.0"&gt;
@@ -154,7 +155,8 @@ Expires: Mon, 22 Dec 2014 15:17:07 GMT</pre>
   &lt;AttemptsPeriod&gt;1&lt;/AttemptsPeriod&gt;
   &lt;SuspensionMinutes&gt;1&lt;/SuspensionMinutes&gt;
   &lt;AutoLoginExternalDomain&gt;com.soa.feature.enabled&lt;/AutoLoginExternalDomain&gt;
-  &lt;LoginSessionTimeout&gt;0&lt;/LoginSessionTimeout&gt;
+  &lt;ActiveSessionTimeout&gt;0&lt;/ActiveSessionTimeout&gt;
+  &lt;InactiveSessionTimeout&gt;30&lt;/InactiveSessionTimeout&gt;
 &lt;/LoginPolicy&gt;
 </pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -226,7 +228,8 @@ Expires: Mon, 22 Dec 2014 15:17:07 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Metrics on the Platform | Reference Material | Enterprise API Platform API
+title: Metrics on the Platform | Reference Material | Akana API Platform API
 description: Most operations perform actions that create, modify, read, or delete platform resources such as apps, APIs, discussions, tickets, and so forth.
 product: cm
 category: ref
@@ -28,12 +28,12 @@ no-catalog: true
       <p>API: <span class="apidoc_code"><a href="../apis/m_apis_getTransactionRecord.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/txlogs/{TransactionID}</a></span></p></td>
   </tr>
   <tr>
-    <td>Retrieve a summary of metrics for the app version or API version in JSON format that can be used to create a chart</td>
+    <td>Retrieve a summary of metrics for the app version, API version, or operation, in JSON format that can be used to create a chart</td>
     <td><p>App: <span class="apidoc_code"><a href="../apps/m_apps_getMetrics.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics</a></span></p>
       <p>API: <span class="apidoc_code"><a href="../apis/m_apis_getMetrics.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/metrics</a></span></p></td>
   </tr>
   <tr>
-    <td>Export a summary of metrics for the app version or API version to a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file</td>
+    <td>Export a summary of metrics for the app version, API version, or operation, to a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file</td>
     <td><p>App: <span class="apidoc_code"><a href="../apps/m_apps_exportMetrics.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/metrics/export</a></span></p>
       <p>API: <span class="apidoc_code"><a href="../apis/m_apis_exportMetrics.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/metrics/export</a></span></p></td>
   </tr>
@@ -46,6 +46,14 @@ no-catalog: true
     <td>Export transaction logs to a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file</td>
     <td><p>App: <span class="apidoc_code"><a href="../apps/m_apps_exportUsageLogs.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/txlogs/export</a></span></p>
       <p>API: <span class="apidoc_code"><a href="../apis/m_apis_exportUsageLogs.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/txlogs/export</a></span></p></td>
+    </tr>
+  <tr>
+    <td>Export a summary of metrics for a specific API operation, in a specific environment, in JSON or XML format</td>
+    <td><span class="apidoc_code"><a href="../apis/m_apis_getTxLogsForOperation.htm">GET&nbsp;/api/apis/versions/{ApiVersionID}/environments/{Environment}/operations/{OperationName}/txlogs</a></span></td>
+    </tr>
+  <tr>
+    <td>Export a summary of metrics for a specific API operation, in a specific environment, to a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file</td>
+    <td><span class="apidoc_code"><a href="../apis/m_apis_getMetricsForOperation.htm">GET&nbsp;/api/apis/versions/{ApiVersionID}/environments/{Environment}/operations/{OperationName}/metrics</a></span></td>
     </tr>
 </tbody>
 </table>

@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Delete App Version | Apps Service | Enterprise API Platform API
+title: Delete App Version | Apps Service | Akana API Platform API
 description:  Deletes the specified version of an app.
 product: cm
 category: ref
@@ -18,9 +18,10 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/library/desc_deleteAppVersion.lbi" --> Deletes the specified version of an app.<!-- #EndLibraryItem --></p>
 <p><!-- #BeginLibraryItem "/library/desc_deleteApp_note.lbi" -->
-<strong>Note</strong>: If you want to completely remove an app, use <span class="apidoc_code"><a href="m_apps_deleteApp.htm">DELETE&nbsp;/api/apps/{AppID}</a></span>. If you want to delete the only existing app version, but keep the app, first add a new version, using <span class="apidoc_code"><a href="m_apps_addVersion.htm">POST&nbsp;apps/{AppID}/versions</a></span>, and then delete the old version using <span class="apidoc_code"><a href="m_apps_deleteAppVersion.htm">DELETE&nbsp;/api/apps/versions/{AppVersionID}</a></span>. An app cannot exist in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;without at least one valid version.<!-- #EndLibraryItem --></p>
+<strong>Note</strong>: If you want to completely remove an app, use <span class="apidoc_code"><a href="m_apps_deleteApp.htm">DELETE&nbsp;/api/apps/{AppID}</a></span>. If you want to delete the only existing app version, but keep the app, first add a new version, using <span class="apidoc_code"><a href="m_apps_addVersion.htm">POST&nbsp;apps/{AppID}/versions</a></span>, and then delete the old version using <span class="apidoc_code"><a href="m_apps_deleteAppVersion.htm">DELETE&nbsp;/api/apps/versions/{AppVersionID}</a></span>. An app cannot exist in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;without at least one valid version.<!-- #EndLibraryItem --></p>
 <p id="id_workflow"><strong>Workflow</strong>: This operation checks whether the resource is governed by a workflow, and if so whether the action is valid based on the current state of the resource. If the action is not valid, the operation will fail.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -85,7 +86,7 @@ Content-Type: application/x-www-form-urlencoded
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --> Also <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --> Also <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
@@ -149,8 +150,29 @@ Content-Type: application/x-www-form-urlencoded
 Date: Mon, 16 Jul 2012 21:44:32 GMT
 Content-Type: text/plain
 Atmo-Renew-Token: renew</pre>
-<p><strong>Sample response body</strong></p>
+<p><strong>Sample response body</strong>#1</p>
 <pre>1zPOeamQxXm1jzm1CPNvoP7H.acmepaymentscorp</pre>
+<p><strong>Sample response body</strong>#2</p>
+<pre>{
+  "RuntimeID" : "6EWkvFemCKn2lsUMw41p1uAs.acmepaymentscorp",
+  "AppID" : "d811aac7-b9c0-4752-9761-c76c86fd94cd.acmepaymentscorp",
+  "Name" : "s",
+  "Description" : "s",
+  "WebsiteAddress" : "",
+  "Visibility" : "Public",
+  "InitialEnvironment" : "Sandbox",
+  "CurrentEnvironment" : "Sandbox",
+  "Created" : "2016-01-04T21:16:22Z",
+  "Updated" : "2016-01-04T21:16:39Z",
+  "State" : "com.soa.app.state.deleted",
+  "RatingSummary" : {
+    "Five" : 0,
+    "Four" : 0,
+    "Three" : 0,
+    "Two" : 0,
+    "One" : 0
+  }
+}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -168,7 +190,7 @@ Atmo-Renew-Token: renew</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
@@ -224,7 +246,8 @@ Atmo-Renew-Token: renew</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

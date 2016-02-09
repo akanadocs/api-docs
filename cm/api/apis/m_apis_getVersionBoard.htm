@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Get Version Board | APIs Service | Enterprise API Platform API
+title: Get Version Board | APIs Service | Akana API Platform API
 description: Returns a list of Board items for the specified API version.
 product: cm
 category: ref
@@ -16,9 +16,9 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/library/desc_getVersionBoard_apis.lbi" -->Returns a list of Board items for the specified API version.<!-- #EndLibraryItem --></p>
-<p>If the API only has one version, the results returned for the <span class="apidoc_code"><a href="m_apis_getBoard.htm">GET&nbsp;apis/{APIID}/board</a></span> and <span class="apidoc_code">GET&nbsp;apis/{APIVersionID}/board</span> operations are the same.</p>
+<p>If the API only has one version, the results returned for <span class="apidoc_code"><a href="m_apis_getBoard.htm">GET&nbsp;/api/apis/{APIID}/board</a></span> and <span class="apidoc_code">GET&nbsp;/api/apis/{APIVersionID}/board</span> (this operation) are the same.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/library/roles_none.lbi" -->
-Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
+  Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -82,7 +82,7 @@ Accept: application/json
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_textxml.lbi" --><strong>text/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -382,10 +382,10 @@ Content-Type: application/json</pre>
   "version" : "1.0"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/xml</strong></p>
+<p><strong>Sample response headers: text/xml</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: text/xml</pre>
-<p><a id="rss_apiversionboard_xml"></a><strong>Sample response body: application/xml</strong></p>
+<p><a id="rss_apiversionboard_xml"></a><strong>Sample response body: text/xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;rss xmlns:ns2="http://soa.com/xsd/rss/1.0" 
 xmlns:ns3="http://soa.com/xsd/comment/1.0" 
@@ -509,7 +509,7 @@ xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_textxml.lbi" --><strong>text/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -614,7 +614,8 @@ The response body is in the form of an RSS channel, and includes the items liste
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

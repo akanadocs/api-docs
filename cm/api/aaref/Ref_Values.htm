@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Valid Values for Components on the Platform | Reference Material | Enterprise API Platform API
+title: Valid Values for Components on the Platform | Reference Material | Akana API Platform API
 description: This topic includes lists of valid values for the following common elements used on the platform-
 product: cm
 category: ref
@@ -74,69 +74,73 @@ no-catalog: true
     <td><a href="#values_resourcetype">Resource Types</a></td>
     </tr>
   <tr>
-    <td><a href="#values_consoleresourcedynamicvariables">Console Resource dynamic variable values</a></td>
-    <td><a href="#values_search_type">Search &quot;Type&quot; values</a></td>
+    <td><a href="#values_role">Roles</a></td>
+    <td><a href="#values_search_type">Roles</a></td>
     </tr>
   <tr>
     <td><a href="#values_descriptionmediatype">DescriptionMediaType</a></td>
-    <td><a href="#values_securitychallengequestions">Security Challenge Questions</a></td>
+    <td><a href="#values_search_type">Search &quot;Type&quot; values</a></td>
     </tr>
   <tr>
     <td><a href="#values_displaymode">Display Mode</a></td>
-    <td><a href="#values_sortby">Sort By values</a></td>
+    <td><a href="#values_securitychallengequestions">Security Challenge Questions</a></td>
     </tr>
   <tr>
     <td><a href="#values_environment">Environment</a></td>
-    <td><a href="#values_sortorder">Sort Order values</a></td>
+    <td><a href="#values_signupstatus">SignupStatus values</a></td>
     </tr>
   <tr>
     <td><a href="#values_groupmemberroles">Group Member Roles</a></td>
-    <td><a href="#values_ticketlabel">Ticket Label values</a></td>
+    <td><a href="#values_sortby">Sort By values</a></td>
     </tr>
   <tr>
     <td><a href="#values_groupmembershipstates">Group Membership States</a></td>
-    <td><a href="#values_ticketstate">Ticket State values</a></td>
+    <td><a href="#values_sortorder">Sort Order values</a></td>
     </tr>
   <tr>
     <td><a href="#values_groupsettings">Group Settings</a></td>
-    <td><a href="#values_timeintervals">Time Intervals</a></td>
+    <td><a href="#values_ticketlabel">Ticket Label values</a></td>
     </tr>
     <tr>
       <td><a href="#values_groupstates">Group States</a></td>
-      <td><a href="#values_useractions">User Actions on a Resource</a></td>
+      <td><a href="#values_ticketstate">Ticket State values</a></td>
       </tr>
     <tr>
       <td><a href="#values_grouptypes">Group Types</a></td>
-      <td><a href="#values_userpreferences">User Preferences</a></td>
+      <td><a href="#values_timeintervals">Time Intervals</a></td>
       </tr>
     <tr>
       <td><a href="#values_idsystemtype">IdSystemType values for Login Connector Type</a></td>
-      <td><a href="#values_usersignupstate">User Signup State values</a></td>
+      <td><a href="#values_useractions">User Actions on a Resource</a></td>
       </tr>
     <tr>
       <td><a href="#values_legalagreementtype">Legal Agreement Types</a></td>
-      <td><a href="#values_userstatus">User Status</a></td>
+      <td><a href="#values_userpreferences">User Preferences</a></td>
       </tr>
     <tr>
       <td><a href="#values_legaldocumentstate">Legal Document States</a></td>
-      <td><a href="#values_visibilitysettings">Visibility Settings</a></td>
+      <td><a href="#values_usersignupstate">User Signup State values</a></td>
       </tr>
     <tr>
       <td><a href="#values_licensestate">LicenseState values</a></td>
-      <td><a href="#values_workflowactions">Workflow Actions</a></td>
+      <td><a href="#values_userstatus">User Status</a></td>
       </tr>
     <tr>
       <td><a href="#values_logininstructiontype">Login Instruction Types</a></td>
-      <td><a href="#values_workflowstates">Workflow States</a></td>
+      <td><a href="#values_visibilitysettings">Visibility Settings</a></td>
       </tr>
     <tr>
       <td><a href="#values_loginstate">Login State</a></td>
-      <td><a href="#values_workflow_objecttype">Workflow ObjectTypes</a></td>
+      <td><a href="#values_workflowactions">Workflow Actions</a></td>
       </tr>
     <tr>
       <td><a href="#values_loginstatus">Login Status</a></td>
+      <td><a href="#values_workflowstates">Workflow States</a></td>
+      </tr>
+    <tr>
       <td>&nbsp;</td>
-    </tr>
+      <td><a href="#values_workflow_objecttype">Workflow ObjectTypes</a></td>
+      </tr>
   </tbody>
 </table>
 
@@ -342,11 +346,13 @@ no-catalog: true
 
 
 <h3><a id="values_appstate"></a>App State values</h3>
-<p>There are five possible states for an app in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
+<p>There are five possible states for an app in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->. When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
 <p>When an app is first set up, before any API contracts are initiated, it is in the Initial state.</p>
 <p>Changes in state are part of the sequence as an app requests access to first one environment and then the other.</p>
 <p>In setting up the sequence for granting access to an API's sandbox or production environment, the API provider can choose whether a review stage is needed before sandbox access is granted, and also whether review is needed before production access is granted. As an example,  the API owner might decide to grant sandbox access automatically but to require review before approving production access.</p>
-<p>The&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;user interface is designed to guide app developers through these state changes.</p>
+<p>The&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;user interface is designed to guide app developers through these state changes.</p>
 <p class="apidoc_note"><strong>Note</strong>: Changing an app's state to <strong>production</strong> gives an application access to the production endpoints of all the APIs it has contracts with. This can only be achieved if <strong>all</strong> of the app's API contracts are approved as production contracts.</p>
 
 <p>When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
@@ -708,7 +714,8 @@ no-catalog: true
 
 
 <h3><a id="values_grouptypes"></a>Group Types</h3>
-<p>In practical terms, the only valid group type you'll see in working with the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:</p>
+<p>In practical terms, the only valid group type you'll see in working with the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:</p>
 <ul>
   <li>com.soa.group.type.independent</li>
 </ul>
@@ -1109,7 +1116,7 @@ no-catalog: true
     </tr>
     <tr>
       <td>api.usage.by.app.per.license</td>
-      <td>This reports the API consumption per app, per license.</td>
+      <td>This reports the API consumption per app, per license.></td>
     </tr>
   </tbody>
 </table>
@@ -1154,6 +1161,13 @@ no-catalog: true
   <li>apiversion</li>
   <li>group</li>
 </ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_role"></a>Roles</h3>
+<p>The different authorization roles determine which user groups can perform actions on specific types of resources.</p>
+<p>For detailed information on authorization roles, see the separate reference article, <a href="Ref_AuthorizationRolesOnThePlatform.htm">Authorization Roles on the Platform</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -1207,6 +1221,17 @@ no-catalog: true
     </tr>
   </tbody>
 </table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_signupstatus"></a>SignupStatus values</h3>
+<p>SignupStatus indicates a platform user's status with regard to signing up for the platform. Possible values:</p>
+<ul>
+  <li>user.signup.confirm.email</li>
+  <li> user.signup.complete</li>
+  <li>user.signup.email.next.steps</li>
+</ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -1528,7 +1553,7 @@ no-catalog: true
   <li>Public: anyone who is authorized to see an API can see public licenses or scopes associated with the API.</li>
   <li>Limited: users must be authorized to see the API and, additionally, specifically invited to have visibility to the private licenses or scopes. Uninvited users see other parts of the API, including public licenses, but do not see the private licenses or scopes.</li>
 </ul>
-<p>For general information on how privacy works with the License feature, refer to the Community Manager user interface help (<a href="http://docs.akana.com/cm/learnmore/ov_licenses.htm" target="_blank">Licenses</a>).</p>
+<p>For general information on how privacy works with the License feature, refer to the developer portal user interface help (<a href="http://docs.akana.com/cm/learnmore/ov_licenses.htm" target="_blank">Licenses</a>).</p>
 <h4>Visibility for users</h4>
 <p>For users, visibility is always Public.</p>
 <p class="apidoc_note"><strong>Note</strong>: If an app has multiple versions, the visibility setting for the app is Private if at least one version is set to Private.</p>

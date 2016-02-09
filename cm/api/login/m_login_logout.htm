@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Log Out | Login Service | Enterprise API Platform API
+title: Log Out | Login Service | Akana API Platform API
 description:  Destroys any authentication cookies associated with the current session for a tenant logging out.
 product: cm
 category: ref
@@ -17,9 +17,10 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/library/desc_logout_.lbi" --> Destroys any authentication cookies associated with the current session for a tenant logging out.<!-- #EndLibraryItem --></p>
-<p>Since this operation ends the user's session with the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->, there is no response content.</p>
+<p>Since this operation ends the user's session with the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->, there is no response content.</p>
 <p class="apidoc_note"><strong>Note</strong>: we recommend using the <span class="apidoc_code"><a href="m_login_endSession.htm">GET&nbsp;/api/login/endsession</a></span> operation, rather than this operation which will be deprecated.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_authorizeduser">Authorized User</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_user">User (logged in)</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -130,7 +131,8 @@ Content-Type: application/x-www-form-urlencoded</pre>
 
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
-<p id="id_sampleresponse">The sample response below shows that the logout completed successfully. The new set-cookie parameter expires the current cookie, effectively ending the user's&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;session.</p>
+<p id="id_sampleresponse">The sample response below shows that the logout completed successfully. The new set-cookie parameter expires the current cookie, effectively ending the user's&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;session.</p>
 <h5>Sample response header</h5>
 <pre>HTTP/1.1 200 OK
 Date: Wed, 06 Feb 2013 20:30:27 GMT
@@ -191,7 +193,8 @@ Set-Cookie: AtmoAuthToken=none;path=/;expires=Wed, 06-Feb-2013 15:30:27 GMT;Http
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

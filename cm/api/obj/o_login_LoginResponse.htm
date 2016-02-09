@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: LoginResponse Object | Login Service | Enterprise API Platform API
+title: LoginResponse Object | Login Service | Akana API Platform API
 description: Contains information returned as a result of logging in.
 product: cm
 category: ref
@@ -13,7 +13,7 @@ no-catalog: true
 
 <h2><a name="top"></a>LoginResponse Object</h2>
 <p><!-- #BeginLibraryItem "/library/o_login_LoginResponse.lbi" -->Contains information returned as a result of logging in.<!-- #EndLibraryItem --></p>
-<!--<p>\atmosphere\com.soa.atmosphere.interfaces\src\com\soa\login\model\LoginResponse.java</p>-->
+<!--<p>http://svn.soa.local/nd/trunk/products/api-portal/com.soa.atmosphere.interfaces/src/com/soa/login/model/LoginResponse.java</p>-->
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
   <li><span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span></li>
@@ -72,7 +72,7 @@ no-catalog: true
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_logindomainid">loginDomainID</a></td>
       <td>string</td>
-      <td>The unique ID for the user's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domain</a>. For local platform users, the value is siteusers.{tenant-id}. Other login domains, such as Google and Facebook, have different IDs.</td>
+      <td>The unique ID for the user's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domain</a>. For local platform users, the value is siteusers.{tenant-id}. Example: <strong>siteusers.acmepaymentscorp</strong>. Other login domains, such as Google and Facebook, have different IDs.</td>
     </tr>
     <tr>
       <td><a name="login_pendingTasks"></a>pendingTasks[&nbsp;]</td>
@@ -80,13 +80,13 @@ no-catalog: true
       <td><p>If applicable, an array of one or more pending tasks that must be completed before login is complete. Possible values:</p>
         <ul class="apidoctable_ul">
           <li>change.password
-          <p>User must change password; use the <span class="apidoc_code"><a href="../users/m_users_modifyPassword.htm">PUT&nbsp;/api/users/{UserID}/password</a></span> operation)</p></li>
+            <p>User must change password; use the <span class="apidoc_code"><a href="../users/m_users_modifyPassword.htm">PUT&nbsp;/api/users/{UserID}/password</a></span> operation)</p></li>
           <li>force.accept.agreements 
-<p>User must accept one or more pending legal agreements; use the <span class="apidoc_code"><a href="../legals/m_legals_acceptAgreement.htm">POST&nbsp;/api/legals/agreements</a></span> operation)</p></li>
+  <p>User must accept one or more pending legal agreements; use the <span class="apidoc_code"><a href="../legals/m_legals_acceptAgreement.htm">POST&nbsp;/api/legals/agreements</a></span> operation)</p></li>
           <li>collect.security.question.answers
-<p>User must provide answers to the security challenge questions; use the <span class="apidoc_code"><a href="../users/m_users_saveChallenges.htm">PUT&nbsp;/api/users/{UserID}/challenges</a></span> operation)</p></li>
-        </ul>
-</td>
+  <p>User must provide answers to the security challenge questions; use the <span class="apidoc_code"><a href="../users/m_users_saveChallenges.htm">PUT&nbsp;/api/users/{UserID}/challenges</a></span> operation)</p></li>
+          </ul>
+  </td>
     </tr>
     <tr>
       <td>pendingTaskData</td>
@@ -112,6 +112,18 @@ no-catalog: true
       <td>csrfToken</td>
       <td>string</td>
       <td>The CSRF token for the logged-in user, if applicable.</td>
+    </tr>
+    <tr>
+      <td>sessionValidUntil</td>
+      <td>dateTime</td>
+      <td><p>This property is used to determine how long the session will be valid if the session remains active (active sesion timeout), if active session timeout is set up in the developer portal. If active session timeout is not set, authTokenValidUntil is not present in the response. If it is present, the user&rsquo;s session will be invalid after the timestamp, even if the token is renewed. The developer portal uses this value to determine when to end the user's sesssion.</p>
+        <p>This property is constructed using login time and active session timeout value.</p></td>
+    </tr>
+    <tr>
+      <td>authTokenValidUntil</td>
+      <td>dateTime</td>
+      <td><p>How long the session will be valid. This property is used to determine the active session timeout, if active session timeout is set in the developer portal. If active session timeout is not set, <strong>authTokenValidUntil</strong> is not present in the response. If it is present, the user&rsquo;s session will be invalid after the timestamp, even if the token is renewed. The developer portal uses this value to determine when to end the user's session.</p>
+        <p>For more information on how session timeout works, see <a href="../aaref/Ref_SessionTime.htm">Session Time / Session Timeout</a>.</p></td>
     </tr>
     </tbody>
 </table>

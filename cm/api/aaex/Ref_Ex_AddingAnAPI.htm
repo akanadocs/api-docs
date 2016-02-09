@@ -1,7 +1,7 @@
 ---
 layout: apipage
-title: Example - Adding an App | How-To Material | Enterprise API Platform API
-description: This example walks you through adding an API to the&nbsp;Enterprise API Platform&nbsp;by using the platform API rather than the user interface. One use of this sequence is to build code that will load multiple APIs via the platform. This could be useful if you are just getting started on the platform and have many APIs.
+title: Example - Adding an App | How-To Material | Akana API Platform API
+description: This example walks you through adding an API to the&nbsp; Akana API Platform&nbsp;by using the platform API rather than the user interface. One use of this sequence is to build code that will load multiple APIs via the platform. This could be useful if you are just getting started on the platform and have many APIs.
 product: cm
 category: ref
 nav-title: Example - Adding an App 
@@ -12,8 +12,10 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>Example: Adding an API</h2>
-<p>This example walks you through adding an API to the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;by using the platform API rather than the user interface. One use of this sequence is to build code that will load multiple APIs via the platform. This could be useful if you are just getting started on the platform and have many APIs.</p>
-<p>This exercise assumes that you already have a valid login for the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. You can't add an API unless you're an authorized user. Before running the procedures below, go into the user interface to set up your user profile.</p>
+<p>This example walks you through adding an API to the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;by using the platform API rather than the user interface. One use of this sequence is to build code that will load multiple APIs via the platform. This could be useful if you are just getting started on the platform and have many APIs.</p>
+<p>This exercise assumes that you already have a valid login for the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->. You can't add an API unless you're an authorized user. Before running the procedures below, go into the user interface to set up your user profile.</p>
 <p>Essentially, you'll need to complete these two activities, in sequence:</p>
 <ol>
   <li>Log in using your authorized user profile you've already set up. Operation: <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span>.</li>
@@ -21,7 +23,8 @@ no-catalog: true
 </ol>
 <p>Once you've completed the above steps, the APIID is returned in the response and the API is ready for further setup (for example, adding legal agreements, adding operations, adding policies, assigning scopes to operations, adding additional API versions) or for use.</p>
 <p>Follow the detailed instructions below.</p>
-<h4>To add an API in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;using the platform API</h4>
+<h4>To add an API in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;using the platform API</h4>
 <ol>
   <li>Log in via the API, <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
     <ul>

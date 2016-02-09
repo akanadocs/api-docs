@@ -1,0 +1,87 @@
+---
+layout: apipage
+title: Session Time/Session Timeout | Reference Material | Akana API Platform API
+description: From version 8.0 onwards, the Akana API Platform provides two values that the Site Admin can use to configure how long a user's session should last. Both these settings are part of login policy settings. They are set up-
+product: cm
+category: ref
+nav-title: Session Time/Session Timeout 
+no-nav: api
+sub-nav: true
+sub-nav-class: aaref
+no-catalog: true
+---
+
+<h2><a name="top"></a>Session Time / Session Timeout</h2>
+<p>From version 8.0 onwards, the Akana API Platform provides two values that the Site Admin can use to configure how long a user's session should last. Both these settings are part of login policy settings. They are set up:</p>
+<ul>
+  <li><strong>In the developer portal</strong>: Administration &gt; Settings &gt; Logins.</li>
+  <li><strong>In the API</strong>: <span class="apidoc_code"><a href="../businesses/m_businesses_updateLoginPolicy.htm">PUT&nbsp;/api/businesses/{BusinessID}/loginpolicy</a></span>). To retrieve the values specified: <span class="apidoc_code"><a href="../businesses/m_businesses_getLoginPolicy.htm">GET&nbsp;/api/businesses/{BusinessID}/loginpolicy</a></span>.</li>
+</ul>
+<p>The values are:</p>
+<ul>
+  <li>Inactive Login Session Timeout (Minutes): <strong>InactiveSessionTimeout</strong></li>
+  <li>Active Login Session Timeout (Minutes): <strong>ActiveSessionTimeout</strong>
+  </ul>
+<p>The user's AuthToken determines how long the user's session will last. The platform uses   the values provided for these settings, if specified, to calculate the AuthToken expiration time, which is set in the <strong>AuthTokenValidUntil</strong> property. If no session timeout value is specified, the default AuthToken expiration time of 30 minutes applies. If the AuthToken is renewed via the Renew Token operation, the token time is extended for Inactive Session Timeout, but for Active Session Timeout it is not extended further than the total session duration specified in the setting.</p>
+<p>Notes:</p>
+<ul>
+  <li>Inactive login session timeout value cannot exceed active login session timeout.</li>
+  <li>For these two fields, as with other Settings fields, a value of 0 means that there is no setting applied. However, token validity is still affected by the duration of the AuthToken, which is set at login and renewed by the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation. By default, the token is valid for 30 minutes, and then expires unless renewed before expiration. If these two timeout fields are set to 0, the developer portal user interface automatically renews the token; but if you're using the API, you'll need to renew the token using the API, or it will expire.</li>
+  <li>In the developer portal, with regard to these settings, active means active in one browser tab. If the user is running more than one browser tab, only one tab needs to be active, and other instances do not timeout. This is true only in the UI, which has additional coding that triggers automatic renewal of the token. This is just additional information to give a broader picture of how these settings work in all instances.</li>
+  <li><strong>AuthTokenValidUntil</strong> is constructed using the login time + the active session timeout value to calculate a future time value. At that time, the auth token expires and the user is automatically logged out.</li>
+  </ul>
+
+
+
+<h3>Inactive Login Session Timeout</h3>
+<p>This value determines when the session ends if the user is inactive. It's calculated based on the platform inactive timeout setting and the user's activity on the platform.</p>
+<p><strong>API behavior</strong>:</p>
+<ul>
+  <li><strong>Value set</strong>: The AuthToken is set for that value, so an inactive session is automatically ended after that point, unless the token is renewed. If the token is renewed, the new token extends the session for the same time period. Example: token is set for 20 minutes. User is inactive for 15 minutes. Token is renewed. New token extends the session for another 20 minutes.</li>
+  <li><strong>No value set</strong>: The token expires after  30 minutes, the default life of the AuthToken, if the token is not renewed.</li>
+</ul>
+<p><strong>Developer portal behavior</strong>:</p>
+<ul>
+  <li><strong>Value set</strong>: The AuthToken is set for that value, so an inactive session is automatically ended after that point, unless the user is active in the developer portal. If the user is active, the developer portal renews the token, and the new token extends the session for the same time period. Example: token is set for 20 minutes. User is inactive for 15 minutes and is then active. Token is renewed. New token extends the session for another 20 minutes.</li>
+  <li><strong>No value set</strong>: The user's session does not expire. The developer portal UI renews the token.</li>
+</ul>
+<h3>Active Login Session Timeout</h3>
+<p>This value determines when the session is ended, even if the user is active. Expiration of the AuthToken results in timeout for the user. In the user interface, there is a warning message prior to the expiration.</p>
+<p><strong>API behavior</strong>:</p>
+<ul>
+  <li><strong>Value set</strong>: The AuthToken is set for the duration specified in the <strong>ActiveSessionTimeout</strong> setting. If the token is renewed, the new token is set to the same expiration time as the original token; renewing the token does not extend the session time.</li>
+  <li><strong>No value set</strong>: The token expires after  30 minutes, the default life of the AuthToken, if the token is not renewed.</li>
+</ul>
+<p><strong>Developer portal behavior</strong>:</p>
+<ul>
+  <li><strong>Value set</strong>: The user's session is ended after the specified number of minutes has passed, even if the user is active. If the token is renewed, the new token is set to the same expiration time as the original token; renewing the token does not extend the session time.</li>
+  <li><strong>No value set</strong>: The user's session does not expire. The developer portal UI renews the token.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+  <li><strong>Active Session Timeout is 15 minutes</strong>. Regardless of activity, session ends after 15 minutes.</li>
+  <li><strong>Active Session Timeout is 45 minutes</strong>. Token is set to expire after 45 minutes. Token is renewed after 35 minutes. New token is valid only for 10 minutes, for a total active session time of 45 minutes.</li>
+  <li><strong>Active Session Timeout is not set</strong>. If token is not renewed, token expires after 30 minutes. If token is renewed, session is extended for another 30 minutes, on a continuing basis.</li>
+</ul>
+<p>When using the API, you'll sometimes need to invoke the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation, as mentioned above, to obtain a new token. The expiration timestamp for the new token will always be before, or no later than, the <strong>AuthTokenValidUntil</strong> timestamp. <strong>SessionValidUntil</strong> is set up at the login time and cannot be changed independently of how many times the token is renewed.</p>
+<p> If Active Session Timeout is not configured, the <strong>SessionValidUntil</strong> property might not be present in the response. However, <strong>AuthTokenValidUntil</strong> is always used.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<table width="700" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

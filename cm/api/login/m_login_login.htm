@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Log In | Login Service | Enterprise API Platform API
+title: Log In | Login Service | Akana API Platform API
 description: Initiates the login process by verifying the credentials of a user who is attempting to log in to the platform. If there are pending login tasks, this operation directs the user to the next task; if there are no pending tasks, it logs the user in, returning an authentication cookie that is used to make authenticated calls to the platform. The cookie is valid for 25 minutes. To renew it, use the <span class="apidoc_code"><a href="m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation.
 product: cm
 category: ref
@@ -204,13 +204,17 @@ y2N8XIrzICKTaUdCIni2ETKNCccpbYfBWftTQoUNVpQffzUTCP965GKqPLf6Zo0ol48TCRn4bWepqz8p
 }</pre>
 <h5>Sample response body #4</h5>
 <p id="id_sampleresponse_4">The example below shows a LoginResponse object returned when a user has completed all pending tasks, or when a user signs in under normal circumstances; there are no pending tasks, just a simple login. Tokens have been abbreviated.</p>
-<pre>{
-  &quot;authToken&quot; : &quot;TokenID%3Ddc8c8f4d-d8ca-...&quot;,
-  &quot;userName&quot; : &quot;JaneMead&quot;,<br />  &quot;userFDN&quot; : &quot;df492b7e-ce2a-478c-86d2-b0bf09c27e52.acmepaymentscorp&quot;,
-  &quot;pendingNotifications&quot; : 0,<br />  &quot;status&quot; : &quot;success&quot;,
-  &quot;loginState&quot; : &quot;login.complete&quot;,
-  &quot;loginDomainID&quot; : &quot;siteusers.acmepaymentscorp&quot;,
-  &quot;avatarURL&quot; : &quot;http://{hostname}/api/users/df492b7e-ce2a-478c-86d2-b0bf09c27e52.acmepaymentscorp/avatar&quot;
+<pre>
+{
+  "userFDN" : "4fa1a6c9-c846-4186-87c1-7dab542aad22.acmepaymentscorp",
+  "userName" : "adminAtmosphere",
+  "loginDomainID" : "siteusers.acmepaymentscorp",
+  "loginState" : "login.complete",
+  "sessionValidUntil" : "2016-01-14T18:15:53.538Z",
+  "authTokenValidUntil" : "2016-01-14T17:47:53.812Z",
+  "avatarURL" : "http://www.acmepaymentscorp.com/api/users/avatar/_VCpiEj0keo1zHfcA_5usV3w",
+  "status" : "success",
+  "pendingNotifications" : 0
 }</pre>
 <h5>Sample response body #5</h5>
 <p id="id_sampleresponse_5">The example below shows a LoginResponse object returned when a user is logging in and two-factor authentication is set up on the platform, with delivery options for the authentication code. The user must choose a delivery mechanism and then complete the two-factor authentication process, putting in the verification code, before completing any additional pending login tasks.</p>
@@ -325,7 +329,7 @@ y2N8XIrzICKTaUdCIni2ETKNCccpbYfBWftTQoUNVpQffzUTCP965GKqPLf6Zo0ol48TCRn4bWepqz8p
     <tr>
       <td>LoginResponse</td>
       <td><a href="../obj/o_login_LoginResponse.htm">LoginResponse</a></td>
-      <td><!-- #BeginLibraryItem "/library/o_login_LoginResponse.lbi" -->Contains information returned as a result of logging in.<!-- #EndLibraryItem --> User name and FDN, along with an authorization token and the pending notifications count for the user.</td>
+      <td><!-- #BeginLibraryItem "/library/o_login_LoginResponse.lbi" -->Contains information returned as a result of logging in.<!-- #EndLibraryItem --> User name and FDN, along with an authorization token and the pending notifications count for the user.<!--http://svn.soa.local/nd/trunk/products/api-portal/com.soa.atmosphere.interfaces/src/com/soa/login/model/LoginResponse.java--></td>
     </tr>
   </tbody>
 </table>
@@ -351,7 +355,8 @@ y2N8XIrzICKTaUdCIni2ETKNCccpbYfBWftTQoUNVpQffzUTCP965GKqPLf6Zo0ol48TCRn4bWepqz8p
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

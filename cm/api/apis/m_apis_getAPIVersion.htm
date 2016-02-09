@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Get API Version | APIs Service | Enterprise API Platform API
+title: Get API Version | APIs Service | Akana API Platform API
 description:  Returns the specified API version.
 product: cm
 category: ref
@@ -87,7 +87,7 @@ Accept: application/json, text/javascript, */*; q=0.01
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -201,100 +201,83 @@ Content-Type: application/json</pre>
   "SandboxServiceKey" : "uddi:0dc2dfb1-fae0-11e3-82e1-ee73ce832365"
 }</pre>
 <h3 id="sampleresponse_2">Sample Response #2</h3>
-<p>The sample response below shows the response information for sample request #1 above, where the request message included the optional <span class="apidoc_code">includeOperations</span> parameter.</p>
+<p>The sample response below shows API version information for a rendition of the Swagger Petstore API (<a href="http://petstore.swagger.io/" target="_blank">http://petstore.swagger.io/</a>), set up on the platform. In this example, the request message included the optional <span class="apidoc_code">includeOperations</span> parameter, so information about the operations is in the response.</p>
 
 <p><strong>Sample response headers</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
+Date: Fri, 09 Oct 2015 17:43:14 GMT</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "APIVersionID" : "9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp",
-  "APIID" : "780e7a30-6f9b-4d08-9366-ae18ea071183.acmepaymentscorp",
+  "APIVersionID" : "f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp",
+  "APIID" : "44d187c6-7aa0-492d-bb41-fa5b9c16b450.acmepaymentscorp",
   "Name" : "1.0",
-  "Description" : "First release",
+  "Description" : "First version",
   "Type" : "shttp",
   "DefaultProfile" : "Any in and out",
-  "Tag" : [ "payments" ],
-  "ProductionEndpoint" : "http://acme_payments_api.10.1.20.137:9901/",
-  "SandboxEndpoint" : "http://acme_payments_api.10.1.20.137:9901/",
+  "Tag" : [ ],
+  "ProductionEndpoint" : "http://acmepaymentscorp.com/",
   "Operations" : {
     "Operation" : [ {
-      "Name" : "listPayments",
+      "Name" : "getPetById",
       "Method" : "GET",
-      "Path" : "/payments",
-      "InputContentType" : "*/*",
-      "OutputContentType" : "*/*",
-      "FaultContentType" : "*/*"
-    }, {
-      "Name" : "getPayment",
-      "Method" : "GET",
-      "Path" : "/payments/{PaymentID}",
+      "Path" : "/pet/{petid}",
       "InputContentType" : "*/*",
       "OutputContentType" : "*/*",
       "FaultContentType" : "*/*",
       "Input" : [ {
-        "Name" : "PaymentID",
+        "Name" : "petid",
         "Type" : "path"
-      } ]
+      } ],
+      "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
+      "WsdlOperationName" : "getPetById"
     }, {
-      "Name" : "addPayment",
-      "Method" : "POST",
-      "Path" : "/payments",
-      "InputContentType" : "*/*",
-      "OutputContentType" : "*/*",
-      "FaultContentType" : "*/*"
-    }, {
-      "Name" : "modifyPayment",
+      "Name" : "modifyPet",
       "Method" : "PUT",
-      "Path" : "/payments/{PaymentID}",
+      "Path" : "/pet/{petid}",
       "InputContentType" : "*/*",
       "OutputContentType" : "*/*",
       "FaultContentType" : "*/*",
       "Input" : [ {
-        "Name" : "PaymentID",
+        "Name" : "petid",
         "Type" : "path"
-      } ]
+      } ],
+      "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
+      "WsdlOperationName" : "modifyPet"
     }, {
-      "Name" : "deletePayment",
+      "Name" : "deletePet",
       "Method" : "DELETE",
-      "Path" : "/payments/{PaymentID}",
+      "Path" : "/pet/{petid}",
       "InputContentType" : "*/*",
       "OutputContentType" : "*/*",
       "FaultContentType" : "*/*",
       "Input" : [ {
-        "Name" : "PaymentID",
+        "Name" : "petid",
         "Type" : "path"
-      } ]
+      } ],
+      "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
+      "WsdlOperationName" : "deletePet"
     } ]
   },
   "Endpoints" : {
     "Endpoint" : [ {
-      "CName" : "acme_payments_api.10.1.20.137",
+      "CName" : &quot;acmepaymentscorp.com&quot;,
       "Category" : "Production",
-      "Uri" : "http://10.1.20.137:9901/",
+      "Uri" : "http://acmepaymentscorp.com/",
       "ConnectionProperties" : [ ],
-      "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.production.virtual",
+      "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production.virtual",
       "BindingType" : "binding.http",
-      "EndpointKey" : "uddi:0d6a112f-fae0-11e3-82e1-ee73ce832365"
-    }, {
-      "CName" : "acme_payments_api.10.1.20.137",
-      "Category" : "Sandbox",
-      "Uri" : "http://10.1.20.137:9901/",
-      "ConnectionProperties" : [ ],
-      "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.sandbox.virtual",
-      "BindingType" : "binding.http",
-      "EndpointKey" : "uddi:0e0036f3-fae0-11e3-82e1-ee73ce832365"
+      "EndpointKey" : "uddi:2ae0be2d-6eac-11e5-8b6d-ff8913d9df0e"
     } ]
   },
   "Policies" : {
     "Policy" : [ {
-      "PolicyKey" : "10001-AtmosphereApplicationSecurityPolicy",
-      "Name" : "AtmosphereApplicationSecurityPolicy",
+      "PolicyKey" : "10001-BasicAuditing",
+      "Name" : "BasicAuditing",
       "Description" : "",
       "PolicyType" : "Operational Policy",
-      "PolicySubType" : "policy.apisec"
+      "PolicySubType" : "policy.auditservice"
     }, {
       "PolicyKey" : "10001-DetailedAuditing",
       "Name" : "DetailedAuditing",
@@ -303,9 +286,9 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
       "PolicySubType" : "policy.auditservice"
     } ]
   },
-  "Visibility" : "Limited",
-  "Created" : "2014-06-23T14:09:53Z",
-  "Updated" : "2014-06-23T14:09:53Z",
+  "Visibility" : "Public",
+  "Created" : "2015-10-09T00:08:24Z",
+  "Updated" : "2015-10-09T17:35:43Z",
   "State" : "com.soa.api.state.open",
   "ProductionEndpointAccessAutoApproved" : true,
   "SandboxEndpointAccessAutoApproved" : true,
@@ -317,86 +300,63 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
     "One" : 0
   },
   "SandboxAnonymousAccessAllowed" : false,
-  "ProductionAnonymousAccessAllowed" : false,
-  "ResourceLevelPermissionsSupported" : true,
+  "ProductionAnonymousAccessAllowed" : true,
+  "ResourceLevelPermissionsSupported" : false,
   "APIOwnedImplementations" : true,
-  "ProductionServiceKey" : "uddi:0ced18dc-fae0-11e3-82e1-ee73ce832365",
-  "SandboxServiceKey" : "uddi:0dc2dfb1-fae0-11e3-82e1-ee73ce832365",
+  "ProductionServiceKey" : "uddi:dc72b1ae-6e19-11e5-8b6d-ff8913d9df0e",
   "APIImplementations" : {
     "APIImplementation" : [ {
       "Environment" : "Production",
-      "Name" : "ACME Payments API_1.0_Production_Virtual",
-      "Description" : "First release",
-      "ServiceKey" : "uddi:0ced18dc-fae0-11e3-82e1-ee73ce832365",
+      "Name" : "aaa_Swagger_Gen_1.0_Production_Virtual",
+      "Description" : "First version",
+      "ServiceKey" : "uddi:dc72b1ae-6e19-11e5-8b6d-ff8913d9df0e",
       "APIBindings" : {
         "APIBinding" : [ {
-          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.production.virtual",
-          "BindingKey" : "uddi:c49656e3-58ca-c7e0-f91c-62a3bb1809a2",
-          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.production",
-          "InterfaceKey" : "uddi:bd988666-235e-66cc-6289-05f613a8751a",
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production.virtual",
+          "BindingKey" : "uddi:81854428-7480-adaa-96d0-a847af1f6ab1",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
+          "InterfaceKey" : "uddi:8f11ac74-0427-e8c0-1a95-dc8ef4d0a6e4",
           "BindingType" : "binding.http",
           "BindingOperations" : {
             "BindingOperation" : [ {
-              "OperationName" : "listPayments",
-              "WsdlOperationName" : "listPayments",
+              "OperationName" : "getPetById",
+              "WsdlOperationName" : "getPetById",
               "HttpOperation" : {
                 "Method" : "GET",
-                "Path" : "/payments",
-                "InputContentType" : "*/*",
-                "OutputContentType" : "*/*",
-                "FaultContentType" : "*/*",
-                "Input" : [ ]
-              }
-            }, {
-              "OperationName" : "getPayment",
-              "WsdlOperationName" : "getPayment",
-              "HttpOperation" : {
-                "Method" : "GET",
-                "Path" : "/payments/{PaymentID}",
+                "Path" : "/pet/{petid}",
                 "InputContentType" : "*/*",
                 "OutputContentType" : "*/*",
                 "FaultContentType" : "*/*",
                 "Input" : [ {
-                  "Name" : "PaymentID",
+                  "Name" : "petid",
                   "Type" : "path"
                 } ]
               }
             }, {
-              "OperationName" : "addPayment",
-              "WsdlOperationName" : "addPayment",
-              "HttpOperation" : {
-                "Method" : "POST",
-                "Path" : "/payments",
-                "InputContentType" : "*/*",
-                "OutputContentType" : "*/*",
-                "FaultContentType" : "*/*",
-                "Input" : [ ]
-              }
-            }, {
-              "OperationName" : "modifyPayment",
-              "WsdlOperationName" : "modifyPayment",
+              "OperationName" : "modifyPet",
+              "WsdlOperationName" : "modifyPet",
               "HttpOperation" : {
                 "Method" : "PUT",
-                "Path" : "/payments/{PaymentID}",
+                "Path" : "/pet/{petid}",
                 "InputContentType" : "*/*",
                 "OutputContentType" : "*/*",
                 "FaultContentType" : "*/*",
                 "Input" : [ {
-                  "Name" : "PaymentID",
+                  "Name" : "petid",
                   "Type" : "path"
                 } ]
               }
             }, {
-              "OperationName" : "deletePayment",
-              "WsdlOperationName" : "deletePayment",
+              "OperationName" : "deletePet",
+              "WsdlOperationName" : "deletePet",
               "HttpOperation" : {
                 "Method" : "DELETE",
-                "Path" : "/payments/{PaymentID}",
+                "Path" : "/pet/{petid}",
                 "InputContentType" : "*/*",
                 "OutputContentType" : "*/*",
                 "FaultContentType" : "*/*",
                 "Input" : [ {
-                  "Name" : "PaymentID",
+                  "Name" : "petid",
                   "Type" : "path"
                 } ]
               }
@@ -406,177 +366,40 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
       },
       "APIInterfaces" : {
         "APIInterface" : [ {
-          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.production",
-          "InterfaceKey" : "uddi:bd988666-235e-66cc-6289-05f613a8751a",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
+          "InterfaceKey" : "uddi:8f11ac74-0427-e8c0-1a95-dc8ef4d0a6e4",
           "InterfaceOperations" : {
             "InterfaceOperation" : [ {
-              "OperationName" : "listPayments",
-              "WsdlOperationName" : "listPayments"
+              "OperationName" : "getPetById",
+              "WsdlOperationName" : "getPetById"
             }, {
-              "OperationName" : "getPayment",
-              "WsdlOperationName" : "getPayment"
+              "OperationName" : "modifyPet",
+              "WsdlOperationName" : "modifyPet"
             }, {
-              "OperationName" : "addPayment",
-              "WsdlOperationName" : "addPayment"
-            }, {
-              "OperationName" : "modifyPayment",
-              "WsdlOperationName" : "modifyPayment"
-            }, {
-              "OperationName" : "deletePayment",
-              "WsdlOperationName" : "deletePayment"
+              "OperationName" : "deletePet",
+              "WsdlOperationName" : "deletePet"
             } ]
           }
         } ]
       },
       "Endpoints" : {
         "Endpoint" : [ {
-          "CName" : "acme_payments_api.10.1.20.137",
+          "CName" : &quot;acmepaymentscorp.com&quot;,
           "Category" : "Production",
-          "Uri" : "http://10.1.20.137:9901/",
+          "Uri" : "http://acmepaymentscorp.com/",
           "ConnectionProperties" : [ ],
-          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.production.virtual",
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production.virtual",
           "BindingType" : "binding.http",
-          "EndpointKey" : "uddi:0d6a112f-fae0-11e3-82e1-ee73ce832365"
+          "EndpointKey" : "uddi:2ae0be2d-6eac-11e5-8b6d-ff8913d9df0e"
         } ]
       },
       "Policies" : {
         "Policy" : [ {
-          "PolicyKey" : "10001-AtmosphereApplicationSecurityPolicy",
-          "Name" : "AtmosphereApplicationSecurityPolicy",
-          "Description" : "",
-          "PolicyType" : "Operational Policy",
-          "PolicySubType" : "policy.apisec"
-        }, {
-          "PolicyKey" : "10001-DetailedAuditing",
-          "Name" : "DetailedAuditing",
+          "PolicyKey" : "10001-BasicAuditing",
+          "Name" : "BasicAuditing",
           "Description" : "",
           "PolicyType" : "Operational Policy",
           "PolicySubType" : "policy.auditservice"
-        } ]
-      }
-    }, {
-      "Environment" : "Sandbox",
-      "Name" : "ACME Payments API_1.0_Sandbox_Virtual",
-      "Description" : "First release",
-      "ServiceKey" : "uddi:0dc2dfb1-fae0-11e3-82e1-ee73ce832365",
-      "APIBindings" : {
-        "APIBinding" : [ {
-          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.sandbox.virtual",
-          "BindingKey" : "uddi:659417b9-f374-65a1-778a-6b5d8a0025dc",
-          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.sandbox",
-          "InterfaceKey" : "uddi:d5dd8c7c-3ad0-211e-7eb0-1b6075bebd1f",
-          "BindingType" : "binding.http",
-          "BindingOperations" : {
-            "BindingOperation" : [ {
-              "OperationName" : "listPayments",
-              "WsdlOperationName" : "listPayments",
-              "HttpOperation" : {
-                "Method" : "GET",
-                "Path" : "/payments",
-                "InputContentType" : "*/*",
-                "OutputContentType" : "*/*",
-                "FaultContentType" : "*/*",
-                "Input" : [ ]
-              }
-            }, {
-              "OperationName" : "getPayment",
-              "WsdlOperationName" : "getPayment",
-              "HttpOperation" : {
-                "Method" : "GET",
-                "Path" : "/payments/{PaymentID}",
-                "InputContentType" : "*/*",
-                "OutputContentType" : "*/*",
-                "FaultContentType" : "*/*",
-                "Input" : [ {
-                  "Name" : "PaymentID",
-                  "Type" : "path"
-                } ]
-              }
-            }, {
-              "OperationName" : "addPayment",
-              "WsdlOperationName" : "addPayment",
-              "HttpOperation" : {
-                "Method" : "POST",
-                "Path" : "/payments",
-                "InputContentType" : "*/*",
-                "OutputContentType" : "*/*",
-                "FaultContentType" : "*/*",
-                "Input" : [ ]
-              }
-            }, {
-              "OperationName" : "modifyPayment",
-              "WsdlOperationName" : "modifyPayment",
-              "HttpOperation" : {
-                "Method" : "PUT",
-                "Path" : "/payments/{PaymentID}",
-                "InputContentType" : "*/*",
-                "OutputContentType" : "*/*",
-                "FaultContentType" : "*/*",
-                "Input" : [ {
-                  "Name" : "PaymentID",
-                  "Type" : "path"
-                } ]
-              }
-            }, {
-              "OperationName" : "deletePayment",
-              "WsdlOperationName" : "deletePayment",
-              "HttpOperation" : {
-                "Method" : "DELETE",
-                "Path" : "/payments/{PaymentID}",
-                "InputContentType" : "*/*",
-                "OutputContentType" : "*/*",
-                "FaultContentType" : "*/*",
-                "Input" : [ {
-                  "Name" : "PaymentID",
-                  "Type" : "path"
-                } ]
-              }
-            } ]
-          }
-        } ]
-      },
-      "APIInterfaces" : {
-        "APIInterface" : [ {
-          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.sandbox",
-          "InterfaceKey" : "uddi:d5dd8c7c-3ad0-211e-7eb0-1b6075bebd1f",
-          "InterfaceOperations" : {
-            "InterfaceOperation" : [ {
-              "OperationName" : "listPayments",
-              "WsdlOperationName" : "listPayments"
-            }, {
-              "OperationName" : "getPayment",
-              "WsdlOperationName" : "getPayment"
-            }, {
-              "OperationName" : "addPayment",
-              "WsdlOperationName" : "addPayment"
-            }, {
-              "OperationName" : "modifyPayment",
-              "WsdlOperationName" : "modifyPayment"
-            }, {
-              "OperationName" : "deletePayment",
-              "WsdlOperationName" : "deletePayment"
-            } ]
-          }
-        } ]
-      },
-      "Endpoints" : {
-        "Endpoint" : [ {
-          "CName" : "acme_payments_api.10.1.20.137",
-          "Category" : "Sandbox",
-          "Uri" : "http://10.1.20.137:9901/",
-          "ConnectionProperties" : [ ],
-          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp.sandbox.virtual",
-          "BindingType" : "binding.http",
-          "EndpointKey" : "uddi:0e0036f3-fae0-11e3-82e1-ee73ce832365"
-        } ]
-      },
-      "Policies" : {
-        "Policy" : [ {
-          "PolicyKey" : "10001-AtmosphereApplicationSecurityPolicy",
-          "Name" : "AtmosphereApplicationSecurityPolicy",
-          "Description" : "",
-          "PolicyType" : "Operational Policy",
-          "PolicySubType" : "policy.apisec"
         }, {
           "PolicyKey" : "10001-DetailedAuditing",
           "Name" : "DetailedAuditing",
@@ -605,7 +428,7 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -661,7 +484,8 @@ Date: Mon, 23 Jun 2014 19:52:48 GMT</pre>
     </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
+Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

@@ -1,6 +1,6 @@
 ---
 layout: apipage
-title: Users Service | Overview | Enterprise API Platform API
+title: Users Service | Overview | Akana API Platform API
 description:  The Users service provides operations for managing users in the platform, such as adding, modifying, and deleting users and retrieving user information.
 product: cm
 category: ref
@@ -216,6 +216,12 @@ Changes the value of a user preference.<!-- #EndLibraryItem --></td>
     <td><a href="users/m_users_signupUser.htm">POST&nbsp;/api/users/signupUser[/{InvitationCode}]</a></td>
     <td><!-- #BeginLibraryItem "/library/desc_signupUser.lbi" -->
 Initiates the signup process by sending the user's signup information to the database; in some cases, sends an email to the user.<!-- #EndLibraryItem --></td>
+  </tr>
+  <tr>
+    <td>verify invitation</td>
+    <td><a href="users/m_users_verifyInvitation.htm">POST&nbsp;/api/users/verifyInvitation</a></td>
+    <td><!-- #BeginLibraryItem "/library/desc_verifyInvitation.lbi" -->
+Validates an invitation code at the Simple Dev signup page and returns user details.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>verify signup</td>
