@@ -14,7 +14,7 @@ To optimize Github Pages build times (we were getting timeouts) we have moved th
 	
 1. Copy the newly refreshed docs-test into a new temporary location (I keep my repositories in /projects/akanadocs in my home directory):
 
-```
+	```
 	rm -rf temp
 	cd ..
 	cp -R docs-test temp
