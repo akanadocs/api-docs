@@ -2,16 +2,25 @@
 To optimize Github Pages build times (we were getting timeouts) we have moved the CM API Docs (/cm/api) to a separate repository and have replaced them with pre-built versions.  There are a few steps to go through when we need to update the API docs on the test and production servers.  All CM API Documentation updates should be made in the [API Docs repository](https://github.com/akanadocs/api-docs).
 
 ## Updating docs-test
-1. Make sure your docs-test and api-docs repositories are up-to-date with ```git pull```
-1. Clone docs-test into a new temporary repository (I keep my repositories in /projects/akanadocs in my home directory):
+1. Make sure your docs-test and api-docs repositories are up-to-date:
 
 	```
-	rm -rf temp
 	cd ~/projects/akanadocs
-	git clone https://github.com/akanadocs/docs-test temp
+	cd docs-test
+	git pull
+	cd api-docs
+	git pull
+	```
+	
+1. Copy the newly refreshed docs-test into a new temporary location (I keep my repositories in /projects/akanadocs in my home directory):
+
+```
+	rm -rf temp
+	cd ..
+	cp -R docs-test temp
 ```
 
-1. Remove the pre-built API docs from this temp repo, and replace them with the docs from your API Docs repo, then build the temp repo:
+1. Remove the pre-built API docs from this temp folder, and replace them with the docs from your API Docs repo, then build the temp repo:
 
 	```
 	rm -rf temp/cm/api
