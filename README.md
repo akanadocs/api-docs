@@ -77,8 +77,8 @@ This process has changed, you need to follow the exact same process as above, bu
 	git pull
 	cd api-docs
 	git pull
-	rm -rf temp
 	cd ..
+	rm -rf temp
 	cp -R akanadocs.github.io temp
 	rm -rf temp/cm/api
 	cp -R api-docs/cm/api/ temp/cm/api/
