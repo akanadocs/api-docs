@@ -15,10 +15,10 @@ To optimize Github Pages build times (we were getting timeouts) we have moved th
 1. Copy the newly refreshed docs-test into a new temporary location (I keep my repositories in /projects/akanadocs in my home directory):
 
 	```
-	rm -rf temp
 	cd ..
+	rm -rf temp
 	cp -R docs-test temp
-```
+	```
 
 1. Remove the pre-built API docs from this temp folder, and replace them with the docs from your API Docs repo, then build the temp repo:
 
