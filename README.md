@@ -67,52 +67,39 @@ To optimize Github Pages build times (we were getting timeouts) we have moved th
 And you're done.
 
 ## Updating the production site
-This is much easier, all you need to do is replace the /cm/api folder in the product site with the /cm/api folder from docs-test:
+This process has changed, you need to follow the exact same process as above, but for akanadocs.github.io instead of docs-test.  Run the exact same command sequence and steps.
 
-```
-cd ~/projects/akanadocs
-cd docs-test
-git pull
-cd ../akanadocs.github.io
-git pull
-rm -rf cm/api
-cp -R ../docs-test/cm/api/ cm/api
-git add -A .
-git commit -m "<JIRA # - Update reason>"
-git push
-```
+1.	Do all the same steps as for docs-test.  Here are the Linux commands:
 
-And that's it.
+	```
+	cd ~/projects/akanadocs
+	cd akanadocs.github.io
+	git pull
+	cd api-docs
+	git pull
+	rm -rf temp
+	cd ..
+	cp -R akanadocs.github.io temp
+	rm -rf temp/cm/api
+	cp -R api-docs/cm/api/ temp/cm/api/
+	cd temp
+	bundle exec jekyll build
+	cd ~/projects/akanadocs
+	cp akanadocs.github.io/cm/api/index.htm .
+	rm -rf akanadocs.github.io/cm/api/
+	cp -R temp/_site/cm/api/ akanadocs.github.io/cm/api/
+	cp index.htm akanadocs.github.io/cm/api/
+	```
 
-## Updating the search index
-The script to update the search index runs at 8am GMT.  It is located on the ```blog.akana.com``` server at: ```/home/igoldsmith/build_akana_index.sh```.  The script is:
+1. Replace the content of the ```unsorted_pages_prod_cat``` variable in ```_includes/unsorted-pages-apioverview``` in your **akanadocs.github.io** repo, with the contents of the same variable taken from ```_site/cm/api/Ref_API_Reference.htm```, or any of the Ref docs in your **temp** repo - now in akanadocs.github.io too.
 
-```
-#!/bin/bash
+	> NOTE: this step is essential for maintaining the navigation structure of the API Docs.
 
-export LANG=en_US.UTF-8
-source /etc/profile
-source /home/igoldsmith/.profile
-cd /home/igoldsmith/akanadocs/akanadocs.github.io
-/usr/bin/git pull
-cd /home/igoldsmith/akanadocs/api-docs
-/usr/bin/git pull
-rm -rf /home/igoldsmith/akanadocs/build
-cp -R /home/igoldsmith/akanadocs/akanadocs.github.io /home/igoldsmith/akanadocs/build
-rm -rf /home/igoldsmith/akanadocs/build/cm/api
-cp -R /home/igoldsmith/akanadocs/api-docs/cm/api/ /home/igoldsmith/akanadocs/build/cm/api/
-cd /home/igoldsmith/akanadocs/build
-/usr/local/rvm/gems/ruby-2.0.0-p353/bin/bundle exec jekyll build
-cd /home/igoldsmith/akanadocs/akanadocs.github.io
-cp /home/igoldsmith/akanadocs/build/search.json .
-/usr/bin/git add search.json
-/usr/bin/git commit -a -m "Update search index - $(date)"
-/usr/bin/git push
-```
+1.	Push the updated API Docs up to akanadocs.github.io:
 
-The script shows how the build construct works to combine the primary and the non-pre-built docs repo.
-
-Note that this script uses the Git credentials for the logged in user (the CRON job runs the command as igoldsmith).
-
-
-
+	```
+	cd akanadocs.github.io
+	git add -A .
+	git commit -m "<JIRA # - Update reason>"
+	git push
+	```
