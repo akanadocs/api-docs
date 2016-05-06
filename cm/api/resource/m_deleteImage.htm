@@ -16,10 +16,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_deleteImage_all.lbi" -->
+<p><!-- #BeginLibraryItem "/Library/desc_deleteImage_all.lbi" -->
 Deletes the avatar associated with the specified resource.<!-- Currently the platform only supports deletion of a user's avatar. For an app or API, once a custom avatar is specified you can only change to a different avatar.--><!-- #EndLibraryItem --> This operation is currently available only to the users service. Once an avatar is in place for an app, API, or independent group, you can remove it only by replacing it with another custom avatar.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_user">User</a> (logged in) or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> (for any user).</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -48,7 +48,7 @@ Deletes the avatar associated with the specified resource.<!-- Currently the pla
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/{UserID}/picture</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/{UserID}/picture</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -57,7 +57,7 @@ Deletes the avatar associated with the specified resource.<!-- Currently the pla
 <h3 id="samplerequest">Sample Request</h3>
 <p>The example below shows a request to delete the avatar for the specified user.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/picture</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/picture</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: text/plain</pre>
 <p><strong>Sample request body</strong></p>
@@ -80,11 +80,11 @@ Deletes the avatar associated with the specified resource.<!-- Currently the pla
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_contenttype_any.lbi" --><strong>Any format (*/*)</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_any.lbi" --><strong>Any format (*/*)</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -155,7 +155,7 @@ Date: Thu, 23 May 2013 19:32:32 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -181,7 +181,7 @@ Date: Thu, 23 May 2013 19:32:32 GMT</pre>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-      <td><p><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></p>
+      <td><p><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></p>
         <p>You would also get this response if you were not an authorized user for the resource.</p></td>
     </tr>
   </thead>
@@ -193,16 +193,15 @@ Date: Thu, 23 May 2013 19:32:32 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -210,7 +209,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

@@ -1,24 +1,24 @@
 ---
 layout: apipage
-title: Get Tenant Country Codes | Tenant Administration Service | Akana API Platform API
-description: Returns a list of telephone country codes for the tenant.
+title: Get Tenant | Tenant Administration Service | Akana API Platform API
+description: Returns information about a tenant on the API Platform.
 product: cm
 category: ref
-nav-title: Get Tenant Country Codes 
+nav-title: Get Tenant 
 no-nav: api
 sub-nav: true
-sub-nav-class: tenants
+sub-nav-class: tenantadmin
 no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>GET&nbsp;/api/tenants/{TenantFedMemberID}/countrycodes</h2>
+<h2>	<a name="top" id="top"></a>GET&nbsp;/api/tenants/{TenantFedMemberID}</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_getTenantCountryCodes.lbi" -->Returns a list of telephone country codes for the tenant.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>No permission required.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
+<p><!-- #BeginLibraryItem "/Library/desc_getTenant.lbi" -->Returns information about a tenant on the API Platform.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be an authorized Administrator for the specified tenant.</p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -47,19 +47,19 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->tenants/{TenantFedMemberID}/countrycodes</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->tenants/{TenantFedMemberID}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The example below shows a request for the country codes for the specified tenant.</p>
+<p id="id_samplerequest">The example below shows a request for information about the specified tenant.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->tenants/acmepaymentscorp/countrycodes</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->tenants/acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
-</pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -79,7 +79,11 @@ no-catalog: true
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
+      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
     </tr>
   </tbody>
 </table>
@@ -105,7 +109,8 @@ no-catalog: true
       <td>Path</td>
       <td>TenantFedMemberID</td>
       <td>Required</td>
-      <td><p>Same as TenantID.</p>        <!-- #BeginLibraryItem "/library/o_ID_TenantID.lbi" -->In a federation scenario, the TenantID identifies a specific tenant in the federation.<!-- #EndLibraryItem --></td>
+      <td><p>Same as TenantID.</p>
+        <!-- #BeginLibraryItem "/Library/o_ID_TenantID.lbi" -->Unique ID for a specific tenant, in a federation (multi-tenant) scenario.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -115,31 +120,34 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
-<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the country codes that are set up for the tenant.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the requested information.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
-<p id="id_sampleresponse">The sample response below shows successful completion of this operation. In this example, the tenant supports three country codes.</p>
-<p><strong>Sample response headers</strong></p>
-<pre>GET http://{hostname}/api/tenants/acmepaymentscorp/countrycodes?_=1441742341105 HTTP/1.0
-Host: {hostname}
-Accept: application/json, text/javascript, */*; q=0.01
-Expires: Tue, 08 Sep 2015 15:01:21 GMT</pre>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
+<p><strong>Sample response headers: application/json</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/json
+Date: Fri, 05 Feb 2016 20:13:47 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>[
-  {
-    "id":"+1"
+<pre>{
+  "FedMemberID" : "acmepaymentscorp",
+  "TenantName" : "Acmepaymentscorp",
+  "Description" : "Acmepaymentscorp",
+  "AdminGroupID" : "tenantadmin.acmepaymentscorp",
+  "Business" : {
+    "BusinessID" : "tenantbusiness.acmepaymentscorp",
+    "Name" : "Tenant - acmepaymentscorp",
+    "Visibility" : "Limited",
+    "AdminGroupID" : "bizadmin-tenantbusiness.acmepaymentscorp"
   },
-  {
-    &quot;id&quot;:&quot;+44&quot;
-  },
-  {
-    "id":"+91"
-  }
-]</pre>
+  "IndexTargets" : [ "compass", "elastic" ],
+  "SearchSource" : "elastic",
+  "ESIndexName" : "default"
+}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -157,7 +165,7 @@ Expires: Tue, 08 Sep 2015 15:01:21 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -167,7 +175,7 @@ Expires: Tue, 08 Sep 2015 15:01:21 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
-<table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
       <th width="20%">Name</th>
@@ -177,9 +185,9 @@ Expires: Tue, 08 Sep 2015 15:01:21 GMT</pre>
   </thead>
   <tbody>
     <tr>
-      <td>CountryCodes</td>
-      <td><a href="../obj/o_tenants_CountryCodes.htm">CountryCodes</a><a href="../obj/o_alerts_Alert.htm"></a></td>
-      <td><!-- #BeginLibraryItem "/library/o_tenants_CountryCodes.lbi" -->Contains information about the telephone country codes supported on the platform.<!-- #EndLibraryItem --></td>
+      <td>Tenant</td>
+      <td><a href="../obj/o_tenants_Tenant.htm">Tenant</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_tenants_Tenant.lbi" -->Contains information about a tenant on the API Platform.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -199,22 +207,25 @@ Expires: Tue, 08 Sep 2015 15:01:21 GMT</pre>
   </thead>
   <tbody>
     <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -222,7 +233,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

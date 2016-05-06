@@ -16,9 +16,9 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_getBoard_apps.lbi" --> Returns a list of Board items for the specified app.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_getBoard_apps.lbi" --> Returns a list of Board items for the specified app.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong>or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -47,7 +47,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/{AppID}/board[?ItemType={ItemType}][&amp;APIID={APIID}]<br />[&amp;TicketLabel={TicketLabel}][&amp;TicketState={TicketState}][&amp;ItemID={ItemID}][&amp;Tag={Tag}][&amp;IncludeComments={IncludeComments}]
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/{AppID}/board[?ItemType={ItemType}][&amp;APIID={APIID}]<br />[&amp;TicketLabel={TicketLabel}][&amp;TicketState={TicketState}][&amp;ItemID={ItemID}][&amp;Tag={Tag}][&amp;IncludeComments={IncludeComments}]
 [&amp;NumberOfComments={NumberOfComments}][&amp;IncludeActions={IncludeActions}][&amp;start={start}][&amp;count={count}][&amp;SortBy={SortBy}]
 [&amp;RetrievingUserID={RetrievingUserID}]</pre>
 <!-- InstanceEndEditable -->
@@ -58,12 +58,12 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for the first two items on an app's board.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/app16964.acmepaymentscorp/board?start=0&amp;count=2&amp;RetrievingUserID=user12262.acmepaymentscorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/app16964.acmepaymentscorp/board?start=0&amp;count=2&amp;RetrievingUserID=user12262.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apps/app16964.acmepaymentscorp/board?start=0&amp;count=2&amp;RetrievingUserID=user12262.acmepaymentscorp HTTP/1.1
-Host:<!-- #BeginLibraryItem "/library/_endpointhost.lbi" -->{hostname}<!-- #EndLibraryItem -->
+Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->{hostname}<!-- #EndLibraryItem -->
 Accept: application/json, text/javascript, */*; q=0.01
-<!-- #BeginLibraryItem "/library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -83,7 +83,10 @@ Accept: application/json, text/javascript, */*; q=0.01
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></td>
+      <td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
     </tr>
   </tbody>
 </table>
@@ -109,7 +112,7 @@ Accept: application/json, text/javascript, */*; q=0.01
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/o_ID_AppID.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->
 The unique ID for a specific app.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
@@ -131,28 +134,28 @@ The unique ID for a specific app.<!-- #EndLibraryItem --></td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/parm_TicketLabel.lbi" --> A filtering parameter: if specified, only tickets with that label are returned. If not specified, no filter is applied. For valid values, refer to <a href="../aaref/Ref_Values.htm#values_ticketlabel">Ticket Label Values</a>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_TicketLabel.lbi" --> A filtering parameter: if specified, only tickets with that label are returned. If not specified, no filter is applied. For valid values, refer to <a href="../aaref/Ref_Values.htm#values_ticketlabel">Ticket Label Values</a>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>TicketState</td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/parm_TicketState.lbi" --> A filtering parameter: if specified, only tickets of that state are returned. For valid values, refer to <a href="../aaref/Ref_Values.htm#values_ticketstate">Ticket State Values</a>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_TicketState.lbi" --> A filtering parameter: if specified, only tickets of that state are returned. For valid values, refer to <a href="../aaref/Ref_Values.htm#values_ticketstate">Ticket State Values</a>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_itemid">ItemID</a></td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/o_ID_ItemID.lbi" --> The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem -->If specified, results are limited to items relating to that item ID. If not specified, no filter is applied.</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" --> The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem -->If specified, results are limited to items relating to that item ID. If not specified, no filter is applied.</td>
     </tr>
     <tr>
       <td>Tag</td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><p><!-- #BeginLibraryItem "/library/parm_Tag.lbi" -->A user-defined <a href="../Ref_Glossary_CommunityPlatform.htm#gl_tag">tag</a>. <!-- #EndLibraryItem --> </p>
+      <td><p><!-- #BeginLibraryItem "/Library/parm_Tag.lbi" -->A user-defined <a href="../Ref_Glossary_CommunityPlatform.htm#gl_tag">tag</a>. <!-- #EndLibraryItem --> </p>
         <p>If specified, results are limited to board items relating to that tag. If not specified, no filter is applied.</p></td>
     </tr>
     <tr>
@@ -160,7 +163,7 @@ The unique ID for a specific app.<!-- #EndLibraryItem --></td>
       <td>Query</td>
       <td>boolean</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/o_apps_IncludeComments.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_apps_IncludeComments.lbi" -->
 Indicates whether comments should be included in the information returned. Default: <strong>true</strong>. If set to <strong>false</strong>, comments are excluded.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
@@ -168,49 +171,49 @@ Indicates whether comments should be included in the information returned. Defau
       <td>Query</td>
       <td>int</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/o_apps_NumberOfComments.lbi" --> The number of comments to be returned (if IncludeComments is not set to <strong>false</strong>). Default value: <strong>2</strong>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apps_NumberOfComments.lbi" --> The number of comments to be returned (if IncludeComments is not set to <strong>false</strong>). Default value: <strong>2</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>IncludeActions</td>
       <td>Query</td>
       <td>boolean</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/o_apps_IncludeActions_def_true.lbi" -->Indicates whether workflow actions currently valid for the resource should be included in the results. Default: <strong>true</strong>. For valid workflow actions, see <a href="../aaref/Ref_Values.htm#values_workflowactions">Workflow Actions</a>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apps_IncludeActions_def_true.lbi" -->Indicates whether workflow actions currently valid for the resource should be included in the results. Default: <strong>true</strong>. For valid workflow actions, see <a href="../aaref/Ref_Values.htm#values_workflowactions">Workflow Actions</a>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>start</td>
       <td>Query</td>
       <td>int</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/parm_start.lbi" --> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_start.lbi" --> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>count</td>
       <td>Query</td>
       <td>int</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/parm_count.lbi" --> The number of results to be returned, from the specified starting point. If not specified, all matching results are returned.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_count.lbi" --> The number of results to be returned, from the specified starting point. If not specified, all matching results are returned.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>SortBy</td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/parm_SortBy.lbi" --> An optional parameter allowing users to sort results by a specific value; for example, <strong>com.soa.sort.order.updated</strong> sorts with the most updated entries first. For valid values, see <a href="../aaref/Ref_Values.htm#values_sortby">Sort By Values</a>. If not specified, items are returned in the sort order of <strong>DescendingDate</strong>, which means that the most recent items are first.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_SortBy.lbi" --> An optional parameter allowing users to sort results by a specific value; for example, <strong>com.soa.sort.order.updated</strong> sorts with the most updated entries first. For valid values, see <a href="../aaref/Ref_Values.htm#values_sortby">Sort By Values</a>. If not specified, items are returned in the sort order of <strong>DescendingDate</strong>, which means that the most recent items are first.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_retrievinguserid">RetrievingUserID</a></td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/o_ID_RetrievingUserID.lbi" --> The unique UserID of the user performing a specific action.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_RetrievingUserID.lbi" --> The unique UserID of the user performing a specific action.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>IncludeSelfAuthored</td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/parm_IncludeSelfAuthored.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/parm_IncludeSelfAuthored.lbi" -->
         <p>Indicates whether resources authored by the requestor should be included.</p>
         <p>Default: <strong>true</strong>.</p>
       <!-- #EndLibraryItem --></td>
@@ -220,7 +223,7 @@ Indicates whether comments should be included in the information returned. Defau
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/library/parm_PublishedState.lbi" --><p>Indicates that only resources in a specific state should be returned. Valid values: <strong>published</strong> or <strong>unpublished</strong>.</p>
+      <td><!-- #BeginLibraryItem "/Library/parm_PublishedState.lbi" --><p>Indicates that only resources in a specific state should be returned. Valid values: <strong>published</strong> or <strong>unpublished</strong>.</p>
         <p>Default: <strong>published</strong>, indicating that only resources that have been published are returned.</p><!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
@@ -243,7 +246,7 @@ Indicates whether comments should be included in the information returned. Defau
 <pre>HTTP/1.1 200 OK
 Date: Fri, 31 May 2013 20:13:57 GMT
 Content-Type: application/json</pre>
-<p><strong><a name="rss_appboard_json" id="rss_appboard_json"></a>Sample response body: JSON</strong></p>
+<p><strong><a name="rss_appboard_json" id="rss_appboard_json"></a>Sample response body: application/json</strong></p>
 <pre>{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;App Board&quot;,
@@ -270,13 +273,13 @@ Content-Type: application/json</pre>
         &quot;ID&quot; : &quot;user12262.acmepaymentscorp&quot;,
         &quot;Name&quot; : &quot;JaneSaoirse&quot;,
         &quot;Image&quot; : {
-          &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&quot;,
+          &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&quot;,
           &quot;Title&quot; : &quot;JaneSaoirse&quot;,
           &quot;Link&quot; : &quot;#/users/user12262.acmepaymentscorp/details&quot;
         }
       },
       &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&quot;,
+        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&quot;,
         &quot;Link&quot; : &quot;#/user/user12262.acmepaymentscorp/details&quot;
       },
       &quot;CreatedDate&quot; : &quot;2013-05-30T00:36:00.000Z&quot;,
@@ -295,7 +298,7 @@ Content-Type: application/json</pre>
           &quot;IsMarked&quot; : false,
           &quot;UserID&quot; : &quot;user13998.acmepaymentscorp&quot;,
           &quot;UserName&quot; : &quot;PhilipPirrip&quot;,
-          &quot;AvatarURL&quot; : &quot;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user13998.acmepaymentscorp/avatars/ce76ac4e-02db-47a3-a0d4-1f2e66a6cf3e.png&quot;
+          &quot;AvatarURL&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user13998.acmepaymentscorp/avatars/ce76ac4e-02db-47a3-a0d4-1f2e66a6cf3e.png&quot;
         }, {
           &quot;CommentID&quot; : &quot;comment23923.acmepaymentscorp&quot;,
           &quot;CommentSubjectID&quot; : &quot;group_member_req23850.acmepaymentscorp&quot;,
@@ -305,7 +308,7 @@ Content-Type: application/json</pre>
           &quot;IsMarked&quot; : false,
           &quot;UserID&quot; : &quot;user23531.acmepaymentscorp&quot;,
           &quot;UserName&quot; : &quot;JenniferMeadows&quot;,
-          &quot;AvatarURL&quot; : &quot;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user23531.acmepaymentscorp/avatars/14402873-86bf-4b70-a5b1-acf50e789eeb.png&quot;
+          &quot;AvatarURL&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user23531.acmepaymentscorp/avatars/14402873-86bf-4b70-a5b1-acf50e789eeb.png&quot;
         } ]
       },
       &quot;EntityReference&quot; : [ {
@@ -351,13 +354,13 @@ Content-Type: application/json</pre>
         &quot;ID&quot; : &quot;user12262.acmepaymentscorp&quot;,
         &quot;Name&quot; : &quot;JaneSaoirse&quot;,
         &quot;Image&quot; : {
-          &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&quot;,
+          &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&quot;,
           &quot;Title&quot; : &quot;JaneSaoirse&quot;,
           &quot;Link&quot; : &quot;#/users/user12262.acmepaymentscorp/details&quot;
         }
       },
       &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&quot;,
+        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&quot;,
         &quot;Link&quot; : &quot;#/user/user12262.acmepaymentscorp/details&quot;
       },
       &quot;CreatedDate&quot; : &quot;2013-05-30T00:35:49.000Z&quot;,
@@ -376,7 +379,7 @@ Content-Type: application/json</pre>
           &quot;IsMarked&quot; : false,
           &quot;UserID&quot; : &quot;user13967.acmepaymentscorp&quot;,
           &quot;UserName&quot; : &quot;JonathanSwift&quot;,
-          &quot;AvatarURL&quot; : &quot;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user13967.acmepaymentscorp/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png&quot;
+          &quot;AvatarURL&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user13967.acmepaymentscorp/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png&quot;
         } ]
       },
       &quot;EntityReference&quot; : [ {
@@ -405,7 +408,7 @@ Content-Type: application/json</pre>
   },
   &quot;version&quot; : &quot;1.0&quot;
 }</pre>
-<p><strong><a name="rss_appboard_xml" id="rss_appboard_xml"></a>Sample response body: XML</strong></p>
+<p><strong><a name="rss_appboard_xml" id="rss_appboard_xml"></a>Sample response body: application/xml</strong></p>
 <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;rss xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot; xmlns:ns3=&quot;http://soa.com/xsd/user/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/rss/1.0&quot; xmlns:ns5=&quot;http://soa.com/xsd/comment/1.0&quot; 
 xmlns:ns6=&quot;http://a9.com/-/spec/opensearch/1.1/&quot; xmlns:ns7=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns8=&quot;http://soa.com/xsd/fault/1.0&quot; xmlns:ns9=&quot;http://soa.com/xsd/api/1.0&quot; 
@@ -438,7 +441,7 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
           &lt;ns3:UserID&gt;user13998.acmepaymentscorp&lt;/ns3:UserID&gt;
           &lt;ns3:UserName&gt;PhilipPirrip&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user13998.acmepaymentscorp/avatars/ce76ac4e-02db-47a3-a0d4-1f2e66a6cf3e.png&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:AvatarURL&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user13998.acmepaymentscorp/avatars/ce76ac4e-02db-47a3-a0d4-1f2e66a6cf3e.png&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
         &lt;ns5:Comment&gt;
           &lt;ns5:CommentID&gt;comment23923.acmepaymentscorp&lt;/ns5:CommentID&gt;
@@ -449,14 +452,14 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
           &lt;ns3:UserID&gt;user23531.acmepaymentscorp&lt;/ns3:UserID&gt;
           &lt;ns3:UserName&gt;JenniferMeadows&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user23531.acmepaymentscorp/avatars/14402873-86bf-4b70-a5b1-acf50e789eeb.png&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:AvatarURL&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user23531.acmepaymentscorp/avatars/14402873-86bf-4b70-a5b1-acf50e789eeb.png&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
         &lt;ID&gt;user12262.acmepaymentscorp&lt;/ID&gt;
         &lt;Name&gt;JaneSaoirse&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneSaoirse&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.acmepaymentscorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -477,7 +480,7 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
         &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;user&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
         &lt;Link&gt;#/user/user12262.acmepaymentscorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;
@@ -505,14 +508,14 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
           &lt;ns5:IsMarked&gt;false&lt;/ns5:IsMarked&gt;
           &lt;ns3:UserID&gt;user13967.acmepaymentscorp&lt;/ns3:UserID&gt;
           &lt;ns3:UserName&gt;JonathanSwift&lt;/ns3:UserName&gt;
-          &lt;ns3:AvatarURL&gt;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user13967.acmepaymentscorp/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png&lt;/ns3:AvatarURL&gt;
+          &lt;ns3:AvatarURL&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user13967.acmepaymentscorp/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png&lt;/ns3:AvatarURL&gt;
         &lt;/ns5:Comment&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
         &lt;ID&gt;user12262.acmepaymentscorp&lt;/ID&gt;
         &lt;Name&gt;JaneSaoirse&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneSaoirse&lt;/Title&gt;
           &lt;Link&gt;#/users/user12262.acmepaymentscorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
@@ -533,7 +536,7 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
         &lt;ns4:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;group&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
         &lt;Link&gt;#/user/user12262.acmepaymentscorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;
@@ -557,7 +560,11 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></td>
+      <td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
     </tr>
   </tbody>
 </table>
@@ -567,7 +574,7 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
 
 <!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
-<p><!-- #BeginLibraryItem "/library/_rss_responsetable_intro.lbi" --> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The title of the RSS channel is <strong>App Board</strong>, and the channel includes <a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_pagingofreturnedrssitems">paging values</a>: StartIndex, TotalResults (if applicable), and ItemsPerPage. Each item in the channel represents a Board item for the app, and includes the information listed below.</p>
+<p><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" --> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The title of the RSS channel is <strong>App Board</strong>, and the channel includes <a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_pagingofreturnedrssitems">paging values</a>: StartIndex, TotalResults (if applicable), and ItemsPerPage. Each item in the channel represents a Board item for the app, and includes the information listed below.</p>
 
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
@@ -654,7 +661,7 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-      <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>
@@ -669,16 +676,15 @@ xmlns:ns10=&quot;http://soa.com/xsd/board/1.0&quot; version=&quot;1.0&quot;&gt;
     </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -686,7 +692,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

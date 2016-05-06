@@ -16,19 +16,18 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_completeSignup.lbi" -->Registers the user, so the user can log in and perform authenticated actions.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_completeSignup.lbi" -->Registers the user, so the user can log in and perform authenticated actions.<!-- #EndLibraryItem --></p>
 <p>Before: The user clicks the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_code_user_signup">signup code</a> in the notification email, and then puts in the password. Those actions serve to validate the user input; processing of the new user registration can now be completed by means of the <span class="apidoc_code">completeSignup</span> operation.</p>
-<p>After: When this operation is complete, the user is logged in and can begin using the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->.</p>
+<p>After: When this operation is complete, the user is logged in and can begin using the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->.</p>
 <p>This operation can be used in two ways:</p>
 <ul>
   <li>The operation sends a signup code from a signup email.</li>
   <li>The operation sends no signup code (signupCode=). In this case, the currently authenticated third-party user (for example, a Google or Facebook user) will be used to complete the authentication process.</li>
 </ul>
 <p>After a successful call, any subsequent attempt to sign up using the same email address results in an   error. </p>
-<p id="id_roles"><!-- #BeginLibraryItem "/library/roles_none.lbi" -->
+<p id="id_roles"><!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
 Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->This is because the operation is used in the signup process.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -57,17 +56,16 @@ Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->Th
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/completeSignup</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/completeSignup</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The example below shows the password and signup code passed as URL parameters. In this example the user is completing the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;signup process rather than using Google&reg; or Facebook&reg;.</p>
+<p id="id_samplerequest">The example below shows the password and signup code passed as URL parameters. In this example the user is completing the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;signup process rather than using Google&reg; or Facebook&reg;.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/completeSignup?password=Margaret23&amp;signupCode=TjXfXSiqJBmRIoMGHyTD5kxBSRosu8Nqj4YBDXNYH-DkjnRxl84Wzw</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/completeSignup?password=Margaret23&amp;signupCode=TjXfXSiqJBmRIoMGHyTD5kxBSRosu8Nqj4YBDXNYH-DkjnRxl84Wzw</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: */*
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
@@ -90,11 +88,11 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -220,11 +218,11 @@ expires=Mon, 17-Sep-2012 23:56:17 GMT;HttpOnly;Version=1</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#setcookie_response">Set-Cookie</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_setcookie.lbi" --> The set-cookie response header sets, updates, or expires the platform cookie to reflect changes made by the operation.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_setcookie.lbi" --> The set-cookie response header sets, updates, or expires the platform cookie to reflect changes made by the operation.<!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -258,16 +256,15 @@ expires=Mon, 17-Sep-2012 23:56:17 GMT;HttpOnly;Version=1</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -275,7 +272,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

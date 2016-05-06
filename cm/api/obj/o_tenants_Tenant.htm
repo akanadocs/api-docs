@@ -1,0 +1,116 @@
+---
+layout: apipage
+title: Tenant Object | Tenant Administration Service | Akana API Platform API
+description: Contains information about a tenant on the API Platform.
+product: cm
+category: ref
+nav-title: Tenant Object 
+no-nav: api
+sub-nav: true
+sub-nav-class: obj
+no-catalog: true
+---
+
+  <h2><a name="top"></a>Tenant Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_tenants_Tenant.lbi" -->Contains information about a tenant on the API Platform.<!-- #EndLibraryItem --></p>
+<p class="usedby">This object is used by the following operations:</p>
+<ul>
+  <li><span class="apidoc_code"><a href="../tenantmgmt/m_tenantmgmt_addNewTenant.htm">POST&nbsp;/platform/subscriptions</a></span> (in the response)</li>
+  <li><span class="apidoc_code"><a href="../tenantadmin/m_tenantadmin_getTenant.htm">GET&nbsp;/api/tenants/{TenantFedMemberID}</a></span> (in the response)</li>
+  <li><span class="apidoc_code"><a href="../tenantmgmt/m_tenantmgmt_changeTenantState.htm">PUT&nbsp;/platform/subscriptions/{SubscriptionID}/state</a></span> (in the response)</li>
+
+<!--  <li>Any operations that use the zzz object</li>-->
+</ul>
+
+<p>The properties included in the <strong>Tenant</strong> object are listed below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+    <th width="15%">Property</th>
+    <th width="15%">Type</th>
+    <th width="70%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FedMemberID</td>
+      <td>string</td>
+      <td>Same as TenantID:&nbsp;<!-- #BeginLibraryItem "/Library/o_ID_TenantID.lbi" -->Unique ID for a specific tenant, in a federation (multi-tenant) scenario.<!-- #EndLibraryItem --></td>
+      </tr>
+    <tr>
+      <td>TenantName</td>
+      <td>string</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_TenantName.lbi" -->Name of the tenant.<!-- #EndLibraryItem --></td>
+      </tr>
+    <tr>
+      <td>Description</td>
+      <td>string</td>
+      <td>Description of the tenant</td>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_admingroupid">AdminGroupID</a></td>
+      <td>string</td>
+      <td>The unique ID for the Admin Group associated with the tenant.</td>
+    </tr>
+    <tr>
+      <td>AvatarURL</td>
+      <td>anyURI</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_AvatarURL.lbi" --> URL for the avatar uploaded for the resource, if any. Used only in response messages.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>Business</td>
+      <td><a href="o_businesses_Business.htm">Business</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_businesses_Business.lbi" -->Contains information about a business on the platform.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>IndexTargets</td>
+      <td>string[&nbsp;]</td>
+      <td>This property was added in case anyone wants to use Compass during the transition from 7.2 to 8.x. One or or more valid targets for the search index. Valid values: <strong>compass</strong>, <strong>elastic</strong>.</td>
+    </tr>
+    <tr>
+      <td>SearchSource</td>
+      <td>string</td>
+      <td>This property was added in case anyone wants to use Compass during the transition from 7.2 to 8.x. Indicates the search tool used for search on the platform. The default value is <strong>elastic</strong>. If you need to set Compass as the index source for searching, set this value to <strong>compass</strong>; however, note that this value will be removed shortly, and the Compass search indexing tool will no longer be supported.</td>
+    </tr>
+    <tr>
+      <td>ESIndexName</td>
+      <td>string</td>
+      <td>The name of the tenant-specific Elasticsearch index defined for the tenant, if applicable.</td>
+    </tr>
+    <tr>
+      <td>State</td>
+      <td>string</td>
+      <td>Indicates whether the tenant is active or suspended. For valid values, see <a href="../aaref/Ref_Values.htm#values_state_tenant">State (Tenant)</a>.</td>
+    </tr>
+    <tr>
+      <td>PlatformApiClientID</td>
+      <td>string</td>
+      <td>Optional. Unique ID for the client on the API Platform.</td>
+    </tr>
+    <tr>
+      <td>PlatformApiContractExists</td>
+      <td>boolean</td>
+      <td>Optional. If set to <strong>true</strong>, the tenant has a contract on the API Platform.</td>
+    </tr>
+    </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="700" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

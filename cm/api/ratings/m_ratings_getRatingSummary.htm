@@ -15,7 +15,7 @@ no-catalog: true
 <h2><a name="top" id="top"></a>GET&nbsp;/api/{service}[/versions/]{ID}/ratings/summary</h2><!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_getRatingSummary_all.lbi" -->
+<p><!-- #BeginLibraryItem "/Library/desc_getRatingSummary_all.lbi" -->
 Retrieves a summary of the ratings for a resource.<!-- #EndLibraryItem --></p>
 <p>This operation is used by the following services:</p>
 <ul>
@@ -23,11 +23,10 @@ Retrieves a summary of the ratings for a resource.<!-- #EndLibraryItem --></p>
   <li>Apps service</li>
   <li>Groups service</li>
 </ul>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/library/roles_none.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
 Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
-<p class="apidoc_note"><strong>Note</strong>: Generally, the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;maintains averaged ratings for each version of an app or API, aggregating and averaging the ratings based on the specific version that the user is rating rather than for the app or API as a whole. The exception to this is the search interface, where the app or API is displayed as a single line item with the average rating of all versions combined.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
+<p class="apidoc_note"><strong>Note</strong>: Generally, the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;maintains averaged ratings for each version of an app or API, aggregating and averaging the ratings based on the specific version that the user is rating rather than for the app or API as a whole. The exception to this is the search interface, where the app or API is displayed as a single line item with the average rating of all versions combined.</p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -56,7 +55,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;maintains averaged ratings for e
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->{service}[/versions]/{ID}/ratings/summary</pre><!-- InstanceEndEditable -->
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->{service}[/versions]/{ID}/ratings/summary</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -71,12 +70,12 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;maintains averaged ratings for e
 
 <p id="id_samplerequest">The example below shows a request for the ratings summary for the specified API to be returned in JSON.</p>
 <p><strong>Request URL</strong> #1</p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/api18969.acmepaymentscorp/ratings/summary</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/api18969.acmepaymentscorp/ratings/summary</pre>
 <p><strong>Request URL</strong> #2</p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/apiversion19184.acmepaymentscorp/ratings/summary</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/apiversion19184.acmepaymentscorp/ratings/summary</pre>
 <p><strong></strong><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
-<!-- #BeginLibraryItem "/library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -85,7 +84,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;maintains averaged ratings for e
 <h4 id="samplerequest_2">Sample request: Apps service</h4>
 <p id="id_samplerequest_2">The example below shows a request for the ratings summary for the specified app. A JSON response is requested.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/app16964.acmepaymentscorp/ratings/summary</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/app16964.acmepaymentscorp/ratings/summary</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>
 Accept: application/json
@@ -98,7 +97,7 @@ Accept: application/json
 <h4 id="samplerequest_3">Sample request: Groups service</h4>
 <p id="id_samplerequest_3">The example below shows a request for the ratings summary for the specified group. A JSON response is requested.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->groups/group24386.acmepaymentscorp/ratings/summary</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->groups/group24386.acmepaymentscorp/ratings/summary</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>
 Accept: application/json
@@ -123,7 +122,7 @@ Accept: application/json
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -255,7 +254,7 @@ Date: Wed, 19 Jun 2013 15:55:13 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_txtxml_or_appjson.lbi" --> <strong>text/xml</strong> or <strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -277,7 +276,7 @@ Date: Wed, 19 Jun 2013 15:55:13 GMT</pre>
     <tr>
       <td>RatingSummary</td>
       <td><a href="../obj/o_res_RatingSummary.htm">RatingSummary</a></td>
-      <td><!-- #BeginLibraryItem "/library/o_RatingSummary.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_RatingSummary.lbi" -->
 An aggregated, averaged summary of individual user ratings for the resource, including the current ratings count for each possible value (1, 2, 3, 4, or 5). Used only in response messages.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -303,7 +302,7 @@ An aggregated, averaged summary of individual user ratings for the resource, inc
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-      <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -312,16 +311,15 @@ An aggregated, averaged summary of individual user ratings for the resource, inc
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -329,7 +327,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

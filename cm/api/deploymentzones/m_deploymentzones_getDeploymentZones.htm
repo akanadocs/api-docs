@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Deployment Zones | Deployment Zones Service | Akana API Platform API
-description: Returns a list of valid <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zones</a> on the platform.
+description: Returns a list of valid <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zones</a> on the platform, in the form of an RSS channel.
 product: cm
 category: ref
 nav-title: Get Deployment Zones 
@@ -16,12 +16,13 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_getDeploymentZones.lbi" -->Returns a list of valid <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zones</a> on the platform.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_getDeploymentZones.lbi" -->Returns a list of valid <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zones</a> on the platform, in the form of an RSS channel.<!-- #EndLibraryItem --></p>
+<p><strong>Note</strong>: Be sure to include a valid Accept header with this operation. If you don't include the Accept header, the operation might fail in versions later than 8.0, even if it worked in earlier versions.</p>
 <p>For more information on deployment zones, refer to <a href="../aaref/Ref_DeploymentZonesOnThePlatform.htm">Deployment Zones on the Platform</a>.</p>
 <p class="apidoc_note"><strong>Note</strong>: At this time, there is no interface to manage deployment zones in the platform. Deployment zone configuration is optional. Deployment zones are loaded in the DEPLOY_ZONES and DEPLOY_ZONE_CONTAINER tables using a database script. If no deployment zones are configured, the platform API constructs transient deployment zones based on the deployment configuration of the agents available for the platform to host API proxy endpoints. To manage the deployment zones in the platform, contact tech support.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/library/roles_user.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_user.lbi" -->
 To complete this operation successfully, a user must be logged in.<!-- #EndLibraryItem --></p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -50,7 +51,7 @@ To complete this operation successfully, a user must be logged in.<!-- #EndLibra
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -59,12 +60,12 @@ To complete this operation successfully, a user must be logged in.<!-- #EndLibra
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below requests a list of deployment zones.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones</span></pre>
+<pre><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones</span></pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/deploymentzones HTTP/1.1
-Host:<!-- #BeginLibraryItem "/library/_endpointhost.lbi" -->{hostname}<!-- #EndLibraryItem -->
+Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->{hostname}<!-- #EndLibraryItem -->
 Accept: application/json
-<!-- #BeginLibraryItem "/library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -84,11 +85,14 @@ Accept: application/json
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td>application/json  or text/xml</td>
+      <td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_textxml.lbi" --><strong>text/xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_contenttype_any.lbi" --><strong>Any format (*/*)</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_any.lbi" --><strong>Any format (*/*)</strong><!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -116,17 +120,16 @@ Accept: application/json
 
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Wed, 16 Jan 2013 23:35:39 GMT
+Date:  Thu, 11 Feb 2016 20:48:36 GMT
 Content-Type: application/json</pre>
 
-<p><a id="rss_deploymentzones_json"></a><strong>Sample response body: JSON</strong></p>
+<p><a id="rss_deploymentzones_json"></a><strong>Sample response body: application/json</strong></p>
 <pre>{
   "channel" : {
     "title" : "Deployment Zones",
     "item" : [ {
-      "title" : "container-1051",
-      "link" : "http://broker.soa.com",
-      "description" : "Brokers located on the East Coast of the United States",
+      "title" : "88cb1bbd-1f52-4e98-a5e4-fad2a8af",
+      "link" : "http://acmepaymentscorp.akana.com:9901",
       "category" : [ {
         "value" : "Production",
         "domain" : "uddi:soa.com:environment"
@@ -135,12 +138,12 @@ Content-Type: application/json</pre>
         "domain" : "uddi:soa.com:environment"
       } ],
       "guid" : {
-        "value" : "dzone-rule-1"
+        "value" : "88cb1bbd-1f52-4e98-a5e4-fad2a8afdefault-http0"
       },
       "EntityReferences" : {
         "EntityReference" : [ {
-          "Title" : "East Coast",
-          "Guid" : "dzone1.acmepaymentscorp",
+          "Title" : "88cb1bbd-1f52-4e98-a5e4-fad2a8af",
+          "Guid" : "88cb1bbd-1f52-4e98-a5e4-fad2a8af.acmepaymentscorp",
           "Category" : [ {
             "value" : "dzone",
             "domain" : "uddi:soa.com:resourcetype"
@@ -153,7 +156,7 @@ Content-Type: application/json</pre>
 }</pre>
 
 
-<p><a id="rss_deploymentzones_xml"></a><strong>Sample response body: application/xml</strong></p>
+<p><a id="rss_deploymentzones_xml"></a><strong>Sample response body: text/xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;rss xmlns:ns2="http://soa.com/xsd/rss/1.0" xmlns:ns3="http://soa.com/xsd/comment/1.0" 
 xmlns:ns4="http://soa.com/xsd/user/1.0" xmlns:ns5="http://a9.com/-/spec/opensearch/1.1/" 
@@ -196,7 +199,10 @@ xmlns:ns8="http://soa.com/xsd/api/1.0" xmlns:ns9="http://soa.com/xsd/board/1.0" 
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td>application/json  or text/xml</td>
+      <td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_textxml.lbi" --><strong>text/xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p></td>
     </tr>
   </tbody>
 </table>
@@ -261,7 +267,7 @@ xmlns:ns8="http://soa.com/xsd/api/1.0" xmlns:ns9="http://soa.com/xsd/board/1.0" 
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-      <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>
@@ -272,16 +278,15 @@ xmlns:ns8="http://soa.com/xsd/api/1.0" xmlns:ns9="http://soa.com/xsd/board/1.0" 
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -289,7 +294,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

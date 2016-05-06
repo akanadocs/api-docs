@@ -23,14 +23,18 @@ no-catalog: true
 <tbody>
   <tr>
     <td><a href="#values_apibindingtypes">API Binding Types</a></td>
-    <td><a href="#values_mediatype">MediaType</a></td>
+    <td><a href="#values_metric">Metric values</a><a href="#values_metrickey"></a></td>
     </tr>
   <tr>
     <td><a href="#values_apicontractstate">API Contract State</a></td>
-    <td><a href="#values_metrickey">Metric Key values</a></td>
+    <td><a href="#values_metrickey">Metric Key values</a><a href="#values_metric"></a></td>
     </tr>
   <tr>
     <td><a href="#values_apicontractstatus">API Contract Status</a></td>
+    <td><a href="#values_metrictype">Metric Type values</a><a href="#values_metric"></a></td>
+    </tr>
+  <tr>
+    <td><a href="#values_apipattern">API Pattern</a></td>
     <td><a href="#values_notificationsgroup">Notification Group values</a></td>
     </tr>
   <tr>
@@ -75,7 +79,7 @@ no-catalog: true
     </tr>
   <tr>
     <td><a href="#values_role">Roles</a></td>
-    <td><a href="#values_search_type">Roles</a></td>
+    <td><a href="#values_role">Roles</a></td>
     </tr>
   <tr>
     <td><a href="#values_descriptionmediatype">DescriptionMediaType</a></td>
@@ -97,44 +101,48 @@ no-catalog: true
     <td><a href="#values_groupmembershipstates">Group Membership States</a></td>
     <td><a href="#values_sortorder">Sort Order values</a></td>
     </tr>
-  <tr>
-    <td><a href="#values_groupsettings">Group Settings</a></td>
-    <td><a href="#values_ticketlabel">Ticket Label values</a></td>
-    </tr>
+    <tr>
+      <td><a href="#values_groupsettings">Group Settings</a></td>
+      <td><a href="#values_state_tenant">State (Tenant)</a></td>
+      </tr>
     <tr>
       <td><a href="#values_groupstates">Group States</a></td>
-      <td><a href="#values_ticketstate">Ticket State values</a></td>
+      <td><a href="#values_ticketlabel">Ticket Label values</a></td>
       </tr>
     <tr>
       <td><a href="#values_grouptypes">Group Types</a></td>
-      <td><a href="#values_timeintervals">Time Intervals</a></td>
+      <td><a href="#values_ticketstate">Ticket State values</a></td>
       </tr>
     <tr>
       <td><a href="#values_idsystemtype">IdSystemType values for Login Connector Type</a></td>
-      <td><a href="#values_useractions">User Actions on a Resource</a></td>
+      <td><a href="#values_timeintervals">Time Intervals</a></td>
       </tr>
     <tr>
       <td><a href="#values_legalagreementtype">Legal Agreement Types</a></td>
-      <td><a href="#values_userpreferences">User Preferences</a></td>
+      <td><a href="#values_useractions">User Actions on a Resource</a></td>
       </tr>
     <tr>
       <td><a href="#values_legaldocumentstate">Legal Document States</a></td>
-      <td><a href="#values_usersignupstate">User Signup State values</a></td>
+      <td><a href="#values_userpreferences">User Preferences</a></td>
       </tr>
     <tr>
       <td><a href="#values_licensestate">LicenseState values</a></td>
-      <td><a href="#values_userstatus">User Status</a></td>
+      <td><a href="#values_usersignupstate">User Signup State values</a></td>
       </tr>
     <tr>
       <td><a href="#values_logininstructiontype">Login Instruction Types</a></td>
-      <td><a href="#values_visibilitysettings">Visibility Settings</a></td>
+      <td><a href="#values_userstatus">User Status</a></td>
       </tr>
     <tr>
       <td><a href="#values_loginstate">Login State</a></td>
-      <td><a href="#values_workflowactions">Workflow Actions</a></td>
+      <td><a href="#values_visibilitysettings">Visibility Settings</a></td>
       </tr>
     <tr>
       <td><a href="#values_loginstatus">Login Status</a></td>
+      <td><a href="#values_workflowactions">Workflow Actions</a></td>
+      </tr>
+    <tr>
+      <td><a href="#values_mediatype">MediaType</a></td>
       <td><a href="#values_workflowstates">Workflow States</a></td>
       </tr>
     <tr>
@@ -207,10 +215,19 @@ no-catalog: true
 
 
 
+<h3><a id="values_apipattern"></a>API Pattern</h3>
+<p>The approach used to create a new implementation for an existing API version. Valid values are shown below.</p>
+<ul>
+  <li>com.akana.pattern.proxy</li>
+  <li>com.akana.pattern.target</li>
+  <li>com.akana.pattern.orchestration</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
 
 <h3><a id="values_apistate"></a>API States</h3>
 <p>There are two valid states for an API:</p>
-<!--Per MM 4/1/15 there is also com.soa.api.state.closed not used by UI. If the state is closed then you cannot request contracts against that api version.-->
 <ul>
   <li><strong>Active</strong>: com.soa.api.state.active</li>
   <li><strong>Deleted</strong>: com.soa.api.state.deleted</li>
@@ -346,13 +363,11 @@ no-catalog: true
 
 
 <h3><a id="values_appstate"></a>App State values</h3>
-<p>There are five possible states for an app in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->. When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
+<p>There are five possible states for an app in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->. When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
 <p>When an app is first set up, before any API contracts are initiated, it is in the Initial state.</p>
 <p>Changes in state are part of the sequence as an app requests access to first one environment and then the other.</p>
-<p>In setting up the sequence for granting access to an API's sandbox or production environment, the API provider can choose whether a review stage is needed before sandbox access is granted, and also whether review is needed before production access is granted. As an example,  the API owner might decide to grant sandbox access automatically but to require review before approving production access.</p>
-<p>The&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;user interface is designed to guide app developers through these state changes.</p>
+<p>In setting up the sequence for granting access to an API's sandbox or production environment, the API provider can choose whether a review stage is needed before sandbox access is granted, and also whether review is needed before production access is granted. As an example, the API owner might decide to grant sandbox access automatically but to require review before approving production access.</p>
+<p>The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;user interface is designed to guide app developers through these state changes.</p>
 <p class="apidoc_note"><strong>Note</strong>: Changing an app's state to <strong>production</strong> gives an application access to the production endpoints of all the APIs it has contracts with. This can only be achieved if <strong>all</strong> of the app's API contracts are approved as production contracts.</p>
 
 <p>When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
@@ -714,8 +729,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;user interface is designed to gu
 
 
 <h3><a id="values_grouptypes"></a>Group Types</h3>
-<p>In practical terms, the only valid group type you'll see in working with the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:</p>
+<p>In practical terms, the only valid group type you'll see in working with the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:</p>
 <ul>
   <li>com.soa.group.type.independent</li>
 </ul>
@@ -869,13 +883,53 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
 
 
 
-<h3><a id="values_mediatype"></a>Media Type  values</h3>
+<h3><a id="values_mediatype"></a>Media Type values</h3>
 <p>Valid values for MediaType are as follows:</p>
 <ul>
   <li>text/plain</li>
   <li>text/markdown</li>
 </ul>
 <p>MediaType provides information about the media type for a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_comment">comment</a> associated with a discussion, ticket, alert, or review.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_metric"></a>Metric values</h3>
+<p>Metric values are used in reporting API platform usage for a specific tenant.</p>
+<p>There are two sets of values, as shown below.</p>
+<table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
+  <thead>
+    <tr>
+      <th width="20%">Metric values:</th>
+      <th width="80%">Values relating to supported identity systems:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><ul class="apidoctable_ul">
+          <li>AppCount</li>
+          <li>ApiCount</li>
+          <li>UserAccountsCount</li>
+          <li>PlatformApiUsage</li>
+          <li>CustomerApiUsage</li>
+          <li>PortalVanityURLUsage</li>
+          <li>ApiVanityURLUsage</li>
+          <li>DeploymentZonesUsage</li>
+        </ul></td>
+      <td><ul class="apidoctable_ul">
+          <li>IdentitySystem-OAuthProviderCount</li>
+          <li>IdentitySystem-OpenIDConnectRelyingPartyCount</li>
+          <li>IdentitySystem-ExternalOAuthProviderCount</li>
+          <li>IdentitySystem-PingFederateProviderCount</li>
+          <li>IdentitySystem-GoogleProviderCount</li>
+          <li>IdentitySystem-FacebookProviderCount</li>
+          <li>IdentitySystem-LDAPProviderCount</li>
+          <li>IdentitySystem-SiteMinderProviderCount </li>
+          <li>IdentitySystem-SAMLWebSSOProviderCount </li>
+        </ul></td>
+    </tr>
+  </tbody>
+</table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -890,6 +944,17 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
   <li>totalCount</li>
   <li>successCount</li>
   <li>faultCount</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_metrictype"></a>Metric Type values</h3>
+<p>The metric type indicates additional information about how the metric is aggregated.</p>
+<p>Possible values:</p>
+<ul>
+  <li><strong>Aggregate</strong>: the metric information includes only aggregate metric values.</li>
+  <li><strong>PerDayWithAggregate</strong>: The metric information includes per day usage as well as aggregate usage, if that information is available.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -1010,6 +1075,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
 
 <h3><a id="values_policytypes"></a>Policy Types</h3>
 <p>As part of API setup, the API owner or administrator can define one or more policies that govern the API's operation. Policies are categorized into the policy types listed below.</p>
+<p>Note that URL encoding of spaces (%20) is needed if these values are used in a request parameter.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
     <tr>
@@ -1020,19 +1086,19 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
   <tbody>
     <tr>
       <td>Denial of Service</td>
-      <td><!-- #BeginLibraryItem "/library/policy_denialofservice.lbi" -->A policy that defines conditions for protecting against, and/or dealing with, a Denial of Service attack.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/policy_denialofservice.lbi" -->A policy that defines conditions for protecting against, and/or dealing with, a Denial of Service attack.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>Service Level Policy</td>
-      <td><!-- #BeginLibraryItem "/library/policy_servicelevel.lbi" -->A specific type of Quality of Service (QoS) policy that defines conditions for measuring and reporting performance for a specific contract.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/policy_servicelevel.lbi" -->A specific type of Quality of Service (QoS) policy that defines conditions for measuring and reporting performance for a specific contract.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>Operational Policy</td>
-      <td><!-- #BeginLibraryItem "/library/policy_operational.lbi" -->A policy that defines requirements for addressing the operational implications of services that are shared across enterprise departments. These policies address the operational model for services, capacity monitoring and planning, the handling of policy exceptions and violations, and service execution including the definition and enforcement of runtime policies such as security, access, logging procedures, and service reliability.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/policy_operational.lbi" -->A policy that defines requirements for addressing the operational implications of services that are shared across enterprise departments. These policies address the operational model for services, capacity monitoring and planning, the handling of policy exceptions and violations, and service execution including the definition and enforcement of runtime policies such as security, access, logging procedures, and service reliability.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>Compliance Policy</td>
-      <td><!-- #BeginLibraryItem "/library/policy_compliance.lbi" -->A policy that allows an organization to create standards that control the quality of the data in the repository. These policies can be used to analyze the service metamodel, WSDL documents, Schema, and transactional data to determine whether they meet corporate standards.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/policy_compliance.lbi" -->A policy that allows an organization to create standards that control the quality of the data in the repository. These policies can be used to analyze the service metamodel, WSDL documents, Schema, and transactional data to determine whether they meet corporate standards.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -1097,7 +1163,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
 
 <h3><a id="values_reporttype_license"></a>Report Type: License Report</h3>
 <p>Valid values for the <strong>ReportType</strong> parameter (in the user interface, used in the License Report) are shown in the tables below.</p>
-<p>The license report for APIs (see <span class="apidoc_code"><a href="../apis/m_apis_getLicenseReport.htm">GET&nbsp;/api/apis/versions/{ApiVersionID}/licensereport</a></span>) references the following <strong>ReportType</strong> values.</p>
+<p>The license report for APIs (see <span class="apidoc_code"><a href="../apis/m_apis_getLicenseReport.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/licensereport</a></span>) references the following <strong>ReportType</strong> values.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
     <tr>
@@ -1116,7 +1182,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
     </tr>
     <tr>
       <td>api.usage.by.app.per.license</td>
-      <td>This reports the API consumption per app, per license.></td>
+      <td>This reports the API consumption per app, per license.</td>
     </tr>
   </tbody>
 </table>
@@ -1312,6 +1378,16 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
 
 
 
+<h3><a id="values_state_tenant"></a>State (Tenant)</h3>
+<p>Valid <strong>state</strong> value for a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_tenant">tenant</a> are:</p>
+<ul>
+  <li>com.akana.tenant.state.active</li>
+  <li>com.akana.tenant.state.suspended</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
 <h3><a id="values_ticketlabel"></a>Ticket Label values</h3>
 <p>The platform supports the writing and tracking of tickets on apps and APIs. Authorized users can assign a label to the ticket indicating its priority. The same user, or another authorized user, can change the priority value of a ticket.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -1388,7 +1464,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
 
 
 
-<h3><a id="values_timeintervals"></a>Time Intervals</h3><!-- #BeginLibraryItem "/library/values_metrics.lbi" --><p>By default, the platform supports tracking of metrics in the increments shown below.</p>
+<h3><a id="values_timeintervals"></a>Time Intervals</h3><!-- #BeginLibraryItem "/Library/values_metrics.lbi" --><p>By default, the platform supports tracking of metrics in the increments shown below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
     <tr>
@@ -1566,7 +1642,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
 <p>Valid workflow actions for various types of resources are shown in the tables below.</p>
 <p>For more information about workflow actions, including process flow diagrams, see <a href="Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
 
-<h4><a id="values_workflowactions_groups_all"></a>All Groups: Valid Workflow Actions</h4><!-- #BeginLibraryItem "/library/table_workflowactions_groups_all.lbi" --><table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<h4><a id="values_workflowactions_groups_all"></a>All Groups: Valid Workflow Actions</h4><!-- #BeginLibraryItem "/Library/table_workflowactions_groups_all.lbi" --><table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
     <tr>
     <th width="50%">Action</th>
@@ -1591,7 +1667,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
       <td>group.membership.action.remove</td>
     </tr>
 </tbody>
-</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_groups_private"></a>API Context Groups and Independent Groups: Additional Workflow Actions</h4><!-- #BeginLibraryItem "/library/table_workflowactions_groups_private.lbi" -->
+</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_groups_private"></a>API Context Groups and Independent Groups: Additional Workflow Actions</h4><!-- #BeginLibraryItem "/Library/table_workflowactions_groups_private.lbi" -->
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
     <tr>
@@ -1613,7 +1689,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
       <td>group.membership.action.make.member</td>
       </tr>
   </tbody>
-</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_tickets"></a>Tickets: Valid Workflow Actions</h4><!-- #BeginLibraryItem "/library/table_workflowactions_tickets.lbi" -->
+</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_tickets"></a>Tickets: Valid Workflow Actions</h4><!-- #BeginLibraryItem "/Library/table_workflowactions_tickets.lbi" -->
 <p>To perform any of the actions listed below, the user must be an app team member, author or submitter of the ticket, or API or Business Administrator. The Site Administrator can delete an action.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
@@ -1644,7 +1720,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
       <td>ticket.action.edit.priority</td>
     </tr>
   </tbody>
-</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_contracts"></a>App/API Contracts: Valid Workflow Actions</h4><!-- #BeginLibraryItem "/library/table_workflowactions_contracts.lbi" --><p>The Contracts workflow actions switch an app/API contract from one valid state to another. Again, the two conditions to be met are 1) the requestor is authorized to make the change, and 2) the change is valid for the specific contract. In order for the switch to be valid, the old state must be the current state of the object, and the new state must be a valid change.</p>
+</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_contracts"></a>App/API Contracts: Valid Workflow Actions</h4><!-- #BeginLibraryItem "/Library/table_workflowactions_contracts.lbi" --><p>The Contracts workflow actions switch an app/API contract from one valid state to another. Again, the two conditions to be met are 1) the requestor is authorized to make the change, and 2) the change is valid for the specific contract. In order for the switch to be valid, the old state must be the current state of the object, and the new state must be a valid change.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
     <tr>
@@ -1809,11 +1885,11 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
 
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -1821,7 +1897,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

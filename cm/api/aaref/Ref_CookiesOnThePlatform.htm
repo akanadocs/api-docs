@@ -11,8 +11,7 @@ sub-nav-class: aaref
 no-catalog: true
 ---
 
-<h2><a name="top"></a>Cookies in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;</h2>
+<h2><a name="top"></a>Cookies in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;</h2>
 <p>This topic provides information about the use of cookies in the platform, including:</p>
 <ul>
   <li><a href="#cookies_custom">Session cookies</a></li>
@@ -21,13 +20,8 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;</h2>
   <li><a href="#cookies_google_analytics">Optional Google Analytics cookies</a></li>
 </ul>
 <h4><a name="cookies_custom"></a>Session Cookies</h4>
-<p>API calls from the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;use the custom cookies shown below. The AtmoAuthToken cookie is quite long&#8212;over 400 characters.</p>
-<p class="apidoc_note"><strong>Note</strong>: The only requirement from the developer using the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is that the app supports cookies. The&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;takes care of the rest. If your development environment supports automatically capturing and sending the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;cookie you don't need to do anything. If it doesn't, you'll have to make sure the cookie that the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;returns upon login is sent with every request and that the token is renewed when information stored in the token changes, such as when a user adds an app.</p>
+<p>API calls from the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;use the custom cookies shown below. The AtmoAuthToken cookie is quite long&#8212;over 400 characters.</p>
+<p class="apidoc_note"><strong>Note</strong>: The only requirement from the developer using the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is that the app supports cookies. The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;takes care of the rest. If your development environment supports automatically capturing and sending the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;cookie you don't need to do anything. If it doesn't, you'll have to make sure the cookie that the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;returns upon login is sent with every request and that the token is renewed when information stored in the token changes, such as when a user adds an app.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
     <tr>
@@ -38,10 +32,8 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;returns upon login is sent with 
 <tbody>
     <tr>
       <td><a name="cookie_atmoauthtoken"></a>AtmoAuthToken_{fedmemberid}</td>
-      <td><p>A tenant-specific cookie. <!--In a federation scenario, one cookie is set for each federation member, so there would generally be at least two.-->This is the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token. This cookie indicates the level of access allowed. It is valid only for 30 minutes and must be renewed at that time. It also includes other information, such as the APIs, apps, and groups the user is a member of. When any of this information changes, the token must be renewed.</p>
-        <p><strong>Note</strong>: When your app invokes the <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> method, the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;sets the cookie; you don't need to do anything. Your app must support cookies, so that the cookies that are set by the API responses can be sent back as part of the subsequent requests.</p></td>
+      <td><p>A tenant-specific cookie. <!--In a federation scenario, one cookie is set for each federation member, so there would generally be at least two.-->This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token. This cookie indicates the level of access allowed. It is valid only for 30 minutes and must be renewed at that time. It also includes other information, such as the APIs, apps, and groups the user is a member of. When any of this information changes, the token must be renewed.</p>
+        <p><strong>Note</strong>: When your app invokes the <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> method, the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;sets the cookie; you don't need to do anything. Your app must support cookies, so that the cookies that are set by the API responses can be sent back as part of the subsequent requests.</p></td>
     </tr>
     <tr>
       <td><a name="cookie_csrftoken"></a>Csrf-Token_{fedmemberid}</td>
@@ -115,8 +107,7 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
 
 <h3>Related Topics</h3>
 <ul>
-  <li><a href="../index.htm"><!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API: Overview</a></li>
+  <li><a href="../index.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API: Overview</a></li>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>

@@ -15,8 +15,7 @@ no-catalog: true
 <p>Some operations can be performed even if a user is not logged in to the platform, such as viewing certain types of content. Other operations, such as adding an app, require login.</p>
 <p>In other cases, activities are further restricted so that certain operations can only be performed by a member of a certain user group or group. For details about these scenarios, see <a href="#access_private">Access to Private Resources and Content</a> below.</p>
 <p>Certain roles, such as the business administrator, have a senior level of access to multiple resources.</p>
-<p>The authorization roles used by the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API are listed and explained below. If an API call doesn't meet the necessary authorization role criteria it fails. If a user doesn't have the required access to a private resource, the operation runs successfully, returning an HTTP code 200, but information relating to the private resource is not returned. Depending on the scenario, the response might include a subset of information or might not contain any information at all.</p>
+<p>The authorization roles used by the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API are listed and explained below. If an API call doesn't meet the necessary authorization role criteria it fails. If a user doesn't have the required access to a private resource, the operation runs successfully, returning an HTTP code 200, but information relating to the private resource is not returned. Depending on the scenario, the response might include a subset of information or might not contain any information at all.</p>
 <p>The documentation for each operation includes information on the authorization roles that are required to run the operation.</p>
 <p>Authorization role specification is prefaced by <strong>AuthorizationRole</strong>; for example, <strong>AuthorizationRole.USER</strong>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -40,6 +39,11 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API are listed and explained bel
       <td>An administrator for a specific API. <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_apiadmin">Details about API Admin rights</a>.</td>
   </tr>
     <tr>
+      <td>API Owner</td>
+      <td>API</td>
+      <td>The owner of a specific API. Defined in the underlying infrastructure. An API Admin can edit or delete any API for which he/she is an Admin; an API Owner can edit or delete an API only if he/she created the API.</td>
+    </tr>
+    <tr>
       <td>ApiInvitedUser</td>
       <td>APIContract</td>
       <td>Indicates whether the user is an authorized for the resource the contract relates to.</td>
@@ -51,7 +55,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API are listed and explained bel
     <tr>
       <td><a id="authroles_appadmin"></a>AppAdmin</td>
       <td>APIContract</td>
-      <td><p>A member of the app team for a specific app.  <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_appteam">Details about app team member rights</a>.</p>
+      <td><p>A member of the app team for a specific app. <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_appteam">Details about app team member rights</a>.</p>
   <p>Currently, all app team members have the same permission, so there is no distinction between an app admin and an app team member; they are identical in terms of access rights and capabilities.</p>
   <p><strong>Note</strong>: The role Admin applies to the app; the role AppAdmin applies to the APIContract.</p></td>
     </tr>
@@ -157,11 +161,11 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API are listed and explained bel
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -169,7 +173,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API are listed and explained bel
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

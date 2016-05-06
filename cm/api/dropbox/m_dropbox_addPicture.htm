@@ -16,10 +16,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_addPicture.lbi" --> Adds an image for a resource such as a user profile.<!-- #EndLibraryItem --> Provides a temporary storage location for  an avatar image the user uploads as part of creating or updating a resource such as a user profile, an API, or an app.</p>
+<p><!-- #BeginLibraryItem "/Library/desc_addPicture.lbi" --> Adds an image for a resource such as a user profile.<!-- #EndLibraryItem --> Provides a temporary storage location for  an avatar image the user uploads as part of creating or updating a resource such as a user profile, an API, or an app.</p>
 <p>For more information on managing images associated with resources on the portal, refer to <a href="../aaref/Ref_ManagingAvatarsOnThePortal.htm">Managing Avatars on the Portal</a>.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong>To complete this operation successfully, a user must be logged in and must be either an authorized user for the resource or a site admin.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -48,7 +48,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->dropbox/pictures</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->dropbox/pictures</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -58,13 +58,13 @@ no-catalog: true
 <p id="id_samplerequest">The example below shows a picture being uploaded. The image is part of the multipart/form-data request body. </p>
 <p class="apidoc_note"><strong>Note</strong>: If you are using iframes, you can wrap the image in HTML so that it will work with the browser's same-origin security policy. For more information, see <a href="../aaref/Ref_FileUploadWithAjax.htm">File Upload with Ajax</a>.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->dropbox/pictures</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->dropbox/pictures</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST&nbsp;/api/dropbox/pictures HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 Content-Type: multipart/form-data; boundary=---------------------------15197250722578
-<!-- #BeginLibraryItem "/library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>The request body is the image which the user uploaded.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -84,11 +84,11 @@ Content-Type: multipart/form-data; boundary=---------------------------151972507
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_multipart_form-data.lbi" --><strong><a href="../aaref/Ref_MediaTypes.htm#mediatype_multipartformdata">multipart/form-data</a></strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_multipart_form-data.lbi" --><strong><a href="../aaref/Ref_MediaTypes.htm#mediatype_multipartformdata">multipart/form-data</a></strong><!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -168,7 +168,7 @@ consectetur adipiscing elit. Morbi eleifend tincidunt pellentesque. Cras eu sapi
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -188,9 +188,9 @@ consectetur adipiscing elit. Morbi eleifend tincidunt pellentesque. Cras eu sapi
   </thead>
   <tbody>
     <tr>
-      <td>DropboxID</td>
-      <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/o_ID_PictureID.lbi" -->A temporary ID for a picture on the platform, such as the avatar for an app, API, or user. The PictureID is assigned by the Dropbox when the picture is first uploaded to the server, using the Dropbox service, as part of adding or updating the resource. The PictureID is the same as the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_dropboxid">DropboxID</a>.<!-- #EndLibraryItem --></td>
+      <td>PictureId</td>
+      <td>long</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_PictureID.lbi" --> A temporary ID for a picture on the platform, such as the avatar for an app, API, or user. The PictureId is assigned by the Dropbox when the picture is first uploaded to the server, using the Dropbox service, as part of adding or updating the resource. PictureId is essentially the same as <a href="../aaref/Ref_IDsOnThePlatform.htm#id_dropboxid">DropboxId</a>.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -209,7 +209,7 @@ consectetur adipiscing elit. Morbi eleifend tincidunt pellentesque. Cras eu sapi
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-      <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>
@@ -220,16 +220,15 @@ consectetur adipiscing elit. Morbi eleifend tincidunt pellentesque. Cras eu sapi
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -237,7 +236,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

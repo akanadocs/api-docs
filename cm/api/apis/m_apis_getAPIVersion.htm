@@ -16,10 +16,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_getAPIVersion.lbi" --> Returns the specified API version.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/library/roles_none.lbi" -->
-Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
+<p><!-- #BeginLibraryItem "/Library/desc_getAPIVersion.lbi" --> Returns the specified API version.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
+  Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -48,7 +48,7 @@ Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}[?][includeTargetAPI=boolean]&amp;[includeOperations=boolean]
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}[?][includeTargetAPI=boolean]&amp;[includeOperations=boolean]
 &amp;[includeTargetAPI={Boolean}]&amp;[includeSettings={Boolean}]&amp;[ContractID={ContractID}]
 </pre>
 <!-- InstanceEndEditable -->
@@ -59,15 +59,15 @@ Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for specific API version information.</p>
 <p><strong>Sample request URL #1</strong></p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/d5de1637-7b00-46ba-9e8c-9d81d762f58e.acmepaymentscorp</pre>
 <p><strong>Sample request URL #2</strong></p>
 <p>Includes the optional <span class="apidoc_code">includeOperations</span> parameter.</p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp?includeOperations=true</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp?includeOperations=true</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET&nbsp;/api/apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp HTTP/1.1
 Host: {hostname}
-Accept: application/json, text/javascript, */*; q=0.01
-<!-- #BeginLibraryItem "/library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
+Accept: application/vnd.soa.v81+json, text/javascript, */*; q=0.01
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -87,7 +87,7 @@ Accept: application/json, text/javascript, */*; q=0.01
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -113,21 +113,21 @@ Accept: application/json, text/javascript, */*; q=0.01
     <td>Path</td>
     <td>string</td>
     <td>Required</td>
-    <td><!-- #BeginLibraryItem "/library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+    <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>includeOperations</td>
     <td>Query</td>
     <td>boolean</td>
     <td>Optional</td>
-    <td>If set to <strong>true</strong>, operations associated with the API version are returned. Default: <strong>false</strong>. See example.</td>
+    <td>Default: <strong>false</strong>. If set to <strong>true</strong>, operations associated with the API version are included in the response. See example.</td>
   </tr>
   <tr>
     <td>IncludeEndpoints</td>
     <td>Query</td>
     <td>boolean</td>
     <td>Optional</td>
-    <td>Indicates whether endpoints for the API version should be included in the information returned. If not specified, defaults to <strong>false</strong>.</td>
+    <td>Indicates whether endpoints for the API version should be included in the response. If not specified, defaults to <strong>false</strong>.</td>
   </tr>
   <tr>
     <td>includeTargetAPI</td>
@@ -141,14 +141,21 @@ Accept: application/json, text/javascript, */*; q=0.01
     <td>Query</td>
     <td>boolean</td>
     <td>Optional</td>
-    <td><!-- #BeginLibraryItem "/library/parm_IncludeSettings.lbi" -->Indicates whether the settings for the resource should be included in the information returned. If not specified, defaults to <strong>false</strong>.<!-- #EndLibraryItem --></td>
+    <td><!-- #BeginLibraryItem "/Library/parm_IncludeSettings.lbi" -->Indicates whether the settings for the resource should be included in the response. If not specified, defaults to <strong>false</strong>.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a></td>
     <td>Query</td>
     <td>string</td>
-    <td>Required</td>
-    <td><!-- #BeginLibraryItem "/library/o_ID_ContractID.lbi" --> The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></td>
+    <td>Optional</td>
+    <td><!-- #BeginLibraryItem "/Library/o_ID_ContractID.lbi" --> The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></td>
+  </tr>
+  <tr>
+    <td>includeTargetResources</td>
+    <td>Query</td>
+    <td>string</td>
+    <td>Optional</td>
+    <td>Default: <strong>false</strong>. If set to <strong>true</strong>, information about the API is included in the response, since the API is a resource associated with the API version.<strong></strong></td>
   </tr>
 </tbody>
 </table>
@@ -169,20 +176,130 @@ Accept: application/json, text/javascript, */*; q=0.01
 
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Mon, 23 Jun 2014 19:49:21 GMT
-Content-Type: application/json</pre>
+Date: Mon, 29 Feb 2016 16:23:21 GMT
+Content-Type: application/vnd.soa.v81+json</pre>
 
 <p><strong>Sample response body</strong></p>
 <pre>{
-  "APIVersionID" : "9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp",
-  "APIID" : "780e7a30-6f9b-4d08-9366-ae18ea071183.acmepaymentscorp",
+  "APIVersionID" : "d5de1637-7b00-46ba-9e8c-9d81d762f58e.acmepaymentscorp",
+  "APIID" : "5130abc9-04ff-4d5c-ad69-cef7690da150.acmepaymentscorp",
+  "Name" : "v1",
+  "Description" : "This is a sample Petstore server apple API.",
+  "Environment" : "default",
+  "Tag" : [ ],
+  "Visibility" : "Public",
+  "Created" : "2016-02-29T16:20:11Z",
+  "Updated" : "2016-02-29T16:20:11Z",
+  "State" : "com.soa.api.state.open",
+  "ProductionEndpointAccessAutoApproved" : false,
+  "SandboxEndpointAccessAutoApproved" : true,
+  "RatingSummary" : {
+    "Five" : 0,
+    "Four" : 0,
+    "Three" : 0,
+    "Two" : 0,
+    "One" : 0
+  },
+  "SandboxAnonymousAccessAllowed" : false,
+  "ProductionAnonymousAccessAllowed" : false,
+  "ResourceLevelPermissionsSupported" : false,
+  "APIOwnedImplementations" : true,
+  "ProductionServiceKey" : "uddi:4f728f31-df00-11e5-be7a-c898302e047e",
+  "BindingType" : [ "binding.http" ]
+}</pre>
+<h3 id="sampleresponse_2">Sample Response #2</h3>
+<p>The sample response below (response to <strong>sample request URL #2</strong>) shows API version information for a rendition of the Swagger Petstore API (<a href="http://petstore.swagger.io/" target="_blank">http://petstore.swagger.io/</a>), set up on the platform. In this example, the request message included the optional <span class="apidoc_code">includeOperations</span> parameter, so information about the operations is in the response.</p>
+
+<p><strong>Sample response headers</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/vnd.soa.v81+json
+Date: Mon, 29 Feb 2016 16:39:21 GMT</pre>
+
+<p><strong>Sample response body</strong></p>
+<pre>{
+  "APIVersionID" : "95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp",
+  "APIID" : "96c84d2c-8e2e-42c0-9f2b-8506c6febdc5.acmepaymentscorp",
   "Name" : "1.0",
-  "Description" : "First release",
+  "Description" : "First version",
+  "Environment" : "default",
   "Type" : "shttp",
-  "Tag" : [ "payments" ],
-  "Visibility" : "Limited",
-  "Created" : "2014-06-23T14:09:53Z",
-  "Updated" : "2014-06-23T14:09:53Z",
+  "DefaultProfile" : "Any in and out",
+  "Tag" : [ "swagger", "test", "api" ],
+  "Operations" : {
+    "Operation" : [ {
+      "Name" : "getPetById",
+      "Method" : "GET",
+      "Path" : "/pet/{petId}",
+      "InputContentType" : "*/*",
+      "OutputContentType" : "*/*",
+      "FaultContentType" : "*/*",
+      "Input" : [ {
+        "Name" : "petId",
+        "Type" : "path"
+      } ],
+      "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production",
+      "WsdlOperationName" : "getPetById"
+    }, {
+      "Name" : "addPet",
+      "Method" : "POST",
+      "Path" : "/pet",
+      "InputContentType" : "*/*",
+      "OutputContentType" : "*/*",
+      "FaultContentType" : "*/*",
+      "Input" : [ {
+        "Name" : "Body",
+        "Type" : "entity"
+      } ],
+      "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production",
+      "WsdlOperationName" : "addPet"
+    }, {
+      "Name" : "updatePet",
+      "Method" : "PUT",
+      "Path" : "/pet",
+      "InputContentType" : "*/*",
+      "OutputContentType" : "*/*",
+      "FaultContentType" : "*/*",
+      "Input" : [ {
+        "Name" : "Body",
+        "Type" : "entity"
+      } ],
+      "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production",
+      "WsdlOperationName" : "updatePet"
+    } ]
+  },
+  "Endpoints" : {
+    "Endpoint" : [ ]
+  },
+  "Policies" : {
+    "Policy" : [ {
+      "PolicyKey" : "acmepaymentscorp-acmepaymentscorpApplicationSecurityPolicy",
+      "Name" : "AtmosphereApplicationSecurityPolicy",
+      "Description" : "",
+      "PolicyType" : "Operational Policy",
+      "PolicySubType" : "policy.apisec"
+    }, {
+      "PolicyKey" : "Atmosphere-CORSAllowAll",
+      "Name" : "CORSAllowAll",
+      "Description" : "",
+      "PolicyType" : "Operational Policy",
+      "PolicySubType" : "policy.cors"
+    }, {
+      "PolicyKey" : "Atmosphere-DetailedAuditing",
+      "Name" : "DetailedAuditing",
+      "Description" : "",
+      "PolicyType" : "Operational Policy",
+      "PolicySubType" : "policy.auditservice"
+    }, {
+      "PolicyKey" : "Atmosphere-OAuthSecurity",
+      "Name" : "OAuthSecurity",
+      "Description" : "",
+      "PolicyType" : "Operational Policy",
+      "PolicySubType" : "policy.oauth"
+    } ]
+  },
+  "Visibility" : "Public",
+  "Created" : "2016-02-29T13:03:12Z",
+  "Updated" : "2016-02-29T13:03:25Z",
   "State" : "com.soa.api.state.open",
   "ProductionEndpointAccessAutoApproved" : true,
   "SandboxEndpointAccessAutoApproved" : true,
@@ -197,125 +314,21 @@ Content-Type: application/json</pre>
   "ProductionAnonymousAccessAllowed" : false,
   "ResourceLevelPermissionsSupported" : true,
   "APIOwnedImplementations" : true,
-  "ProductionServiceKey" : "uddi:0ced18dc-fae0-11e3-82e1-ee73ce832365",
-  "SandboxServiceKey" : "uddi:0dc2dfb1-fae0-11e3-82e1-ee73ce832365"
-}</pre>
-<h3 id="sampleresponse_2">Sample Response #2</h3>
-<p>The sample response below shows API version information for a rendition of the Swagger Petstore API (<a href="http://petstore.swagger.io/" target="_blank">http://petstore.swagger.io/</a>), set up on the platform. In this example, the request message included the optional <span class="apidoc_code">includeOperations</span> parameter, so information about the operations is in the response.</p>
-
-<p><strong>Sample response headers</strong></p>
-<pre>Status Code: 200 OK
-Content-Type: application/json
-Date: Fri, 09 Oct 2015 17:43:14 GMT</pre>
-
-<p><strong>Sample response body</strong></p>
-<pre>{
-  "APIVersionID" : "f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp",
-  "APIID" : "44d187c6-7aa0-492d-bb41-fa5b9c16b450.acmepaymentscorp",
-  "Name" : "1.0",
-  "Description" : "First version",
-  "Type" : "shttp",
-  "DefaultProfile" : "Any in and out",
-  "Tag" : [ ],
-  "ProductionEndpoint" : "http://acmepaymentscorp.com/",
-  "Operations" : {
-    "Operation" : [ {
-      "Name" : "getPetById",
-      "Method" : "GET",
-      "Path" : "/pet/{petid}",
-      "InputContentType" : "*/*",
-      "OutputContentType" : "*/*",
-      "FaultContentType" : "*/*",
-      "Input" : [ {
-        "Name" : "petid",
-        "Type" : "path"
-      } ],
-      "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
-      "WsdlOperationName" : "getPetById"
-    }, {
-      "Name" : "modifyPet",
-      "Method" : "PUT",
-      "Path" : "/pet/{petid}",
-      "InputContentType" : "*/*",
-      "OutputContentType" : "*/*",
-      "FaultContentType" : "*/*",
-      "Input" : [ {
-        "Name" : "petid",
-        "Type" : "path"
-      } ],
-      "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
-      "WsdlOperationName" : "modifyPet"
-    }, {
-      "Name" : "deletePet",
-      "Method" : "DELETE",
-      "Path" : "/pet/{petid}",
-      "InputContentType" : "*/*",
-      "OutputContentType" : "*/*",
-      "FaultContentType" : "*/*",
-      "Input" : [ {
-        "Name" : "petid",
-        "Type" : "path"
-      } ],
-      "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
-      "WsdlOperationName" : "deletePet"
-    } ]
-  },
-  "Endpoints" : {
-    "Endpoint" : [ {
-      "CName" : &quot;acmepaymentscorp.com&quot;,
-      "Category" : "Production",
-      "Uri" : "http://acmepaymentscorp.com/",
-      "ConnectionProperties" : [ ],
-      "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production.virtual",
-      "BindingType" : "binding.http",
-      "EndpointKey" : "uddi:2ae0be2d-6eac-11e5-8b6d-ff8913d9df0e"
-    } ]
-  },
-  "Policies" : {
-    "Policy" : [ {
-      "PolicyKey" : "10001-BasicAuditing",
-      "Name" : "BasicAuditing",
-      "Description" : "",
-      "PolicyType" : "Operational Policy",
-      "PolicySubType" : "policy.auditservice"
-    }, {
-      "PolicyKey" : "10001-DetailedAuditing",
-      "Name" : "DetailedAuditing",
-      "Description" : "",
-      "PolicyType" : "Operational Policy",
-      "PolicySubType" : "policy.auditservice"
-    } ]
-  },
-  "Visibility" : "Public",
-  "Created" : "2015-10-09T00:08:24Z",
-  "Updated" : "2015-10-09T17:35:43Z",
-  "State" : "com.soa.api.state.open",
-  "ProductionEndpointAccessAutoApproved" : true,
-  "SandboxEndpointAccessAutoApproved" : true,
-  "RatingSummary" : {
-    "Five" : 0,
-    "Four" : 0,
-    "Three" : 0,
-    "Two" : 0,
-    "One" : 0
-  },
-  "SandboxAnonymousAccessAllowed" : false,
-  "ProductionAnonymousAccessAllowed" : true,
-  "ResourceLevelPermissionsSupported" : false,
-  "APIOwnedImplementations" : true,
-  "ProductionServiceKey" : "uddi:dc72b1ae-6e19-11e5-8b6d-ff8913d9df0e",
+  "ProductionServiceKey" : "uddi:ca039472-dee4-11e5-be7a-c898302e047e",
+  "SandboxServiceKey" : "uddi:cba73282-dee4-11e5-be7a-c898302e047e",
   "APIImplementations" : {
     "APIImplementation" : [ {
-      "Environment" : "Production",
-      "Name" : "aaa_Swagger_Gen_1.0_Production_Virtual",
+      "Name" : "__SwaggerAPI_Both_1.0_Production_Virtual",
+      "ImplementationCode" : "Live",
       "Description" : "First version",
-      "ServiceKey" : "uddi:dc72b1ae-6e19-11e5-8b6d-ff8913d9df0e",
+      "Pattern" : "com.akana.pattern.physical.service",
+      "ServiceKey" : "uddi:ca039472-dee4-11e5-be7a-c898302e047e",
       "APIBindings" : {
         "APIBinding" : [ {
-          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production.virtual",
-          "BindingKey" : "uddi:81854428-7480-adaa-96d0-a847af1f6ab1",
-          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
-          "InterfaceKey" : "uddi:8f11ac74-0427-e8c0-1a95-dc8ef4d0a6e4",
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production.virtual",
+          "BindingKey" : "uddi:5a12ac80-1dcc-eede-8f67-7d1a5d53d74e",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production",
+          "InterfaceKey" : "uddi:6f948c82-2717-bb91-da74-8b280151cfa7",
           "BindingType" : "binding.http",
           "BindingOperations" : {
             "BindingOperation" : [ {
@@ -323,41 +336,41 @@ Date: Fri, 09 Oct 2015 17:43:14 GMT</pre>
               "WsdlOperationName" : "getPetById",
               "HttpOperation" : {
                 "Method" : "GET",
-                "Path" : "/pet/{petid}",
+                "Path" : "/pet/{petId}",
                 "InputContentType" : "*/*",
                 "OutputContentType" : "*/*",
                 "FaultContentType" : "*/*",
                 "Input" : [ {
-                  "Name" : "petid",
+                  "Name" : "petId",
                   "Type" : "path"
                 } ]
               }
             }, {
-              "OperationName" : "modifyPet",
-              "WsdlOperationName" : "modifyPet",
+              "OperationName" : "addPet",
+              "WsdlOperationName" : "addPet",
+              "HttpOperation" : {
+                "Method" : "POST",
+                "Path" : "/pet",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ {
+                  "Name" : "Body",
+                  "Type" : "entity"
+                } ]
+              }
+            }, {
+              "OperationName" : "updatePet",
+              "WsdlOperationName" : "updatePet",
               "HttpOperation" : {
                 "Method" : "PUT",
-                "Path" : "/pet/{petid}",
+                "Path" : "/pet",
                 "InputContentType" : "*/*",
                 "OutputContentType" : "*/*",
                 "FaultContentType" : "*/*",
                 "Input" : [ {
-                  "Name" : "petid",
-                  "Type" : "path"
-                } ]
-              }
-            }, {
-              "OperationName" : "deletePet",
-              "WsdlOperationName" : "deletePet",
-              "HttpOperation" : {
-                "Method" : "DELETE",
-                "Path" : "/pet/{petid}",
-                "InputContentType" : "*/*",
-                "OutputContentType" : "*/*",
-                "FaultContentType" : "*/*",
-                "Input" : [ {
-                  "Name" : "petid",
-                  "Type" : "path"
+                  "Name" : "Body",
+                  "Type" : "entity"
                 } ]
               }
             } ]
@@ -366,50 +379,203 @@ Date: Fri, 09 Oct 2015 17:43:14 GMT</pre>
       },
       "APIInterfaces" : {
         "APIInterface" : [ {
-          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production",
-          "InterfaceKey" : "uddi:8f11ac74-0427-e8c0-1a95-dc8ef4d0a6e4",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production",
+          "InterfaceKey" : "uddi:6f948c82-2717-bb91-da74-8b280151cfa7",
           "InterfaceOperations" : {
             "InterfaceOperation" : [ {
               "OperationName" : "getPetById",
               "WsdlOperationName" : "getPetById"
             }, {
-              "OperationName" : "modifyPet",
-              "WsdlOperationName" : "modifyPet"
+              "OperationName" : "addPet",
+              "WsdlOperationName" : "addPet"
             }, {
-              "OperationName" : "deletePet",
-              "WsdlOperationName" : "deletePet"
+              "OperationName" : "updatePet",
+              "WsdlOperationName" : "updatePet"
             } ]
           }
         } ]
       },
       "Endpoints" : {
-        "Endpoint" : [ {
-          "CName" : &quot;acmepaymentscorp.com&quot;,
-          "Category" : "Production",
-          "Uri" : "http://acmepaymentscorp.com/",
-          "ConnectionProperties" : [ ],
-          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_f9e38abc-9d29-4586-a45f-e61a6780b6a1.acmepaymentscorp.production.virtual",
-          "BindingType" : "binding.http",
-          "EndpointKey" : "uddi:2ae0be2d-6eac-11e5-8b6d-ff8913d9df0e"
-        } ]
+        "Endpoint" : [ ]
       },
       "Policies" : {
         "Policy" : [ {
-          "PolicyKey" : "10001-BasicAuditing",
-          "Name" : "BasicAuditing",
+          "PolicyKey" : "Atmosphere-AtmosphereApplicationSecurityPolicy",
+          "Name" : "AtmosphereApplicationSecurityPolicy",
           "Description" : "",
           "PolicyType" : "Operational Policy",
-          "PolicySubType" : "policy.auditservice"
+          "PolicySubType" : "policy.apisec"
         }, {
-          "PolicyKey" : "10001-DetailedAuditing",
+          "PolicyKey" : "Atmosphere-CORSAllowAll",
+          "Name" : "CORSAllowAll",
+          "Description" : "",
+          "PolicyType" : "Operational Policy",
+          "PolicySubType" : "policy.cors"
+        }, {
+          "PolicyKey" : "Atmosphere-DetailedAuditing",
           "Name" : "DetailedAuditing",
           "Description" : "",
           "PolicyType" : "Operational Policy",
           "PolicySubType" : "policy.auditservice"
+        }, {
+          "PolicyKey" : "Atmosphere-OAuthSecurity",
+          "Name" : "OAuthSecurity",
+          "Description" : "",
+          "PolicyType" : "Operational Policy",
+          "PolicySubType" : "policy.oauth"
+        } ]
+      },
+      "APIImplementationDeployments" : {
+      },
+      "Operations" : {
+        "Operation" : [ {
+          "Name" : "addPet",
+          "OperationKey" : "ca518d69-dee4-11e5-be7a-c898302e047e",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production",
+          "WsdlOperationName" : "addPet"
+        }, {
+          "Name" : "getPetById",
+          "OperationKey" : "ca4f9196-dee4-11e5-be7a-c898302e047e",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production",
+          "WsdlOperationName" : "getPetById"
+        }, {
+          "Name" : "updatePet",
+          "OperationKey" : "ca53b04c-dee4-11e5-be7a-c898302e047e",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production",
+          "WsdlOperationName" : "updatePet"
+        } ]
+      }
+    }, {
+      "Name" : "__SwaggerAPI_Both_1.0_Sandbox_Virtual",
+      "ImplementationCode" : "Sandbox",
+      "Description" : "First version",
+      "Pattern" : "com.akana.pattern.physical.service",
+      "ServiceKey" : "uddi:cba73282-dee4-11e5-be7a-c898302e047e",
+      "APIBindings" : {
+        "APIBinding" : [ {
+          "BindingQName" : "{uri:acmepaymentscorp}Binding_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox.virtual",
+          "BindingKey" : "uddi:e4b1fe2b-0e43-9d93-e6c1-e0ad7714bf68",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox",
+          "InterfaceKey" : "uddi:b17209b4-d4e0-5e99-4870-d8adb404d767",
+          "BindingType" : "binding.http",
+          "BindingOperations" : {
+            "BindingOperation" : [ {
+              "OperationName" : "getPetById",
+              "WsdlOperationName" : "getPetById",
+              "HttpOperation" : {
+                "Method" : "GET",
+                "Path" : "/pet/{petId}",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ {
+                  "Name" : "petId",
+                  "Type" : "path"
+                } ]
+              }
+            }, {
+              "OperationName" : "addPet",
+              "WsdlOperationName" : "addPet",
+              "HttpOperation" : {
+                "Method" : "POST",
+                "Path" : "/pet",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ {
+                  "Name" : "Body",
+                  "Type" : "entity"
+                } ]
+              }
+            }, {
+              "OperationName" : "updatePet",
+              "WsdlOperationName" : "updatePet",
+              "HttpOperation" : {
+                "Method" : "PUT",
+                "Path" : "/pet",
+                "InputContentType" : "*/*",
+                "OutputContentType" : "*/*",
+                "FaultContentType" : "*/*",
+                "Input" : [ {
+                  "Name" : "Body",
+                  "Type" : "entity"
+                } ]
+              }
+            } ]
+          }
+        } ]
+      },
+      "APIInterfaces" : {
+        "APIInterface" : [ {
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox",
+          "InterfaceKey" : "uddi:b17209b4-d4e0-5e99-4870-d8adb404d767",
+          "InterfaceOperations" : {
+            "InterfaceOperation" : [ {
+              "OperationName" : "getPetById",
+              "WsdlOperationName" : "getPetById"
+            }, {
+              "OperationName" : "addPet",
+              "WsdlOperationName" : "addPet"
+            }, {
+              "OperationName" : "updatePet",
+              "WsdlOperationName" : "updatePet"
+            } ]
+          }
+        } ]
+      },
+      "Endpoints" : {
+        "Endpoint" : [ ]
+      },
+      "Policies" : {
+        "Policy" : [ {
+          "PolicyKey" : "Atmosphere-AtmosphereApplicationSecurityPolicy",
+          "Name" : "AtmosphereApplicationSecurityPolicy",
+          "Description" : "",
+          "PolicyType" : "Operational Policy",
+          "PolicySubType" : "policy.apisec"
+        }, {
+          "PolicyKey" : "Atmosphere-CORSAllowAll",
+          "Name" : "CORSAllowAll",
+          "Description" : "",
+          "PolicyType" : "Operational Policy",
+          "PolicySubType" : "policy.cors"
+        }, {
+          "PolicyKey" : "Atmosphere-DetailedAuditing",
+          "Name" : "DetailedAuditing",
+          "Description" : "",
+          "PolicyType" : "Operational Policy",
+          "PolicySubType" : "policy.auditservice"
+        }, {
+          "PolicyKey" : "Atmosphere-OAuthSecurity",
+          "Name" : "OAuthSecurity",
+          "Description" : "",
+          "PolicyType" : "Operational Policy",
+          "PolicySubType" : "policy.oauth"
+        } ]
+      },
+      "APIImplementationDeployments" : {
+      },
+      "Operations" : {
+        "Operation" : [ {
+          "Name" : "addPet",
+          "OperationKey" : "cbfd8fe9-dee4-11e5-be7a-c898302e047e",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox",
+          "WsdlOperationName" : "addPet"
+        }, {
+          "Name" : "getPetById",
+          "OperationKey" : "cbfb9416-dee4-11e5-be7a-c898302e047e",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox",
+          "WsdlOperationName" : "getPetById"
+        }, {
+          "Name" : "updatePet",
+          "OperationKey" : "cc0000ec-dee4-11e5-be7a-c898302e047e",
+          "InterfaceQName" : "{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox",
+          "WsdlOperationName" : "updatePet"
         } ]
       }
     } ]
-  }
+  },
+  "BindingType" : [ "binding.http" ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -428,7 +594,7 @@ Date: Fri, 09 Oct 2015 17:43:14 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -450,7 +616,7 @@ Date: Fri, 09 Oct 2015 17:43:14 GMT</pre>
     <tr>
       <td>APIVersion</td>
       <td><a href="../obj/o_apis_APIVersion.htm">APIVersion</a></td>
-      <td><!-- #BeginLibraryItem "/library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -469,7 +635,7 @@ Date: Fri, 09 Oct 2015 17:43:14 GMT</pre>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-      <td><!-- #BeginLibraryItem "/library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
   </thead>
   <tbody>
@@ -484,16 +650,15 @@ Date: Fri, 09 Oct 2015 17:43:14 GMT</pre>
     </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -501,7 +666,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

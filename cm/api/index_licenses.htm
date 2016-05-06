@@ -13,7 +13,7 @@ no-catalog: false
 
 <h2><a name="top"></a>Licenses Service: Overview</h2>
 <p>The Licenses service provides operations for managing API licenses.</p>
-<p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->notifications</span></p>
+<p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->notifications</span></p>
 
 <table class="tableparmsresponse" width="100%" cellspacing="0"
   cellpadding="2" summary="table description">
@@ -28,43 +28,48 @@ no-catalog: false
     <tr>
       <td>add license</td>
       <td><a href="licenses/m_licenses_addLicense.htm">POST&nbsp;/api/licenses</a></td>
-      <td><!-- #BeginLibraryItem "/library/desc_addLicense.lbi" -->Adds a license.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_addLicense.lbi" -->Adds a license.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>change license state</td>
       <td><a href="licenses/m_licenses_changeLicenseState.htm">PUT&nbsp;/api/licenses/{LicenseID}/state</a></td>
-      <td><!-- #BeginLibraryItem "/library/desc_changeLicenseState.lbi" -->Changes the <a href="aaref/Ref_Values.htm#values_licensestate">state</a> of a license.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_changeLicenseState.lbi" -->Changes the <a href="aaref/Ref_Values.htm#values_licensestate">state</a> of a license.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>delete  license</td>
       <td><a href="licenses/m_licenses_deleteLicense.htm">DELETE&nbsp;/api/licenses/{LicenseID}</a></td>
-      <td><!-- #BeginLibraryItem "/library/desc_deleteLlicense.lbi" -->Deletes the specified <a href="Ref_Glossary_CommunityPlatform.htm#gl_license">license</a> on the platform.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_deleteLlicense.lbi" -->Deletes the specified <a href="Ref_Glossary_CommunityPlatform.htm#gl_license">license</a> on the platform.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>export  license</td>
       <td><a href="licenses/m_licenses_exportLicense.htm">GET&nbsp;/api/licenses/{LicenseID}/package</a></td>
-      <td><!-- #BeginLibraryItem "/library/desc_exportLicense.lbi" -->Exports information about platform licenses to an export file that can be imported to another platform instance.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_exportLicense.lbi" -->Exports information about platform licenses to an export file that can be imported to another platform instance.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>get license</td>
       <td><a href="licenses/m_licenses_getLicense.htm">GET&nbsp;/api/licenses/{LicenseID}</a></td>
-      <td><!-- #BeginLibraryItem "/library/desc_getLicense.lbi" -->Returns information about the specified license.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getLicense.lbi" -->Returns information about the specified license.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>modify legal state</td>
+      <td><a href="licenses/m_licenses_modifyLegalState.htm">PUT&nbsp;/api/licenses/{LicenseID}/legals/{LegalDocumentID}/state</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_modifyLegalState_licenses.lbi" -->Updates the <a href="aaref/Ref_Values.htm#values_legaldocumentstate">state</a> of a legal document associated with a <a href="Ref_Glossary_CommunityPlatform.htm#gl_license">license</a> on the platform.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>update license</td>
       <td><a href="licenses/m_licenses_updateLicense.htm">PUT&nbsp;/api/licenses/{LicenseID}</a></td>
-      <td><!-- #BeginLibraryItem "/library/desc_updateLicense.lbi" -->Updates information about a <a href="Ref_Glossary_CommunityPlatform.htm#gl_license">license</a> on the platform.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_updateLicense.lbi" -->Updates information about a <a href="Ref_Glossary_CommunityPlatform.htm#gl_license">license</a> on the platform.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -72,7 +77,7 @@ no-catalog: false
     <td width="400"><ul>
   <li><a href="Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

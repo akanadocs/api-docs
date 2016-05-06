@@ -1,0 +1,338 @@
+---
+layout: apipage
+title: Delete API Implementation | APIs Service | Akana API Platform API
+description: Deletes the specified <a href="../Ref_Glossary_CommunityPlatform.htm#gl_implementation">implementation</a> for the specified API version.
+product: cm
+category: ref
+nav-title: Delete API Implementation 
+no-nav: api
+sub-nav: true
+sub-nav-class: apis
+no-catalog: true
+---
+
+<!-- InstanceBeginEditable name="Heading" -->
+<h2><a name="top" id="top"></a>DELETE&nbsp;/api/apis/versions/{APIVersionID}/implementations/{ImplName}</h2>
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/Library/desc_deleteAPIImplementation.lbi" -->Deletes the specified <a href="../Ref_Glossary_CommunityPlatform.htm#gl_implementation">implementation</a> for the specified API version.<!-- #EndLibraryItem --></p>
+<p><strong>Note</strong>: When you delete an implementation, all apps are disconnected from the implementation, and all process configuration, policies, and endpoints are deleted. This action is not reversible.</p>
+<h5 class="stamp">New in API Platform Version: 8.1</h5>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have Delete permission for this API.</p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
+<p class="httpverb">DELETE</p>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/implementations/{ImplName}</pre>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<!-- InstanceBeginEditable name="Sample Request" -->
+<h3 id="samplerequest">Sample Request</h3>
+<p id="id_samplerequest">The example below shows a request to delete the Live implementation for the specified API version.</p>
+<p><strong>Request URL</strong></p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/a0a676f7-b243-486d-8599-951834ed2318.acmepaymentscorp/implementations/Live</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>Accept: application/vnd.soa.v81+json
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
+<p><strong>Sample request body</strong></p>
+<p>Not applicable.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Headers" -->
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Parameters" -->
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a></td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>ImplName</td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_ImplName.lbi" -->The name for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_implementation">implementation</a> of an API version.<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Description" -->
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Sample Response" -->
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
+<p><strong>Sample response headers</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/vnd.soa.v81+json
+Date: Fri, 18 Mar 2016 01:52:24 GMT</pre>
+<p><strong>Sample response body</strong></p>
+<pre>{
+  "Name" : "Swagger_Slim_v1_Live_Virtual",
+  "ImplementationCode" : "Live",
+  "Description" : "Swagger Slim Version",
+  "Pattern" : "com.akana.pattern.proxy",
+  "ServiceKey" : "uddi:49dfe97e-eca8-11e5-9c5f-c2617724f57b",
+  "APIBindings" : {
+    "APIBinding" : [ {
+      "BindingQName" : "{Swagger_Slim.json}Swagger_Slim_Binding_0",
+      "BindingKey" : "uddi:e19d3b62-9014-2176-dd9a-98c0c65e6f7f",
+      "InterfaceQName" : "{Swagger_Slim.json}Swagger_Slim_PortType_0",
+      "InterfaceKey" : "uddi:371853c7-3707-aa09-4293-4a3989d508ff",
+      "BindingType" : "binding.http",
+      "BindingOperations" : {
+        "BindingOperation" : [ {
+          "OperationName" : "addPet",
+          "WsdlOperationName" : "addPet",
+          "HttpOperation" : {
+            "Method" : "POST",
+            "Path" : "/pet",
+            "InputContentType" : "application/json,application/xml",
+            "OutputContentType" : "application/xml,application/json",
+            "FaultContentType" : "",
+            "Input" : [ {
+              "Name" : "body",
+              "Type" : "entity"
+            } ]
+          }
+        }, {
+          "OperationName" : "getPetById",
+          "WsdlOperationName" : "getPetById",
+          "HttpOperation" : {
+            "Method" : "GET",
+            "Path" : "/pet/{petId}",
+            "InputContentType" : "application/json",
+            "OutputContentType" : "application/json",
+            "FaultContentType" : "",
+            "Input" : [ {
+              "Name" : "petId",
+              "Type" : "path"
+            } ]
+          }
+        }, {
+          "OperationName" : "deletePet",
+          "WsdlOperationName" : "deletePet",
+          "HttpOperation" : {
+            "Method" : "DELETE",
+            "Path" : "/pet/{petId}",
+            "InputContentType" : "",
+            "OutputContentType" : "application/xml,application/json",
+            "FaultContentType" : "",
+            "Input" : [ {
+              "Name" : "petId",
+              "Type" : "path"
+            }, {
+              "Name" : "api_key",
+              "Type" : "header"
+            } ]
+          }
+        } ]
+      }
+    } ]
+  },
+  "APIInterfaces" : {
+    "APIInterface" : [ {
+      "InterfaceQName" : "{Swagger_Slim.json}Swagger_Slim_PortType_0",
+      "InterfaceKey" : "uddi:371853c7-3707-aa09-4293-4a3989d508ff",
+      "InterfaceOperations" : {
+        "InterfaceOperation" : [ {
+          "OperationName" : "addPet",
+          "WsdlOperationName" : "addPet"
+        }, {
+          "OperationName" : "getPetById",
+          "WsdlOperationName" : "getPetById"
+        }, {
+          "OperationName" : "deletePet",
+          "WsdlOperationName" : "deletePet"
+        } ]
+      }
+    } ]
+  },
+  "Endpoints" : {
+    "Endpoint" : [ ]
+  },
+  "APIImplementationDeployments" : {
+  },
+  "Operations" : {
+    "Operation" : [ {
+      "Name" : "addPet",
+      "OperationKey" : "4a397b32-eca8-11e5-9c5f-c2617724f57b",
+      "InterfaceQName" : "{Swagger_Slim.json}Swagger_Slim_PortType_0",
+      "WsdlOperationName" : "addPet"
+    }, {
+      "Name" : "deletePet",
+      "OperationKey" : "4a3f95b8-eca8-11e5-9c5f-c2617724f57b",
+      "InterfaceQName" : "{Swagger_Slim.json}Swagger_Slim_PortType_0",
+      "WsdlOperationName" : "deletePet"
+    }, {
+      "Name" : "getPetById",
+      "OperationKey" : "4a3c6165-eca8-11e5-9c5f-c2617724f57b",
+      "InterfaceQName" : "{Swagger_Slim.json}Swagger_Slim_PortType_0",
+      "WsdlOperationName" : "getPetById"
+    } ]
+  }
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Headers" -->
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Body" -->
+<h3 id="responsebody">Response Body</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Name</th>
+      <th width="15%">Type</th>
+      <th width="65%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>APIImplementation</td>
+      <td><a href="../obj/o_apis_APIImplementation.htm">APIImplementation</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIImplementation.lbi" -->Contains information about an implementation for a specific API version.<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
+      <td>The resource could not be found. For example, you might get this if the implementation had already been deleted.</td>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+    </tr>
+  </tbody>
+</table>
+<!-- InstanceEndEditable -->
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="700" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

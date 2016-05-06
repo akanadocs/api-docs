@@ -12,7 +12,7 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>APIVersion Object</h2>
-<p><!-- #BeginLibraryItem "/library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --></p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
@@ -37,22 +37,27 @@ no-catalog: true
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a></td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --> Required except when adding a new API version.</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --> Required except when adding a new API version.</td>
   </tr>
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiid">APIID</a></td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/o_ID_APIID.lbi" -->The unique ID for a specific API.<!-- #EndLibraryItem --> Required.</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->The unique ID for a specific API.<!-- #EndLibraryItem --> Required.</td>
   </tr>
     <tr>
       <td>Name</td>
       <td>string</td>
-      <td>The name of the API.</td>
+      <td>The name of the API version.</td>
   </tr>
     <tr>
       <td>Description</td>
       <td>string</td>
       <td>The description of the API version.</td>
+    </tr>
+    <tr>
+      <td>Environment</td>
+      <td>string</td>
+      <td>The environment the API is valid for.</td>
     </tr>
     <tr>
       <td>Type</td>
@@ -62,7 +67,7 @@ no-catalog: true
     <tr>
       <td>DefaultProfile</td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/parm_DefaultProfile.lbi" -->The <a href="../aaref/Ref_API_DefaultProfile.htm">default profile</a> for the API version. This determines default media type values for request and response messages. In the user interface, the default profile is automatically used for new operations, although it can be changed.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_DefaultProfile.lbi" -->The <a href="../aaref/Ref_API_DefaultProfile.htm">default profile</a> for the API version. This determines default media type values for request and response messages. In the user interface, the default profile is automatically used for new operations, although it can be changed.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>DefaultInputContentType</td>
@@ -80,8 +85,8 @@ no-catalog: true
       <td>The default content type (MIME type) for fault response messages for this operation.</td>
     </tr>
     <tr>
-      <td>Tag</td>
-      <td>string[&nbsp;]</td>
+      <td>Tag[&nbsp;]</td>
+      <td>string</td>
       <td>One or more user-defined tags assigned to the discussion.</td>
     </tr>
     <tr>
@@ -109,7 +114,7 @@ no-catalog: true
     <tr>
       <td>Descriptor</td>
       <td><a href="../obj/o_apis_Descriptor.htm">Descriptor</a></td>
-      <td><!-- #BeginLibraryItem "/library/parm_descriptor.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/parm_descriptor.lbi" -->
         SOAP APIs only: Includes information about the WSDL that contains the technical details about the API version. For SOAP APIs, this is required in the request message when adding or updating an API version. Not used in response messages.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
@@ -125,29 +130,29 @@ no-catalog: true
     <tr>
       <td>Policies</td>
       <td><a href="../obj/o_apis_Policies.htm">Policies</a></td>
-      <td><!-- #BeginLibraryItem "/library/o_apis_Policies.lbi" -->Contains information about one or more policies that are enforced for the API version, if applicable.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_Policies.lbi" -->Contains information about one or more policies that are enforced for the API version, if applicable.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>TargetAPI</td>
       <td><a href="../obj/o_apis_TargetAPI.htm">TargetAPI</a></td>
-      <td><!-- #BeginLibraryItem "/library/parm_TargetAPI.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/parm_TargetAPI.lbi" -->
         Includes information about the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_targetapi">target API</a>&#8212;the destination endpoint, or next hop, defined when an API is using the platform as a proxy.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Visibility</td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/parm_Visibility_apis.lbi" -->The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting for the API; either Public, which is visible to all users, or Limited, which is visible only to API Administrators and API Context Group members.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Visibility_apis.lbi" -->The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting for the API; either Public, which is visible to all users, or Limited, which is visible only to API Administrators and API Context Group members.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Created</td>
       <td>dateTime</td>
-      <td><!-- #BeginLibraryItem "/library/o_Created.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_Created.lbi" -->
         The date/time stamp when the resource was first created. Used only in response messages.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Updated</td>
       <td>dateTime</td>
-      <td><!-- #BeginLibraryItem "/library/o_Updated.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_Updated.lbi" -->
         The date/time stamp when the resource was last updated. Used only in response messages.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
@@ -168,7 +173,7 @@ no-catalog: true
     <tr>
       <td>RatingSummary</td>
       <td><a href="../obj/o_res_RatingSummary.htm">RatingSummary</a></td>
-      <td><!-- #BeginLibraryItem "/library/o_RatingSummary.lbi" --> An aggregated, averaged summary of individual user ratings for the resource, including the current ratings count for each possible value (1, 2, 3, 4, or 5). Used only in response messages.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_RatingSummary.lbi" --> An aggregated, averaged summary of individual user ratings for the resource, including the current ratings count for each possible value (1, 2, 3, 4, or 5). Used only in response messages.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>ProductionEndpointExists</td>
@@ -193,13 +198,13 @@ no-catalog: true
     <tr>
       <td>APIVersionSettings</td>
       <td><a href="o_apis_APIVersionSettings.htm">APIVersionSettings</a></td>
-      <td><!-- #BeginLibraryItem "/library/o_apis_APIVersionSettings.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIVersionSettings.lbi" -->
         Includes information about the settings for an API version; for example, whether access is auto approved and whether ratings and reviews are supported. If not specified for the API version, settings are inherited from the API, business, or tenant.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>APIVersionResourceDetails</td>
       <td><a href="o_apis_APIVersionResourceDetails.htm">APIVersionResourceDetails</a></td>
-      <td><!-- #BeginLibraryItem "/library/o_apis_APIVersionResourceDetails.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIVersionResourceDetails.lbi" -->
         Contains details about operation-specific scope mapping for an API version, if operation-specific scope mapping is in use for the API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
@@ -210,8 +215,8 @@ no-catalog: true
     <tr>
       <td>APIOwnedImplementations</td>
       <td>boolean</td>
-      <td><p>If the API was created on the platform (API with New Service option, the default) this value is <strong>true</strong>. If the API was created using the API With Existing Service option, the service implementation is owned by Policy Manager; in this case, the value is <strong>false</strong>.</p>
-        <p>Default: <strong>true</strong>.</p></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_APIOwnedImplementation.lbi" --><p>If the API was created on the platform (API with New Service option, the default) this value is <strong>true</strong>. If the API was created using the API With Existing Service option, the service implementation is owned by Policy Manager; in this case, the value is <strong>false</strong>.</p>
+        <p>Default: <strong>true</strong>.</p><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>ProductionServiceKey</td>
@@ -226,18 +231,38 @@ no-catalog: true
     <tr>
       <td>APIImplementations</td>
       <td><a href="o_apis_APIImplementations.htm">APIImplementations</a></td>
-      <td><!-- #BeginLibraryItem "/library/o_apis_APIImplementations.lbi" -->Contains information about one or more API implementations.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIImplementations.lbi" -->Contains information about one or more API implementations.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>TargetResources</td>
+      <td><a href="o_dn_model_TargetResources.htm">TargetResources</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_dn_model_TargetResources.lbi" -->Contains information about a resource that is associated with the current resource.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>APIDesign</td>
+      <td><a href="o_apis_APIDesign.htm">APIDesign</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIDesign.lbi" -->Contains information about the design for a specific API.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>APIVersionOAuthResourceMapping</td>
+      <td><a href="o_apis_APIVersionOAuthResourceMapping.htm">APIVersionOAuthResourceMapping</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_apis_APIVersionOAuthResourceMapping.lbi" -->Contains information about one or more resources (grants) applicable to an API-wide resource.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>BindingType</td>
+      <td>string[&nbsp;]</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_BindingType.lbi" -->The API binding type; for example, <strong>binding.http</strong>. For valid values, see <a href="../aaref/Ref_Values.htm#values_apibindingtypes">API Binding Types</a>.<!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -245,7 +270,7 @@ no-catalog: true
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

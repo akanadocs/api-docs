@@ -12,7 +12,7 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>BaseOAuthClient Object</h2>
-<p><!-- #BeginLibraryItem "/library/o_apps_OAuthClient.lbi" -->Includes information about the OAuth Client settings for the specified app.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/o_apps_OAuthClient.lbi" -->Includes information about the OAuth Client settings for the specified app.<!-- #EndLibraryItem --></p>
 <p>Most of the values are standard OAuth values. For information about them, refer to the <a href="http://www.iana.org/assignments/oauth-parameters/oauth-parameters.xml" target="_blank">OAuth specification parameters list</a> (external link).</p>
 
 <p class="usedby">This object is used by the following operations:</p>
@@ -20,6 +20,7 @@ no-catalog: true
   <li><span class="apidoc_code"><a href="../apps/m_apps_saveAppOAuthClientProperties.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}/oauthclient</a></span></li>
   <li><span class="apidoc_code"><a href="../apps/m_apps_getAppOAuthClientProperties.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/oauthclient</a></span></li>
   <li>any operations that use the <a href="o_apps_OAuthClient.htm">OAuthClient</a> object</li>
+<!--  <li><span class="apidoc_code"><a href="../apps/__m-apps_validateOAuthClient.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/validationreport</a></span></li>-->
 </ul>
 
 <p>The properties included in the <strong>BaseOAuthClient</strong> object are listed below.</p>
@@ -35,17 +36,17 @@ no-catalog: true
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_runtimeid">RuntimeID</a></td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/o_ID_RuntimeID_AppVersionID.lbi" --> Although this field is labeled <a href="../aaref/Ref_IDsOnThePlatform.htm#id_runtimeid">RuntimeID</a> it is actually the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a>; the unique ID for the specific app version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_RuntimeID_AppVersionID.lbi" --> Although this field is labeled <a href="../aaref/Ref_IDsOnThePlatform.htm#id_runtimeid">RuntimeID</a> it is actually the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a>; the unique ID for the specific app version.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_oauthclientid">OAuthClientID</a></td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/o_id_OAuthClientID.lbi" -->Unique ID for the OAuth Client.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_id_OAuthClientID.lbi" -->Unique ID for the OAuth Client.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>OAuthClientType</td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/parm_OAuthClientType.lbi" -->The OAuth client type. Example: <strong>com.soa.oauth.clienttype.public</strong>. Required in the request when adding or changing OAuth client properties. For valid values, see <a href="../aaref/Ref_Values.htm#values_oauthclienttype">OAuth Client Type</a>. Required in requests.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_OAuthClientType.lbi" -->The OAuth client type. Example: <strong>com.soa.oauth.clienttype.public</strong>. Required in the request when adding or changing OAuth client properties. For valid values, see <a href="../aaref/Ref_Values.htm#values_oauthclienttype">OAuth Client Type</a>. Required in requests.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>Title</td>
@@ -105,13 +106,13 @@ no-catalog: true
     <tr>
       <td>Created</td>
       <td>dateTime</td>
-      <td><!-- #BeginLibraryItem "/library/o_Created.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_Created.lbi" -->
         The date/time stamp when the resource was first created. Used only in response messages.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>Updated</td>
       <td>dateTime</td>
-      <td><!-- #BeginLibraryItem "/library/o_Updated.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_Updated.lbi" -->
         The date/time stamp when the resource was last updated. Used only in response messages.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
@@ -317,11 +318,11 @@ RP for use at the OpenID Connect provider.</td>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -329,7 +330,7 @@ RP for use at the OpenID Connect provider.</td>
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

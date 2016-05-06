@@ -16,10 +16,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/library/desc_renewToken.lbi" --> Updates the time for which an authentication token cookie is valid, as well as other information stored in the cookie.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_renewToken.lbi" --> Updates the time for which an authentication token cookie is valid, as well as other information stored in the cookie.<!-- #EndLibraryItem --></p>
 <p>The cookie expiration time is stored as part of the cookie value itself, in the HTTP header. This operation updates the expiration time by sending a new cookie value to the server.</p>
 <p>There must be a valid cookie in place for this operation to succeed; if the cookie has already expired the operation will fail.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
   <tr>
@@ -48,7 +48,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/renewToken</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/renewToken</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -57,7 +57,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a <span class="apidoc_code">POST&nbsp;/api/login/renewToken</span> request.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/renewToken</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/renewToken</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>
 POST /api/login/renewToken HTTP/1.1
@@ -94,11 +94,11 @@ Xy1Jly8eEfdvHoCuebRT-1NjKzdEvLyvum1NpPjYDJhg</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td>JSON, text/javascript, or any value that matches text/plain.</td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -129,7 +129,7 @@ Xy1Jly8eEfdvHoCuebRT-1NjKzdEvLyvum1NpPjYDJhg</pre>
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows a new cookie returned. In this example, the CSRF feature is turned on, so an updated CSRF-token cookie is also returned.</p>
 <h5>Sample response headers</h5>
-<!-- #BeginLibraryItem "/library/_linebreakincode_note.lbi" -->
+<!-- #BeginLibraryItem "/Library/_linebreakincode_note.lbi" -->
 <p class="apidoc_note"><strong>Note</strong>: In the example below, line breaks have been added for display reasons. If there is any indentation within a parameter, it indicates a line break, not spaces in the content.</p>
 <!-- #EndLibraryItem -->
 <pre>HTTP/1.1 200 OK
@@ -181,11 +181,11 @@ path=/;expires=Thu, 14-Jan-2016 15:46:41 GMT</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><strong>application/json</strong></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#setcookie_response">Set-Cookie</a></td>
-      <td><!-- #BeginLibraryItem "/library/hdrval_setcookie.lbi" --> The set-cookie response header sets, updates, or expires the platform cookie to reflect changes made by the operation.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_setcookie.lbi" --> The set-cookie response header sets, updates, or expires the platform cookie to reflect changes made by the operation.<!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -207,7 +207,7 @@ path=/;expires=Thu, 14-Jan-2016 15:46:41 GMT</pre>
     <tr>
       <td>LoginResponse</td>
       <td><a href="../obj/o_login_LoginResponse.htm">LoginResponse</a></td>
-      <td><p><!-- #BeginLibraryItem "/library/o_login_LoginResponse.lbi" -->Contains information returned as a result of logging in.<!-- #EndLibraryItem --> </p>
+      <td><p><!-- #BeginLibraryItem "/Library/o_login_LoginResponse.lbi" -->Contains information returned as a result of logging in.<!-- #EndLibraryItem --> </p>
         <p>When renewing the token, the LoginResponse object includes user name and FDN, along with pendingNotifications, status, loginDomainID, avatarURL, and sessionValidUntil/authTokenValidUntil; how long the session will be valid if active/inactive. See example above.</p>        <!--http://svn.soa.local/nd/trunk/products/api-portal/com.soa.atmosphere.interfaces/src/com/soa/login/model/LoginResponse.java--></td>
     </tr>
     </tbody>
@@ -234,16 +234,15 @@ path=/;expires=Thu, 14-Jan-2016 15:46:41 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -251,7 +250,7 @@ Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

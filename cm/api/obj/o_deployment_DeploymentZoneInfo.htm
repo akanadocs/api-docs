@@ -1,0 +1,99 @@
+---
+layout: apipage
+title: DeploymentZoneInfo Object | Deployment Zones Service | Akana API Platform API
+description: Contains information about a specific deployment zone.
+product: cm
+category: ref
+nav-title: DeploymentZoneInfo Object 
+no-nav: api
+sub-nav: true
+sub-nav-class: obj
+no-catalog: true
+---
+
+  <h2><a name="top"></a>DeploymentZoneInfo Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_deployment_DeploymentZoneInfo.lbi" -->Contains information about a specific deployment zone.<!-- #EndLibraryItem --></p>
+<p class="usedby">This object is used by the following operations:</p>
+<ul>
+  <li><span class="apidoc_code"><a href="../deploymentzones/m_deploymentzones_getDeploymentZoneInfo.htm">GET&nbsp;/api/deploymentzones/{dzInfoID}</a></span></li>
+  <li>Any operations that use the <a href="o_deployment_DeploymentZoneInfoList.htm">DeploymentZoneInfoList</a> object</li>
+</ul>
+
+<p>The properties included in the <strong>DeploymentZoneInfo</strong> object are listed below.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+    <th width="15%">Property</th>
+    <th width="15%">Type</th>
+    <th width="70%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_deploymentzoneid">DeploymentZoneID</a></td>
+      <td>string</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_DeploymentZoneID.lbi" -->Unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>string</td>
+      <td>Name of the deployment zone.</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>string</td>
+      <td>Description of the deployment zone.</td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>string</td>
+      <td>Coordinates for the location of the deployment zone.</td>
+    </tr>
+    <tr>
+      <td>ContainerKey</td>
+      <td>string</td>
+      <td>Unique key for the container where the deployment zone is hosted.</td>
+    </tr>
+    <tr>
+      <td>AddressOverride</td>
+      <td>boolean</td>
+      <td>Indicates whether there is an address override for the deployment zone. Default: <strong>false</strong>.</td>
+    </tr>
+    <tr>
+      <td>VirtualHostSupported</td>
+      <td>boolean</td>
+      <td>Indicates whether the deployment zone supports use of a virtual host. Default: <strong>true</strong>.</td>
+    </tr>
+    <tr>
+      <td>DeploymentZoneAccessPoint</td>
+      <td><a href="o_deployment_DeploymentZoneAccessPoint.htm">DeploymentZoneAccessPoint</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_deployment_DeploymentZoneAccessPoint.lbi" -->Contains information about an access point for a deployment zone.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>DeploymentZoneEligibilityCriteria</td>
+      <td><a href="o_deployment_DeploymentZoneEligibilityCriteria.htm">DeploymentZoneEligibilityCriteria</a>[&nbsp;]</td>
+      <td><!-- #BeginLibraryItem "/Library/o_deployment_DeploymentZoneEligibilityCriteria.lbi" -->
+Contains information about implementation/environment combinations. Used to determine whether the specific combinations are eligible to be deployed to a specific deployment zone.<!-- #EndLibraryItem --></td>
+    </tr>
+    </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="700" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />

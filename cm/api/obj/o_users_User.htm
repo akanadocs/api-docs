@@ -12,7 +12,7 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>User  Object</h2>
-<p><!-- #BeginLibraryItem "/library/o_users_User.lbi" -->Contains information about a platform user.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/o_users_User.lbi" -->Contains information about a platform user.<!-- #EndLibraryItem --></p>
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
   <li><span class="apidoc_code"><a href="../users/m_users_signupUser.htm">POST&nbsp;/api/users/signupUser[/{InvitationCode}]</a></span></li>
@@ -37,15 +37,14 @@ no-catalog: true
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_userid">UserID</a></td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/o_ID_UserID.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_ID_UserID.lbi" -->
         The unique ID for a specific user.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>UserName</td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/o_users_UserName.lbi" -->
-The user's name, as set up by the user in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->
-Akana API Platform<!-- #EndLibraryItem -->. For a Facebook user, the user name is a numeric ID. For a Google user it is a URL.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_users_UserName.lbi" -->
+The user's name, as set up by the user in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->. For a Facebook user, the user name is a numeric ID. For a Google user it is a URL.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>FirstName</td>
@@ -60,7 +59,7 @@ Akana API Platform<!-- #EndLibraryItem -->. For a Facebook user, the user name i
     <tr>
       <td>AuthIdentifier</td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/o_users_authIdentifier.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_users_authIdentifier.lbi" -->
         The identifier for the user, as provided by the identify store. If the user signed up using Facebook, this value is a numeric ID; for Google, it is the URI of the user on Google. If the user signed up on the platform, it is a unique identifier for the platform.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
@@ -81,7 +80,7 @@ Akana API Platform<!-- #EndLibraryItem -->. For a Facebook user, the user name i
     <tr>
       <td>Visibility</td>
       <td>string</td>
-      <td><p><!-- #BeginLibraryItem "/library/parm_Visibility_all.lbi" -->
+      <td><p><!-- #BeginLibraryItem "/Library/parm_Visibility_all.lbi" -->
 The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.<!-- #EndLibraryItem --></p>
         <p>Currently, the visibility of all users is Public.</p></td>
   </tr>
@@ -98,7 +97,7 @@ The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a>
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a></td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/o_ID_BusinessID.lbi" --> The unique ID for a specific business on the platform.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" --> The unique ID for a specific business on the platform.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Title</td>
@@ -133,7 +132,7 @@ The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a>
     <tr>
       <td>AvatarProvider</td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/parm_AvatarProvider.lbi" -->The avatar provider, such as Gravatar, if applicable.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_AvatarProvider.lbi" -->The avatar provider, such as Gravatar, if applicable.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>HasPicture</td>
@@ -143,25 +142,25 @@ The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a>
     <tr>
       <td>State</td>
       <td>string</td>
-      <td><!-- #BeginLibraryItem "/library/parm_State_user.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/parm_State_user.lbi" -->
         The current signup state of the user; for example, pending_validation. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_usersignupstate">User Signup State Values</a>.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Created</td>
       <td>dateTime</td>
-      <td><!-- #BeginLibraryItem "/library/o_Created.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_Created.lbi" -->
         The date/time stamp when the resource was first created. Used only in response messages.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Updated</td>
       <td>dateTime</td>
-      <td><!-- #BeginLibraryItem "/library/o_Updated.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_Updated.lbi" -->
         The date/time stamp when the resource was last updated. Used only in response messages.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>AvatarURL</td>
       <td>anyURI</td>
-      <td><!-- #BeginLibraryItem "/library/parm_AvatarURL.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/parm_AvatarURL.lbi" -->
 URL for the avatar uploaded for the resource, if any. Used only in response messages.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
@@ -192,13 +191,13 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
     <tr>
       <td>UserIdentificationChallenges</td>
       <td><a href="o_users_UserIdentificationChallenges.htm">UserIdentificationChallenges</a></td>
-      <td><!-- #BeginLibraryItem "/library/o_users_UserIdentificationChallenges.lbi" -->
+      <td><!-- #BeginLibraryItem "/Library/o_users_UserIdentificationChallenges.lbi" -->
 Contains information about one or more user identification challenge questions applicable to a specific user, and in some cases the answers also.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_logindomainid">LoginDomainID</a></td>
       <td>LoginDomainID</td>
-      <td><!-- #BeginLibraryItem "/library/o_ID_LoginDomainID.lbi" -->The unique ID for a user's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domain</a>; either the platform, for a local account, or an additional login domain such as Google or Facebook. The login domains supported by a specific platform version are configured by the Site Admin.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_LoginDomainID.lbi" -->The unique ID for a user's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domain</a>; either the platform, for a local account, or an additional login domain such as Google or Facebook. The login domains supported by a specific platform version are configured by the Site Admin.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>ForcePasswordChangeOnLogin</td>
@@ -224,18 +223,18 @@ Contains information about one or more user identification challenge questions a
     <tr>
       <td>UserPhones</td>
       <td><a href="o_users_UserPhones.htm">UserPhones</a></td>
-      <td><!-- #BeginLibraryItem "/library/o_users_UserPhones.lbi" -->Contains information about one or more phone numbers associated with the user.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_users_UserPhones.lbi" -->Contains information about one or more phone numbers associated with the user.<!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>
-  <li><a href="../index.htm">Enterprise API Platform API: Overview</a></li>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
   <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
   <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
@@ -243,7 +242,7 @@ Contains information about one or more user identification challenge questions a
     <td width="400"><ul>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="../Ref_API_Reference.htm">Enterprise API Platform API: Reference Material</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 </ul>
 </td>
   </tr>

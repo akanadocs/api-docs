@@ -1,0 +1,333 @@
+---
+layout: apipage
+title: List Members | Groups Service | Akana API Platform API
+description: Returns information about the members of the specified group. The information is returned in JSON format.
+product: cm
+category: ref
+nav-title: List Members 
+no-nav: api
+sub-nav: true
+sub-nav-class: groups
+no-catalog: true
+---
+
+<!-- InstanceBeginEditable name="Heading" -->
+<h2><a name="top" id="top"></a>GET&nbsp;/api/groups/{GroupID}/members</h2>
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/Library/desc_listMembers.lbi" -->Returns information about the members of the specified group. The information is returned in JSON format.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_member">Group member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_leader">group leader</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_admin">Admin</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>, or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a></p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
+<p class="httpverb">GET</p>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->groups/{GroupID}/members</pre>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<!-- InstanceBeginEditable name="Sample Request" -->
+<h3 id="samplerequest">Sample Request</h3>
+<p id="id_samplerequest">The example below shows a request for the group members for the specified group.</p>
+<p><strong>Request URL</strong></p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->groups/group19212.acmepaymentscorp/members</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>Accept: application/vnd.soa.v71+xml</pre>
+<p><strong>Sample request body</strong></p>
+<p>Not applicable.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Headers" -->
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Parameters" -->
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="apidoc_div_codeendpoint"><a href="../aaref/Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a></span></td>
+      <td>Path</td>
+      <td>string</td>
+      <td>Required</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_GroupID.lbi" --> The unique ID for a specific group.<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Description" -->
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about the group members in JSON or XML format.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Sample Response" -->
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response below shows information about the members of the specified group. In this example, two members are in Pending status, meaning they have been invited but have not yet accepted.</p>
+<p><strong>Sample response headers: application/vnd.soa.v71+json</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/vnd.soa.v71+json
+Date: Fri, 29 Apr 2016 13:42:59 GMT</pre>
+<p><strong>Sample response body: application/vnd.soa.v71+json</strong></p>
+<pre>[
+  {
+    "role":"com.soa.group.membership.role.admin",
+    "Email":"saoirse@acmepaymentscorp.com",
+    "UserID":"e4542c76-cb39-4af4-84fd-a8e85ffb652c.acmepaymentscorp",
+    "FirstName":"Jane",
+    "LastName":"Mead",
+    "State":"com.soa.group.membership.state.approved",
+    "UserName":"JaneMead",
+    "IdentityName":"JaneMead",
+    "DomainName":"Local Domain",
+    "Image":{
+      "Url":"http://acmepaymentscorp.com/api/users/avatar/_V_5wI7SKSjKMXvHlakks84g",
+      "Link":"../acmepaymentscorp#/user/e4542c76-cb39-4af4-84fd-a8e85ffb652c.acmepaymentscorp/details"
+    }
+  },
+  {
+    "role":"com.soa.group.membership.role.admin",
+    "Email":"siochain@acmepaymentscorp.com",
+    "UserID":"6582b088-d990-4870-8cc7-95a340170589.acmepaymentscorp",
+    "FirstName":"Philip",
+    "LastName":"Pirrip",
+    "State":"com.soa.group.membership.state.pending",
+    "UserName":"PhilipPirrip",
+    "IdentityName":"PhilipPirrip",
+    "DomainName":"Local Domain",
+    "Image":{
+      "Url":"http://acmepaymentscorp.com/api/users/avatar/_V_5wI7SKSjKMXvHlakks84g",
+      "Link":"../acmepaymentscorp#/user/6582b088-d990-4870-8cc7-95a340170589.acmepaymentscorp/details"
+    }
+  },
+  {
+    "role":"com.soa.group.membership.role.admin",
+    "Email":"saoirse@yahoo.com",
+    "UserID":"41c04963-f17d-4b5e-a19c-ab0fa22adfb1.acmepaymentscorp",
+    "FirstName":"Jonathan",
+    "LastName":"Swift",
+    "State":"com.soa.group.membership.state.pending",
+    "UserName":"JonathanSwift",
+    "IdentityName":"JonathanSwift",
+    "DomainName":"Local Domain",
+    "Image":{
+      "Url":"http://acmepaymentscorp.com/api/users/avatar/_V_5wI7SKSjKMXvHlakks84g",
+      "Link":"../acmepaymentscorp#/user/41c04963-f17d-4b5e-a19c-ab0fa22adfb1.acmepaymentscorp/details"
+    }
+  }
+]</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<p><strong>Sample response headers: application/vnd.soa.v71+json</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/vnd.soa.v71+xml
+Date: Fri, 29 Apr 2016 13:44:43 GMT</pre>
+<p><strong>Sample response body: application/vnd.soa.v71+json</strong></p>
+<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;Memberships&gt;
+  &lt;Membership xmlns="http://soa.com/xsd/group/1.0" xmlns:ns2="http://soa.com/xsd/user/1.0" 
+xmlns:ns3="http://soa.com/xsd/dnmodel/1.0" xmlns:ns4="http://soa.com/xsd/resource/1.0"&gt;
+    &lt;Email&gt;saoirse@acmepaymentscorp.com&lt;/Email&gt;
+    &lt;ns2:UserID&gt;e4542c76-cb39-4af4-84fd-a8e85ffb652c.acmepaymentscorp&lt;/ns2:UserID&gt;
+    &lt;FirstName&gt;Jane&lt;/FirstName&gt;
+    &lt;LastName&gt;Mead&lt;/LastName&gt;
+    &lt;State&gt;com.soa.group.membership.state.approved&lt;/State&gt;
+    &lt;role&gt;com.soa.group.membership.role.admin&lt;/role&gt;
+    &lt;UserName&gt;JaneMead&lt;/UserName&gt;
+    &lt;IdentityName&gt;JaneMead&lt;/IdentityName&gt;
+    &lt;DomainName&gt;Local Domain&lt;/DomainName&gt;
+    &lt;ns3:Image&gt;
+      &lt;ns3:Url&gt;http://acmepaymentscorp.com/api/users/avatar/_V_5wI7SKSjKMXvHlakks84g&lt;/ns3:Url&gt;
+      &lt;ns3:Link&gt;../acmepaymentscorp#/user/e4542c76-cb39-4af4-84fd-a8e85ffb652c.acmepaymentscorp/details&lt;/ns3:Link&gt;
+    &lt;/ns3:Image&gt;
+  &lt;/Membership&gt;
+  &lt;Membership xmlns="http://soa.com/xsd/group/1.0" xmlns:ns2="http://soa.com/xsd/user/1.0" xmlns:ns3="http://soa.com/xsd/dnmodel/1.0" xmlns:ns4="http://soa.com/xsd/resource/1.0"&gt;
+    &lt;Email&gt;siochain@acmepaymentscorp.com&lt;/Email&gt;
+    &lt;ns2:UserID&gt;6582b088-d990-4870-8cc7-95a340170589.acmepaymentscorp&lt;/ns2:UserID&gt;
+    &lt;FirstName&gt;Philip&lt;/FirstName&gt;
+    &lt;LastName&gt;Pirrip&lt;/LastName&gt;
+    &lt;State&gt;com.soa.group.membership.state.pending&lt;/State&gt;
+    &lt;role&gt;com.soa.group.membership.role.admin&lt;/role&gt;
+    &lt;UserName&gt;PhilipPirrip&lt;/UserName&gt;
+    &lt;IdentityName&gt;PhilipPirrip&lt;/IdentityName&gt;
+    &lt;DomainName&gt;Local Domain&lt;/DomainName&gt;
+    &lt;ns3:Image&gt;
+      &lt;ns3:Url&gt;http://acmepaymentscorp.com/api/users/avatar/_V_5wI7SKSjKMXvHlakks84g&lt;/ns3:Url&gt;
+      &lt;ns3:Link&gt;../acmepaymentscorp#/user/6582b088-d990-4870-8cc7-95a340170589.acmepaymentscorp/details&lt;/ns3:Link&gt;
+    &lt;/ns3:Image&gt;
+  &lt;/Membership&gt;
+  &lt;Membership xmlns="http://soa.com/xsd/group/1.0" xmlns:ns2="http://soa.com/xsd/user/1.0" xmlns:ns3="http://soa.com/xsd/dnmodel/1.0" xmlns:ns4="http://soa.com/xsd/resource/1.0"&gt;
+    &lt;Email&gt;saoirse@yahoo.com&lt;/Email&gt;
+    &lt;ns2:UserID&gt;41c04963-f17d-4b5e-a19c-ab0fa22adfb1.acmepaymentscorp&lt;/ns2:UserID&gt;
+    &lt;FirstName&gt;Jonathan&lt;/FirstName&gt;
+    &lt;LastName&gt;Swift&lt;/LastName&gt;
+    &lt;State&gt;com.soa.group.membership.state.pending&lt;/State&gt;
+    &lt;role&gt;com.soa.group.membership.role.admin&lt;/role&gt;
+    &lt;UserName&gt;JonathanSwift&lt;/UserName&gt;
+    &lt;IdentityName&gt;JonathanSwift&lt;/IdentityName&gt;
+    &lt;DomainName&gt;Local Domain&lt;/DomainName&gt;
+    &lt;ns3:Image&gt;
+      &lt;ns3:Url&gt;http://acmepaymentscorp.com/api/users/avatar/_V_5wI7SKSjKMXvHlakks84g&lt;/ns3:Url&gt;
+      &lt;ns3:Link&gt;../acmepaymentscorp#/user/41c04963-f17d-4b5e-a19c-ab0fa22adfb1.acmepaymentscorp/details&lt;/ns3:Link&gt;
+    &lt;/ns3:Image&gt;
+  &lt;/Membership&gt;
+&lt;/Memberships&gt;</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Headers" -->
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Body" -->
+<h3 id="responsebody">Response Body</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Name</th>
+      <th width="15%">Type</th>
+      <th width="65%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Membership[&nbsp;]</td>
+      <td><a href="../obj/o_groups_Membership.htm">Membership</a></td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_groups_Membership.lbi" -->Contains information about a user's membership in a group.<!-- #EndLibraryItem --></p>
+        <p>One or more.</p></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<!-- InstanceEndEditable -->
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
+      <td><!-- #BeginLibraryItem "/Library/http_405.lbi" --> Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header.<!-- #EndLibraryItem --><!-- Actually: had PUT&nbsp;instead of GET&nbsp;for the HTTP verb, and no Content-Type specified, as well, when this code occurred--></td>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+    </tr>
+  </tbody>
+</table>
+<!-- InstanceEndEditable -->
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="700" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><hr />
