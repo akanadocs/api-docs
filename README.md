@@ -5,10 +5,9 @@ To optimize Github Pages build times (we were getting timeouts) we have moved th
 1. Make sure your docs-test and api-docs repositories are up-to-date:
 
 	```
-	cd ~/projects/akanadocs
-	cd docs-test
+	cd ~/projects/akanadocs/docs-test
 	git pull
-	cd api-docs
+	cd ~/projects/akanadocs/api-docs
 	git pull
 	```
 	
