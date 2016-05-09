@@ -72,10 +72,9 @@ This process has changed, you need to follow the exact same process as above, bu
 1.	Do all the same steps as for docs-test.  Here are the Linux commands:
 
 	```
-	cd ~/projects/akanadocs
-	cd akanadocs.github.io
+	cd ~/projects/akanadocs/akanadocs.github.io
 	git pull
-	cd api-docs
+	cd ~/projects/akanadocs/api-docs
 	git pull
 	cd ..
 	rm -rf temp
