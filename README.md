@@ -30,13 +30,6 @@ To optimize Github Pages build times (we were getting timeouts) we have moved th
 
 	Once the build completes you have a couple more steps:
 
-1.	Save the ```/cm/api/index.htm``` file from the **docs-test** repo somewhere safe:
-
-	```
-	cd ~/projects/akanadocs
-	cp docs-test/cm/api/index.htm .
-	```
-
 1.	Replace the ```cm/api``` folder om **docs-test** with the one from the built _site in **temp**:
 
 	```
@@ -44,13 +37,7 @@ To optimize Github Pages build times (we were getting timeouts) we have moved th
 	cp -R temp/_site/cm/api/ docs-test/cm/api/
 	```
 	
-1.	Put the saved ```index.htm``` file back:
-
-	```
-	cp index.htm docs-test/cm/api/
-	```
-
-1. Replace the content of the ```unsorted_pages_prod_cat``` variable in ```_includes/unsorted-pages-apioverview``` in your **docs-test** repo, with the contents of the same variable taken from ```_site/cm/api/Ref_API_Reference.htm```, or any of the Ref docs in your **temp** repo - now in docs-test too.
+1. 	Replace the content of the ```unsorted_pages_prod_cat``` variable in ```_includes/unsorted-pages-apioverview``` in your **docs-test** repo, with the contents of the same variable taken from ```_site/cm/api/Ref_API_Reference.htm```, or any of the Ref docs in your **temp** repo - now in docs-test too.
 
 	> NOTE: this step is essential for maintaining the navigation structure of the API Docs.
 
@@ -83,10 +70,8 @@ This process has changed, you need to follow the exact same process as above, bu
 	cd temp
 	bundle exec jekyll build
 	cd ~/projects/akanadocs
-	cp akanadocs.github.io/cm/api/index.htm .
 	rm -rf akanadocs.github.io/cm/api/
 	cp -R temp/_site/cm/api/ akanadocs.github.io/cm/api/
-	cp index.htm akanadocs.github.io/cm/api/
 	```
 
 1. Replace the content of the ```unsorted_pages_prod_cat``` variable in ```_includes/unsorted-pages-apioverview``` in your **akanadocs.github.io** repo, with the contents of the same variable taken from ```_site/cm/api/Ref_API_Reference.htm```, or any of the Ref docs in your **temp** repo - now in akanadocs.github.io too.
