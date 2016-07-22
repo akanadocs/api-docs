@@ -33,6 +33,7 @@ To optimize Github Pages build times (we were getting timeouts) we have moved th
 1.	Replace the ```cm/api``` folder om **docs-test** with the one from the built _site in **temp**:
 
 	```
+	cd ..
 	rm -rf docs-test/cm/api/
 	cp -R temp/_site/cm/api/ docs-test/cm/api/
 	```
