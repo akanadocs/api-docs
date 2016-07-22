@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Modify API Version Design | APIs Service | Akana API Platform API
-description: Updates an API version by providing an update to the API description file.
+description: Updates an API version by providing an update to the API description.
 product: cm
 category: ref
 nav-title: Modify API Version Design 
@@ -16,7 +16,7 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_modifyAPIVersionDesign.lbi" -->Updates an API version by providing an update to the API description file.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_modifyAPIVersionDesign.lbi" -->Updates an API version by providing an update to the API description.<!-- #EndLibraryItem --></p>
 <h5 class="stamp">New in API Platform Version: 8.1</h5>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to modify the API; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -120,7 +120,8 @@ Content-Type: application/vnd.soa.v81+json
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+      <td><p>Any one of the following media types is valid for the request Content-Type:</p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p></td>
     </tr>
   </tbody>
 </table>

@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Endpoints Object | APIs Service | Akana API Platform API
-description: Includes information about the set of Endpoint objects containing the URL hosting the API, and the category of each. The TargetAPI can have either Sandbox or Production endpoints and can also have more than one of each.
+description:  Includes information about the set of Endpoint objects containing the URL hosting the API, and the category of each. The TargetAPI can have endpoints for Live or Sandbox implementations and can also have more than one of each.
 product: cm
 category: ref
 nav-title: Endpoints Object 
@@ -12,11 +12,14 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a> Endpoints Object</h2>
-<p><!-- #BeginLibraryItem "/Library/o_apis_Endpoints.lbi" -->Includes information about the set of Endpoint objects containing the URL hosting the API, and the category of each. The TargetAPI can have either Sandbox or Production endpoints and can also have more than one of each.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/o_apis_Endpoints.lbi" -->
+Includes information about the set of Endpoint objects containing the URL hosting the API, and the category of each. The TargetAPI can have endpoints for Live or Sandbox implementations and can also have more than one of each.<!-- #EndLibraryItem --></p>
 <p>If two or more endpoints are defined for a particular category, the system will load-balance across all endpoints for that category.</p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
+  <li><span class="apidoc_code"><a href="../apis/m_apis_saveServiceEndpoints.htm">PUT&nbsp;/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/services/{ServiceID}/endpoints</a></span> (in request and response)</li>
+  <li><span class="apidoc_code"><a href="../apis/m_apis_getServiceEndpoints.htm">GET&nbsp;/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/services/{ServiceID}/endpoints</a></span> (in response)</li>
   <li>Operations that reference the <a href="o_apis_APIVersion.htm">APIVersion</a> object</li>
   <li>Operations that reference the <a href="o_apis_TargetAPI.htm">TargetAPI</a> object</li>
   <li>Operations that reference the <a href="o_apis_APIImplementation.htm">APIImplementation</a> object</li>

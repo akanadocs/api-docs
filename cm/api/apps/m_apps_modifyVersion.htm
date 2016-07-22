@@ -12,13 +12,13 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top"></a>PUT&nbsp;apps/versions/{AppVersionID}</h2>
+<h2><a name="top"></a>PUT&nbsp;/api/apps/versions/{AppVersionID}</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_modifyVersion.lbi" --> Changes one or more values associated with an app version.<!-- #EndLibraryItem --></p>
 <p>This operation allows modifying the Shared Secret for the app only if this feature is enabled via platform settings <strong>and</strong> the account was created on the platform. Users who sign in using LDAP or another external identity account cannot modify the Shared Secret on the platform.</p>
-<p class="apidoc_note"><strong>Note</strong>: If you are not sure of the ID for the app version, but you have the App ID, you can run the <span class="apidoc_code"><a href="m_apps_getApp.htm">GET&nbsp;apps/{AppID}</a></span> operation to get the ID of the default version.</p>
+<p class="apidoc_note"><strong>Note</strong>: If you are not sure of the ID for the app version, but you have the App ID, you can run the <span class="apidoc_code"><a href="m_apps_getApp.htm">GET&nbsp;/api/apps/{AppID}</a></span> operation to get the ID of the default version.</p>
 <p id="id_workflow"><strong>Workflow</strong>: This operation checks whether the resource is governed by a workflow, and if so whether the action is valid based on the current state of the resource. If the action is not valid, the operation will fail.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a></p>
 <p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
@@ -121,7 +121,8 @@ Content-Type: application/json; charset=UTF-8
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+      <td><p>Any one of the following media types is valid for the request Content-Type:</p>
+<p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -199,7 +200,7 @@ Atmo-Renew-Token: renew</pre>
   </thead>
   <tbody>
     <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>

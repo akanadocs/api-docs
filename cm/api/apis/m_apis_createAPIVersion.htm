@@ -97,7 +97,8 @@ Content-Type: application/vnd.soa.v81+json
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></td>
+      <td><p>Any one of the following media types is valid for the request Content-Type:</p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -134,7 +135,15 @@ Content-Type: application/vnd.soa.v81+json
       <td>Body</td>
       <td><a href="../obj/o_apis_AddAPIRequest.htm">AddAPIRequest</a></td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_apis_addAPIRequest.lbi" -->Contains information about a request to add an API.<!-- #EndLibraryItem --></td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_apis_addAPIRequest.lbi" -->Contains information about a request to add an API.<!-- #EndLibraryItem --></p>
+        <p>The only property required is the API name.</p>
+        <p>Properties supported in the <strong>AddAPIImplementRequest</strong> when creating an API version are:</p>
+        <ul class="apidoctable_ul">
+          <li>ImplementationCode</li>
+          <li>CreateMechanism</li>
+          <li>ProxyImplementationRequest (if <strong>CreateMechanism</strong> is <strong>PROXY</strong>)</li>
+        </ul>
+        <p>The DropboxFileId is returned by the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readFileDetails</a></span> operation which is run first to upload an individual or ZIP file.</p></td>
     </tr>
   </tbody>
 </table>

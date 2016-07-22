@@ -34,11 +34,11 @@ The APIs service provides a REST interface and a set of operations for managing 
    <tr>
      <td>add API</td>
      <td><p><a href="apis/m_apis_addAPI.htm">POST&nbsp;/api/apis</a></p>
-       <p><strong>Note</strong>: Legacy operation. From version 8.1 onwards, use <a href="apis/m_apis_createAPI.htm">POST&nbsp;/api/apis</a>with custom headers.</p></td>
+       <p><strong>Note</strong>: Legacy operation. From version 8.1 onwards, use <a href="apis/m_apis_createAPI.htm">POST&nbsp;/api/apis</a> with custom headers.</p></td>
      <td><!-- #BeginLibraryItem "/Library/desc_addAPI.lbi" -->Adds a new API to the platform, and also adds the first API version; or, creates an API definition on the platform from an existing virtual service defined in Policy Manager.<!-- #EndLibraryItem --></td>
    </tr>
    <tr>
-     <td>ass API Administrator</td>
+     <td>add API Administrator</td>
      <td>POST&nbsp;/api/apis/{APIID}/administrators is deprecated; use <a href="groups/m_groups_inviteMemberToGroup.htm">POST&nbsp;/api/groups/{GroupID}/members</a></td>
      <td><!-- #BeginLibraryItem "/Library/desc_addAPIAdministrator.lbi" -->Adds a new Administrator for the specified API.<!-- #EndLibraryItem --></td>
    </tr>
@@ -294,6 +294,16 @@ Returns a list of <a href="Ref_Glossary_CommunityPlatform.htm#gl_viewer">viewers
 Retrieves a summary of the ratings for a resource.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
+      <td>get service asset</td>
+      <td><a href="apis/m_apis_getServiceAsset.htm">GET&nbsp;/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/services/{ServiceID}</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getServiceAsset.lbi" -->Returns information about the service for a specific API version implementation.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>get service endpoints</td>
+      <td><a href="apis/m_apis_getServiceEndpoints.htm">GET&nbsp;/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/services/{ServiceID}/endpoints</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getServiceEndpoints.lbi" -->Returns information about the endpoints for a specific API version, implementation, service.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
       <td>get Swagger API document</td>
       <td><a href="apis/m_apis_getSwaggerApiDocument.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/swagger/{SwaggerPath}</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_getSwaggerAPIDocument.lbi" -->
@@ -326,13 +336,13 @@ Returns the automatically-generated <a href="Ref_Glossary_CommunityPlatform.htm#
       <td><!-- #BeginLibraryItem "/Library/desc_getVersionBoard_apis.lbi" -->Returns a list of Board items for the specified API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td>Invite private viewer</td>
+      <td>invite private viewer</td>
       <td><a href="apis/m_apis_invitePrivateViewer.htm">POST&nbsp;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_invitePrivateViewer.lbi" -->
 Invites a group to connect to a Private API. When the group is connected, group members can view the API.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td>Invite private viewer with scope</td>
+      <td>invite private viewer with scope</td>
       <td><a href="apis/m_apis_invitePrivateViewerWithScope.htm">POST&nbsp;/api/apis/versions/{APIVersionID}/viewers</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_invitePrivateViewerWithScope.lbi" -->
 Invites a group to have visibility of an API version, with visibility limited to one or more specified scopes.<!-- #EndLibraryItem --></td>
@@ -373,7 +383,7 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
     <tr>
       <td>modify API version design</td>
       <td><a href="apis/m_apis_modifyAPIVersionDesign.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/design</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_modifyAPIVersionDesign.lbi" -->Updates an API version by providing an update to the API description file.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_modifyAPIVersionDesign.lbi" -->Updates an API version by providing an update to the API description.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>modify legal details</td>
@@ -387,7 +397,7 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
 Modifies the <a href="aaref/Ref_Values.htm#values_legaldocumentstate">State</a> of a legal document associated with a specified API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td>Remove API Administrator</td>
+      <td>remove API Administrator</td>
       <td>DELETE&nbsp;/api/apis/{APIID}/administrators/{UserID} is deprecated; use <a href="groups/m_groups_removeMemberFromGroup.htm">DELETE&nbsp;/api/groups/{GroupID}/members/{UserID}</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_removeAPIAdministrator.lbi" --> Removes the specified user from the Administrator role for the specified API.<!-- #EndLibraryItem --></td>
     </tr>
@@ -411,6 +421,11 @@ Adds or updates information about operation-specific scope mapping for an API ve
       <td>save private viewer scope</td>
       <td><a href="apis/m_apis_savePrivateViewerScope.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_savePrivateViewerScope.lbi" -->Saves private viewer scope for an API.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>save service endpoints</td>
+      <td><a href="apis/m_apis_saveServiceEndpoints.htm">PUT&nbsp;/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/services/{ServiceID}/endpoints</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_saveServiceEndpoints.lbi" -->Modifies information about the endpoints for a specific API version, implementation, service.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>uninvite private viewer</td>

@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: DeploymentZoneInfo Object | Deployment Zones Service | Akana API Platform API
-description: Contains information about a specific deployment zone.
+description:  Contains information about a specific deployment zone on the platform.
 product: cm
 category: ref
 nav-title: DeploymentZoneInfo Object 
@@ -11,11 +11,14 @@ sub-nav-class: obj
 no-catalog: true
 ---
 
-  <h2><a name="top"></a>DeploymentZoneInfo Object</h2>
-<p><!-- #BeginLibraryItem "/Library/o_deployment_DeploymentZoneInfo.lbi" -->Contains information about a specific deployment zone.<!-- #EndLibraryItem --></p>
+<h2><a name="top"></a>DeploymentZoneInfo Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_deployment_DeploymentZoneInfo.lbi" -->
+Contains information about a specific deployment zone on the platform.<!-- #EndLibraryItem --></p>
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
-  <li><span class="apidoc_code"><a href="../deploymentzones/m_deploymentzones_getDeploymentZoneInfo.htm">GET&nbsp;/api/deploymentzones/{dzInfoID}</a></span></li>
+  <li><span class="apidoc_code"><a href="../deploymentzones/m_deploymentzones_addDeploymentZone.htm">POST&nbsp;/api/deploymentzones</a></span> (in request and response)</li>
+  <li><span class="apidoc_code"><a href="../deploymentzones/m_deploymentzones_updateDeploymentZone.htm">PUT&nbsp;/api/deploymentzones/{DZoneID}</a></span> (in request and response)</li>
+  <li><span class="apidoc_code"><a href="../deploymentzones/m_deploymentzones_getDeploymentZoneInfo.htm">GET&nbsp;/api/deploymentzones/{DZoneID}</a></span> (in response)</li>
   <li>Any operations that use the <a href="o_deployment_DeploymentZoneInfoList.htm">DeploymentZoneInfoList</a> object</li>
 </ul>
 
@@ -55,9 +58,34 @@ no-catalog: true
       <td>Unique key for the container where the deployment zone is hosted.</td>
     </tr>
     <tr>
-      <td>AddressOverride</td>
-      <td>boolean</td>
-      <td>Indicates whether there is an address override for the deployment zone. Default: <strong>false</strong>.</td>
+      <td>ContainerName</td>
+      <td>string</td>
+      <td>Name of the container where the deployment zone is hosted.</td>
+    </tr>
+    <tr>
+      <td>AddressOverrideBehavior</td>
+      <td>string</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_AddressOverrideBehavior.lbi" --><p>Indicates whether the default API Gateway hostname is overridden by a specific hostname (specified in the <strong>HostName</strong> property. Valid values:</p>
+        <ul class="apidoctable_ul">
+          <li>com.akana.allow: address override is allowed.</li>
+          <li>com.akana.dontallow: address override is not allowed.</li>
+        </ul>
+        <p>Default: <strong>com.akana.dontallow</strong>.</p><!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>RandomHostNameBehavior</td>
+      <td>string</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_RandomHostNameBehavior.lbi" --><p>Indicates whether to append a random prefix to the hostname or not. Valid values:</p>
+        <ul class="apidoctable_ul">
+          <li>com.akana.allow: a random prefix is appended to the hostname.</li>
+          <li>com.akana.dontallow: there is no random prefix.</li>
+          </ul>
+        <p>Default: <strong>com.akana.allow</strong>.</p><!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>HostName</td>
+      <td>string</td>
+      <td>If AddressOverrideBehavior is set to allow an override, hostname is required. It must be a valid hostname. In this scenario, all APIs in the business will have the same hostname. The API Admin must make sure that the DNS system is configured to resolve this hostname to the hostname for the API implementation.</td>
     </tr>
     <tr>
       <td>VirtualHostSupported</td>
@@ -70,10 +98,9 @@ no-catalog: true
       <td><!-- #BeginLibraryItem "/Library/o_deployment_DeploymentZoneAccessPoint.lbi" -->Contains information about an access point for a deployment zone.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td>DeploymentZoneEligibilityCriteria</td>
-      <td><a href="o_deployment_DeploymentZoneEligibilityCriteria.htm">DeploymentZoneEligibilityCriteria</a>[&nbsp;]</td>
-      <td><!-- #BeginLibraryItem "/Library/o_deployment_DeploymentZoneEligibilityCriteria.lbi" -->
-Contains information about implementation/environment combinations. Used to determine whether the specific combinations are eligible to be deployed to a specific deployment zone.<!-- #EndLibraryItem --></td>
+      <td>DZoneEnvImplAssociations</td>
+      <td><a href="o_deployment_DZoneEnvImplAssociations.htm">DZoneEnvImplAssociations</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_deployment_DZoneEnvImplAssociations.lbi" -->Contains information about implementation/environment associations for a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>. <!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>

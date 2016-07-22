@@ -66,9 +66,10 @@ Content-Type: application/json
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "AnonymousAccessAllowed":false,
-  "EndpointAccessAutoApproved":true,
-  "Description":"Sandbox implementation"
+  &quot;AnonymousAccessAllowed&quot;:false,
+  &quot;EndpointAccessAutoApproved&quot;:true,
+  &quot;Description&quot;:&quot;Swagger Slim Version&quot;,
+  &quot;Pattern&quot;:&quot;com.akana.pattern.proxy&quot;
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -92,8 +93,9 @@ Content-Type: application/json
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+      <td><p>Any one of the following media types is valid for the request Content-Type:</p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -157,14 +159,14 @@ Content-Type: application/json
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Thu, 28 Apr 2016 20:47:39 GMT
+Date: Fri, 20 May 2016 22:54:09 GMT
 Content-Type: <strong>application/vnd.soa.v81+json</strong></pre>
 <p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
 <pre>{
-  "APIVersionID" : "f7f250fc-8405-43e0-9073-0f56a918d676.acmepaymentscorp",
+  "APIVersionID" : "f10624ed-9a23-4cb9-90d4-595d4a7c64f9.acmepaymentscorp",
   "ImplementationCode" : "Sandbox",
   "Pattern" : "com.akana.pattern.proxy",
-  "ServiceKey" : "uddi:1529fb5b-0d7b-11e6-9fe3-c2371d568f6f",
+  "ServiceKey" : "uddi:e4f16dc7-1eda-11e6-a076-bde7b81dff00",
   "AnonymousAccessAllowed" : false,
   "EndpointAccessAutoApproved" : true,
   "APIOwnedImplementation" : true
@@ -173,20 +175,19 @@ Content-Type: <strong>application/vnd.soa.v81+json</strong></pre>
 <p><strong>Sample response headers: application/vnd.soa.v81+xml</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: <strong>application/vnd.soa.v81+xml</strong>
-Date: Thu, 28 Apr 2016 20:57:56 GMT</pre>
+Date: Fri, 20 May 2016 22:55:03 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v81+xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
 &lt;APIImplementationInfo xmlns="http://soa.com/xsd/api/1.0" xmlns:ns2="http://soa.com/xsd/business/1.0" 
-xmlns:ns3="http://soa.com/xsd/deploymentzone/1.0" xmlns:ns4="http://soa.com/xsd/asset/1.0" 
-xmlns:ns5="http://soa.com/xsd/legals/1.0" xmlns:ns6="http://soa.com/xsd/dnmodel/1.0" 
-xmlns:ns7="http://soa.com/xsd/resource/1.0"&gt;
-    &lt;APIVersionID&gt;f7f250fc-8405-43e0-9073-0f56a918d676.acmepaymentscorp&lt;/APIVersionID&gt;
-    &lt;ImplementationCode&gt;Sandbox&lt;/ImplementationCode&gt;
-    &lt;Pattern&gt;com.akana.pattern.proxy&lt;/Pattern&gt;
-    &lt;ServiceKey&gt;uddi:1529fb5b-0d7b-11e6-9fe3-c2371d568f6f&lt;/ServiceKey&gt;
-    &lt;AnonymousAccessAllowed&gt;false&lt;/AnonymousAccessAllowed&gt;
-    &lt;EndpointAccessAutoApproved&gt;true&lt;/EndpointAccessAutoApproved&gt;
-    &lt;APIOwnedImplementation&gt;true&lt;/APIOwnedImplementation&gt;
+xmlns:ns3="http://soa.com/xsd/resource/1.0" xmlns:ns4="http://soa.com/xsd/deploymentzone/1.0" 
+xmlns:ns5="http://soa.com/xsd/asset/1.0" xmlns:ns6="http://soa.com/xsd/dnmodel/1.0" xmlns:ns7="http://soa.com/xsd/legals/1.0"&gt;
+  &lt;APIVersionID&gt;f10624ed-9a23-4cb9-90d4-595d4a7c64f9.acmepaymentscorp&lt;/APIVersionID&gt;
+  &lt;ImplementationCode&gt;Sandbox&lt;/ImplementationCode&gt;
+  &lt;Pattern&gt;com.akana.pattern.proxy&lt;/Pattern&gt;
+  &lt;ServiceKey&gt;uddi:e4f16dc7-1eda-11e6-a076-bde7b81dff00&lt;/ServiceKey&gt;
+  &lt;AnonymousAccessAllowed&gt;false&lt;/AnonymousAccessAllowed&gt;
+  &lt;EndpointAccessAutoApproved&gt;true&lt;/EndpointAccessAutoApproved&gt;
+  &lt;APIOwnedImplementation&gt;true&lt;/APIOwnedImplementation&gt;
 &lt;/APIImplementationInfo&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

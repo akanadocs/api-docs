@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_ssoLoginPost.lbi" -->Logs the user in to an external identity system such as Facebook, for a login domain set up on the platform.<!-- #EndLibraryItem --></p>
 <p class="apidoc_note"><strong>Note</strong>: Login domains might support SSO login via POST or GET. For example, an OpenID Connect Relying Party domain might support a response mode of query, fragment, or form_post. If the domain supports form_post, <span class="apidoc_code">POST&nbsp;/api/login/ssoLogin</span> is used. If the domain supports query or fragment, <span class="apidoc_code">GET&nbsp;/api/login/ssoLogin</span> is used.</p>
-<p>The specific processing that occurs with this operation depends on the login domain being used, as specified in the Domain parameter in the request message. For example:</p>
+<p>The specific processing that occurs with this operation depends on the login domain being used, as specified in the <strong>domain</strong> parameter in the request message. For example:</p>
 <ul>
   <li>CA Siteminder domain: the operation looks for the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_smsession_cookie">SMSESSION</a> cookie header.</li>
   <li>SAML Web SSO domain: it looks for the SAML assertion in query or form parameters.</li>
@@ -62,18 +62,30 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The example below shows an SSO login request.</p>
-<p><strong>Request URL</strong></p>
+<p id="id_samplerequest">The examples below shows an SSO login request for an LDAP domain. The first example sends the <strong>domain</strong> parameter in the POST content, the second sends it in the path.</p>
+<p class="apidoc_note"><strong>Note</strong>: In processing the request, the platform looks for the <strong>domain</strong> parameter first in the POST content, and then in the path.</p>
+<p><strong>Request URL #1 (LDAP)</strong></p>
+<p>Domain parameter is not included in the path, it is sent in the POST content (see sample request body #1).</p>
 <pre>http://acmepaymentscorp.com/api/login/ssoLogin</pre>
+
+<p><strong>Request URL #2 (LDAP)</strong></p>
+<p>Domain parameter is sent in the path, and other parameters are sent in the POST content (see sample request body #2).</p>
+<pre>http://acmepaymentscorp.com/api/login/ssoLogin/LdapAutomation1acmepaymentscorp</pre>
+
 <p><strong>Sample request headers</strong></p>
 <pre>Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8
 Cookie: JSESSIONID_pm60=1gsjqvxu1cgnj1th05legkdfvo</pre>
-<p><strong>Sample request body</strong></p>
-<pre>identity_username=MaryMartinson&secret_password=MyPassword11&domain=LdapAutomation1acmepaymentscorp</pre>
+
+<p><strong>Sample request body #1 (LDAP)</strong></p>
+<pre>identity_username=MaryMartinson&amp;secret_password=MyPassword11&amp;domain=LdapAutomation1acmepaymentscorp</pre>
+
+<p><strong>Sample request body #2 (LDAP)</strong></p>
+<pre>identity_username=MaryMartinson&amp;secret_password=MyPassword11</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
+
 
 
 <!-- InstanceBeginEditable name="Request Headers" -->
@@ -115,7 +127,7 @@ Cookie: JSESSIONID_pm60=1gsjqvxu1cgnj1th05legkdfvo</pre>
   </thead>
   <tbody>
     <tr>
-      <td>Domain</td>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_domainid">domainid</a></td>
       <td>Form</td>
       <td>String</td>
       <td>Required</td>

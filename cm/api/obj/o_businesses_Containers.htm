@@ -1,25 +1,24 @@
 ---
 layout: apipage
-title: DeploymentZoneEligibilityCriteria Object | Deployment Zones Service | Akana API Platform API
-description:  Contains information about implementation/environment combinations. Used to determine whether the specific combinations are eligible to be deployed to a specific deployment zone.
+title: Containers Object | Businesses Service | Akana API Platform API
+description: Contains information about one or more OSGi container on the platform.
 product: cm
 category: ref
-nav-title: DeploymentZoneEligibilityCriteria Object 
+nav-title: Containers Object 
 no-nav: api
 sub-nav: true
 sub-nav-class: obj
 no-catalog: true
 ---
 
-  <h2><a name="top"></a>DeploymentZoneEligibilityCriteria Object</h2>
-<p><!-- #BeginLibraryItem "/Library/o_deployment_DeploymentZoneEligibilityCriteria.lbi" -->
-Contains information about implementation/environment combinations. Used to determine whether the specific combinations are eligible to be deployed to a specific deployment zone.<!-- #EndLibraryItem --></p>
+<h2><a name="top"></a>Containers Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_businesses_Containers.lbi" -->Contains information about one or more OSGi container on the platform.<!-- #EndLibraryItem --></p>
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
-  <li>Any operations that use the <a href="o_deployment_DeploymentZoneInfo.htm">DeploymentZoneInfo</a> object</li>
+  <li><span class="apidoc_code"><a href="../businesses/m_businesses_getContainers.htm">GET&nbsp;/api/businesses/{BusinessID}/containers</a></span></li>
 </ul>
 
-<p>The properties included in the <strong>DeploymentZoneEligibilityCriteria</strong> object are listed below.</p>
+<p>The properties included in the <strong>Containers</strong> object are listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -30,14 +29,10 @@ Contains information about implementation/environment combinations. Used to dete
   </thead>
   <tbody>
     <tr>
-      <td>Implementation</td>
-      <td>string</td>
-      <td>A specific implementation.</td>
-    </tr>
-    <tr>
-      <td>Environment</td>
-      <td>string</td>
-      <td>A specific environment.</td>
+      <td>Container</td>
+      <td><a href="o_businesses_Container.htm">Container</a>[&nbsp;]</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_businesses_Container.lbi" -->Contains information about an OSGi container on the platform.<!-- #EndLibraryItem --></p>
+        <p>One or more.</p></td>
     </tr>
     </tbody>
 </table>

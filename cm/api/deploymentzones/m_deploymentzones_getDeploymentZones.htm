@@ -120,16 +120,18 @@ Accept: application/json
 
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
-Date:  Thu, 11 Feb 2016 20:48:36 GMT
+Date:   Thu, 21 Jul 2016 18:24:04 GMT
 Content-Type: application/json</pre>
 
 <p><a id="rss_deploymentzones_json"></a><strong>Sample response body: application/json</strong></p>
-<pre>{
+<pre>
+
+{
   "channel" : {
     "title" : "Deployment Zones",
     "item" : [ {
-      "title" : "88cb1bbd-1f52-4e98-a5e4-fad2a8af",
-      "link" : "http://acmepaymentscorp.akana.com:9901",
+      "title" : "nkCl-3ScTUG1Zsvzim-BzA",
+      "link" : "http://ubu1464qa-10.local.akana.com:7901",
       "category" : [ {
         "value" : "Production",
         "domain" : "uddi:soa.com:environment"
@@ -138,12 +140,12 @@ Content-Type: application/json</pre>
         "domain" : "uddi:soa.com:environment"
       } ],
       "guid" : {
-        "value" : "88cb1bbd-1f52-4e98-a5e4-fad2a8afdefault-http0"
+        "value" : "nkCl-3ScTUG1Zsvzim-BzAdefault-http0"
       },
       "EntityReferences" : {
         "EntityReference" : [ {
-          "Title" : "88cb1bbd-1f52-4e98-a5e4-fad2a8af",
-          "Guid" : "88cb1bbd-1f52-4e98-a5e4-fad2a8af.acmepaymentscorp",
+          "Title" : "nkCl-3ScTUG1Zsvzim-BzA",
+          "Guid" : "nkCl-3ScTUG1Zsvzim-BzA.atmosphere",
           "Category" : [ {
             "value" : "dzone",
             "domain" : "uddi:soa.com:resourcetype"
@@ -157,27 +159,33 @@ Content-Type: application/json</pre>
 
 
 <p><a id="rss_deploymentzones_xml"></a><strong>Sample response body: text/xml</strong></p>
-<pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
-&lt;rss xmlns:ns2="http://soa.com/xsd/rss/1.0" xmlns:ns3="http://soa.com/xsd/comment/1.0" 
-xmlns:ns4="http://soa.com/xsd/user/1.0" xmlns:ns5="http://a9.com/-/spec/opensearch/1.1/" 
-xmlns:ns6="http://soa.com/xsd/resource/1.0" xmlns:ns7="http://soa.com/xsd/fault/1.0" 
-xmlns:ns8="http://soa.com/xsd/api/1.0" xmlns:ns9="http://soa.com/xsd/board/1.0" version="1.0"&gt;
+<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;rss xmlns:ns2="http://soa.com/xsd/business/1.0" xmlns:ns3="http://soa.com/xsd/user/1.0" 
+xmlns:ns4="http://soa.com/xsd/rss/1.0" xmlns:ns5="http://soa.com/xsd/comment/1.0" xmlns:ns6="http://soa.com/xsd/board/1.0" 
+xmlns:ns7="http://soa.com/xsd/dnmodel/1.0" xmlns:ns8="http://a9.com/-/spec/opensearch/1.1/" 
+xmlns:ns9="http://soa.com/xsd/resource/1.0" xmlns:ns10="http://soa.com/xsd/legals/1.0" 
+xmlns:ns11="http://soa.com/xsd/fault/1.0" xmlns:ns12="http://soa.com/xsd/api/1.0" 
+xmlns:ns13="http://soa.com/xsd/deploymentzone/1.0" xmlns:ns14="http://soa.com/xsd/asset/1.0" 
+xmlns:ns15="http://soa.com/xsd/ticket/1.0" xmlns:ns16="http://soa.com/xsd/app/1.0" 
+xmlns:ns17="http://soa.com/xsd/review/1.0" xmlns:ns18="http://soa.com/xsd/alert/1.0" 
+xmlns:ns19="http://soa.com/xsd/contract/1.0" xmlns:ns20="http://soa.com/xsd/discussion/1.0" 
+xmlns:ns21="http://soa.com/xsd/search/1.0" xmlns:ns22="http://soa.com/xsd/workflow/1.0" 
+xmlns:ns23="http://soa.com/xsd/client/services/1.0" version="1.0"&gt;
   &lt;channel&gt;
     &lt;title&gt;Deployment Zones&lt;/title&gt;
     &lt;item&gt;
-      &lt;title&gt;container-1051&lt;/title&gt;
-      &lt;link&gt;http://broker.soa.com&lt;/link&gt;
-      &lt;description&gt;Brokers located on the East Coast of the United States&lt;/description&gt;
+      &lt;title&gt;nkCl-3ScTUG1Zsvzim-BzA&lt;/title&gt;
+      &lt;link&gt;http://ubu1464qa-10.local.akana.com:7901&lt;/link&gt;
       &lt;category domain="uddi:soa.com:environment"&gt;Production&lt;/category&gt;
       &lt;category domain="uddi:soa.com:environment"&gt;Sandbox&lt;/category&gt;
-      &lt;guid&gt;dzone-rule-1&lt;/guid&gt;
-      &lt;ns2:EntityReferences&gt;
-        &lt;ns2:EntityReference&gt;
-          &lt;Title&gt;East Coast&lt;/Title&gt;
-          &lt;Guid&gt;dzone1.acmepaymentscorp&lt;/Guid&gt;
-          &lt;ns2:Category domain="uddi:soa.com:resourcetype"&gt;dzone&lt;/ns2:Category&gt;
-        &lt;/ns2:EntityReference&gt;
-      &lt;/ns2:EntityReferences&gt;
+      &lt;guid&gt;nkCl-3ScTUG1Zsvzim-BzAdefault-http0&lt;/guid&gt;
+      &lt;ns4:EntityReferences&gt;
+        &lt;ns4:EntityReference&gt;
+          &lt;Title&gt;nkCl-3ScTUG1Zsvzim-BzA&lt;/Title&gt;
+          &lt;Guid&gt;nkCl-3ScTUG1Zsvzim-BzA.atmosphere&lt;/Guid&gt;
+          &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;dzone&lt;/ns4:Category&gt;
+        &lt;/ns4:EntityReference&gt;
+      &lt;/ns4:EntityReferences&gt;
     &lt;/item&gt;
   &lt;/channel&gt;
 &lt;/rss&gt;

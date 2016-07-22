@@ -20,7 +20,7 @@ no-catalog: true
 <p>The values are:</p>
 <ul>
   <li>Inactive Login Session Timeout (Minutes): <strong>InactiveSessionTimeout</strong></li>
-  <li>Active Login Session Timeout (Minutes): <strong>ActiveSessionTimeout</strong>
+  <li>Active Login Session Timeout (Minutes): <strong>ActiveSessionTimeout</strong></li>
   </ul>
 <p>The user's AuthToken determines how long the user's session will last. The platform uses   the values provided for these settings, if specified, to calculate the AuthToken expiration time, which is set in the <strong>AuthTokenValidUntil</strong> property. If no session timeout value is specified, the default AuthToken expiration time of 30 minutes applies. If the AuthToken is renewed via the Renew Token operation, the token time is extended for Inactive Session Timeout, but for Active Session Timeout it is not extended further than the total session duration specified in the setting.</p>
 <p>Notes:</p>

@@ -98,7 +98,8 @@ Cookie: {cookie}
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+      <td><p>Any one of the following media types is valid for the request Content-Type:</p>
+        <p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p></td>
     </tr>
   </tbody>
 </table>
@@ -151,20 +152,19 @@ Cookie: {cookie}
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Thu, 28 Apr 2016 19:54:55 GMT
+Date: Fri, 20 May 2016 22:33:36 GMT
 Content-Type: application/vnd.soa.v81+json</pre>
 <p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
 <pre>{
-  "APIVersionID" : "f7f250fc-8405-43e0-9073-0f56a918d676.acmepaymentscorp",
+  "APIVersionID" : "f10624ed-9a23-4cb9-90d4-595d4a7c64f9.acmepaymentscorp",
   "ImplementationCode" : "Sandbox",
   "Pattern" : "com.akana.pattern.proxy",
-  "ServiceKey" : "uddi:1529fb5b-0d7b-11e6-9fe3-c2371d568f6f",
+  "ServiceKey" : "uddi:e4f16dc7-1eda-11e6-a076-bde7b81dff00",
   "AnonymousAccessAllowed" : true,
   "EndpointAccessAutoApproved" : true,
   "APIOwnedImplementation" : true
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p>
 <!-- InstanceEndEditable -->
 
 
@@ -182,6 +182,10 @@ Content-Type: application/vnd.soa.v81+json</pre>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
       <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
+      <td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</td>
     </tr>
   </tbody>
 </table>

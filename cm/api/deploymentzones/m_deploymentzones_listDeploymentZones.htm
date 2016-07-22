@@ -18,6 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_listDeploymentZones.lbi" -->Returns a list of valid <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zones</a> on the platform, in the form of a JSON or XML object.<!-- #EndLibraryItem --></p>
 <p><strong>Note</strong>: Be sure to include a valid Accept header with this operation. If you don't include the Accept header, the operation might fail.</p>
+<h5 class="stamp">New in API Platform Version: 8.1</h5>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -150,27 +151,34 @@ Accept: application/vnd.soa.v81+json
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/vnd.soa.v81+json
-Date: Fri, 19 Feb 2016 20:31:54 GMT</pre>
+Date: Thu, 21 Jul 2016 18:27:33 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
-<pre>{
+<pre>
+
+{
   "DeploymentZoneInfo" : [ {
-    "DeploymentZoneID" : "36f2c4c0-b025-4642-ad4d-96a62fdc.acmepaymentscorp",
-    "Name" : "DZ-nd80",
-    "Location" : "34.052234, -118.243685",
-    "ContainerKey" : "36f2c4c0-b025-4642-ad4d-96a62fdc",
-    "AddressOverride" : false,
-    "VirtualHostSupported" : true,
+    "DZoneEnvImplAssociations" : {
+      "DZoneEnvImplAssociation" : [ {
+        "Implementation" : "Live",
+        "Environment" : "Production"
+      }, {
+        "Implementation" : "Sandbox",
+        "Environment" : "Production"
+      } ]
+    },
+    "DeploymentZoneID" : "nkCl-3ScTUG1Zsvzim-BzA.atmosphere",
+    "Name" : "eapnd",
+    "Description" : "Built by Automation 07/21/16 (Please don\"t change or delete) \nPlatform Version ['8.2.0'] with: ND version ['8.2.0']",
+    "Location" : "25.761680, -80.191790",
+    "ContainerKey" : "nkCl-3ScTUG1Zsvzim-BzA",
+    "ContainerName" : "eapnd",
+    "AddressOverrideBehavior" : "com.akana.allow",
+    "RandomHostNameBehavior" : "com.akana.allow",
+    "VirtualHostSupported" : false,
     "DeploymentZoneAccessPoint" : [ {
       "Protocol" : "http",
       "Name" : "default-http0",
-      "Address" : "http://www.acmepaymentscorp.com"
-    } ],
-    "DeploymentZoneEligibilityCriteria" : [ {
-      "Implementation" : "Live",
-      "Environment" : "default"
-    }, {
-      "Implementation" : "Sandbox",
-      "Environment" : "default"
+      "Address" : "http://ubu1464qa-10.local.akana.com:7901"
     } ]
   } ]
 }</pre>

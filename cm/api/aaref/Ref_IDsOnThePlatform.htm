@@ -189,7 +189,7 @@ Unique ID for the latest or only version of an app.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a id="id_deploymentzoneid"></a>DeploymentZoneID</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_DeploymentZoneID.lbi" -->Unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_DeploymentZoneID.lbi" -->Unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.<!-- #EndLibraryItem --> (DeploymentZoneID and DZoneID are the same.)</td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -211,7 +211,7 @@ The unique ID for the specific resource that a <a href="../Ref_Glossary_Communit
   </tr>
   <tr>
     <td><a id="id_domainid"></a>DomainID</td>
-    <td>The unique ID for the domain relating to OAuth implementation. Used in the OAuth services.</td>
+    <td>The unique ID for the domain relating to OAuth implementation. Used in the OAuth services and the Login API.</td>
     <td>1006</td>
   </tr>
   <tr>
@@ -226,6 +226,11 @@ The unique ID for the specific resource that a <a href="../Ref_Glossary_Communit
 A temporary ID for a file uploaded to the platform. The DropboxId is assigned by the Dropbox when the file is first uploaded to the platform, using the Dropbox service, as part of adding or updating the resource. <!-- #EndLibraryItem --></p>
       <p>Note: Most IDs are strings, but <strong>DropboxId</strong> and <strong>PictureId</strong> have a data type of <strong>long</strong>.</p></td>
     <td>1021</td>
+  </tr>
+  <tr>
+    <td><a id="id_dzoneid"></a>DZoneID</td>
+    <td><!-- #BeginLibraryItem "/Library/o_ID_DeploymentZoneID.lbi" -->Unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.<!-- #EndLibraryItem --> (DeploymentZoneID and DZoneID are the same.)</td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
       <td><a id="id_fedmemberid"></a>FedMemberID</td>
@@ -413,6 +418,11 @@ The unique UserID of the user performing a specific action.<!-- #EndLibraryItem 
 <p><strong>Note</strong>: Where RuntimeID appears in a request or response object, it is actually the AppVersionID.</p></td>
       <td><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem -->-9ezRSOnifci8EYNndZu79U6w.</td>
   </tr>
+    <tr>
+      <td><a id="id_serviceid"></a>ServiceID</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ServiceID.lbi" -->The unique ID for a specific proxied API service.<!-- #EndLibraryItem --></td>
+      <td>&nbsp;</td>
+    </tr>
     <tr>
       <td><a id="id_scopeid"></a>ScopeID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_ScopeID.lbi" -->A unique ID indicating the scope of a user's permissions.<!-- #EndLibraryItem --></td>

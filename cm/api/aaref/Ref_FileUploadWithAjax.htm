@@ -95,7 +95,12 @@ eu sapien massa, vitae rutrum sapien. Aenean id condimentum sem. Suspendisse tem
 </ul>
 
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
+<!--<p>wrapInHtml is only needed if a browser based client is making the call using ajax and only in the scenario of a single page application. This is why it is needed.</p>
+<ol>
+  <li>In a single page application, browser&rsquo;s address bar never changes (or changes only after the hash character). This is done so javascript context/cache is maintained in the page memory for long time.</li>
+  <li>Browsers do not allow to get the contents of the file in javascript for security reasons. For this reason, only way to making a multi-part request is to use the form submit. But, form submit will change the address which is a No in single page application. For this reason, we use the IFRAME as the form submit output. But then, javascript running in single page application needs to read the contents of the IFRAME. There are different kind of issues with the reading from IFRAME in different browsers and when federation is&nbsp; used as the file upload might be happening to different site than the site from which application is accessed.</li>
+  <li>To work around these browser restrictions to read from IFRAME, we wrap the output of this REST API call in html so single page javascript application can read this response.</li>
+</ol>-->
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">

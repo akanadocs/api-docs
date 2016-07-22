@@ -684,7 +684,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_mockservice"></a>mock service (API)</dt>
-<dd>A mock service is a specific type of <a href="#gl_orchestration">orchestration</a> that constructs the response based on a set of sample request/responses. A mock service is at an operation level, nor a service level.
+<dd>A mock service is a specific type of <a href="#gl_orchestration">orchestration</a> that constructs the response based on a set of sample request/responses. A mock service is at an operation level, nor a service level.</dd>
 
 
 
@@ -836,7 +836,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_orchestration"></a>orchestration (API)</dt>
-<dd>An orchestration creates a service that is implemented with a process, rather than being simply a proxy of another service. The orchestration process itself might invoke multiple APIs and might aggregrate responses or take other actions to process a request. A <a href="#gl_mockservice">mock service</a> is a type of orchestration. An orchestration is at an operation level, nor a service level.</dd>
+<dd>An orchestration creates a service that is implemented with a process, rather than being simply a proxy of another service. The orchestration process itself might invoke multiple APIs (but does not necessarily) and might aggregrate responses or take other actions to process a request. A <a href="#gl_mockservice">mock service</a> is a type of orchestration. An orchestration is at an operation level, nor a service level.</dd>
 
 
 
@@ -1074,6 +1074,13 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 
+<dt><a name="gl_sni"></a>Server Name Indication (SNI)</dt>
+<dd>An abbreviation for Server Name Indication, SNI is an extension of the TLS protocol that allows a single server to connect multiple SSL certificates to one IP address. When the client attempts to connect to the server, the client indicates the hostname it is attempting to connect to. The server sends the applicable digital certificate, which the browser then verifies; upon verification, the connection goes ahead.</dd>
+<dd>The API platform's support of SNI means that multiple certificates can be used for one HTTPS endpoint. This means that each API can use its own certificate for its own clients. The deployment zone must support HTTPS; the API implementation must have the <strong>Use Implementation's Key/Certificate for SSL</strong> option checked in the HTTPS tab for the deployment, and there must be a certificate in place for the implementation.</dd>
+<dd>For general information on SNI, see <a href="https://en.m.wikipedia.org/wiki/Server_Name_Indication" title="https://en.m.wikipedia.org/wiki/Server_Name_Indication" target="_blank">https://en.m.wikipedia.org/wiki/Server_Name_Indication</a>.</dd>
+
+
+
 <dt><a name="gl_policy_servicelevel"></a>service-level policy</dt>
 <dd><!-- #BeginLibraryItem "/Library/policy_servicelevel.lbi" -->A specific type of Quality of Service (QoS) policy that defines conditions for measuring and reporting performance for a specific contract.<!-- #EndLibraryItem --></dd>
 
@@ -1117,6 +1124,11 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 <dt><a name="gl_smsession_cookie"></a>SMSESSION cookie</dt>
 <dd>An authentication cookie used by <a href="#gl_casiteminder">CA SiteMinder</a>. The CA SiteMinder product implements single sign-on by means of this encrypted cookie.</dd>
+
+
+
+<dt>SNI</dt>
+<dd>See <a href="#gl_sni">Server Name Indication (SNI)</a>.</dd>
 
 
 
