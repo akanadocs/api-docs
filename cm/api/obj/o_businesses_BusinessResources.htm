@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: BusinessResources Object | Businesses Service | Akana API Platform API
-description: Contains information about resources, such as scopes, defined for a business.
+description: Contains information about scopes defined for a business organization.
 product: cm
 category: ref
 nav-title: BusinessResources Object 
@@ -12,8 +12,12 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>BusinessResources Object</h2>
-<p>Contains information about resources, such as scopes, defined for a business.</p>
+<p><!-- #BeginLibraryItem "/Library/o_businesses_BusinessResources.lbi" -->Contains information about scopes defined for a business organization.<!-- #EndLibraryItem --></p>
+<p class="usedby">This object is used by the following operations:</p>
+<ul>
+  <li><span class="apidoc_code"><a href="../businesses/m_businesses_getBusinessResourcesHierarchy.htm">GET&nbsp;/api/businesses/{BusinessID}/resourcehierarchy</a></span> (in the response)</li>
 
+</ul>
 
 <p>The properties included in the <strong>BusinessResources</strong> object are listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -28,7 +32,8 @@ no-catalog: true
     <tr>
       <td>Resource</td>
       <td><a href="o_businesses_Resource.htm">Resource</a>[&nbsp;]</td>
-      <td><p><!-- #BeginLibraryItem "/Library/o_businesses_Resource.lbi" -->Contains information about a resource, such as a scope, defined for a business.<!-- #EndLibraryItem --></p>
+      <td><p><!-- #BeginLibraryItem "/Library/o_businesses_Resource.lbi" -->
+Contains information about a resource, such as a scope, defined for a business organization.<!-- #EndLibraryItem --></p>
         <p>One or more.</p></td>
     </tr>
     </tbody>
@@ -52,4 +57,4 @@ no-catalog: true
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

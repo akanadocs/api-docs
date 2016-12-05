@@ -41,19 +41,22 @@ Records the user's acceptance of a legal agreement document for the platform.<!-
     <tr>
       <td>get agreement document</td>
       <td><a href="legals/m_legals_getAgreementDocument.htm">GET&nbsp;/api/legals/{LegalDocumentID}</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_getAgreementDocument.lbi" -->
-Returns a summary of information about a specified legal agreement document on the platform.<!-- #EndLibraryItem --></td>
-  </tr>
+      <td><!-- #BeginLibraryItem "/Library/desc_getAgreementDocument.lbi" -->Returns a summary of information about a specified legal agreement document on the platform.<!-- #EndLibraryItem --></td>
+    </tr>
     <tr>
       <td>get agreement documents</td>
-      <td><a href="legals/m_legals_getAgreementDocuments.htm">GET&nbsp;/api/legals</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_getAgreementDocuments.lbi" -->
-        Returns a summary of information about legal agreement documents on the platform, in the form of an RSS feed.<!-- #EndLibraryItem --></td>
+      <td><a href="legals/m_legals_getAgreementDocuments.htm">GET&nbsp;/api/legals?AgreementType={LegalAgreementType}</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getAgreementDocuments.lbi" -->Returns a summary of information about a specific type of legal agreement documents on the platform, in the form of an RSS feed.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>list agreement documents</td>
-      <td><a href="legals/m_legals_listAgreementDocuments.htm">GET&nbsp;/api/legals</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_listAgreementDocuments.lbi" -->Returns information about all legal agreement documents matching the specified criteria.<!-- #EndLibraryItem --></td>
+      <td><a href="legals/m_legals_listAgreementDocuments.htm">GET&nbsp;/api/legals?AgreementType={LegalAgreementType}</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_listAgreementDocuments.lbi" -->Returns information about all legal agreement documents matching the specified criteria, in the form of a JSON or XML object.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>update agreement</td>
+      <td><a href="legals/m_legals_updateAgreement.htm">PUT&nbsp;/api/legals/{LegalDocumentID}</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_updateAgreement.lbi" -->Updates information about the platform legal agreement. You can use this operation to change or deactivate the existing legal agreement.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -76,4 +79,4 @@ Returns a summary of information about a specified legal agreement document on t
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

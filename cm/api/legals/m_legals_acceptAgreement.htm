@@ -18,8 +18,8 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_acceptAgreement.lbi" -->
 Records the user's acceptance of a legal agreement document for the platform.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
-Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->It is generally part of the signup process, following the <span class="apidoc_code"><a href="../users/m_users_signupUser.htm">POST&nbsp;/api/users/signupUser[/{InvitationCode}]</a></span> operation.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/roles_none.lbi" --> 
+Anyone can use this operation; login is not required. However, note that for any operations that do not require login, information about private resources is not returned unless the user is logged in and is authorized to view information about those resources. Without login, only public information is returned. <!-- #EndLibraryItem -->It is generally part of the signup process, following the <span class="apidoc_code"><a href="../users/m_users_signupUser.htm">POST&nbsp;/api/users/signupUser[/{InvitationCode}]</a></span> operation.</p>
 <p>Once the user has signed up to the platform, this operation might need to be invoked to complete the login process any time there is a new legal agreement. Any pending legal agreements must be accepted before login is complete. For more information about logging in, refer to the <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation.</p>
 <p>This operation is also used for the user's acceptance of a legal agreement as part of an API access request.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -222,4 +222,4 @@ Date: Wed, 01 Aug 2012 19:00:26 GMT</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

@@ -19,7 +19,7 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/Library/desc_addAPIVersion.lbi" -->Adds an additional API version to an existing API.<!-- #EndLibraryItem --></p>
 <p>You can also add an API version by using the <span class="apidoc_code"><a href="m_apis_updateAPIVersion.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}</a></span> operation with a new API version object as part of the request, and including the applicable APIID. However, using <span class="apidoc_code">POST&nbsp;/api/apis/{APIID}/versions</span> is the recommended method.</p>
 <p class="apidoc_note"><strong>Note</strong>: The initial API version is added as part of the <span class="apidoc_code"><a href="m_apis_addAPI.htm">POST&nbsp;apis</a></span> operation when adding the API.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to modify the API; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/permission_modify.lbi" -->Must have Modify permission for the resource. <!-- #EndLibraryItem -->An <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <p id="id_notes_workflow"><strong>Workflow</strong>: There is no default workflow for new API versions. However, a custom workflow might be in place. There is only one initial action valid for Akana API Platform workflows relating to API versions, the  @Create initial action. For more information on workflow, see <a href="../aaref/Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
 <p><!-- #BeginLibraryItem "/Library/_authtokenrenewal.lbi" --> <strong>Authorization token renewal</strong>: This operation changes information that is reflected in the authorization token; therefore, when invoking this operation, you  must also renew the token.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -882,4 +882,4 @@ xmlns:ns5="http://soa.com/xsd/legals/1.0"&gt;
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

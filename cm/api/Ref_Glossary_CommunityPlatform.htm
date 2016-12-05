@@ -52,7 +52,7 @@ no-catalog: true
 
 
 <dt><a name="gl_apiadmin"></a>API Administrator</dt>
-<dd>One of the <a href="#gl_role">roles</a> defined in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#gl_board">Board</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_apiadmin">Managing Groups on the Platform</a>.</dd>
+<dd>One of the <a href="#gl_role">roles</a> defined in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#gl_forum">Forum (Board)</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_apiadmin">Managing Groups on the Platform</a>.</dd>
 
 
 
@@ -74,19 +74,24 @@ no-catalog: true
 
 
 <dt><a name="gl_appteammember"></a>app team member</dt>
-<dd>One of the <a href="#gl_role">roles</a> defined in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's <a href="#gl_board">Board</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_appteam">Managing Groups on the Platform</a>.</dd>
+<dd>One of the <a href="#gl_role">roles</a> defined in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's <a href="#gl_forum">Forum (Board)</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_appteam">Managing Groups on the Platform</a>.</dd>
 
 
 
 <dt><a name="gl_appid"></a>AppID</dt>
-<dd>When a user registers an app in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;platform, the app is assigned an AppID. The AppID is the unique identifier for the app within the platform. All API calls include the AppID.</dd>
+<dd>When a user registers an app in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, the app is assigned an AppID. The AppID is the unique identifier for the app within the platform. All API calls include the AppID.</dd>
 
 
 
 <dt><a name="gl_archivable"></a>archivable</dt>
-<dd>A flag used for internal purposes to track whether a Board item can be deleted without impacting other functionality. If an item is archivable, it can be deleted. If it is not archivable, deleting it could potentially impact the user experience. For example, if a user has a group membership invitation, and the Board item is deleted, the invitor could change the invitation, and there would be no way for the user to see the update without the original Board item.</dd>
+<dd>A flag used for internal purposes to track whether a Board item can be deleted without impacting other functionality. If an item is archivable, it can be deleted. If it is not archivable, deleting it could potentially impact the user experience. For example, if a user has a group membership invitation, and the Board item is deleted, the inviter could change the invitation, and there would be no way for the user to see the update without the original Board item.</dd>
 <dd>If administrators are writing purge functionality for board items, it's important to make sure that only Board items with the archivable flag set to <strong>true</strong> are purged.</dd>
 <dd>You might see this value in an RSS feed response to some operations relating to the Board for a resource, or to a user's home feed; for example, <span class="apidoc_code"><a href="apis/m_apis_getBoard.htm">GET&nbsp;/api/apis/{APIID}/board</a></span>.</dd>
+
+
+
+<dt><a name="gl_a_record"></a>A record (in DNS entry)</dt>
+<dd>A DNS entry for a website address includes an A record that maps the hostname or <a href="#gl_cname">CNAME</a> to the IP address of the DNS entry.</dd>
 
 
 
@@ -112,7 +117,7 @@ no-catalog: true
 
 <dt><a name="gl_atmoauthtoken"></a>AtmoAuthToken</dt>
 <dd>A tenant-specific cookie. This is the platform's authorization token. The token is returned in the Set-Cookie response header. This cookie indicates the level of access allowed. It is valid only for 30 minutes and must be renewed at that time. It also includes other information, such as the APIs, apps, and groups the user is a member of. When any of this information changes, the token must be renewed.</dd>
-<dd>Because the AtmoAuthToken includes a lot of information about the user, in some cases the token is long, and could potentially cause requests to fail if the server has a limitation on HTTP header length. For this reason, container configuration properties include authTokenMaxLength. When the AtmoAuthToken would be greater than the max length, the platform creates a mini auth token, and saves the full auth token in the database..</dd>
+<dd>Because the AtmoAuthToken includes a lot of information about the user, in some cases the token is long, and could potentially cause requests to fail if the server has a limitation on HTTP header length. For this reason, container configuration properties include authTokenMaxLength. When the AtmoAuthToken would be greater than the max length, the platform creates a mini auth token, and saves the full auth token in the database.</dd>
 
 
 
@@ -143,7 +148,7 @@ no-catalog: true
 
 <dt><a name="gl_saml_base_url"></a>Base URL</dt>
 <dd>In setting up the <a href="#gl_saml">SAML</a> identity provider in Policy Manager, the platform provides a specific URL to be used for instances where the Identity Provider, when encountering an error, returns the error response to the default Service Provider endpoint rather than just showing the error on the authentication page. PingFederate is an example of an Identity Provider that returns an error response in this way.</dd>
-<dd>To construct the endpoint to be used for error responses, the platform needs to know the {protocol_scheme}://{host}:{por}&gt; of the container where the SAML Web SSO domain is initialized. This is the base URL.</dd>
+<dd>To construct the endpoint to be used for error responses, the platform needs to know the {protocol_scheme}://{host}:{port}&gt; of the container where the SAML Web SSO domain is initialized. This is the base URL.</dd>
 
 
 
@@ -157,14 +162,13 @@ no-catalog: true
 
 
 
-<dt><a name="gl_board"></a>board</dt>
-<dd>In the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, every resource, such as an app or API, has a board that displays all feed entries for the resource. Users with approved connections to the resource can post items to the resource's Board according to privileges. For example, a member of a specific app team can post items to the board for that app. Users with approved connections also see relevant <a href="#gl_boarditem">board items</a> in their personal home Feed. These types of boards are <a href="#gl_board_systemboard">system boards</a>. The platform also supports <a href="#gl_board_userdefined">user-defined boards</a>.</dd>
+<dt>Board</dt>
+<dd>See <a href="#gl_forum">Forum</a>. In versions of the platform before 8.3, Forums for resources were called Boards.</dd>
 
 
 
-<dt><a name="gl_boarditem"></a>board item</dt>
-<dd>An individual entry on a resource's <a href="#gl_board">Board</a>. A Board item can be an <a href="#gl_alert">Alert</a>, <a href="#gl_apiaccessrequest">API Access Request (Contract Request)</a>, <a href="#gl_discussion">Discussion</a>, <a href="#gl_membershiprequest">Group Membership Invitation</a>, or <a href="#gl_ticket">Ticket</a>. It can also be an item on a <a href="#gl_board_userdefined">user-defined board</a>.</dd>
-<dd>A <a href="#gl_review">review</a> is also a type of Board item; however, in the platform user interface a review isn't included as part of the object's Board. Instead, reviews are included in the user interface as part of the details page for the object (app, API, or group). In terms of using the API, all operations that work for Board items work for reviews also.</dd>
+<dt>Board item</dt>
+<dd>See <a href="#gl_forumentry">Forum entry</a>. In versions of the platform before 8.3, Forum entries were called Board items.</dd>
 
 
 
@@ -228,7 +232,8 @@ no-catalog: true
 
 
 <dt><a name="gl_cname"></a>CNAME</dt>
-<dd>Abbreviation for Canonical Name. A CNAME identifies a unique domain name registered in the Domain Name System (DNS); for example, www.acmepaymentscorp.com. The domain name is mapped to an IP address.</dd>
+<dd>A CNAME, or Canonical Name Record, specifies that a domain name is an alias for another domain. The CNAME record always points to another domain name, not directly to the underlying IP address for the domain.</dd>
+<dd>The CNAME is used, in partnership with an <a href="#gl_a_record">A record</a>, for supporting multiple services from a single IP address.</dd>
 <dd>When adding an API, the API definition includes CNAME, which is the hostname part of the URL which will be visible to app developers for the API. Typically you would register a CNAME (such as api.acmepaymentscorp.com) in your DNS for your API and then map it to the proxy hostname provided to you during signup (typically acmepaymentscorp.broker.akana.com).</dd>
 
 
@@ -318,7 +323,7 @@ no-catalog: true
 
 
 <dt><a name="gl_csrf_header"></a>CSRF header</dt>
-<dd>The platform includes a feature to help prevent CSRF attacks. Essentially, the login process generates a CSRF cookie, the <a href="#gl_csrf_tokencookie">Csrf-Token</a> cookie, that identifies the user, and most platform operations require that the user send a special header with the request message. This header, the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header, includes the value of the Csrf-Token cookie. For more information, see <a href="aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</dd>
+<dd>The platform includes a feature to help prevent CSRF attacks. Essentially, the login process generates a CSRF cookie, the <a href="#gl_csrf_tokencookie">Csrf-Token</a> cookie, that identifies the user, and most platform operations require that the user send a special header with the request message. This header, the <a href="#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header, includes the value of the Csrf-Token cookie. For more information, see <a href="aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>.</dd>
 
 
 
@@ -339,7 +344,7 @@ no-catalog: true
 
 
 <dt><a name="gl_dashboard"></a>Dashboard</dt>
-<dd>The user's Dashboard, also called home page or feed, is the first page the user sees after logging in. The Dashboard includes information relating to apps and APIs the user is associated with. An individual user's Dashboard is an aggregation of all the <a href="#gl_boarditem">Board items</a> from all the resources that the user is following. An individual user can modify the types of information that are displayed on his/her Dashboard. See also <a href="#gl_dashboardentry">Dashboard entry</a>.</dd>
+<dd>The user's Dashboard, also called home page or feed, is the first page the user sees after logging in. The Dashboard includes information relating to apps and APIs the user is associated with. An individual user's Dashboard is an aggregation of all the board items (<a href="#gl_forumentry">forum entries</a>) from all the resources that the user is following. An individual user can modify the types of information that are displayed on his/her Dashboard. See also <a href="#gl_dashboardentry">Dashboard entry</a>.</dd>
 
 
 
@@ -374,7 +379,7 @@ no-catalog: true
 
 
 <dt><a name="gl_devconsole"></a>Dev Console</dt>
-<dd>The Developer Console (Dev Console) is a web-based REST client provided as part of the developer portyal user interface so that developers can test different APIs in the context of their app. It is available for any app added to the platform, on the <em>Apps &gt; Dev Console</em> page.</dd>
+<dd>The Developer Console (Dev Console) is a web-based REST client provided as part of the developer portal user interface so that developers can test different APIs in the context of their app. It is available for any app added to the platform, on the <em>Apps &gt; Dev Console</em> page.</dd>
 
 
 
@@ -386,6 +391,11 @@ no-catalog: true
 
 <dt><a name="gl_discussiontype"></a>discussion type</dt>
 <dd>In an earlier version of the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, discussions were categorized in separate discussion types, such as Comment or Question. Discussion types are no longer in use. In certain cases, a DiscussionType parameter might still be returned in a response message; if so, it can be ignored.</dd>
+
+
+
+<dt><a name="gl_dl"></a>DL</dt>
+<dd>API Descriptor Language. Abbreviation used in the developer portal user interface and underlying API for API descriptor language document.</dd>
 
 
 
@@ -429,6 +439,12 @@ no-catalog: true
 
 
 
+<dt><a name="gl_export"></a>export</dt>
+<dd>A Site Admin or Business Admin can output all the information about one or more of certain resources, or an entire business, to an export file. The information can then be <a href="#gl_import">imported</a> into another platform instance. Information is exported to a specially formulated ZIP file called a <a href="#gl_packagefile">package file</a>.</dd>
+<dd>Full export is only available to a Site Admin or Business Admin. An API Admin can export an API.</dd>
+
+
+
 <dt><a name="gl_favicon"></a>favicon</dt>
 <dd>A small icon, typically 16x16 pixels, associated with a website or a specific webpage.</dd>
 <dd>Implementation varies, but typically the browser displays the favicon in the address bar, on the tab next to the page title, and next to the page's name in a list of bookmarks.</dd>
@@ -457,7 +473,7 @@ no-catalog: true
 
 
 <dt><a name="gl_follow"></a>follow</dt>
-<dd>The concept of following a resource on the platform is similar to the same concept in Twitter. When a user chooses to follow a resource, notifications relating to that resource are posted to the user's Dashboard to keep the user informed. There is also a separate list of resources that the user is following. For example, if there are many APIs on the platform, and the user is only interested in two or three, the user can choose to follow those specific APis. They are displayed in a separate list, <strong>APIs you are following</strong>, making them easier to find. The same principle applies to all resources that can be followed: apps, APIs, and groups.</dd>
+<dd>The concept of following a resource on the platform is similar to the same concept in Twitter. When a user chooses to follow a resource, notifications relating to that resource are posted to the user's Dashboard to keep the user informed. There is also a separate list of resources that the user is following. For example, if there are many APIs on the platform, and the user is only interested in two or three, the user can choose to follow those specific APIs. They are displayed in a separate list, <strong>APIs you are following</strong>, making them easier to find. The same principle applies to all resources that can be followed: apps, APIs, and groups.</dd>
 
 
 
@@ -467,14 +483,15 @@ no-catalog: true
 
 
 <dt><a name="gl_forum"></a>forum</dt>
-<dd>A way of sharing information and content in the platform. Forum types include: <a href="#gl_alert">Alerts</a>, <a href="#gl_contractrequest">Contract Requests</a>, <a href="#gl_discussion">Discussions</a>, <a href="#gl_groupmembershiprequest">Group Membership Requests</a>, <a href="#gl_review">Reviews</a>, <a href="#gl_ticket">Tickets</a>.</dd>
-<dd>Forum types and <a href="#gl_boarditem">Board item</a> types are essentially identical. The only difference is in implementation; the forum is viewed by the Business Admin or Site Admin in Moderate view (Administration &gt; Moderate), and is an overall view of Board items from all boards on the platform.</dd>
+<dd>In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, every resource, such as an app or API, has a Forum that displays all feed entries for the resource. Users with approved connections to the resource can post items to the resource's Forum according to privileges. For example, a member of a specific app team can post items to the Forum for that app. Users with approved connections also see relevant <a href="#gl_forumentry">Forum entries</a> in their personal home Feed.</dd>
+<dd>A Forum is a way of sharing information and content in the platform. Forum types include: <a href="#gl_alert">Alerts</a>, <a href="#gl_contractrequest">Contract Requests</a>, <a href="#gl_discussion">Discussions</a>, <a href="#gl_groupmembershiprequest">Group Membership Requests</a>, <a href="#gl_review">Reviews</a>, <a href="#gl_ticket">Tickets</a>.</dd>
+<dd>Forum types and <a href="#gl_forumentry">Forum entry</a> types are essentially identical. The difference is in implementation; the Forum is viewed by the Business Admin or Site Admin in Forum view (Administration &gt; Forum), and is an overall view of Forum entries from all boards on the platform.</dd>
 
 
 
-<dt><a name="gl_forumentry"></a>forum entry</dt>
-<dd>An individual content contribution by a specific user, to one of the <a href="#gl_forum">forum</a> types. A forum entry is essentially exactly the same as a Board item entry.</dd>
-<dd>A forum entry is essentially exactly the same as a Board item entry. However, in the user interface, the forum is restricted to authorized individuals.</dd>
+<dt><a name="gl_forumentry"></a>Forum entry</dt>
+<dd>An individual content contribution by a specific user, to one of the <a href="#gl_forum">Forum</a> types. A Forum entry can be an Alert, API Access Request (Contract Request), Discussion, Group Membership Invitation, or Ticket.</dd>
+<dd> In versions of the platform before 8.3, Forum entries were called Board items.</dd>
 
 
 
@@ -485,7 +502,7 @@ no-catalog: true
 
 
 <dt><a name="gl_groupadministrator"></a>group administrator</dt>
-<dd>For an independent group on the platform, the administrator has greater rights than a <a href="#gl_leader">leader</a> or <a href="#gl_member">member</a>. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_independentgroup">Managing Groups on the Platform</a>. For an <a href="#gl_apicontextgroup">API Context Group</a>, the Administrator role is held by the API Adminstrator.</dd>
+<dd>For an independent group on the platform, the administrator has greater rights than a <a href="#gl_leader">leader</a> or <a href="#gl_member">member</a>. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_independentgroup">Managing Groups on the Platform</a>. For an <a href="#gl_apicontextgroup">API Context Group</a>, the Administrator role is held by the API Administrator.</dd>
 
 
 
@@ -552,7 +569,7 @@ When adding an app version, you can specify a custom identity name for the app v
 
 
 <dt><a name="gl_identityprovider"></a>identity provider</dt>
-<dd>An identity provider (sometimes abbreviated as IdP) is an entity responsible for verifying user identity and issuing identity information, usually in the form of a token. A common example is a website that allows users to log in using a Facebook or Google identiy; in this scenario, Facebook and Google are identity providers. In <a href="#gl_openidconnect">OpenID Connect</a>, the identity provider is called the Connect provider.</dd>
+<dd>An identity provider (sometimes abbreviated as IdP) is an entity responsible for verifying user identity and issuing identity information, usually in the form of a token. A common example is a website that allows users to log in using a Facebook or Google identity; in this scenario, Facebook and Google are identity providers. In <a href="#gl_openidconnect">OpenID Connect</a>, the identity provider is called the Connect provider.</dd>
 <dd>In terms of <a href="#gl_saml">SAML</a>, the identity provider verifies the identity of the user in response to a request by the Service Provider, and then responds with a SAML assertion.</dd>
 
 
@@ -564,6 +581,22 @@ When adding an app version, you can specify a custom identity name for the app v
 
 <dt><a name="gl_implementation"></a>implementation (of an API)</dt>
 <dd>Different implementations of an API represent the different endpoints of the API in the same lifecycle stage. For example, it is common for an API to have Sandbox and Live implementations.</dd>
+
+
+
+<dt><a name="gl_implementationpattern"></a>implementation pattern</dt>
+<dd>The implementation pattern determines how the implementation is created, which also governs capabilities of the implementation. The platform supports the following options for implementation pattern:
+  <ul>
+  <li>Proxy: appropriate for a simple scenario where the API implementation has a 1:1 relationship with a back-end physical service/API.</li>
+  <li>Orchestration: appropriate for a more complex API implementation that might include one or more services, processes, or additional steps.</li>
+</ul></dd>
+  <dd>Note that if you change the pattern for an existing implementation, all data associated with the implementation is lost. For example, if an implementation has a pattern of Orchestration, with processes set up, and you change it to Proxy, the orchestration information is lost.</dd>
+
+
+
+<dt><a name="gl_import"></a>import</dt>
+<dd>When information is <a href="#gl_export">exported</a> from one instance of the platform to an <a href="#gl_packagefile">export file (package file)</a>, it can be imported to another instance of the platform.</dd>
+  <dd>Only a Site Admin or Business Admin has permission to perform functions relating to import.</dd>
 
 
 
@@ -604,7 +637,7 @@ When adding an app version, you can specify a custom identity name for the app v
 
 
 <dt><a name="gl_jwt_token"></a>JWT token (OpenID Connect)</dt>
-<dd>Acronym for <a href="#gl_json">JSON</a> Web Token. In the context of OpenID Connect, a JWT token is a a compact, URL-safe means of representing <a href="#gl_claim_jwt">claims</a> to be sent from one party to another over the web. The claims in a JWT are encoded as a JSON object that is used either as the payload of a JSON Web Signature (JWS) structure or as the plain text of a JSON Web Encryption (JWE) structure. This enables the claims to be digitally signed and/or encrypted.</dd>
+<dd>Acronym for <a href="#gl_json">JSON</a> Web Token. In the context of OpenID Connect, a JWT token is a compact, URL-safe means of representing <a href="#gl_claim_jwt">claims</a> to be sent from one party to another over the web. The claims in a JWT are encoded as a JSON object that is used either as the payload of a JSON Web Signature (JWS) structure or as the plain text of a JSON Web Encryption (JWE) structure. This enables the claims to be digitally signed and/or encrypted.</dd>
 <dd>The OpenID Connect Provider can issue a JWT token from either the Authorization Endpoint or the Token Endpoint. This is one of the two ways offered by the OpenID Connect specification for the app to learn information about the end user. The other is by publishing a <a href="#gl_userinfoendpoint">UserInfo endpoint</a>.</dd>
 
 
@@ -616,7 +649,7 @@ LaaS is a Lifecycle Manager offering in the cloud. You can use this service in m
 
 
 <dt><a name="gl_label_ticket"></a>label (for a ticket)</dt>
-<dd>A label assigned to a ticket to indicate the tickets's priority rating. For valid values, see <a href="aaref/Ref_Values.htm#values_ticketlabel">Ticket Label Values</a>.</dd>
+<dd>A label assigned to a ticket to indicate the ticket's priority rating. For valid values, see <a href="aaref/Ref_Values.htm#values_ticketlabel">Ticket Label Values</a>.</dd>
 
 
 
@@ -679,7 +712,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_membershiprequest"></a>membership request (invitation)</dt>
-<dd>An invitation to another individual, whether a registered user or not, to join a&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
+<dd>An invitation to another individual, whether a registered user or not, to join an&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
 
 
 
@@ -782,7 +815,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_oauth_refreshtoken"></a>OAuth refresh token</dt>
-<dd>In OAuth 2.0, certain grant types support use of refresh tokens to facilitate longer access periods. This is useful in scenarios that extend over time, such as as a regular monthly payment amount.</dd>
+<dd>In OAuth 2.0, certain grant types support use of refresh tokens to facilitate longer access periods. This is useful in scenarios that extend over time, such as a regular monthly payment amount.</dd>
 <dd>In OAuth 1.0a, once an <a href="#gl_oauth_accesstoken">access token</a> is generated it is valid until revoked by the user. OAuth 1.0a does not support refresh tokens.</dd>
 <dd>OAuth 2.0 introduces expiration of access tokens and adds a second type of token, a refresh token, that can be used in conjunction with the access token to allow users to give long-term permissions but yet maintain security. This process helps ensure that if a specific access token is compromised, a new one can be generated from the refresh token, which can be stored in the database on the server.</dd>
 <dd>The access token grants immediate access but only for a limited time. The access token comes with two additional values: expires_in, which indicates the life of the access token, and refresh_token which can be used to get a new access token when the current token expires. Additional user approval is not needed, but the expiration and renewal add security to the process. When (or before) the access token expires, the refresh token can be used to generate a new access token.</dd>
@@ -837,6 +870,22 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 <dt><a name="gl_orchestration"></a>orchestration (API)</dt>
 <dd>An orchestration creates a service that is implemented with a process, rather than being simply a proxy of another service. The orchestration process itself might invoke multiple APIs (but does not necessarily) and might aggregrate responses or take other actions to process a request. A <a href="#gl_mockservice">mock service</a> is a type of orchestration. An orchestration is at an operation level, nor a service level.</dd>
+
+
+
+<dt><a name="gl_organization"></a>organization</dt>
+<dd>In the context of the Akana API Platform, an organization can represent any of several different types of organizational entities, such as a company, department, project, or partner.</dd>
+
+
+
+<dt><a name="gl_overloaded_operation"></a>overloaded operation (API)</dt>
+<dd>An overloaded operation is one that has two or more implementations that have the same basic URL but with different arguments or, commonly, different media types. Often, there might be two operations that share the same path and HTTP verb but have different media types for Consumes (request media type) and Produces (response media type) elements.</dd>
+  <dd>For example, the platform API itself has a small number of overloaded operations that  take a response media type of <strong>application/json</strong> or <strong>application/xml</strong> to return the response information in the form of an RSS channel, and the same path and verb with a media type of <strong>application/vnd.soa.v81+json</strong> or <strong>application/vnd.soa.v81+xml</strong> returns the response information as a model object in JSON or XML format.</dd>
+
+
+
+<dt><a name="gl_packagefile"></a>package file</dt>
+<dd>The ZIP file that is created as a result of using the <a href="#gl_export">export</a> function. The package file can be <a href="#gl_import">imported</a> into another instance of the platform by a Site Admin or API Admin.</dd>
 
 
 
@@ -946,7 +995,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_relyingparty"></a>relying party</dt>
-<dd>In <a href="#gl_openid">OpenID</a> and <a href="#gl_openidconnect">OpenID Connect</a>, the service provider is called the relying party. The relying party trusts the <a href="#gl_connectprovider">Connect provider</a> to authenticate the user. In the context of the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, the platform is the service provider and the Site Admin sets up the Connect provider in Domains setup.</dd>
+<dd>In <a href="#gl_openid">OpenID</a> and <a href="#gl_openidconnect">OpenID Connect</a>, the service provider is called the relying party. The relying party trusts the <a href="#gl_connectprovider">Connect provider</a> to authenticate the user. In the context of the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, the platform is the service provider and the Site Admin sets up the Connect provider in Domains setup.</dd>
 
 
 
@@ -985,7 +1034,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 <dd>Users can write reviews for any apps, APIs, or groups that they have access to. In the developer portal, reviews are created from the Details page for the resource. Each review includes a subject line and a comment.</dd>
 <dd>Other users can comment on the review, and can <a href="#gl_mark">mark</a> reviews that they like.</dd>
 <dd>Depending on the platform configuration, reviews might be moderated. If so, the review must be approved by an Administrator before it is published.</dd>
-<dd>A review is actually a <a href="#gl_boarditem">Board item</a> even though, in the user interface, reviews are not displayed on the Board for the resource, but instead are displayed on the Details page.</dd>
+<dd>A review is actually a board item (<a href="#gl_forumentry">forum entry</a>) even though, in the user interface, reviews are not displayed on the Board for the resource, but instead are displayed on the Details page.</dd>
 <dd>In terms of using the API, all operations that work for Board items work for reviews also.</dd>
 
 
@@ -1022,7 +1071,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 <dt><a name="gl_saml"></a>SAML</dt>
 <dd>Acronym for Security Assertion Markup Language. SAML is an identity federation standard that enables single sign-on. It is an XML-based standard for exchanging authentication and authorization data between a <a href="#gl_saml_service_provider">service provider</a> (providing a service to the user) and an <a href="#gl_identityprovider">identity provider</a> (providing user identity verification for the service provider).</dd>
-<dd>One usage, in the context of the platform, is by OpenID Connect where it is used to provide single sign-on. The plaform acts as the <a href="#gl_relyingparty">relying party</a>.</dd>
+<dd>One usage, in the context of the platform, is by OpenID Connect where it is used to provide single sign-on. The platform acts as the <a href="#gl_relyingparty">relying party</a>.</dd>
 
 
 <dt><a name="gl_saml_artifact"></a>SAML Artifact</dt>
@@ -1184,7 +1233,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_board_systemboard"></a>system board</dt>
-<dd>One of the types of <a href="#gl_board">board</a> that are part of the portal. The App Version Board, API Version Board, and Group Board are system boards.</dd>
+<dd>One of the types of <a href="#gl_forum">Forum (Board)</a> that are part of the portal. The App Version Board, API Version Board, and Group Board are system boards.</dd>
 
 
 
@@ -1214,6 +1263,12 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 <dd>It can be used for prototyping, testing, and troubleshooting apps against an API. It includes OAuth support for retrieving the OAuth token in order to process the message.</dd>
 <dd>In Default Theme, the tool is called Dev Console; in Simple Developer Theme, it is called Test Client.</dd>
 <dd>See also <a href="#gl_devconsole">Dev Console</a>.</dd>
+
+
+
+<dt><a name="gl_theme"></a>theme</dt>
+<dd>One instance of the portal. More than one theme can be defined during the installation process and can then be customized for different purposes or audiences. Each theme has a separate URL.</dd>
+<dd>The platform includes three out-of-the-box themes; Default Theme, Simple Developer Theme, and Hermosa Theme. The first two can be cloned, which means you can have more than one version, independently customizable. Hermosa Theme cannot be cloned.</dd>
 
 
 
@@ -1279,8 +1334,8 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 
-<dt><a name="gl_board_userdefined"></a>user-defined board</dt>
-<dd>A platform <a href="#gl_board">board</a> which is additional to the standard system boards that come with the platform (such as the app and API boards); a custom board, defined as part of site customization. The Support Board is considered to be a user-defined board.</dd>
+<dt><a name="gl_board_userdefined"></a>user-defined forum (board)</dt>
+<dd>A platform <a href="#gl_forum">Forum (Board)</a> which is additional to the standard system boards that come with the platform (such as the app and API forums); a custom forum, defined as part of site customization. The Support Forum is considered to be a user-defined board.</dd>
 
 
 
@@ -1380,4 +1435,4 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
   <li><a href="Ref_API_Reference.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API Reference Material</a></li>
   <li><a href="Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
-<hr />
+

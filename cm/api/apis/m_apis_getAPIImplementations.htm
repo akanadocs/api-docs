@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAPIImplementations.lbi" -->
 Returns a list of valid current services matching the query parameter provided, for selection when creating an API from an existing service.<!-- #EndLibraryItem --></p>
-<p> This operation searches for valid services matching the query parameter, so that one of the services can be selected as the implementation for the API. Note that this operation only returns valid results if the <strong>Creation of API with existing service</strong> platform setting is enabled in the platform instance. This setting is controlled by the Site Admin.</p>
+<p> This operation searches for valid services matching the query parameter, so that one of the services can be selected as the implementation for the API. It is used by the platform portal when adding an API using the <strong>Add API with Existing Service</strong> option. Note that this operation only returns valid results if the <strong>Creation of API with existing service</strong> platform setting is enabled in the platform instance. This setting is controlled by the Site Admin.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation, but if the user is not logged in no results are returned. The results returned are dependent on the user's role or roles, and therefore, the user's permission to view the information.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -288,4 +288,4 @@ xmlns:ns5="http://soa.com/xsd/dnmodel/1.0" xmlns:ns6="http://soa.com/xsd/resourc
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

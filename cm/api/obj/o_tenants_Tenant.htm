@@ -16,8 +16,10 @@ no-catalog: true
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
   <li><span class="apidoc_code"><a href="../tenantmgmt/m_tenantmgmt_addNewTenant.htm">POST&nbsp;/platform/subscriptions</a></span> (in the response)</li>
-  <li><span class="apidoc_code"><a href="../tenantadmin/m_tenantadmin_getTenant.htm">GET&nbsp;/api/tenants/{TenantFedMemberID}</a></span> (in the response)</li>
   <li><span class="apidoc_code"><a href="../tenantmgmt/m_tenantmgmt_changeTenantState.htm">PUT&nbsp;/platform/subscriptions/{SubscriptionID}/state</a></span> (in the response)</li>
+  <li><span class="apidoc_code"><a href="../tenantadmin/m_tenantadmin_getTenant.htm">GET&nbsp;/api/tenants/{TenantFedMemberID}</a></span> (in the response)</li>
+  <li><span class="apidoc_code"><a href="../tenantadmin/m_tenantadmin_updateTenant.htm">PUT&nbsp;/api/tenants/{TenantFedMemberID}</a></span> (in request and response)</li>
+
 </ul>
 
 <p>The properties included in the <strong>Tenant</strong> object are listed below.</p>
@@ -90,6 +92,44 @@ no-catalog: true
       <td>boolean</td>
       <td>Optional. If set to <strong>true</strong>, the tenant has a contract on the API Platform.</td>
     </tr>
+    <tr>
+      <td>ConsoleAddress</td>
+      <td>string</td>
+      <td><p>Optional. The full URL that will be used in the browser when accessing the developer portal user interface. The browser then redirects to the default login page.</p>
+        <p>Corresponds to the <strong>consoleAddress</strong> element in the installation Jython script.</p></td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>string</td>
+      <td>Optional. The base URL of the tenant. The hostname must be unique. There is normally no context unless the product is running in an application server. This is the default address from which the tenant is accessed. Multiple additional virtual hostnames are allowed, but the hostname provided in this element is the primary hostname. This value is used in certain notifications that provide a URL for accessing the tenant; for example, the signup confirmation email. Example: http://acmepaymentscorp:9901.</td>
+    </tr>
+    <tr>
+      <td>ContactEmailAddress</td>
+      <td>string</td>
+      <td><p>Optional. The email address used in any &quot;contact us&quot; context for the developer portal, including certain emails and notifications that include contact information.</p>
+        <p>Corresponds to the <strong>contactEmailAddress</strong> element in the installation Jython script.</p></td>
+    </tr>
+    <tr>
+      <td>FromEmailAddress</td>
+      <td>string</td>
+      <td><p>Optional. The email address displayed in the &quot;From&quot; field for email notifications sent out by the platform.</p>
+        <p>Corresponds to the <strong>fromEmailAddress</strong> element in the installation Jython script.</p></td>
+    </tr>
+    <tr>
+      <td>AnalyticsAccountID</td>
+      <td>string</td>
+      <td>Optional. Google Analytics Account ID. Adds Google Analytics automatically to site pages.</td>
+    </tr>
+    <tr>
+      <td>Themes</td>
+      <td><a href="o_tenants_Theme.htm">Theme</a>[&nbsp;]</td>
+      <td>One or more <a href="../Ref_Glossary_CommunityPlatform.htm#gl_theme">themes</a> for the tenant. You can add, modify, or delete themes. You can have multiple themes, including clones (multiple versions, independently customizable) for <strong>simpledev</strong> and <strong>default</strong> theme.</td>
+    </tr>
+    <tr>
+      <td>LaaSIntegrationSupport</td>
+      <td>string</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_LaaSIntegrationSupport.lbi" -->Indicates whether the Lifecycle Manager integration feature is turned on. For valid values, see <a href="../aaref/Ref_Values.htm#values_laasintegrationsupport">LaaSIntegrationSupport values</a>. Optional.<!-- #EndLibraryItem --></td>
+    </tr>
     </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -111,4 +151,4 @@ no-catalog: true
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

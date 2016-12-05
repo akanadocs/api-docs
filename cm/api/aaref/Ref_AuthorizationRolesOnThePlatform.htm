@@ -117,6 +117,11 @@ no-catalog: true
       <td>The administrator of the tenant on which a resource exists. The Site Admin can see resources such as apps and APIs, but cannot modify them. The Site Admin also has access to additional parts of the user interface for configuration and monitoring purposes. <a href="Ref_ManagingGroupsOnThePlatform.htm#groups_siteadmin">Details about site admin rights</a>.</td>
   </tr>
     <tr>
+      <td><a id="authroles_sysadmin"></a>System Administrator</td>
+      <td>Any, including the tenant</td>
+      <td>The administrator of the tenant on which a resource exists, and also of the underlying infrastructure. The System Administrator has additional rights that the Site Admin does not have. For example, the System Administrator role is required for managins some of the operations in the <a href="../index_index.htm">Search Index</a> service, for managing the Elasticsearch index.</td>
+    </tr>
+    <tr>
       <td><a id="authroles_user"></a>User (Registered User)</td>
       <td>User</td>
       <td><p>A user who is logged in. </p>
@@ -177,4 +182,4 @@ no-catalog: true
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

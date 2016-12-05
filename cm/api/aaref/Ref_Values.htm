@@ -74,81 +74,89 @@ no-catalog: true
     <td><a href="#values_resetstatus">Reset Status values</a> (for password reset)</td>
     </tr>
   <tr>
-    <td><a href="#values_client_auth_policy_options">Client Authorization Policy Options</a></td>
+    <td><a href="#values_businesstype">BusinessType values</a></td>
     <td><a href="#values_resourcetype">Resource Types</a></td>
     </tr>
   <tr>
-    <td><a href="#values_role">Roles</a></td>
+    <td><a href="#values_client_auth_policy_options">Client Authorization Policy Options</a></td>
     <td><a href="#values_role">Roles</a></td>
     </tr>
   <tr>
-    <td><a href="#values_descriptionmediatype">DescriptionMediaType</a></td>
+    <td><a href="#values_createmechanism">CreateMechanism</a></td>
     <td><a href="#values_search_type">Search &quot;Type&quot; values</a></td>
     </tr>
   <tr>
-    <td><a href="#values_displaymode">Display Mode</a></td>
+    <td><a href="#values_role">Roles</a></td>
     <td><a href="#values_securitychallengequestions">Security Challenge Questions</a></td>
     </tr>
   <tr>
-    <td><a href="#values_environment">Environment</a></td>
+    <td><a href="#values_descriptionmediatype">DescriptionMediaType</a></td>
     <td><a href="#values_signupstatus">SignupStatus values</a></td>
     </tr>
   <tr>
-    <td><a href="#values_groupmemberroles">Group Member Roles</a></td>
+    <td><a href="#values_displaymode">Display Mode</a></td>
     <td><a href="#values_sortby">Sort By values</a></td>
     </tr>
   <tr>
-    <td><a href="#values_groupmembershipstates">Group Membership States</a></td>
+    <td><a href="#values_environment">Environment</a></td>
     <td><a href="#values_sortorder">Sort Order values</a></td>
     </tr>
     <tr>
-      <td><a href="#values_groupsettings">Group Settings</a></td>
+      <td><a href="#values_groupmemberroles">Group Member Roles</a></td>
       <td><a href="#values_state_tenant">State (Tenant)</a></td>
       </tr>
     <tr>
-      <td><a href="#values_groupstates">Group States</a></td>
+      <td><a href="#values_groupmembershipstates">Group Membership States</a></td>
       <td><a href="#values_ticketlabel">Ticket Label values</a></td>
       </tr>
     <tr>
-      <td><a href="#values_grouptypes">Group Types</a></td>
+      <td><a href="#values_groupsettings">Group Settings</a></td>
       <td><a href="#values_ticketstate">Ticket State values</a></td>
       </tr>
     <tr>
-      <td><a href="#values_idsystemtype">IdSystemType values for Login Connector Type</a></td>
+      <td><a href="#values_groupstates">Group States</a></td>
       <td><a href="#values_timeintervals">Time Intervals</a></td>
       </tr>
     <tr>
-      <td><a href="#values_legalagreementtype">Legal Agreement Types</a></td>
+      <td><a href="#values_grouptypes">Group Types</a></td>
       <td><a href="#values_useractions">User Actions on a Resource</a></td>
       </tr>
     <tr>
-      <td><a href="#values_legaldocumentstate">Legal Document States</a></td>
+      <td><a href="#values_idsystemtype">IdSystemType values for Login Connector Type</a></td>
       <td><a href="#values_userpreferences">User Preferences</a></td>
       </tr>
     <tr>
-      <td><a href="#values_licensestate">LicenseState values</a></td>
+      <td><a href="#values_laasintegrationsupport">LaaSIntegrationSupport values</a></td>
       <td><a href="#values_usersignupstate">User Signup State values</a></td>
       </tr>
     <tr>
-      <td><a href="#values_logininstructiontype">Login Instruction Types</a></td>
+      <td><a href="#values_legalagreementtype">Legal Agreement Types</a></td>
       <td><a href="#values_userstatus">User Status</a></td>
       </tr>
     <tr>
-      <td><a href="#values_loginstate">Login State</a></td>
+      <td><a href="#values_legaldocumentstate">Legal Document States</a></td>
       <td><a href="#values_visibilitysettings">Visibility Settings</a></td>
       </tr>
     <tr>
-      <td><a href="#values_loginstatus">Login Status</a></td>
+      <td><a href="#values_licensestate">LicenseState values</a></td>
       <td><a href="#values_workflowactions">Workflow Actions</a></td>
       </tr>
     <tr>
-      <td><a href="#values_mediatype">MediaType</a></td>
+      <td><a href="#values_logininstructiontype">Login Instruction Types</a></td>
       <td><a href="#values_workflowstates">Workflow States</a></td>
       </tr>
     <tr>
-      <td>&nbsp;</td>
+      <td><a href="#values_loginstate">Login State</a></td>
       <td><a href="#values_workflow_objecttype">Workflow ObjectTypes</a></td>
       </tr>
+    <tr>
+      <td><a href="#values_loginstatus">Login Status</a></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td><a href="#values_mediatype">MediaType</a></td>
+      <td>&nbsp;</td>
+    </tr>
   </tbody>
 </table>
 
@@ -523,6 +531,20 @@ no-catalog: true
 
 
 
+<h3><a id="values_businesstype"></a>BusinessType values</h3>
+<p>Valid values for <strong>BusinessType</strong> are as follows:</p>
+<ul>
+  <li>Company</li>
+  <li>Department</li>
+  <li>Project</li>
+  <li>Application</li>
+  <li>Partner</li>
+</ul>
+<p>The default is <strong>Company</strong>.</p>
+<p><a href="#top">Back to top</a></p>
+
+
+
 <h3><a id="values_client_auth_policy_options"></a>Client Authorization Policy Options</h3>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
@@ -553,6 +575,19 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+<h3><a id="values_createmechanism"></a>CreateMechanism values</h3>
+<p>CreateMechanism indicates the implementation pattern used to create an API. Valid values are as follows:</p>
+<ul>
+  <li>CLONE</li>
+  <li>PROXY</li>
+  <li>EXISTING_ASSET</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+
+
 <h3><a id="values_consoleresourcedynamicvariables"></a>Console Resource dynamic variable values</h3>
 <p>In the Console Resource API, in the <span class="apidoc_code"><a href="../consoleresource/m_consoleresource_get.htm">GET&nbsp;/resources/{path:.*}</a></span> operation, <strong>dynamic</strong> parameter, you can use the following variables:</p>
 <ul>
@@ -576,7 +611,7 @@ no-catalog: true
   <li>text/plain</li>
   <li>text/markdown</li>
 </ul>
-<p>DescriptionMediaType provides information about the media type for the content of a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board item</a>. This is applicable to the following board item types: <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussion</a>, <a href="../Ref_Glossary_CommunityPlatform.htm#gl_ticket">ticket</a>, <a href="../Ref_Glossary_CommunityPlatform.htm#gl_alert">alert</a>, or <a href="../Ref_Glossary_CommunityPlatform.htm#gl_review">review</a>.</p>
+<p>DescriptionMediaType provides information about the media type for the content of a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">board item (forum entry)</a>. This is applicable to the following board item types: <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussion</a>, <a href="../Ref_Glossary_CommunityPlatform.htm#gl_ticket">ticket</a>, <a href="../Ref_Glossary_CommunityPlatform.htm#gl_alert">alert</a>, or <a href="../Ref_Glossary_CommunityPlatform.htm#gl_review">review</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -770,6 +805,16 @@ no-catalog: true
     </tr>
   </tbody>
 </table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_laasintegrationsupport"></a>LaaSIntegrationSupport values</h3>
+<p>Indicates the status of the Lifecycle Manager integration feature. Possible values:</p>
+<ul>
+  <li><strong>Enabled</strong>: com.soa.feature.enabled</li>
+  <li><strong>Disabled</strong>: com.soa.feature.disabled</li>
+</ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -1179,6 +1224,10 @@ no-catalog: true
     <tr>
       <td>api.usage.by.license</td>
       <td>This reports the API usage distribution per license. An example scenario might be if an API is offered to some apps for a fee and some for a cost. The free license consumption might be 70% of the API traffic, and the paid API calls consuming the remaining 30%. In the user interface, this information is depicted in a pie chart. The report value sends the data needed to draw the chart.</td>
+    </tr>
+    <tr>
+      <td>api.usage.by.app.per.license</td>
+      <td>This reports the API consumption per app, per license.</td>
     </tr>
   </tbody>
 </table>
@@ -1897,4 +1946,4 @@ no-catalog: true
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

@@ -125,7 +125,7 @@ Returns a list of Board items for the specified user.<!-- #EndLibraryItem --></p
       <td>Query</td>
       <td>string[ ]</td>
       <td>Optional</td>
-      <td>A filtering parameter, specifying one or more <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">board item</a> types to be returned, such as an alert, discussion, or ticket. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_boarditemtypes">Board Item Types</a>.</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_ItemType.lbi" -->A filtering parameter, specifying one or more <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">board item (forum entry)</a> types to be returned, such as an alert, discussion, or ticket. For valid values, see <a href="../aaref/Ref_Values.htm#values_boarditemtypes">Board Item Types</a>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>DiscussionType</td>
@@ -169,8 +169,8 @@ A filtering parameter: if specified, only tickets of that state are returned. Fo
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->
-The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem -->If specified, results are limited to items relating to that item ID. If not specified, no filter is applied.</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">forum entry</a>.<!-- #EndLibraryItem --></p>
+        <p>If specified, results are limited to items relating to that item ID. If not specified, no filter is applied.</p></td>
     </tr>
     <tr>
       <td>Tag</td>
@@ -191,7 +191,7 @@ Indicates whether comments should be included in the information returned. Defau
     <tr>
       <td>NumberOfComments</td>
       <td>Query</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/o_apps_NumberOfComments.lbi" --> The number of comments to be returned (if IncludeComments is not set to <strong>false</strong>). Default value: <strong>2</strong>.<!-- #EndLibraryItem --></td>
     </tr>
@@ -205,14 +205,14 @@ Indicates whether comments should be included in the information returned. Defau
     <tr>
       <td>start</td>
       <td>Query</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/parm_start.lbi" --> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>count</td>
       <td>Query</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/parm_count.lbi" --> The number of results to be returned, from the specified starting point. If not specified, all matching results are returned.<!-- #EndLibraryItem --></td>
     </tr>
@@ -536,4 +536,4 @@ Information about comments on a Board item such as a ticket or discussion, inclu
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

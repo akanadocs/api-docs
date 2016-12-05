@@ -67,12 +67,13 @@ Content-Type: application/json
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body #1</strong></p>
 <p>This example shows the platform default, without phone numbers.</p>
-<pre>{
+<pre>
+{
   "FirstName":"Jonathan",
   "LastName":"Swift",
-  &quot;ForcePasswordChangeOnLogin&quot;:"true",
   "Email":"jswift@acmepaymentscorp.com",
-  "Password":"Jonathan23"
+  "Password":"Jonathan23",
+  "ForcePasswordChangeOnLogin":"false"
 }</pre>
 <p><strong>Sample request body #2</strong></p>
 <p>In the example below, country codes are enabled on the platform. In this scenario, the Site Admin must add phone number information for the user.</p>
@@ -166,12 +167,39 @@ Content-Type: application/json
 
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
-<p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
-<p><strong>Sample response headers: application/json</strong></p>
+<p id="id_sampleresponse">The sample responses below shows successful completion of this operation.</p>
+
+<p><strong>Sample response headers #1: application/json</strong></p>
+<p>Platform default, without phone numbers.</p>
+<pre>HTTP/1.1 200 OK
+Date: Fri, 02 Dec 2016 19:32:43 GMT
+Content-Type: application/json</pre>
+
+<p><strong>Sample response body #1: application/json</strong></p>
+<p>Platform default, without phone numbers.</p>
+<pre>{
+  "UserID" : "09c781ff-ff73-47a3-83d1-b2ced75fdf2d.acmepaymentscorp",
+  "FirstName" : "Jonathan",
+  "LastName" : "Swift",
+  "Password" : "Jonathan23",
+  "Email" : "jswift@acmepaymentscorp.com",
+  "Language" : [ ],
+  "Technology" : [ ],
+  "AvatarProvider" : "com.soa.imageprovider.type.default",
+  "State" : "registered",
+  "AcceptedAgreementID" : [ ],
+  "ForcePasswordChangeOnLogin" : false,
+  "ExpirationDate" : "2017-01-01T11:32:43.628-08:00"
+}</pre>
+
+<p><strong>Sample response headers #2: application/json</strong></p>
+<p>With phone numbers.</p>
 <pre>Status Code: 200 OK
 Content-Type:  application/json
 Expires: Tue, 08 Sep 2015 13:54:32 GMT</pre>
+
 <p><strong>Sample response body: application/json</strong></p>
+<p>With phone numbers.</p>
 <pre>{
   "UserID" : "8789eac3-227b-4956-a74e-65c706a65bb6.acmepaymentscorp",
   "FirstName" : "Jane",
@@ -192,7 +220,8 @@ Expires: Tue, 08 Sep 2015 13:54:32 GMT</pre>
     } ]
   }
 }</pre>
-<p><strong>Sample response headers: application/xml</strong></p>
+
+<p><strong>Sample response headers #2: application/xml</strong></p>
 <pre>Status Code: 200 OK
 Content-Type:  application/xml
 Expires: Tue, 08 Sep 2015 15:42:22 GMT</pre>
@@ -320,4 +349,4 @@ Expires: Tue, 08 Sep 2015 15:42:22 GMT</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

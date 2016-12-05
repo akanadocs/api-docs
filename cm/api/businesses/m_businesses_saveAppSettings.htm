@@ -18,8 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_saveAppSettings_bus.lbi" -->Updates the configurable app settings for a business on the platform.<!-- #EndLibraryItem --></p>
 <p><span class="apidoc_note"><strong>Note</strong>: When you change a setting, it might take up to five minutes for the change to take effect.</span></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be an authorized administrator: <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
-<!--<p>AuthorizationRole.BUSINESSADMIN,AuthorizationRole.SITEADMIN,AuthorizationRole.ADMIN)</p>-->
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/permission_modify.lbi" -->Must have Modify permission for the resource. <!-- #EndLibraryItem --><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> or other authorized Admin.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -65,13 +64,14 @@ Accept: application/vnd.soa.v72+json
 X-Csrf-Token_acmepaymentscorp: &lt;TokenID&gt;</pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "UserDefinedIdentitySupport":"com.soa.feature.enabled",
+  "UserDefinedIdentitySupport":"com.soa.feature.enabled.for.siteadmins",
   "SimultaneousSandboxProductAccessSupport":"com.soa.feature.enabled",
   "ReturnPlainTextSharedSecret":"com.soa.feature.enabled",
-  "AppVersionWorkflowDefKey":"workflow:definition:appversion",
+  "AppVersionWorkflowDefKey":"workflow:definition:appversion-workflow-template1",
+  "AppTeamMemberWorkflowDefKey":"workflow:definition:application-team-mbr",
   "PublicAppSupport":"com.soa.feature.enabled",
   "PublicAppReviewsSupport":"com.soa.feature.enabled",
-  "PublicAppRatingsSupport":"com.soa.feature.disabled",
+  "PublicAppRatingsSupport":"com.soa.feature.enabled",
   "PrivateAppSupport":"com.soa.feature.enabled",
   "PrivateAppReviewsSupport":"com.soa.feature.enabled",
   "PrivateAppRatingsSupport":"com.soa.feature.enabled"
@@ -136,7 +136,8 @@ X-Csrf-Token_acmepaymentscorp: &lt;TokenID&gt;</pre>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" --> The unique ID for a specific business on the platform.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" -->
+The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>BusinessAppSettings</td>
@@ -164,42 +165,44 @@ X-Csrf-Token_acmepaymentscorp: &lt;TokenID&gt;</pre>
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Expires: Thu, 18 Dec 2014 16:02:42 GMT</pre>
+Expires: Thu, 10 Nov 2016 22:50:47 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
   "PublicAppSupport" : "com.soa.feature.enabled",
   "PublicAppBoardSupport" : "com.soa.feature.enabled",
-  "PublicAppRatingsSupport" : "com.soa.feature.disabled",
+  "PublicAppRatingsSupport" : "com.soa.feature.enabled",
   "PublicAppReviewsSupport" : "com.soa.feature.enabled",
   "PrivateAppSupport" : "com.soa.feature.enabled",
   "PrivateAppBoardSupport" : "com.soa.feature.enabled",
   "PrivateAppRatingsSupport" : "com.soa.feature.enabled",
   "PrivateAppReviewsSupport" : "com.soa.feature.enabled",
-  "UserDefinedIdentitySupport" : "com.soa.feature.enabled",
+  "UserDefinedIdentitySupport" : "com.soa.feature.enabled.for.siteadmins",
   "SimultaneousSandboxProductAccessSupport" : "com.soa.feature.enabled",
-  "AppVersionWorkflowDefKey" : "workflow:definition:appversion",
+  "AppVersionWorkflowDefKey" : "workflow:definition:appversion-workflow-template1",
+  "AppTeamMemberWorkflowDefKey" : "workflow:definition:application-team-mbr",
   "ReturnPlainTextSharedSecret" : "com.soa.feature.enabled"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/xml</strong></p>
+<p><strong>Sample response headers: application/vnd.soa.v81+xml</strong></p>
 <pre>Status Code: 200 OK
-Content-Type: application/xml
-Expires: Thu, 18 Dec 2014 16:18:11 GMT</pre>
-<p><strong>Sample response body: application/xml</strong></p>
+Content-Type: application/vnd.soa.v81+xml
+Expires:  Thu, 10 Nov 2016 22:55:42 GMT</pre>
+<p><strong>Sample response body: application/vnd.soa.v81+xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;BusinessAppSettings xmlns="http://soa.com/xsd/business/1.0" xmlns:ns2="http://soa.com/xsd/api/1.0" 
-xmlns:ns3="http://soa.com/xsd/legals/1.0" xmlns:ns4="http://soa.com/xsd/dnmodel/1.0"&gt;
+&lt;BusinessAppSettings xmlns="http://soa.com/xsd/business/1.0" xmlns:ns2="http://soa.com/xsd/legals/1.0" 
+xmlns:ns3="http://soa.com/xsd/dnmodel/1.0" xmlns:ns4="http://soa.com/xsd/api/1.0"&gt;
   &lt;PublicAppSupport&gt;com.soa.feature.enabled&lt;/PublicAppSupport&gt;
   &lt;PublicAppBoardSupport&gt;com.soa.feature.enabled&lt;/PublicAppBoardSupport&gt;
-  &lt;PublicAppRatingsSupport&gt;com.soa.feature.disabled&lt;/PublicAppRatingsSupport&gt;
+  &lt;PublicAppRatingsSupport&gt;com.soa.feature.enabled&lt;/PublicAppRatingsSupport&gt;
   &lt;PublicAppReviewsSupport&gt;com.soa.feature.enabled&lt;/PublicAppReviewsSupport&gt;
   &lt;PrivateAppSupport&gt;com.soa.feature.enabled&lt;/PrivateAppSupport&gt;
   &lt;PrivateAppBoardSupport&gt;com.soa.feature.enabled&lt;/PrivateAppBoardSupport&gt;
   &lt;PrivateAppRatingsSupport&gt;com.soa.feature.enabled&lt;/PrivateAppRatingsSupport&gt;
   &lt;PrivateAppReviewsSupport&gt;com.soa.feature.enabled&lt;/PrivateAppReviewsSupport&gt;
-  &lt;UserDefinedIdentitySupport&gt;com.soa.feature.enabled&lt;/UserDefinedIdentitySupport&gt;
+  &lt;UserDefinedIdentitySupport&gt;com.soa.feature.enabled.for.siteadmins&lt;/UserDefinedIdentitySupport&gt;
   &lt;SimultaneousSandboxProductAccessSupport&gt;com.soa.feature.enabled&lt;/SimultaneousSandboxProductAccessSupport&gt;
-  &lt;AppVersionWorkflowDefKey&gt;workflow:definition:appversion&lt;/AppVersionWorkflowDefKey&gt;
+  &lt;AppVersionWorkflowDefKey&gt;workflow:definition:appversion-workflow-template1&lt;/AppVersionWorkflowDefKey&gt;
+  &lt;AppTeamMemberWorkflowDefKey&gt;workflow:definition:application-team-mbr&lt;/AppTeamMemberWorkflowDefKey&gt;
   &lt;ReturnPlainTextSharedSecret&gt;com.soa.feature.enabled&lt;/ReturnPlainTextSharedSecret&gt;
 &lt;/BusinessAppSettings&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -274,6 +277,10 @@ xmlns:ns3="http://soa.com/xsd/legals/1.0" xmlns:ns4="http://soa.com/xsd/dnmodel/
       <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
+      <td><!-- #BeginLibraryItem "/Library/http_405.lbi" --> Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
@@ -300,4 +307,4 @@ xmlns:ns3="http://soa.com/xsd/legals/1.0" xmlns:ns4="http://soa.com/xsd/dnmodel/
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

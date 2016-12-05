@@ -15,7 +15,6 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/Library/o_client_services_PolicyResult.lbi" -->
 Provides information about the instructions to be implemented as a result of application of the <strong>AtmosphereApplicationSecurityPolicy</strong>; for example, how the token should be added to the request message (header, cookie, query parameter, or POST parameter) and what steps should be taken in the event of an error.<!-- #EndLibraryItem --></p>
 
-
 <p>The properties included in the <strong>PolicyResult</strong> object are listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -29,7 +28,8 @@ Provides information about the instructions to be implemented as a result of app
     <tr>
       <td>RequestContext</td>
       <td><a href="o_client_services_RequestContext.htm">RequestContext</a></td>
-      <td><!-- #BeginLibraryItem "/Library/o_client_services_RequestContext.lbi" -->Includes information about the request context&#8212;that is, the instructions about how the request message should be prepared for sending to the API. Uses the information returned by one of these operations: <span class="apidoc_code"><a href="../client_services/m_client_services_assignClientIdentityWithSharedSecretPOST.htm">POST&nbsp;/api/client/services/request/client/identity</a></span> (assign client identity for shared secret, POST), and <span class="apidoc_code"><a href="../client_services/m_client_services_assignClientIdentityWithSharedSecretPUT.htm">PUT&nbsp;/api/client/services/request/client/identity</a></span> (assign client identity for shared secret, PUT). Uses the response to any of these operations to prepare the request message in conformance with the settings of the <strong>AtmosphereApplicationSecurityPolicy</strong>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_client_services_RequestContext.lbi" -->
+Includes information about the request context&#8212;that is, the instructions about how the request message should be prepared for sending to the API. Uses the information returned by one of these operations: <span class="apidoc_code"><a href="../client_services/m_client_services_assignClientIdentityWithSharedSecretPOST.htm">POST&nbsp;/api/client/services/request/client/identity</a></span> (assign client identity for shared secret, POST), and <span class="apidoc_code"><a href="../client_services/m_client_services_assignClientIdentityWithSharedSecretPUT.htm">PUT&nbsp;/api/client/services/request/client/identity</a></span> (assign client identity for shared secret, PUT). Uses the response to prepare the request message in conformance with the settings of the <strong>AtmosphereApplicationSecurityPolicy</strong>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>Proceed</td>
@@ -67,4 +67,4 @@ Provides information about the instructions to be implemented as a result of app
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

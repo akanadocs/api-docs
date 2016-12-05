@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Board | APIs Service | Akana API Platform API
-description: Returns a list of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board items</a> for the specified API.
+description:  Returns a list of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">Forum entries</a> for the specified API.
 product: cm
 category: ref
 nav-title: Get Board 
@@ -15,11 +15,11 @@ no-catalog: true
 <h2><a name="top" id="top"></a>GET&nbsp;/api/apis/{APIID}/board</h2><!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getBoard_apis.lbi" -->Returns a list of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board items</a> for the specified API.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_getBoard_apis.lbi" -->
+Returns a list of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">Forum entries</a> for the specified API.<!-- #EndLibraryItem --></p>
 <p>If the API only has one version, the results returned for <span class="apidoc_code">GET&nbsp;/api/apis/{APIID}/board</span> (this operation) and <span class="apidoc_code"><a href="m_apis_getVersionBoard.htm">GET&nbsp;/api/apis/{APIVersionID}/board</a></span> are the same.</p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
-Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->However, the results that are returned are restricted based on the user's access rights. For example, Board items relating to a Private API are not returned unless the user is logged in and has access rights to the API.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/permission_read.lbi" -->Must have Read permission for the resource. <!-- #EndLibraryItem --></p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -121,7 +121,7 @@ Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->Ho
       <td>Query</td>
       <td>string[ ]</td>
       <td>Optional</td>
-      <td>A filtering parameter, specifying one or more <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">board item</a> types to be returned, such as an alert, discussion, or ticket. For valid values, see <a href="../aaref/Ref_Values.htm#values_boarditemtypes">Board Item Types</a>.</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_ItemType.lbi" -->A filtering parameter, specifying one or more <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">board item (forum entry)</a> types to be returned, such as an alert, discussion, or ticket. For valid values, see <a href="../aaref/Ref_Values.htm#values_boarditemtypes">Board Item Types</a>.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_AppID">AppID</a></td>
@@ -151,8 +151,8 @@ A filtering parameter: if specified, only tickets of that state are returned. Fo
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->
-The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem -->If specified, results are limited to information relating to that item ID. If not specified, no filter is applied.</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">forum entry</a>.<!-- #EndLibraryItem --></p>
+        <p>If specified, results are limited to information relating to that item ID. If not specified, no filter is applied.</p></td>
     </tr>
     <tr>
       <td>Tag</td>
@@ -173,7 +173,7 @@ Indicates whether comments should be included in the information returned. Defau
     <tr>
       <td>NumberOfComments</td>
       <td>Query</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/o_apps_NumberOfComments.lbi" -->
 The number of comments to be returned (if IncludeComments is not set to <strong>false</strong>). Default value: <strong>2</strong>.<!-- #EndLibraryItem --></td>
@@ -188,14 +188,14 @@ The number of comments to be returned (if IncludeComments is not set to <strong>
     <tr>
       <td>start</td>
       <td>Query</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/parm_start.lbi" --> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>count</td>
       <td>Query</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/parm_count.lbi" -->
 The number of results to be returned, from the specified starting point. If not specified, all matching results are returned.<!-- #EndLibraryItem --></td>
@@ -729,4 +729,4 @@ The response body is in the form of an RSS channel, and includes the items liste
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

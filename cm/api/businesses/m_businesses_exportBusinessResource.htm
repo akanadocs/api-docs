@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_exportBusinessResource.lbi" -->
 Exports information about <a href="../Ref_Glossary_CommunityPlatform.htm#gl_scope">scopes</a> associated with a business to an export file that can be imported to another platform instance.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have Read permission for the business information; a <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/permission_read.lbi" -->Must have Read permission for the resource. <!-- #EndLibraryItem --><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <!--<p>@PermissionRequired(action=AuzAction.READ)</p>-->
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -134,7 +134,7 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 <p><strong>Sample response headers</strong></p>
 <pre>Content-Disposition: attachment;filename="resource-export.zip"
 Content-Type: application/octet-stream
-Expires: Tue, 03 Feb 2015 17:20:45 GMT</pre>
+Date: Fri, 11 Nov 2016 16:00:59 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <p>The response content is sent as the export file named in the Content-Disposition header. <a href="../assets/resource-export.zip">View an example</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -216,4 +216,4 @@ Expires: Tue, 03 Feb 2015 17:20:45 GMT</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

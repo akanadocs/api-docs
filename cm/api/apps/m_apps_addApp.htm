@@ -105,6 +105,26 @@ Content-Type: application/json; charset=UTF-8
     "SharedSecret":"1234567890123456789012345678901234567890"
   }
 }</pre>
+
+<p><strong>Sample request body #3</strong></p>
+<p>Adds an app in the context of a specific business organization on the platform.</p>
+<pre>{
+  "Name":"Billing App 2",
+  "Description":"Billing App 2",
+  "ApplicationVersion":{
+    "Name":"v1",
+    "Description":"v1",
+    "Tag":[
+
+    ],
+    "Visibility":"Public",
+    "Identity":"",
+    "SharedSecret":"",
+    "WebsiteAddress":""
+  },
+  "PictureID":"",
+  "BusinessID":"8c7d0ba1-b73f-41ee-9144-b5a90173382d.acmepaymentscorp"
+}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -281,4 +301,4 @@ The unique ID for a specific app.<!-- #EndLibraryItem --></td>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

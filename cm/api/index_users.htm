@@ -77,8 +77,8 @@ Returns information about the APIs that the specified user is connected to, eith
   </tr>
   <tr>
     <td>get authorization result</td>
-    <td><a href="users/m_users_getAuthorizationResult.htm">GET&nbsp;/api/users/{UserID}/auzstatus</a></td>
-    <td><!-- #BeginLibraryItem "/Library/desc_getAuthorizationResult.lbi" -->Returns information about the authorization status of the specified user.<!-- #EndLibraryItem --></td>
+    <td><a href="users/m_users_getAuthorizationResult.htm">GET&nbsp;/api/users/{UserID}/auzstatus?ResourceID={ResourceID}</a></td>
+    <td><!-- #BeginLibraryItem "/Library/desc_getAuthorizationResult.lbi" -->Returns information about the authorization status of the specified user in relation to the specified resource or resource type.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>get avatar providers</td>
@@ -163,7 +163,7 @@ Returns the number of current notifications for a user. <!-- #EndLibraryItem -->
   </tr>
   <tr>
     <td>get user roles</td>
-    <td><a href="users/m_users_getUserRoles.htm">GET&nbsp;/api/users/{UserID}/roles</a></td>
+    <td><a href="users/m_users_getUserRoles.htm">GET&nbsp;/api/users/{UserID}/roles?ResourceID={ResourceID}</a></td>
     <td><!-- #BeginLibraryItem "/Library/desc_getUserRoles.lbi" -->
 Returns the roles the user has in relation to a specified resource.<!-- #EndLibraryItem --></td>
   </tr>
@@ -175,7 +175,7 @@ Returns the roles the user has in relation to a specified resource.<!-- #EndLibr
   <tr>
     <td>list apps</td>
     <td><a href="users/m_users_listApps.htm">GET&nbsp;/api/users/{UserID}/apps</a></td>
-    <td><!-- #BeginLibraryItem "/Library/desc_listApps.lbi" -->Returns information about the apps for which the user is on the app team, and optionally also information about app versions. The information is returned as a JSON object.<!-- #EndLibraryItem --></td>
+    <td><!-- #BeginLibraryItem "/Library/desc_listApps_users.lbi" -->Returns information about the apps for which the user is on the app team, and optionally also information about app versions. The information is returned as a JSON object.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>modify account settings</td>
@@ -194,6 +194,11 @@ Returns the roles the user has in relation to a specified resource.<!-- #EndLibr
     <td><!-- #BeginLibraryItem "/Library/desc_modifyUser.lbi" -->
 Modifies information about a platform user. <!-- #EndLibraryItem --></td>
   </tr>
+<!--  <tr>
+    <td>previewavatar is out</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>-->
   <tr>
     <td>resend activation</td>
     <td><a href="users/m_users_resendActivation.htm">POST&nbsp;/api/users/resendActivation</a></td>
@@ -249,4 +254,4 @@ Validates an invitation code at the Simple Dev signup page and returns user deta
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

@@ -132,15 +132,15 @@ Production/operations/getPetById/metrics</pre>
       <td>Query</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_StartDate.lbi" -->
-        The beginning point for the date range of metric information requested. If StartDate is not specified, the operation uses EndDate minus Duration. If both StartDate and EndDate are unspecified, the operation returns information for the Duration value, and if Duration is also unspecified it returns default Duration value of 2 hours.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_StartDate.lbi" -->The beginning point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>StartDate=2011-01-01T11:55:22</strong>. If StartDate is not specified, the operation uses EndDate minus Duration. If both StartDate and EndDate are unspecified, the operation returns information for the Duration value, and if Duration is also unspecified it returns default Duration value of 2 hours.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>EndDate</td>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_EndDate.lbi" -->The ending point for the date range of metric information requested. If not specified, defaults to the current date/time of the API call. <!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_EndDate.lbi" -->
+The ending point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>EndDate=2011-01-02T11:55:22</strong>. If not specified, defaults to the current date/time of the API call.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>TimeZone</td>
@@ -154,7 +154,7 @@ Production/operations/getPetById/metrics</pre>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_TimeInterval.lbi" -->The time interval for the metric information to be returned. If not specified, defaults to five-second intervals (5s). For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.
+      <td><!-- #BeginLibraryItem "/Library/parm_TimeInterval.lbi" -->The time interval for the metric information to be returned. For example, you might want data points every 10 seconds. If not specified, defaults to five-second intervals (5s). The StartDate, EndDate, and Duration fields work together to define the information to be returned; the TimeInterval determines the data points. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.
 <!-- #EndLibraryItem --></td>
     </tr>
     <tr>
@@ -162,7 +162,8 @@ Production/operations/getPetById/metrics</pre>
       <td>Query</td>
       <td>string</td>
       <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->
+The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. For example, you might want metric information for a 24-hour period or only for an hour. If not specified, defaults to two hours (2h). The StartDate, EndDate, and Duration fields work together to define the information to be returned.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>ShowSummary</td>
@@ -409,4 +410,4 @@ xmlns:ns7="http://soa.com/xsd/app/1.0" xmlns:ns8="http://soa.com/xsd/contract/1.
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

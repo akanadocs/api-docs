@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getDeploymentZoneAssociations.lbi" -->Returns information about the implementation/environment associations for a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be an authorized administrator: <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/permission_read.lbi" -->Must have Read permission for the resource. <!-- #EndLibraryItem -->For example, an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,7 +56,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for information about the implementation/environment associations for the specified deployment zone.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --><span class="soaapidoc_endpoint">deploymentzones</span>/4hrNPFUYSpq5jeju_Vk5PA.acmepaymentscorp/associations</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones/4hrNPFUYSpq5jeju_Vk5PA.acmepaymentscorp/associations</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET /api/deploymentzones/4hrNPFUYSpq5jeju_Vk5PA.acmepaymentscorp/associations HTTP/1.1
 Accept: application/json, text/javascript, */*; q=0.01
@@ -103,7 +103,7 @@ Accept: application/json, text/javascript, */*; q=0.01
   </thead>
   <tbody>
     <tr>
-      <td><span class="soaapidoc_endpoint">DZoneID</span></td>
+      <td>DZoneID</td>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
@@ -232,4 +232,4 @@ Content-Type: application/json</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

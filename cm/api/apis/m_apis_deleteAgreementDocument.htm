@@ -21,7 +21,7 @@ no-catalog: true
 <p>If you don't have the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a>, you could run the <span class="apidoc_code"><a href="m_apis_getLegals.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/legals</a></span> operation which includes this information in the response.</p>
 <p class="apidoc_note"><strong>Note</strong>: Once a legal agreement is active it's best to keep it unless you're sure you don't need the information on user acceptance of the agreement, or already have the data. Once a legal agreement is active, and apps are using your API, it's safer to leave the agreement in place even if it's currently inactive and/or has been superseded by later versions. If you think users have already accepted the agreement but you need to go ahead with deleting it, call Akana Technical Support for a script to retrieve the user acceptance information from the database.</p>
 <p>For more information about managing legal agreements for your API, see <a href="../aaref/Ref_ManagingLegalAgreementsOnThePlatform.htm">Managing Legal Agreements on the Platform</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/permission_modify.lbi" -->Must have Modify permission for the resource. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -240,4 +240,4 @@ Date: Mon, 28 Apr 2014 15:41:03 GMT</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

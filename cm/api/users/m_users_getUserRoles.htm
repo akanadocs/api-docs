@@ -12,13 +12,13 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top"></a>GET&nbsp;/api/users/{UserID}/roles</h2>
+<h2><a name="top"></a>GET&nbsp;/api/users/{UserID}/roles?ResourceID={ResourceID}</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getUserRoles.lbi" --> Returns the roles the user has in relation to a specified resource.<!-- #EndLibraryItem --></p>
 <!--FM-->
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_self">Self</a> (logged in) or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> (for any user).</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/permission_read.lbi" -->Must have Read permission for the resource. <!-- #EndLibraryItem --> <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_self">Self</a> (logged in) or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> (for any user).</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -64,7 +64,7 @@ Host: {hostname}
 Accept: application/json
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
-<p>N/A.</p>
+<p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -234,4 +234,4 @@ Content-Type: application/json</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

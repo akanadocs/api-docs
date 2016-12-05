@@ -1,0 +1,322 @@
+---
+layout: apipage
+title: List Businesses | Businesses Service | Akana API Platform API
+description: Returns information about business organizations on the platform, as a JSON object.
+product: cm
+category: ref
+nav-title: List Businesses 
+no-nav: api
+sub-nav: true
+sub-nav-class: businesses
+no-catalog: true
+---
+
+<!-- InstanceBeginEditable name="Heading" -->
+<h2><a name="top" id="top"></a>GET&nbsp;/api/businesses</h2>
+<!-- InstanceEndEditable -->
+
+<!-- InstanceBeginEditable name="Intro_AuthRoles" -->
+<p><!-- #BeginLibraryItem "/Library/desc_listBusinesses.lbi" -->Returns information about business organizations on the platform, as a JSON object.<!-- #EndLibraryItem --></p>
+<h5 class="stamp">Supported Versions: 8.3 and later</h5>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/permission_read.lbi" -->Must have Read permission for the resource. <!-- #EndLibraryItem --></p>
+<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>This topic includes the following sections:</p>
+<table width="600" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="200"><ul>
+  <li><a href="#httpmethod">HTTP Method</a></li>
+  <li><a href="#endpoint">URL</a></li>
+  <li><a href="#samplerequest">Sample Request</a></li>
+  <li><a href="#requestheaders">Request Headers</a></li>
+  <li><a href="#requestparameters">Request Parameters</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="#response">Response</a></li>
+  <li><a href="#sampleresponse">Sample Response</a></li>
+  <li><a href="#responseheaders">Response Headers</a></li>
+  <li><a href="#responsebody">Response Body</a></li>
+  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+<!-- InstanceBeginEditable name="HTTP Method" -->
+<p class="httpverb">GET</p>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+<h3 id="endpoint">URL</h3>
+<!-- InstanceBeginEditable name="URL" -->
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->businesses</pre>
+<!-- InstanceEndEditable -->
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<!-- InstanceBeginEditable name="Sample Request" -->
+<h3 id="samplerequest">Sample Request</h3>
+<p id="id_samplerequest">The example below shows a request for information about organizations on the platform.</p>
+<p><strong>Request URL</strong></p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->businesses[?][Federation=true][&amp;][BusinessID={BusinessID}]</pre>
+<p><strong>Sample request headers</strong></p>
+<pre>
+GET /api/businesses HTTP/1.1
+Host: {hostname}
+Accept: application/vnd.soa.v83+json</pre>
+<p><strong>Sample request body</strong></p>
+<p>Not applicable.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Headers" -->
+<h3 id="requestheaders">Request Headers</h3>
+<p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+      <td><p>Any of the following media types is valid for the Accept header:</p>        <!-- #BeginLibraryItem "/Library/hdrval_appjson_83.lbi" --><strong>application/vnd.soa.v83+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_83.lbi" --><strong>application/vnd.soa.v83+xml</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Request Parameters" -->
+<h3 id="requestparameters">Request Parameters</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr>
+      <th width="11%">Parameter</th>
+      <th width="9%">Parm Type</th>
+      <th width="11%">Data Type</th>
+      <th width="11%">Required</th>
+      <th width="58%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Federation</td>
+      <td>Query</td>
+      <td>Boolean</td>
+      <td>Optional</td>
+      <td>If this parameter is included and set to <strong>true</strong>,  businesses in the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_federation">federation</a> are included in the response. Default: <strong>false</strong>.</td>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a></td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" --> The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></p>
+        <p>If specified, only child businesses for the specified business are returned.</p></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Description" -->
+<h3 id="response">Response</h3>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about the businesses set up for the platform.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Sample Response" -->
+<h3 id="sampleresponse">Sample Response</h3>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
+<p><strong>Sample response headers: application/vnd.soa.v83+json</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/vnd.soa.v83+json
+Date: Fri, 02 Sep 2016 20:59:02 GMT</pre>
+<p><strong>Sample response body: application/vnd.soa.v83+json</strong></p>
+<p>The example below returns child business organizations to the specified parent organization.</p>
+<pre>{
+  "Business":[
+    {
+      "BusinessID":"249203f7-58ed-4e5d-a3e8-e1c020f51a6e.acmepaymentscorp",
+      "Name":"ACME Payments Corporation Billing Department",
+      "Description":"ACME Payments Corporation Billing Department",
+      "Visibility":"Public",
+      "AvatarURL":"http://{hostname}/api/businesses/avatar/_VxZnW6AUoRKFwfqp0DGpuRA",
+      "ParentBusinessID":"65a4afbe-9a56-46b2-8e41-862a15c36bc2.acmepaymentscorp",
+      "TargetResources":{
+        "TargetResource":[
+          {
+            "Name":"ACME Payments Corporation",
+            "ID":"65a4afbe-9a56-46b2-8e41-862a15c36bc2.acmepaymentscorp",
+            "Type":"business",
+            "Avatar":"http://acmepaymentscorp.com/api/businesses/avatar/_VxZnW6AUoRKFwfqp0DGpuRA"
+          }
+        ]
+      }
+    },
+    {
+      "BusinessID":"8ec969c1-eeb4-44c7-aa11-6ca721603ef2.acmepaymentscorp",
+      "Name":"ACME Payments Corporation Collections Department",
+      "Description":"ACME Payments Corporation Collections Department",
+      "Visibility":"Public",
+      "AvatarURL":"http://{hostname}/api/businesses/avatar/_VxZnW6AUoRKFwfqp0DGpuRA",
+      "ParentBusinessID":"65a4afbe-9a56-46b2-8e41-862a15c36bc2.acmepaymentscorp",
+      "TargetResources":{
+        "TargetResource":[
+          {
+            "Name":"ACME Payments Corporation",
+            "ID":"65a4afbe-9a56-46b2-8e41-862a15c36bc2.acmepaymentscorp",
+            "Type":"business",
+            "Avatar":"http://acmepaymentscorp.com/api/businesses/avatar/_VxZnW6AUoRKFwfqp0DGpuRA"
+          }
+        ]
+      }
+    }
+  ]
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<p><strong>Sample response headers: application/vnd.soa.v83+xml</strong></p>
+<pre>Status Code: 200 OK
+Content-Type:application/vnd.soa.v83+xml
+Date:  Wed, 09 Nov 2016 22:13:09 GMT</pre>
+<p><strong>Sample response body: application/vnd.soa.v83+xml</strong></p>
+<p>The example below returns all business organizations specified for the tenant.</p>
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;BusinessInfos xmlns="http://soa.com/xsd/business/1.0" xmlns:ns2="http://soa.com/xsd/api/1.0" 
+xmlns:ns3="http://soa.com/xsd/dnmodel/1.0" xmlns:ns4="http://soa.com/xsd/legals/1.0"&gt;
+  &lt;Business&gt;
+    &lt;BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/BusinessID&gt;
+    &lt;Name&gt;Tenant - automation&lt;/Name&gt;
+    &lt;Visibility&gt;Limited&lt;/Visibility&gt;
+    &lt;AvatarURL&gt;http://acmepaymentscorp.com/api/businesses/avatar/_VNJ_Q40UH1GhlAHRPXZS0rg/atmo.tenant&lt;/AvatarURL&gt;
+  &lt;/Business&gt;
+  &lt;Business&gt;
+    &lt;BusinessID&gt;5451af3c-83bd-4669-86d9-044c46d6ee26.acmepaymentscorp&lt;/BusinessID&gt;
+    &lt;Name&gt;tye&lt;/Name&gt;
+    &lt;Description&gt;eyrt&lt;/Description&gt;
+    &lt;Visibility&gt;Limited&lt;/Visibility&gt;
+    &lt;AvatarURL&gt;http://acmepaymentscorp.com/api/businesses/avatar/_VNJ_Q40UH1GhlAHRPXZS0rg/Department&lt;/AvatarURL&gt;
+    &lt;ParentBusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ParentBusinessID&gt;
+    &lt;ns3:TargetResources&gt;
+      &lt;ns3:TargetResource&gt;
+        &lt;ns3:Name&gt;Tenant - automation&lt;/ns3:Name&gt;
+        &lt;ns3:ID&gt;tenantbusiness.acmepaymentscorp&lt;/ns3:ID&gt;
+        &lt;ns3:Type&gt;business&lt;/ns3:Type&gt;
+        &lt;ns3:Avatar&gt;http://acmepaymentscorp.com/api/businesses/avatar/_VNJ_Q40UH1GhlAHRPXZS0rg/atmo.tenant&lt;/ns3:Avatar&gt;
+      &lt;/ns3:TargetResource&gt;
+    &lt;/ns3:TargetResources&gt;
+  &lt;/Business&gt;
+  &lt;Business&gt;
+    &lt;BusinessID&gt;2d4b1202-2951-40b3-a6c5-21a8fbbb9b20.acmepaymentscorp&lt;/BusinessID&gt;
+    &lt;Name&gt;org1&lt;/Name&gt;
+    &lt;Description&gt;test&lt;/Description&gt;
+    &lt;Visibility&gt;Limited&lt;/Visibility&gt;
+    &lt;AvatarURL&gt;http://acmepaymentscorp.com/api/businesses/avatar/_VNJ_Q40UH1GhlAHRPXZS0rg/Department&lt;/AvatarURL&gt;
+    &lt;ParentBusinessID&gt;5451af3c-83bd-4669-86d9-044c46d6ee26.acmepaymentscorp&lt;/ParentBusinessID&gt;
+    &lt;ns3:TargetResources&gt;
+      &lt;ns3:TargetResource&gt;
+        &lt;ns3:Name&gt;tye&lt;/ns3:Name&gt;
+        &lt;ns3:ID&gt;5451af3c-83bd-4669-86d9-044c46d6ee26.acmepaymentscorp&lt;/ns3:ID&gt;
+        &lt;ns3:Type&gt;business&lt;/ns3:Type&gt;
+        &lt;ns3:Avatar&gt;http://acmepaymentscorp.com/api/businesses/avatar/_VNJ_Q40UH1GhlAHRPXZS0rg/Department&lt;/ns3:Avatar&gt;
+      &lt;/ns3:TargetResource&gt;
+    &lt;/ns3:TargetResources&gt;
+  &lt;/Business&gt;
+&lt;/BusinessInfos&gt;</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Headers" -->
+<h3 id="responseheaders">Response Headers</h3>
+<p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Header</th>
+      <th width="80%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson_83.lbi" --><strong>application/vnd.soa.v83+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_83.lbi" --><strong>application/vnd.soa.v83+xml</strong><!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<!-- InstanceBeginEditable name="Response Body" -->
+<h3 id="responsebody">Response Body</h3>
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Name</th>
+      <th width="15%">Type</th>
+      <th width="65%">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Businesses</td>
+      <td><a href="../obj/o_businesses_Businesses.htm">Businesses</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_businesses_Businesses.lbi" -->Contains information about one or more businesses.<!-- #EndLibraryItem --></td>
+    </tr>
+  </tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<!-- InstanceEndEditable -->
+
+
+<h3 id="errorcodes">Error Codes/Messages</h3>
+<p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
+<!-- InstanceBeginEditable name="Error Messages" -->
+<table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+  <thead>
+    <tr bgcolor="#DDDDDD">
+      <th width="20%">Item</th>
+      <th width="80%">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+      <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+      <td>An error occurred processing the call. </td>
+    </tr>
+  </tbody>
+</table>
+<!-- InstanceEndEditable -->
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<table width="700" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td width="300"><ul>
+  <li><a href="../index.htm">Akana API Platform API: Overview</a></li>
+  <li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
+  <li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
+</ul>
+</td>
+    <td width="400"><ul>
+  <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
+  <li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+  <li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
+</ul>
+</td>
+  </tr>
+</table><!-- #EndLibraryItem -->

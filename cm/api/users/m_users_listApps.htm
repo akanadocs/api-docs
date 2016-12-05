@@ -16,7 +16,7 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_listApps.lbi" -->Returns information about the apps for which the user is on the app team, and optionally also information about app versions. The information is returned as a JSON object.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_listApps_users.lbi" -->Returns information about the apps for which the user is on the app team, and optionally also information about app versions. The information is returned as a JSON object.<!-- #EndLibraryItem --></p>
 <p><strong>Note</strong>: Use this operation rather than <span class="apidoc_code"><a href="m_users_getApps.htm">GET&nbsp;/api/users/{UserID}/apps</a></span> (with Accept header of application/json, text/xml, or application/rss+xml) which returns the results in the form of an RSS channel.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_self">Self</a> (logged in) or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> (for any user).</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -123,14 +123,14 @@ no-catalog: true
     <tr>
       <td>start</td>
       <td>Query</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/parm_start.lbi" --> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>count</td>
       <td>Query</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Optional</td>
       <td><!-- #BeginLibraryItem "/Library/parm_count.lbi" --> The number of results to be returned, from the specified starting point. If not specified, all matching results are returned.<!-- #EndLibraryItem --></td>
     </tr>
@@ -389,4 +389,4 @@ xmlns:ns3="http://soa.com/xsd/dnmodel/1.0"&gt;
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

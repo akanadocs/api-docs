@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Read File Details | Dropbox Service | Akana API Platform API
-description: Reads the contents of a file, such as an API definition document, to the Dropbox, and returns a list of services that are included in the file.
+description:  Reads the contents of a file, such as an API definition document (individual file or ZIP file), to the Dropbox, and returns information about the service that will be used to create the API. If the upload file is a ZIP file containing multiple services, it returns a list of services that are included in the file, so the user can specify a service.
 product: cm
 category: ref
 nav-title: Read File Details 
@@ -12,11 +12,12 @@ no-catalog: true
 ---
 
 <!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>POST&nbsp;/api/dropbox/readFileDetails</h2>
+<h2><a name="top" id="top"></a>POST&nbsp;/api/dropbox/readfiledetails</h2>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_readFileDetails.lbi" -->Reads the contents of a file, such as an API definition document, to the Dropbox, and returns a list of services that are included in the file.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_readFileDetails.lbi" -->
+Reads the contents of a file, such as an API definition document (individual file or ZIP file), to the Dropbox, and returns information about the service that will be used to create the API. If the upload file is a ZIP file containing multiple services, it returns a list of services that are included in the file, so the user can specify a service.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be an authorized user for the resource for which the file is being uploaded.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -47,7 +48,7 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->dropbox/readFileDetails</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->dropbox/readfiledetails</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -56,9 +57,9 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to upload a specific API definition document to create an API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->dropbox/readFileDetails</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->dropbox/readfiledetails</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>POST /api/dropbox/readfiledetails?wrapInHTML=true&document.domain= HTTP/1.1
+<pre>POST /api/dropbox/readfiledetails?wrapInHTML=true&amp;document.domain= HTTP/1.1
 Accept: application/vnd.soa.v81+json
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
@@ -132,12 +133,21 @@ Accept: application/vnd.soa.v81+json
 <pre>HTTP/1.1 200 OK
 Date: Wed, 10 Feb 2016 21:54:27 GMT
 Content-Type: application/vnd.soa.v81+json</pre>
-<p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
+<p><strong>Sample response body #1: application/vnd.soa.v81+json</strong></p>
+<p>In the example below, a single file was uploaded to the Dropbox.</p>
 <pre>{
   &quot;FileName&quot; : &quot;swagger_getPetById.json&quot;,
   &quot;FileType&quot; : &quot;json&quot;,
   &quot;DropboxFileId&quot; : 1008
 }</pre>
+<p>In the example below, a ZIP file containing multiple services was uploaded to the Dropbox. In this example, a further step is needed; the user must specify which service to use to create the API, using the <span class="apidoc_code"><a href="m_dropbox_readZipFileDetails.htm">GET&nbsp;/api/dropbox/readfiledetails</a></span> operation.</p>
+<pre>{
+  &quot;FileName&quot; : &quot;swagger_petstore_multi.zip&quot;,
+  &quot;FileType&quot; : &quot;zip&quot;,
+  &quot;DropboxFileId&quot; : 1009,
+  &quot;ZipFileEntry&quot; : [ &quot;swagger_petstore2.json&quot;, &quot;swagger_petstore.json&quot; ]
+}
+</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -227,4 +237,4 @@ Content-Type: application/vnd.soa.v81+json</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

@@ -20,8 +20,8 @@ no-catalog: true
 <p>The API can be defined in three ways:</p>
 <ul>
   <li>With only API name (API details to be added later)</li>
-  <li>Based on an existing service\</li>
-  <li>Based on an API description document at a referenced URL or in a file (individual file or part of a ZIP file) previously uploaded to the Dropbox using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readFileDetails</a></span> operation (Swagger 2.0, RAML, WADL, or WSDL).</li>
+  <li>Based on an existing service</li>
+  <li>Based on an API description document at a referenced URL or in a file (individual file or part of a ZIP file) previously uploaded to the Dropbox using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readfiledetails</a></span> operation (Swagger 2.0, RAML, WADL, or WSDL).</li>
 </ul>
 <p>To make changes to the API once you've created it, use one of the following:</p>
 <ul>
@@ -76,7 +76,7 @@ Accept: application/vnd.soa.v81+json
 Content-Type: application/vnd.soa.v81+json; charset=UTF-8
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body #1</strong></p>
-<p>Creates an API by uploading a Swagger document, previously uploaded to the Dropbox using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readFileDetails</a></span> operation.</p>
+<p>Creates an API by uploading a Swagger document, previously uploaded to the Dropbox using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readfiledetails</a></span> operation.</p>
 <!--<p>Date: Tue, 05 Jul 2016 14:27:47 GMT</p>-->
 <pre>{
   "DLDescriptor":{
@@ -142,7 +142,7 @@ Content-Type: application/vnd.soa.v81+json; charset=UTF-8
 }</pre>
 
 <p><strong>Sample request body #4: Upload RAML file</strong></p>
-<p>Creates an API by referencing a specific RAML file previously uploaded to the Dropbox using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readFileDetails</a></span> operation.</p>
+<p>Creates an API by referencing a specific RAML file previously uploaded to the Dropbox using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readfiledetails</a></span> operation.</p>
 <pre>{
   "DLDescriptor":{
     "ServiceDescriptorReference":{
@@ -154,7 +154,7 @@ Content-Type: application/vnd.soa.v81+json; charset=UTF-8
 }</pre>
 
 <p><strong>Sample request body #5: Upload RAML file in ZIP file</strong></p>
-<p>Creates an API by referencing a specific RAML file in a ZIP file previously uploaded to the Dropbox using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readFileDetails</a></span> operation.</p>
+<p>Creates an API by referencing a specific RAML file in a ZIP file previously uploaded to the Dropbox using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readfiledetails</a></span> operation.</p>
 <pre>{
   "DLDescriptor":{
     "ServiceDescriptorReference":{
@@ -218,13 +218,13 @@ Content-Type: application/vnd.soa.v81+json; charset=UTF-8
       <td>Required</td>
       <td><p><!-- #BeginLibraryItem "/Library/o_apis_addAPIRequest.lbi" -->Contains information about a request to add an API.<!-- #EndLibraryItem --></p>
         <p>The only property required is the API name.</p>
-        <p>Properties supported in the <strong>AddAPIImplementRequest</strong> when creating an API are:</p>
+        <p>Properties supported in the <strong>AddAPIImplementRequest</strong> (part of this object) when creating an API are:</p>
         <ul class="apidoctable_ul">
           <li>ImplementationCode</li>
           <li>CreateMechanism</li>
           <li>ProxyImplementationRequest (if <strong>CreateMechanism</strong> is <strong>PROXY</strong>)</li>
         </ul>
-        <p>The DropboxFileId is returned by the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readFileDetails</a></span> operation which is run first to upload an individual or ZIP file.</p></td>
+        <p>The DropboxFileId is returned by the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readfiledetails</a></span> operation which is run first to upload an individual or ZIP file.</p></td>
     </tr>
   </tbody>
 </table>
@@ -389,4 +389,4 @@ Set-Cookie: Csrf-Token_acmepaymentscorp=TokenID%3Dde5b2e6a-d040-11e5-82f9-a0de4d
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

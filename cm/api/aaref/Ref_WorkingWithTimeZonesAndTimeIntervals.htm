@@ -13,6 +13,21 @@ no-catalog: true
 
 <h2><a name="top"></a>Working with Time Zones and Time Intervals</h2>
 <p>The platform provides metric information to help you monitor function and performance, such as your app's usage of an API or your API's overall traffic volume and message processing speed.</p>
+
+<p>This topic includes:</p>
+<ul>
+  <li><a href="#overview_metrics">Overview</a></li>
+  <li><a href="#supportedtimezones">Supported Time Zones</a></li>
+  <li><a href="#timezoneoffsets">Time Zone Offsets</a></li>
+  <li><a href="#presetlimitations">Preset Limitations on Your Platform</a></li>
+  <li><a href="#flexibilityofdatapoints">Flexibility of Data Points</a></li>
+  <li><a href="#accuracyvsefficiency">Accuracy Versus Efficiency</a></li>
+  <li><a href="#summary">Summary</a></li>
+</ul>
+
+
+
+<h3><a name="overview_metrics"></a>Overview</h3>
 <p>There are several key factors to consider when determining what metric information you want to track and how you will do it, including:</p>
 <ul>
   <li>Time zones you want to support</li>
@@ -21,6 +36,7 @@ no-catalog: true
   <li>Reporting requirements</li>
   <li>Budget</li>
 </ul>
+
 
 
 <h3><a name="supportedtimezones"></a>Supported Time Zones</h3>
@@ -81,6 +97,7 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+
 <h3><a name="presetlimitations"></a>Preset Limitations on Your Platform</h3>
 <p>Your specific installation might be preconfigured in such a way as to limit your reporting possibilities. You can get this information from your system administrator.</p>
 <p>For example, you might decide that you want to support hourly metrics for Bangalore, but you might find that your deployment only supports hourly reporting in GMT plus or minus 1-hour increments, which would mean that Bangalore time could not be supported.</p>
@@ -89,9 +106,11 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+
 <h3><a name="flexibilityofdatapoints"></a>Flexibility of Data Points</h3>
 <p>Smaller data points have greater flexibility; larger data points have less flexibility. For example, 5s or 15m data points are applicable to any time zone; 1h data points can't be used for the half-hour and quarter-hour time zones; daily data points can't be used for any time zone other than the one to which they apply. Choosing the appropriate data points for your scenario is a matter of judgment based on requirements and resources.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
 
 
 <h3><a name="accuracyvsefficiency"></a>Accuracy Versus Efficiency</h3>
@@ -101,10 +120,12 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
+
 <h3><a name="summary"></a>Summary</h3>
 <p>Generally, the important factors are to make sure you choose data points that are compatible with any limitations preset by your implementation, and that satisfy any reporting requirements you might have.</p>
 <p>Satisfying user requirements while maintaining performance and efficiency of your implementation are also important considerations.</p>
 <p>You can modify data points later if needed.</p>
+
 
 
 <h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
@@ -123,4 +144,4 @@ no-catalog: true
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

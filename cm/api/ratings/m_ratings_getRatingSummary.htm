@@ -23,8 +23,8 @@ Retrieves a summary of the ratings for a resource.<!-- #EndLibraryItem --></p>
   <li>Apps service</li>
   <li>Groups service</li>
 </ul>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
-Anyone can use this operation; login is not required. <!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" --> 
+Anyone can use this operation; login is not required. However, note that for any operations that do not require login, information about private resources is not returned unless the user is logged in and is authorized to view information about those resources. Without login, only public information is returned. <!-- #EndLibraryItem --></p>
 <p class="apidoc_note"><strong>Note</strong>: Generally, the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;maintains averaged ratings for each version of an app or API, aggregating and averaging the ratings based on the specific version that the user is rating rather than for the app or API as a whole. The exception to this is the search interface, where the app or API is displayed as a single line item with the average rating of all versions combined.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -331,4 +331,4 @@ An aggregated, averaged summary of individual user ratings for the resource, inc
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

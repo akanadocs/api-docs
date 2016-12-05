@@ -20,8 +20,8 @@ no-catalog: true
   <li><span class="apidoc_code"><a href="../apps/m_apps_addVersion.htm">POST&nbsp;/api/apps/{AppID}/versions</a></span></li>
   <li><span class="apidoc_code"><a href="../apps/m_apps_modifyVersion.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}</a></span></li>
   <li><span class="apidoc_code"><a href="../apps/m_apps_getVersion.htm">GET&nbsp;/api/apps/versions/{AppVersionID}</a></span></li>
-  <li>Any operations that use the <a href="o_performance_ReferencedObjects.htm">ReferencedObjects</a> object</li>
-  <li>Any operations that use the <a href="o_apps_ApplicationVersions.htm">ApplicationVersions</a> object</li>
+  <li>Operations that reference the <a href="o_performance_ReferencedObjects.htm">ReferencedObjects</a> object</li>
+  <li>Operations that reference the <a href="o_apps_ApplicationVersions.htm">ApplicationVersions</a> object</li>
 </ul>
 
 <p>The properties included in the <strong>ApplicationVersion</strong> object are listed below.</p>
@@ -142,7 +142,7 @@ When adding an app version, you can specify a custom identity name for the app v
     <tr>
       <td>TargetResources</td>
       <td><a href="o_dn_model_TargetResources.htm">TargetResources</a></td>
-      <td><!-- #BeginLibraryItem "/Library/o_dn_model_TargetResources.lbi" -->Contains information about a resource that is associated with the current resource.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_dn_model_TargetResources.lbi" -->Contains information about one or more resources associated with the current resource. Used only in response messages.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -165,4 +165,4 @@ When adding an app version, you can specify a custom identity name for the app v
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

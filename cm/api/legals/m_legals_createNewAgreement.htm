@@ -137,7 +137,7 @@ Accept: text/plain
       <td>POST</td>
       <td><a href="../obj/o_legals_AgreementDocument.htm">AgreementDocument</a></td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_legals_AgreementDocument.lbi" -->Contains information about a legal agreement document.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_legals_AgreementDocument.lbi" -->Contains information about a platform legal agreement document.<!-- #EndLibraryItem --></td>
     </tr>
     </tbody>
 </table>
@@ -148,6 +148,7 @@ Accept: text/plain
 <!-- InstanceBeginEditable name="Response Description" -->
 <h3 id="response">Response</h3>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200. There is no other response.</p>
+<p class="apidoc_note"><strong>Note</strong>: If you need to get the LegalDocumentID assigned to the agreement, run the <a href="m_legals_getAgreementDocuments.htm">GET&nbsp;/api/legals</a> operation with the applicable <strong>AgreementType</strong> parameter: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->legals?AgreementType=com.soa.atmosphere.legals.signup</strong></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -238,4 +239,4 @@ Date: Fri, 2 May 2014 18:31:00 GMT</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

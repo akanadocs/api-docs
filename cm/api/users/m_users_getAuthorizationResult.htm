@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Authorization Result | Users Service | Akana API Platform API
-description: Returns information about the authorization status of the specified user.
+description: Returns information about the authorization status of the specified user in relation to the specified resource or resource type.
 product: cm
 category: ref
 nav-title: Get Authorization Result 
@@ -16,11 +16,9 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getAuthorizationResult.lbi" -->Returns information about the authorization status of the specified user.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_getAuthorizationResult.lbi" -->Returns information about the authorization status of the specified user in relation to the specified resource or resource type.<!-- #EndLibraryItem --></p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_user">User (logged in)</a> only.</p>
-
-
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/permission_read.lbi" -->Must have Read permission for the resource. <!-- #EndLibraryItem --> <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_self">Self</a> only.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -50,7 +48,8 @@ no-catalog: true
 
 <h3 id="endpoint">URL</h3>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/{UserID}/auzstatus</pre>
+<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/{UserID}/auzstatus?[ResourceID={ResourceID}]&amp;[ResourceKey={ResourceKey}]
+&amp;ScopeID={ScopeID}]&amp;[ResourceType={ResourceType}]&amp;[Action={Action}]&amp;[Role={Role}]&amp;[AuthorizeAll={Boolean}]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -59,9 +58,9 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below queries whether the specified user is authorized to add an API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user13998.acmepaymentscorp/auzstatus?ResourceType=api&amp;Action=Add</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/03de5a70-c54e-4924-9abd-29da117230cf.acmepaymentscorp/auzstatus?ResourceType=api&amp;Action=Add</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/users/user13998.acmepaymentscorp/auzstatus?ResourceType=api&amp;Action=Add HTTP/1.1
+<pre>GET&nbsp;/api/users/03de5a70-c54e-4924-9abd-29da117230cf.acmepaymentscorp/auzstatus?ResourceType=api&amp;Action=Add HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
@@ -121,8 +120,15 @@ The unique ID for a specific user.<!-- #EndLibraryItem --></td>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_resourceid">ResourceID</a></td>
       <td>Query</td>
       <td>string</td>
-      <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_ResourceID.lbi" -->The unique ID for a specific resource; for example, the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_scopeid">ScopeID</a> or the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>.<!-- #EndLibraryItem -->If a ResourceID is not specified, the operation returns a value of Unauthorized unless the user has access to all resources on the platform.</td>
+      <td>Optional</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ResourceID.lbi" -->The unique ID for a specific resource; for example, the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_scopeid">ScopeID</a> or the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>ResourceKey</td>
+      <td>Query</td>
+      <td>string</td>
+      <td>Optional</td>
+      <td>The <a href="../aaref/Ref_IDsOnThePlatform.htm#id_assetid">AssetID</a>; could be the UDDI key of a service.</td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_scopeid">ScopeID</a></td>
@@ -196,10 +202,10 @@ The unique ID for a specific user.<!-- #EndLibraryItem --></td>
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: application/json
-Date: Tue, 06 Oct 2015 08:46:47 GMT</pre>
+Date: Fri, 11 Nov 2016 20:38:44 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "UserID" : "37fab113-f9e4-471c-80c3-0f1d39a15cac.acmepaymentscorp",
+  "UserID" : "03de5a70-c54e-4924-9abd-29da117230cf.acmepaymentscorp",
   "ResourceType" : "api",
   "Result" : "Authorized"
 }</pre>
@@ -209,7 +215,7 @@ Date: Tue, 06 Oct 2015 08:46:47 GMT</pre>
 <p><strong>Sample response body: application/xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding=&quot;UTF-8&quot;?&gt;
 &lt;AuthorizationResult xmlns="http://soa.com/xsd/user/1.0"&gt;
-  &lt;UserID&gt;user12262.acmepaymentscorp&lt;/UserID&gt;
+  &lt;UserID&gt;03de5a70-c54e-4924-9abd-29da117230cf.acmepaymentscorp&lt;/UserID&gt;
   &lt;ResourceType&gt;api&lt;/ResourceType&gt;
   &lt;Result&gt;Authorized&lt;/Result&gt;
 &lt;/AuthorizationResult&gt;
@@ -308,4 +314,4 @@ Indicates the authorization status of a specified user in relation to a specifie
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

@@ -18,7 +18,8 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_createAPIVersion.lbi" -->Adds a new API version on the platform; from scratch, based on an existing service, or based on an API description document.<!-- #EndLibraryItem --></p>
 <h5 class="stamp">New in API Platform Version: 8.1</h5>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to modify the API; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/permission_add.lbi" -->
+Must have Add permission for the resource. <!-- #EndLibraryItem -->An <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -137,13 +138,13 @@ Content-Type: application/vnd.soa.v81+json
       <td>Required</td>
       <td><p><!-- #BeginLibraryItem "/Library/o_apis_addAPIRequest.lbi" -->Contains information about a request to add an API.<!-- #EndLibraryItem --></p>
         <p>The only property required is the API name.</p>
-        <p>Properties supported in the <strong>AddAPIImplementRequest</strong> when creating an API version are:</p>
+        <p>Properties supported in the <strong>AddAPIImplementRequest</strong> (part of this object) when creating an API version are:</p>
         <ul class="apidoctable_ul">
           <li>ImplementationCode</li>
           <li>CreateMechanism</li>
           <li>ProxyImplementationRequest (if <strong>CreateMechanism</strong> is <strong>PROXY</strong>)</li>
         </ul>
-        <p>The DropboxFileId is returned by the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readFileDetails</a></span> operation which is run first to upload an individual or ZIP file.</p></td>
+        <p>The DropboxFileId is returned by the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readfiledetails</a></span> operation which is run first to upload an individual or ZIP file.</p></td>
     </tr>
   </tbody>
 </table>
@@ -332,4 +333,4 @@ xmlns:ns7="http://soa.com/xsd/resource/1.0"&gt;
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

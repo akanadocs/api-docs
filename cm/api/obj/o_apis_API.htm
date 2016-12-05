@@ -21,8 +21,8 @@ Includes information about an API.<!-- #EndLibraryItem --></p>
   <li><span class="apidoc_code"><a href="../apis/m_apis_createAPI.htm">POST&nbsp;/api/apis</a></span> (with vendor-specific headers)</li>
   <li><span class="apidoc_code"><a href="../apis/m_apis_updateAPI.htm">PUT&nbsp;/api/apis/{apiID}</a></span></li>
   <li><span class="apidoc_code"><a href="../apis/m_apis_getAPI.htm">GET&nbsp;/api/apis/{APIID}</a></span></li>
-  <li>Any operations that use the <a href="o_contracts_ContractAPI.htm">ContractAPI</a> object</li>
-  <li>Any operations that use the <a href="o_performance_ReferencedObjects.htm">ReferencedObjects</a> object</li>
+  <li>Operations that reference the <a href="o_contracts_ContractAPI.htm">ContractAPI</a> object</li>
+  <li>Operations that reference the <a href="o_performance_ReferencedObjects.htm">ReferencedObjects</a> object</li>
 </ul>
 
 <p>The properties included in the <strong>API</strong> object are listed below. All values are optional unless otherwise noted.</p>
@@ -51,6 +51,11 @@ Includes information about an API.<!-- #EndLibraryItem --></p>
       <td>string</td>
       <td>The description of the API.</td>
   </tr>
+    <tr>
+      <td>Summary</td>
+      <td>string</td>
+      <td><!-- #BeginLibraryItem "/Library/parm_Summary_api.lbi" -->A brief, plain-text description of the API (optional property).<!-- #EndLibraryItem --></td>
+    </tr>
     <tr>
       <td>Visibility</td>
       <td>string</td>
@@ -127,6 +132,18 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
       <td><a href="o_apis_APISettings.htm">APISettings</a></td>
       <td><!-- #BeginLibraryItem "/Library/o_apis_APISettings.lbi" -->Includes information about the settings for an API; for example, whether access is auto approved and whether ratings and reviews are supported.<!-- #EndLibraryItem --></td>
     </tr>
+    <tr>
+      <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a></td>
+      <td>string</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" -->
+        The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></p>
+        <p>Returned if the API is assigned to a business.</p></td>
+    </tr>
+    <tr>
+      <td>TargetResources</td>
+      <td><a href="o_dn_model_TargetResources.htm">TargetResources</a></td>
+      <td><!-- #BeginLibraryItem "/Library/o_dn_model_TargetResources.lbi" -->Contains information about one or more resources associated with the current resource. Used only in response messages.<!-- #EndLibraryItem --></td>
+    </tr>
     </tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -148,4 +165,4 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

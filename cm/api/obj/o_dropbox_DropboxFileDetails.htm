@@ -13,13 +13,15 @@ no-catalog: true
 
 <h2><a name="top"></a>DropboxFileDetails Object</h2>
 <p><!-- #BeginLibraryItem "/Library/o_dropbox_DropboxFileDetails.lbi" -->Contains information about file contents that were loaded into the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_dropbox">Dropbox</a>.<!-- #EndLibraryItem --></p>
-<p class="usedby">This object is used by the following operations:</p>
+<p>This object is used by the following operations:</p>
 <ul>
-  <li><span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readFileDetails</a></span> (in the response)</li>
+  <li><span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readfiledetails</a></span> (in the response)</li>
+  <li><span class="apidoc_code"><a href="../dropbox/m_dropbox_readZipFileDetails.htm">GET&nbsp;/api/dropbox/readfiledetails</a></span> (in the response)</li>
   <li><span class="apidoc_code"><a href="../dropbox/m_dropbox_readUrl.htm">POST&nbsp;/api/dropbox/readurl</a></span> (in the response)</li>
 </ul>
 
 <p>The properties included in the <strong>DropboxFileDetails</strong> object are listed below.</p>
+<p><strong>Note</strong>: Either <strong>ServiceDescriptorDocument</strong> or <strong>ZipFileEntry</strong> must be present.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -46,8 +48,15 @@ no-catalog: true
     </tr>
     <tr>
       <td>ServiceDescriptorDocument</td>
-      <td><a href="o_dropbox_ServiceDescriptorDocument.htm">ServiceDescriptorDocument</a></td>
-      <td><!-- #BeginLibraryItem "/Library/o_dropbox_ServiceDescriptorDocument.lbi" -->Contains information to let the user know the possible options based on an API description document uploaded to the Dropbox. For example, one document might include more than one service, or an uploaded ZIP file might include multiple files each with multiple services.<!-- #EndLibraryItem --></td>
+      <td><a href="o_dropbox_ServiceDescriptorDocument.htm">ServiceDescriptorDocument</a>[&nbsp;]</td>
+      <td><p><!-- #BeginLibraryItem "/Library/o_dropbox_ServiceDescriptorDocument.lbi" --> Contains information to let the user know the possible options based on an API description document uploaded to the Dropbox. For example, one document might include more than one service.<!-- #EndLibraryItem --></p>
+        <p>Required if <strong>ZipFileEntry</strong> is not present.</p></td>
+    </tr>
+    <tr>
+      <td>ZipFileEntry</td>
+      <td>string[&nbsp;]</td>
+      <td><p>Contains information to let the user know the possible options based on a ZIP file uploaded to the Dropbox for creating an API. For example, one ZIP file might include more than one service, or multiple files each with multiple services.</p>
+        <p>Required if <strong>ServiceDescriptorDocument</strong> is not present.</p></td>
     </tr>
     </tbody>
 </table>
@@ -70,4 +79,4 @@ no-catalog: true
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

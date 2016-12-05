@@ -214,7 +214,7 @@ Retrieves the specified avatar version associated with the specified resource. T
     <tr>
       <td>get Board</td>
       <td><a href="apis/m_apis_getBoard.htm">GET&nbsp;/api/apis/{APIID}/board</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_getBoard_apis.lbi" -->Returns a list of <a href="Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board items</a> for the specified API.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getBoard_apis.lbi" -->Returns a list of <a href="Ref_Glossary_CommunityPlatform.htm#gl_forumentry">Forum entries</a> for the specified API.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>get connected apps</td>
@@ -333,7 +333,7 @@ Returns the automatically-generated <a href="Ref_Glossary_CommunityPlatform.htm#
     <tr>
       <td>get version board</td>
       <td><a href="apis/m_apis_getVersionBoard.htm">GET&nbsp;/api/apis/{APIVersionID}/board</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_getVersionBoard_apis.lbi" -->Returns a list of Board items for the specified API version.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_getVersionBoard_apis.lbi" -->Returns a list of <a href="Ref_Glossary_CommunityPlatform.htm#gl_forumentry">Forum entries</a> for the specified API version.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>invite private viewer</td>
@@ -348,22 +348,25 @@ Invites a group to connect to a Private API. When the group is connected, group 
 Invites a group to have visibility of an API version, with visibility limited to one or more specified scopes.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
+      <td>list all API versions</td>
+      <td><a href="apis/m_apis_listAllAPIVersions.htm">GET&nbsp;/api/apis/versions</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_llistAllAPIVersions.lbi" --> Returns information about API versions for all APIs, in the form of a JSON or XML object.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
       <td>list APIs</td>
       <td><a href="apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_listAPIs.lbi" -->
-        Returns a list of all APIs on the platform. With an optional parameter, lists APIs owned by a specific business.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_listAPIs.lbi" -->Returns a list of all APIs on the platform. With an optional parameter, lists APIs owned by a specific business <a href="Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a>.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>list API summaries</td>
+      <td><a href="apis/m_apis_listAPISummaries.htm">GET&nbsp;/api/apis</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_listAPISummaries.lbi" -->Returns information about APIs on the platform. With the optional query parameter, returns information about the APIs associated with the specified business organization.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>list API versions</td>
       <td><a href="apis/m_apis_listAPIVersions.htm">GET&nbsp;/api/apis/versions</a></td>
       <td><!-- #BeginLibraryItem "/Library/desc_listAPIVersions.lbi" -->
 Returns information about API versions for all APIs, in the form of an RSS channel.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>list all API versions</td>
-      <td><a href="apis/m_apis_listAllAPIVersions.htm">GET&nbsp;/api/apis/versions</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_llistAllAPIVersions.lbi" -->
-Returns information about API versions for all APIs, in the form of a JSON or XML object.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>list contracts</td>
@@ -662,4 +665,4 @@ Removes the connection between a <a href="Ref_Glossary_CommunityPlatform.htm#gl_
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

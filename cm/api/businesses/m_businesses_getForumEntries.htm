@@ -17,8 +17,8 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getForumEntries.lbi" -->Returns information about <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">forum entries</a> for a business.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
-Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->However, if the user is not logged in, only public entries are returned.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/roles_none.lbi" --> 
+Anyone can use this operation; login is not required. However, note that for any operations that do not require login, information about private resources is not returned unless the user is logged in and is authorized to view information about those resources. Without login, only public information is returned. <!-- #EndLibraryItem -->However, if the user is not logged in, only public entries are returned.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -122,7 +122,8 @@ Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->Ho
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" --> The unique ID for a specific business on the platform.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" -->
+The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td>ItemType[&nbsp;]</td>
@@ -149,7 +150,7 @@ Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->Ho
     <tr>
       <td>start</td>
       <td>Query</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Optional</td>
       <td><p>The starting point for the comments to be returned, with 0 as the first comment. For example, if there are 73 comments and the <span class="apidoc_code">start</span> value is <strong>50</strong>, comment number 50 is the first to be returned.</p>
         <p>Default: <strong>0</strong>.</p></td>
@@ -157,7 +158,7 @@ Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->Ho
     <tr>
       <td>count</td>
       <td>Query</td>
-      <td>int</td>
+      <td>integer</td>
       <td>Optional</td>
       <td><p>The number of comments  to be returned, from the specified starting point. If not specified, all comments associated with the specified discussion are returned. For example, if there are 105 comments and <span class="apidoc_code">start</span> is <strong>50</strong> with <span class="apidoc_code">count</span> <strong>50</strong>, comments 50-100 are returned.</p>
         <p>Default: <strong>20</strong>.</p></td>
@@ -345,4 +346,4 @@ Expires: Mon, 02 Feb 2015 16:36:51 GMT</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

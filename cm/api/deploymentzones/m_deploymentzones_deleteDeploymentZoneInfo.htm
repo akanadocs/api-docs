@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_deleteDeploymentZoneInfo.lbi" -->Deletes a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a> on the platform.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be an authorized administrator: <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/permission_delete.lbi" -->Must have Delete permission for the resource. <!-- #EndLibraryItem -->For example, a <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -56,7 +56,7 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request to delete the specified deployment zone.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --><span class="soaapidoc_endpoint">deploymentzones</span>/cb5502a0-7780-470f-8bda-c41f53659689.acmepaymentscorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones/cb5502a0-7780-470f-8bda-c41f53659689.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>DELETE /api/deploymentzones/cb5502a0-7780-470f-8bda-c41f53659689.acmepaymentscorp HTTP/1.1
 Accept: text/plain
@@ -103,7 +103,7 @@ Content-Type: application/json
   </thead>
   <tbody>
     <tr>
-      <td><span class="soaapidoc_endpoint">DZoneID</span></td>
+      <td>DZoneID</td>
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
@@ -168,7 +168,7 @@ Content-Type: text/plain</pre>
   </thead>
   <tbody>
     <tr>
-      <td><span class="soaapidoc_endpoint">DZoneID</span></td>
+      <td>DZoneID</td>
       <td>string</td>
       <td>Unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.</td>
     </tr>
@@ -220,4 +220,4 @@ Content-Type: text/plain</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

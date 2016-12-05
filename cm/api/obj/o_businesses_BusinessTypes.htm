@@ -1,24 +1,25 @@
 ---
 layout: apipage
-title: SupportedThemes Object | Tenant Service | Akana API Platform API
-description: Contains information about themes that are supported for the current tenant.
+title: BusinessTypes Object | Businesses Service | Akana API Platform API
+description:  Contains information about business organization types on the platform.
 product: cm
 category: ref
-nav-title: SupportedThemes Object 
+nav-title: BusinessTypes Object 
 no-nav: api
 sub-nav: true
 sub-nav-class: obj
 no-catalog: true
 ---
 
-<h2><a name="top"></a>SupportedThemes Object</h2>
-<p><!-- #BeginLibraryItem "/Library/o_tenants_SupportedThemes.lbi" -->Contains information about themes that are supported for the current tenant.<!-- #EndLibraryItem --></p>
+<h2><a name="top"></a>BusinessTypes Object</h2>
+<p><!-- #BeginLibraryItem "/Library/o_businesses_BusinessTypes.lbi" -->
+Contains information about business organization types on the platform.<!-- #EndLibraryItem --></p>
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
-  <li>Operations that reference the <a href="o_tenants_TenantProperties.htm">TenantProperties</a> object</li>
+  <li><span class="apidoc_code"><a href="../businesses/m_businesses_listBusinessTypes.htm">GET&nbsp;/api/businesses/types</a></span></li>
 </ul>
 
-<p>The properties included in the <strong>SupportedThemes</strong> object are listed below.</p>
+<p>The properties included in the <strong>BusinessTypes</strong> object are listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -29,19 +30,10 @@ no-catalog: true
   </thead>
   <tbody>
     <tr>
-      <td>Theme</td>
-      <td>string</td>
-      <td>The name of the theme.</td>
-    </tr>
-    <tr>
-      <td>VirtualHosts</td>
-      <td>string</td>
-      <td>Information about the virtual host, if applicable.</td>
-    </tr>
-    <tr>
-      <td>ConsoleAddress</td>
-      <td>string</td>
-      <td>The console address for the theme.</td>
+      <td>BusinessType</td>
+      <td><a href="o_businesses_BusinessType.htm">BusinessType</a></td>
+      <td><p><!-- #BeginLibraryItem "/Library/parm_BusinessType.lbi" --> The name for the type of business; for example, Company, Department, Partner. For valid values, see <a href="../aaref/Ref_Values.htm#values_businesstype">BusinessType values</a>.<!-- #EndLibraryItem --></p>
+        <p>One or more.</p></td>
     </tr>
     </tbody>
 </table>
@@ -64,4 +56,4 @@ no-catalog: true
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

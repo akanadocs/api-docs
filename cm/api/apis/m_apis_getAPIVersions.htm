@@ -17,8 +17,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAPIVersions.lbi" -->Returns a list of versions associated with the specified API, as an RSS channel.<!-- #EndLibraryItem --></p>
 <p><strong>Note</strong>: version information does not include operations. For information about operations for a specific API version, use <span class="apidoc_code"><a href="m_apis_getAPIVersion.htm">GET&nbsp;/api/apis/versions/{APIVersionID}</a></span> with the optional <strong>includeOperations</strong> parameter.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/Library/roles_none.lbi" -->
-Anyone can use this operation; login is not required. <!-- #EndLibraryItem -->Results are returned only if the user calling the operation has visibility of the APIs.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/permission_read.lbi" -->Must have Read permission for the resource. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -323,4 +322,4 @@ Content-Type: application/json</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

@@ -19,7 +19,7 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/Library/desc_inviteMemberToGroup.lbi" -->
 Invites a new member to the specified group.<!-- #EndLibraryItem --></p>
 <p id="id_settings"><strong>Settings</strong>: This operation checks whether the setting that allows group members to invite members who are not already platform users is turned on. If the setting (InviteUnregisteredUsers) is turned off, the operation will fail. To check this setting, run the <span class="apidoc_code"><a href="../businesses/m_businesses_getUserSettings.htm">GET&nbsp;/api/businesses/{BusinessID}/usersettings</a></span> operation.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_member">Group member</a> (Private API or independent as applicable), <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_leader">group leader</a> (Private API or independent as applicable), <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_admin">Admin</a>, or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/permission_modify.lbi" -->Must have Modify permission for the resource. <!-- #EndLibraryItem -->For example, a <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_leader">group leader</a> can perform this action.</p>
 <p id="id_notes_workflow"><strong>Workflow</strong>: A default workflow is in effect for new group membership objects, unless a custom workflow is specified. By default, when a new group membership object is created, the API invokes the default initial action, @Invite, to start the workflow. This places the new group member in a Pending state. If a custom workflow is used, the custom workflow definition could choose which state the group membership will be placed in. For example, if you wanted to skip the acceptance of the group membership invitation by the invited user, you could develop and implement a custom workflow to skip the Pending state and put the new group membership directly into the Accepted state. For more information on workflow, see <a href="../aaref/Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -248,4 +248,4 @@ Date: Fri, 14 Jun 2013 16:28:56 GMT</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

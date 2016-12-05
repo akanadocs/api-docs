@@ -18,7 +18,7 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/Library/desc_getPrivateViewers.lbi" -->
 Returns a list of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_viewer">viewers</a> (groups) that can view the specified API.<!-- #EndLibraryItem --></p>
 <p class="apidoc_note"><strong>Note</strong>: This operation returns groups, not individual users. Once you have the list of groups you can use the Group IDs to get a list of individuals in the groups, if needed, using an operation in the Groups service (getGroupMembers, not yet documented).</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: &nbsp;<!-- #BeginLibraryItem "/Library/roles_user.lbi" -->To complete this operation successfully, a user must be logged in.<!-- #EndLibraryItem --></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/permission_read.lbi" -->Must have Read permission for the resource. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -341,4 +341,4 @@ The response body is in the form of an RSS channel, and includes the items liste
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

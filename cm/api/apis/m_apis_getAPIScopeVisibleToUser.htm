@@ -18,7 +18,7 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAPIScopeVisibleToUser.lbi" -->Returns information about the current user's visibility of the API, based on an aggregate of all the visibility scopes assigned to all the groups that the user is a member of, for the specified API version.<!-- #EndLibraryItem --></p>
 <p>This operation returns information about the portions of the API version that the user has visibility to (licenses, operations, and scopes) based on group membership; but if the user is an API Admin, Business Admin, or Site Admin, the AllAPIVisible property is true and the user has full visibility of the API, independent of the visibility information returned in the response.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to view information about the API. If the user has some permission, the response includes information about the parts of the API the user has permission to see. Note that if the allAPIVisible parameter is returned with a value of <strong>true</strong>, the user has full permission to view the API, which might exceed the specific scope, license, and operation results returned.</p>
+<p><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/permission_read.lbi" -->Must have Read permission for the resource. <!-- #EndLibraryItem -->Note that if the allAPIVisible parameter is returned with a value of <strong>true</strong>, the user has full permission to view the API, which might exceed the specific scope, license, and operation results returned.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -527,4 +527,4 @@ xmlns:ns3="http://soa.com/xsd/resource/1.0" xmlns:ns4="http://soa.com/xsd/legals
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

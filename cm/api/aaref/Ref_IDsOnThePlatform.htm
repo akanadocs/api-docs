@@ -13,15 +13,14 @@ no-catalog: true
 
 <h2><a name="top"></a>IDs on the Platform</h2>
 <p>The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
-<p>These IDs are essentially simple strings. However, they generally have a two-part construction, such as:</p>
+<p>These IDs are assigned by the back end, and are essentially simple strings. However, they generally have a two-part construction, such as:</p>
 <ul>
   <li><strong>{uniqueid for object/tenant}.{tenant name}</strong></li>
 </ul>
-<p>For example, a unique UserID for a user on&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;might be <strong>user10011.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong>. In this example:</p>
+<p>For example, a unique UserID for a user on&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;might be <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong>. In this example:</p>
 <ul>
-  <li><strong>user</strong> indicates that this is a user ID.</li>
-  <li><strong>10011</strong> is unique to&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, so the unique user record can be located in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;database.</li>
-  <li><strong><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong> indicates the tenant name. Including the tenant name after the period increases the usefulness of the object, because even if two tenants both have a user10011, each ID is unique across the entirety of the platform in a federated scenario where there might be many tenants.</li>
+  <li><strong>eceffbe3-3386-495b-80d3-7526f0eb0edc </strong>is unique to&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, so the unique user record can be located in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;database.</li>
+  <li><strong><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong> indicates the tenant name. Including the tenant name after the period increases the usefulness of the object, because even if two tenants both have a user <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc</strong>, each ID is unique across the entirety of the platform in a federated scenario where there might be many tenants.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -106,6 +105,11 @@ The unique ID for a specific app version.<!-- #EndLibraryItem --></p>
       <td>72zNE5InKlf2z00y8fWSp3AU.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
+      <td><a id="id_assetid"></a>AssetID</td>
+      <td>The unique AssetID for a resource; could be the UDDI key of a service.</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><a id="id_authorid"></a>AuthorID</td>
       <td>The unique <a href="#id_userid">UserID</a> for the author of a resource such as a discussion.</td>
       <td>&nbsp;</td>
@@ -117,8 +121,7 @@ The unique ID for a specific app version.<!-- #EndLibraryItem --></p>
     </tr>
     <tr>
       <td><a id="id_boardid"></a>BoardID</td>
-      <td><p><!-- #BeginLibraryItem "/Library/o_ID_BoardID.lbi" -->
-The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_board">board</a>, such as an app, API, or group board or a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_board_userdefined">user-defined board</a>.<!-- #EndLibraryItem --></p>
+      <td><p><!-- #BeginLibraryItem "/Library/o_ID_BoardID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forum">forum (board)</a>, such as an app, API, or group forum or a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_board_userdefined">user-defined forum</a>.<!-- #EndLibraryItem --></p>
         <p>In the <a href="../index_boards.htm">Boards service</a>, operations that use the BoardID are generally for user-defined boards.</p></td>
       <td>&nbsp;</td>
     </tr>
@@ -146,7 +149,7 @@ The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_b
     <tr>
       <td><a id="id_businessid"></a>BusinessID</td>
       <td><p><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" -->
-        The unique ID for a specific business on the platform.<!-- #EndLibraryItem --></p>
+The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></p>
         <p>When the tenant is configured, as part of the post-install configuration with the jython script, a business is created, and has a unique Business ID. Currently, each tenant can have only one business configured.</p>
 To find out what the Business ID is for your installation, you can run the <span class="apidoc_code"><a href="../properties/m_properties_getTenantProperties.htm">GET&nbsp;/api/properties</a></span> operation. It is the <strong>TenantBusinessID</strong> value.</td>
       <td>tenantbusiness.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
@@ -269,8 +272,7 @@ The unique ID for a specific user's membership in a specific group.<!-- #EndLibr
   </tr>
     <tr>
       <td><a id="id_itemid"></a>ItemID</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->
-The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_boarditem">Board item</a>.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">forum entry</a>.<!-- #EndLibraryItem --></td>
       <td>&nbsp;</td>
   </tr>
     <tr>
@@ -349,6 +351,11 @@ The unique Board Item ID for a specific group membership request.<!-- #EndLibrar
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td><a id="id_parentbusinessid"></a>ParentBusinessID</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ParentBusinessID.lbi" -->The unique <a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a> for the parent organization (senior in the organization hierarchy) of a business organization on the platform.<!-- #EndLibraryItem --></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><a id="id_pictureid"></a>PictureId</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_PictureID.lbi" -->
 A temporary ID for a picture on the platform, such as the avatar for an app, API, or user. The PictureId is assigned by the Dropbox when the picture is first uploaded to the server, using the Dropbox service, as part of adding or updating the resource. PictureId is essentially the same as <a href="Ref_IDsOnThePlatform.htm#id_dropboxid">DropboxId</a>.<!-- #EndLibraryItem --></td>
@@ -371,7 +378,7 @@ The ID of the third party providing validation for the user, such as Facebook&re
       <td><p><!-- #BeginLibraryItem "/Library/o_ID_ResourceID.lbi" -->The unique ID for a specific resource; for example, the <a href="Ref_IDsOnThePlatform.htm#id_scopeid">ScopeID</a> or the <a href="Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>.<!-- #EndLibraryItem --></p>
         <p>Usage examples:</p>
         <ul class="apidoctable_ul">
-          <li>The <span class="apidoc_code"><a href="../users/m_users_getUserRoles.htm">GET&nbsp;/api/users/{UserID}/roles</a></span> operation references a <a href="#id_userid">UserID</a> as a resource ID</li>
+          <li>The <span class="apidoc_code"><a href="../users/m_users_getUserRoles.htm">GET&nbsp;/api/users/{UserID}/roles?ResourceID={ResourceID}</a></span> operation references a <a href="#id_userid">UserID</a> as a resource ID</li>
           <li>The <span class="apidoc_code"><a href="../apis/m_apis_getTxLogsForOperation.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/resources</a></span> response message references a <a href="#id_scopeid">ScopeID</a> as a resourceID.</li>
         </ul>
         <p>The ResourceID could also be an <a href="#id_alertid">AlertID</a>, <a href="#id_discussionid">DiscussionID</a>, <a href="#id_ticketid">TicketID</a>, <a href="#id_reviewid">ReviewID</a>, or <a href="#id_commentid">CommentID</a>.</p></td>
@@ -410,7 +417,7 @@ The unique UserID for the author of a specific review.<!-- #EndLibraryItem --></
       <td><a id="id_retrievinguserid"></a>RetrievingUserID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_RetrievingUserID.lbi" -->
 The unique UserID of the user performing a specific action.<!-- #EndLibraryItem --></td>
-      <td>user10011.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+      <td>eceffbe3-3386-495b-80d3-7526f0eb0edc.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a id="id_runtimeid"></a>RuntimeID</td>
@@ -525,4 +532,4 @@ The unique ID for a specific user.<!-- #EndLibraryItem --></td>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->

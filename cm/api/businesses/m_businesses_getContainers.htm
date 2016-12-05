@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getContainers.lbi" -->Returns information about the API Gateway containers for a business.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be an authorized administrator: <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><!-- #BeginLibraryItem "/Library/permission_read.lbi" -->Must have Read permission for the resource. <!-- #EndLibraryItem -->Must be a <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -107,7 +107,8 @@ Accept: application/json, text/javascript, */*; q=0.01
       <td>Path</td>
       <td>string</td>
       <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" --> The unique ID for a specific business on the platform.<!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" -->
+The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -127,15 +128,20 @@ Accept: application/json, text/javascript, */*; q=0.01
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Thu, 30 Jun 2016 20:35:11 GMT
+Date: Fri, 11 Nov 2016 17:10:12 GMT
 Content-Type: application/vnd.soa.v81+json</pre>
 <p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
 <pre>{
   "Container" : [ {
-    "Name" : "eapnd",
+    "Name" : "eapnd83",
     "ListenerName" : "default-http0",
-    "ContainerKey" : "_OiuCUt8TdqUdHdpxwne5g",
-    "Location" : "http://ubu1464qa-10.local.akana.com:7901"
+    "ContainerKey" : "bM25-vuHR96BN7c-rVZnVw",
+    "Location" : "http://acmepaymentscorp.com:7901"
+  }, {
+    "Name" : "eapnd2_83",
+    "ListenerName" : "default-http0",
+    "ContainerKey" : "nd2",
+    "Location" : "http://acmepaymentscorp.com:7904"
   } ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -244,4 +250,4 @@ Content-Type: application/vnd.soa.v81+xml</pre>
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><hr />
+</table><!-- #EndLibraryItem -->
