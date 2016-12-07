@@ -1,10 +1,10 @@
 ---
 layout: apipage
 title: Deployment Zones on the Platform | Reference Material | Akana API Platform API
-description: If an API is hosted on the platform and is using the proxy capability, the API owner can specify one or more deployment zones, such as a geographical area or a specific data center, that the endpoint will be proxied in. The <span class="apidoc_code"><a href="../deploymentzones/m_deploymentzones_getDeploymentZones.htm">GET&nbsp;/api/deploymentzones</a></span> operation returns a list of deployment zones that are valid for the tenant.
+description: If an API is hosted on the platform and is using the proxy capability, the API owner can specify one or more deployment zones.
 product: cm
 category: ref
-nav-title: Deployment Zones on the Platform 
+nav-title: Deployment Zones on the Platform
 no-nav: api
 sub-nav: true
 sub-nav-class: aaref
@@ -20,7 +20,7 @@ no-catalog: true
 <p>Deployment zones are also useful for DNS redirection. For example, Network Director might be on one specific hostname, but it might be determined that it&rsquo;s better not to expose that hostname to customers, but rather to specify a DNS redirection for each deployment zone.</p>
 <p>Configuring deployment zones allows you to:</p>
 <ul>
-  <li>Limit the containers or container clusters that are available for platform APIs, so that the APIs can only use those that you specify are available. When you define deployment zones, only those that are defined are valid choices when adding an API to the platform. You might have other containers or container clusters that you donât want to use for platform APIs. Defining deployment zones protects those from use by platform APIs.</li>
+  <li>Limit the containers or container clusters that are available for platform APIs, so that the APIs can only use those that you specify are available. When you define deployment zones, only those that are defined are valid choices when adding an API to the platform. You might have other containers or container clusters that you donâ??t want to use for platform APIs. Defining deployment zones protects those from use by platform APIs.</li>
   <li>Limit a specific container or container cluster for use only as a Sandbox endpoint or only as a Live endpoint. When you define deployment zones, you can specify Environment/Implementation associations that it's valid for; for example, only for Production environments and Live implementation.</li>
   <li>Define a virtual host. A Network Director HTTP or HTTPS listener only has one hostname, but you could configure deployment zones to show a different hostname, a virtual hostname. This is useful in scenarios where the API needs to be published with a specific hostname, independently of where it is deployed.</li>
 </ul>

@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: IDs on the Platform | Reference Material | Akana API Platform API
-description: The&nbsp;Akana API Platform&nbsp;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.
+description: the Akana API Platform uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.
 product: cm
 category: ref
 nav-title: IDs on the Platform 
@@ -12,14 +12,14 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>IDs on the Platform</h2>
-<p>The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
+<p>The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
 <p>These IDs are assigned by the back end, and are essentially simple strings. However, they generally have a two-part construction, such as:</p>
 <ul>
   <li><strong>{uniqueid for object/tenant}.{tenant name}</strong></li>
 </ul>
-<p>For example, a unique UserID for a user on&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;might be <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong>. In this example:</p>
+<p>For example, a unique UserID for a user on <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> might be <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong>. In this example:</p>
 <ul>
-  <li><strong>eceffbe3-3386-495b-80d3-7526f0eb0edc </strong>is unique to&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, so the unique user record can be located in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;database.</li>
+  <li><strong>eceffbe3-3386-495b-80d3-7526f0eb0edc </strong>is unique to&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, so the unique user record can be located in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> database.</li>
   <li><strong><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong> indicates the tenant name. Including the tenant name after the period increases the usefulness of the object, because even if two tenants both have a user <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc</strong>, each ID is unique across the entirety of the platform in a federated scenario where there might be many tenants.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
