@@ -50,6 +50,8 @@ To optimize Github Pages build times (we were getting timeouts) we have moved th
 
 1.	Push the updated API Docs up to docs-test:
 
+	> NOTE: Make sure you change the placeholder text in the commit!!
+
 	```
 	cd docs-test
 	git add -A .
@@ -87,6 +89,8 @@ This process has changed, you need to follow the exact same process as above, bu
 	> NOTE: this step is essential for maintaining the navigation structure of the API Docs.
 
 1.	Push the updated API Docs up to akanadocs.github.io:
+
+	> NOTE: Make sure you change the placeholder text in the commit!!
 
 	```
 	cd akanadocs.github.io
