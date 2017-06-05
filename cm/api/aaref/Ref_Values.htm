@@ -1,10 +1,10 @@
 ---
 layout: apipage
 title: Valid Values for Components on the Platform | Reference Material | Akana API Platform API
-description: This topic includes lists of valid values for common elements used on the platform.
+description: This topic includes lists of valid values for the following common elements used on the platform-
 product: cm
 category: ref
-nav-title: Valid Values for Components on the Platform
+nav-title: Valid Values for Components on the Platform 
 no-nav: api
 sub-nav: true
 sub-nav-class: aaref
@@ -58,7 +58,7 @@ no-catalog: true
     <td><a href="#values_policytypes">Policy Types</a></td>
     </tr>
   <tr>
-    <td><a href="#values_contractenvironment">App/API Contract Environment values</a></td>
+    <td><a href="#values_contractenvironment">App/API Contract Environment (Implementation) values</a></td>
     <td><a href="#values_publishedstate">Published State values</a></td>
     </tr>
   <tr>
@@ -98,7 +98,7 @@ no-catalog: true
     <td><a href="#values_sortby">Sort By values</a></td>
     </tr>
   <tr>
-    <td><a href="#values_environment">Environment</a></td>
+    <td><a href="#values_environment">Environment (now called Implementation in the user interface)</a></td>
     <td><a href="#values_sortorder">Sort Order values</a></td>
     </tr>
     <tr>
@@ -373,9 +373,9 @@ no-catalog: true
 <h3><a id="values_appstate"></a>App State values</h3>
 <p>There are five possible states for an app in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->. When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
 <p>When an app is first set up, before any API contracts are initiated, it is in the Initial state.</p>
-<p>Changes in state are part of the sequence as an app requests access to first one environment and then the other.</p>
-<p>In setting up the sequence for granting access to an API's sandbox or production environment, the API provider can choose whether a review stage is needed before sandbox access is granted, and also whether review is needed before production access is granted. As an example, the API owner might decide to grant sandbox access automatically but to require review before approving production access.</p>
-<p>The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> user interface is designed to guide app developers through these state changes.</p>
+<p>Changes in state are part of the sequence as an app requests access to first one implementation and then the other.</p>
+<p>In setting up the sequence for granting access to an API's Sandbox or <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> implementation, the API provider can choose whether a review stage is needed before access to the sandbox implementation is granted, and also whether review is needed before access to the live implementation is granted. As an example, the API owner might decide to grant sandbox access automatically but to require review before approving production access.</p>
+<p>The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;user interface is designed to guide app developers through these state changes.</p>
 <p class="apidoc_note"><strong>Note</strong>: Changing an app's state to <strong>production</strong> gives an application access to the production endpoints of all the APIs it has contracts with. This can only be achieved if <strong>all</strong> of the app's API contracts are approved as production contracts.</p>
 
 <p>When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
@@ -402,9 +402,10 @@ no-catalog: true
 
 
 
-<h3><a id="values_contractenvironment"></a>App/API Contract Environment values</h3>
-<p>An app can connect to an API in either of two environments: Sandbox or Production. An app/API contract is always specific to the environment. Generally, the contract in the Sandbox environment is first; usually, the Sandbox contract is terminated when the app goes live in the Production environment, activating the Production contract.</p>
-<p>In some cases an app can have contracts with the same API Version in both environments at the same time. Each contract has a unique <a href="Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a>.</p>
+<h3><a id="values_contractenvironment"></a>App/API Contract Environment (Implementation) values</h3>
+<p>An app can connect to an API in either of two implementations: Sandbox or <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> (Production). An app/API contract is always specific to the implementation. Generally, the contract in the Sandbox implementation is first; usually, the Sandbox contract is terminated when the app goes live, activating the contract in the <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> (Production) implementation. The user interface uses the value <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem -->; the API in some instances still uses the old value, <strong>Production</strong>.</p>
+<p>In some cases an app can have contracts with the same API Version in both implementations at the same time. Each contract has a unique <a href="Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a>.</p>
+<p class="apidoc_note"><strong>Note</strong>: Earlier versions of the Akana API Platform used the term <strong>environment</strong> rather than <strong>implementation</strong>. In occasional instances, you might see API parameters and/or model objects that use the old wording.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -627,12 +628,13 @@ no-catalog: true
 
 
 
-<h3><a id="values_environment"></a>Environment</h3>
-<p>Valid values for <a href="../Ref_Glossary_CommunityPlatform.htm#gl_environment">environment</a> are as follows:</p>
+<h3><a id="values_environment"></a>Environment (now called Implementation in the user interface)</h3>
+<p>Valid values for <strong>environment</strong> (now called <a href="../Ref_Glossary_CommunityPlatform.htm#gl_implementation">implementation</a> in the user interface) are as follows:</p>
 <ul>
   <li>Sandbox</li>
   <li>Production</li>
 </ul>
+<p class="apidoc_note"><strong>Note</strong>: The user interface now uses the values Sandbox/<!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> rather than Sandbox/Production. You might see either value in the API, <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> or Production. In most cases, the old value, <strong>Production</strong>, is still used.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -764,7 +766,7 @@ no-catalog: true
 
 
 <h3><a id="values_grouptypes"></a>Group Types</h3>
-<p>In practical terms, the only valid group type you'll see in working with the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API is for an independent group:</p>
+<p>In practical terms, the only valid group type you'll see in working with the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:</p>
 <ul>
   <li>com.soa.group.type.independent</li>
 </ul>
@@ -1046,7 +1048,7 @@ no-catalog: true
     </tr>
     <tr>
       <td>com.soa.notification.type.privateapi</td>
-      <td>There are changes to the user's API Context Group.</td>
+      <td>There are changes to the user's API Scope Group.</td>
     </tr>
     <tr>
       <td>com.soa.notification.type.ticket.change</td>
@@ -1650,7 +1652,7 @@ no-catalog: true
   <li>Limited:
     <ul>
       <li>App: An app is visible only to app team members</li>
-      <li>API: An API is visible only to API Administrators or API Context Group members</li>
+      <li>API: An API is visible only to API Administrators or API Scope Group members</li>
       <li>Group: Groups are visible to those who have group membership</li>
     </ul>
   </li>
@@ -1712,7 +1714,7 @@ no-catalog: true
       <td>group.membership.action.remove</td>
     </tr>
 </tbody>
-</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_groups_private"></a>API Context Groups and Independent Groups: Additional Workflow Actions</h4><!-- #BeginLibraryItem "/Library/table_workflowactions_groups_private.lbi" -->
+</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_groups_private"></a>API Scope Groups and Independent Groups: Additional Workflow Actions</h4><!-- #BeginLibraryItem "/Library/table_workflowactions_groups_private.lbi" -->
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
     <tr>

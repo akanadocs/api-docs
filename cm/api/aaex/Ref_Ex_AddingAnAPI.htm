@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Example - Adding an App | How-To Material | Akana API Platform API
-description: This example walks you through adding an API to the Akana API Platform by using the platform API rather than the user interface. One use of this sequence is to build code that will load multiple APIs via the platform. This could be useful if you are just getting started on the platform and have many APIs.
+description: This example walks you through adding an API to the&nbsp;Akana API Platform&nbsp;by using the platform API rather than the user interface. One use of this sequence is to build code that will load multiple APIs via the platform. This could be useful if you are just getting started on the platform and have many APIs.
 product: cm
 category: ref
 nav-title: Example - Adding an App 
@@ -12,16 +12,16 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>Example: Adding an API</h2>
-<p>This example walks you through adding an API to the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> by using the platform API rather than the user interface. One use of this sequence is to build code that will load multiple APIs via the platform. This could be useful if you are just getting started on the platform and have many APIs.</p>
+<p>This example walks you through adding an API to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;by using the platform API rather than the user interface. One use of this sequence is to build code that will load multiple APIs via the platform. This could be useful if you are just getting started on the platform and have many APIs.</p>
 <p>This exercise assumes that you already have a valid login for the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->. You can't add an API unless you're an authorized user. Before running the procedures below, go into the user interface to set up your user profile.</p>
 <p>Essentially, you'll need to complete these two activities, in sequence:</p>
 <ol>
   <li>Log in using your authorized user profile you've already set up. Operation: <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span>.</li>
-  <li>Add an API. This also adds the first API version. Operation: <span class="apidoc_code"><a href="../apis/m_apis_addAPI.htm">POST&nbsp;/api/apis</a></span>.</li>
+  <li>Add an API. This also adds the first API version. Operation: <span class="apidoc_code"><a href="../apis/m_apis_createAPI.htm">POST&nbsp;/api/apis</a></span>.</li>
 </ol>
 <p>Once you've completed the above steps, the APIID is returned in the response and the API is ready for further setup (for example, adding legal agreements, adding operations, adding policies, assigning scopes to operations, adding additional API versions) or for use.</p>
 <p>Follow the detailed instructions below.</p>
-<h4>To add an API in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> using the platform API</h4>
+<h4>To add an API in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;using the platform API</h4>
 <ol>
   <li>Log in via the API, <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
     <ul>
@@ -37,7 +37,7 @@ no-catalog: true
       </li>
     </ul>
   </li>
-  <li>Add the API, using the <span class="apidoc_code"><a href="../apis/m_apis_addAPI.htm">POST&nbsp;/api/apis</a></span> operation. In your API call, use the values below, modifying the URL path as needed, and filling in your own values  for all fields in the Request Body (URL encoding not needed). This is a very simple example, using only a few values to create an API in the platform.
+  <li>Add the API, using the <span class="apidoc_code"><a href="../apis/m_apis_createAPI.htm">POST&nbsp;/api/apis</a></span> operation. In your API call, use the values below, modifying the URL path as needed, and filling in your own values  for all fields in the Request Body (URL encoding not needed). This is a very simple example, using only a few values to create an API in the platform.
     <ul>
         <li>HTTP method: POST</li>
       <li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --></span>apis</strong></li>

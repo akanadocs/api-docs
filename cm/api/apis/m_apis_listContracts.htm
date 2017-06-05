@@ -124,7 +124,7 @@ no-catalog: true
       <td>Query</td>
       <td>string</td>
       <td>Required</td>
-      <td>The environment (Sandbox or Production). If specified, returns only contracts for that environment. If not specified, all are returned.</td>
+      <td>The <a href="../aaref/Ref_Values.htm#values_environment">environment (implementation)</a> (Sandbox or Production). If specified, returns only contracts for that environment. If not specified, all are returned.</td>
     </tr>
   </tbody>
 </table>
@@ -270,13 +270,17 @@ Date: Tue, Tue, 31 Mar 2015 13:14:40 GMT</pre>
       <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem -->You would also get it if you are not an authorized viewer of the API.</td>
     </tr>
     <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
+      <td>The resource could not be found. For example, you might get this if you have a typo in the URL, or if the Accept header is set to a wrong value.</td>
+    </tr>
+    <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

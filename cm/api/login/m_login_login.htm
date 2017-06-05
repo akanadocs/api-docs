@@ -159,15 +159,17 @@ gu61Dk7vIIiVhBJV1AIRZiHKoDim04hq-tjw8NIeHdH6DV7M2COAaTZA
 <h5>Sample response body #1</h5>
 <p id="id_sampleresponse_1">In the example below, the Site Admin added the user (using the <span class="apidoc_code"><a href="../users/m_users_addUser.htm">POST&nbsp;/api/users</a></span> operation) and the user is now logging in for the first time. The Site Admin specified that the user must change password on first login (<strong>ForcePasswordChangeOnLogin</strong> parameter in the Add User operation); therefore, change password is listed as a pending task. Tokens have been abbreviated.</p>
 <p>To change the password, invoke the <span class="apidoc_code"><a href="../users/m_users_modifyPassword.htm">PUT&nbsp;/api/users/{UserID}/password</a></span> operation.</p>
-<pre>{
-  "userName" : "adminacmepaymentscorp",
-  "status" : "success",
-  "authTokenValidUntil" : "2016-01-01T00:00:00.410Z",
-  "userFDN" : "5a48b51d-b726-460f-bec5-8fb4e392137c.acmepaymentscorp",
+<pre>
+{
   "loginState" : "login.complete",
+  "authTokenValidUntil" : "2017-05-25T19:31:02.477Z",
+  "avatarURL" : "http://api.acmepaymentscorp.com:7900/api/users/avatar/_VeOpbQ0ztsM0WHiH3iUkBYg",
   "loginDomainID" : "siteusers.acmepaymentscorp",
-  "avatarURL" : "http://{hostname}/api/users/5a48b51d-b726-460f-bec5-8fb4e392137c.acmepaymentscorp/avatar",
-  "pendingNotifications" : 0
+  "lastLoginDate" : "2017-05-25T18:55:30Z",
+  "userName" : "adminacmepaymentscorp",
+  "userFDN" : "461b3899-37c6-4eb8-936b-9abf8ba74c0a.acmepaymentscorp",
+  "pendingNotifications" : 0,
+  "status" : "success"
 }</pre>
 <h5>Sample response body #2</h5>
 <p id="id_sampleresponse_2">The example below shows a scenario where the user must accept a pending legal agreement. Until the legal agreement is accepted, the login process isn't complete. Tokens have been abbreviated.</p>
@@ -356,7 +358,7 @@ gu61Dk7vIIiVhBJV1AIRZiHKoDim04hq-tjw8NIeHdH6DV7M2COAaTZA
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

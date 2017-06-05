@@ -15,7 +15,7 @@ no-catalog: true
 <p>On the platform, a group is any collection of individuals with a common interest or purpose. The platform includes several different types of groups; there are similarities between all group types in the way they work, with some important differences between them, not only in purpose but also in mechanics. The group types are:</p>
 <ul>
   <li><a href="#groups_apiadmin">API Administrator (Admin) Group</a></li>
-  <li><a href="#groups_apicontext">API Context Group</a></li>
+  <li><a href="#groups_apiscope">API Scope Group</a></li>
   <li><a href="#groups_appteam">App Team</a></li>
   <li><a href="#groups_independentgroup">Independent Group</a></li>
   <li><a href="#groups_siteadmin">Site Administrator Group</a></li>
@@ -30,7 +30,7 @@ no-catalog: true
   <li>Manage discussions relating to the API.</li>
   <li>Upload, modify, and delete API documentation.</li>
   <li>Upload legal agreements for the API.</li>
-  <li>Manage an API Context Group (see below), including creating the group, inviting one or more members, changing a member's role, and modifying or deleting the group.</li>
+  <li>Manage an API Scope Group (see below), including creating the group, inviting one or more members, changing a member's role, and modifying or deleting the group.</li>
   <li>Invite independent groups to connect with the API.</li>
   <li>Manage API access requests including granting an app's request for API access and suspending or cancelling API access.</li>
   <li>Make changes to the API including modifying the API, adding, modifying, or deleting API versions, or deleting the API.</li>
@@ -41,12 +41,12 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a name="groups_apicontext"></a>API Context Group</h3>
-<p>An API Admin of a Private API can create a user group for that API, called an API Context Group. The API Admin can invite members to the group. Each user can have one of three group member roles, and there can be multiple users for each role. The roles are:</p>
+<h3><a name="groups_apiscope"></a>API Scope Group</h3>
+<p>An API Admin of a Private API can create a user group for that API, called an API Scope Group. The API Admin can invite members to the group. Each user can have one of three group member roles, and there can be multiple users for each role. The roles are:</p>
 <ul>
   <li><strong>Administrator</strong>. An Administrator can invite additional members to the group, change another member's status (from any one of the three roles to any other) remove a member from the group, or resend an invitation.</li>
   <li><strong>Leader</strong>. A leader can invite additional members to the group, change another member's status (from member to leader or vice versa) or remove a member from the group. A leader can also add another leader, but cannot create or delete group administrators and cannot create, modify, or delete the group itself.</li>
-  <li><strong>Member</strong>. An API Context Group member has access to all information relating to the API and the group, including reviews, tickets and discussions. Members cannot invite additional members or change the status of other members. A member can be promoted to leader status or removed from the group by an API Admin or by a leader.</li>
+  <li><strong>Member</strong>. An API Scope Group member has access to all information relating to the API and the group, including reviews, tickets and discussions. Members cannot invite additional members or change the status of other members. A member can be promoted to leader status or removed from the group by an API Admin or by a leader.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -81,17 +81,34 @@ no-catalog: true
 
 
 <h3><a name="groups_siteadmin"></a>Site Administrator Group</h3>
-<p>A Site Administrator has Admin control over many parts of the platform. There are parts of the user interface, and API operations, that require Site Administrator rights and are closed to other users. However, the Site Admin doesn't have global rights. For example, some operations are unique to an individual user, such as changing a password, and cannot be run by a Site Administrator.</p>
-<p>Essentially, the Site Administrator is responsible for configuring the site, including activities such as setting up integration with other login domains. Site Admins can also add or remove members of the various types of groups; API administrators, API Context Groups, app teams, independent groups, and the business administrator group. The Site Administrator can also add members to the site admin group.</p>
-<p>The Site Administrator cannot make configuration changes to apps or APIs. API Administrators or Businesss Administrators have full rights to the applicable API, and app team members or Business Administrators have full rights to the applicable app. Site Administrator rights for apps and APIs is limited to GET operations and to managing team member access.</p>
-<p class="apidoc_note"><strong>Note</strong>: Although a Site Admin can make another user an API Admin or Business Admin, the Site Admin cannot make himself or herself an API Admin or Business Admin, and cannot perform the functions of an API Admin with regard to the API or of a Business Administrator with regard to the business. Site configuration is the Site Admin's primary duty.</p>
+<p>A Site Administrator has Admin control over many parts of the platform. There are parts of the user interface that require Site Administrator rights and are closed to other users. Site Admins essentially control the look and feel, and general configuration, of the portal.</p>
+<p>The Site Admin manages the following functions on the platform:</p>
+<ul>
+  <li><strong>Agreements</strong>&#8212;Manage the platform signup legal agreement.</li>
+  <li><strong>Config</strong>&#8212;Manage site look and feel, including managing custom styles and resources.</li>
+  <li><strong>Settings</strong>&#8212;Configure settings for resources on the platform such as alerts, apps, APIs, connections, comments, discussions, groups, tickets, users, reviews, and business security.</li>
+  <li><strong>Site</strong>&#8212;Configure basic site settings such as site URL, contact email address, and themes.</li>
+  <li><strong>Site Admins</strong>&#8212;Manage site admins on the platform, including inviting and removing site admins.</li>
+  <li><strong>Users</strong>&#8212;Manage users on the platform, including activating and deleting users. However, some operations are unique to an individual user, such as changing a password, and cannot be run by a Site Administrator.</li>
+  <li><strong>Workflows</strong>&#8212;View, add, change, and delete custom and default workflows for platform resources such as tickets and API contracts.</li>
+</ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <h3><a name="groups_bizadmin"></a>Business Administrator Group</h3>
 <p>In a federated environment, where a specific tenant has its own instance of the platform, the Business Administrator has some rights that are senior to those of the Site Administrator. There are parts of the user interface, and API operations, that require Business Administrator rights and are closed to other users. For example, Business Administrators can make certain choices that determine options that are available or not available on the platform.</p>
-<p>Although the Site Administrator has responsibility for configuration and settings for the available options, the Site Administrator cannot turn these features on and off; this is done by the Business Administrator. However, the Business Administrator cannot make changes to resources on the platform, such as apps, APIs, and users. The Business Administrator has API Admin rights over all APIs in the business.</p>
-<p>In the platform user interface, there is an Administration section available only to Site Administrators and Business Administrators. The table below shows which functions each type of administrator has access to, and for what purpose.</p>
+<p>The Business Administrator has Administrator rights for all APIs and apps in the business.</p>
+<!--<p>The Business Admin manages the following functions on the platform:</p>
+<ul>
+  <li><strong>API Gateways</strong>&#8212;Adding, modifying, or deleting.</li>
+  <li><strong>Business Admins</strong>&#8212;Manage business admins on the platform, including inviting and removing business admins.</li>
+  <li><strong>Deployment Zones</strong>&#8212;Adding, modifying, or deleting.</li>
+  <li><strong>Domains</strong>&#8212;Adding, modifying, or deleting.</li>
+  <li><strong>Forums</strong>&#8212;Moderating.</li>
+  <li><strong>Licenses</strong>&#8212;Adding, modifying, or deleting.</li>
+  <li><strong>Scopes</strong>&#8212;Adding, modifying, or deleting.</li>
+</ul>
+--><p>In the platform user interface, there is an Administration section available only to Site Administrators and Business Administrators. The table below shows which functions each type of administrator has access to, and for what purpose.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
     <tr>
@@ -117,7 +134,7 @@ no-catalog: true
     <tr>
       <td>Business Admins</td>
       <td>Manage the Business Admin group (invite, resend invite, remove)</td>
-      <td>Yes</td>
+      <td>No</td>
       <td>Yes</td>
     </tr>
     <tr>
@@ -156,7 +173,7 @@ no-catalog: true
 <ul>
   <li>Add, modify, or delete an app or app version.</li>
   <li>Add, modify, or delete an API or API version.</li>
-  <li>Add or remove members of the various types of groups; API administrators, API Context Groups, app teams, independent groups, and the site administrator group. Where applicable, the Business Admin can also change a group member's status.</li>
+  <li>Add or remove members of the various types of groups; API administrators, API Scope Groups, app teams, independent groups, and the site administrator group. Where applicable, the Business Admin can also change a group member's status.</li>
   <li>Revoke a user's access to the platform.</li>
   <li>Revoke an app's access tokens for one or more APIs.</li>
 </ul>

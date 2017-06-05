@@ -4,7 +4,7 @@ title: Create API | APIs Service | Akana API Platform API
 description: Defines an API from scratch, based on an existing service, or based on an API description document.
 product: cm
 category: ref
-nav-title: Create API
+nav-title: Create API 
 no-nav: api
 sub-nav: true
 sub-nav-class: apis
@@ -16,7 +16,7 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_createAPI.lbi" -->Defines an API on the platform: from scratch, based on an existing service, or based on an API description document.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_createAPI.lbi" -->Defines an API from scratch, based on an existing service, or based on an API description document.<!-- #EndLibraryItem --></p>
 <p>The API can be defined in three ways:</p>
 <ul>
   <li>With only API name (API details to be added later)</li>
@@ -29,6 +29,7 @@ no-catalog: true
   <li>Update the API design: <span class="apidoc_code"><a href="m_apis_modifyAPIVersionDesign.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/design</a></span></li>
 </ul>
 <h5 class="stamp">New in API Platform Version: 8.1</h5>
+<p class="apidoc_note"><strong>Note</strong>: When creating an API using this API operation, you can specify deployment zones for the new API. This functionality isn't currently covered by the user interface (as of version 8.3) but is supported by the API. See <a href="#samplerequest06">Sample Request Body #6</a> below.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have permission to add an API. The user who adds the API automatically becomes the first API Administrator.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -66,7 +67,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h3 id="samplerequest">Sample Request</h3>
-<p id="id_samplerequest">The examples below add an API based on an API definition document.</p>
+<p id="id_samplerequest">The examples below show several variations of adding an API by providing different optional values.</p>
 <p><strong>Request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis</pre>
 <p><strong>Sample request headers</strong></p>
@@ -164,6 +165,39 @@ Content-Type: application/vnd.soa.v81+json; charset=UTF-8
     }
   }
 }</pre>
+
+<p id="samplerequest06"><strong>Sample request body #6: Include deployment zone specifications</strong></p>
+<p>Specifies two deployment zones for the API.</p>
+<pre>{
+  "APIVersionInfo": {
+    "Name": "NewAPI_WithDZ"
+  },
+  "AddAPIImplementationRequest": {
+    "ProxyImplementationRequest": {
+      "TargetEndpointURL": "http://httpstat.us"
+    },
+    "APIImplementationDeployments": {
+      "DeploymentZonesHostingInfo": [{
+        "DeploymentZoneEndpoint": [{
+          "DeploymentZoneID": "83c0f1b8-b0fb-4195-86db-e9f2a95132f5.acmepaymentscorp",
+          "EndpointPath": "/",
+          "Protocol": "https",
+          "Public": true
+        }, {
+          "DeploymentZoneID": "83c0f1b8-b0fb-4195-86db-e9f2a95132f5.acmepaymentscorp",
+          "Protocol": "http",
+          "ListenerName": "httplistener2",
+          "EndpointHostName": "acmepaymentscorp",
+          "EndpointPath": "/http"
+        }],
+        "DeploymentZoneID": "83c0f1b8-b0fb-4195-86db-e9f2a95132f5.acmepaymentscorp"
+      }]
+    },
+    "CreateMechanism": "PROXY"
+  },
+  "classifiers": {}
+}</pre>
+
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -369,7 +403,7 @@ Set-Cookie: Csrf-Token_acmepaymentscorp=TokenID%3Dde5b2e6a-d040-11e5-82f9-a0de4d
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

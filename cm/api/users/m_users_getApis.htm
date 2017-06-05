@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get APIs | Users Service | Akana API Platform API
-description: Returns information about the APIs that the specified user is connected to, either as an API Administrator or API Context Group member or as an app team member for an app that's subscribed to the API.
+description:  Returns information about the APIs that the specified user is connected to, either as an API Administrator or API Scope Group member or as an app team member for an app that's subscribed to the API.
 product: cm
 category: ref
 nav-title: Get APIs 
@@ -17,7 +17,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getApis.lbi" -->
-Returns information about the APIs that the specified user is connected to, either as an API Administrator or API Context Group member or as an app team member for an app that's subscribed to the API.<!-- #EndLibraryItem --></p>
+Returns information about the APIs that the specified user is connected to, either as an API Administrator or API Scope Group member or as an app team member for an app that's subscribed to the API.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_self">Self</a> (logged in) or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> (for any user).</p>
 
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -59,7 +59,7 @@ Returns information about the APIs that the specified user is connected to, eith
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for information about APIs the specified user is associated with.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user10002.acmepaymentscorp/apis</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/apis</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
@@ -171,7 +171,7 @@ Date: Mon, 20 May 2013 23:24:13 GMT</pre>
 {
   "channel" : {
     "title" : "My Apis",
-    "link" : "../../acmepaymentscorp#/user/user10002.acmepaymentscorp/apis",
+    "link" : "../../acmepaymentscorp#/user/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/apis",
     "description" : "List of apis by user",
     "item" : [ {
       "title" : "Facepond",
@@ -275,7 +275,7 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0"
 xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
   &lt;channel&gt;
     &lt;title&gt;My Apis&lt;/title&gt;
-    &lt;link&gt;../../acmepaymentscorp#/user/user10002.acmepaymentscorp/apis&lt;/link&gt;
+    &lt;link&gt;../../acmepaymentscorp#/user/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/apis&lt;/link&gt;
     &lt;description&gt;List of apis by user&lt;/description&gt;
     &lt;item&gt;
       &lt;title&gt;Facepond&lt;/title&gt;
@@ -456,7 +456,7 @@ xmlns:ns10="http://soa.com/xsd/board/1.0" version="1.0"&gt;
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

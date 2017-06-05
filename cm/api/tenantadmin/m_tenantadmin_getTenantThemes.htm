@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Tenant Themes | Tenant Administration Service | Akana API Platform API
-description: Returns information about the themes set up for the specified tenant.
+description: Returns information about the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_theme">themes</a> set up for the specified tenant.
 product: cm
 category: ref
 nav-title: Get Tenant Themes 
@@ -18,7 +18,8 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getTenantThemes.lbi" -->Returns information about the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_theme">themes</a> set up for the specified tenant.<!-- #EndLibraryItem --></p>
 <h5 class="stamp">Supported Versions: 8.3 and later</h5>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> only.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have Read permission for the tenant; must be an authorized Administrator for the specified tenant.</p>
+<!--<p>@PermissionRequired(action=AuzAction.READ, resourceType=FDN.RESOURCE_TYPE_TENANT</p>-->
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -132,35 +133,58 @@ Content-Type: application/json
 Content-Type: application/json
 Date: Mon, 22 Aug 2016 19:17:19 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>[ {
-  "Theme" : "clone",
-  "VirtualHosts" : [ "automationclone.local.acmepaymentscorp.test" ],
-  "ConsoleAddress" : "http://automationclone.acmepaymentscorp.test:7900/acmepaymentscorp/",
-  "TenantID" : 10001,
-  "FedmemberID" : "atmosphere",
-  "ThemeImpl" : "default"
-}, {
-  "Theme" : "default",
-  "VirtualHosts" : [ "automation.acmepaymentscorp.test" ],
-  "ConsoleAddress" : "{hostname}/acmepaymentscorp/",
-  "TenantID" : 10001,
-  "FedmemberID" : "atmosphere",
-  "ThemeImpl" : "default"
-}, {
-  "Theme" : "hermosa",
-  "VirtualHosts" : [ "automationcloud.acmepaymentscorp.test" ],
-  "ConsoleAddress" : "http://automationcloud.acmepaymentscorp.test:7900/acmepaymentscorp/",
-  "TenantID" : 10001,
-  "FedmemberID" : "atmosphere",
-  "ThemeImpl" : "default"
-}, {
-  "Theme" : "simpledev",
-  "VirtualHosts" : [ "automationdeveloper.local.acmepaymentscorp.test" ],
-  "ConsoleAddress" : "http://automationdeveloper.local.acmepaymentscorp.test:7900/acmepaymentscorp/",
-  "TenantID" : 10001,
-  "FedmemberID" : "atmosphere",
-  "ThemeImpl" : "simpledev"
-} ]</pre>
+<pre>[
+  {
+    "Theme":"clone",
+    "VirtualHosts":[
+      "clone-acmepaymentscorp.com"
+    ],
+    "ConsoleAddress":"http://clone-acmepaymentscorp.com:7900/atmosphere/",
+    "SiteTitle":"",
+    "SiteDescription":"",
+    "TenantID":10001,
+    "FedmemberID":"automation",
+    "ThemeImpl":"default",
+    "Alias":""
+  },
+  {
+    "Theme":"default",
+    "VirtualHosts":[
+      "automation-acmepaymentscorp.com"
+    ],
+    "ConsoleAddress":"http://automation-acmepaymentscorp.com:7900/atmosphere/",
+    "SiteTitle":"",
+    "SiteDescription":"",
+    "TenantID":10001,
+    "FedmemberID":"automation",
+    "Alias":""
+  },
+  {
+    "Theme":"hermosa",
+    "VirtualHosts":[
+      "automationcloud-acmepaymentscorp.com"
+    ],
+    "ConsoleAddress":"http://automationcloud-acmepaymentscorp.com:7900/acmepaymentscorp/",
+    "SiteTitle":"",
+    "SiteDescription":"",
+    "TenantID":10001,
+    "FedmemberID":"automation",
+    "ThemeImpl":"default",
+    "Alias":""
+  },
+  {
+    "Theme":"simpledev",
+    "VirtualHosts":[
+      "automationdeveloper-acmepaymentscorp.com"
+    ],
+    "ConsoleAddress":"http://automationdeveloper-acmepaymentscorp.com:7900/acmepaymentscorp/",
+    "SiteTitle":"simpledev",
+    "SiteDescription":"",
+    "TenantID":10001,
+    "FedmemberID":"automation",
+    "Alias":""
+  }
+]</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -231,7 +255,7 @@ Date: Mon, 22 Aug 2016 19:17:19 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

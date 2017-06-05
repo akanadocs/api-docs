@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Contract Versions | APIs Service | Akana API Platform API
-description: Returns information about contracts for the specified API version.
+description:  Returns information about contracts for the specified API version.
 product: cm
 category: ref
 nav-title: Get Contract Versions 
@@ -119,7 +119,7 @@ Content-Type: application/json</pre>
       <td>Query</td>
       <td>string</td>
       <td>Required</td>
-      <td>The environment (Sandbox or Production). If specified, returns only contracts for that environment. If not specified, all are returned.</td>
+      <td>The <a href="../aaref/Ref_Values.htm#values_environment">environment (implementation)</a> (Sandbox or Production). If specified, returns only contracts for that environment. If not specified, all are returned.</td>
     </tr>
     <tr>
       <td>IncludeActions</td>
@@ -495,7 +495,7 @@ xmlns:ns20="http://soa.com/xsd/workflow/1.0" xmlns:ns21="http://soa.com/xsd/clie
       <td><p>An array of sets of two name/value pairs, each including Value and Domain, with a value for each. For example:</p>
         <pre>"value" : "Sandbox",
 "domain" : "uddi:soa.com:environment"</pre>
-        <p>The example above indicates that the contract applies to the Sandbox <a href="../Ref_Glossary_CommunityPlatform.htm#gl_environment">environment</a>.</p>
+        <p>The example above indicates that the contract applies to the Sandbox <a href="../Ref_Glossary_CommunityPlatform.htm#gl_implementation">implementation</a>.</p>
         <pre>"value" : "apicontract.status.activated",
 "domain" : "uddi:soa.com:wfstate"</pre>
         <p>The example above indicates that the contract's <a href="../aaref/Ref_Values.htm#values_legaldocumentstate">status</a> is <strong>activated</strong>.</p></td>
@@ -507,10 +507,10 @@ xmlns:ns20="http://soa.com/xsd/workflow/1.0" xmlns:ns21="http://soa.com/xsd/clie
     <tr>
       <td>Endpoints</td>
       <td><p>An array of name/value pair sets containing information about the endpoints that the contract applies to. </p>
-        <p>Each includes Category, which is the <a href="../aaref/Ref_Values.htm#values_environment">environment</a> for the endpoint, and URI, which is the URI for the endpoint. For example:</p>
+        <p>Each includes Category, which is the <a href="../aaref/Ref_Values.htm#values_environment">implementation</a> for the endpoint, and URI, which is the URI for the endpoint. For example:</p>
         <p><span class="apidoc_code">&quot;Category&quot;: &quot;Sandbox&quot;,</span></p>
         <p><span class="apidoc_code">&quot;Uri&quot;: &quot;http://acmepaymentscorpsandbox.broker.soa.com/payments&quot;</span></p>
-        <p>The above indicates that the specified URI is for the Sandbox environment.</p></td>
+        <p>The above indicates that the specified URI is for the Sandbox implementation.</p></td>
     </tr>
     <tr>
       <td>Image</td>
@@ -569,7 +569,7 @@ xmlns:ns20="http://soa.com/xsd/workflow/1.0" xmlns:ns21="http://soa.com/xsd/clie
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

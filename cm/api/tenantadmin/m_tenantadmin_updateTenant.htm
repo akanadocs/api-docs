@@ -18,7 +18,8 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_updateTenant.lbi" -->Updates information about the specified platform tenant.<!-- #EndLibraryItem --></p>
 <h5 class="stamp">Supported Versions: 8.3 and later</h5>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> only.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong> Must have Modify permission for the tenant; <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<!--<p>@PermissionRequired(action=AuzAction.MODIFY, resourceType=FDN.RESOURCE_TYPE_TENANT</p>-->
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -66,43 +67,58 @@ Content-Type: application/json
 <p><strong>Sample request body</strong></p>
 <pre>{
   "TenantName":"acmepaymentscorp",
-  "ContactEmailAddress":"support@acmepaymentscorp.com",
-  "FromEmailAddress":"support@acmepaymentscorp.com",
-  "ConsoleAddress":"http://ubu1464qa-10:7900/acmepaymentscorp/",
+  "ContactEmailAddress":"administrator@acmepaymentscorp.com",
+  "FromEmailAddress":"",
+  "ForwardProxyAllowedHosts":[
+    "*"
+  ],
+  "ConsoleAddress":"http://automation-acmepaymentscorp.com:7900/acmepaymentscorp/",
   "AnalyticsAccountID":"",
-  "LaaSIntegrationSupport":"com.soa.feature.enabled",
+  "LaaSIntegrationSupport":"com.soa.feature.disabled",
   "Themes":[
     {
       "Theme":"clone",
       "VirtualHosts":[
-        "automationclone.test"
+        "clone-acmepaymentscorp.com"
       ],
-      "ConsoleAddress":"http://automationclone.test:7900/acmepaymentscorp/",
-      "ThemeImpl":"default"
+      "ConsoleAddress":"http://clone-acmepaymentscorp.com:7900/acmepaymentscorp/",
+      "ThemeImpl":"default",
+      "SiteTitle":"",
+      "SiteDescription":"",
+      "Alias":""
     },
     {
       "Theme":"default",
       "VirtualHosts":[
-        "automation.test"
+        "automation-acmepaymentscorp.com"
       ],
-      "ConsoleAddress":"http://automation.test:7900/acmepaymentscorp/",
-      "ThemeImpl":""
+      "ConsoleAddress":"http://automation-acmepaymentscorp.com:7900/acmepaymentscorp/",
+      "ThemeImpl":"",
+      "SiteTitle":"",
+      "SiteDescription":"",
+      "Alias":""
     },
     {
       "Theme":"hermosa",
       "VirtualHosts":[
-        "automationcloud.test"
+        "automationcloud-acmepaymentscorp.com"
       ],
-      "ConsoleAddress":"http://automationcloud.test:7900/acmepaymentscorp/",
-      "ThemeImpl":"default"
+      "ConsoleAddress":"http://automationcloud-acmepaymentscorp.com:7900/acmepaymentscorp/",
+      "ThemeImpl":"default",
+      "SiteTitle":"",
+      "SiteDescription":"",
+      "Alias":""
     },
     {
       "Theme":"simpledev",
       "VirtualHosts":[
-        "automationdeveloper.test"
+        "automationdeveloper-acmepaymentscorp.com"
       ],
-      "ConsoleAddress":"http://automationdeveloper.test:7900/acmepaymentscorp/",
-      "ThemeImpl":""
+      "ConsoleAddress":"http://automationdeveloper-acmepaymentscorp.com:7900/acmepaymentscorp/",
+      "ThemeImpl":"",
+      "SiteTitle":"simpledev",
+      "SiteDescription":"",
+      "Alias":""
     }
   ]
 }</pre>
@@ -181,56 +197,70 @@ Content-Type: application/json
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Mon, 22 Aug 2016 18:36:25 GMT
+Date: Fri, 28 Apr 2017 15:05:53 GMT
 Content-Type: application/json</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "FedMemberID" : "acmepaymentscorp",
-  "TenantName" : "acmepaymentscorp",
-  "Description" : "acmepaymentscorp",
-  "AdminGroupID" : "tenantadmin.acmepaymentscorp",
+  "FedMemberID" : "automation",
+  "TenantName" : "automation",
+  "Description" : "automation",
+  "AdminGroupID" : "tenantadmin.automation",
   "Business" : {
-    "BusinessID" : "tenantbusiness.acmepaymentscorp",
+    "BusinessID" : "tenantbusiness.automation",
+    "BusinessKey" : "uddi:soa.com:acmepaymentscorp:tenant:automation",
     "Name" : "Tenant - automation",
     "Visibility" : "Limited",
-    "AdminGroupID" : "bizadmin-tenantbusiness.acmepaymentscorp",
+    "AdminGroupID" : "bizadmin-tenantbusiness.automation",
     "BusinessType" : "atmo.tenant"
   },
-  "IndexTargets" : [ "compass", "elastic" ],
+  "IndexTargets" : [ "elastic" ],
   "SearchSource" : "elastic",
   "ESIndexName" : "default",
   "PlatformApiContractExists" : false,
-  "ConsoleAddress" : "http://ubu1464qa-10:7900/acmepaymentscorp/",
-  "Address" : "http://ubu1464qa-10:7900",
-  "ContactEmailAddress" : "support@acmepaymentscorp.com",
-  "FromEmailAddress" : "support@acmepaymentscorp.com",
+  "ConsoleAddress" : "http://automation-acmepaymentscorp.com:7900/acmepaymentscorp/",
+  "Address" : "http://automation-acmepaymentscorp.com:7900",
+  "ContactEmailAddress" : "administrator@simpledev.com",
+  "FromEmailAddress" : "",
   "AnalyticsAccountID" : "",
   "Themes" : [ {
     "Theme" : "clone",
-    "VirtualHosts" : [ "automationclone.test" ],
-    "ConsoleAddress" : "http://automationclone.test:7900/acmepaymentscorp/",
+    "VirtualHosts" : [ "clone-acmepaymentscorp.com" ],
+    "ConsoleAddress" : "http://clone-acmepaymentscorp.com:7900/acmepaymentscorp/",
+    "SiteTitle" : "",
+    "SiteDescription" : "",
     "TenantID" : 10001,
-    "ThemeImpl" : "default"
+    "ThemeImpl" : "default",
+    "Alias" : ""
   }, {
     "Theme" : "default",
-    "VirtualHosts" : [ "automation.test" ],
-    "ConsoleAddress" : "http://automation.test:7900/acmepaymentscorp/",
+    "VirtualHosts" : [ "automation-acmepaymentscorp.com" ],
+    "ConsoleAddress" : "http://automation-acmepaymentscorp.com:7900/acmepaymentscorp/",
+    "SiteTitle" : "",
+    "SiteDescription" : "",
     "TenantID" : 10001,
-    "ThemeImpl" : ""
+    "ThemeImpl" : "",
+    "Alias" : ""
   }, {
     "Theme" : "hermosa",
-    "VirtualHosts" : [ "automationcloud.test" ],
-    "ConsoleAddress" : "http://automationcloud.test:7900/acmepaymentscorp/",
+    "VirtualHosts" : [ "automationcloud-acmepaymentscorp.com" ],
+    "ConsoleAddress" : "http://automationcloud-acmepaymentscorp.com:7900/acmepaymentscorp/",
+    "SiteTitle" : "",
+    "SiteDescription" : "",
     "TenantID" : 10001,
-    "ThemeImpl" : "default"
+    "ThemeImpl" : "default",
+    "Alias" : ""
   }, {
     "Theme" : "simpledev",
-    "VirtualHosts" : [ "automationdeveloper.test" ],
-    "ConsoleAddress" : "http://automationdeveloper.test:7900/acmepaymentscorp/",
+    "VirtualHosts" : [ "automationdeveloper-acmepaymentscorp.com" ],
+    "ConsoleAddress" : "http://automationdeveloper-acmepaymentscorp.com:7900/acmepaymentscorp/",
+    "SiteTitle" : "simpledev",
+    "SiteDescription" : "",
     "TenantID" : 10001,
-    "ThemeImpl" : ""
+    "ThemeImpl" : "",
+    "Alias" : ""
   } ],
-  "LaaSIntegrationSupport" : "com.soa.feature.enabled"
+  "LaaSIntegrationSupport" : "com.soa.feature.disabled",
+  "ForwardProxyAllowedHosts" : [ "*" ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -301,7 +331,7 @@ Content-Type: application/json</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

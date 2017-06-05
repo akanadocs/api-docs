@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Read File Details | Dropbox Service | Akana API Platform API
-description: Reads the contents of a file, such as an API definition document (individual file or ZIP file), to the Dropbox, and returns information about the service that will be used to create the API. If the upload file is a ZIP file containing multiple services, it returns a list of services that are included in the file, so the user can specify a service.
+description:  Reads the contents of a file, such as an API definition document (individual file or ZIP file), to the Dropbox, and returns information about the service that will be used to create the API. If the upload file is a ZIP file containing multiple services, it returns a list of services that are included in the file, so the user can specify a service.
 product: cm
 category: ref
 nav-title: Read File Details 
@@ -211,13 +211,18 @@ Content-Type: application/vnd.soa.v81+json</pre>
       <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
+      <td><p><!-- #BeginLibraryItem "/Library/http_405.lbi" --> Method Not Allowed. For example, you might get this if you specified an invalid Accept header or omitted a required Content-Type header.<!-- #EndLibraryItem --></p>
+        <p>You would also get it if the URL was incorrect, including case.</p></td>
+    </tr>
+    <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
       <td>An error occurred processing the call. </td>
     </tr>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: BusinessAPISettings Object | Businesses Service | Akana API Platform API
-description: Contains information about the settings to apply to all APIs within the business, unless specified otherwise at a lower level.
+description:  Contains information about the settings to apply to all APIs within the business, unless specified otherwise at a lower level.
 product: cm
 category: ref
 nav-title: BusinessAPISettings Object 
@@ -52,12 +52,12 @@ Contains information about the settings to apply to all APIs within the business
     <tr>
       <td>PublicAPISandboxAutoApprovalSupport</td>
       <td>String</td>
-      <td>Indicates whether automatic approval of requests for access to the sandbox environment for a public API is enabled or disabled.</td>
+      <td>Indicates whether automatic approval of requests for access to the Sandbox implementation for a public API is enabled or disabled.</td>
     </tr>
     <tr>
       <td>PublicAPIProductionAutoApprovalSupport</td>
       <td>String</td>
-      <td>Indicates whether automatic approval of requests for access to the production environment for a public API is enabled or disabled.</td>
+      <td>Indicates whether automatic approval of requests for access to the <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> implementation for a public API is enabled or disabled.</td>
     </tr>
     <tr>
       <td>PublicAPIBoardSupport</td>
@@ -92,17 +92,17 @@ Contains information about the settings to apply to all APIs within the business
     <tr>
       <td>PrivateAPISandboxAutoApprovalSupport</td>
       <td>String</td>
-      <td>Indicates whether automatic approval of requests for access to the sandbox environment for a Private API is enabled or disabled.</td>
+      <td>Indicates whether automatic approval of requests for access to the sandbox implementation for a Private API is enabled or disabled.</td>
     </tr>
     <tr>
       <td>PrivateAPIProductionAutoApprovalSupport</td>
       <td>String</td>
-      <td>Indicates whether automatic approval of requests for access to the production environment for a Private API is enabled or disabled.</td>
+      <td>Indicates whether automatic approval of requests for access to the <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> implementation for a Private API is enabled or disabled.</td>
     </tr>
     <tr>
       <td>PrivateAPIGroupTypeSupport</td>
       <td>String</td>
-      <td><p>Indicates whether <a href="../Ref_Glossary_CommunityPlatform.htm#gl_apicontextgroup">API Context Group</a> (Private API Group, Scope Group) support is enabled or disabled.</p>
+      <td><p>Indicates whether <a href="../Ref_Glossary_CommunityPlatform.htm#gl_apiscopegroup">API Scope Group</a> (Private API Group) support is enabled or disabled.</p>
         <p><strong>Note</strong>: This setting is general to all APIs, not just private APIs.</p></td>
     </tr>
     <tr>
@@ -154,6 +154,11 @@ Contains information about the settings to apply to all APIs within the business
       <td>APIWithExistingServiceSupport</td>
       <td>String</td>
       <td>Indicates whether the <strong>Creation of API with Existing Service</strong> option is enabled or disabled.</td>
+    </tr>
+    <tr>
+      <td>APIWithAnonymousAccessSupport</td>
+      <td>String</td>
+      <td>Indicates whether the API supports anonymous access.</td>
     </tr>
     </tbody>
 </table>

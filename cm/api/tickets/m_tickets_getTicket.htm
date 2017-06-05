@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Ticket | Tickets Service | Akana API Platform API
-description: Returns information about a specific ticket.
+description:  Returns information about a specific ticket.
 product: cm
 category: ref
 nav-title: Get Ticket 
@@ -58,7 +58,7 @@ Anyone can use this operation; login is not required. However, note that for any
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for information about the specified ticket.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->tickets/ticket25687.acmepaymentscorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->tickets/132f7a34-b71f-448f-9a49-6e8777de2b4c.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
 </pre>
@@ -129,67 +129,86 @@ Anyone can use this operation; login is not required. However, note that for any
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
-<p><strong>Sample response headers</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Date: Mon, 11 May 2015 19:53:10 GMT</pre>
+Date: Thu, 11 May 2017 15:37:09 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "TicketID" : "ticket10843.acmepaymentscorp",
-  "APIID" : "ecbf7010-abcf-41f8-9f52-1c02b3a51984.acmepaymentscorp",
+  "TicketID" : "132f7a34-b71f-448f-9a49-6e8777de2b4c.acmepaymentscorp",
+  "APIID" : "177f24e1-513f-4239-b20b-3d06d85bd15b.acmepaymentscorp",
   "Title" : "Bug when using multiple payment types",
-  "Description" : "When I try to use more than one payment type the transaction hangs up. It's happened to me **twice**.",
+  "Description" : "When I try to use more than one payment type the transaction hangs up. It's happened to me **twice**.\n![thumbsdown.jpg](thumbsdown.jpg \"thumbsdown.jpg\")\n",
   "Environment" : "Production",
   "State" : "OPEN",
-  "UserID" : "8dba2d85-1108-417f-ad81-7a369e9e5d79.acmepaymentscorp",
-  "UserName" : "JaneMead",
-  "Created" : "2015-05-12T00:49:10Z",
+  "UserID" : "3a5aca42-498a-4341-a204-0694684fc05b.acmepaymentscorp",
+  "UserName" : "adminacmepaymentscorp",
+  "Created" : "2017-05-11T15:18:22Z",
   "Label" : [ "com.soa.ticket.label.priority.high" ],
   "Tag" : [ ],
   "Comments" : 0,
   "Marks" : 0,
-  "Visibility" : "Limited",
+  "Visibility" : "Public",
+  "PubDate" : "2017-05-11T15:18:22Z",
   "Image" : {
-    "Url" : "http://{hostname}/api/users/8dba2d85-1108-417f-ad81-7a369e9e5d79.acmepaymentscorp/avatar",
-    "Link" : "../acmepaymentscorp#/user/8dba2d85-1108-417f-ad81-7a369e9e5d79.acmepaymentscorp/details"
+    "Url" : "http://automation-acmepaymentscorp/api/users/avatar/_VSHJa4F1wLk54xM7MQkJIaA",
+    "Link" : "../atmosphere#/user/3a5aca42-498a-4341-a204-0694684fc05b.acmepaymentscorp/details"
   },
   "Published" : true,
   "DescriptionMediaType" : "text/markdown",
   "BoardItemArtifacts" : {
-    "BoardItemArtifact" : [ ]
+    "BoardItemArtifact" : [ {
+      "ContextID" : "132f7a34-b71f-448f-9a49-6e8777de2b4c.acmepaymentscorp",
+      "FileName" : "thumbsdown.jpg",
+      "BaseUri" : "http://automation-acmepaymentscorp",
+      "UriPath" : "/api/boards/items/132f7a34-b71f-448f-9a49-6e8777de2b4c.acmepaymentscorp/artifacts/thumbsdown.jpg"
+    } ]
   }
 }</pre>
-<p><strong>Sample response body: application/xml</strong></p>
+
+<p><strong>Sample response headers: application/vnd.soa.v81+xml</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/vnd.soa.v81+xml
+Date: Thu, 11 May 2017 15:38:55 GMT</pre>
+<p><strong>Sample response body: application/vnd.soa.v81+xml</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;Ticket xmlns="http://soa.com/xsd/ticket/1.0" xmlns:ns2="http://soa.com/xsd/api/1.0" 
-xmlns:ns3="http://soa.com/xsd/resource/1.0" xmlns:ns4="http://soa.com/xsd/business/1.0" 
-xmlns:ns5="http://soa.com/xsd/dnmodel/1.0" xmlns:ns6="http://soa.com/xsd/board/1.0" 
-xmlns:ns7="http://soa.com/xsd/app/1.0" xmlns:ns8="http://soa.com/xsd/user/1.0" 
-xmlns:ns9="http://soa.com/xsd/comment/1.0" xmlns:ns10="http://a9.com/-/spec/opensearch/1.1/" 
-xmlns:ns11="http://soa.com/xsd/alert/1.0" xmlns:ns12="http://soa.com/xsd/contract/1.0" 
-xmlns:ns13="http://soa.com/xsd/discussion/1.0" xmlns:ns14="http://soa.com/xsd/review/1.0"&gt;
-  &lt;TicketID&gt;ticket10843.acmepaymentscorp&lt;/TicketID&gt;
-  &lt;ns2:APIID&gt;ecbf7010-abcf-41f8-9f52-1c02b3a51984.atmosacmepaymentscorpphere&lt;/ns2:APIID&gt;
-  &lt;Title&gt;Bug when using multiple payment types&lt;/Title&gt;
-  &lt;Description&gt;When I try to use more than one payment type the transaction hangs up. It's happened to me **twice**.&lt;/Description&gt;
-  &lt;Environment&gt;Production&lt;/Environment&gt;
-  &lt;State&gt;OPEN&lt;/State&gt;
-  &lt;ns8:UserID&gt;8dba2d85-1108-417f-ad81-7a369e9e5d79.acmepaymentscorp&lt;/ns8:UserID&gt;
-  &lt;ns8:UserName&gt;JaneMead&lt;/ns8:UserName&gt;
-  &lt;Created&gt;2015-05-12T00:49:10Z&lt;/Created&gt;
-  &lt;Label&gt;com.soa.ticket.label.priority.high&lt;/Label&gt;
-  &lt;Comments&gt;0&lt;/Comments&gt;
-  &lt;Marks&gt;0&lt;/Marks&gt;
-  &lt;Visibility&gt;Limited&lt;/Visibility&gt;
+&lt;ns12:Ticket xmlns:ns2="http://soa.com/xsd/api/1.0" xmlns:ns3="http://soa.com/xsd/app/1.0" xmlns:ns4="http://soa.com/xsd/user/1.0" 
+xmlns:ns5="http://soa.com/xsd/dnmodel/1.0" xmlns:ns6="http://soa.com/xsd/comment/1.0" xmlns:ns7="http://soa.com/xsd/board/1.0" 
+xmlns:ns8="http://soa.com/xsd/resource/1.0" xmlns:ns9="http://soa.com/xsd/business/1.0" xmlns:ns10="http://soa.com/xsd/deploymentzone/1.0" 
+xmlns:ns11="http://soa.com/xsd/asset/1.0" xmlns:ns12="http://soa.com/xsd/ticket/1.0" xmlns:ns13="http://a9.com/-/spec/opensearch/1.1/" 
+xmlns:ns14="http://soa.com/xsd/review/1.0" xmlns:ns15="http://soa.com/xsd/alert/1.0" xmlns:ns16="http://soa.com/xsd/contract/1.0" 
+xmlns:ns17="http://soa.com/xsd/discussion/1.0"&gt;
+  &lt;ns12:TicketID&gt;132f7a34-b71f-448f-9a49-6e8777de2b4c.acmepaymentscorp&lt;/ns12:TicketID&gt;
+  &lt;ns2:APIID&gt;177f24e1-513f-4239-b20b-3d06d85bd15b.acmepaymentscorp&lt;/ns2:APIID&gt;
+  &lt;ns12:Title&gt;Bug when using multiple payment types&lt;/ns12:Title&gt;
+  &lt;ns12:Description&gt;When I try to use more than one payment type the transaction hangs up. It's happened to me **twice**.
+![thumbsdown.jpg](thumbsdown.jpg "thumbsdown.jpg")
+&lt;/ns12:Description&gt;
+  &lt;ns12:Environment&gt;Production&lt;/ns12:Environment&gt;
+  &lt;ns12:State&gt;OPEN&lt;/ns12:State&gt;
+  &lt;ns4:UserID&gt;3a5aca42-498a-4341-a204-0694684fc05b.acmepaymentscorp&lt;/ns4:UserID&gt;
+  &lt;ns4:UserName&gt;adminacmepaymentscorp&lt;/ns4:UserName&gt;
+  &lt;ns12:Created&gt;2017-05-11T15:18:22Z&lt;/ns12:Created&gt;
+  &lt;ns12:Label&gt;com.soa.ticket.label.priority.high&lt;/ns12:Label&gt;
+  &lt;ns12:Comments&gt;0&lt;/ns12:Comments&gt;
+  &lt;ns12:Marks&gt;0&lt;/ns12:Marks&gt;
+  &lt;ns12:Visibility&gt;Public&lt;/ns12:Visibility&gt;
+  &lt;ns12:PubDate&gt;2017-05-11T15:18:22Z&lt;/ns12:PubDate&gt;
   &lt;ns5:Image&gt;
-    &lt;ns5:Url&gt;http://{hostname}/api/users/8dba2d85-1108-417f-ad81-7a369e9e5d79.acmepaymentscorp/avatar&lt;/ns5:Url&gt;
-    &lt;ns5:Link&gt;../acmepaymentscorp#/user/8dba2d85-1108-417f-ad81-7a369e9e5d79.acmepaymentscorp/details&lt;/ns5:Link&gt;
+    &lt;ns5:Url&gt;http://automation-acmepaymentscorp/api/users/avatar/_VSHJa4F1wLk54xM7MQkJIaA&lt;/ns5:Url&gt;
+    &lt;ns5:Link&gt;../atmosphere#/user/3a5aca42-498a-4341-a204-0694684fc05b.acmepaymentscorp/details&lt;/ns5:Link&gt;
   &lt;/ns5:Image&gt;
-  &lt;Published&gt;true&lt;/Published&gt;
-  &lt;ns6:DescriptionMediaType&gt;text/markdown&lt;/ns6:DescriptionMediaType&gt;
-  &lt;ns6:BoardItemArtifacts /&gt;
-&lt;/Ticket&gt;
-</pre>
+  &lt;ns12:Published&gt;true&lt;/ns12:Published&gt;
+  &lt;ns7:DescriptionMediaType&gt;text/markdown&lt;/ns7:DescriptionMediaType&gt;
+  &lt;ns7:BoardItemArtifacts&gt;
+    &lt;ns7:BoardItemArtifact&gt;
+      &lt;ns7:ContextID&gt;132f7a34-b71f-448f-9a49-6e8777de2b4c.acmepaymentscorp&lt;/ns7:ContextID&gt;
+      &lt;ns7:FileName&gt;thumbsdown.jpg&lt;/ns7:FileName&gt;
+      &lt;ns7:BaseUri&gt;http://automation-acmepaymentscorp&lt;/ns7:BaseUri&gt;
+      &lt;ns7:UriPath&gt;/api/boards/items/132f7a34-b71f-448f-9a49-6e8777de2b4c.acmepaymentscorp/artifacts/thumbsdown.jpg&lt;/ns7:UriPath&gt;
+    &lt;/ns7:BoardItemArtifact&gt;
+  &lt;/ns7:BoardItemArtifacts&gt;
+&lt;/ns12:Ticket&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->
@@ -260,7 +279,7 @@ xmlns:ns13="http://soa.com/xsd/discussion/1.0" xmlns:ns14="http://soa.com/xsd/re
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

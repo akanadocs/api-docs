@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Users Service | Overview | Akana API Platform API
-description: The Users service provides operations for managing users in the platform, such as adding, modifying, and deleting users and retrieving user information.
+description:  The Users service provides operations for managing users in the platform, such as adding, modifying, and deleting users and retrieving user information.
 product: cm
 category: ref
 nav-title: Users Service 
@@ -14,6 +14,7 @@ no-catalog: false
 <h2><a name="top"></a>Users Service: Overview</h2>
 <p><!-- #BeginLibraryItem "/Library/descsvc_users.lbi" -->
 The Users service provides operations for managing users in the platform, such as adding, modifying, and deleting users and retrieving user information.<!-- #EndLibraryItem --></p>
+<p>Note: to return a list of all users, use the <span class="apidoc_code"><a href="search/m_search_search.htm">GET search</a></span> operation (Search service).</p>
 <p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users</span></p>
 
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2" summary="table description">
@@ -48,11 +49,18 @@ Changes the <a href="aaref/Ref_Values.htm#values_notificationstate">state</a> of
   </tr>
   <tr>
     <td>complete signup</td>
-    <td><a href="users/m_users_completeSignup.htm">POST&nbsp;/api/users/completeSignup Operation</a></td>
-    <td><!-- #BeginLibraryItem "/Library/desc_completeSignup.lbi" -->Registers the user, so the user can log in and perform authenticated actions.<!-- #EndLibraryItem --></td>
+    <td><a href="users/m_users_completeSignup.htm">POST&nbsp;/api/users/completeSignup</a> (deprecated; use <a href="users/m_users_completeSignUpAdvanced.htm">POST&nbsp;/api/users/completeSignup</a>, below, instead)</td>
+    <td><!-- #BeginLibraryItem "/Library/desc_completeSignup.lbi" -->
+Deprecated. Registers the user, so that the user can log in and perform authenticated actions. As of version 8.4, this operation is replaced by <span class="apidoc_code"><a href="users/m_users_completeSignUpAdvanced.htm">POST&nbsp;/api/users/completeSignup</a></span> (extended functionality, different headers). The pre-existing operation is supported for backwards compatibility, but it's best to use the new operation instead.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
-    <td>deleteUser</td>
+    <td>complete signup advanced</td>
+    <td><a href="users/m_users_completeSignUpAdvanced.htm">POST&nbsp;/api/users/completeSignup</a></td>
+    <td><!-- #BeginLibraryItem "/Library/desc_completeSignupAdvanced.lbi" -->
+Registers the user, so that the user can log in and perform authenticated actions. Use this operation, which offers extended functionality, rather than the pre-existing operation, <span class="apidoc_code"><a href="users/m_users_completeSignup.htm">POST&nbsp;/api/users/completeSignup</a></span> (with different headers).<!-- #EndLibraryItem --></td>
+  </tr>
+  <tr>
+    <td>delete user</td>
     <td><a href="users/m_users_deleteUser.htm">DELETE&nbsp;/api/users/{userID}</a></td>
     <td><!-- #BeginLibraryItem "/Library/desc_deleteUser.lbi" -->Deletes the specified site user.<!-- #EndLibraryItem --></td>
   </tr>
@@ -66,14 +74,14 @@ Changes the <a href="aaref/Ref_Values.htm#values_notificationstate">state</a> of
     <td>get APIs</td>
     <td><a href="users/m_users_getApis.htm">GET&nbsp;/api/users/{UserID}/apis</a></td>
     <td><!-- #BeginLibraryItem "/Library/desc_getApis.lbi" -->
-Returns information about the APIs that the specified user is connected to, either as an API Administrator or API Context Group member or as an app team member for an app that's subscribed to the API.<!-- #EndLibraryItem --></td>
+Returns information about the APIs that the specified user is connected to, either as an API Administrator or API Scope Group member or as an app team member for an app that's subscribed to the API.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>get apps</td>
     <td><a href="users/m_users_getApps.htm">GET&nbsp;/api/users/{UserID}/apps</a></td>
     <td><p><!-- #BeginLibraryItem "/Library/desc_getApps.lbi" -->
       Returns information about the apps for which the user is on the app team, and optionally also information about app versions. The information is returned as an RSS feed.<!-- #EndLibraryItem --></p>
-      <p><strong>Note</strong>: <a href="users/m_users_listApps.htm">GET&nbsp;/api/users/{UserID}/apps</a> (list apps, with custom Accept header) returns the same information as a JSON object. We recommend using that operation rather than this one.</p></td>
+      <p><strong>Note</strong>: <span class="apidoc_code"><a href="users/m_users_listApps.htm">GET&nbsp;/api/users/{UserID}/apps</a></span> (list apps, with custom Accept header) returns the same information as a JSON object. We recommend using that operation rather than this one.</p></td>
   </tr>
   <tr>
     <td>get authorization result</td>
@@ -194,11 +202,6 @@ Returns the roles the user has in relation to a specified resource.<!-- #EndLibr
     <td><!-- #BeginLibraryItem "/Library/desc_modifyUser.lbi" -->
 Modifies information about a platform user. <!-- #EndLibraryItem --></td>
   </tr>
-<!--  <tr>
-    <td>previewavatar is out</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>-->
   <tr>
     <td>resend activation</td>
     <td><a href="users/m_users_resendActivation.htm">POST&nbsp;/api/users/resendActivation</a></td>

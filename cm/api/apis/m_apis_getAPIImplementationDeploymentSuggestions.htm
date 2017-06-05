@@ -57,9 +57,9 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p id="id_samplerequest">The example below shows a request for information about eligible deployment zones for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/109f55fd-e007-493b-a28b-17fb8f1434b3.acmepaymentscorp/implementations/Live/deploymentsuggestions</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/8fff41fb-1dcf-4843-95d2-d96b5d41c956.acmepaymentscorp/implementations/live/deploymentsuggestions</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/apis/versions/109f55fd-e007-493b-a28b-17fb8f1434b3.acmepaymentscorp/implementations/Live/deploymentsuggestions HTTP/1.1
+<pre>GET /api/apis/versions/8fff41fb-1dcf-4843-95d2-d96b5d41c956.acmepaymentscorp/implementations/live/deploymentsuggestions HTTP/1.1
 Host: {hostname}
 Accept: application/vnd.soa.v81+json
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
@@ -82,7 +82,7 @@ Accept: application/vnd.soa.v81+json
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -144,48 +144,101 @@ A code for a specific implementation. Valid values: <strong>Live</strong> or <st
 
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h3 id="sampleresponse">Sample Response</h3>
-<p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation. In this example, there are three deployment zone endpoints (<a href="../Ref_Glossary_CommunityPlatform.htm#gl_listener">listeners</a>) set up for the deployment zone.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>HTTP/1.1 200 OK
-Date: Thu, 03 Mar 2016 15:04:10 GMT
-Content-Type: application/vnd.soa.v81+json</pre>
-<p><strong>Sample response body: application/json</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/vnd.soa.v81+json
+Date: Thu, 27 Apr 2017 14:56:32 GMT</pre>
+<p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
 <pre>{
   "DeploymentZonesHostingInfo" : [ {
-    "DeploymentZoneID" : "6a7bce7b-2c01-48d3-8faf-824a447d.acmepaymentscorp",
+    "DeploymentZoneID" : "9561a62d-cf13-47de-b746-a1306796cc00.automation",
     "DeploymentZoneEndpoint" : [ {
-      "DeploymentZoneID" : "6a7bce7b-2c01-48d3-8faf-824a447d.acmepaymentscorp",
-      "Protocol" : "http",
+      "DeploymentZoneID" : "9561a62d-cf13-47de-b746-a1306796cc00.automation",
       "ListenerName" : "default-http0",
-      "ContainerKey" : "6a7bce7b-2c01-48d3-8faf-824a447d",
-      "VirtualHost" : "api11192live.acmepaymentscorp.local.akana.com",
-      "Url" : "http://api11192live.acmepaymentscorp.local.akana.com:9901/",
-      "Path" : "/"
-    } ]
-  }, {
-    "DeploymentZoneID" : "f053959c-01b1-4b46-bbe1-affb691b.acmepaymentscorp",
-    "DeploymentZoneEndpoint" : [ {
-      "DeploymentZoneID" : "f053959c-01b1-4b46-bbe1-affb691b.acmepaymentscorp",
+      "ContainerKey" : "fae3-b808-4fc6-85aa-88518e2a81d7",
+      "GatewayHostName" : "api10063live.ubu1464qa-10.local.akana.com",
+      "GatewayHostPath" : "",
+      "EndpointHostName" : "api10063live.ubu1464qa-10.local.akana.com",
+      "EndpointPath" : "/",
       "Protocol" : "http",
-      "ListenerName" : "default-http0",
-      "ContainerKey" : "f053959c-01b1-4b46-bbe1-affb691b",
-      "VirtualHost" : "api11192live.acmepaymentscorp.local.akana.com",
-      "Url" : "http://api11192live.acmepaymentscorp.local.akana.com:9902/",
-      "Path" : "/"
-    } ]
-  }, {
-    "DeploymentZoneID" : "9a56c630-6d54-47b2-b270-a97deab7.acmepaymentscorp",
-    "DeploymentZoneEndpoint" : [ {
-      "DeploymentZoneID" : "9a56c630-6d54-47b2-b270-a97deab7.acmepaymentscorp",
+      "Path" : "",
+      "Url" : "http://api10063live.ubu1464qa-10.local.akana.com:7905"
+    }, {
+      "DeploymentZoneID" : "9561a62d-cf13-47de-b746-a1306796cc00.automation",
+      "ListenerName" : "https",
+      "ContainerKey" : "fae3-b808-4fc6-85aa-88518e2a81d7",
+      "GatewayHostName" : "api10063live.ubu1464qa-10.local.akana.com",
+      "GatewayHostPath" : "",
+      "EndpointHostName" : "api10063live.ubu1464qa-10.local.akana.com",
+      "EndpointPath" : "/",
+      "Protocol" : "https",
+      "Path" : "",
+      "Url" : "https://api10063live.ubu1464qa-10.local.akana.com:7908"
+    }, {
+      "DeploymentZoneID" : "9561a62d-cf13-47de-b746-a1306796cc00.automation",
+      "ListenerName" : "http2",
+      "ContainerKey" : "fae3-b808-4fc6-85aa-88518e2a81d7",
+      "GatewayHostName" : "api10063live.ubu1464qa-10.local.akana.com",
+      "GatewayHostPath" : "",
+      "EndpointHostName" : "api10063live.ubu1464qa-10.local.akana.com",
+      "EndpointPath" : "/",
       "Protocol" : "http",
-      "ListenerName" : "default-http0",
-      "ContainerKey" : "9a56c630-6d54-47b2-b270-a97deab7",
-      "VirtualHost" : "api11192live.acmepaymentscorp.local.akana.com",
-      "Url" : "http://api11192live.acmepaymentscorp.local.akana.com:9903/",
-      "Path" : "/"
+      "Path" : "",
+      "Url" : "http://api10063live.ubu1464qa-10.local.akana.com:7906"
     } ]
   } ]
 }</pre>
+
+<p><strong>Sample response headers: application/vnd.soa.v81+xml</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/vnd.soa.v81+xml
+Date: Thu, 27 Apr 2017 14:59:51 GMT</pre>
+<p><strong>Sample response body: application/vnd.soa.v81+xml</strong></p>
+<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
+&lt;ns7:APIImplementationDeployments xmlns:ns2="http://soa.com/xsd/resource/1.0" xmlns:ns3="http://soa.com/xsd/business/1.0" 
+xmlns:ns4="http://soa.com/xsd/deploymentzone/1.0" xmlns:ns5="http://soa.com/xsd/asset/1.0" xmlns:ns6="http://soa.com/xsd/dnmodel/1.0" 
+xmlns:ns7="http://soa.com/xsd/api/1.0" xmlns:ns8="http://soa.com/xsd/legals/1.0"&gt;
+  &lt;ns7:DeploymentZonesHostingInfo&gt;
+    &lt;ns4:DeploymentZoneID&gt;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&lt;/ns4:DeploymentZoneID&gt;
+    &lt;ns7:DeploymentZoneEndpoint&gt;
+      &lt;ns4:DeploymentZoneID&gt;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&lt;/ns4:DeploymentZoneID&gt;
+      &lt;ns7:ListenerName&gt;default-http0&lt;/ns7:ListenerName&gt;
+      &lt;ns7:ContainerKey&gt;fae3-b808-4fc6-85aa-88518e2a81d7&lt;/ns7:ContainerKey&gt;
+      &lt;ns7:GatewayHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:GatewayHostName&gt;
+      &lt;ns7:GatewayHostPath&gt;&lt;/ns7:GatewayHostPath&gt;
+      &lt;ns7:EndpointHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:EndpointHostName&gt;
+      &lt;ns7:EndpointPath&gt;/&lt;/ns7:EndpointPath&gt;
+      &lt;ns7:Protocol&gt;http&lt;/ns7:Protocol&gt;
+      &lt;ns7:Path&gt;&lt;/ns7:Path&gt;
+      &lt;ns7:Url&gt;http://api10063live.ubu1464qa-10.local.akana.com:7905&lt;/ns7:Url&gt;
+    &lt;/ns7:DeploymentZoneEndpoint&gt;
+    &lt;ns7:DeploymentZoneEndpoint&gt;
+      &lt;ns4:DeploymentZoneID&gt;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&lt;/ns4:DeploymentZoneID&gt;
+      &lt;ns7:ListenerName&gt;https&lt;/ns7:ListenerName&gt;
+      &lt;ns7:ContainerKey&gt;fae3-b808-4fc6-85aa-88518e2a81d7&lt;/ns7:ContainerKey&gt;
+      &lt;ns7:GatewayHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:GatewayHostName&gt;
+      &lt;ns7:GatewayHostPath&gt;&lt;/ns7:GatewayHostPath&gt;
+      &lt;ns7:EndpointHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:EndpointHostName&gt;
+      &lt;ns7:EndpointPath&gt;/&lt;/ns7:EndpointPath&gt;
+      &lt;ns7:Protocol&gt;https&lt;/ns7:Protocol&gt;
+      &lt;ns7:Path&gt;&lt;/ns7:Path&gt;
+      &lt;ns7:Url&gt;https://api10063live.ubu1464qa-10.local.akana.com:7908&lt;/ns7:Url&gt;
+    &lt;/ns7:DeploymentZoneEndpoint&gt;
+    &lt;ns7:DeploymentZoneEndpoint&gt;
+      &lt;ns4:DeploymentZoneID&gt;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&lt;/ns4:DeploymentZoneID&gt;
+      &lt;ns7:ListenerName&gt;http2&lt;/ns7:ListenerName&gt;
+      &lt;ns7:ContainerKey&gt;fae3-b808-4fc6-85aa-88518e2a81d7&lt;/ns7:ContainerKey&gt;
+      &lt;ns7:GatewayHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:GatewayHostName&gt;
+      &lt;ns7:GatewayHostPath&gt;&lt;/ns7:GatewayHostPath&gt;
+      &lt;ns7:EndpointHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:EndpointHostName&gt;
+      &lt;ns7:EndpointPath&gt;/&lt;/ns7:EndpointPath&gt;
+      &lt;ns7:Protocol&gt;http&lt;/ns7:Protocol&gt;
+      &lt;ns7:Path&gt;&lt;/ns7:Path&gt;
+      &lt;ns7:Url&gt;http://api10063live.ubu1464qa-10.local.akana.com:7906&lt;/ns7:Url&gt;
+    &lt;/ns7:DeploymentZoneEndpoint&gt;
+  &lt;/ns7:DeploymentZonesHostingInfo&gt;
+&lt;/ns7:APIImplementationDeployments&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -203,7 +256,7 @@ Content-Type: application/vnd.soa.v81+json</pre>
   <tbody>
     <tr>
       <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
@@ -255,7 +308,7 @@ Content-Type: application/vnd.soa.v81+json</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

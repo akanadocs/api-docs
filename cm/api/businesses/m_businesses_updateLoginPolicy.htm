@@ -59,17 +59,19 @@ no-catalog: true
 <p><strong>Request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->businesses/tenantbusiness.acmepaymentscorp/loginpolicy</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json
-Content-Type: application/json
+<pre>Accept: application/vnd.soa.v81+json
+Content-Type: application/vnd.soa.v81+json
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "MaxSequentialFailureAttemptsAllowed" : 3,
-  "AttemptsPeriod" : 1,
-  "SuspensionMinutes" : 30,
-  "AutoLoginExternalDomain" : "com.soa.feature.enabled",
-  &quot;ActiveSessionTimeout&quot; : 0
-  &quot;InactiveSessionTimeout&quot; : 30
+  &quot;MaxSequentialFailureAttemptsAllowed&quot; : 0,
+  &quot;AttemptsPeriod&quot; : 0,
+  &quot;SuspensionMinutes&quot; : 0,
+  &quot;AutoLoginExternalDomain&quot; : &quot;com.soa.feature.disabled&quot;,
+  &quot;LoginSessionTimeout&quot; : 0,
+  &quot;ActiveSessionTimeout&quot; : 0,
+  &quot;InactiveSessionTimeout&quot; : 300,
+  &quot;PersistentSession&quot; : true
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -163,27 +165,32 @@ Content-Type: application/json
 Expires: Tue, 15 Dec 2015 16:00:00 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  &quot;MaxSequentialFailureAttemptsAllowed&quot; : 3,
-  &quot;AttemptsPeriod&quot; : 1,
-  &quot;SuspensionMinutes&quot; : 30,
-  &quot;AutoLoginExternalDomain&quot; : &quot;com.soa.feature.enabled&quot;,
-  &quot;ActiveSessionTimeout&quot; : 0
-  &quot;InactiveSessionTimeout&quot; : 30
+  &quot;MaxSequentialFailureAttemptsAllowed&quot; : 0,
+  &quot;AttemptsPeriod&quot; : 0,
+  &quot;SuspensionMinutes&quot; : 0,
+  &quot;AutoLoginExternalDomain&quot; : &quot;com.soa.feature.disabled&quot;,
+  &quot;LoginSessionTimeout&quot; : 0,
+  &quot;ActiveSessionTimeout&quot; : 0,
+  &quot;InactiveSessionTimeout&quot; : 300,
+  &quot;PersistentSession&quot; : true
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <p><strong>Sample response headers: application/xml</strong></p>
 <pre>Status Code: 200 OK
-Content-Type: application/xml
-Expires: Tue, 15 Dec 2015 16:00:00 GMT</pre>
+Content-Type: application/vnd.soa.v81+json
+Date: Thu, 27 Apr 2017 19:47:17 GMT</pre>
 <p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;LoginPolicy xmlns="http://soa.com/xsd/business/1.0" xmlns:ns2="http://soa.com/xsd/legals/1.0" xmlns:ns3="http://soa.com/xsd/dnmodel/1.0" xmlns:ns4="http://soa.com/xsd/api/1.0"&gt;
-  &lt;MaxSequentialFailureAttemptsAllowed&gt;3&lt;/MaxSequentialFailureAttemptsAllowed&gt;
-  &lt;AttemptsPeriod&gt;1&lt;/AttemptsPeriod&gt;
-  &lt;SuspensionMinutes&gt;30&lt;/SuspensionMinutes&gt;
-  &lt;AutoLoginExternalDomain&gt;com.soa.feature.enabled&lt;/AutoLoginExternalDomain&gt;
+<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;LoginPolicy xmlns=&quot;http://soa.com/xsd/business/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/legals/1.0&quot; 
+xmlns:ns3=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/api/1.0&quot;&gt;
+  &lt;MaxSequentialFailureAttemptsAllowed&gt;0&lt;/MaxSequentialFailureAttemptsAllowed&gt;
+  &lt;AttemptsPeriod&gt;0&lt;/AttemptsPeriod&gt;
+  &lt;SuspensionMinutes&gt;0&lt;/SuspensionMinutes&gt;
+  &lt;AutoLoginExternalDomain&gt;com.soa.feature.disabled&lt;/AutoLoginExternalDomain&gt;
+  &lt;LoginSessionTimeout&gt;0&lt;/LoginSessionTimeout&gt;
   &lt;ActiveSessionTimeout&gt;0&lt;/ActiveSessionTimeout&gt;
-  &lt;InactiveSessionTimeout&gt;30&lt;/InactiveSessionTimeout&gt;
+  &lt;InactiveSessionTimeout&gt;300&lt;/InactiveSessionTimeout&gt;
+  &lt;PersistentSession&gt;true&lt;/PersistentSession&gt;
 &lt;/LoginPolicy&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -258,7 +265,7 @@ Expires: Tue, 15 Dec 2015 16:00:00 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

@@ -26,8 +26,18 @@ no-catalog: true
 
 
 
+<dt><a name="gl_admin"></a>admin (group)</dt>
+<dd>In the context of an <a href="#gl_apiscopegroup">API Scope Group</a>, an Admin is the top-level group member, and can perform any functions associated with the group.</dd>
+
+
+
 <dt><a name="gl_ajax"></a>Ajax</dt>
 <dd>An abbreviation for <strong>Advanced JavaScript and XML</strong>&#8212;A term for a set of related web development techniques that can be used together to update parts of a webpage without reloading the entire page. For an example of how the platform works with Ajax, see <a href="aaref/Ref_FileUploadWithAjax.htm">File Upload with Ajax</a>.</dd>
+
+
+
+<dt>Akana API Gateway</dt>
+<dd>See <a href="#gl_gateway">gateway</a>.</dd>
 
 
 
@@ -52,13 +62,7 @@ no-catalog: true
 
 
 <dt><a name="gl_apiadmin"></a>API Administrator</dt>
-<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#gl_forum">Forum (Board)</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_apiadmin">Managing Groups on the Platform</a>.</dd>
-
-
-
-<dt><a name="gl_apicontextgroup"></a>API Context Group</dt>
-<dd>A group directly associated with a specific version of a specific API, public or private, and created by an API admin for that API. Each member has a group member role, either as <a href="#gl_member">member</a> or <a href="#gl_leader">leader</a>. Each group can have multiple leaders as well as members. An API Context Group is uniquely related to its API version and does not exist independently of it. If the API version is deleted, any API Context Groups associated with that version are also deleted, whereas independent platform groups associated with the API are not. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_apicontext">Managing Groups on the Platform</a>.</dd>
-<dd><strong>Note</strong>: In the past, we used the terms Private API group. However, since the licenses feature was implemented, API visibility is affected by multiple factors. For this reason, the term was changed to API Context Group. We also used the term scope group.</dd>
+<dd>One of the <a href="#gl_role">roles</a> defined in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;is that of the API Admin. Each API must have at least one Admin, and can have more. The API Admin approves or rejects connection requests, moderates the API's <a href="#gl_forum">Forum (Board)</a>, views and manages alerts and trouble tickets, and manages documents, policies, and other information associated with the API. The API Admin can also view performance and usage data for the entire API, and can invite others to be Admins for the same API. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_apiadmin">Managing Groups on the Platform</a>.</dd>
 
 
 
@@ -68,13 +72,21 @@ no-catalog: true
 
 
 
+<dt><a name="gl_apiscopegroup"></a>API Scope Group</dt>
+<dd>A group directly associated with a specific version of a specific API, public or private, and created by an API admin for that API.</dd>
+<dd>An API scope group is uniquely related to an API. There are two types: <strong>Independently Managed</strong>, which can exist separately from the API, and <strong>Not Independently Managed</strong>, which is automatically deleted if the API is deleted.</dd>
+<dd>Each member has a group member role, as a <a href="#gl_member">Member</a>, <a href="#gl_leader">Leader</a>, or <a href="#gl_admin">Admin</a>. Each group can have multiple Admins, Leaders, and Members.</dd>
+<dd><strong>Note</strong>: In the past, we used the term Private API Group. However, since the licenses feature was implemented, API visibility is affected by multiple factors. For this reason, the term was changed to API Scope Group. We also used the term API Context Group.</dd>
+
+
+
 <dt><a name="gl_app"></a>app</dt>
 <dd>An app (application) is a piece of software that delivers specific capabilities to its users. In the context of the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, an app is a piece of software that consumes one or more APIs.</dd>
 
 
 
 <dt><a name="gl_appteammember"></a>app team member</dt>
-<dd>One of the <a href="#gl_role">roles</a> defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's <a href="#gl_forum">Forum (Board)</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_appteam">Managing Groups on the Platform</a>.</dd>
+<dd>One of the <a href="#gl_role">roles</a> defined in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;is that of the app team member. Each app must have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's <a href="#gl_forum">Forum (Board)</a>, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_appteam">Managing Groups on the Platform</a>.</dd>
 
 
 
@@ -117,7 +129,7 @@ no-catalog: true
 
 <dt><a name="gl_atmoauthtoken"></a>AtmoAuthToken</dt>
 <dd>A tenant-specific cookie. This is the platform's authorization token. The token is returned in the Set-Cookie response header. This cookie indicates the level of access allowed. It is valid only for 30 minutes and must be renewed at that time. It also includes other information, such as the APIs, apps, and groups the user is a member of. When any of this information changes, the token must be renewed.</dd>
-<dd>Because the AtmoAuthToken includes a lot of information about the user, in some cases the token is long, and could potentially cause requests to fail if the server has a limitation on HTTP header length. For this reason, container configuration properties include authTokenMaxLength. When the AtmoAuthToken would be greater than the max length, the platform creates a mini auth token, and saves the full auth token in the database.</dd>
+<dd>Because the AtmoAuthToken includes a lot of information about the user, in some cases, the token is long, and could potentially cause requests to fail if the server has a limitation on HTTP header length. For this reason, container configuration properties include authTokenMaxLength. When the AtmoAuthToken would be greater than the max length, the platform creates a mini auth token, and saves the full auth token in the database.</dd>
 
 
 
@@ -137,18 +149,18 @@ no-catalog: true
 
 
 <dt><a name="gl_autoconnect"></a>auto-connect</dt>
-<dd>An API setting that allows a contract to be created automatically with the API when a new app is created. The auto-connect feature can be specified per <a href="#gl_environment">environment</a> and can also be limited to specific <a href="#gl_license">licenses</a>.</dd>
+<dd>An API setting that allows a contract to be created automatically with the API when a new app is created. The auto-connect feature can be specified per <a href="#gl_environment_old">environment</a> and can also be limited to specific <a href="#gl_license">licenses</a>.</dd>
 
 
 
 <dt><a name="gl_avatar"></a>avatar</dt>
-<dd>Within the platform, an avatar is an image that can be associated with a resource such as an app, API, user, or API Context Group.</dd>
+<dd>Within the platform, an avatar is an image that can be associated with a resource such as an app, API, user, or group.</dd>
 
 
 
 <dt><a name="gl_saml_base_url"></a>Base URL</dt>
 <dd>In setting up the <a href="#gl_saml">SAML</a> identity provider in Policy Manager, the platform provides a specific URL to be used for instances where the Identity Provider, when encountering an error, returns the error response to the default Service Provider endpoint rather than just showing the error on the authentication page. PingFederate is an example of an Identity Provider that returns an error response in this way.</dd>
-<dd>To construct the endpoint to be used for error responses, the platform needs to know the {protocol_scheme}://{host}:{port}&gt; of the container where the SAML Web SSO domain is initialized. This is the base URL.</dd>
+<dd>To construct the endpoint to be used for error responses, the platform needs to know the {protocol_scheme}://{host}:{port} of the container where the SAML Web SSO domain is initialized. This is the base URL.</dd>
 
 
 
@@ -178,7 +190,7 @@ no-catalog: true
 
 
 <dt><a name="gl_businessadmin"></a>Business Administrator</dt>
-<dd>One of the roles defined in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> is that of the <a href="aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a>. A business can own one or more APIs and apps, and must have at least one Administrator. The Business Administrator automatically has administrator rights over all the APIs and apps owned by the business as well as all the users who are part of the business. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_bizadmin">Managing Groups on the Platform</a>.</dd>
+<dd>One of the roles defined in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;is that of the <a href="aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Administrator</a>. A business can own one or more APIs and apps, and must have at least one Administrator. The Business Administrator automatically has administrator rights over all the APIs and apps owned by the business as well as all the users who are part of the business. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_bizadmin">Managing Groups on the Platform</a>.</dd>
 
 
 
@@ -265,7 +277,7 @@ no-catalog: true
 
 
 <dt><a name="gl_connection"></a>connection</dt>
-<dd>A relationship between resources in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> &#8212;such as the API access relationship between an app and an API that it's using.</dd>
+<dd>A relationship between resources in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;&#8212;such as the API access relationship between an app and an API that it's using.</dd>
 
 
 
@@ -296,7 +308,7 @@ no-catalog: true
 
 
 <dt><a name="gl_coordinateduniversaltime"></a>Coordinated Universal Time (UTC)</dt>
-<dd>Coordinated Universal Time (UTC), also called Zulu time, is the primary time standard in general use. It essentially equates to Greenwich Mean Time (GMT), but is more scientifically precise. In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API, time values are represented in the standard UTC date/time format <strong>YYYY-MM-DDTHH:MM:SSZ</strong>. Example: <strong>2013-12-31T15:45:00-04:00Z</strong>.</dd>
+<dd>Coordinated Universal Time (UTC), also called Zulu time, is the primary time standard in general use. It essentially equates to Greenwich Mean Time (GMT), but is more scientifically precise. In the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API, time values are represented in the standard UTC date/time format <strong>YYYY-MM-DDTHH:MM:SSZ</strong>. Example: <strong>2013-12-31T15:45:00-04:00Z</strong>.</dd>
 <dd>Epoch time, also called Unix time, is defined as the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time; Thursday, 1 January 1970. In some cases we use this value in response messages, expressed in milliseconds.</dd>
 
 
@@ -385,7 +397,7 @@ no-catalog: true
 
 <dt><a name="gl_discussion"></a>discussion</dt>
 <dd>In the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, an authorized user can create a discussion topic about a resource (app or API) on the resource's Board. A discussion is typically, but not necessarily, created by someone other than the owner or administrator of the resource. Discussion entries are not threaded; users comment on the original item rather than on the comments/replies to the original item. Users can, however, <a href="#gl_mark">mark</a> or <a href="#gl_unmark">unmark</a> the discussion itself and/or one or more discussion comments.</dd>
-<dd>Each discussion has a title and one or more comments. The visibility of a discussion is controlled by the visibility of the resource it's associated with; for example, a discussion about a Limited (Private) API can only be seen by administrators and API Context Group members associated with that API.</dd>
+<dd>Each discussion has a title and one or more comments. The visibility of a discussion is controlled by the visibility of the resource it's associated with; for example, a discussion about a Limited (Private) API can only be seen by administrators and API Scope Group members associated with that API.</dd>
 
 
 
@@ -430,12 +442,12 @@ no-catalog: true
 
 
 <dt><a name="gl_environment"></a>environment</dt>
-<dd>An app/API contract can apply either to the Sandbox environment, which is a testing area, or the production environment. See also <a href="aaref/Ref_Values.htm#values_contractenvironment">App/API Contract Environment Values</a>.</dd>
-
+<dd>A state defined by a workflow that corresponds to a software lifecycle stage (for example, Dev, Test, QA, Production).</dd>
+<dd>An Environment has its own representation, or data model, for an API. and the assets that support that API. A customer may have several Environments in which the same API exists. Each Environment serves a different purpose such as development, testing, staging, or finally serving the business (production). Environments are typically chained together in an order of use, reflecting the development lifecycle. For example, development is before testing. An API is created first in the development Environment, and then in the test Environment. Changes to an API are made in the development Environment before being made in the test Environment.</dd>
 
 
 <dt><a name="gl_epochtime"></a>epoch time</dt>
-<dd>Epoch time, also called Unix time, is defined as the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time; Thursday, 1 January 1970. In some cases the developer platform uses this value in response messages, expressed in milliseconds.</dd>
+<dd>Epoch time, also called Unix time, is defined as the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time; Thursday, 1 January 1970. In some cases, the developer platform uses this value in response messages, expressed in milliseconds.</dd>
 
 
 
@@ -457,7 +469,7 @@ no-catalog: true
 
 
 <dt><a name="gl_federation"></a>federation</dt>
-<dd>Two or more <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> <a href="#gl_tenant">tenants</a> who have unified to create a community in which APIs can be shared by users of both tenants.</dd>
+<dd>Two or more&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;<a href="#gl_tenant">tenants</a> who have unified to create a community in which APIs can be shared by users of both tenants.</dd>
 <dd>The systems that participate in a federation (federation members, tenants) share information without requiring duplication of that information in each member and without relinquishing control of the information. Developers who sign up as users of one federation member can access information from a second federation member directly, without the need for signup or authentication by the second member. A federation setup requires the establishment of a trust relationship between federation members.</dd>
 
 
@@ -495,14 +507,25 @@ no-catalog: true
 
 
 
+<dt><a name="gl_forwardproxy"></a>forward proxy</dt>
+<dd>In general, a forward proxy is a server that acts as an intermediary, generally between client requests and another server.</dd>
+<dd>In the context of the API platform, if an API is using the platform as a proxy, calls from clients to the API are sent to the platform and, from there, redirected to the API live endpoint. The developer portal includes a configuration setting (<strong>Administration</strong> &gt; <strong>Site</strong>) that allows the Site Admin to limit forward proxy activity to one or more specified hosts.</dd>
+
+
+
+<dt><a name="gl_gateway"></a>gateway</dt>
+<dd>An Akana API Gateway streamlines management, deployment, development, and operation of APIs, enhancing security and regulatory compliance through authentication, authorization, and audit capabilities. It provides central definition and management of security, routing, orchestration, mediation, auditing, threat protection, and other operational governance policies across multiple instances. The Gateway enables enterprises to standardize API and service delivery with high security, performance, and availability.</dd>
+
+
+
 <dt><a name="gl_group"></a>group</dt>
-<dd>1) The term "group" is used in many instances to refer to any of the following types of groups in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->: app teams, API Context Groups, API Administrator groups, Site Administrator groups, or independent groups.</dd>
-<dd>2) &quot;Group&quot; is sometimes used specifically to mean an <a href="#gl_apicontextgroup">API Context Group</a>.</dd>
+<dd>1) The term "group" is used in many instances to refer to any of the following types of groups in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->: app teams, API Scope Groups, API Administrator groups, Site Administrator groups, or independent groups.</dd>
+<dd>2) &quot;Group&quot; is sometimes used specifically to mean an <a href="#gl_apiscopegroup">API Scope Group</a>.</dd>
 
 
 
 <dt><a name="gl_groupadministrator"></a>group administrator</dt>
-<dd>For an independent group on the platform, the administrator has greater rights than a <a href="#gl_leader">leader</a> or <a href="#gl_member">member</a>. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_independentgroup">Managing Groups on the Platform</a>. For an <a href="#gl_apicontextgroup">API Context Group</a>, the Administrator role is held by the API Administrator.</dd>
+<dd>For an independent group on the platform, the administrator has greater rights than a <a href="#gl_leader">leader</a> or <a href="#gl_member">member</a>. For more information, see <a href="aaref/Ref_ManagingGroupsOnThePlatform.htm#groups_independentgroup">Managing Groups on the Platform</a>. For an <a href="#gl_apiscopegroup">API Scope Group</a>, the Administrator role is held by the API Administrator.</dd>
 
 
 
@@ -553,7 +576,7 @@ no-catalog: true
 
 
 <dt><a name="gl_homepage"></a>home page</dt>
-<dd>A user who signs up to the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> has a customized <a href="#gl_dashboard">Dashboard</a> which is that user's home page&#8212;the first page the user sees when logging in. A user who hasn't signed up doesn't have a home page.</dd>
+<dd>A user who signs up to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;has a customized <a href="#gl_dashboard">Dashboard</a> which is that user's home page&#8212;the first page the user sees when logging in. A user who hasn't signed up doesn't have a home page.</dd>
 
 
 
@@ -579,8 +602,14 @@ When adding an app version, you can specify a custom identity name for the app v
 
 
 
+<dt><a name="gl_environment_old"></a>implementation (previously called environment)</dt>
+<dd>See <a href="#gl_implementation">implementation (of an API)</a> below.</dd>
+
+
+
 <dt><a name="gl_implementation"></a>implementation (of an API)</dt>
 <dd>Different implementations of an API represent the different endpoints of the API in the same lifecycle stage. For example, it is common for an API to have Sandbox and Live implementations.</dd>
+<dd>An app/API contract can apply either to the Sandbox implementation, which is a testing area, or the production implementation.</dd>
 
 
 
@@ -659,7 +688,7 @@ LaaS is a Lifecycle Manager offering in the cloud. You can use this service in m
 
 
 <dt><a name="gl_leader"></a>leader</dt>
-<dd>In the context of an <a href="#gl_apicontextgroup">API Context Group</a>, a leader is a senior group member. A leader can invite additional members to the group and can change another member's status, from <a href="#gl_member">member</a> to leader or vice versa.</dd>
+<dd>In the context of an <a href="#gl_apiscopegroup">API Scope Group</a>, a Leader has more capabilities than a group Member, but is not as senior as a group Admin.</dd>
 
 
 
@@ -679,9 +708,23 @@ LaaS is a Lifecycle Manager offering in the cloud. You can use this service in m
 
 
 
+<dt><a name="gl_lm"></a>Lifecycle Manager</dt>
+<dd>Lifecycle Manager is a metadata repository and SDLC management product that enables enterprises to effectively collaborate between business, developers, and IT operations, resulting in rapid development and deployment cycles while increasing reliability, stability, and availability of their APIs and supporting assets.</dd>
+<!--<dd>Lifecycle Manager, an Akana product, is a development-time Software Development Asset (SDA) repository and governance platform (library) that allows enterprises to easily represent and search for key development assets (external, industry-standard assets and also in-house development assets) within an application development environment, in a graphical, intuitive way.</dd>-->
+<dd>Lifecycle Manager provides an intelligent inventory of assets and includes their relationships to each other, to the technical infrastructure, and to the company's business architecture. Through the use of Lifecycle Manager, organizations can accelerate reuse and SOA initiatives, as well as improve the governance over production and consumption of services and other reusable assets. Application developers, business analysts, and technical and business architects can search the repository for the company's SDAs, to identify those that best match business and technical requirements for application development and integration.</dd>
+
+
+
 <dt><a name="gl_app_limited"></a>limited-visibility app</dt>
 <dd><!-- #BeginLibraryItem "/Library/define_visibility.lbi" -->
 There are two visibility settings for an app: <strong>public</strong> and <strong>limited</strong>. Public means that anyone can see information about the app. Limited visibility means that the app is private; only app team members can see information about the app.<!-- #EndLibraryItem --> For more information, see <a href="aaref/Ref_PublicandPrivateApps.htm">Public and Limited (Private) Apps</a>.</dd>
+
+
+
+<dt><a name="gl_listener"></a>listener</dt>
+<dd>In general, a listener is an object that executes some code when triggered by an event. A listener monitors events happening in the program and acts based on how it's programmed to act in certain events.</dd>
+<dd>In the context of the API platform, a listener is the server process that listens for and accepts incoming connection requests from client applications. Each deployment zone is based on an API Gateway; one or more listeners are defined for the API Gateway. The deployment zone can use one or more of the listeners defined for the API Gateway.</dd>
+<dd>Policy Manager supports the following listener types: HTTP, HTTPS, JMS, AMQP. The developer portal supports HTTP and HTTPS.</dd>
 
 
 
@@ -707,12 +750,12 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_member"></a>member</dt>
-<dd>In the context of an <a href="#gl_apicontextgroup">API Context Group</a>, a group member has access to all information relating to the Private API and the group, including tickets and discussions. Members cannot invite additional members or change the status of other members. A member can be promoted to <a href="#gl_leader">leader</a> status by the API Admin or by another leader.</dd>
+<dd>In the context of an <a href="#gl_apiscopegroup">API Scope Group</a>, a group member has access to all information relating to the API and the group, including tickets and discussions. Members cannot invite additional members or change the status of other members.</dd>
 
 
 
 <dt><a name="gl_membershiprequest"></a>membership request (invitation)</dt>
-<dd>An invitation to another individual, whether a registered user or not, to join an <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
+<dd>An invitation to another individual, whether a registered user or not, to join an&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;group or team such as an app team. API Administrators can invite others to be API Administrators; app team members can invite others to the app team. A Site Administrator, Private API Administrator, or Independent Group member can also issue a membership request in the same way.</dd>
 
 
 
@@ -738,7 +781,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_oauth_accesstoken"></a>OAuth access token</dt>
-<dd>In OAuth, an access token is essentially a pass, a credential that gives authorization to access the requested and approved resource or resources for as long as the access token remains valid. In some cases, access tokens can be renewed by means of a <a href="#gl_oauth_refreshtoken">refresh token</a>; in some cases they cannot. For more information, refer to <a href="http://tools.ietf.org/html/rfc6749" target="_blank">the OAuth 2.0 specification</a> (external site).</dd>
+<dd>In OAuth, an access token is essentially a pass, a credential that gives authorization to access the requested and approved resource or resources for as long as the access token remains valid. In some cases, access tokens can be renewed by means of a <a href="#gl_oauth_refreshtoken">refresh token</a>; in some cases, they cannot. For more information, refer to <a href="http://tools.ietf.org/html/rfc6749" target="_blank">the OAuth 2.0 specification</a> (external site).</dd>
 
 
 
@@ -761,7 +804,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 <dt><a name="gl_oauth_authorizationserverurl"></a>OAuth authorization server URL</dt>
 <dd>As part of setting up the OAuth domain, the Site Admin must specify the Authorization Server URL. This is the URL that the browser for the resource owner (app user) will be accessing for the OAuth grant. It is the URL at which the OAuth Provider accesses the requests, for both Authorization Endpoint and Token Endpoint.</dd>
-<dd>The URL must be accessible to all the apps and end users that might use APIs that are referencing the OAuth domain. The Authorization Endpoint and Token Endpoint for OAuth 10.a and OAuth 2.0 will use different paths according to the specific OAuth version. Firewalls and DNS servers must be set up for this URL so that end users and apps can access the URL.</dd>
+<dd>The URL must be accessible to all the apps and end users that might use APIs that are referencing the OAuth domain. The Authorization Endpoint and Token Endpoint for OAuth 1.0a and OAuth 2.0 will use different paths according to the specific OAuth version. Firewalls and DNS servers must be set up for this URL so that end users and apps can access the URL.</dd>
 
 
 
@@ -869,7 +912,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_orchestration"></a>orchestration (API)</dt>
-<dd>An orchestration creates a service that is implemented with a process, rather than being simply a proxy of another service. The orchestration process itself might invoke multiple APIs (but does not necessarily) and might aggregrate responses or take other actions to process a request. A <a href="#gl_mockservice">mock service</a> is a type of orchestration. An orchestration is at an operation level, nor a service level.</dd>
+<dd>An orchestration creates a service that is implemented with a process, rather than being simply a proxy of another service. The orchestration process itself might invoke multiple APIs (but does not necessarily) and might aggregate responses or take other actions to process a request. A <a href="#gl_mockservice">mock service</a> is a type of orchestration. An orchestration is at an operation level, nor a service level.</dd>
 
 
 
@@ -916,22 +959,22 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_privateapi"></a>Private API</dt>
-<dd>An <a href="#gl_api">API</a> that is designated with a <a href="#gl_visibility_api">visibility</a> of Limited. A Private API and all content associated with it including documentation, discussions, tickets, and reviews is invisible to all users who are not specifically authorized to view it. Only Administrators and API Context Group members who have specifically been granted access can see the Private API.</dd>
+<dd>An <a href="#gl_api">API</a> that is designated with a <a href="#gl_visibility_api">visibility</a> of Limited. A Private API and all content associated with it including documentation, discussions, tickets, and reviews is invisible to all users who are not specifically authorized to view it. Only Administrators and members of API Scope Groups that have specifically been granted access can see the Private API.</dd>
 
 
 
 <dt>Private API Group</dt>
-<dd>See <a href="#gl_apicontextgroup">API Context Group</a>.</dd>
+<dd>See <a href="#gl_apiscopegroup">API Scope Group</a>.</dd>
 
 
 
 <dt><a name="gl_private"></a>private resource</dt>
-<dd>A resource that is designated as Private can only be accessed by authorized users. A Private API can only be seen by an API Administrator, API Context Group Member, business administrator, or site administrator; a Private App can only be seen by app team members and the business or site administrators; a Private Group can only be seen by invited group members and the business or site administrators.</dd>
+<dd>A resource that is designated as Private can only be accessed by authorized users. A Private API can only be seen by an API Administrator, API Scope Group Member, business administrator, or site administrator; a Private App can only be seen by app team members and the business or site administrators; a Private Group can only be seen by invited group members and the business or site administrators.</dd>
 
 
 
 <dt><a name="gl_proxyapi"></a>proxy API</dt>
-<dd>When you set up your API on the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
+<dd>When you set up your API on the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
 
 
 
@@ -942,8 +985,8 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_pki"></a>public key integration (PKI)</dt>
-<dd>When a user registers an app in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, the Shared Secret security option is the default. App owners who want to use Public Key Infrastructure (PKI) for secure message signing must specify Public Key Integration as the security option in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> user interface, on the App Details page.</dd>
-<dd>To implement PKI, the app owner must get a public/private key pair, upload the public key to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, and use the private key for signing the API requests. The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API verifies each incoming request using the public key.</dd>
+<dd>When a user registers an app in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, the Shared Secret security option is the default. App owners who want to use Public Key Infrastructure (PKI) for secure message signing must specify Public Key Integration as the security option in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;user interface, on the App Details page.</dd>
+<dd>To implement PKI, the app owner must get a public/private key pair, upload the public key to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, and use the private key for signing the API requests. The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API verifies each incoming request using the public key.</dd>
 
 
 
@@ -953,8 +996,8 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_qname"></a>QName</dt>
-<dd>A unique identifier used for certain elements and attributes (Qualified Name). The APIs service uses QNames to identify elements such as API bindings and interfaces.</dd>
-<dd>QNames are used to create a mapping between a URI and a namespace prefix.</dd>
+<dd>A unique identifier used for certain elements and attributes (Qualified Name). The developer portal API uses QNames to identify elements such as API bindings and interfaces. Policy Manager also uses QNames.</dd>
+<dd>QNames are used to create a mapping between a URI and a namespace prefix. The QName includes the object's unique name within the namespace, plus the namespace itself.</dd>
 
 
 
@@ -1040,8 +1083,8 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_role"></a>role</dt>
-<dd>Within an <a href="#gl_apicontextgroup">API Context Group</a>, each group member has a role, either as <a href="#gl_member">Member</a> or <a href="#gl_leader">Leader</a>. The Private API Admin cam invite team members and designate roles.</dd>
-<dd>Within an <a href="#gl_independentgroup">independent group</a>, each group member has a role, either as Member, Admin, or Leader. An Admin can invite or remove other team members and designate roles.</dd>
+<dd>Within an <a href="#gl_apiscopegroup">API Scope Group</a>, each group member has a role, as <a href="#gl_member">Member</a>, <a href="#gl_leader">Leader</a>, or <a href="#gl_admin">Admin</a>. An API Admin cam invite team members and designate roles.</dd>
+<dd>Within an <a href="#gl_independentgroup">independent group</a>, each group member has a role, as <a href="#gl_member">Member</a>, <a href="#gl_leader">Leader</a>, or <a href="#gl_admin">Admin</a>. A Group Admin can invite or remove other team members and designate roles.</dd>
 <dd>Other roles on the platform include App Team Member, Site Administrator, API Administrator, and Site User. An additional role, API Owner, is defined in the underlying infrastructure.</dd>
 
 
@@ -1059,8 +1102,8 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 <dt><a name="gl_rsschannel"></a>RSS channel</dt>
 <dd>The format in which information is conveyed using the RSS technology is called an RSS feed, web feed, RSS channel, or RSS document. It includes full or summarized text plus metadata (information about the text).</dd>
-<dd>Many of the operations in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API use RSS in the response. In general, GET&nbsp;methods that return any type of list return the information as an RSS channel, usually in either JSON or XML format as specified in the request message.</dd>
-<dd>For more information on how the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> uses RSS channels, see <a href="aaref/Ref_RSSChannelsOnThePlatform.htm">RSS Channels on the Platform</a>.</dd>
+<dd>Many of the operations in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API use RSS in the response. In general, GET&nbsp;methods that return any type of list return the information as an RSS channel, usually in either JSON or XML format as specified in the request message.</dd>
+<dd>For more information on how the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;uses RSS channels, see <a href="aaref/Ref_RSSChannelsOnThePlatform.htm">RSS Channels on the Platform</a>.</dd>
 
 
 
@@ -1103,7 +1146,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_scopegroup"></a>scope group</dt>
-<dd>See <a href="#gl_apicontextgroup">API Context Group</a>.</dd>
+<dd>See <a href="#gl_apiscopegroup">API Scope Group</a>.</dd>
 
 
 
@@ -1153,7 +1196,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_sharedsecret"></a>shared secret</dt>
-<dd>When you register your app, the AppID and Shared Secret are automatically generated. The Shared Secret is a binary hashed value, generated within the secure environment of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> and known only to you and to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->. On your app's Details page, in the Security section, you'll see that the Shared Secret option is the default security mechanism.</dd>
+<dd>When you register your app, the AppID and Shared Secret are automatically generated. The Shared Secret is a binary hashed value, generated within the secure environment of the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;and known only to you and to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->. On your app's Details page, in the Security section, you'll see that the Shared Secret option is the default security mechanism.</dd>
 <dd>The Shared Secret approach follows the WS-Security digest authentication mechanism.</dd>
 <dd>In some scenarios, the app might have a user-defined App Identity that includes a domain. In this case, the platform does not collect, regenerate, return, or display the Shared Secret value. Instead, the user manages it in the external identity domain, which must be a valid domain set up in the platform. The platform takes the Shared Secret value that the user provides and validates it with the external identity domain.</dd>
 <dd>For this to occur, the platform's App Settings must allow user-defined identity (this includes ID and Shared Secret), and the user identity must be set to a value of {LoginDomain}\{LoginDomain-UserName}, where {login-domain} is the platform's ID for a valid login domain set up on the platform, LoginDomain-UserName is a valid account on that login domain, and they are separated by a backslash. The platform validates the LoginDomain ID and does nothing with the Shared Secret value except validate it at runtime when it's provided by the user.</dd>
@@ -1244,7 +1287,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_targetapi"></a>target API</dt>
-<dd>When defining an API on the platform, if an API is using the platform as a proxy, the TargetAPI is used to define the destination ("next-hop") endpoint for the API.</dd>
+<dd>When defining an API on the platform, if an API is using the platform as a proxy, the <strong>Target API</strong> defines the destination (&quot;next-hop&quot;) endpoint for the API.</dd>
 
 
 
@@ -1294,7 +1337,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_transaction"></a>transaction</dt>
-<dd>In the context of the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API, a transaction is one instance of an app making a call to an API.</dd>
+<dd>In the context of the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API, a transaction is one instance of an app making a call to an API.</dd>
 
 
 
@@ -1329,8 +1372,8 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_user"></a>user</dt>
-<dd>A person with a registered login ID to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->. All users must complete the registration process so that the system can gather required information about them before granting access. Each user can choose to define a new username/password combination that will be managed within the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, or can leverage the integration of <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> with external security providers such as Facebook&reg; for authentication. By completing the signup process, each individual is assigned the role of User; users can then assume other roles, such as API Administrator or App team member (depending on platform settings).</dd>
-<dd><strong>Note</strong>: To use the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API, users must sign up with the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> rather than using a third-party authentication provider.</dd>
+<dd>A person with a registered login ID to the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->. All users must complete the registration process so that the system can gather required information about them before granting access. Each user can choose to define a new username/password combination that will be managed within the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, or can leverage the integration of&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;with external security providers such as Facebook&reg; for authentication. By completing the signup process, each individual is assigned the role of User; users can then assume other roles, such as API Administrator or App team member (depending on platform settings).</dd>
+<dd><strong>Note</strong>: To use the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API, users must sign up with the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;rather than using a third-party authentication provider.</dd>
 
 
 
@@ -1357,7 +1400,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_version"></a>version</dt>
-<dd>Each <a href="#gl_app">app</a> or <a href="#gl_api">API</a> on the platform much have at least one version, and can have multiple versions. When a user creates an app or API on the platform, the first version is created automatically; when using the API it's important to complete both actions. If there is only one app or API version, deleting that version also deletes the app or API.</dd>
+<dd>Each <a href="#gl_app">app</a> or <a href="#gl_api">API</a> on the platform much have at least one version, and can have multiple versions. When a user creates an app or API on the platform, the first version is created automatically; when using the API, it's important to complete both actions. If there is only one app or API version, deleting that version also deletes the app or API.</dd>
 
 
 
@@ -1372,7 +1415,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_visibility_api"></a>visibility (API)</dt>
-<dd>A setting that controls the types of users who can see an API and its associated items such as discussions and tickets. Possible values are <strong>Public</strong> or <strong>Limited</strong>. A discussion about a Limited (Private) API can only be seen by administrators and API Context Group members associated with that API. Members must be either invited to an API Context Group associated with the API or invited to be an Administrator for the API, and must then accept the invitation, before they even see the API in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->.</dd>
+<dd>A setting that controls the types of users who can see an API and its associated items such as discussions and tickets. Possible values are <strong>Public</strong> or <strong>Limited</strong>. A discussion about a Limited (Private) API can only be seen by administrators and API Scope Group members associated with that API. Users must be a member of an API Scope Group associated with the API or invited to be an Administrator for the API, and must then accept the invitation, before they even see the API in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->.</dd>
 
 
 
@@ -1399,7 +1442,7 @@ There are two visibility settings for an app: <strong>public</strong> and <stron
 
 
 <dt><a name="gl_authenticate"></a>WWW-Authenticate response header</dt>
-<dd >A standard HTTP response header used as part of the authentication process used in <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API calls. When the server receives the request message, it challenges the client for valid authentication via the WWW-Authenticate response header. The client returns the authentication information in an <a href="#gl_authorization">Authorization header</a>. The server validates the client information and then acts on the request message.</dd>
+<dd >A standard HTTP response header used as part of the authentication process used in&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API calls. When the server receives the request message, it challenges the client for valid authentication via the WWW-Authenticate response header. The client returns the authentication information in an <a href="#gl_authorization">Authorization header</a>. The server validates the client information and then acts on the request message.</dd>
 
 
 

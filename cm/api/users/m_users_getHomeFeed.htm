@@ -59,14 +59,14 @@ no-catalog: true
 <h3 id="samplerequest">Sample Request</h3>
 <p><strong>Request URL #1</strong></p>
 <p>The example below requests the first 10 items for the specified user.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user12262.acmepaymentscorp
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp
 </pre>
 <p><strong>Request URL #2</strong></p>
 <p>The example below requests the third and fourth items, with comments excluded.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/feeds/homefeed?start=2&amp;count=2&amp;RetrievingUserID=user12262.acmepaymentscorp&amp;IncludeComments=false
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/feeds/homefeed?start=2&amp;count=2&amp;RetrievingUserID=522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp&amp;IncludeComments=false
 </pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&nbsp;/api/users/user12262.acmepaymentscorp/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=user13998.acmepaymentscorp&amp;SortBy=DescendingDate HTTP/1.1
+<pre>GET&nbsp;/api/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/feeds/homefeed?start=0&amp;count=10&amp;RetrievingUserID=2d0bc425-49ec-4c04-b272-cc8f6f20e52b.acmepaymentscorp&amp;SortBy=DescendingDate HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
@@ -286,17 +286,17 @@ Date: Thu, 30 May 2013 20:11:25 GMT</pre>
       },
       "pubDate" : "2013-05-30T00:10:01.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.acmepaymentscorp",
+        "ID" : "522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp",
         "Name" : "JaneSaoirse",
         "Image" : {
-          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneSaoirse",
-          "Link" : "#/users/user12262.acmepaymentscorp/details"
+          "Link" : "#/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/details"
         }
       },
       "Image" : {
-        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
-        "Link" : "#/user/user12262.acmepaymentscorp/details"
+        "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+        "Link" : "#/user/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/details"
       },
       "CreatedDate" : "2012-11-26T15:20:30.000Z",
       "Marks" : {
@@ -308,7 +308,7 @@ Date: Thu, 30 May 2013 20:11:25 GMT</pre>
       },
       "EntityReference" : [ {
         "Title" : "JonathanSwift",
-        "Guid" : "user13967.acmepaymentscorp",
+        "Guid" : "957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp",
         "Category" : [ {
           "value" : "user",
           "domain" : "uddi:soa.com:resourcetype"
@@ -323,7 +323,7 @@ Date: Thu, 30 May 2013 20:11:25 GMT</pre>
       } ]
     }, {
       "title" : "API Access request",
-      "description" : "ACMECorp member JaneSaoirse has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) 
+      "description" : "ACMECorp member JaneSaoirse has requested access to the Sandbox implementation for the ACME Payments DeLuxe (Version 2.0) 
 on behalf of the  PaaStime (2.0) application",
       "category" : [ {
         "value" : "CONTRACT_REQUEST",
@@ -343,12 +343,12 @@ on behalf of the  PaaStime (2.0) application",
       },
       "pubDate" : "2013-05-23T22:14:30.000Z",
       "AuthoringUser" : {
-        "ID" : "user12262.acmepaymentscorp",
+        "ID" : "522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp",
         "Name" : "JaneSaoirse",
         "Image" : {
-          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
+          "Url" : "<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png",
           "Title" : "JaneSaoirse",
-          "Link" : "#/users/user12262.acmepaymentscorp/details"
+          "Link" : "#/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/details"
         }
       },
       "Image" : {
@@ -456,17 +456,17 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ns5:Count&gt;3&lt;/ns5:Count&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user12262.acmepaymentscorp&lt;/ID&gt;
+        &lt;ID&gt;522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp&lt;/ID&gt;
         &lt;Name&gt;JaneSaoirse&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneSaoirse&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.acmepaymentscorp/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
         &lt;Title&gt;JonathanSwift&lt;/Title&gt;
-        &lt;Guid&gt;user13967.acmepaymentscorp&lt;/Guid&gt;
+        &lt;Guid&gt;957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp&lt;/Guid&gt;
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;user&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:EntityReference&gt;
@@ -475,13 +475,13 @@ xmlns:ns8="http://soa.com/xsd/fault/1.0" xmlns:ns9="http://soa.com/xsd/api/1.0" 
         &lt;ns4:Category domain="uddi:soa.com:resourcetype"&gt;app&lt;/ns4:Category&gt;
       &lt;/ns4:EntityReference&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
-        &lt;Link&gt;#/user/user12262.acmepaymentscorp/details&lt;/Link&gt;
+        &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+        &lt;Link&gt;#/user/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;
     &lt;/item&gt;
     &lt;item&gt;
       &lt;title&gt;API Access request&lt;/title&gt;
-      &lt;description&gt;ACMECorp member JaneSaoirse has requested access to the Sandbox environment for the ACME Payments DeLuxe (Version 2.0) 
+      &lt;description&gt;ACMECorp member JaneSaoirse has requested access to the Sandbox implementation for the ACME Payments DeLuxe (Version 2.0) 
 on behalf of the  PaaStime (2.0) application&lt;/description&gt;
       &lt;category domain="uddi:soa.com:resourcetype"&gt;CONTRACT_REQUEST&lt;/category&gt;
       &lt;category domain="uddi:soa.com:archivable"&gt;false&lt;/category&gt;
@@ -498,12 +498,12 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
         &lt;ns5:Count&gt;1&lt;/ns5:Count&gt;
       &lt;/ns5:CommentsPreview&gt;
       &lt;ns4:AuthoringUser&gt;
-        &lt;ID&gt;user12262.acmepaymentscorp&lt;/ID&gt;
+        &lt;ID&gt;522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp&lt;/ID&gt;
         &lt;Name&gt;JaneSaoirse&lt;/Name&gt;
         &lt;ns4:Image&gt;
-          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/user12262.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
+          &lt;Url&gt;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/avatars/b423eac3-4dbd-4b8c-a2f6-841caacd6dc1.png&lt;/Url&gt;
           &lt;Title&gt;JaneSaoirse&lt;/Title&gt;
-          &lt;Link&gt;#/users/user12262.acmepaymentscorp/details&lt;/Link&gt;
+          &lt;Link&gt;#/users/522320b9-cb6b-495d-ae07-e4b3bfdb3f6a.acmepaymentscorp/details&lt;/Link&gt;
         &lt;/ns4:Image&gt;
       &lt;/ns4:AuthoringUser&gt;
       &lt;ns4:EntityReference&gt;
@@ -656,7 +656,7 @@ on behalf of the  PaaStime (2.0) application&lt;/description&gt;
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

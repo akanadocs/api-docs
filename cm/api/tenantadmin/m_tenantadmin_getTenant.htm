@@ -17,7 +17,8 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getTenant.lbi" -->Returns information about a tenant on the API Platform.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be an authorized Administrator for the specified tenant.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must have Read permission for the business information; must be an authorized Administrator for the specified tenant.</p>
+<!--<p>@PermissionRequired(action=AuzAction.READ, resourceType=FDN.RESOURCE_TYPE_TENANT</p>-->
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -131,22 +132,56 @@ no-catalog: true
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Date: Fri, 05 Feb 2016 20:13:47 GMT</pre>
+Date: Fri, 28 Apr 2017 16:13:29 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
   "FedMemberID" : "acmepaymentscorp",
-  "TenantName" : "Acmepaymentscorp",
-  "Description" : "Acmepaymentscorp",
+  "TenantName" : "acmepaymentscorp",
+  "Description" : "acmepaymentscorp",
   "AdminGroupID" : "tenantadmin.acmepaymentscorp",
   "Business" : {
     "BusinessID" : "tenantbusiness.acmepaymentscorp",
+    "BusinessKey" : "uddi:soa.com:atmosphere:tenant:acmepaymentscorp",
     "Name" : "Tenant - acmepaymentscorp",
     "Visibility" : "Limited",
-    "AdminGroupID" : "bizadmin-tenantbusiness.acmepaymentscorp"
+    "AdminGroupID" : "bizadmin-tenantbusiness.acmepaymentscorp",
+    "BusinessType" : "atmo.tenant"
   },
-  "IndexTargets" : [ "compass", "elastic" ],
+  "IndexTargets" : [ "elastic" ],
   "SearchSource" : "elastic",
-  "ESIndexName" : "default"
+  "ESIndexName" : "default",
+  "PlatformApiContractExists" : false,
+  "Themes" : [ {
+    "Theme" : "default",
+    "VirtualHosts" : [ "acmepaymentscorp-local.com" ],
+    "ConsoleAddress" : "http://acmepaymentscorp-local.com:7900/atmosphere/",
+    "SiteTitle" : "",
+    "SiteDescription" : "",
+    "TenantID" : 10001,
+    "FedmemberID" : "acmepaymentscorp",
+    "Alias" : ""
+  }, {
+    "Theme" : "simpledev",
+    "VirtualHosts" : [ "acmepaymentscorpdeveloper-local.com" ],
+    "ConsoleAddress" : "http://acmepaymentscorpdeveloper-local.com:7900/atmosphere/",
+    "SiteTitle" : "simpledev theme",
+    "SiteDescription" : "",
+    "TenantID" : 10001,
+    "FedmemberID" : "acmepaymentscorp",
+    "Alias" : ""
+  }, {
+    "Theme" : "hermosa",
+    "VirtualHosts" : [ "acmepaymentscorpcloud-local.com" ],
+    "ConsoleAddress" : "http://acmepaymentscorpcloud-local.com:7900/atmosphere/",
+    "SiteTitle" : "",
+    "SiteDescription" : "",
+    "TenantID" : 10001,
+    "FedmemberID" : "acmepaymentscorp",
+    "ThemeImpl" : "default",
+    "Alias" : ""
+  } ],
+  "LaaSIntegrationSupport" : "com.soa.feature.disabled",
+  "ForwardProxyAllowedHosts" : [ "*" ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -217,7 +252,7 @@ Date: Fri, 05 Feb 2016 20:13:47 GMT</pre>
   </tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

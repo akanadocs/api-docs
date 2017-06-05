@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: API Object | APIs Service | Akana API Platform API
-description: Includes information about an API.
+description:  Includes information about an API.
 product: cm
 category: ref
 nav-title: API Object 
@@ -17,7 +17,6 @@ Includes information about an API.<!-- #EndLibraryItem --></p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
-  <li><span class="apidoc_code"><a href="../apis/m_apis_addAPI.htm">POST&nbsp;/api/apis</a></span> (with default headers)</li>
   <li><span class="apidoc_code"><a href="../apis/m_apis_createAPI.htm">POST&nbsp;/api/apis</a></span> (with vendor-specific headers)</li>
   <li><span class="apidoc_code"><a href="../apis/m_apis_updateAPI.htm">PUT&nbsp;/api/apis/{apiID}</a></span></li>
   <li><span class="apidoc_code"><a href="../apis/m_apis_getAPI.htm">GET&nbsp;/api/apis/{APIID}</a></span></li>
@@ -65,7 +64,7 @@ Includes information about an API.<!-- #EndLibraryItem --></p>
       <td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_latestversionid">LatestVersionID</a></td>
       <td>string</td>
       <td><p>The unique ID for the latest version of the API.</p>
-        <p>When the API object is received in a response message, LatestVersionID is ID for the latest version of the API the user is authorized to see, based on the user's status and the API's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting. If the app is Private, the user must be logged in and msut be an API Administrator or API Context Group member.</p></td>
+        <p>When the API object is received in a response message, LatestVersionID is ID for the latest version of the API the user is authorized to see, based on the user's status and the API's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting. If the app is Private, the user must be logged in and msut be an API Administrator or API Scope Group member.</p></td>
   </tr>
     <tr>
       <td>Tag</td>
@@ -143,6 +142,11 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
       <td>TargetResources</td>
       <td><a href="o_dn_model_TargetResources.htm">TargetResources</a></td>
       <td><!-- #BeginLibraryItem "/Library/o_dn_model_TargetResources.lbi" -->Contains information about one or more resources associated with the current resource. Used only in response messages.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>apiOrganizationKey</td>
+      <td>String</td>
+      <td>Organization key for the business organization the API is part of.</td>
     </tr>
     </tbody>
 </table>

@@ -18,7 +18,7 @@ no-catalog: true
   <li>HTTP Response Headers</li>
 </ul>
 <h3><a name="ref_httprequestheaders"></a>HTTP Request Headers</h3>
-<p>The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API uses the HTTP request headers shown in the table below.<!-- For general information about each header field, refer to the applicable glossary entries.--> The significant headers are:</p>
+<p>The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API uses the HTTP request headers shown in the table below.<!-- For general information about each header field, refer to the applicable glossary entries.--> The significant headers are:</p>
 <ul>
   <li><a href="#acceptheader">Accept</a></li>
   <li>For operations other than GET, <a href="#contenttype_request">Content-Type</a></li>
@@ -64,7 +64,7 @@ Lists one or more data formats that are valid in the response. For example,<stro
       <td>Cache-Control</td>
       <td>Both</td>
       <td><!-- #BeginLibraryItem "/Library/hdrboth_cache-control.lbi" -->
-Used in both request and response to specify whether the message can be cached between the client and the server. <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).<!-- #EndLibraryItem --></td>
+Used in both request and response to specify whether the message can be cached between the client and the server.&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Connection</td>
@@ -81,13 +81,13 @@ Used in both request and response to specify whether the message can be cached b
       <td>Both</td>
       <td><!-- #BeginLibraryItem "/Library/hdrreq_content-type.lbi" -->
 <p>Specifies the media type of a request or response message body.</p>
-<p>For request messages, content-type is used for POST&nbsp;and PUT&nbsp;but not for GET&nbsp;or DELETE. Most <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> operations that use this header use <strong>application/json</strong> in the request message. Methods involving file upload use <strong>multipart/form-data</strong>. Methods with POST&nbsp;parameters might use <strong>application/x-www-form-urlencoded</strong>; for example, the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation.</p><!-- #EndLibraryItem --><p>For information on valid values, see <a href="Ref_MediaTypes.htm">Media Types</a>.</p></td>
+<p>For request messages, content-type is used for POST&nbsp;and PUT&nbsp;but not for GET&nbsp;or DELETE. Most&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;operations that use this header use <strong>application/json</strong> in the request message. Methods involving file upload use <strong>multipart/form-data</strong>. Methods with POST&nbsp;parameters might use <strong>application/x-www-form-urlencoded</strong>; for example, the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation.</p><!-- #EndLibraryItem --><p>For information on valid values, see <a href="Ref_MediaTypes.htm">Media Types</a>.</p></td>
   </tr>
     <tr>
       <td>Cookie</td>
       <td>Request Only</td>
       <td><!-- #BeginLibraryItem "/Library/hdrreq_cookie.lbi" -->
-An extension header used for client identification and tracking. In the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API the cookie parameter contains the session ID.<!-- #EndLibraryItem -->For more information, see <a href="Ref_CookiesOnThePlatform.htm">Cookies in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --></a>.</td>
+An extension header used for client identification and tracking. In the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API the cookie parameter contains the session ID.<!-- #EndLibraryItem -->For more information, see <a href="Ref_CookiesOnThePlatform.htm">Cookies in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --></a>.</td>
   </tr>
     <tr>
       <td><a id="host_request"></a>Host</td>
@@ -109,7 +109,7 @@ The URL from which the request originated. Example: <strong>https://api.acmepaym
     <tr>
       <td>X-Requested-With</td>
       <td>Request Only</td>
-      <td>An extension header used to identify Ajax requests. Wherever the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API uses this header, the value is <strong>XMLHttpRequest</strong>.</td>
+      <td>An extension header used to identify Ajax requests. Wherever the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API uses this header, the value is <strong>XMLHttpRequest</strong>.</td>
   </tr>
     <tr>
       <td><a id="csrf_token_request"></a>X-Csrf-Token_{<a href="Ref_IDsOnThePlatform.htm#id_fedmemberid">fedmemberid</a>}</td>
@@ -124,7 +124,7 @@ The URL from which the request originated. Example: <strong>https://api.acmepaym
 
 
 <h3><a name="ref_httpresponseheaders"></a>HTTP Response Headers</h3>
-<p>The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API uses the HTTP response headers shown in the table below.<!-- For general information about each header field, refer to the applicable glossary entries.--> The significant headers are:</p>
+<p>The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API uses the HTTP response headers shown in the table below.<!-- For general information about each header field, refer to the applicable glossary entries.--> The significant headers are:</p>
 <ul>
   <li>Content-Type</li>
   <li>For the specific operations that require it, Atmo-Renew-Token</li>
@@ -149,13 +149,13 @@ The URL from which the request originated. Example: <strong>https://api.acmepaym
       <td><a id="cachecontrol"></a>Cache-Control</td>
       <td>Both</td>
       <td><!-- #BeginLibraryItem "/Library/hdrboth_cache-control.lbi" -->
-Used in both request and response to specify whether the message can be cached between the client and the server. <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).<!-- #EndLibraryItem --></td>
+Used in both request and response to specify whether the message can be cached between the client and the server.&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td>Content-Encoding</td>
       <td>Response only</td>
       <td><!-- #BeginLibraryItem "/Library/hrdrsp_content-encoding.lbi" -->
-Indicates the type of compression encoding the server used for the response message, so that the client can decode the message. This is the counterpart to the <strong>Accept-Encoding</strong> request header which specifies which types of compression are acceptable in the response. Example: <strong>gzip</strong>. The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API always returns a gzip-encoded response if the request header indicates that gzip encoding is accepted for responses.<!-- #EndLibraryItem --></td>
+Indicates the type of compression encoding the server used for the response message, so that the client can decode the message. This is the counterpart to the <strong>Accept-Encoding</strong> request header which specifies which types of compression are acceptable in the response. Example: <strong>gzip</strong>. The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API always returns a gzip-encoded response if the request header indicates that gzip encoding is accepted for responses.<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
       <td><a id="contentdisposition_response"></a>Content-Disposition</td>
@@ -194,7 +194,7 @@ Indicates the type of compression encoding the server used for the response mess
       <td>Transfer-Encoding</td>
       <td>Response only</td>
       <td><!-- #BeginLibraryItem "/Library/hdrrsp_transfer-encoding.lbi" -->
-If encoding was used to transfer the message safely, this value indicates the encoding method used. Example: <strong>chunked</strong>. For HTTP 1.1 messages, the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> API always uses the value <strong>chunked</strong>. For HTTP 1.0, transfer-encoding is not used.<br /><strong>Note</strong>: We recommend using HTTP version 1.1 since it includes several enhancements; chunking is one of them.<!-- #EndLibraryItem --></td>
+If encoding was used to transfer the message safely, this value indicates the encoding method used. Example: <strong>chunked</strong>. For HTTP 1.1 messages, the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API always uses the value <strong>chunked</strong>. For HTTP 1.0, transfer-encoding is not used.<br /><strong>Note</strong>: We recommend using HTTP version 1.1 since it includes several enhancements; chunking is one of them.<!-- #EndLibraryItem --></td>
   </tr>
   </tbody>
 </table>

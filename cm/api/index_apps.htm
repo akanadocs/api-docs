@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Apps Service | Overview | Akana API Platform API
-description: The Apps service provides a REST interface and a set of operations for managing apps in the Akana API Platform. This service incluces operations to support complete app lifecycle management, including such activities as creating, modifying, and deleting apps and app versions, managing app teams, and creating, modifying, and deleting the app security mechanism.
+description:  The Apps service provides a REST interface and a set of operations for managing apps in the&nbsp;Akana API Platform. This service incluces operations to support complete app lifecycle management, including such activities as creating, modifying, and deleting apps and app versions, managing app teams, and creating, modifying, and deleting the app security mechanism.
 product: cm
 category: ref
 nav-title: Apps Service 
@@ -43,8 +43,7 @@ Creates a new app, which includes the first app version.<!-- #EndLibraryItem -->
   <tr>
     <td>add version</td>
     <td><a href="apps/m_apps_addVersion.htm">POST&nbsp;/api/apps/{AppID}/versions</a></td>
-    <td><!-- #BeginLibraryItem "/Library/desc_addVersion.lbi" -->
-        Adds a  version of an app&#8212;either the original version when the app is created, or a new version created later.<!-- #EndLibraryItem --></td>
+    <td><!-- #BeginLibraryItem "/Library/desc_addVersion.lbi" -->Adds a  version of an app. Can be either the original version when the app is created, or a new version created later.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>delete app</td>
@@ -129,7 +128,7 @@ Returns information about an app.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>Get app version connection environments</td>
-    <td><a href="apps/m_apps_getAppVersionConnectionEnvironments.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/contracts/environments</a></td>
+    <td><a href="apps/m_apps_getAppVersionConnectionEnvironments.htm">GET&nbsp;/api/apps/versions/{AppVersionID}/contracts/environments?APIVersionID={APIVersionID}</a></td>
     <td><!-- #BeginLibraryItem "/Library/desc_getAppVersionConnectionEnvironments.lbi" -->Returns a summary of the environments available for the specified app version to request a contract with the specified API version.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
@@ -263,7 +262,7 @@ Returns a list of Board items for the specified app version.<!-- #EndLibraryItem
   <tr>
     <td>list versions</td>
     <td><a href="apps/m_apps_listVersions.htm">GET&nbsp;/api/apps/versions?{Identity}</a></td>
-    <td><!-- #BeginLibraryItem "/Library/desc_listVersions_apps.lbi" -->Returns app version information, including the <a href="aaref/Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a>, based on the Identity value provided.<!-- #EndLibraryItem --></td>
+    <td><!-- #BeginLibraryItem "/Library/desc_listVersions_apps.lbi" -->Returns app version information, including the AppVersionID, based on the Identity value provided.<!-- #EndLibraryItem --></td>
   </tr>
   <tr>
     <td>modify app</td>

@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: IDs on the Platform | Reference Material | Akana API Platform API
-description: the Akana API Platform uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.
+description: The&nbsp;Akana API Platform&nbsp;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.
 product: cm
 category: ref
 nav-title: IDs on the Platform 
@@ -12,14 +12,14 @@ no-catalog: true
 ---
 
 <h2><a name="top"></a>IDs on the Platform</h2>
-<p>The <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
+<p>The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
 <p>These IDs are assigned by the back end, and are essentially simple strings. However, they generally have a two-part construction, such as:</p>
 <ul>
   <li><strong>{uniqueid for object/tenant}.{tenant name}</strong></li>
 </ul>
-<p>For example, a unique UserID for a user on <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> might be <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong>. In this example:</p>
+<p>For example, a unique UserID for a user on&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;might be <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong>. In this example:</p>
 <ul>
-  <li><strong>eceffbe3-3386-495b-80d3-7526f0eb0edc </strong>is unique to&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, so the unique user record can be located in the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --> database.</li>
+  <li><strong>eceffbe3-3386-495b-80d3-7526f0eb0edc </strong>is unique to&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, so the unique user record can be located in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;database.</li>
   <li><strong><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong> indicates the tenant name. Including the tenant name after the period increases the usefulness of the object, because even if two tenants both have a user <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc</strong>, each ID is unique across the entirety of the platform in a federated scenario where there might be many tenants.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -155,6 +155,11 @@ To find out what the Business ID is for your installation, you can run the <span
       <td>tenantbusiness.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
   </tr>
     <tr>
+      <td><a id="id_businesskey"></a>BusinessKey</td>
+      <td>A unique ID used by the underlying infrastructure to identify a business. Most operations use the BusinessID, which is made up of a unique ID for the tenant and the tenant ID. However, some operations that reference the features of the underlying infrastructure use the BusinessKey, which is a globally unique ID assigned to the business by the underlying infrastructure. The BusinessKey doesn't indicate the tenant. These two IDs are completely separate, and each business organization has both.</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td><a id="id_clientid">ClientID</a></td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_ClientID.lbi" -->
 The unique ID for a specific OAuth client, as set up with the OAuth Provider. In the context of the platform, the ClientID is the same as the app's <a href="Ref_IDsOnThePlatform.htm#id_runtimeid">RuntimeID</a>.<!-- #EndLibraryItem --></td>
@@ -175,7 +180,7 @@ The unique ID for a specific OAuth client, as set up with the OAuth Provider. In
     <tr>
       <td><a id="id_contextobjectid"></a>ContextObjectID</td>
       <td><!-- #BeginLibraryItem "/Library/o_ID_ContextObjectID.lbi" -->
-The unique ID of the object that a group belongs to, if applicable. For an app team it is the <strong>AppID</strong>; for an API Context Group it is the <strong>APIVersionID</strong>.<!-- #EndLibraryItem --></td>
+The unique ID of the object that a group belongs to, if applicable. For an app team it is the <strong>AppID</strong>; for an API Scope Group it is the <strong>APIVersionID</strong>.<!-- #EndLibraryItem --></td>
       <td>&nbsp;</td>
   </tr>
     <tr>
@@ -427,8 +432,8 @@ The unique UserID of the user performing a specific action.<!-- #EndLibraryItem 
   </tr>
     <tr>
       <td><a id="id_serviceid"></a>ServiceID</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_ServiceID.lbi" -->The unique ID for a specific proxied API service.<!-- #EndLibraryItem --></td>
-      <td>&nbsp;</td>
+      <td><!-- #BeginLibraryItem "/Library/o_ID_ServiceID.lbi" -->The unique ID for a specific proxied API service. Sometimes also called the <strong>ServiceKey</strong>.<!-- #EndLibraryItem --></td>
+      <td>uddi:d26f2232-3bfe-11e7-8c53-f1aac8715c11</td>
     </tr>
     <tr>
       <td><a id="id_scopeid"></a>ScopeID</td>

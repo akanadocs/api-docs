@@ -17,8 +17,10 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_importPackage.lbi" -->Imports information that was previously exported from a platform version.<!-- #EndLibraryItem --></p>
-<p>Supports upload of a ZIP file containing the information previously exported from the same or another platform instance, and an optional migration properties file. Migration properties allow for URL mapping of physical service endpoints between the source environment that the information was exported from and the target environment you're importing it to. For more information on the import properties file, see <a href="{{ site.baseurl }}/cm/learnmore/bus_admin_export_import.htm#import_properties_file" title="Import Properties file" target="_blank">What is the import properties file and when do I need it?</a> (developer portal help).</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<p>Supports upload of a ZIP file containing the information previously exported from the same or another platform instance, and an optional migration properties file. Migration properties allow for URL mapping of physical service endpoints between the source environment that the information was exported from and the target environment you're importing it to. For more information on the import properties file, see <a href="http://docs.akana.com/cm/learnmore/bus_admin_export_import.htm#import_properties_file" title="Import Properties file" target="_blank">What is the import properties file and when do I need it?</a> (developer portal help).</p>
+<p><strong>Note</strong>: To export the package, use this operation: <span class="apidoc_code"><a href="../businesses/m_businesses_exportPackage.htm">GET&nbsp;/api/businesses/{BusinessID}/package</a></span>.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions: </strong> Must have Modify permission for the tenant; <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<!--<p>@PermissionRequired(action=AuzAction.MODIFY, resourceType=FDN.RESOURCE_TYPE_TENANT</p>-->
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -64,7 +66,7 @@ Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 <!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_{tenant}: {TokenID}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
-<p>The request body is the import ZIP file and possibly an optional properties file. The example below shows a snippet of the import file to demonstrate how the additional attributes, parameter key (name) and filename, are used in the POST content.</p>
+<p>The request body is the import ZIP file and possibly an optional properties file. The example below shows a snippet of the import file to demonstrate how the additional attribute, Package and filename, is used in the POST content. In this example, there is no mapping properties file.</p>
 <pre>-----------------------------11829702124658
 Content-Disposition: form-data; name="Package"; filename="business-export.zip"
 Content-Type: application/zip</pre>
@@ -127,7 +129,7 @@ Content-Type: application/zip</pre>
       <td>Path</td>
       <td>TenantFedMemberID</td>
       <td>Required</td>
-      <td><p>Same as TenantID.</p>
+      <td><p>Same as <a href="../aaref/Ref_IDsOnThePlatform.htm#id_tenantid">TenantID</a>.</p>
         <!-- #BeginLibraryItem "/Library/o_ID_TenantID.lbi" -->Unique ID for a specific tenant, in a federation (multi-tenant) scenario.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
@@ -180,6 +182,7 @@ Date: Fri, 15 Jul 2016 18:53:19 GMT</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
+
 <!-- InstanceBeginEditable name="Response Body" -->
 <h3 id="responsebody">Response Body</h3>
 <p>There is no response body.</p>
@@ -201,6 +204,15 @@ Date: Fri, 15 Jul 2016 18:53:19 GMT</pre>
     <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
       <td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
+      <td><p>The resource could not be found.</p>
+        For example, you might get this if the Accept header is set to a wrong value.</td>
+    </tr>
+    <tr>
+      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http415">415</a></td>
+      <td>Unsupported Media Type; returned if the request is using a media type not supported by the method. For this operation, you must use a Content-Type of <!-- #BeginLibraryItem "/Library/hdrval_multipart_form-data.lbi" --><strong><a href="../aaref/Ref_MediaTypes.htm#mediatype_multipartformdata">multipart/form-data</a></strong><!-- #EndLibraryItem -->, and you must provide two parameters keys, <strong>Package</strong> and <strong>MappingProperties</strong>. See <a href="#requestheaders">Request Headers</a>.</td>
     </tr>
     <tr>
       <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
