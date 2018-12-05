@@ -22,26 +22,29 @@ To optimize Github Pages build times (we were getting timeouts) we have moved th
 1. Remove the pre-built API docs from this temp folder, and replace them with the docs from your API Docs repo, then build the temp repo:
 
 	```
-	rm -rf temp/cm/api
+	rm -rf temp/cm/api temp/cm/api_oauth
 	cp -R api-docs/cm/api/ temp/cm/api/
+	cp -R api-docs/cm/api_oauth/ temp/cm/api_oauth/
 	cd temp
 	bundle exec jekyll build
 	```
 
 	Once the build completes you have a couple more steps:
 
-1.	Replace the ```cm/api``` folder om **docs-test** with the one from the built _site in **temp**:
+1.	Replace the ```cm/api``` and ```cm/api_oauth``` folders om **docs-test** with the ones from the built _site in **temp**:
 
 	```
 	cd ..
-	rm -rf docs-test/cm/api/
+	rm -rf docs-test/cm/api/ docs-test/cm/api_oauth/
 	cp -R temp/_site/cm/api/ docs-test/cm/api/
+	cp -R temp/_site/cm/api_oauth/ docs-test/cm/api_oauth/
 	```
 	
-1. 	Override the pre-built API docs index with the original from the api-docs repo
+1. 	Override the pre-built API docs index files with the original ones from the api-docs repo
 	
 	```
 	cp api-docs/cm/api/index.htm docs-test/cm/api/
+	cp api-docs/cm/api_oauth/index.htm docs-test/cm/api_oauth/
 	```
 
 1.	Replace the content of the ```unsorted_pages_prod_cat``` variable in ```_includes/unsorted-pages-apioverview``` in your **docs-test** repo, with the contents of the same variable taken from ```_site/cm/api/Ref_API_Reference.htm```, or any of the Ref docs in your **temp** repo - now in docs-test too.
@@ -74,14 +77,17 @@ This process has changed, you need to follow the exact same process as above, bu
 	cd ..
 	rm -rf temp
 	cp -R akanadocs.github.io temp
-	rm -rf temp/cm/api
+	rm -rf temp/cm/api temp/cm/api_oauth
 	cp -R api-docs/cm/api/ temp/cm/api/
+	cp -R api-docs/cm/api_oauth/ temp/cm/api_oauth/
 	cd temp
 	bundle exec jekyll build
 	cd ~/projects/akanadocs
-	rm -rf akanadocs.github.io/cm/api/
+	rm -rf akanadocs.github.io/cm/api/ akanadocs.github.io/cm/api_oauth/
 	cp -R temp/_site/cm/api/ akanadocs.github.io/cm/api/
+	cp -R temp/_site/cm/api_oauth/ akanadocs.github.io/cm/api_oauth/
 	cp api-docs/cm/api/index.htm akanadocs.github.io/cm/api/
+	cp api-docs/cm/api_oauth/index.htm akanadocs.github.io/cm/api_oauth/
 	```
 
 1. Replace the content of the ```unsorted_pages_prod_cat``` variable in ```_includes/unsorted-pages-apioverview``` in your **akanadocs.github.io** repo, with the contents of the same variable taken from ```_site/cm/api/Ref_API_Reference.htm```, or any of the Ref docs in your **temp** repo - now in akanadocs.github.io too.
