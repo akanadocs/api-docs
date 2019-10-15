@@ -5,7 +5,7 @@ description: Provides operations for performing activities relating to the resou
 product: cm
 category: ref
 nav-title: Authorization Server Authorization Service 
-no-nav: oauthapi
+no-nav: api
 sub-nav: false
 sub-nav-class: oauth/index_auz
 no-catalog: false
@@ -13,7 +13,7 @@ no-catalog: false
 
 <div class="apidocContent">
 <h2 id="top">Authorization Server Authorization Service: Overview</h2>
-<p>Provides operations for performing activities relating to the resource owner's interaction with the OAuth Provider;s authorization endpoint during the grant setup/provisioning process.</p>
+<p>Provides operations for performing activities relating to the resource owner's interaction with the OAuth Provider's authorization endpoint during the grant setup/provisioning process.</p>
 <p>This service includes such activities as initiating a resource owner grant, authenticating the resource owner with the corresponding resource owner domain, and obtaining the resource owner's authorization for the application's access to the resources, with the specific scopes requested.</p>
 <p>Calls to this service are always initiated by the resource owner, never by the application. Since the authorization endpoint is only used in <a href="Ref_Glossary_CommunityPlatform.htm#gl_oauth_grant_3legged">three-legged</a> scenarios, these operations are only used by three-legged grant types (<a href="Ref_Glossary_CommunityPlatform.htm#gl_oauth_grant_authorizationcode">Authorization Code</a> and <a href="Ref_Glossary_CommunityPlatform.htm#gl_oauth_grant_implicit">Implicit</a>).</p>
 <p><strong>URL</strong>:<span class="soaapidoc_endpoint"> <!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem --></span>auz</p>
@@ -44,11 +44,16 @@ no-catalog: false
     		Authenticates the resource owner. For SSO login, this operation renders the login domain; for LDAP domain, it accepts LDAP credentials such as username and password.<!-- #EndLibraryItem --></td>
     	</tr>
     <tr>
-    	<td>complete resource owner authorization</td>
-    	<td><a href="oauth_auz/m_auz_completeResourceOwnerAuthorization.htm">GET&nbsp;/oauth/auz/grants/{GrantID}/auzcomplete</a></td>
-    	<td><!-- #BeginLibraryItem "/Library/desc_oauth_auz_completeResourceOwnerAuthorization.lbi" -->
-    		Completes the process of authentication and authorization. Changes the grant status to Active or Rejected based on the authorization action, removes the temporary cookie that was in use during provisioning, and returns the resource owner to the redirect URI along with additional information such as the <strong>state</strong> parameter and the code, token, or id token.<!-- #EndLibraryItem --></td>
-    	</tr>
+      <td>authorize client by resource owner</td>
+      <td><a href="oauth_auz/m_-auz_authorizeClientByResourceOwner.htm">POST&nbsp;/oauth/auz/grants</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_oauth_auz_authorizeClientByResourceOwner.lbi" -->Authorizes the grant. The resource owner authorizes the client app based on the <a href="Ref_Glossary_CommunityPlatform.htm#gl_oauth_scope">OAuth scopes</a> that have been configured. As a result of this operation, the grant status changes from Pending to Active.<!-- #EndLibraryItem --></td>
+    </tr>
+    <tr>
+      <td>complete resource owner authorization</td>
+      <td><a href="oauth_auz/m_auz_completeResourceOwnerAuthorization.htm">GET&nbsp;/oauth/auz/grants/{GrantID}/auzcomplete</a></td>
+      <td><!-- #BeginLibraryItem "/Library/desc_oauth_auz_completeResourceOwnerAuthorization.lbi" -->
+Completes the process of authentication and authorization. Changes the grant status to Active or Rejected based on the authorization action, removes the temporary cookie that was in use during provisioning, and returns the resource owner to the redirect URI along with additional information such as the <strong>state</strong> parameter and the code, token, or id token.<!-- #EndLibraryItem --></td>
+    </tr>
     <tr>
       <td>get client avatar</td>
       <td><a href="oauth_auz/m_auz_getClientAvatar.htm">GET&nbsp;/oauth/auz/grants/{GrantID}/client/picture</a></td>
@@ -56,15 +61,10 @@ no-catalog: false
 Returns the avatar image for the OAuth client, for display on the Authorization page where the resource owner authorizes the grant.<!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td>get grant details</td>
-      <td><a href="oauth_auz/m_auz_getGrantDetails.htm">GET&nbsp;/oauth/auz/grants/{GrantID}/details</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_oauth_auz_getGrantDetails.lbi" -->Returns detailed information about the specified OAuth grant, including the list of scopes.<!-- #EndLibraryItem --></td>
-    </tr>
-<!--    <tr>
-      <td>get OAuth Provider</td>
-      <td>GET&nbsp;/oauth/auz/provider</td>
-      <td>{[to be deprecated in favor of getOAuthProviderFromGrantID per RS 6/30/15 do not doc.]}</td>
-    </tr>-->
+    	<td>get grant details</td>
+    	<td><a href="oauth_auz/m_auz_getGrantDetails.htm">GET&nbsp;/oauth/auz/grants/{GrantID}/details</a></td>
+    	<td><!-- #BeginLibraryItem "/Library/desc_oauth_auz_getGrantDetails.lbi" -->Returns detailed information about the specified OAuth grant, including the list of scopes.<!-- #EndLibraryItem --></td>
+    	</tr>
     <tr>
       <td>get OAuth Provider from Grant ID</td>
       <td><a href="oauth_auz/m_auz_getOAuthProviderFromGrantID.htm">GET&nbsp;/oauth/auz/grants/{GrantID}/provider</a></td>

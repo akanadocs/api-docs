@@ -5,10 +5,10 @@ description: Definitions for some of the terms used in the OAuth API documentati
 product: cm
 category: ref
 nav-title: Glossary 
-no-nav: oauthapi
-sub-nav: true
-sub-nav-class: Ref
-no-catalog: true
+no-nav: api
+sub-nav: false
+sub-nav-class: oauth/Ref_Glossary_CommunityPlatform
+no-catalog: false
 ---
 
 <div class="apidocContent">
@@ -170,11 +170,6 @@ no-catalog: true
 
 
 
-<dt id="gl_devconsole">Dev Console</dt>
-<dd>The Developer Console (Dev Console) is a web-based REST client provided as part of the developer portyal user interface so that developers can test different APIs in the context of their app. It is available for any app added to the platform, on the <em>Apps &gt; Dev Console</em> page.</dd>
-
-
-
 <dt id="gl_duration">duration</dt>
 <dd>The duration of a request or response message is expressed with the Duration data type in the format <strong>PnYnMnDTnHnMnS</strong>. For example, a message response time of <strong>P0Y0M0DT0H0M0.022S</strong> indicates 22 milliseconds. For an expanded definition of Duration, refer to <a href="aaref/Ref_DataTypes.htm">Data Types</a>.</dd>
 
@@ -208,6 +203,11 @@ no-catalog: true
 <dt id="gl_epochtime">epoch time</dt>
 <dd>Epoch time, also called Unix time, is defined as the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time; Thursday, 1 January 1970. In some cases the developer platform uses this value in response messages, expressed in milliseconds.</dd>
 
+
+
+<dt id="gl_extendedproperties">extended properties</dt>
+<dd>The Extended Properties feature is an add-on feature, available for use with the Akana API Platform, that allows you to set up and use configurable custom properties, along with workflows based on those properties.</dd>
+<dd>For installation information and links to additional resources see <a href="../../sp/install_lr/install_lr.htm">Installing the Extended Properties Feature</a>.</dd>
 
 
 <dt id="gl_favicon">favicon</dt>
@@ -312,8 +312,12 @@ no-catalog: true
 
 
 <dt id="gl_laas">LaaS</dt>
-<dd>Lifecycle as a Service (LaaS) is a set of products from Akana that exposes Lifecycle Manager asset configuration as a service/API. LaaS provides a way to integrate Lifecycle Manager functionality into&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->. Since Lifecycle Manager is more configurable, this facilitates the introduction of a more complex workflow, which can be used for purposes such as API governance.
-LaaS is a Lifecycle Manager offering in the cloud. You can use this service in many ways to extend the capabilities and reach of both Lifecycle Manager and&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->. For more information, see <a href="http://www.soa.com" target="_blank">www.soa.com</a>.</dd>
+<dd>Lifecycle as a Service (LaaS) is a set of products from Akana that exposes Lifecycle Manager asset configuration as a service/API. LaaS provides a way to integrate Lifecycle Manager functionality into&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->. Since Lifecycle Manager is more configurable, this facilitates the introduction of a more complex workflow, which can be used for purposes such as API governance.</dd>
+<dd>As of version 2018.0.0, LAAS is no longer a separate installation component. Instead, there are two separate features:
+	<ul>
+		<li><a href="#gl_lc">Lifecycle Coordinator</a></li>
+		<li><a href="#gl_lifecyclerepository">Lifecycle Repository</a></li>
+	</ul></dd>
 
 
 
@@ -325,6 +329,16 @@ LaaS is a Lifecycle Manager offering in the cloud. You can use this service in m
 <dt id="gl_ldap">LDAP</dt>
 <dd>Acronym for Lightweight Directory Access Protocol, an open, industry-standard protocol used by the platform to support single sign-on.</dd>
 
+
+
+	<dt id="gl_lc">Lifecycle Coordinator</dt>
+	<dd>Lifecycle Coordinator is a separate configurable component that coordinates promotion across multiple instances of API Platform tenants. It can be deployed standalone or can be co-located with a <a href="#gl_tenant">tenant</a> (or multiple tenants in the SaaS environment). Lifecycle Coordinator governs the <a href="#gl_promotion">promotion</a> process and the transfer of data between environments.</dd>
+
+
+
+	<dt id="gl_lifecyclerepository">Lifecycle Repository</dt>
+	<dd>Lifecycle Repository is another name for the <a href="#gl_extendedproperties">Extended Properties</a> add-on component, available for use with the Akana API Platform, that allows you to set up and use configurable properties, along with workflows based on those properties. Configurable properties are supported for the following resource types: API, App, and User.</dd>
+	<dd>For installation information and links to additional resources see <a href="../../sp/install_lr/install_lr.htm">Installing the Extended Properties Feature</a>.</dd>
 
 
 <dt id="gl_logindomain">login domain</dt>
@@ -482,13 +496,23 @@ LaaS is a Lifecycle Manager offering in the cloud. You can use this service in m
 
 
 <dt id="gl_pkcs12">PKCS12</dt>
-<dd>A file format used for keystores. The private key and certificate can be stored in the same PKCS12 file. In the platform, this format is used for uploading the app keystore file in Dev Console. The file extension can be p12 or pfx.</dd>
+<dd>A file format used for keystores. The private key and certificate can be stored in the same PKCS12 file. In the platform, this format is used for uploading the app keystore file in Test Client. The file extension can be p12 or pfx.</dd>
 
 
 
 <dt id="gl_postman">Postman</dt>
 <dd>A free external Web client application used for testing APIs. See <a href="https://www.getpostman.com/postman" target="_blank">https://www.getpostman.com/postman</a>.</dd>
 
+
+
+	<dt id="gl_promotion">promotion (from one environment to another)</dt>
+	<dd>Promotion is the process of propagating changes made in one <a href="#gl_environment">Environment</a> to another. The Promotion process is automated for efficiency and to help prevent mistakes that could occur in a manual process. Promotion is managed via the <a href="#gl_promotion_coordinator">Promotion Coordinator</a>.</dd>
+	<dd>Promotion requires installation and configuration of the Lifecycle Coordinator feature.</dd>
+
+
+
+	<dt id="gl_promotion_coordinator">Promotion Coordinator</dt>
+	<dd>A Promotion Coordinator is a separate component that controls the <a href="#gl_promotion">promotion</a> process and transfer of data between environments. There is a single Promotion Coordinator for all <a href="#gl_environment">Environments</a>.</dd>
 
 
 <dt id="gl_proxyapi">proxy API</dt>
@@ -707,10 +731,8 @@ LaaS is a Lifecycle Manager offering in the cloud. You can use this service in m
 
 
 <dt id="gl_testclient">Test Client</dt>
-<dd>The platform includes an API testing interface that acts as an easy-to-use test client for any API that is fully integrated, with an API definition in the platform. This test tool allows developers to thoroughly test all capabilities of the API.</dd>
+<dd>The platform includes an API testing interface, Test Client, that acts as an easy-to-use testing tool for any API that is set up in the developer portal. This test tool allows developers to thoroughly test all capabilities of the API.</dd>
 <dd>It can be used for prototyping, testing, and troubleshooting apps against an API. It includes OAuth support for retrieving the OAuth token in order to process the message.</dd>
-<dd>In Default Theme, the tool is called Dev Console; in Simple Developer Theme, it is called Test Client.</dd>
-<dd>See also <a href="#gl_devconsole">Dev Console</a>.</dd>
 
 
 

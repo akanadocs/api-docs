@@ -5,7 +5,7 @@ description: Returns an OAuth 2.0 token using HTTP POST.
 product: cm
 category: ref
 nav-title: Get OAuth 2.0 Token (POST) 
-no-nav: oauthapi
+no-nav: api
 sub-nav: true
 sub-nav-class: oauth_oauth20
 no-catalog: true
@@ -65,27 +65,14 @@ Authorization: Basic czZCaGRSa3F0MzpnWDFmQmF0M2JW
 Content-Type: application/x-www-form-urlencoded
 Accept: application/json</pre>
 <p><strong>Sample request body: authorization_code grant type</strong></p>
-<p>In the sample request body shown below, the client ID and client secret are included. When the Authorization header is included with the request message, as shown above, you don't need to send the client ID and client secret in the parameters. Send them either in the header or in the parameters. The below is an example of sending these values in the POST request body if the Authorization header was not sent. Line breaks have been added for display purposes.</p>
-<pre>client_id=acmepaymentscorp-3rCEQzwEHMT9PPvuXcClpe3v
-&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421
-&amp;code=T8Y2h7zvp-tviqe2gQQ_VGQKMizn8jRgxZ74hA
-&amp;redirect_uri=http%3A%2F%2Facmepaymentscorp.com%3A9900%2Fui%2Fapps%2Facmepaymentscorp%2F_VWQJeFH76RyfD6M6FRO5Svg%2Fresources%2Fconsole%2Fglobal%2Foauthclientredirect.html%3Fdynamic%3Dtrue
-&amp;grant_type=authorization_code
-&amp;scope=Scope1</pre>
+<p>In the sample request body shown below, the client ID and client secret are included. When the Authorization header is included with the request message, as shown above, you don't need to send the client ID and client secret in the parameters. Send them either in the header or in the parameters. The below is an example of sending these values in the POST request body if the Authorization header was not sent.</p>
+<pre>client_id=acmepaymentscorp-3rCEQzwEHMT9PPvuXcClpe3v&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421&amp;code=T8Y2h7zvp-tviqe2gQQ_VGQKMizn8jRgxZ74hA&amp;redirect_uri=http%3A%2F%2Facmepaymentscorp.com%3A9900%2Fui%2Fapps%2Facmepaymentscorp%2F_VWQJeFH76RyfD6M6FRO5Svg%2Fresources%2Fconsole%2Fglobal%2Foauthclientredirect.html%3Fdynamic%3Dtrue&amp;grant_type=authorization_code&amp;scope=Scope1</pre>
 
 <p><strong>Sample request body: client_credentials grant type</strong><strong> (2-legged)</strong></p>
-<pre>client_id=acmepaymentscorp-3rCEQzwEHMT9PPvuXcClpe3v
-&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421
-&amp;grant_type=client_credentials
-&amp;scope=Scope1</pre>
+<pre>client_id=acmepaymentscorp-3rCEQzwEHMT9PPvuXcClpe3v&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421&amp;grant_type=client_credentials&amp;scope=Scope1</pre>
 
 <p><strong>Sample request body: Resource Owner Credentials grant type</strong><strong></strong></p>
-<pre>client_id=atmosphere-3rCEQzwEHMT9PPvuXcClpe3v
-&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421
-&amp;grant_type=password
-&amp;scope=Scope1
-&amp;username=eng100
-&amp;password=password</pre>
+<pre>client_id=atmosphere-3rCEQzwEHMT9PPvuXcClpe3v&amp;client_secret=e5868ebb4445fc2ad9f949956c1cb9ddefa0d421&amp;grant_type=password&amp;scope=Scope1&amp;username=eng100&amp;password=password</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
