@@ -49,6 +49,8 @@ To optimize Github Pages build times (we were getting timeouts) we have moved th
 
 1.	Replace the content of the ```unsorted_pages_prod_cat``` variable in ```_includes/unsorted-pages-apioverview``` in your **docs-test** repo, with the contents of the same variable taken from ```_site/cm/api/Ref_API_Reference.htm```, or any of the Ref docs in your **temp** repo - now in docs-test too.
 
+This is an easy step, but does require care.  Make sure you copy the entire unsorted_pages_prod_cat variable declaration (from var through the semicolon) ***FROM*** a file in temp ***TO*** the ```_includes/unsorted-pages-apioverview``` in ***docs-test***.
+
 	> NOTE: this step is essential for maintaining the navigation structure of the API Docs.
 
 1.	Push the updated API Docs up to docs-test:
