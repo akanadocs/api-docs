@@ -337,11 +337,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -395,7 +395,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -408,15 +408,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -434,26 +434,26 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					
 					<a href="/api-docs/ev/learning.html" class="soa-ui-dc-container-main-left-header-link">Learning</a>
 								
-				</h3>
+				</h2>
 
 			</div>
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="documentation supportContent">
-					<h2 id="toc_0">Introduction to Data Sets</h2>
+					<h1 id="toc_0">Introduction to Data Sets</h1>
 
 <p>Learn about Envision data sets, metrics, and dimensions.</p>
 
 <p><a href="env_toc.html" class="button secondary">Envision Reference (Main Topic)</a>  <a href="../envision_install/installing_envision.htm" class="button secondary">Installing Envision 1.0</a>
-<h5 class="stamp">Supported Platforms: 8.0</h5>  <h5 class="stamp">Supported Envision Versions: 1.0</h5><br></p>
+<h4 class="stamp">Supported Platforms: 8.0</h4>  <h4 class="stamp">Supported Envision Versions: 1.0</h4><br></p>
 
 <div class = "divider1"></div>
 
-<h3 name="top" style="color: grey;">Table of Contents</h3>
+<h2 name="top" style="color: grey;">Table of Contents</h2>
 
 <ol>
 <li><a href="#what-is-a-data-set">What is a Data Set?</a></li>
@@ -463,7 +463,7 @@
 
 <div class = "divider1"></div>
 
-<h3 id="toc_1"><a id="what-is-a-data-set"></a>What is a Data Set?</h3>
+<h2 id="toc_1"><a id="what-is-a-data-set"></a>What is a Data Set?</h2>
 
 <p>A data set is a group of metrics that are collected so that they can be analyzed through queries based on different criteria, or dimensions. It is the foundation on top of which all analysis can be performed. Take a company named Acme that manufactures shoes, for example. Acme provides an API for merchants to order shoes that are sold to the public. Acme wishes to collect metrics on those sales such as: </p>
 
@@ -478,7 +478,7 @@
 <li>Total fees collected</li>
 </ul>
 
-<h3 id="toc_2"><a id="metrics-and-dimensions"></a>Metrics and Dimensions</h3>
+<h2 id="toc_2"><a id="metrics-and-dimensions"></a>Metrics and Dimensions</h2>
 
 <p>Acme wants this information reported on a weekly and monthly basis. This group of metrics becomes the basis for a data set. </p>
 
@@ -515,7 +515,7 @@
 
 <p><a href="#top">back to top</a></p>
 
-<h3 id="toc_3"><a id="data-set-examples"></a>Data Set Examples</h3>
+<h2 id="toc_3"><a id="data-set-examples"></a>Data Set Examples</h2>
 
 <p>By defining the data set in this way each week the number of orders made, number of items sold, sales amount, and fees paid, will be calculated. The numbers will be calculated by creating their sum. There will be a separate sum for each combination of merchant and style, and a sum independent of any dimension. The following table lists a set of orders that will be used to illustrate Shoe Sales Data Set.</p>
 

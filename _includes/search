@@ -10,7 +10,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -23,15 +23,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="{% endraw %}{{ site.baseurl }}{% raw %}{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>

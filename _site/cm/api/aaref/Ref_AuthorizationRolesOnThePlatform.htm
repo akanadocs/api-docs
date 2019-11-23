@@ -185,11 +185,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -243,7 +243,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -256,15 +256,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -282,16 +282,16 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					<a href="/api-docs/cm/api/index.htm" class="soa-ui-dc-container-main-left-header-link">EAP API</a>	
-				</h3>
+				</h2>
 
 			</div>
 
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="contentBody apidocContent">
-					<h2><a name="top"></a>Authorization Roles on the Platform</h2>
+					<h1><a name="top"></a>Authorization Roles on the Platform</h1>
 <p>Some operations can be performed even if a user is not logged in to the platform, such as viewing certain types of content. Other operations, such as adding an app, require login.</p>
 <p>In other cases, activities are further restricted so that certain operations can only be performed by a member of a certain user group or group. For details about these scenarios, see <a href="#access_private">Access to Private Resources and Content</a> below.</p>
 <p>Certain roles, such as the business administrator, have a senior level of access to multiple resources.</p>
@@ -388,11 +388,11 @@
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a name="access_private"></a>Access to Private Resources and Content</h3>
+<h2><a name="access_private"></a>Access to Private Resources and Content</h2>
 <p>Some operations can be performed even if a user is not logged in to the platform, such as viewing certain types of content. However, when resources are marked as Private, a user doesn't see those resources even if an operation doesn't require login. For any resources or content with additional access restrictions applied to it, a user must meet additional requirements before seeing the resource or content. The operation will still run successfully, but the private results will not be returned.</p>
 <p>For example, the <span class="apidoc_code"><a href="../apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></span> operation returns a list of all APIs on the platform. For a user invoking this operation, it returns a list of all public APIs and any additional APIs for which the user has access, providing the user is logged in. Private APIs to which the user doesn't have access do not appear on the list.</p>
 <p>Another examples is the <span class="apidoc_code"><a href="../content/m_content_get.htm">GET&nbsp;/content/get</a></span> operation, which returns content. If the content being requested relates to a Private API and is marked as private, the content is not returned unless the user is an authorized user. In some cases a Private API might have some content designated as Private and some designated as Public. In this case, the public content is returned to all users, but the private content is not.</p>
-<h5>Private API Access</h5>
+<h4>Private API Access</h4>
 <p>If an API version is private, it can be seen only by a user who has one of the following roles:</p>
 <ul>
   <li>API Administrator</li>
@@ -402,7 +402,7 @@
   <li>Invited users (includes API Context Group members and members of additional groups invited by the Private API Administrator)</li>
 </ul>
 
-<h5>Private App Access</h5>
+<h4>Private App Access</h4>
 <p>If an app version is private, it can be seen only by a user who has one of the following roles:</p>
 <ul>
   <li>App team member</li>
@@ -410,7 +410,7 @@
   <li>Sie Administrator</li>
 </ul>
 
-<h5>Private Group Access</h5>
+<h4>Private Group Access</h4>
 <p>To view information relating to a group that's designated as Private, a user must have one of the following roles:</p>
 <ul>
   <li>Group Administrator (for an API Context Group, the API Administrator)</li>
@@ -422,7 +422,7 @@
 
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>

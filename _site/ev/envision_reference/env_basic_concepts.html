@@ -337,11 +337,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -395,7 +395,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -408,15 +408,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -434,26 +434,26 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					
 					<a href="/api-docs/ev/learning.html" class="soa-ui-dc-container-main-left-header-link">Learning</a>
 								
-				</h3>
+				</h2>
 
 			</div>
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="documentation supportContent">
-					<h2 id="toc_0">Basic Concepts</h2>
+					<h1 id="toc_0">Basic Concepts</h1>
 
 <p>Provides a technical overview of the Envision product.</p>
 
 <p><a href="env_toc.html" class="button secondary">Envision Reference (Main Topic)</a>  <a href="../envision_install/installing_envision.htm" class="button secondary">Installing Envision 1.0</a>
-<h5 class="stamp">Supported Platforms: 8.0</h5>  <h5 class="stamp">Supported Envision Versions: 1.0</h5><br></p>
+<h4 class="stamp">Supported Platforms: 8.0</h4>  <h4 class="stamp">Supported Envision Versions: 1.0</h4><br></p>
 
 <div class = "divider1"></div>
 
-<h3 name="top" style="color: grey;">Table of Contents</h3>
+<h2 name="top" style="color: grey;">Table of Contents</h2>
 
 <ol>
 <li><a href="#introduction">Introduction</a></li>
@@ -466,7 +466,7 @@
 
 <div class = "divider1"></div>
 
-<h3 id="toc_1"><a id="introduction"></a>Introduction</h3>
+<h2 id="toc_1"><a id="introduction"></a>Introduction</h2>
 
 <p>Envision is an analytics platform that allows you to slice and dice your data to analyze every aspect of your business and digital strategy. It can help you collect data and identify patterns, trends, violations, baselines, or historical context. The domain of the data you wish to analyze is open ended. You may wish to analyze:</p>
 
@@ -500,7 +500,7 @@
 
 <p><a href="#top">back to top</a></p>
 
-<h3 id="toc_2"><a id="capabilities"></a>Capabilities</h3>
+<h2 id="toc_2"><a id="capabilities"></a>Capabilities</h2>
 
 <p>Envision’s capabilities can be broken down into different four categories, data definition, data enrichment &amp; storage, data aggregation, and data analysis</p>
 
@@ -508,7 +508,7 @@
 
 <p><a href="#top">back to top</a></p>
 
-<h3 id="toc_3"><a id="data-definition"></a>Data Definition</h3>
+<h2 id="toc_3"><a id="data-definition"></a>Data Definition</h2>
 
 <p>The foundation for analytics is understanding and defining what data you have to work with and what you want to do with that data. This is what is done with the data definition capabilities of Envision. </p>
 
@@ -516,19 +516,19 @@
 
 <p><a href="#top">back to top</a></p>
 
-<h3 id="toc_4"><a id="data-storage"></a>Data Storage</h3>
+<h2 id="toc_4"><a id="data-storage"></a>Data Storage</h2>
 
 <p>Envision also supports data enrichment during the storage process. This is the amending, or altering, of data before it is persisted based on information obtained from a different source. For example the business system might be just collecting the user-agent field but for proper charting the corresponding browser/OS/device may be what is persisted instead. Enrichment is performed by plugins invoked by the data storage API prior to persisting the data or by scheduled jobs to manipulate data not persisted through the API.</p>
 
 <p><a href="#top">back to top</a></p>
 
-<h3 id="toc_5"><a id="data-analysis"></a>Data Analysis</h3>
+<h2 id="toc_5"><a id="data-analysis"></a>Data Analysis</h2>
 
 <p>Based on the data definition raw business data must be transformed into metrics that can be compared, charted, and trended. This is done by organizing, or grouping, the data in ways that can be queried with the proper granularity and purpose, and performing aggregating calculations on the data according to those groupings. For example calculating the average sales figures of each channel partner on a quarterly basis. This is what the Envision data aggregation capabilities provide.</p>
 
 <p><a href="#top">back to top</a></p>
 
-<h3 id="toc_6"><a id="data-aggregation"></a>Data Aggregation</h3>
+<h2 id="toc_6"><a id="data-aggregation"></a>Data Aggregation</h2>
 
 <p>Finally users of Envision want to view the aggregated data in ways that easily depict the trends, patterns, and violations they are looking for. Envision provides analysis capabilities for the user to do this. Envision does this through a highly tailorable charting and dashboard generation portal. It can also support the extraction of data through the use of an API so that third party visualization tools can be used.</p>
 

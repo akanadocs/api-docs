@@ -185,11 +185,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -243,7 +243,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -256,15 +256,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -282,9 +282,9 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					<a href="/api-docs/cm/api/index.htm" class="soa-ui-dc-container-main-left-header-link">EAP API</a>	
-				</h3>
+				</h2>
 
 			</div>
 
@@ -292,7 +292,7 @@
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="contentBody apidocContent">
 					<!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>PUT&nbsp;/api/{service}/versions/{ID}/ratings/{UserID}</h2><!-- InstanceEndEditable -->
+<h1><a name="top" id="top"></a>PUT&nbsp;/api/{service}/versions/{ID}/ratings/{UserID}</h1><!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/library/desc_updateRating_all.lbi" -->
@@ -327,20 +327,20 @@ To complete this operation successfully, a user must be logged in.<!-- #EndLibra
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+</table><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">PUT</p>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-<h3 id="endpoint">URL</h3>
+<h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->{service}/versions/{ID}/ratings/{UserID}</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <!-- InstanceBeginEditable name="Sample Request" -->
-<h3 id="samplerequest">Sample Request</h3>
+<h2 id="samplerequest">Sample Request</h2>
 <p>This section includes sample requests for different services that use this operation:</p>
 <ul>
   <li><a href="#samplerequest_1">APIs service</a></li>
@@ -348,7 +348,7 @@ To complete this operation successfully, a user must be logged in.<!-- #EndLibra
   <li><a href="#samplerequest_4">Groups service</a></li>
   <li><a href="#samplerequest_3">Users service</a></li>
 </ul>
-<h4 id="samplerequest_1">Sample request: APIs service</h4>
+<h3 id="samplerequest_1">Sample request: APIs service</h3>
 
 <p id="id_samplerequest">The example below shows a specific user changing their rating of the specified API version to 5.</p>
 <p><strong>Request URL</strong></p>
@@ -366,7 +366,7 @@ Content-Type: application/json; charset=UTF-8
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h4 id="samplerequest_2">Sample request: Apps service</h4>
+<h3 id="samplerequest_2">Sample request: Apps service</h3>
 <p id="id_samplerequest_2">The example below shows a specific user changing their rating for an app version to 4.</p>
 <p><strong>Sample request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/90VsIX3WmpP32sqoYQk8jj4J.acmepaymentscorp/ratings/user13967.acmepaymentscorp</pre>
@@ -384,7 +384,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h4 id="samplerequest_4">Sample request: Groups service</h4>
+<h3 id="samplerequest_4">Sample request: Groups service</h3>
 <p id="id_samplerequest_4">The example below shows a specific user changing their rating for a group to 5.</p>
 <p><strong>Sample request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->groups/group23509.acmepaymentscorp/ratings/user23509.acmepaymentscorp</pre>
@@ -400,7 +400,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h4 id="samplerequest_3">Sample request: Users service</h4>
+<h3 id="samplerequest_3">Sample request: Users service</h3>
 <p id="id_samplerequest_3">The example below shows a specific user changing their rating for an app version to 1.</p>
 <p><strong>Sample request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/AMyrWWlF0Qj2ZPGqF8dPsa7O.acmepaymentscorp/ratings/user12262.acmepaymentscorp</pre>
@@ -421,7 +421,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 
 <!-- InstanceBeginEditable name="Request Headers" -->
-<h3 id="requestheaders">Request Headers</h3>
+<h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -450,7 +450,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 
 <!-- InstanceBeginEditable name="Request Parameters" -->
-<h3 id="requestparameters">Request Parameters</h3>
+<h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -490,14 +490,14 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 
 
 <!-- InstanceBeginEditable name="Response Description" -->
-<h3 id="response">Response</h3>
+<h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the updated rating information.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
 <!-- InstanceBeginEditable name="Sample Response" -->
-<h3 id="sampleresponse">Sample Response</h3>
+<h2 id="sampleresponse">Sample Response</h2>
 <p>This section includes sample responses for different services that use this operation:</p>
 <ul>
   <li><a href="#sampleresponse_1">APIs service</a></li>
@@ -506,7 +506,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
   <li><a href="#sampleresponse_3">Users service</a></li>
 </ul>
 
-<h4 id="sampleresponse_1">Sample response: APIs service</h4>
+<h3 id="sampleresponse_1">Sample response: APIs service</h3>
 <p id="id_sampleresponse">The sample response below shows that the operation completed successfully. The updated Rating object is returned in the response.</p>
 <p><strong>Sample response headers</strong></p>
 <pre>Status Code: 200 OK
@@ -530,7 +530,7 @@ Date: Tue, 12 Feb 2013 20:06:20 GMT</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h4 id="sampleresponse_2">Sample response: Apps service</h4>
+<h3 id="sampleresponse_2">Sample response: Apps service</h3>
 <p id="id_sampleresponse">The sample response below shows that the operation completed successfully. The updated Rating object is returned in the response.</p>
 
 <p><strong>Sample response headers</strong></p>
@@ -547,7 +547,7 @@ Content-Type: application/json</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h4 id="sampleresponse_4">Sample response: Groups service</h4>
+<h3 id="sampleresponse_4">Sample response: Groups service</h3>
 <p id="id_sampleresponse">The sample response below shows that the operation completed successfully. The updated Rating object is returned in the response.</p>
 
 <p><strong>Sample response headers</strong></p>
@@ -564,7 +564,7 @@ Date: Wed, 19 Jun 2013 14:01:28 GMT</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h4 id="sampleresponse_3">Sample response: Users service</h4>
+<h3 id="sampleresponse_3">Sample response: Users service</h3>
 <p id="id_sampleresponse">The sample response below shows that the operation completed successfully. The updated Rating object is returned in the response.</p>
 
 <p><strong>Sample response headers</strong></p>
@@ -584,7 +584,7 @@ Date: Thu, 30 May 2013 17:31:58 GMT</pre>
 
 
 <!-- InstanceBeginEditable name="Response Headers" -->
-<h3 id="responseheaders">Response Headers</h3>
+<h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -605,7 +605,7 @@ Date: Thu, 30 May 2013 17:31:58 GMT</pre>
 
 
 <!-- InstanceBeginEditable name="Response Body" -->
-<h3 id="responsebody">Response Body</h3>
+<h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr bgcolor="#DDDDDD">
@@ -626,7 +626,7 @@ Date: Thu, 30 May 2013 17:31:58 GMT</pre>
 <!-- InstanceEndEditable -->
 
 
-<h3 id="errorcodes">Error Codes/Messages</h3>
+<h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -660,7 +660,7 @@ Date: Thu, 30 May 2013 17:31:58 GMT</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>

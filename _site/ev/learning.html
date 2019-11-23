@@ -337,11 +337,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -395,7 +395,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -408,15 +408,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -434,17 +434,17 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-before-load soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					
 					<a href="/api-docs/ev/learning.html" class="soa-ui-dc-container-main-left-header-link">Learning</a>
 								
-				</h3>
+				</h2>
 
 			</div>
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="documentation supportContent">
-					<h2 id="top">Learning about Envision</h2>
+					<h1 id="top">Learning about Envision</h1>
 					<p>Use the articles and documents below to learn how to use the platform for specific tasks and functions.</p>
 
 										<div class="soa-ui-dc-content-catalog">
@@ -744,7 +744,7 @@
                 if (snClasses.length > 1) {
                     var Objli = $('<li></li>');
                     Objli.addClass("soa-ui-dc-content-catalog-subheading");
-                    var ObjliH3 = $('<h3></h3>');
+                    var ObjliH3 = $('<h2></h2>');
                     ObjliH3.text(snClasses[i]);
                     Objli.append(ObjliH3);
                     ObjUl.append(Objli);
@@ -762,8 +762,8 @@
                     var ObjAvDiv = $('<div></div>');
                     var ObjDetDiv = $('<div></div>');
                     var ObjSecDiv = $('<div></div>');
-                    var ObjDetDivH4 = $('<h4></h4>');
-                    var ObjAvDivH4 = $('<h4></h4>');
+                    var ObjDetDivH4 = $('<h3></h3>');
+                    var ObjAvDivH4 = $('<h3></h3>');
                     var ObjP = $('<p></p>');
 
                     ObjAvDivH4.addClass("soa-ui-dc-icon-imgtxt soa-ui-dc-document-type");
@@ -816,7 +816,7 @@
             if (snClasses.length > 0) {
                 var Objli = $('<li></li>');
                 Objli.addClass("soa-ui-dc-content-catalog-subheading");
-                var ObjliH3 = $('<h3></h3>');
+                var ObjliH3 = $('<h2></h2>');
                 ObjliH3.text("Miscellaneous");
                 Objli.append(ObjliH3);
                 ObjUl.append(Objli);
@@ -829,8 +829,8 @@
                 var ObjAvDiv = $('<div></div>');
                 var ObjDetDiv = $('<div></div>');
                 var ObjSecDiv = $('<div></div>');
-                var ObjDetDivH4 = $('<h4></h4>');
-                var ObjAvDivH4 = $('<h4></h4>');
+                var ObjDetDivH4 = $('<h3></h3>');
+                var ObjAvDivH4 = $('<h3></h3>');
                 var ObjP = $('<p></p>');
 
                 ObjAvDivH4.addClass("soa-ui-dc-icon-imgtxt soa-ui-dc-document-type");
@@ -878,7 +878,7 @@
     $(document).ready(function() {
         var title = catalog(".soa-ui-dc-content-catalog");
         $(".soa-ui-dc-content-catalog").find("ul").show();
-        $("#top").replaceWith("<h2 id=\"top\">" + title + "</h2>");
+        $("#top").replaceWith("<h1 id=\"top\">" + title + "</h1>");
         // $(".soa-ui-dc-container-main-content > div > p").replaceWith("<p>New content</p>");
     });
 </script>

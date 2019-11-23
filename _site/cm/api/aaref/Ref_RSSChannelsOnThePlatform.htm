@@ -185,11 +185,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -243,7 +243,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -256,15 +256,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -282,16 +282,16 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					<a href="/api-docs/cm/api/index.htm" class="soa-ui-dc-container-main-left-header-link">EAP API</a>	
-				</h3>
+				</h2>
 
 			</div>
 
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="contentBody apidocContent">
-					<h2><a name="top"></a>RSS Channels on the Platform</h2>
+					<h1><a name="top"></a>RSS Channels on the Platform</h1>
 <p>RSS is a widely used technology that allows users to subscribe to website content they're interested in. The content provider organizes information in a defined information structure called an RSS channel. Users can then subscribe to the channel via a piece of software called an RSS feed. Once a user subscribes to an RSS feed, content updates are automatically delivered, without the user having to check the individual websites for updates.</p>
 <p>Many of the operations in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API use RSS in the response. In general, GET&nbsp;operations that return any type of list return the information as an RSS channel, in either JSON or XML format. For examples, see <a href="#rss_platform_rss"><!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;Objects Returned as RSS Channels</a> below.</p>
 <p>The RSS channel always includes the required summary information, and can also hold a list of items. In some cases, the RSS structure includes additional extension elements. In cases where&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;operations use additional extension elements, they are described in the documentation for the applicable operation.</p>
@@ -301,7 +301,7 @@
   <li><a href="#rss_pagingofreturnedrssitems">Paging of Returned RSS Items</a></li>
   <li><a href="#rss_platform_rss"><!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;Objects Returned as RSS Channels</a></li>
 </ul>
-<h4><a name="rss_fields"></a>RSS Fields</h4>
+<h3><a name="rss_fields"></a>RSS Fields</h3>
 <p>The following tables describe elements that might appear in RSS feeds returned by the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API.</p>
 <p>In general, platform RSS responses include a few main values, and then one or more items, each with a set of values. These two sets of information are described in the tables below. For examples, refer to <a href="#rss_platform_rss">Enterprise API Platform Objects Returned as RSS Channels</a> below.</p>
 <p><strong>RSS response main values</strong>:</p>
@@ -416,7 +416,7 @@
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h4><a name="rss_pagingofreturnedrssitems"></a>Paging of Returned RSS Items</h4>
+<h3><a name="rss_pagingofreturnedrssitems"></a>Paging of Returned RSS Items</h3>
 <p>When the total number of items in a list exceeds the search results page size, the list is broken down into pages, where each returned RSS channel is one page. <a href="../Ref_Glossary_CommunityPlatform.htm#gl_opensearch">OpenSearch</a> 1.1 elements are used as extensions to the RSS <span class="apidoc_code">channel</span> element to describe how the returned channel represents a page and where it fits in the overall list.</p>
 <p>For example, if the search results are limited to elements 101-200 out of a total of 1000 possible results, that information is included in the RSS channel, in the OpenSearch fields: totalResults, startIndex, and itemsPerPage. Including this information allows the user to get the broader picture of the possible search results available.  If the full set of possible search results is returned, we don't include totalResults.</p>
 <p>Definitions for the paging properties are listed below.</p>
@@ -458,7 +458,7 @@
   },
   &quot;version&quot; : &quot;1.0&quot;
 }</pre>
-<h4><a name="rss_platform_rss"></a>&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;Objects Returned as RSS Channels</h4>
+<h3><a name="rss_platform_rss"></a>&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;Objects Returned as RSS Channels</h3>
 <p>The following is a list of some of the types of&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;information that are returned as RSS channels:</p>
 <ul>
   <li>Alerts: <a href="../alerts/m_alerts_getAlerts.htm#rss_alerts_json">JSON,</a> <a href="../alerts/m_alerts_getAlerts.htm#rss_alerts_xml">XML</a></li>
@@ -500,7 +500,7 @@
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>

@@ -185,11 +185,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -243,7 +243,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -256,15 +256,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -282,16 +282,16 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					<a href="/api-docs/cm/api/index.htm" class="soa-ui-dc-container-main-left-header-link">EAP API</a>	
-				</h3>
+				</h2>
 
 			</div>
 
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="contentBody apidocContent">
-					<h2><a name="top"></a>Managing Avatars on the Platform</h2>
+					<h1><a name="top"></a>Managing Avatars on the Platform</h1>
 <p>This topic includes information about managing avatars on the platform, including:</p>
 <ul>
   <li><a href="#resourcesthathaveavatars">Resources that Have Avatars on the Platform</a></li>
@@ -303,7 +303,7 @@
 </ul>
 
 
-<h3><a name="resourcesthathaveavatars"></a>Resources that Have Avatars on the Platform</h3>
+<h2><a name="resourcesthathaveavatars"></a>Resources that Have Avatars on the Platform</h2>
 <p>The platform supports upload of an image for use as an avatar for the following resource types:</p>
 <ul>
   <li>APIs</li>
@@ -312,7 +312,7 @@
   <li>Users</li>
 </ul>
 
-<h3><a name="supportedfiletypesandsize"></a>Supported File Types and File Size</h3>
+<h2><a name="supportedfiletypesandsize"></a>Supported File Types and File Size</h2>
 <p>Supported image files must be no more than 4MB in size, and must be one of these supported image types:</p>
 <ul>
   <li>JPG</li>
@@ -322,7 +322,7 @@
   <li>PNG</li>
 </ul>
 
-<h3><a name="workingwithresourceimages"></a>Working With Resource Images</h3>
+<h2><a name="workingwithresourceimages"></a>Working With Resource Images</h2>
 <p>The Dropbox service provides operations for uploading images to the platform. Working with images might include such activities as uploading an image, cropping it, and saving the cropped portion as the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_avatar">avatar</a> for a resource.</p>
 <p>Below is a suggested implementation that uses several of the Dropbox operations, in sequence, to complete these tasks.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -367,13 +367,13 @@
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a name="managingcachingforavatars" id="managingcachingforavatars"></a>Managing Caching for Avatars</h3>
+<h2><a name="managingcachingforavatars" id="managingcachingforavatars"></a>Managing Caching for Avatars</h2>
 <p>Because many different resources, such as APIs, apps, and users, can have a different avatar, it's possible that a platform resource, such as an API's Board page with many comments and notifications, might include many different images. For maximum efficiency, avatars can be cached.</p>
 <p>Whenever the avatar for a resource is changed, the URL is updated. An updated image will always have a different URL. This means that you can cache avatars indefinitely without risk that you might be referencing an outdated avatar.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a name="difference"></a>Usage Note: Difference Between getAvatar and getDefaultAvatar</h3>
+<h2><a name="difference"></a>Usage Note: Difference Between getAvatar and getDefaultAvatar</h2>
 <p>There are two operations available for retrieving the avatar associated with a resource, with one key difference between them:</p>
 <ul>
   <li><span class="apidoc_code"><a href="../resource/m_getDefaultAvatar.htm">GET&nbsp;/api/{service}/{ID}/avatar</a> (getDefaultAvatar)</span>: This operation simply returns the avatar for the resource, such as app, API, or user.</li>
@@ -382,7 +382,7 @@
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a name="processflowexample" id="processflowexample"></a>Process Flow: Example</h3>
+<h2><a name="processflowexample" id="processflowexample"></a>Process Flow: Example</h2>
 <p>Let's say a user, Jane Mead, adds an avatar to her user profile. She then decides to change the image; she removes the existing avatar and adds a different one. This process flow uses the following operations:</p>
 <ol>
   <li>User uploads an image from disk: <a href="../dropbox/m_dropbox_addPicture.htm">POST&nbsp;/api/dropbox/pictures</a>. Image is saved to database and PictureID is returned.</li>
@@ -399,7 +399,7 @@
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>

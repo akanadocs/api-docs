@@ -337,11 +337,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -395,7 +395,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -408,15 +408,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -434,26 +434,26 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					
 					<a href="/api-docs/ev/learning.html" class="soa-ui-dc-container-main-left-header-link">Learning</a>
 								
-				</h3>
+				</h2>
 
 			</div>
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="documentation supportContent">
-					<h2 id="toc_0">Data Set Collection and Aggregation</h2>
+					<h1 id="toc_0">Data Set Collection and Aggregation</h1>
 
 <p>Learn how Envision performs data collection and data aggregation.</p>
 
 <p><a href="env_toc.html" class="button secondary">Envision Reference (Main Topic)</a>  <a href="../envision_install/installing_envision.htm" class="button secondary">Installing Envision 1.0</a>
-<h5 class="stamp">Supported Platforms: 8.0</h5>  <h5 class="stamp">Supported Envision Versions: 1.0</h5><br></p>
+<h4 class="stamp">Supported Platforms: 8.0</h4>  <h4 class="stamp">Supported Envision Versions: 1.0</h4><br></p>
 
 <div class = "divider1"></div>
 
-<h3 name="top" style="color: grey;">Table of Contents</h3>
+<h2 name="top" style="color: grey;">Table of Contents</h2>
 
 <ol>
 <li><a href="#introduction">Introduction</a></li>
@@ -464,11 +464,11 @@
 
 <div class = "divider1"></div>
 
-<h3 id="toc_1"><a id="introduction"></a>Introduction</h3>
+<h2 id="toc_1"><a id="introduction"></a>Introduction</h2>
 
 <p>In the previous topic we introduced the concept of a data set, how metrics are defined, their aggregation, and collection intervals. In this topic we will describe how the data in a data set is actually collected and how the aggregation is performed.</p>
 
-<h3 id="toc_2"><a id="data-collection-using-a-broker"></a>Data Collection Using a Broker</h3>
+<h2 id="toc_2"><a id="data-collection-using-a-broker"></a>Data Collection Using a Broker</h2>
 
 <p>Envision on its own does not collect data. It only aggregates data based on the data set definition. It does, however, provide an API that other systems and products can use to report the data they have collected that belong to a data set. Envision also provides an API for defining the data set itself so a system or product can create a data set in Envision and then start reporting data that belongs to that data set.</p>
 
@@ -478,7 +478,7 @@
 
 <p><a href="#top">back to top</a></p>
 
-<h3 id="toc_3"><a id="data-collection-using-individual-transations-or-raw-data"></a>Data Collection Using Individual Transactions or Raw Data</h3>
+<h2 id="toc_3"><a id="data-collection-using-individual-transations-or-raw-data"></a>Data Collection Using Individual Transactions or Raw Data</h2>
 
 <p>The Envision API will accept data from individual transactions (“raw” data) or pre-aggregated data. The API will persist the data in a MongoDB document data store. From here Envision will instruct the data store to aggregate the stored data on intervals that match those defined in the data set. For example, if the data set is defined to provide daily and weekly metrics then Envision will instruct the data store to aggregate the metrics on a daily and weekly basis.</p>
 
@@ -488,7 +488,7 @@
 
 <p><a href="#top">back to top</a></p>
 
-<h3 id="toc_4"><a id="data-aggregation-using-time-intervals"></a>Data Aggregation Using Time Intervals</h3>
+<h2 id="toc_4"><a id="data-aggregation-using-time-intervals"></a>Data Aggregation Using Time Intervals</h2>
 
 <p>Envision has predefined time intervals that it supports for aggregating data, minute, hour, day, week, month, and year. Any and all of these can be used for a particular data set. All smaller intervals are used in the aggregation of the larger intervals, so aggregation may be performed more often than what is defined in the data set. For example, let’s say the data set is defined to collect metrics on a daily basis. Envision will first aggregate the data on a minute basis. Then it will use the output of that aggregation over the course of an hour to create an hourly aggregation. It will then use the output of the hourly aggregations over the course of a day to create the daily aggregation.</p>
 

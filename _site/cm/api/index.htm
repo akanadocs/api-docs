@@ -185,11 +185,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -243,7 +243,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -256,15 +256,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -282,16 +282,16 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					<a href="/api-docs/cm/api/index.htm" class="soa-ui-dc-container-main-left-header-link">EAP API</a>	
-				</h3>
+				</h2>
 
 			</div>
 
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="contentBody apidocContent">
-					<h2><a name="top"></a>&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API: Overview</h2>
+					<h1><a name="top"></a>&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API: Overview</h1>
 <p>The <!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem --> API is a REST-based API that supports activities relating to setting up, managing, and supporting app and API owners and all other platform users.</p>
 <p>It has many features and capabilities to support such activities as logging in and out, setting up apps and APIs, creating contracts between apps and APIs, creating discussions and reviews, commenting on discussions and reviews, creating and managing groups such as app teams and API Context Groups, and many others.</p>
 <p>This documentation includes information on each operation that's available including parameters, possible values, and in most cases examples of requests and responses in JSON, XML, or plain text as applicable.</p>
@@ -305,7 +305,7 @@
 
 
 
-<h3><a name="methods"></a>Services and Operations (Methods)</h3>
+<h2><a name="methods"></a>Services and Operations (Methods)</h2>
 <p>The&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API services are summarized in the list below, with a link to detailed information about the operations available in each service.</p>
 <p class="apidoc_note"><strong>Note</strong>: Where information is missing, it will be available in a later version of the documentation.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -367,7 +367,7 @@
 
 
 
-<h3><a name="gettingstarted"></a>Getting Started</h3>
+<h2><a name="gettingstarted"></a>Getting Started</h2>
 <p>To get started with using the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API, follow the steps below.</p>
 <ol>
   <li>Decide which services you need to use, and which methods (operations).</li>
@@ -383,7 +383,7 @@
   <li>For each operation, refer to the documentation for detailed information about the request message format and expected response.
   <p class="apidoc_note"><strong>Note</strong>: Remember that if parameter values contain special characters, they must be encoded. For example, if a parameter includes an email address, the @ sign must be replaced with its URL-encoded representation of <strong>%40</strong>. A space in a value must be encoded with <strong>%25</strong>, and so on.</p></li>
 </ol>
-<h4>Additional resources for getting started:</h4>
+<h3>Additional resources for getting started:</h3>
 <ul>
   <li>For more detailed information about logging in and managing the session cookie, refer to <a href="Ref_AuthenticationAndSecurity.htm">Authentication and Security with the Enterprise API Platform API</a>.</li>
   <li>For some example &quot;getting started&quot; scenarios, see <a href="Ref_API_Reference.htm#howto_list">&quot;how-to&quot; topics</a>.</li>
@@ -392,7 +392,7 @@
 
 
 
-<h3><a name="usingtheapitomodify"></a>Using the API to Modify the Platform</h3>
+<h2><a name="usingtheapitomodify"></a>Using the API to Modify the Platform</h2>
 <p>You can use the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API to help speed up tasks normally completed through the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;user interface, such as setting up your apps or APIs.</p>
 <p>However, if you're running the API to make changes to the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;user interface it's very important that you check for successful results along the way, and that if necessary you undo actions that haven't successfully completed. You must make sure you restore the user interface to a good stable condition with regard to your data.</p>
 <p>When you're done, remember to invoke the <span class="apidoc_code"><a href="login/m_login_logout.htm">POST&nbsp;/api/login/logout</a></span> API to log out.</p>
@@ -400,7 +400,7 @@
 
 
 
-<h3>Related Topics</h3>
+<h2>Related Topics</h2>
 <ul>
   <li><a href="Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
   <li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>

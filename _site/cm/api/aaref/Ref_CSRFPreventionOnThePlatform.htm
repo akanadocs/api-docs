@@ -185,11 +185,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -243,7 +243,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -256,15 +256,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -282,16 +282,16 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					<a href="/api-docs/cm/api/index.htm" class="soa-ui-dc-container-main-left-header-link">EAP API</a>	
-				</h3>
+				</h2>
 
 			</div>
 
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="contentBody apidocContent">
-					<h2><a name="top"></a>CSRF Prevention on the Platform</h2>
+					<h1><a name="top"></a>CSRF Prevention on the Platform</h1>
 <p>The platform offers a CSRF prevention feature that adds a layer of protection against malicious <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csrf_attack">CSRF</a> attacks.</p>
 <p>A CSRF attack leverages the fact that the authorized user has already authenticated, and that the cookie is stored in the user's browser. The CSRF prevention feature requires an additional value, a CSRF token, to be sent in the request. If the CSRF token is not present, the request is rejected as unauthorized.</p>
 <p>This topic includes:</p>
@@ -305,7 +305,7 @@
 
 
 
-<h3><a name="checking_if_csrf_is_required"></a>Checking if CSRF Is Required: Platform Settings</h3>
+<h2><a name="checking_if_csrf_is_required"></a>Checking if CSRF Is Required: Platform Settings</h2>
 <p>If the platform security settings relating to CSRF are turned off, the CSRF token is not returned at login. If either of the two settings is turned on, the CSRF token is returned. It is always returned as a cookie.</p>
 <p>In case you are not sure whether the CSRF header is required in your implementation, here are two ways you can check:</p>
 <ul>
@@ -321,7 +321,7 @@
 
 
 
-<h3><a name="operations_exempt_from_csrf"></a>Operations Exempt from CSRF</h3>
+<h2><a name="operations_exempt_from_csrf"></a>Operations Exempt from CSRF</h2>
 <p>Certain operations are exempt from CSRF, regardless of the platform settings. These are GET operations which, if disabled, could interfere with the core user experience on the platform. When the platform CSRF settings are both turned on, CSRF is required for most GET operations, but not for these specific operations that are exempt.</p>
 <p>An example is the <span class="apidoc_code"><a href="../content/m_content_get.htm">GET&nbsp;/{contentpath}</a></span> operation which allows users to view API documentation which is not marked as private.</p>
 <p>For any such operations, you'll see the below note in the documentation, below the <strong>Authorization Roles/Permissions</strong> section.</p>
@@ -330,13 +330,13 @@
 
 
 
-<h3><a name="getting_the_csrf_cookie_value"></a>Getting the CSRF Cookie Value</h3>
+<h2><a name="getting_the_csrf_cookie_value"></a>Getting the CSRF Cookie Value</h2>
 <p>If the developer portal is configured to require a CSRF token, the CSRF value is generated as a result of successful login, and is sent to the browser as a cookie, along with the standard <a href="Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken</a> cookie. If the AtmoAuthToken cookie is renewed, the CSRF token is renewed at the same time, using the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation.</p>
 <p><a href="#top">Back to top</a></p>
 
 
 
-<h3><a name="sending_the_csrf_token"></a>Sending the CSRF Token</h3>
+<h2><a name="sending_the_csrf_token"></a>Sending the CSRF Token</h2>
 <p>The CSRF token can be sent in any of several ways. Different ways are better in different scenarios, as shown in the table below.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
@@ -386,7 +386,7 @@
 <p>The <strong>Csrf-Token cookie</strong> has the same timeout value as the <strong>AtmoAuthToken</strong> authorization cookie (as specified by the Site Admin, or 25 minutes by default).</p>
 <p>For general information about cookies used by the platform, see <a href="Ref_CookiesOnThePlatform.htm">Cookies in the Enterprise API Platform</a>.</p>
 <p>For information about the FedmemberID that's used in the header, see <a href="Ref_IDsOnThePlatform.htm#id_fedmemberid">IDs on the Platform</a>.</p>
-<h5>To use the Community Manager API, using the custom header, when the CSRF prevention feature is in effect:</h5>
+<h4>To use the Community Manager API, using the custom header, when the CSRF prevention feature is in effect:</h4>
 <ol>
   <li>Get the value from the Csrf-Token cookie for the authenticated Community Manager user.</li>
   <li>Send the exact same value in the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header for the request message.</li>
@@ -395,7 +395,7 @@
 
 
 
-<h3><a name="csrf_in_a_federation_setting"></a>CSRF in a federation setting</h3>
+<h2><a name="csrf_in_a_federation_setting"></a>CSRF in a federation setting</h2>
 <p>In a federation setting, CSRF should be either disabled in both/all federation members or enabled in both/all federation members. If CSRF is enabled in one federation member and disabled in other, there will be issues with conflicting permission requirements.</p>
 <p>When changing the CSRF permission setting in two or more federation members, allow five minutes after changing the setting for the cache to be refreshed on the server side.</p>
 <p><a href="#top">Back to top</a></p>
@@ -408,7 +408,7 @@
 
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>

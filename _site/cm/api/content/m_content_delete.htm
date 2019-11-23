@@ -185,11 +185,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -243,7 +243,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -256,15 +256,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -282,9 +282,9 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					<a href="/api-docs/cm/api/index.htm" class="soa-ui-dc-container-main-left-header-link">EAP API</a>	
-				</h3>
+				</h2>
 
 			</div>
 
@@ -292,7 +292,7 @@
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="contentBody apidocContent">
 					<!-- InstanceBeginEditable name="Heading" -->
-<h2><a name="top" id="top"></a>DELETE&nbsp;/content/{path}</h2>
+<h1><a name="top" id="top"></a>DELETE&nbsp;/content/{path}</h1>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
@@ -320,13 +320,13 @@ Deletes platform content associated with an API (a specific file).<!-- #EndLibra
 </ul>
 </td>
   </tr>
-</table><!-- #EndLibraryItem --><h3 id="httpmethod">HTTP Method</h3>
+</table><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">DELETE</p>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
-<h3 id="endpoint">URL</h3>
+<h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
 <pre class="soaapidoc_endpoint">https://<!-- #BeginLibraryItem "/library/_endpointhost.lbi" -->{hostname}<!-- #EndLibraryItem -->/content/{path}</pre>
 <!-- InstanceEndEditable -->
@@ -334,7 +334,7 @@ Deletes platform content associated with an API (a specific file).<!-- #EndLibra
 
 
 <!-- InstanceBeginEditable name="Sample Request" -->
-<h3 id="samplerequest">Sample Request</h3>
+<h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to delete the index file from the API documentation for the specified API version.</p>
 <p><strong>Request URL</strong></p>
 <pre>https://api.acmepaymentscorp.com/content/api/api19427.acmepaymentscorp/documents/index.htm</pre>
@@ -350,7 +350,7 @@ Accept: */*
 
 
 <!-- InstanceBeginEditable name="Request Headers" -->
-<h3 id="requestheaders">Request Headers</h3>
+<h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -379,7 +379,7 @@ Accept: */*
 
 
 <!-- InstanceBeginEditable name="Request Parameters" -->
-<h3 id="requestparameters">Request Parameters</h3>
+<h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
     <tr>
@@ -405,14 +405,14 @@ Accept: */*
 
 
 <!-- InstanceBeginEditable name="Response Description" -->
-<h3 id="response">Response</h3>
+<h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200. There is no response content.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
 <!-- InstanceBeginEditable name="Sample Response" -->
-<h3 id="sampleresponse">Sample Response</h3>
+<h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
@@ -426,7 +426,7 @@ Date: Mon, 24 Jun 2013 18:18:59 GMT</pre>
 
 
 <!-- InstanceBeginEditable name="Response Headers" -->
-<h3 id="responseheaders">Response Headers</h3>
+<h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -447,13 +447,13 @@ Date: Mon, 24 Jun 2013 18:18:59 GMT</pre>
 
 
 <!-- InstanceBeginEditable name="Response Body" -->
-<h3 id="responsebody">Response Body</h3>
+<h2 id="responsebody">Response Body</h2>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
-<h3 id="errorcodes">Error Codes/Messages</h3>
+<h2 id="errorcodes">Error Codes/Messages</h2>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -483,7 +483,7 @@ Date: Mon, 24 Jun 2013 18:18:59 GMT</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>

@@ -185,11 +185,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -243,7 +243,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -256,15 +256,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -282,16 +282,16 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					<a href="/api-docs/cm/api/index.htm" class="soa-ui-dc-container-main-left-header-link">EAP API</a>	
-				</h3>
+				</h2>
 
 			</div>
 
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="contentBody apidocContent">
-					<h2><a name="top"></a>Valid Values for Components on the Platform</h2>
+					<h1><a name="top"></a>Valid Values for Components on the Platform</h1>
 <p>This topic includes lists of valid values for the following common elements used on the platform:</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
@@ -422,7 +422,7 @@
 
 
 
-<h3><a id="values_apibindingtypes"></a>API Binding Types</h3>
+<h2><a id="values_apibindingtypes"></a>API Binding Types</h2>
 <p>The binding type indicates whether an API is SOAP or REST. In some cases, a single API could have both binding types.</p>
 <p>Valid values for API binding type:</p>
 <ul>
@@ -433,7 +433,7 @@
 
 
 
-<h3><a id="values_apicontractstate"></a>API Contract State</h3>
+<h2><a id="values_apicontractstate"></a>API Contract State</h2>
 <p>During the lifecycle of an API access contract between an app and an API, the contract might have a change in state depending on various events. Certain operations execute workflow actions that result in a change to the state of the API contract. The API access state values are never used in request messages, but are sometimes included in response messages. </p>
 <p>For more information about workflow actions relating to API access, refer to <a href="Ref_ExecutingWorkflowActions.htm#values_workflowactions_contracts">App/API Contracts: Valid Workflow Actions</a>.</p>
 <p><span class="apidoc_note"><strong>Note</strong>: there are two sets of values relating to contracts&#8212;contract state and contract status. Contract <strong>state</strong> indicates what point in the contract lifecycle the contract is currently in; for example, pending approval, approved, activated. Contract <strong>status</strong> indicates whether the contract is active, not yet active, or archived, and determines which workflow actions are valid for the contract.</span></p>
@@ -453,7 +453,7 @@
 
 
 
-<h3><a id="values_apicontractstatus"></a>API Contract Status</h3>
+<h2><a id="values_apicontractstatus"></a>API Contract Status</h2>
 <p>The Status value of an API contract is used to determine which workflow actions are valid for the contract at the current time.</p>
 <p class="apidoc_note"><strong>Note</strong>: there are two sets of values relating to contracts&#8212;contract state and contract status. Contract <strong>state</strong> indicates what point in the contract lifecycle the contract is currently in; for example, pending approval, approved, activated. Contract <strong>status</strong> indicates whether the contract is active, not yet active, or archived, and determines which workflow actions are valid for the contract.</p>
 <p>The status values are shown below.</p>
@@ -484,7 +484,7 @@
 
 
 
-<h3><a id="values_apistate"></a>API States</h3>
+<h2><a id="values_apistate"></a>API States</h2>
 <p>There are two valid states for an API:</p>
 <!--Per MM 4/1/15 there is also com.soa.api.state.closed not used by UI. If the state is closed then you cannot request contracts against that api version.-->
 <ul>
@@ -495,7 +495,7 @@
 
 
 
-<h3><a id="values_apitypes"></a>API Types</h3>
+<h2><a id="values_apitypes"></a>API Types</h2>
 <p>API Types are deprecated. We now use <a href="#values_apibindingtypes">API Binding Types</a> instead. Although the values are shown below, do not use API Types.</p>
 <p> Values:</p>
 <ul>
@@ -507,7 +507,7 @@
 
 
 
-<h3><a id="values_appsecuritymechanisms"></a>App Security Mechanisms</h3>
+<h2><a id="values_appsecuritymechanisms"></a>App Security Mechanisms</h2>
 <p>An app version can use one or both of the following valid app security mechanisms:</p>
 <ul>
   <li>com.soa.security.mechanism.sharedsecret</li>
@@ -517,7 +517,7 @@
 
 
 
-<h3><a id="values_appsettings"></a>App Settings</h3>
+<h2><a id="values_appsettings"></a>App Settings</h2>
 <p>Most app settings used by the <a href="../obj/o_apps_AppSettings.htm">AppSettings</a> object, but not all, have two values, one for the enabled state and one for the disabled state. All app setting values are shown below.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
@@ -621,7 +621,7 @@
 
 
 
-<h3><a id="values_appstate"></a>App State values</h3>
+<h2><a id="values_appstate"></a>App State values</h2>
 <p>There are five possible states for an app in the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->. When a user first creates an app, the app state is <strong>Initial</strong>. Other possible values are: <strong>Sandbox</strong>, <strong>Review</strong>, <strong>Approved</strong>, <strong>Live</strong>.</p>
 <p>When an app is first set up, before any API contracts are initiated, it is in the Initial state.</p>
 <p>Changes in state are part of the sequence as an app requests access to first one environment and then the other.</p>
@@ -653,14 +653,14 @@
 
 
 
-<h3><a id="values_contractenvironment"></a>App/API Contract Environment values</h3>
+<h2><a id="values_contractenvironment"></a>App/API Contract Environment values</h2>
 <p>An app can connect to an API in either of two environments: Sandbox or Production. An app/API contract is always specific to the environment. Generally, the contract in the Sandbox environment is first; usually, the Sandbox contract is terminated when the app goes live in the Production environment, activating the Production contract.</p>
 <p>In some cases an app can have contracts with the same API Version in both environments at the same time. Each contract has a unique <a href="Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 
-<h3><a id="values_appversionsettings"></a>App Version Settings</h3>
+<h2><a id="values_appversionsettings"></a>App Version Settings</h2>
 <p>Most app version settings used by the <a href="../obj/o_apps_AppVersionSettings.htm">AppVersionSettings</a> object, but not all, have two values, one for the enabled state and one for the disabled state. All app version setting values are shown below.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
@@ -724,7 +724,7 @@
 
 
 
-<h3><a id="values_avatarproviders"></a>Avatar Providers</h3>
+<h2><a id="values_avatarproviders"></a>Avatar Providers</h2>
 <p>Valid values for <strong>AvatarProvider</strong> are as follows:</p>
 <ul>
   <li>com.soa.imageprovider.type.gravatar</li>
@@ -734,7 +734,7 @@
 
 
 
-<h3><a id="values_boarditemtypes"></a>Board Item Types</h3>
+<h2><a id="values_boarditemtypes"></a>Board Item Types</h2>
 <p>BoardItemType can be any of the below.</p>
 <p class="apidoc_note"><strong>Note</strong>: Although the user interface renders the names of Board item types in all caps, all operations should use the values exactly as shown below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -782,7 +782,7 @@
 
 
 
-<h3><a id="values_client_auth_policy_options"></a>Client Authorization Policy Options</h3>
+<h2><a id="values_client_auth_policy_options"></a>Client Authorization Policy Options</h2>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
     <tr>
@@ -812,7 +812,7 @@
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h3><a id="values_consoleresourcedynamicvariables"></a>Console Resource dynamic variable values</h3>
+<h2><a id="values_consoleresourcedynamicvariables"></a>Console Resource dynamic variable values</h2>
 <p>In the Console Resource API, in the <span class="apidoc_code"><a href="../consoleresource/m_consoleresource_get.htm">GET&nbsp;/resources/{path:.*}</a></span> operation, <strong>dynamic</strong> parameter, you can use the following variables:</p>
 <ul>
   <li>${scripts.version}</li>
@@ -829,7 +829,7 @@
 
 
 
-<h3><a id="values_descriptionmediatype"></a>DescriptionMediaType</h3>
+<h2><a id="values_descriptionmediatype"></a>DescriptionMediaType</h2>
 <p>Valid values for DescriptionMediaType are as follows:</p>
 <ul>
   <li>text/plain</li>
@@ -840,7 +840,7 @@
 
 
 
-<h3><a id="values_displaymode"></a>Display Mode</h3>
+<h2><a id="values_displaymode"></a>Display Mode</h2>
 <p>Valid values for display mode are as follows:</p>
 <ul>
   <li>MAINPAGE</li>
@@ -851,7 +851,7 @@
 
 
 
-<h3><a id="values_environment"></a>Environment</h3>
+<h2><a id="values_environment"></a>Environment</h2>
 <p>Valid values for <a href="../Ref_Glossary_CommunityPlatform.htm#gl_environment">environment</a> are as follows:</p>
 <ul>
   <li>Sandbox</li>
@@ -861,7 +861,7 @@
 
 
 
-<h3><a id="values_groupmemberroles"></a>Group Member Roles</h3>
+<h2><a id="values_groupmemberroles"></a>Group Member Roles</h2>
 <p>Group member roles and their values are listed below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
       <thead>
@@ -889,7 +889,7 @@
 
 
 
-<h3><a id="values_groupmembershipstates"></a>Group Membership States</h3>
+<h2><a id="values_groupmembershipstates"></a>Group Membership States</h2>
 <p>The following states are valid for group membership: </p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
   <thead>
@@ -929,10 +929,10 @@
 
 
 
-<h3><a id="values_groupsettings"></a>Group Settings</h3>
+<h2><a id="values_groupsettings"></a>Group Settings</h2>
 <p>Valid values for group settings are shown below.</p>
 
-<h4><a id="values_groupsettings_GroupBoardSupport"></a>Group Settings: GroupBoardSupport</h4>
+<h3><a id="values_groupsettings_GroupBoardSupport"></a>Group Settings: GroupBoardSupport</h3>
 <p>The <strong>GroupBoardSupport</strong> property indicates whether a Board is supported for the group.</p>
 <p>Possible values:</p>
 <ul>
@@ -941,7 +941,7 @@
 </ul>
 <p>For example, this property is part of the <a href="../obj/o_groups_GroupSettings.htm">Group Settings</a> object returned by the <span class="apidoc_code"><a href="../groups/m_groups_getGroup.htm">GET&nbsp;/api/groups/{GroupID}</a></span> operation</p>
 
-<h4><a id="values_groupsettings_GroupRatingsSupport"></a>Group Settings: GroupRatingsSupport</h4>
+<h3><a id="values_groupsettings_GroupRatingsSupport"></a>Group Settings: GroupRatingsSupport</h3>
 <p>The <strong>GroupRatingsSupport</strong> property indicates whether ratings are supported for the group.</p>
 <p>Possible values:</p>
 <ul>
@@ -950,7 +950,7 @@
 </ul>
 <p>For example, this property is part of the <a href="../obj/o_groups_GroupSettings.htm">Group Settings</a> object returned by the <span class="apidoc_code"><a href="../groups/m_groups_getGroup.htm">GET&nbsp;/api/groups/{GroupID}</a></span> operation</p>
 
-<h4><a id="values_groupsettings_GroupReviewsSupport"></a>Group Settings: GroupReviewsSupport</h4>
+<h3><a id="values_groupsettings_GroupReviewsSupport"></a>Group Settings: GroupReviewsSupport</h3>
 
 <p>The <strong>GroupReviewsSupport</strong> property indicates whether reviews are supported for the group.</p>
 <p>Possible values:</p>
@@ -963,7 +963,7 @@
 
 
 
-<h3><a id="values_groupstates"></a>Group States</h3>
+<h2><a id="values_groupstates"></a>Group States</h2>
 <p>There are two valid states for a group, as shown below.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
@@ -987,7 +987,7 @@
 
 
 
-<h3><a id="values_grouptypes"></a>Group Types</h3>
+<h2><a id="values_grouptypes"></a>Group Types</h2>
 <p>In practical terms, the only valid group type you'll see in working with the&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API is for an independent group:</p>
 <ul>
   <li>com.soa.group.type.independent</li>
@@ -999,7 +999,7 @@
 
 
 
-<h3><a id="values_idsystemtype"></a>IdSystemType values for Login Connector Type</h3>
+<h2><a id="values_idsystemtype"></a>IdSystemType values for Login Connector Type</h2>
 <p>Each login domain connector type has a unique <strong>IdSystemType</strong> value. The login domain connector types that are available for a specific instance of the platform depend on the nature of the platform instance, including installation and configuration choices and any customization.</p>
 <p>Some of the standard <strong>IdSystemType</strong> values are shown below. For additional connector types, refer to the documentation from the connector providor.</p>
 <p>You can check the <strong>IdSystemType</strong> values for your installation by running the <span class="apidoc_code"><a href="../login/m_login_getLoginDomains.htm">GET&nbsp;/api/login/domains</a></span> operation.</p>
@@ -1033,7 +1033,7 @@
 
 
 
-<h3><a id="values_legalagreementtype"></a>Legal Agreement Types</h3>
+<h2><a id="values_legalagreementtype"></a>Legal Agreement Types</h2>
 <p>The platform allows you to specify a type for your legal agreement documents. The only reserved legal agreement type is the signup agreement, as listed below.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
@@ -1057,7 +1057,7 @@
 
 
 
-<h3><a id="values_legaldocumentstate"></a>Legal Document States</h3>
+<h2><a id="values_legaldocumentstate"></a>Legal Document States</h2>
 <p>The State or DocumentState value of a legal document indicates its activation state. When the document is first added, it is in a <strong>draft</strong> state. Once the document has been activated, the API Admin can switch states between <strong>active</strong> and <strong>inactive</strong>.</p>
 <p>Possible values:</p>
 <ul>
@@ -1069,7 +1069,7 @@
 
 
 
-<h3><a id="values_licensestate"></a>License State values</h3>
+<h2><a id="values_licensestate"></a>License State values</h2>
 <p>A <a href="../Ref_Glossary_CommunityPlatform.htm#gl_license">license</a> can be in either of the following states:</p>
 <ul>
   <li>Active</li>
@@ -1079,7 +1079,7 @@
 
 
 
-<h3><a id="values_logininstructiontype"></a>Login Instruction Types</h3>
+<h2><a id="values_logininstructiontype"></a>Login Instruction Types</h2>
 <p>Login instruction types (instructionType in the response message) are used by the login service. The <span class="apidoc_code"><a href="../login/m_login_ssoLoginInstructions.htm">GET&nbsp;/api/login/ssoLoginInstructions</a></span> operation first determines the next step needed to log the user in, depending on the login option the user has selected, and then it returns a value for the login instruction type, as well as additional values. For example, if the login instruction type is NeedCredentials, the response also indicates which credentials to collect; if the instruction type is NeedRedirect, the response includes the redirect URL.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
@@ -1107,7 +1107,7 @@
 
 
 
-<h3><a id="values_loginstate"></a>Login State</h3>
+<h2><a id="values_loginstate"></a>Login State</h2>
 <p>The login operation returns the user's login state (loginState field) indicating where in the login process the user currently is. If there are tasks that must be completed for the user to be fully logged in, those are indicated by the value of the loginState field, and specified in the pendingTasks field. For example, the user might need to change the password, provide answers to security challenge questions, or accept the platform legal agreement. Valid values are shown below.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
@@ -1131,7 +1131,7 @@
 
 
 
-<h3><a id="values_loginstatus"></a>Login Status</h3>
+<h2><a id="values_loginstatus"></a>Login Status</h2>
 <p>The login status, returned in the response to the <span class="apidoc_code"><a href="../login/m_login_ssoLogin.htm">GET&nbsp;/api/login/ssoLogin</a></span> operation, indicates the user's status in terms of login. There are three possible values:</p>
 <ul>
   <li>Active</li>
@@ -1142,7 +1142,7 @@
 
 
 
-<h3><a id="values_mediatype"></a>Media Type  values</h3>
+<h2><a id="values_mediatype"></a>Media Type  values</h2>
 <p>Valid values for MediaType are as follows:</p>
 <ul>
   <li>text/plain</li>
@@ -1153,7 +1153,7 @@
 
 
 
-<h3><a id="values_metrickey"></a>Metric Key values</h3>
+<h2><a id="values_metrickey"></a>Metric Key values</h2>
 <p>The metric key indicates the information type. It corresponds to the column name in the metrics  export file, if the information is exported.</p>
 <p>Possible values:</p>
 <ul>
@@ -1168,7 +1168,7 @@
 
 
 
-<h3><a id="values_notificationsgroup"></a>Notification Group values</h3>
+<h2><a id="values_notificationsgroup"></a>Notification Group values</h2>
 <p>As part of their preference settings, users can choose whether to receive email notifications for events in the categories listed below. Notifications are sent by default. These settings are returned by the <span class="apidoc_code"><a href="../users/m_users_getAccountSettings.htm">GET&nbsp;/api/users/{UserID}/settings</a></span> operation, and can be modified using the <span class="apidoc_code"><a href="../users/m_users_modifyAccountSettings.htm">PUT&nbsp;/api/users/{UserID}/settings</a></span> operation.</p>
 <p>Valid notification groups are listed in the table below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -1221,13 +1221,13 @@
 
 
 
-<h3><a id="values_notificationstate"></a>Notification State values</h3>
+<h2><a id="values_notificationstate"></a>Notification State values</h2>
 <p>When a user first receives a notification, the notification state is <strong>Unread</strong>. Other valid notification states are: <strong>Read</strong>, <strong>Archived</strong>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 
-<h3><a id="values_oauthclienttype"></a>OAuth Client Type values</h3>
+<h2><a id="values_oauthclienttype"></a>OAuth Client Type values</h2>
 <p>Valid values for <strong>OAuth Client Type</strong> are as follows:</p>
 <ul>
   <li>Confidential: <strong>com.soa.oauth.ctype.confidential</strong></li>
@@ -1237,7 +1237,7 @@
 
 
 
-<h3><a id="values_oidc_response_mode"></a>OpenID Connect Relying Party Response Mode values</h3>
+<h2><a id="values_oidc_response_mode"></a>OpenID Connect Relying Party Response Mode values</h2>
 <p>The response_mode value in the request determines the type of response that will be returned. Supported values for the platform's OpenID Connect Relying Party domain response mode (response_mode parameter) are as follows:</p>
 <ul>
   <li>form_post</li>
@@ -1248,7 +1248,7 @@
 
 
 
-<h3><a id="values_policysubtypes"></a>Policy SubTypes</h3>
+<h2><a id="values_policysubtypes"></a>Policy SubTypes</h2>
 <p>As part of API setup, the API owner or administrator can define one or more policies that govern the API's operation. Policies are categorized into <a href="#values_policytypes">policy types</a> and policy subtypes. Policy subtypes are listed below.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
@@ -1281,7 +1281,7 @@
 
 
 
-<h3><a id="values_policytypes"></a>Policy Types</h3>
+<h2><a id="values_policytypes"></a>Policy Types</h2>
 <p>As part of API setup, the API owner or administrator can define one or more policies that govern the API's operation. Policies are categorized into the policy types listed below.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
@@ -1314,7 +1314,7 @@
 
 
 
-<h3><a id="values_publishedstate"></a>Published State values</h3>
+<h2><a id="values_publishedstate"></a>Published State values</h2>
 <p>Valid values for the <strong>published state</strong> for a piece of user-generated content, such as a discussion, ticket, alert, review, or comment, are:</p>
 <ul>
   <li>Unpublished</li>
@@ -1324,7 +1324,7 @@
 
 
 
-<h3><a id="values_reporttype"></a>Report Type</h3>
+<h2><a id="values_reporttype"></a>Report Type</h2>
 <p>Valid values for the <strong>Report Type</strong> parameter are shown in the table below.</p>
 <p>This parameter is used by the following metrics operations Apps and APIs services:</p>
 <ul>
@@ -1368,7 +1368,7 @@
 
 
 
-<h3><a id="values_reporttype_license"></a>Report Type: License Report</h3>
+<h2><a id="values_reporttype_license"></a>Report Type: License Report</h2>
 <p>Valid values for the <strong>ReportType</strong> parameter (in the user interface, used in the License Report) are shown in the tables below.</p>
 <p>The license report for APIs (see <span class="apidoc_code"><a href="../apis/m_apis_getLicenseReport.htm">GET&nbsp;/api/apis/versions/{ApiVersionID}/licensereport</a></span>) references the following <strong>ReportType</strong> values.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
@@ -1412,7 +1412,7 @@
 
 
 
-<h3><a id="values_resetstatus"></a>Reset Status Values (for password reset)</h3>
+<h2><a id="values_resetstatus"></a>Reset Status Values (for password reset)</h2>
 <p>When a user is resetting the password, and security <a href="../Ref_Glossary_CommunityPlatform.htm#gl_challengequestion">challenge questions</a> are in effect, the API tracks whether the user's answer to the security question was valid. If there are three incorrect answers, the user is locked out for 30 minutes. Reset status values, returned in the response are shown below.</p>
 <p>These are returned in the response for the <span class="apidoc_code"><a href="../login/m_login_authenticateWithPasswordResetCode.htm">POST&nbsp;/api/login/authenticateWithPasswordResetCode</a></span> (authenticate with <a href="../Ref_Glossary_CommunityPlatform.htm#gl_code_passwordreset">password reset code</a>) operation.</p>
 <ul>
@@ -1424,7 +1424,7 @@
 
 
 
-<h3><a id="values_resourcetype"></a>Resource Types</h3>
+<h2><a id="values_resourcetype"></a>Resource Types</h2>
 <p>The Users service includes operations that report on a specific user's connection with a resource type.</p>
 <p>For the purposes of these operations, valid values for resource type are as follows:</p>
 <ul>
@@ -1438,7 +1438,7 @@
 
 
 
-<h3><a id="values_search_type"></a>Search "Type" Values</h3>
+<h2><a id="values_search_type"></a>Search "Type" Values</h2>
 <p>When using the Search operation (<span class="apidoc_code"><a href="../search/m_search_search.htm">GET&nbsp;search</a></span>), you can define a search type in the <strong>q</strong> field. Valid values for search type are shown below. For an example of how this is used, see <a href="Ref_UsingSearchOnThePlatform.htm">Using Search on the Platform</a> (example #4).</p>
 <ul>
   <li>app</li>
@@ -1458,7 +1458,7 @@
 
 
 
-<h3><a id="values_securitychallengequestions"></a>Security Challenge Questions</h3>
+<h2><a id="values_securitychallengequestions"></a>Security Challenge Questions</h2>
 <p>Depending on the platform's settings, one or more security challenge questions might be required as a security measure. On signup, the user chooses out of the questions offered, and provides answers which are stored securely in the database. The security challenge questions provide an added measure of security for certain operations relating to the user account, such as password reset, profile changes, and password change.</p>
 <p>The platform has certain default security questions; new questions can be added by the Business Admin. The default questions are shown below.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
@@ -1491,7 +1491,7 @@
 
 
 
-<h3><a id="values_sortby"></a>Sort By values</h3>
+<h2><a id="values_sortby"></a>Sort By values</h2>
 <p>As part of retrieving some types of information, such as the Board for an app or API, you can define a sort value for the information that's returned. Valid values are shown below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
@@ -1539,7 +1539,7 @@
 
 
 
-<h3><a id="values_sortorder"></a>Sort Order values</h3>
+<h2><a id="values_sortorder"></a>Sort Order values</h2>
 <p>As part of retrieving some types of information, such as the Board for an app or API, you can define the sort order for the information that's returned. Valid values are shown below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
@@ -1567,7 +1567,7 @@
 
 
 
-<h3><a id="values_ticketlabel"></a>Ticket Label values</h3>
+<h2><a id="values_ticketlabel"></a>Ticket Label values</h2>
 <p>The platform supports the writing and tracking of tickets on apps and APIs. Authorized users can assign a label to the ticket indicating its priority. The same user, or another authorized user, can change the priority value of a ticket.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
@@ -1599,7 +1599,7 @@
 
 
 
-<h3><a id="values_ticketstate"></a>Ticket State values</h3>
+<h2><a id="values_ticketstate"></a>Ticket State values</h2>
 <p>The platform supports the writing and tracking of tickets on apps and APIs. When it's first opened, the ticket is in a state of OPEN. Typically, the process includes a transition to the states of ACTIVE, RESOLVED, and CLOSED. In some cases the process might be a little different.</p>
 <p>The current state of a ticket determines the state changes that are valid. For example, a ticket must be closed before it can be reopened; it must be active before it can be resolved.</p>
 <p>The ticket state indicates where the ticket currently stands in the process. Valid values are shown below.</p>
@@ -1643,7 +1643,7 @@
 
 
 
-<h3><a id="values_timeintervals"></a>Time Intervals</h3><!-- #BeginLibraryItem "/library/values_metrics.lbi" --><p>By default, the platform supports tracking of metrics in the increments shown below.</p>
+<h2><a id="values_timeintervals"></a>Time Intervals</h2><!-- #BeginLibraryItem "/library/values_metrics.lbi" --><p>By default, the platform supports tracking of metrics in the increments shown below.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
     <tr>
@@ -1694,7 +1694,7 @@
 
 
 
-<h3><a id="values_useractions"></a>User Actions on a Resource</h3>
+<h2><a id="values_useractions"></a>User Actions on a Resource</h2>
 <p>Valid actions users can take on a resource, such as an app or API, are as follows:</p>
 <ul>
   <li>Add</li>
@@ -1708,7 +1708,7 @@
 
 
 
-<h3><a id="values_userpreferences"></a>User Preferences</h3>
+<h2><a id="values_userpreferences"></a>User Preferences</h2>
 <p>As part of their preference settings, users can choose to dismiss certain parts of the platform help content that are designed for helping new users set started. In the user interface, the user clicks to close the dismissible help panel. Using the API, user preferences are set with the <span class="apidoc_code"><a href="../users/m_users_savePreference.htm">POST&nbsp;/api/users/{UserID}/preferences</a></span> operation. </p>
 <p>Valid user preferences are listed in the table below. Valid values for user preferences are <strong>open</strong>, which displays the help, or <strong>closed</strong>, which dismisses the help.</p>
 <table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
@@ -1749,7 +1749,7 @@
 
 
 
-<h3><a id="values_usersignupstate"></a>User Signup State values</h3>
+<h2><a id="values_usersignupstate"></a>User Signup State values</h2>
 <p>The user signup state can be either of the following:</p>
 <ul>
   <li>pending_validation</li>
@@ -1759,7 +1759,7 @@
 
 
 
-<h3><a id="values_userstatus"></a>User Status</h3>
+<h2><a id="values_userstatus"></a>User Status</h2>
 <p>A user with Site Admin rights can enable or disable an existing user. A user who has been disabled no longer has access to the platform. After disabling a user's access, the Site Admin can enable it, which restores any access rights the user previously had.</p>
 <p>Similarly, the Site Admin can lock a user's account, or can unlock it if it was locked either by the Site Admin or because of failed password attempts.</p>
 <p>Valid values for <strong>UserStatus</strong> are as follows:</p>
@@ -1774,9 +1774,9 @@
 
 
 
-<h3><a id="values_visibilitysettings"></a>Visibility Settings</h3>
+<h2><a id="values_visibilitysettings"></a>Visibility Settings</h2>
 <p>Visibility options vary according to the resource type. For details, see below.</p>
-<h4>Visibility for app, APIs, or groups</h4>
+<h3>Visibility for app, APIs, or groups</h3>
 <p>For app, API, or group visibility, there are three valid values:<br />
 </p>
 <ul>
@@ -1791,7 +1791,7 @@
   <li>com.soa.visibility.registered.users: platform users who are logged in.</li>
 </ul>
 
-<h4>Visibility for Alerts, Discussions, Reviews, and Tickets</h4>
+<h3>Visibility for Alerts, Discussions, Reviews, and Tickets</h3>
 <p>Alerts, Discussions, Reviews, and Tickets are governed by the same three visibility values as above for apps, APIs, or groups. For example:</p>
 <ul>
   <li>A discussion for a specific group is visible to all who have visibility of the group.</li>
@@ -1799,17 +1799,17 @@
 </ul>
 <p class="apidoc_note"><strong>Note</strong>: The information above is for published Board items. When Board items are moderated, visibility is also affected by the item's publication status. For more information, see <a href="Ref_BoardsInThePortal.htm#boards_forummoderation">Boards in the Portal: Forum Moderation</a>.</p>
 
-<h4>Visibility for Comments</h4>
+<h3>Visibility for Comments</h3>
 <p>A published comment on a Board item, such as a discussion or ticket, is visible to those who have visibility of the Board item itself. However, note that visibility is also affected by the comment's publication status. If the comment is unpublished, it has reduced visibility. For more information, see <a href="Ref_BoardsInThePortal.htm#boards_forummoderation">Boards in the Portal: Forum Moderation</a>.</p>
 
-<h4><a id="values_visibilitysettings_licenses"></a>Visibility for Licenses and Scopes</h4>
+<h3><a id="values_visibilitysettings_licenses"></a>Visibility for Licenses and Scopes</h3>
 <p>For licenses and scopes, there are two valid values:</p>
 <ul>
   <li>Public: anyone who is authorized to see an API can see public licenses or scopes associated with the API.</li>
   <li>Limited: users must be authorized to see the API and, additionally, specifically invited to have visibility to the private licenses or scopes. Uninvited users see other parts of the API, including public licenses, but do not see the private licenses or scopes.</li>
 </ul>
 <p>For general information on how privacy works with the License feature, refer to the Community Manager user interface help (<a href="http://docs.akana.com/cm/learnmore/ov_licenses.htm" target="_blank">Licenses</a>).</p>
-<h4>Visibility for users</h4>
+<h3>Visibility for users</h3>
 <p>For users, visibility is always Public.</p>
 <p class="apidoc_note"><strong>Note</strong>: If an app has multiple versions, the visibility setting for the app is Private if at least one version is set to Private.</p>
 <p>For more information about visibility of apps, see <a href="Ref_PublicandPrivateApps.htm">Public and Limited (Private) Apps</a>.</p>
@@ -1817,11 +1817,11 @@
 
 
 
-<h3><a id="values_workflowactions"></a>Workflow Actions</h3>
+<h2><a id="values_workflowactions"></a>Workflow Actions</h2>
 <p>Valid workflow actions for various types of resources are shown in the tables below.</p>
 <p>For more information about workflow actions, including process flow diagrams, see <a href="Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
 
-<h4><a id="values_workflowactions_groups_all"></a>All Groups: Valid Workflow Actions</h4><!-- #BeginLibraryItem "/library/table_workflowactions_groups_all.lbi" --><table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
+<h3><a id="values_workflowactions_groups_all"></a>All Groups: Valid Workflow Actions</h3><!-- #BeginLibraryItem "/library/table_workflowactions_groups_all.lbi" --><table class="tableparmsresponse" width="100%" cellspacing="0" cellpadding="2">
 <thead>
     <tr>
     <th width="50%">Action</th>
@@ -1846,7 +1846,7 @@
       <td>group.membership.action.remove</td>
     </tr>
 </tbody>
-</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_groups_private"></a>API Context Groups and Independent Groups: Additional Workflow Actions</h4><!-- #BeginLibraryItem "/library/table_workflowactions_groups_private.lbi" -->
+</table><!-- #EndLibraryItem --><h3><a id="values_workflowactions_groups_private"></a>API Context Groups and Independent Groups: Additional Workflow Actions</h3><!-- #BeginLibraryItem "/library/table_workflowactions_groups_private.lbi" -->
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
     <tr>
@@ -1868,7 +1868,7 @@
       <td>group.membership.action.make.member</td>
       </tr>
   </tbody>
-</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_tickets"></a>Tickets: Valid Workflow Actions</h4><!-- #BeginLibraryItem "/library/table_workflowactions_tickets.lbi" -->
+</table><!-- #EndLibraryItem --><h3><a id="values_workflowactions_tickets"></a>Tickets: Valid Workflow Actions</h3><!-- #BeginLibraryItem "/library/table_workflowactions_tickets.lbi" -->
 <p>To perform any of the actions listed below, the user must be an app team member, author or submitter of the ticket, or API or Business Administrator. The Site Administrator can delete an action.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
@@ -1899,7 +1899,7 @@
       <td>ticket.action.edit.priority</td>
     </tr>
   </tbody>
-</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_contracts"></a>App/API Contracts: Valid Workflow Actions</h4><!-- #BeginLibraryItem "/library/table_workflowactions_contracts.lbi" --><p>The Contracts workflow actions switch an app/API contract from one valid state to another. Again, the two conditions to be met are 1) the requestor is authorized to make the change, and 2) the change is valid for the specific contract. In order for the switch to be valid, the old state must be the current state of the object, and the new state must be a valid change.</p>
+</table><!-- #EndLibraryItem --><h3><a id="values_workflowactions_contracts"></a>App/API Contracts: Valid Workflow Actions</h3><!-- #BeginLibraryItem "/library/table_workflowactions_contracts.lbi" --><p>The Contracts workflow actions switch an app/API contract from one valid state to another. Again, the two conditions to be met are 1) the requestor is authorized to make the change, and 2) the change is valid for the specific contract. In order for the switch to be valid, the old state must be the current state of the object, and the new state must be a valid change.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
   <thead>
     <tr>
@@ -1937,7 +1937,7 @@
       <td>apicontract.action.resume</td>
     </tr>
   </tbody>
-</table><!-- #EndLibraryItem --><h4><a id="values_workflowactions_discussions"></a>Discussions: Valid Workflow Actions</h4>
+</table><!-- #EndLibraryItem --><h3><a id="values_workflowactions_discussions"></a>Discussions: Valid Workflow Actions</h3>
 
 <p>The Discussions workflow actions govern how discussions are managed on the platform.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
@@ -1973,7 +1973,7 @@
 
 
 
-<h4><a id="values_workflowactions_reviews"></a>Reviews: Valid Workflow Actions</h4>
+<h3><a id="values_workflowactions_reviews"></a>Reviews: Valid Workflow Actions</h3>
 
 <p>The Reviews workflow actions govern how reviews are managed on the platform.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
@@ -2008,7 +2008,7 @@
 </table>
 
 
-<h4><a id="values_workflowactions_comments"></a>Comments: Valid Workflow Actions</h4>
+<h3><a id="values_workflowactions_comments"></a>Comments: Valid Workflow Actions</h3>
 
 <p>The Comments workflow actions govern how comments are managed on the platform.</p>
 <table width="100%" cellpadding="2" cellspacing="0" class="tableparmsresponse">
@@ -2040,14 +2040,14 @@
 
 
 
-<h3><a id="values_workflowstates"></a>Workflow States</h3>
+<h2><a id="values_workflowstates"></a>Workflow States</h2>
 <p>The workflow state values depend on the workflow definition XML file. For details of workflow states for your specific installation, refer to the applicable XML file.</p>
 <p>In the user interface you can find the XML file. First check which workflow file is in use, in the applicable Administration / Config page (APIs, Apps, Tickets, and so forth). Then, go to Administration/Workflows and view or download the file.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 
-<h3><a id="values_workflow_objecttype"></a>Workflow ObjectTypes</h3>
+<h2><a id="values_workflow_objecttype"></a>Workflow ObjectTypes</h2>
 <p>For workflows, ObjectType is a type of resource to which a custom workflow can be applied. Valid values are:</p>
 <ul>
   <li>oauth-grant</li>
@@ -2064,7 +2064,7 @@
 
 
 
-<h3 id="relatedtopics">Related Topics</h3><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/library/_RelatedTopics.lbi" -->
 <table width="700" border="0" cellspacing="0" cellpadding="2">
   <tr>
     <td width="300"><ul>

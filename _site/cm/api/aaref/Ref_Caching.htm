@@ -185,11 +185,11 @@
 		<div class="soa-ui-dc-top-bar-wrapper">
 	<div class="top-bar">
 
-					<h2 class="soa-ui-dc-logo-container">
+					<h1 class="soa-ui-dc-logo-container">
 				<a href="/api-docs/index.html" class="soa-ui-dc-logo">
 					<img src="/api-docs/style/images/formerlyLOGO8.png" alt="Akana&trade;, Powering the API Economy" width="180" height="81">
 				</a><!-- logo link, replace href -->
-			</h2>
+			</h1>
 
 
 		<div class="soa-ui-dc-topnav-wrapper">
@@ -243,7 +243,7 @@
 							<button id="soa-control-dc-close-results" type="button" class="soa-ui-dc-icon-imgtxt soa-ui-dc-button soa-ui-dc-button-borderless soa-ui-dc-button-close">Close</button>
 						</li>
 					</ul>
-					<h3 class="soa-ui-dc-content-header">Search Results</h3>
+					<h2 class="soa-ui-dc-content-header">Search Results</h2>
 					<div id="soa-control-dc-search-result-entries">
 					</div>
 				</div>
@@ -256,15 +256,15 @@
 						<ul class="soa-ui-dc-content-catalog-items">
 							<li class="soa-ui-dc-content-catalog-item soa-ui-dc-2col-with-avatar soa-ui-dc-clearthis">
 								<div class="soa-ui-dc-avatar-box">
-									<h4 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
+									<h3 class="soa-ui-dc-icon-imgtxt soa-ui-dc-document-type soa-ui-dc-icon-{{ type }}">
 									Document
-									</h4>
+									</h3>
 								</div>
 								<div class="soa-ui-dc-details-box">
 									<div class="soa-ui-dc-section">
-										<h3 class="soa-ui-dc-section-header">
+										<h2 class="soa-ui-dc-section-header">
 											<a href="/api-docs{{ url }}"{{#if_eq type "pdf"}} target="_blank"{{/if_eq}}>{{ title }}</a>
-										</h3>
+										</h2>
 										<p class="soa-ui-dc-section-paragraph">
 										{{ description }}
 										</p>
@@ -282,16 +282,16 @@
 		<div class="soa-ui-dc-container-main soa-ui-dc-clearthis">
 			<!-- left nav -->
 			<div class="soa-ui-dc-container-main-left">
-				<h3 class="soa-ui-dc-container-main-left-header">
+				<h2 class="soa-ui-dc-container-main-left-header">
 					<a href="/api-docs/cm/api/index.htm" class="soa-ui-dc-container-main-left-header-link">EAP API</a>	
-				</h3>
+				</h2>
 
 			</div>
 
 <!-- End left nav -->
 			<div class="soa-ui-dc-container-main-content"><!-- main content starts here -->
 				<div class="contentBody apidocContent">
-					<h2><a name="top"></a>How the Platform API Uses Caching</h2>
+					<h1><a name="top"></a>How the Platform API Uses Caching</h1>
 <p>Most&nbsp;<!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;operations don't use caching at all. Generally, the <strong>Cache-Control</strong> header is set to <strong>no-cache</strong>, for both request and response messages, since the platform APIs generally pass database information that might change and should therefore not be cached.</p>
 <p>However, there are a few operations that do use caching. In general, the types of information that might be cached are:</p>
 <ul>
@@ -308,7 +308,7 @@
 
 
 
-<h3><a name="caching_ui_resources"></a>Caching of UI Resource Files</h3>
+<h2><a name="caching_ui_resources"></a>Caching of UI Resource Files</h2>
 <p>UI resource files include all code-related components such as JavaScript files, templates, and stylesheets.</p>
 <p>These types of files are cached for a long time, to improve performance, since generally the files do not change. The cache setting is one month.</p>
 <p>For all resource files, the URL includes a dynamically-constructed unique ID, called a Resource Version Key.</p>
@@ -328,7 +328,7 @@
 
 
 
-<h3><a name="caching_avatars"></a>Caching of Avatars</h3>
+<h2><a name="caching_avatars"></a>Caching of Avatars</h2>
 <p>Avatar files are cached using a similar approach to that used for UI resource files; the URL to each version of the file includes a unique key. However, this is not the Resource Version Key, which is unique to a specific version of the platform resource files. Instead, each avatar has its own unique ID, randomly generated when the avatar is uploaded, and used in the avatar URL. If a new avatar is uploaded for the same resource, the new avatar will have a different ID, and therefore, a unique URL.</p>
 <p>Unlike the Resource Version Key, which is refreshed every 10 minutes, the unique ID for the avatar remains the same for the life of the avatar.</p>
 <p>With avatars, there are two approaches you can take to make sure you always get the latest version of the file:</p>
@@ -346,7 +346,7 @@
 
 
 
-<h3><a name="caching_content"></a>Caching of Content Files</h3>
+<h2><a name="caching_content"></a>Caching of Content Files</h2>
 <p>Content files include API documentation, platform online help, and customizable content pages such as the platform home page.</p>
 <p>Content files do not have a unique ID. Page URLs are constructed as follows:</p>
 <ul>
@@ -369,7 +369,7 @@
 
 
 
-<h3>Related Topics</h3>
+<h2>Related Topics</h2>
 <ul>
   <li><a href="../index.htm"><!-- #BeginLibraryItem "/library/_PlatformName.lbi" -->Enterprise API Platform<!-- #EndLibraryItem -->&nbsp;API: Overview</a></li>
   <li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
