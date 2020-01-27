@@ -40,7 +40,7 @@ no-catalog: true
 }</pre>
 			</li>
 		</ul>
-		<p>The platform API returns the login cookie, which you'll need to send with the request headers for any operation that requires login.</p>
+		<p>The platform API returns the login cookie, which you'll need to send with the request headers for any operation that requires login, and the CSRF cookie, which you'll need to use to put together the CSRF header if required by platform settings (not covered in this exercise: see <a href="Ref_Ex_CSRF.htm">Example: Using the CSRF header</a>).</p>
 	</li>
 	<li>Upload an API description document to the Dropbox, using the <span class="apidoc_code"><a href="../dropbox/m_dropbox_readFileDetails.htm">POST&nbsp;/api/dropbox/readfiledetails</a></span> operation. The document must be locally available. In your API call, use the values below, modifying the URL path as needed, and uploading the API description document.
 		<ul>

@@ -29,7 +29,6 @@ no-catalog: true
 			<li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --></span>login</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
-			<li>CSRF header: include it if needed. If you are not sure whether it's needed or not, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
 			<li>Request Body:
 				<pre>{
   "email":"MyEmailAddress",
@@ -37,6 +36,7 @@ no-catalog: true
 }</pre>
 			</li>
 		</ul>
+		<p>The platform API returns the login cookie, which you'll need to send with the request headers for any operation that requires login, and the CSRF cookie, which you'll need to use to put together the CSRF header if required by platform settings (not covered in this exercise: see <a href="Ref_Ex_CSRF.htm">Example: Using the CSRF header</a>).</p>
 	</li>
 	<li>Add the app version, using the <span class="apidoc_code"><a href="../apps/m_apps_addVersion.htm">POST&nbsp;/api/apps/{AppID}/versions</a></span> operation. In your API call, use the following, substituting the correct AppID in the URL and also in the request body:
 		<ul>
