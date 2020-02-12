@@ -150,14 +150,17 @@ The unique ID for a specific app version.<!-- #EndLibraryItem --></p>
 			<td><a id="id_businessid"></a>BusinessID</td>
 			<td><p><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" -->
 The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></p>
-				<p>When the tenant is configured, as part of the post-install configuration with the jython script, a business is created, and has a unique Business ID. Currently, each tenant can have only one business configured.</p>
+				<p>When the tenant is configured, as part of the post-install configuration with the jython script, a business is created, and has a unique Business ID.</p>
 To find out what the Business ID is for your installation, you can run the <span class="apidoc_code"><a href="../properties/m_properties_getTenantProperties.htm">GET&nbsp;/api/properties</a></span> operation. It is the <strong>TenantBusinessID</strong> value.</td>
 			<td>tenantbusiness.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a id="id_businesskey"></a>BusinessKey</td>
-			<td>A unique ID used by the underlying infrastructure to identify a business. Most operations use the BusinessID, which is made up of a unique ID for the tenant and the tenant ID. However, some operations that reference the features of the underlying infrastructure use the BusinessKey, which is a globally unique ID assigned to the business by the underlying infrastructure. The BusinessKey doesn't indicate the tenant. These two IDs are completely separate, and each business organization has both.</td>
-			<td>&nbsp;</td>
+			<td><p>A unique ID used by the underlying infrastructure to identify a business. Most operations use the BusinessID, which is made up of a unique ID for the tenant and the tenant ID. However, some operations that reference the features of the underlying infrastructure use the BusinessKey, which is a globally unique ID assigned to the business by the underlying infrastructure. The BusinessKey doesn't indicate the tenant. These two IDs are completely separate, and each business organization has both.</p>
+				<p>In the API, OrgKey is sometimes used. OrgKey is the same as BusinessKey.</p></td>
+			<td><div>
+				<div>uddi:soa.com:atmosphere:tenant:acmepaymentscorp</div>
+			</div></td>
 		</tr>
 		<tr>
 			<td><a id="id_clientid">ClientID</a></td>
@@ -367,9 +370,19 @@ The unique Board Item ID for a specific group membership request.<!-- #EndLibrar
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
+			<td><a id="id_orgkey"></a>OrgKey</td>
+			<td>Abbreviation for <a href="#id_organizationkey">Organization Key</a>. For an explanation, see <a href="#id_businesskey">BusinessKey</a>.</td>
+			<td>&#8212;</td>
+		</tr>
+		<tr>
+			<td><a id="id_organizationkey"></a>OrganizationKey</td>
+			<td>Same as <a href="#id_businesskey">BusinessKey</a>.</td>
+			<td>&#8212;</td>
+		</tr>
+		<tr>
 			<td><a id="id_parentbusinessid"></a>ParentBusinessID</td>
 			<td><!-- #BeginLibraryItem "/Library/o_ID_ParentBusinessID.lbi" -->The unique <a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a> for the parent organization (senior in the organization hierarchy) of a business organization on the platform.<!-- #EndLibraryItem --></td>
-			<td>&nbsp;</td>
+			<td>&#8212;</td>
 		</tr>
 		<tr>
 			<td><a id="id_pictureid"></a>PictureID</td>
@@ -515,7 +528,7 @@ The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_t
 			<td><a id="id_userid"></a>UserID</td>
 			<td><p><!-- #BeginLibraryItem "/Library/o_ID_UserID.lbi" -->The unique ID for a specific user.<!-- #EndLibraryItem --></p>
 				<p>Also called userFdn in some model objects.</p>
-				<p>The UserID is returned in the response to the <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation (userFDN parameter in the response body). If you're a Site Admin you can also use the <span class="apidoc_code"><a href="../search/m_search_search.htm">GET&nbsp;/api/search</a></span> operation with user parameter (GET /api/search?q=type:user) to return a list of users.</span></p></td>
+				<p>The UserID is returned in the response to the <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation (userFDN parameter in the response body). If you're a Site Admin you can also use the <span class="apidoc_code"><a href="../search/m_search_search.htm">GET&nbsp;/api/search</a></span> operation with user parameter (GET /api/search?q=type:user) to return a list of users.</p></td>
 			<td>e437a7ea-108f-498e-9065-afd3776b2a08.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
