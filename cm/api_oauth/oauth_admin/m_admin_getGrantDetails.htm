@@ -18,6 +18,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_oauth_admin_getGrantDetails.lbi" -->Returns detailed information about the specified OAuth grant, including the list of scopes.<!-- #EndLibraryItem --></p>
+<!--<p>{[<span class="apidoc_p_subsequent">ignore @GrantContext per RS 7/7/15</span>]}</p>-->
 <p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be the resource owner, provider admin, or client admin. Authentication cookie is required.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -57,8 +58,7 @@ no-catalog: true
 <p><strong>Sample request headers</strong></p>
 <pre>Host: {oauth-provider-hostname}
 Accept: application/json
-Cookie: <!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToken_{OAuthProviderName}<!-- #EndLibraryItem -->
-</pre>
+Cookie:&nbsp;<!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenID)}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -81,9 +81,9 @@ Cookie: <!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToken_{OA
       <td><!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a></td>
+      <td>Cookie</td>
       <td><!-- #BeginLibraryItem "/Library/oauthtoken_cookie.lbi" -->
-The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&nbsp;/oauth/login</a></span> operation.<!-- #EndLibraryItem --></td>
+<a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a>&#8212;The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&nbsp;/oauth/login</a></span> operation.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>

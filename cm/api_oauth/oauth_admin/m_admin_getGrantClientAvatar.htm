@@ -59,7 +59,7 @@ Returns the avatar for the client app associated with the specified OAuth Grant 
 <p><strong>Sample request headers</strong></p>
 <pre>GET http://{oauth-provider-hostname}/oauth/admin/grants/j5qpu6hquiu/client/picture HTTP/1.1
 Host: {oauth-provider-hostname}
-Cookie: <!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToken_{OAuthProviderName}<!-- #EndLibraryItem --></pre>
+Cookie:&nbsp;<!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenID)}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -82,9 +82,9 @@ Cookie: <!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToken_{OA
       <td><!-- #BeginLibraryItem "/Library/hdrval_imagejpg.lbi" --><strong>image/jpg</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a></td>
+      <td>Cookie</td>
       <td><!-- #BeginLibraryItem "/Library/oauthtoken_cookie.lbi" -->
-The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&nbsp;/oauth/login</a></span> operation.<!-- #EndLibraryItem --></td>
+<a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a>&#8212;The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&nbsp;/oauth/login</a></span> operation.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>

@@ -18,10 +18,10 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_oauth_auz_authenticateComplete.lbi" -->Supports redirect from the identity provider after the resource owner's login with the identity provider is complete.<!-- #EndLibraryItem --></p>
-<p><strong>Note</strong>: There are these related operations that render the authorization page:</p>
+<p><strong>Note</strong>: These operations render the authorization page:</p>
 <ul>
-  <li><span class="apidoc_code">GET&nbsp;/oauth/auz/grants/provider/authcomplete{domainid:(/[^/]+?)?}</span> (this operation) performs the same action using HTTP GET. You can use this if you do not need to maintain a static callback URI. The GrantID is a path parameter.</li>
-  <li><span class="apidoc_code"><a href="m_auz_authenticateCompletePOST.htm">POST&nbsp;/oauth/auz/grants/provider/authcomplete{domainid:(/[^/]+?)?}</a></span> performs the same action using HTTP POST. You can use this if you do not need to maintain a static callback URI and prefer to use HTTP POST. The GrantID is relayed in form URL-encoded POST content.</li>
+<li><span class="apidoc_code">GET&nbsp;/oauth/auz/grants/provider/authcomplete{domainid:(/[^/]+?)?}</span> (this operation) uses HTTP GET. You can use this if you do not need to maintain a static callback URI. The GrantID is a path parameter.</li>
+  <li><span class="apidoc_code"><a href="m_auz_authenticateCompletePOST.htm">POST&nbsp;/oauth/auz/grants/provider/authcomplete{domainid:(/[^/]+?)?}</a></span> uses HTTP POST. You can use this if you do not need to maintain a static callback URI and prefer to use HTTP POST. The GrantID is relayed in form URL-encoded POST content.</li>
 </ul>
 
 <p>Corresponds to the Login Complete operation in the Login API, but relates to the resource owner's authentication with the Authorization Server, for the purposes of an OAuth grant, rather than authentication for the purpose of platform access.</p>
@@ -168,9 +168,9 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
       <td>Returns text/html response.</td>
     </tr>
     <tr>
-      <td><a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a></td>
+      <td>Cookie</td>
       <td><!-- #BeginLibraryItem "/Library/oauthtoken_cookie.lbi" -->
-The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&nbsp;/oauth/login</a></span> operation.<!-- #EndLibraryItem --></td>
+<a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a>&#8212;The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&nbsp;/oauth/login</a></span> operation.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>

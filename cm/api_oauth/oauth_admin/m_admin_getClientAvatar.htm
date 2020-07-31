@@ -60,7 +60,7 @@ Returns the avatar for the specified OAuth client, based on the Client ID.<!-- #
 <pre>GET http://{oauth-provider-hostname}/oauth/admin/clients/acmepaymentscorp-ASjFBZlAaEj39cXn8gy5Jd7e/picture HTTP/1.0
 Host: {oauth-provider-hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Cookie: <!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToken_{OAuthProviderName}<!-- #EndLibraryItem --></pre>
+Cookie:&nbsp;<!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenID)}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -83,9 +83,9 @@ Cookie: <!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToken_{OA
       <td><!-- #BeginLibraryItem "/Library/hdrval_imagejpg.lbi" --><strong>image/jpg</strong><!-- #EndLibraryItem --></td>
     </tr>
     <tr>
-      <td><a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a></td>
+      <td>Cookie</td>
       <td><!-- #BeginLibraryItem "/Library/oauthtoken_cookie.lbi" -->
-The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&nbsp;/oauth/login</a></span> operation.<!-- #EndLibraryItem --></td>
+<a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a>&#8212;The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&nbsp;/oauth/login</a></span> operation.<!-- #EndLibraryItem --></td>
     </tr>
   </tbody>
 </table>
