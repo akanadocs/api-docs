@@ -249,10 +249,10 @@ no-catalog: true
 		<li>Information about the certificate: Issue date, expiration date, and serial number.</li>
 	</ul>
 </dd>
-<dd>In the context of the developer portal, a digital certificate can be issued by a commercial trusted <a href="#gl_certificate_authority">Certificate Authority</a> (CA), such as Symantec (VeriSign) or Comodo, or by the platform itself.</dd>
+<dd>In the context of the developer portal, a digital certificate can be issued by a commercial trusted <a href="#gl_certificateauthority">Certificate Authority</a> (CA), such as Symantec (VeriSign) or Comodo, or by the platform itself.</dd>
 
 
-<dt id="gl_certificate_authority">Certificate Authority</dt>
+<dt id="gl_certificateauthority">Certificate Authority</dt>
 <dd>For scenarios where asymmetric encryption is used, a Certificate Authority (CA) issues certificates and guarantees the validity of the binding between the certificate owner and its public key. The CA is a trusted authority, and any certificate issued by the CA identifies the owner of the certificate. Therefore, the private key that corresponds to the public key in the certificate is deemed to be known only to the specific owner. By requesting the public key from the CA, rather than from the key owner, there is an assurance that the key is indeed the valid public key for the key owner, that the key pair has not been compromised or revoked, and that the key owner holds the private key needed to decrypt messages that you encrypt with the public key, which the CA sends to you.</dd>
 
 
@@ -708,7 +708,7 @@ When adding an app version, you can specify a custom identity name for the app v
 
 <dt id="gl_legaldocument">legal document</dt>
 <dd>In the context of the platform, a legal document is a document such as a developer agreement or user signup agreement that can be assigned to another resource such as an API version or a license. Documents are uploaded and managed using the <a href="index_content.htm">Content service</a>; once a legal document is assigned to a specific resource, such as an API version, a <a href="aaref/Ref_IDsOnThePlatform.htm#id_legaldocumentid">LegalDocumentID</a> is assigned for that relationship.</dd>
-<dd>An API legal agreement can be HTML or text; a platform legal agreement can be HTML, text, or PDF.</dd>
+<dd>For supported file types, see <a href="aaref/Ref_Values.htm#values_legalagreement_filetype">Legal Agreement Supported File Types</a>.</dd>
 
 
 <dt id="gl_license">license</dt>
@@ -1439,10 +1439,12 @@ When adding an app version, you can specify a custom identity name for the app v
 	
 	<dt id="gl_theme">theme</dt>
 	<dd>One instance of the portal. More than one theme can be defined during the installation process and can then be customized for different purposes or audiences. Each theme has a separate URL.</dd>
-	<dd>The platform includes three out-of-the-box themes; Default Theme, Simple Developer Theme, and Hermosa Theme. The first two can be cloned, which means you can have more than one version, independently customizable. Hermosa Theme cannot be cloned.</dd>
-	
-	
-	
+
+
+	<dt id="gl_thirdparty_account">third-party account (email)</dt>
+	<dd>The platform supports login through a third-party identity provider, such as logging in with a Google, SAML, or LDAP account.</dd>
+
+
 	<dt id="gl_ticket">ticket</dt>
 	<dd>A type of feed entry, representing a trouble ticket created to raise an issue with a resource (app or API) or a connection. Tickets are typically created by a consumer of an API. Any member of the community can comment on a ticket, but it can only be marked as Resolved by the original creator or by an administrator of the target resource. For example, if Joe writes a ticket about an issue with the SkyBlue API, only Joe or the SkyBlue API Admin can mark the ticket as Resolved.</dd>
 	
@@ -1475,6 +1477,15 @@ When adding an app version, you can specify a custom identity name for the app v
 	
 	
 	
+	<dt id="gl_ttfb">time to first byte (TTFB)</dt>
+	<dd>The TTFB for an API request is the amount of time that it takes from when the request is received from the client app to the first byte of data returned from the API Gateway to the client app.</dd>
+	<dd>In the context of the developer portal, TTFB metric breakdowns are shown in the API Logs page.</dd>
+	
+	
+	<dt>TTFB</dt>
+	<dd>See <a href="#gl_ttfb">time to first byte (TTFB)</a>.</dd>
+
+
 	<dt id="gl_2fa">two-factor authentication (2FA)</dt>
 	<dd>An enhanced security feature for additional authentication of users logging in. The first factor, something the user knows, is satisfied by the user entering credentials, such as username and password, to authenticate. A second factor can be something the user <strong>has</strong>, such as a passcode. The platform has an optional feature to support two-factor authentication, commonly called 2FA. If this feature is enabled, after verifying credentials the user is sent a code, usually by email, and is directed to a platform page for entering the code.</dd>
 </dl>
@@ -1580,7 +1591,8 @@ When adding an app version, you can specify a custom identity name for the app v
 	
 	
 	<dt id="gl_workflowdefinitionkey">workflow definition key</dt>
-	<dd>A unique ID is assigned to each custom workflow when it's uploaded to the platform. Example: <strong>2597f44e-8f1c-4cc4-8019-69781dd1a0d8</strong>. The workflow definition key indicates the custom workflow that's specified as the default for settings governing a certain type of resource, such as apps, APIs, or groups.</dd>
+	<dd>A unique ID is assigned to each custom workflow when it's uploaded to the platform. Example: <strong>2597f44e-8f1c-4cc4-8019-69781dd1a0d8</strong>. The workflow definition key for a resource, such as apps, APIs, or groups, indicates the custom workflow that's specified as the default for settings governing that type of resource.</dd>
+	<dd>The workflow definition key is returned when the workflow is added. If you're not sure of the workflow definition key, you could run the <span class="apidoc_code"><a href="workflow/m_workflow_listWorkflowDefinitions.htm">GET&nbsp;/api/workflow/definitions</a></span> operation to get a summary of all workflows that exist. However, the response doesn't include the key. You could also run the applicable GET operation to return the workflow definition key for the current workflow, for the particular object type. For example, to get the workflow definition key for the current workflow in place for API versions, run the <span class="apidoc_code"><a href="businesses/m_businesses_getAPISettings.htm">GET&nbsp;/api/businesses/{BusinessID }/apisettings</a></span> operation.</dd>
 	
 	
 	

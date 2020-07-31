@@ -58,7 +58,7 @@ no-catalog: true
 <pre>GET http://acmepaymentscorp.com/api/apis/versions/facf4025-5a72-46aa-a61e-1f5172647682.acmepaymentscorp/connectedapps HTTP/1.0
 Host: acmepaymentscorp.com
 Accept: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -86,7 +86,8 @@ Accept: application/json
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -409,7 +410,7 @@ Content-Type: application/vnd.soa.v81+xml</pre>
         &lt;/ns4:EntityReference&gt;
       &lt;/ns4:EntityReferences&gt;
       &lt;ns4:Image&gt;
-        &lt;Url&gt;http://automation-acmepaymentscorp.com/api/apis/avatar/_VYOYCjcINs6JPVByUx741oA&lt;/Url&gt;
+        &lt;Url&gt;http://testing.acmepaymentscorp.com/api/apis/avatar/_VYOYCjcINs6JPVByUx741oA&lt;/Url&gt;
         &lt;Title&gt;api&lt;/Title&gt;
         &lt;Link&gt;#/api/09f82858-aa96-47af-85f7-4e1c40c2b657.acmepaymentscorp/versions/cd423b31-16f9-4f3d-8882-72f69ef13302.acmepaymentscorp/details&lt;/Link&gt;
       &lt;/ns4:Image&gt;

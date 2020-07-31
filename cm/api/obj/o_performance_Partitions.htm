@@ -1,5 +1,5 @@
 ---
-layout: apipage-noindex
+layout: apipage
 title: Partitions Object | Shared Service, Performance | Akana API Platform API
 description: Contains information about partitions in a performance report.
 product: cm
@@ -21,6 +21,7 @@ no-catalog: true
 </ul>
 
 <p>The properties included in the <strong>Partitions</strong> object are listed below.</p>
+<p class="apidoc_note"><strong>Note</strong>: Only one of the properties below is used.</p>
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -31,9 +32,14 @@ no-catalog: true
 	</thead>
 	<tbody>
 		<tr>
-			<td>IntervalDuration</td>
-			<td>string</td>
-			<td>The duration setting for intervals in the performance report.</td>
+			<td>Partition</td>
+			<td>string[&nbsp;]</td>
+			<td><p>Partition must be one of the following:</p>
+				<ul class="apidoctable_ul">
+					<li>Name</li>
+					<li>Unit</li>
+					<li>Value</li>
+				</ul></td>
 		</tr>
 	</tbody>
 </table>

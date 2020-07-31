@@ -63,7 +63,7 @@ Modifies information about a platform user. <!-- #EndLibraryItem --></p>
 Host: {hostname}
 Accept: text/plain
 Content-Type: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body #1</strong></p>
 <p>Security challenges and phone numbers are in place. Request modifies the user's email address and phone number.</p>
 <pre>{
@@ -118,7 +118,7 @@ Content-Type: application/json
 Host: {hostname}
 Accept: text/plain
 Content-Type: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body #2: Site Admin modifies firstname and profile name</strong>.</p>
 <pre>{
   &quot;FirstName&quot;:&quot;John&quot;,
@@ -178,7 +178,8 @@ Content-Type: application/json
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

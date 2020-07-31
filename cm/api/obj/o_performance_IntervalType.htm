@@ -1,5 +1,5 @@
 ---
-layout: apipage-noindex
+layout: apipage
 title: IntervalType Object | Shared Service, Performance | Akana API Platform API
 description: Contains information about an interval type being reported for a metric test.
 product: cm
@@ -18,6 +18,7 @@ no-catalog: true
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
 	<li>Operations that reference the <a href="o_performance_Graph.htm">Graph</a> object</li>
+	<li>Operations that reference the <a href="o_performance_ApiMetrics.htm">ApiMetrics</a> object</li>
 </ul>
 
 <p>The properties included in the <strong>IntervalType</strong> object are listed below.</p>
@@ -36,6 +37,12 @@ no-catalog: true
 			<td><a href="o_performance_Metric.htm">Metric</a>[&nbsp;]</td>
 			<td>Required</td>
 			<td>Information about one or more metric performance tests.</td>
+		</tr>
+		<tr>
+			<td>GeoLocationMetric</td>
+			<td><a href="o_performance_GeoLocationMetric.htm">GeoLocationMetric[&nbsp;]</a></td>
+			<td>Required</td>
+			<td>Information about the location. One or more.</td>
 		</tr>
 		<tr>
 			<td>StartTime</td>

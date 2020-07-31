@@ -60,34 +60,32 @@ no-catalog: true
 Host: {hostname}
 Accept: application/json
 Content-Type: application/json; charset=UTF-8
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  &quot;PublicAPISupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPISandboxEndpointSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIProductionEndpointSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPISandboxAutoApprovalSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIProductionAutoApprovalSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIBoardSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIRatingsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIReviewsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPISupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPISandboxEndpointSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIProductionEndpointSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPISandboxAutoApprovalSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIProductionAutoApprovalSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIGroupTypeSupport&quot;: &quot;com.soa.feature.disabled&quot;,
-  &quot;PrivateAPIIndependentGroupSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIBoardSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIRatingsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIReviewsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIResourceLevelPermissionsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIResourceLevelPermissionsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;APIWithNewServiceSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;APIWithExistingServiceSupport&quot;: &quot;com.soa.feature.disabled&quot;,
-  &quot;APIWithAnonymousAccessSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;APIPromotionSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;ValidateUniqueContextPath&quot;: &quot;com.soa.feature.disabled&quot;
+  "APIWithNewServiceSupport": "com.soa.feature.enabled",
+  "APIWithExistingServiceSupport": "com.soa.feature.disabled",
+  "PrivateAPIGroupTypeSupport": "com.soa.feature.disabled",
+  "APIPromotionSupport": "com.soa.feature.enabled",
+  "ValidateUniqueContextPath": "com.soa.feature.enabled",
+  "ApiVersionWorkflowDefKey": "4c9de0a9-c5d3-4369-8956-fcb8facd8fea",
+  "PublicAPISupport": "com.soa.feature.enabled",
+  "PublicAPISandboxEndpointSupport": "com.soa.feature.enabled",
+  "PublicAPISandboxAutoApprovalSupport": "com.soa.feature.enabled",
+  "PublicAPIProductionEndpointSupport": "com.soa.feature.enabled",
+  "PublicAPIProductionAutoApprovalSupport": "com.soa.feature.enabled",
+  "PublicAPIRatingsSupport": "com.soa.feature.enabled",
+  "PublicAPIReviewsSupport": "com.soa.feature.enabled",
+  "PublicAPIResourceLevelPermissionsSupport": "com.soa.feature.enabled",
+  "PrivateAPISupport": "com.soa.feature.enabled",
+  "PrivateAPISandboxEndpointSupport": "com.soa.feature.enabled",
+  "PrivateAPISandboxAutoApprovalSupport": "com.soa.feature.enabled",
+  "PrivateAPIProductionEndpointSupport": "com.soa.feature.enabled",
+  "PrivateAPIProductionAutoApprovalSupport": "com.soa.feature.enabled",
+  "PrivateAPIIndependentGroupSupport": "com.soa.feature.enabled",
+  "PrivateAPIRatingsSupport": "com.soa.feature.enabled",
+  "PrivateAPIReviewsSupport": "com.soa.feature.enabled",
+  "PrivateAPIResourceLevelPermissionsSupport": "com.soa.feature.enabled"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -125,7 +123,8 @@ Content-Type: application/json; charset=UTF-8
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -184,34 +183,32 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <p><strong>Sample response headers: application/vnd.soa.v84+json</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: application/vnd.soa.v84+json
-Date: Tue, 23 Jan 2018 19:35:54 GMT</pre>
+Date: Wed, 11 Mar 2020 14:35:52 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  &quot;PublicAPISupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPISandboxEndpointSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIProductionEndpointSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPISandboxAutoApprovalSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIProductionAutoApprovalSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIBoardSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIRatingsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIReviewsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPISupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPISandboxEndpointSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIProductionEndpointSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPISandboxAutoApprovalSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIProductionAutoApprovalSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIGroupTypeSupport&quot;: &quot;com.soa.feature.disabled&quot;,
-  &quot;PrivateAPIIndependentGroupSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIBoardSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIRatingsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIReviewsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PublicAPIResourceLevelPermissionsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;PrivateAPIResourceLevelPermissionsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;APIWithNewServiceSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;APIWithExistingServiceSupport&quot;: &quot;com.soa.feature.disabled&quot;,
-  &quot;APIWithAnonymousAccessSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;APIPromotionSupport&quot;: &quot;com.soa.feature.enabled&quot;,
-  &quot;ValidateUniqueContextPath&quot;: &quot;com.soa.feature.disabled&quot;
+  "APIWithNewServiceSupport": "com.soa.feature.enabled",
+  "APIWithExistingServiceSupport": "com.soa.feature.disabled",
+  "PrivateAPIGroupTypeSupport": "com.soa.feature.disabled",
+  "APIPromotionSupport": "com.soa.feature.enabled",
+  "ValidateUniqueContextPath": "com.soa.feature.enabled",
+  "ApiVersionWorkflowDefKey": "4c9de0a9-c5d3-4369-8956-fcb8facd8fea",
+  "PublicAPISupport": "com.soa.feature.enabled",
+  "PublicAPISandboxEndpointSupport": "com.soa.feature.enabled",
+  "PublicAPISandboxAutoApprovalSupport": "com.soa.feature.enabled",
+  "PublicAPIProductionEndpointSupport": "com.soa.feature.enabled",
+  "PublicAPIProductionAutoApprovalSupport": "com.soa.feature.enabled",
+  "PublicAPIRatingsSupport": "com.soa.feature.enabled",
+  "PublicAPIReviewsSupport": "com.soa.feature.enabled",
+  "PublicAPIResourceLevelPermissionsSupport": "com.soa.feature.enabled",
+  "PrivateAPISupport": "com.soa.feature.enabled",
+  "PrivateAPISandboxEndpointSupport": "com.soa.feature.enabled",
+  "PrivateAPISandboxAutoApprovalSupport": "com.soa.feature.enabled",
+  "PrivateAPIProductionEndpointSupport": "com.soa.feature.enabled",
+  "PrivateAPIProductionAutoApprovalSupport": "com.soa.feature.enabled",
+  "PrivateAPIIndependentGroupSupport": "com.soa.feature.enabled",
+  "PrivateAPIRatingsSupport": "com.soa.feature.enabled",
+  "PrivateAPIReviewsSupport": "com.soa.feature.enabled",
+  "PrivateAPIResourceLevelPermissionsSupport": "com.soa.feature.enabled"
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

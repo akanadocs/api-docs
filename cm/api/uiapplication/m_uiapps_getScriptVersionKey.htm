@@ -53,8 +53,8 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below show a requests for the Script Version Key.</p>
 <p><strong>Request URL #1</strong></p>
-<p>Returns ScriptVersionKey for Default Theme (default name is used).</p>
-<pre>http://www.acmepaymentscorp.com/ui/apps/acmepaymentscorp/scriptversionkey?property.theme=default</pre>
+<p>Returns ScriptVersionKey for Hermosa Theme (default name is used).</p>
+<pre>http://www.acmepaymentscorp.com/ui/apps/acmepaymentscorp/scriptversionkey?property.theme=hermosa</pre>
 
 <p><strong>Request URL #2</strong></p>
 <p>ReturnsScriptVersionKey for Simple Dev theme.</p>
@@ -141,8 +141,9 @@ no-catalog: true
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>Accept: text/plain
-Expires: Wed, 04 Nov 2015 13:51:02 GMT</pre>
+<pre>Content-Type: text/plain
+Expires: Wed, 04 Nov 2019 00:00:00 GMT
+X-Frame-Options: SAMEORIGIN</pre>
 <p><strong>Sample response body</strong></p>
 <pre>UVmTjU1aOKmfek07sZrsKA</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -163,6 +164,10 @@ Expires: Wed, 04 Nov 2015 13:51:02 GMT</pre>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
 			<td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#xframeoptions_response">X-Frame-Options</a></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_xframeoptions.lbi" -->Optional header sometimes used as a security measure&nbsp;to control whether content can be displayed within an &lt;iframe&gt; tag.<!-- #EndLibraryItem --></td>
 		</tr>
 	</tbody>
 </table>

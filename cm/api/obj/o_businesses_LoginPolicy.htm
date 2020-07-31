@@ -1,5 +1,5 @@
 ---
-layout: apipage-noindex
+layout: apipage
 title: LoginPolicy Object | Businesses Service | Akana API Platform API
 description: Contains details about login policy settings for a business on the platform
 product: cm
@@ -56,18 +56,18 @@ no-catalog: true
 			<td>LoginSessionTimeout</td>
 			<td>integer</td>
 			<td><p><strong>Deprecated</strong>: supported for backward compatibility only. Replaced by <strong>ActiveSessionTimeout</strong> and <strong>InactiveSessionTimeout</strong>.</p>
-				<p>Indicates the period of time, in minutes, after which the user is automatically logged out of the Default Theme or Simple Dev developer portal user interface if the session is inactive. Default: 30 minutes.</p></td>
+				<p>Indicates the period of time, in minutes, after which the user is automatically logged out of the developer portal user interface if the session is inactive. Default: 30 minutes.</p></td>
 		</tr>
 		<tr>
 			<td>ActiveSessionTimeout</td>
 			<td>integer</td>
-			<td><p>Indicates the period of time, in minutes, after which the user is automatically logged out of the Default Theme or Simple Dev developer portal user interface even if the session is active. Default: 30 minutes.</p>
+			<td><p>Indicates the period of time, in minutes, after which the user is automatically logged out of the developer portal user interface even if the session is active. Default: 30 minutes.</p>
 				<p><strong>Note</strong>: <strong>ActiveSessionTimeout</strong> is the only timeout setting that is applicable to API users who are not using the developer portal user interface.</p></td>
 		</tr>
 		<tr>
 			<td>InactiveSessionTimeout</td>
 			<td>integer</td>
-			<td><p>Indicates the period of time, in minutes, after which the user is automatically logged out of the Default Theme or Simple Dev developer portal user interface if the session is inactive. Default: 30 minutes.</p>
+			<td><p>Indicates the period of time, in minutes, after which the user is automatically logged out of the developer portal user interface if the session is inactive. Default: 30 minutes.</p>
 				<p><strong>Note</strong>: the <strong>InactiveSessionTimeout</strong> setting takes precedence over <strong>LoginSessionTimeout</strong> which will be deprecated.</p></td>
 		</tr>
 		<tr>

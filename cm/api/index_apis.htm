@@ -91,6 +91,11 @@ Adds information about a new legal agreement for the specified API version.<!-- 
 			<td><!-- #BeginLibraryItem "/Library/desc_deleteAPIVersion.lbi" -->Deletes the specified API version.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
+			<td>execute workflow action</td>
+			<td><a href="apis/m_apis_executeWorkflowAction.htm">POST&nbsp;/api/apis/versions/{ApiVersionID}/action</a></td>
+			<td><!-- #BeginLibraryItem "/Library/desc_executeWorkflowAction_apiversion.lbi" -->Executes a workflow action associated with a specific API version.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
 			<td>export API</td>
 			<td><a href="apis/m_apis_export.htm">GET&nbsp;/api/apis/{APIID}/package</a></td>
 			<td><!-- #BeginLibraryItem "/Library/desc_export_apis.lbi" -->Exports information about an API to an export file that can be imported to another platform instance.<!-- #EndLibraryItem --></td>
@@ -136,7 +141,7 @@ Exports the transaction log for the specified API version to a <a href="Ref_Glos
 			<td>get API document</td>
 			<td><a href="apis/m_apis_getAPIDocument.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/definition/{Specification} or GET&nbsp;/api/apis/versions/{APIVersionID}/definition/{Specification}/{IncludeDocId}</a></td>
 			<td><!-- #BeginLibraryItem "/Library/desc_getAPIDocument.lbi" -->
-Returns generated API definition document for the specified API version. With the optional <strong>IncludeDocId</strong> parameter, returns the generated API definition document in the specified format.<!-- #EndLibraryItem --></td>
+Returns the generated API description document for the specified API version. With the optional <strong>IncludeDocId</strong> parameter, returns the generated API description document in the specified format.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td>get API implementation</td>
@@ -272,11 +277,11 @@ Returns a set of metric information for the specified operation in the specified
 			<td>get operation resources</td>
 			<td><a href="apis/m_apis_getOperationResources.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/resources</a></td>
 			<td><!-- #BeginLibraryItem "/Library/desc_getOperationResources.lbi" -->Returns information about operation-specific scope mapping for an API version.<!-- #EndLibraryItem --></td>
-			</tr>
+		</tr>
 		<tr>
 			<td>get private viewer scope</td>
 			<td><a href="apis/m_apis_getPrivateViewerScope.htm">GET&nbsp;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}/scope</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getPrivateViewerScope.lbi" -->Returns information about scope visibility for a specific API version, for a specific viewer.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/desc_getPrivateViewerScope.lbi" -->Returns information about scope visibility for a specific API version, for a specific group that might visibility of the API.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td>get private viewers</td>
@@ -363,7 +368,7 @@ Invites a group to have visibility of an API version, with visibility limited to
 		<tr>
 			<td>list APIs</td>
 			<td><a href="apis/m_apis_listAPIs.htm">GET&nbsp;/api/apis</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_listAPIs.lbi" -->Returns a list of all APIs on the platform. With an optional parameter, lists APIs owned by a specific business <a href="Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/desc_listAPIs_apis.lbi" -->Returns a list of all APIs on the platform. With an optional parameter, lists APIs owned by a specific business <a href="Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td>list API summaries</td>
@@ -425,7 +430,7 @@ Modifies the <a href="aaref/Ref_Values.htm#values_legaldocumentstate">State</a> 
 		<tr>
 			<td>save API OAuth details</td>
 			<td><p><a href="apis/m_apis_saveAPIOAuthDetails.htm">PUT&nbsp;/api/apis/versions/{APIVersionID}/oauthdetails</a></p>
-				<p>(with content-type <!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><strong>application/vnd.soa.v2019+json</strong><!-- #EndLibraryItem -->)</p>
+				<p>(with content-type<!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><strong>application/vnd.soa.v2019+json</strong><!-- #EndLibraryItem -->)</p>
 				<p><strong>Valid in version: 2019.0.0 and later</strong></p></td>
 			<td><!-- #BeginLibraryItem "/Library/desc_saveAPIOAuthDetails.lbi" -->Adds or modifies the OAuth details for the specified API version. Supports multiple OAuth Providers.<!-- #EndLibraryItem --></td>
 		</tr>

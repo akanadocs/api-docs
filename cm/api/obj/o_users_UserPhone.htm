@@ -1,5 +1,5 @@
 ---
-layout: apipage-noindex
+layout: apipage
 title: UserPhone Object | Users Service | Akana API Platform API
 description: Contains information about a phone number associated with a user's account.
 product: cm
@@ -37,12 +37,14 @@ no-catalog: true
 		<tr>
 			<td>CountryCode</td>
 			<td>string</td>
-			<td>The standard country code for the country the user's phone number is valid for.</td>
+			<td><p>The standard country code for the country the user's phone number is valid for.</p>
+				<p>Max length: 32. Must be a valid standard country code.</p></td>
 		</tr>
 		<tr>
 			<td>PhoneNumber</td>
 			<td>string</td>
-			<td>The user's telephone number.</td>
+			<td><p>The user's telephone number.</p>
+				<p>Max length: 32.</p></td>
 		</tr>
 		<tr>
 			<td>Verified</td>

@@ -88,7 +88,8 @@ Returns a list of Board items for the specified user.<!-- #EndLibraryItem --></p
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -200,6 +201,13 @@ Indicates whether comments should be included in the information returned. Defau
 			<td>boolean</td>
 			<td>Optional</td>
 			<td><!-- #BeginLibraryItem "/Library/o_apps_IncludeActions_def_true.lbi" -->Indicates whether workflow actions currently valid for the resource should be included in the results. Default: <strong>true</strong>. For valid workflow actions, see <a href="../aaref/Ref_Values.htm#values_workflowactions">Workflow Actions</a>.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td>IncludeCommentActions</td>
+			<td>Query</td>
+			<td>boolean</td>
+			<td>Optional</td>
+			<td><!-- #BeginLibraryItem "/Library/parm_IncludeCommentActions.lbi" -->Indicates whether workflow actions currently valid for a comment on the board should be included in the results. Default: <strong>false</strong>. For valid workflow actions for comments, see <a href="../aaref/Ref_Values.htm#values_workflowactions_comments">Comments: Valid Workflow Actions</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td>start</td>

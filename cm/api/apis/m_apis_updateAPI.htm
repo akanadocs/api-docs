@@ -61,7 +61,7 @@ no-catalog: true
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body #1: modifying API information</strong></p>
 <pre>{
   &quot;Name&quot;:&quot;acmepaymentscorp&quot;,
@@ -347,7 +347,8 @@ Content-Type: application/json; charset=UTF-8
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -385,7 +386,8 @@ Content-Type: application/json; charset=UTF-8
 			<td>Body</td>
 			<td><a href="../obj/o_apis_API.htm">API</a></td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" --> Includes information about an API.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" -->
+Contains information about an API.<!-- #EndLibraryItem --></td>
 		</tr>
 	</tbody>
 </table>
@@ -656,7 +658,8 @@ xmlns:ns4=&quot;http://soa.com/xsd/legals/1.0&quot; xmlns:ns5=&quot;http://soa.c
 		<tr>
 			<td>API</td>
 			<td><a href="../obj/o_apis_API.htm">API</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" --> Includes information about an API.<!-- #EndLibraryItem --> The full updated API information is returned.</td>
+			<td><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" -->
+Contains information about an API.<!-- #EndLibraryItem -->The full updated API information is returned.</td>
 		</tr>
 	</tbody>
 </table>

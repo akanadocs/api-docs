@@ -80,7 +80,8 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -132,45 +133,46 @@ The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_d
 <p><strong>Sample response headers</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Date: Mon, 11 May 2015 15:42:41 GMT</pre>
+Date: Thu, 12 Mar 2020 20:07:49 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <pre>{
-  &quot;DiscussionID&quot; : &quot;063fe661-a74f-40d2-a242-9d49ec426e81.acmepaymentscorp&quot;,
-  &quot;DiscussionSubjectID&quot; : &quot;ecbf7010-abcf-41f8-9f52-1c02b3a51984.acmepaymentscorp&quot;,
-  &quot;DiscussionType&quot; : &quot;com.soa.discussion.type.comment&quot;,
-  &quot;Topic&quot; : &quot;Call for feature requests &quot;,
-  &quot;Content&quot; : &quot;We are planning for our next release. Feature requests welcome! 
-\n\n![image](http://{hostname}/api/boards/items/063fe661-a74f-40d2-a242-9d49ec426e81.acmepaymentscorp
-/img_dollars.jpg \&quot;img_dollars.jpg\&quot;)\n\nCash prizes for the first five suggestions that we use!&quot;,
-  &quot;UserID&quot; : &quot;8dba2d85-1108-417f-ad81-7a369e9e5d79.acmepaymentscorp&quot;,
-  &quot;UserName&quot; : &quot;JaneMead&quot;,
-  &quot;Created&quot; : &quot;2015-05-11T20:29:53Z&quot;,
-  &quot;Comments&quot; : 0,
-  &quot;Marks&quot; : 0,
-  &quot;IsMarked&quot; : false,
-  &quot;Tag&quot; : [ ],
-  &quot;Visibility&quot; : &quot;Limited&quot;,
-  &quot;Action&quot; : [ {
-    &quot;value&quot; : &quot;discussion.action.unpublish&quot;,
-    &quot;label&quot; : &quot;discussion.action.unpublish&quot;
-  }, {
-    &quot;value&quot; : &quot;discussion.action.delete&quot;,
-    &quot;label&quot; : &quot;discussion.action.delete&quot;
-  } ],
-  &quot;Image&quot; : {
-    &quot;Url&quot; : &quot;http://{hostname}/api/users/8dba2d85-1108-417f-ad81-7a369e9e5d79.acmepaymentscorp/avatar&quot;,
-    &quot;Link&quot; : &quot;../acmepaymentscorp#/user/8dba2d85-1108-417f-ad81-7a369e9e5d79.acmepaymentscorp/details&quot;
+  "DiscussionID": "discussion584187.acmepaymentscorp",
+  "DiscussionSubjectID": "38fcd5ae-08ae-4161-9fd3-65288dffb92e.acmepaymentscorp",
+  "DiscussionType": "com.soa.discussion.type.comment",
+  "Topic": "Call for feature requests",
+  "Content": "We are planning for our next release. Feature requests welcome!!!!!!!!",
+  "UserID": "e4bd4e7b-03a6-4f93-97bd-65cadc2ce45f.acmepaymentscorp",
+  "UserName": "JaneMead",
+  "Created": "2020-03-12T20:07:35Z",
+  "Comments": 0,
+  "Marks": 0,
+  "IsMarked": false,
+  "Tag": [
+    "features",
+    "announcements"
+  ],
+  "Visibility": "Public",
+  "PubDate": "2020-03-12T20:07:35Z",
+  "Action": [
+    {
+      "value": "discussion.action.unpublish",
+      "label": "discussion.action.unpublish"
+    },
+    {
+      "value": "discussion.action.delete",
+      "label": "discussion.action.delete"
+    }
+  ],
+  "Image": {
+    "Url": "https://acmepaymentscorp.apiportal.akana.com:443/api/users/avatar/_VyLI9DgFX3uzW1-QNKBAN4w",
+    "Link": "../atmosphere#/user/e4bd4e7b-03a6-4f93-97bd-65cadc2ce45f.acmepaymentscorp/details"
   },
-  &quot;Published&quot; : true,
-  &quot;DescriptionMediaType&quot; : &quot;text/markdown&quot;,
-  &quot;BoardItemArtifacts&quot; : {
-    &quot;BoardItemArtifact&quot; : [ {
-      &quot;ContextID&quot; : &quot;063fe661-a74f-40d2-a242-9d49ec426e81.acmepaymentscorp&quot;,
-      &quot;FileName&quot; : &quot;img_dollars.jpg&quot;,
-      &quot;BaseUri&quot; : &quot;http://{hostname}&quot;,
-      &quot;UriPath&quot; : &quot;/api/boards/items/063fe661-a74f-40d2-a242-9d49ec426e81.acmepaymentscorp/img_dollars.jpg&quot;
-    } ]
-  }
+  "Published": true,
+  "DescriptionMediaType": "text/markdown",
+  "BoardItemArtifacts": {
+    "BoardItemArtifact": []
+  },
+  "ResourceID": []
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

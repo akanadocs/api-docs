@@ -65,11 +65,11 @@ no-catalog: true
 <p id="id_samplerequest">The examples below show SSO login in different scenarios, with different providers.</p>
 <p><strong>Request URL #1: Domain in query parameter</strong></p>
 <p>In the example below, the domain name is in a query parameter. The response will include the LoginData object, login cookie, and CSRF cookie if applicable.</p>
-<pre>http://www.acmepaymentscorp.com/api/login/ssoLogin?domain=GoogleAutomation</pre>
+<pre>http://www.acmepaymentscorp.com/api/login/ssoLogin?domain=Googleacmepaymentscorp</pre>
 
 <p><strong>Request URL #2: domain in path parameter</strong></p>
 <p>In the example below, the domain name is in a path parameter. The response will include the LoginData object, login cookie, and CSRF cookie if applicable.</p>
-<pre>http://www.acmepaymentscorp.com/api/login/ssoLogin/GoogleAutomation</pre>
+<pre>http://www.acmepaymentscorp.com/api/login/ssoLogin/Googleacmepaymentscorp</pre>
 
 <p><strong>Request URL #3: includes optional finalURL parameter</strong></p>
 <p>This example includes the finalURL parameter. The domain name is in a query parameter. The URL is accessed in a  new tab.</p>
@@ -81,7 +81,7 @@ no-catalog: true
 <p><strong>Request URL #4: SAML identity provider</strong></p>
 <p>This example is a call to a SAML domain. For SAML, you will need to run this operation, then a call to the SAML identity provider, and then a call to the <span class="apidoc_code"><a href="m_login_ssoLoginPost.htm">POST&nbsp;/api/login/ssoLogin</a></span> operation.</p>
 <p>For a full example of SSO login using a SAML domain, including request and response, see <a href="../aaex/Ref_Ex_SSO_Login_SAML.htm">Example: SSO login with SAML Provider</a>.</p>
-<p><img src="../assets/eg_ssoLogin_saml_01_GET.png" alt="GET /api/login/ssoLogin, request"/></p>
+<p><img src="../assets/eg_ssoLogin_saml_01_GET.png" alt="GETÂ /api/login/ssoLogin, request" /></p>
 
 
 <p><strong>Sample request headers</strong></p>
@@ -172,7 +172,7 @@ Accept: application/json</pre>
 <p id="id_sampleresponse">The sample response below shows the authentication information returned from Google.</p>
 <p><strong>Sample response header (Request #1: finalURL parameter provided in request)</strong></p>
 <pre>HTTP/1.1 307 Temporary Redirect
-Location: https://www.google.com/accounts/o8/ud?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.return_to=http%3A%2F%2F{hostname}%3A9900%2Fapi%2Flogin%2FssoLogin%3Fdomain%3DGoogleAutomation%26finalUrl%3Dhttp%253A%252F%252F{hostname}%253A9900%252Fui%252Fapps%252Facmepaymentscorp%252F_VzIIxu3KZVLI9OE54nLgNnQ%252Fresources%252Fconsole%252Fglobal%252Frelyingpartypostlogin.html%253Fdynamic%253Dtrue%2526baseUrl%253Dhttp%253A%252F%252F{hostname}l%253A9900%252Facmepaymentscorp%26ssoRetryCount%3D0&amp;openid.realm=http%3A%2F%2F{hostname}%3A9900&amp;openid.assoc_handle=1.AMlYA9VUmHqfKXB6FDt6oPqbXQltnJwUq-cp3pCesTn_Z8HnsXu4nxfL5848Bp25qpzq_DsrHRX2Zg&amp;openid.mode=checkid_setup&amp;openid.ns.ext1=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&amp;openid.ext1.type.email=http%3A%2F%2Faxschema.org%2Fcontact%2Femail&amp;openid.ext1.type.lastname=http%3A%2F%2Faxschema.org%2FnamePerson%2Flast&amp;openid.ext1.type.firstname=http%3A%2F%2Faxschema.org%2FnamePerson%2Ffirst&amp;openid.ext1.type.fullname=http%3A%2F%2Faxschema.org%2FnamePerson&amp;openid.ext1.required=firstname%2Clastname%2Cemail%2Cfullname&amp;amp;openid.ext1.mode=fetch_request</pre>
+Location: https://www.google.com/accounts/o8/ud?openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&amp;openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&amp;openid.return_to=http%3A%2F%2F{hostname}%3A9900%2Fapi%2Flogin%2FssoLogin%3Fdomain%3DGoogleacmepaymentscorp%26finalUrl%3Dhttp%253A%252F%252F{hostname}%253A9900%252Fui%252Fapps%252Facmepaymentscorp%252F_VzIIxu3KZVLI9OE54nLgNnQ%252Fresources%252Fconsole%252Fglobal%252Frelyingpartypostlogin.html%253Fdynamic%253Dtrue%2526baseUrl%253Dhttp%253A%252F%252F{hostname}l%253A9900%252Facmepaymentscorp%26ssoRetryCount%3D0&amp;openid.realm=http%3A%2F%2F{hostname}%3A9900&amp;openid.assoc_handle=1.AMlYA9VUmHqfKXB6FDt6oPqbXQltnJwUq-cp3pCesTn_Z8HnsXu4nxfL5848Bp25qpzq_DsrHRX2Zg&amp;openid.mode=checkid_setup&amp;openid.ns.ext1=http%3A%2F%2Fopenid.net%2Fsrv%2Fax%2F1.0&amp;openid.ext1.type.email=http%3A%2F%2Faxschema.org%2Fcontact%2Femail&amp;openid.ext1.type.lastname=http%3A%2F%2Faxschema.org%2FnamePerson%2Flast&amp;openid.ext1.type.firstname=http%3A%2F%2Faxschema.org%2FnamePerson%2Ffirst&amp;openid.ext1.type.fullname=http%3A%2F%2Faxschema.org%2FnamePerson&amp;openid.ext1.required=firstname%2Clastname%2Cemail%2Cfullname&amp;amp;openid.ext1.mode=fetch_request</pre>
 <p><strong>Sample response header (Request #2: no finalURL parameter)</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json

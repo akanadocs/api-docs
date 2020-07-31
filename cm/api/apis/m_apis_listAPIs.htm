@@ -17,7 +17,7 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_listAPIs.lbi" -->Returns a list of all APIs on the platform. With an optional parameter, lists APIs owned by a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a>.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_listAPIs_apis.lbi" -->Returns a list of all APIs on the platform. With an optional parameter, lists APIs owned by a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a>.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_login.lbi" -->Must be logged in and have permission to view the requested resources. If the user is logged in but doesn't have permission to view certain resources, the operation works, but limited (or empty) results are returned.<!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
@@ -58,7 +58,7 @@ no-catalog: true
 <pre>GET&nbsp;/api/apis HTTP/1.1
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -86,7 +86,8 @@ Accept: application/json, text/javascript, */*; q=0.01
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -147,139 +148,106 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Thu, 20 Sep 2012 00:30:21 GMT
+Date: Wed, 29 Jul 2020 14:30:37 GMT
 Content-Type: application/json</pre>
 
 <p><a id="rss_apis_json"></a><strong>Sample response body: application/json</strong></p>
 <pre>{
-  &quot;channel&quot; : {
-    &quot;title&quot; : &quot;APIs&quot;,
-    &quot;item&quot; : [ {
-      &quot;title&quot; : &quot;ACMECorp Content Management API&quot;,
-      &quot;description&quot; : &quot;&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;api&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      }, {
-        &quot;value&quot; : &quot;Public&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:visibility&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;api101.acmepaymentscorp&quot;
+  "channel": {
+    "title": "APIs",
+    "item": [
+      {
+        "title": "httpbin",
+        "category": [
+          {
+            "value": "api",
+            "domain": "uddi:soa.com:resourcetype"
+          },
+          {
+            "value": "Public",
+            "domain": "uddi:soa.com:visibility"
+          }
+        ],
+        "guid": {
+          "value": "b5662e48-8bb0-421a-9838-fe13cf4c70df.acmepaymentscorp"
+        },
+        "pubDate": "Wed, 29 Jul 2020 13:55:27 +0000",
+        "EntityReferences": {
+          "EntityReference": [
+            {
+              "Title": "httpbin (1)",
+              "Guid": "6b0a6f4c-3d2e-4fa0-aaa1-f619a360f8ec.acmepaymentscorp",
+              "Category": [
+                {
+                  "value": "apiversion",
+                  "domain": "uddi:soa.com:resourcetype"
+                }
+              ]
+            }
+          ]
+        },
+        "EntityReference": {
+          "Title": "httpbin (1)",
+          "Guid": "6b0a6f4c-3d2e-4fa0-aaa1-f619a360f8ec.acmepaymentscorp",
+          "Category": [
+            {
+              "value": "apiversion",
+              "domain": "uddi:soa.com:resourcetype"
+            }
+          ]
+        },
+        "Image": {
+          "Url": "http://api.acmepaymentscorp.com:7900/api/apis/avatar/_VHqr2PDtS1ZXuNvh-PeT7Mw"
+        }
       },
-      &quot;pubDate&quot; : &quot;Tue, 18 Sep 2012 21:40:27 PDT&quot;,
-      &quot;EntityReference&quot; : {
-        &quot;Title&quot; : &quot;ACMECorp Content Management API (1.0)&quot;,
-        &quot;Guid&quot; : &quot;apiversion401.acmepaymentscorp&quot;,
-        &quot;Category&quot; : [ {
-          &quot;value&quot; : &quot;apiversion&quot;,
-          &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-        } ]
+      {
+        "title": "Swagger_Petstore_5_Operations",
+        "category": [
+          {
+            "value": "api",
+            "domain": "uddi:soa.com:resourcetype"
+          },
+          {
+            "value": "Public",
+            "domain": "uddi:soa.com:visibility"
+          }
+        ],
+        "guid": {
+          "value": "37c792db-e763-4abf-a6c1-2dd2ecc47b7f.acmepaymentscorp"
+        },
+        "pubDate": "Wed, 29 Jul 2020 13:56:19 +0000",
+        "EntityReferences": {
+          "EntityReference": [
+            {
+              "Title": "Swagger_Petstore_5_Operations (v1)",
+              "Guid": "ef8e5dd5-3036-4342-97ec-98232cc36899.acmepaymentscorp",
+              "Category": [
+                {
+                  "value": "apiversion",
+                  "domain": "uddi:soa.com:resourcetype"
+                }
+              ]
+            }
+          ]
+        },
+        "EntityReference": {
+          "Title": "Swagger_Petstore_5_Operations (v1)",
+          "Guid": "ef8e5dd5-3036-4342-97ec-98232cc36899.acmepaymentscorp",
+          "Category": [
+            {
+              "value": "apiversion",
+              "domain": "uddi:soa.com:resourcetype"
+            }
+          ]
+        },
+        "Image": {
+          "Url": "http://api.acmepaymentscorp.com:7900/api/apis/avatar/_VHqr2PDtS1ZXuNvh-PeT7Mw"
+        }
       }
-    }, {
-      &quot;title&quot; : &quot;ACMECorp OpenID API&quot;,
-      &quot;description&quot; : &quot;OpenID Service&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;api&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      }, {
-        &quot;value&quot; : &quot;Public&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:visibility&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;api102.acmepaymentscorp&quot;
-      },
-      &quot;pubDate&quot; : &quot;Tue, 18 Sep 2012 21:40:27 PDT&quot;,
-      &quot;EntityReference&quot; : {
-        &quot;Title&quot; : &quot;ACMECorp OpenID API (1.0)&quot;,
-        &quot;Guid&quot; : &quot;apiversion402.acmepaymentscorp&quot;,
-        &quot;Category&quot; : [ {
-          &quot;value&quot; : &quot;apiversion&quot;,
-          &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-        } ]
-      }
-    }, {
-      &quot;title&quot; : &quot;Movies&quot;,
-      &quot;description&quot; : &quot;Interfaces with a movie database for add, modify, delete, and read of movie information.&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;api&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      }, {
-        &quot;value&quot; : &quot;Public&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:visibility&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;api10041.acmepaymentscorp&quot;
-      },
-      &quot;pubDate&quot; : &quot;Wed, 19 Sep 2012 13:51:12 PDT&quot;,
-      &quot;EntityReference&quot; : {
-        &quot;Title&quot; : &quot;Movies (1.0)&quot;,
-        &quot;Guid&quot; : &quot;apiversion10043.acmepaymentscorp&quot;,
-        &quot;Category&quot; : [ {
-          &quot;value&quot; : &quot;apiversion&quot;,
-          &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-        } ]
-      }
-    } ]
+    ]
   },
-  &quot;version&quot; : &quot;1.0&quot;
+  "version": "1.0"
 }</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-
-
-<p><strong>Sample response headers: text/xml</strong></p>
-<pre>Status Code: 200 OK
-Date: Thu, 20 Sep 2012 00:30:21 GMT
-Content-Type: text/xml</pre>
-
-<p><a id="rss_apis_xml"></a><strong>Sample response body: text/xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;rss xmlns:ns2=&quot;http://soa.com/xsd/rss/1.0&quot; xmlns:ns3=&quot;http://soa.com/xsd/comment/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/user/
-1.0&quot; xmlns:ns5=&quot;http://a9.com/-/spec/opensearch/1.1/&quot; xmlns:ns6=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns7=&quot;http://soa.com/
-xsd/fault/1.0&quot; xmlns:ns8=&quot;http://soa.com/xsd/api/1.0&quot; version=&quot;1.0&quot;&gt;
-  &lt;channel&gt;
-    &lt;title&gt;APIs&lt;/title&gt;
-    &lt;item&gt;
-      &lt;title&gt;ACMECorp Content Management API&lt;/title&gt;
-      &lt;description&gt;&lt;/description&gt;
-      &lt;category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;api&lt;/category&gt;
-      &lt;category domain=&quot;uddi:soa.com:visibility&quot;&gt;Public&lt;/category&gt;
-      &lt;guid&gt;api101.acmepaymentscorp&lt;/guid&gt;
-      &lt;pubDate&gt;Tue, 18 Sep 2012 21:40:27 PDT&lt;/pubDate&gt;
-      &lt;ns2:EntityReference&gt;
-        &lt;Title&gt;ACMECorp Content Management API (1.0)&lt;/Title&gt;
-        &lt;Guid&gt;apiversion401.acmepaymentscorp&lt;/Guid&gt;
-        &lt;ns2:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;apiversion&lt;/ns2:Category&gt;
-      &lt;/ns2:EntityReference&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;ACMECorp OpenID API&lt;/title&gt;
-      &lt;description&gt;OpenID Service&lt;/description&gt;
-      &lt;category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;api&lt;/category&gt;
-      &lt;category domain=&quot;uddi:soa.com:visibility&quot;&gt;Public&lt;/category&gt;
-      &lt;guid&gt;api102.acmepaymentscorp&lt;/guid&gt;
-      &lt;pubDate&gt;Tue, 18 Sep 2012 21:40:27 PDT&lt;/pubDate&gt;
-      &lt;ns2:EntityReference&gt;
-        &lt;Title&gt;ACMECorp OpenID API (1.0)&lt;/Title&gt;
-        &lt;Guid&gt;apiversion402.acmepaymentscorp&lt;/Guid&gt;
-        &lt;ns2:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;apiversion&lt;/ns2:Category&gt;
-      &lt;/ns2:EntityReference&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;Movies&lt;/title&gt;
-      &lt;description&gt;Interfaces with a movie database for add, modify, delete, and read of movie information.&lt;/description&gt;
-      &lt;category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;api&lt;/category&gt;
-      &lt;category domain=&quot;uddi:soa.com:visibility&quot;&gt;Public&lt;/category&gt;
-      &lt;guid&gt;api10041.acmepaymentscorp&lt;/guid&gt;
-      &lt;pubDate&gt;Wed, 19 Sep 2012 13:51:12 PDT&lt;/pubDate&gt;
-      &lt;ns2:EntityReference&gt;
-        &lt;Title&gt;Movies (1.0)&lt;/Title&gt;
-        &lt;Guid&gt;apiversion10043.acmepaymentscorp&lt;/Guid&gt;
-        &lt;ns2:Category domain=&quot;uddi:soa.com:resourcetype&quot;&gt;apiversion&lt;/ns2:Category&gt;
-      &lt;/ns2:EntityReference&gt;
-    &lt;/item&gt;
-  &lt;/channel&gt;
-&lt;/rss&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

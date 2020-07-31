@@ -54,18 +54,25 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h2 id="samplerequest">Sample Request</h2>
-<p id="id_samplerequest01">Several examples of using this API are shown below.</p>
+<p>Several examples of using this API are shown below.</p>
 <p><strong>Note</strong>: For additional examples, see <a href="../aaref/Ref_UsingSearchOnThePlatform.htm#samplesearchurls">Using Search on the Platform (Sample Search URLs section)</a>.</p>
-<p><strong>Sample request URL #1</strong></p>
-<p>The example below shows a search on the search term &quot;payments&quot; requesting the first two responses.</p>
-<pre><span class="apidoc_div_codeendpoint"></span><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?count=20&amp;start=0&amp;q=type:API%20AND%20ACME%20-Payments</pre>
+<p id="id_samplerequest01"><strong>Sample request URL #1</strong></p>
+<p>The example below shows a search for groups, requesting the first two responses. This query returns the first two groups that the user has visibility of. See <a href="#search_response_01">Sample response body #1</a>.</p>
+<pre><span class="apidoc_div_codeendpoint"></span><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?count=2&amp;start=0&amp;q=type:group</pre>
 
-<p><strong>Sample request URL #2</strong></p>
-<p id="id_samplerequest02">The example below shows a search for <strong>oauth</strong>.</p>
+<p id="id_samplerequest02"><strong>Sample request URL #2</strong></p>
+<p>The example below shows a request for information based on a specific unique ID. This query returns the response shown in <a href="#search_response_02_postman">Sample response body #2: Postman</a>.</p>
+<pre><span class="apidoc_div_codeendpoint"></span><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?q=d37990e2-800a-4963-b3b9-908b6a87dbcc.rcoaless</pre>
+
+<p id="id_samplerequest03"><strong>Sample request URL #3</strong></p>
+<p>the example below shows a search for model objects.This query returns the response shown in <a href="#search_response_03">Sample response body #3</a>.</p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?q=type:model</pre>
+<p id="id_samplerequest04"><strong>Sample request URL #4</strong></p>
+<p>The example below shows a search for <strong>oauth</strong>.</p>
 <pre><span class="apidoc_div_codeendpoint"></span><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?count=20&amp;start=0&amp;q=type:*%20AND%20oauth</pre>
 
-<p><strong>Sample request URL #3</strong></p>
-<p id="id_samplerequest03">The example below shows a search for the list of all users.</p>
+<p id="id_samplerequest05"><strong>Sample request URL #5</strong></p>
+<p>The example below shows a search for the list of all users.</p>
 <pre><span class="apidoc_div_codeendpoint"></span><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?sort=asc&amp;sortBy=com.soa.sort.order.title_sort&amp;Federation=false&amp;count=20&amp;start=0&amp;q=type:user</pre>
 
 <p><strong>Sample request headers</strong></p>
@@ -160,7 +167,7 @@ no-catalog: true
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><p>Allows you to to retrieve objects added or updated after a certain date/time stamp. For example, you could use this to retrieve apps and app versions that were updated since the specified date/time. The example below retrieves up to 10,000 app versions that were updated since the specified date:</p>
+			<td><p>Allows you to retrieve objects added or updated after a certain date/time stamp. For example, you could use this to retrieve apps and app versions that were updated since the specified date/time. The example below retrieves up to 10,000 app versions that were updated since the specified date:</p>
 				<pre>/api/search?q=(type:app-version)&amp;UpdatedDateFrom=2019-09-09T00:00:00&amp;count=10000</pre></td>
 		</tr>
 		<tr>
@@ -170,9 +177,10 @@ no-catalog: true
 			<td>string</td>
 			<td>Optional</td>
 			<td><p>In combination with <strong>UpdatedDateFrom</strong>, allows you to retrieve objects, such as apps and app versions, that were updated in a specified date/time range. The example below retrieves all apps that were updated in the specified 1-hour time period:</p>
-				<pre>/api/search?q=(type:app)&amp;UpdatedDateFrom=2019-10-11T22:00:00&amp;UpdatedDateTo=2019-10-11T23:00:00</pre></td>
+				<pre>/api/search?q=(type:app)&amp;UpdatedDateFrom=2019-10-11T22:00:00&amp;UpdatedDateTo=2019-10-11T23:00:00</pre>
+			</td>
 		</tr>
-		</tbody>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -192,224 +200,137 @@ no-catalog: true
 <pre>
 Status Code: 200 OK
 Content-Type: application/json
-Date: Tue, 04 Aug 2015 12:55:26 GMT</pre>
+Date: Thu, 21 May 2020 20:26:11 GMT</pre>
+rss_search_json
+search_response_01
 
-<p><strong><a id="rss_search_json"></a>Sample response body #1: application/json</strong></p>
-<p>The sample response below shows results for the <span class="apidoc_code">GET&nbsp;/api/search</span> method if the content type is JSON.</p>
+<p><a id="rss_search_json"></a><strong>Sample response body #1</strong></p>
+<p id="search_response_01">The sample response below shows results for the <span class="apidoc_code">GET&nbsp;/api/search</span> method when searching for groups and requesting the first two (<a href="#id_samplerequest01">sample request URL #1</a>).</p>
 
 <pre>{
-  &quot;channel&quot; : {
-    &quot;title&quot; : &quot;Search Results&quot;,
-    &quot;description&quot; : &quot;Search results for [type:* AND pet]&quot;,
-    &quot;pubDate&quot; : &quot;Tue Aug 04 17:55:26 UTC 2015&quot;,
-    &quot;startIndex&quot; : 0,
-    &quot;totalResults&quot; : 11,
-    &quot;itemsPerPage&quot; : 11,
-    &quot;elapsedTime&quot; : 575,
-    &quot;item&quot; : [ {
-      &quot;title&quot; : &quot;1.0&quot;,
-      &quot;description&quot; : &quot;Sample <b>version</b> description for <b>Pet</b> Store <b>API</b>&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;apiversion&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      }, {
-        &quot;value&quot; : &quot;com.soa.imageprovider.type.default&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:avatar-provider&quot;
-      }, {
-        &quot;value&quot; : &quot;Public&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:visibility&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;c0d59183-07f6-43b9-8cdc-d13c14caf650.acmepaymentscorp&quot;
+  "channel": {
+    "title": "Search Results",
+    "description": "Search results for [type:group]",
+    "pubDate": "Thu May 21 20:26:11 UTC 2020",
+    "startIndex": 0,
+    "totalResults": 4,
+    "itemsPerPage": 2,
+    "elapsedTime": 28,
+    "item": [
+      {
+        "title": "Private Group 3",
+        "description": "Private Group 3",
+        "category": [
+          {
+            "value": "group",
+            "domain": "uddi:soa.com:resourcetype"
+          },
+          {
+            "value": "com.soa.imageprovider.type.default",
+            "domain": "uddi:soa.com:avatar-provider"
+          },
+          {
+            "value": "Limited",
+            "domain": "uddi:soa.com:visibility"
+          }
+        ],
+        "guid": {
+          "value": "1c95952f-a53b-47ad-8a2f-f02d92ed6d26.acmepaymentscorp"
+        },
+        "Rating": 0.0,
+        "Image": {
+          "Url": "https://acmepaymentscorp.apiportal.akana.com:443/api/groups/avatar/_V8x3edl7eb0sGwDLpdZR1IQ"
+        },
+        "Followers": 0
       },
-      &quot;Rating&quot; : 0.0,
-      &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;http://{hostname}/api/apis/590c83cb-89d9-4e73-9dc5-1510b59e65dd.acmepaymentscorp/avatar&quot;
-      },
-      &quot;EntityReferences&quot; : {
-        &quot;EntityReference&quot; : [ {
-          &quot;Title&quot; : &quot;PetStore API&quot;,
-          &quot;Guid&quot; : &quot;590c83cb-89d9-4e73-9dc5-1510b59e65dd.acmepaymentscorp&quot;,
-          &quot;Category&quot; : [ {
-            &quot;value&quot; : &quot;api&quot;,
-            &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-          } ]
-        } ]
-      },
-      &quot;Connections&quot; : 0
-    }, {
-      &quot;title&quot; : &quot;Add Pet This&quot;,
-      &quot;description&quot; : &quot; (if not specified) and an href. Parameters Parameter:  body (<b>Pet</b> Object
-) The <b>API</b> is secured using&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;doc&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;api/82532296-d4b7-4a37-9e0e-bf41ef2db0a1.demo/documents?addPet.htm&quot;
-      },
-      &quot;pubDate&quot; : &quot;Tue, 04 Aug 2015 16:47:40 +0000&quot;,
-      &quot;EntityReferences&quot; : {
-        &quot;EntityReference&quot; : [ {
-          &quot;Guid&quot; : &quot;82532296-d4b7-4a37-9e0e-bf41ef2db0a1.demo&quot;,
-          &quot;Category&quot; : [ {
-            &quot;value&quot; : &quot;api&quot;,
-            &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-          } ]
-        } ]
+      {
+        "title": "Private Group 1",
+        "description": "Private Group 1",
+        "category": [
+          {
+            "value": "group",
+            "domain": "uddi:soa.com:resourcetype"
+          },
+          {
+            "value": "com.soa.imageprovider.type.default",
+            "domain": "uddi:soa.com:avatar-provider"
+          },
+          {
+            "value": "Limited",
+            "domain": "uddi:soa.com:visibility"
+          }
+        ],
+        "guid": {
+          "value": "e2eb5c36-ae70-4dc9-85ab-e039fd6e125d.acmepaymentscorp"
+        },
+        "Rating": 0.0,
+        "Image": {
+          "Url": "https://acmepaymentscorp.apiportal.akana.com:443/api/groups/avatar/_VOF-tsBCHDT998KwVfpYDxWQ"
+        },
+        "Followers": 0
       }
-    }, {
-      &quot;title&quot; : &quot;Find Pet By&quot;,
-      &quot;description&quot; : &quot; docs page. The fundamental objects this <b>API</b> deals with are pets. The JSON
- representation for a <b>pet</b>&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;doc&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;api/82532296-d4b7-4a37-9e0e-bf41ef2db0a1.demo/documents?findPetById.htm&quot;
-      },
-      &quot;pubDate&quot; : &quot;Tue, 04 Aug 2015 16:47:40 +0000&quot;,
-      &quot;EntityReferences&quot; : {
-        &quot;EntityReference&quot; : [ {
-          &quot;Guid&quot; : &quot;82532296-d4b7-4a37-9e0e-bf41ef2db0a1.demo&quot;,
-          &quot;Category&quot; : [ {
-            &quot;value&quot; : &quot;api&quot;,
-            &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-          } ]
-        } ]
-      }
-    }, {
-      &quot;title&quot; : &quot;PetStore API Overview&quot;,
-      &quot;description&quot; : &quot;. The fundamental objects this <b>API</b> deals with are pets. The JSON representation
- for a <b>pet</b> is easiest seen&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;doc&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;api/82532296-d4b7-4a37-9e0e-bf41ef2db0a1.demo/documents?overview.htm&quot;
-      },
-      &quot;pubDate&quot; : &quot;Tue, 04 Aug 2015 16:47:40 +0000&quot;,
-      &quot;EntityReferences&quot; : {
-        &quot;EntityReference&quot; : [ {
-          &quot;Guid&quot; : &quot;82532296-d4b7-4a37-9e0e-bf41ef2db0a1.demo&quot;,
-          &quot;Category&quot; : [ {
-            &quot;value&quot; : &quot;api&quot;,
-            &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-          } ]
-        } ]
-      }
-    }, {
-      &quot;title&quot; : &quot;PetStore API Overview&quot;,
-      &quot;description&quot; : &quot;. The fundamental objects this <b>API</b> deals with are pets. The JSON representation
- for a <b>pet</b> is easiest seen&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;doc&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;documentation?overview.htm&quot;
-      },
-      &quot;pubDate&quot; : &quot;Tue, 04 Aug 2015 16:47:40 +0000&quot;
-    }, {
-      &quot;title&quot; : &quot;PetStore API Overview&quot;,
-      &quot;description&quot; : &quot;. The fundamental objects this <b>API</b> deals with are pets. The JSON representation
- for a <b>pet</b> is easiest seen&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;doc&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;documentation?index.htm&quot;
-      },
-      &quot;pubDate&quot; : &quot;Tue, 04 Aug 2015 16:47:40 +0000&quot;
-    }, {
-      &quot;title&quot; : &quot;All the functionality&quot;,
-      &quot;description&quot; : &quot;All the functionality of the greatest ever <b>Pet</b> Store platform delivered
- through a RESTful JSON <b>API</b>&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;doc&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;home/landing?index.htm&quot;
-      },
-      &quot;pubDate&quot; : &quot;Tue, 04 Aug 2015 16:47:40 +0000&quot;
-    }, {
-      &quot;title&quot; : &quot;Listen Up&quot;,
-      &quot;description&quot; : &quot;Listen Up This is the greatest PetStore <b>API</b> you'll ever see. You can use
- this <b>API</b> to pound out your&quot;,
-      &quot;category&quot; : [ {
-        &quot;value&quot; : &quot;doc&quot;,
-        &quot;domain&quot; : &quot;uddi:soa.com:resourcetype&quot;
-      } ],
-      &quot;guid&quot; : {
-        &quot;value&quot; : &quot;welcome?index.htm&quot;
-      },
-      &quot;pubDate&quot; : &quot;Tue, 04 Aug 2015 16:47:40 +0000&quot;
-    } ]
+    ]
   }
 }</pre>
 
-<p><strong><a id="search_response_postman"></a>Sample response #2: Postman</strong></p>
-<p>The example below illustrates using Postman to return search information. This response corresponds to <a href="../aaref/Ref_UsingSearchOnThePlatform.htm#search_eg_08">example #8 in the <strong>Sample Search URLs</strong> section of Using Search on the Platform</a>: returns information based on a specific unique ID.</p>
+<p><strong><a id="search_response_02_postman"></a>Sample response #2: Postman</strong></p>
+<p>The example below illustrates using Postman to return search information. This response corresponds to <a href="#id_samplerequest02">sample request URL #2</a>, also <a href="../aaref/Ref_UsingSearchOnThePlatform.htm#search_eg_08">example #8 in the <strong>Sample Search URLs</strong> section of Using Search on the Platform</a>. It returns information based on a specific unique ID.</p>
 <p><img src="../assets/search_postman_uniqueid.jpg" alt="Search example using Postman" /></p>
 
 <p><strong><a id="search_response_03"></a>Sample response #3: Models List</strong></p>
-<p>The example below illustrates the list of models returned by the developer portal user interface on the <strong>{Business}</strong> > <strong>Models</strong> page.</p>
+<p>The example below illustrates the list of models returned by the developer portal user interface on the <strong>{Business}</strong> > <strong>Models</strong> page. This response corresponds to <a href="#id_samplerequest03">sample request URL #3</a>.</p>
 <pre>{
-  "channel":{
-    "title":"Search Results",
-    "description":"Search results for [(type:model AND BusinessID:tenantbusiness.acmepaymentscorp)]",
-    "pubDate":"Mon May 06 21:08:06 UTC 2019",
-    "startIndex":0,
-    "totalResults":3,
-    "itemsPerPage":3,
-    "elapsedTime":2,
-    "item":[
+  "channel": {
+    "title": "Search Results",
+    "description": "Search results for [type:model]",
+    "pubDate": "Thu May 21 21:08:03 UTC 2020",
+    "startIndex": 0,
+    "totalResults": 2,
+    "itemsPerPage": 2,
+    "elapsedTime": 0,
+    "item": [
       {
-        "title":"Cash Purchase",
-        "description":"For use in multiple top-level model objects.",
-        "category":[
+        "title": "Check Purchase",
+        "description": "",
+        "category": [
           {
-            "value":"model",
-            "domain":"uddi:soa.com:resourcetype"
+            "value": "model",
+            "domain": "uddi:soa.com:resourcetype"
           },
           {
-            "value":"com.akana.model.state.draft",
-            "domain":"uddi:soa.com:state"
+            "value": "com.akana.model.state.draft",
+            "domain": "uddi:soa.com:state"
           },
           {
-            "value":"Transaction",
-            "domain":"uddi:soa.com:modelcategory"
+            "value": "global",
+            "domain": "uddi:soa.com:modelcategory"
           },
           {
-            "value":"Public",
-            "domain":"uddi:soa.com:visibility"
+            "value": "Public",
+            "domain": "uddi:soa.com:visibility"
           }
         ],
-        "guid":{
-          "value":"cb242089-3c3d-46ed-a98e-e7385796fa27.acmepaymentscorp"
+        "guid": {
+          "value": "f20eeab0-a489-4be1-9d84-e25140d093eb.rcoaless"
         },
-        "EntityReferences":{
-          "EntityReference":[
+        "EntityReferences": {
+          "EntityReference": [
             {
-              "Guid":"42ccfffd-c7ba-4250-836a-ffc2619bb3a1.acmepaymentscorp",
-              "Category":[
+              "Guid": "8b76c88a-5ef0-4950-8fb7-6c20bd8852bc.rcoaless",
+              "Category": [
                 {
-                  "value":"modelversion",
-                  "domain":"uddi:soa.com:resourcetype"
+                  "value": "modelversion",
+                  "domain": "uddi:soa.com:resourcetype"
                 }
               ]
             },
             {
-              "Title":"automation",
-              "Guid":"tenantbusiness.acmepaymentscorp",
-              "Category":[
+              "Title": "rcoaless",
+              "Guid": "tenantbusiness.rcoaless",
+              "Category": [
                 {
-                  "value":"business",
-                  "domain":"uddi:soa.com:resourcetype"
+                  "value": "business",
+                  "domain": "uddi:soa.com:resourcetype"
                 }
               ]
             }
@@ -417,95 +338,47 @@ Date: Tue, 04 Aug 2015 12:55:26 GMT</pre>
         }
       },
       {
-        "title":"Check Purchase",
-        "description":"For use in multiple top-level model objects.",
-        "category":[
+        "title": "Cash Purchase",
+        "description": "",
+        "category": [
           {
-            "value":"model",
-            "domain":"uddi:soa.com:resourcetype"
+            "value": "model",
+            "domain": "uddi:soa.com:resourcetype"
           },
           {
-            "value":"com.akana.model.state.draft",
-            "domain":"uddi:soa.com:state"
+            "value": "com.akana.model.state.draft",
+            "domain": "uddi:soa.com:state"
           },
           {
-            "value":"Transaction",
-            "domain":"uddi:soa.com:modelcategory"
+            "value": "global",
+            "domain": "uddi:soa.com:modelcategory"
           },
           {
-            "value":"Public",
-            "domain":"uddi:soa.com:visibility"
+            "value": "Public",
+            "domain": "uddi:soa.com:visibility"
           }
         ],
-        "guid":{
-          "value":"4a1c31f4-4c10-469a-85cf-3b918f7bbc01.acmepaymentscorp"
+        "guid": {
+          "value": "4f1d8eba-dd0a-4bbc-9b71-4bf0207dde11.rcoaless"
         },
-        "EntityReferences":{
-          "EntityReference":[
+        "EntityReferences": {
+          "EntityReference": [
             {
-              "Guid":"bc90be73-3bb5-4411-9dae-ad90fc65a6ca.acmepaymentscorp",
-              "Category":[
+              "Guid": "a1604329-afec-4d8e-b41f-2fa7a63cc99e.rcoaless",
+              "Category": [
                 {
-                  "value":"modelversion",
-                  "domain":"uddi:soa.com:resourcetype"
+                  "value": "modelversion",
+                  "domain": "uddi:soa.com:resourcetype"
                 }
               ]
             },
             {
-              "Title":"automation",
-              "Guid":"tenantbusiness.acmepaymentscorp",
-              "Category":[
+              "Title": "rcoaless",
+              "Guid": "tenantbusiness.rcoaless",
+              "Category": [
                 {
-                  "value":"business",
-                  "domain":"uddi:soa.com:resourcetype"
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "title":"Credit Card Purchase",
-        "description":"For use in multiple top-level model objects.",
-        "category":[
-          {
-            "value":"model",
-            "domain":"uddi:soa.com:resourcetype"
-          },
-          {
-            "value":"com.akana.model.state.draft",
-            "domain":"uddi:soa.com:state"
-          },
-          {
-            "value":"Transaction",
-            "domain":"uddi:soa.com:modelcategory"
-          },
-          {
-            "value":"Public",
-            "domain":"uddi:soa.com:visibility"
-          }
-        ],
-        "guid":{
-          "value":"e2d2af5b-cf21-4e68-8635-387e5ec117b6.acmepaymentscorp"
-        },
-        "EntityReferences":{
-          "EntityReference":[
-            {
-              "Guid":"c5f440ee-d57c-4ee2-9082-6c40557c1593.acmepaymentscorp",
-              "Category":[
-                {
-                  "value":"modelversion",
-                  "domain":"uddi:soa.com:resourcetype"
-                }
-              ]
-            },
-            {
-              "Title":"automation",
-              "Guid":"tenantbusiness.acmepaymentscorp",
-              "Category":[
-                {
-                  "value":"business",
-                  "domain":"uddi:soa.com:resourcetype"
+                  "value": "business",
+                  "domain": "uddi:soa.com:resourcetype"
                 }
               ]
             }
@@ -579,9 +452,9 @@ Date: Tue, 04 Aug 2015 12:55:26 GMT</pre>
 				<ul class="apidoctable_ul">
 					<li>Title</li>
 					<li>Description</li>
-					<li>Category[&nbsp;]&#8212;One or more categories for the search results.</li>
+					<li>Category[&nbsp;]&#8212;One or more categories for the search results. Each category includes value and domain, name/value pairs.</li>
 					<li><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_guid">GUID</a>: the unique ID for the item.</li>
-					<li>Entity references&#8212;One or more. For each:Title, GUID, Category</li>
+					<li>EntityReferences&#8212;includes one or more nested EntityReference objects. For each: Title, GUID, Category. Each category includes value and domain, name/value pairs.</li>
 					<li>Connections</li>
 					<li>Ratings</li>
 				</ul></td>

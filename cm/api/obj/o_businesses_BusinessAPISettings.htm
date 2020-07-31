@@ -1,5 +1,5 @@
 ---
-layout: apipage-noindex
+layout: apipage
 title: BusinessAPISettings Object | Businesses Service | Akana API Platform API
 description:  Contains information about the settings to apply to all APIs within the business, unless specified otherwise at a lower level.
 product: cm
@@ -139,7 +139,9 @@ Contains information about the settings to apply to all APIs within the business
 		<tr>
 			<td>ApiVersionWorkflowDefKey</td>
 			<td>String</td>
-			<td>The unique <a href="../Ref_Glossary_CommunityPlatform.htm#gl_workflowdefinitionkey">workflow definition key</a> for the custom workflow for APIs, if a custom workflow for APIs is in use.</td>
+			<td><p>The unique <a href="../Ref_Glossary_CommunityPlatform.htm#gl_workflowdefinitionkey">workflow definition key</a> for the custom workflow for API versions, if a custom workflow for API versions is in use.</p>
+				<p>The key value is returned when the workflow is added (<span class="apidoc_code"><a href="../workflow/m_workflow_addWorkloadDefinitionConfiguration.htm">POST&nbsp;/api/workflow/definitions</a></span> operation).</p>
+				<p><strong>Note</strong>: To remove an existing custom template and go back to the default, update the API settings without including this property.</p></td>
 		</tr>
 		<tr>
 			<td>ApiAdminMemberWorkflowDefKey</td>

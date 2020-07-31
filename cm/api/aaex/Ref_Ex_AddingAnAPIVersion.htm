@@ -22,7 +22,7 @@ no-catalog: true
 	<li>The APIID for the API you want to add a version to.</li>
 	<li>The APIVersionID for the version that you want to clone.</li>
 </ul>
-<h3>To add an API version in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;by cloning the original version, using the API</h3>
+<h4>To add an API version in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;by cloning the original version, using the API</h4>
 <ol>
 	<li>Log in via the API, <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
 		<ul>
@@ -64,11 +64,10 @@ no-catalog: true
 		</ul>
 	</li>
 	<li>You should get an HTTP 200 response, with the full version object including the newly-assigned APIVersionID.Take the APIVersionID; you will use this later.</li>
-	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_logout.htm">POST&nbsp;/api/login/logout</a></span> operation. Use the following values:
+	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_endSession.htm">GET&nbsp;/api/login/endsession</a></span> operation. Use the following values:
 		<ul>
-			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/logout</strong></li>
+			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
-			<li>Content-Type header: <strong>application/x-www-form-urlencoded</strong></li>
 		</ul>
 	</li>
 </ol>

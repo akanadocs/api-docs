@@ -58,19 +58,19 @@ no-catalog: true
 <p><strong>Sample request headers</strong></p>
 <pre>Content-Type: application/json
 Accept: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  "UserWorkflowDefKey":"workflow:definition:user:v2",
-  "AddedUserValidDays":"30",
-  "ResetValidCodeHours":"24",
-  "UpdateEmailValidCodeHours":"48",
-  "SignupUserValidDays":"7",
-  "InvitedUserValidDays":"7",
-  "NewsUpdateNotification":"com.soa.feature.enabled",
-  "EnforceChallengesSetupOnLogin":"com.soa.feature.disabled",
-  "SelfSignup":"com.soa.feature.enabled",
-  "InviteUnregisteredUsers":"com.soa.feature.enabled"
+  "NewsUpdateNotification": "com.soa.feature.enabled",
+  "EnforceChallengesSetupOnLogin": "com.soa.feature.disabled",
+  "SelfSignup": "com.soa.feature.enabled",
+  "InviteUnregisteredUsers": "com.soa.feature.enabled",
+  "ResetValidCodeHours": 48,
+  "UpdateEmailValidCodeHours": 48,
+  "SignupUserValidDays": 7,
+  "AddedUserValidDays": 30,
+  "InvitedUserValidDays": 7,
+  "TopApisCountAllowed": 8
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -106,7 +106,8 @@ Accept: application/json
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -165,19 +166,19 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Expires: Tue, 02 Apr 2019 17:48:02 GMT</pre>
+Date: Thu, 11 Jun 2020 21:43:22 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "UserWorkflowDefKey":"workflow:definition:user:v2",
-  "AddedUserValidDays":"30",
-  "ResetValidCodeHours":"24",
-  "UpdateEmailValidCodeHours":"48",
-  "SignupUserValidDays":"7",
-  "InvitedUserValidDays":"7",
-  "NewsUpdateNotification":"com.soa.feature.enabled",
-  "EnforceChallengesSetupOnLogin":"com.soa.feature.disabled",
-  "SelfSignup":"com.soa.feature.enabled",
-  "InviteUnregisteredUsers":"com.soa.feature.enabled"
+  "NewsUpdateNotification": "com.soa.feature.enabled",
+  "EnforceChallengesSetupOnLogin": "com.soa.feature.disabled",
+  "SelfSignup": "com.soa.feature.enabled",
+  "InviteUnregisteredUsers": "com.soa.feature.enabled",
+  "ResetValidCodeHours": 48,
+  "UpdateEmailValidCodeHours": 48,
+  "SignupUserValidDays": 7,
+  "AddedUserValidDays": 30,
+  "InvitedUserValidDays": 7,
+  "TopApisCountAllowed": 8
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

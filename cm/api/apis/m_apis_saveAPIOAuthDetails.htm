@@ -58,12 +58,12 @@ no-catalog: true
 <p><strong>Sample request headers</strong></p>
 <pre>PUT /api/apis/versions/a7ece9ef-e4cd-4bac-9868-31fde66c516e/oauthdetails HTTP/1.1
 Accept: application/json
-Content-Type: <!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><strong>application/vnd.soa.v2019+json</strong><!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+Content-Type:<!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><strong>application/vnd.soa.v2019+json</strong><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p id="samplerequest_01"><strong>Sample request body: with API-wide scopes and a third-party OAuth provider</strong></p>
 <pre>{
-  "APIVersionID" : "a7ece9ef-e4cd-4bac-9868-31fde66c516e.open",
-  "APIID" : "09e0e3b0-066e-4122-990c-e3ca325282e7.open",
+  "APIVersionID" : "a7ece9ef-e4cd-4bac-9868-31fde66c516e.acmepaymentscorp",
+  "APIID" : "09e0e3b0-066e-4122-990c-e3ca325282e7.acmepaymentscorp",
   "Name" : "v1",
   "Description" : "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.",
   "Environment" : "Production",
@@ -290,7 +290,7 @@ Content-Type: <!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><stro
       "EndpointKey" : "uddi:b5668760-a748-11e9-ba71-d0c88adc4934",
       "EndpointImplementationDetails" : {
         "DeploymentZoneEndpoint" : {
-          "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.open",
+          "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.acmepaymentscorp",
           "EndpointKey" : "uddi:b5668760-a748-11e9-ba71-d0c88adc4934",
           "ListenerName" : "default-http0",
           "ContainerKey" : "21e6a509-1a41-411f-a82c-395bb969",
@@ -327,7 +327,7 @@ Content-Type: <!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><stro
       "EndpointKey" : "uddi:127fb0c3-a749-11e9-ba71-d0c88adc4934",
       "EndpointImplementationDetails" : {
         "DeploymentZoneEndpoint" : {
-          "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.open",
+          "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.acmepaymentscorp",
           "EndpointKey" : "uddi:127fb0c3-a749-11e9-ba71-d0c88adc4934",
           "ListenerName" : "default-http0",
           "ContainerKey" : "21e6a509-1a41-411f-a82c-395bb969",
@@ -539,7 +539,7 @@ Content-Type: <!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><stro
           "EndpointKey" : "uddi:b5668760-a748-11e9-ba71-d0c88adc4934",
           "EndpointImplementationDetails" : {
             "DeploymentZoneEndpoint" : {
-              "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.open",
+              "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.acmepaymentscorp",
               "EndpointKey" : "uddi:b5668760-a748-11e9-ba71-d0c88adc4934",
               "ListenerName" : "default-http0",
               "ContainerKey" : "21e6a509-1a41-411f-a82c-395bb969",
@@ -609,9 +609,9 @@ Content-Type: <!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><stro
       } ],
       "APIImplementationDeployments" : {
         "DeploymentZonesHostingInfo" : [ {
-          "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.open",
+          "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.acmepaymentscorp",
           "DeploymentZoneEndpoint" : [ {
-            "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.open",
+            "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.acmepaymentscorp",
             "EndpointKey" : "uddi:b5668760-a748-11e9-ba71-d0c88adc4934",
             "ListenerName" : "default-http0",
             "ContainerKey" : "21e6a509-1a41-411f-a82c-395bb969",
@@ -863,7 +863,7 @@ Content-Type: <!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><stro
           "EndpointKey" : "uddi:127fb0c3-a749-11e9-ba71-d0c88adc4934",
           "EndpointImplementationDetails" : {
             "DeploymentZoneEndpoint" : {
-              "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.open",
+              "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.acmepaymentscorp",
               "EndpointKey" : "uddi:127fb0c3-a749-11e9-ba71-d0c88adc4934",
               "ListenerName" : "default-http0",
               "ContainerKey" : "21e6a509-1a41-411f-a82c-395bb969",
@@ -933,9 +933,9 @@ Content-Type: <!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><stro
       } ],
       "APIImplementationDeployments" : {
         "DeploymentZonesHostingInfo" : [ {
-          "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.open",
+          "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.acmepaymentscorp",
           "DeploymentZoneEndpoint" : [ {
-            "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.open",
+            "DeploymentZoneID" : "21e6a509-1a41-411f-a82c-395bb969.acmepaymentscorp",
             "EndpointKey" : "uddi:127fb0c3-a749-11e9-ba71-d0c88adc4934",
             "ListenerName" : "default-http0",
             "ContainerKey" : "21e6a509-1a41-411f-a82c-395bb969",
@@ -1020,12 +1020,12 @@ Content-Type: <!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><stro
   },
   "Links" : [ {
     "rel" : "design",
-    "href" : "/api/apis/versions/a7ece9ef-e4cd-4bac-9868-31fde66c516e.open/design?specification=swagger2",
+    "href" : "/api/apis/versions/a7ece9ef-e4cd-4bac-9868-31fde66c516e.acmepaymentscorp/design?specification=swagger2",
     "type" : "GET",
     "title" : "Swagger2"
   }, {
     "rel" : "design",
-    "href" : "/api/apis/versions/a7ece9ef-e4cd-4bac-9868-31fde66c516e.open/design?specification=oas3",
+    "href" : "/api/apis/versions/a7ece9ef-e4cd-4bac-9868-31fde66c516e.acmepaymentscorp/design?specification=oas3",
     "type" : "GET",
     "title" : "OAS3"
   } ]
@@ -1055,7 +1055,8 @@ Content-Type: <!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><stro
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

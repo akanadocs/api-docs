@@ -19,7 +19,6 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_updateAPIImplementationDebugOptions.lbi" -->Changes the debug mode setting for the specified API implementation.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/Library/permission_modify.lbi" -->Must have Modify permission for the resource. <!-- #EndLibraryItem --><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>, or other authorized Admin.</p>
-<!--<p>@WorkflowActionAllowed({ApiVersionWorkflowAction.MODIFY_ACTION, ApiVersionWorkflowAction.MODIFY_DEBUG_OPTIONS_ACTION})</p>-->
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
@@ -93,7 +92,8 @@ TkAldvoSdlqH0eq_WJK0SBNpwm5sy5SJzM4BiBw5pSJ5UpHGipO_i4wbhu4XsPmX6bNfFJbp7htYKMeZ
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

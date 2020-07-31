@@ -1,5 +1,5 @@
 ---
-layout: apipage-noindex
+layout: apipage
 title: SignupResponse Object | Users Service | Akana API Platform API
 description:  Contains basic signup information about the user, including the unique user ID assigned by the platform.
 product: cm
@@ -15,7 +15,6 @@ no-catalog: true
 <h1 id="top">SignupResponse Object</h1>
 <p><!-- #BeginLibraryItem "/Library/o_users_SignupResponse.lbi" -->
 Contains basic signup information about the user, including the unique user ID assigned by the platform.<!-- #EndLibraryItem --></p>
-<!--<p>/src/com/soa/user/api/SignupResponse.java</p>-->
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
 	<li><span class="apidoc_code"><a href="../users/m_users_signupUser.htm">POST&nbsp;/api/users/signupUser[/{InvitationCode}]</a></span></li>
@@ -34,7 +33,8 @@ Contains basic signup information about the user, including the unique user ID a
 		<tr>
 			<td>userName</td>
 			<td>string</td>
-			<td>The unique ID for the user. For example: 506994e4-d840-47c7-84f5-ad3bbae13d36.</td>
+			<td><p>The unique ID for the user. For example: 506994e4-d840-47c7-84f5-ad3bbae13d36.</p>
+				<p>Max length: 128 chars.</p></td>
 		</tr>
 	</thead>
 	<tbody>
@@ -51,7 +51,8 @@ Contains basic signup information about the user, including the unique user ID a
 		<tr>
 			<td>domainName</td>
 			<td>string</td>
-			<td>The domain name.</td>
+			<td><p>The domain name.</p>
+				<p>Max length: 128 chars.</p></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_logindomainid">loginDomainID</a></td>
@@ -61,13 +62,15 @@ Contains basic signup information about the user, including the unique user ID a
 		<tr>
 			<td>authIdentifier</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_users_authIdentifier.lbi" -->
-        The identifier for the user, as provided by the identify store. If the user signed up using Facebook, this value is a numeric ID; for Google, it is the URI of the user on Google. If the user signed up on the platform, it is a unique identifier for the platform.<!-- #EndLibraryItem --></td>
+			<td><p><!-- #BeginLibraryItem "/Library/o_users_authIdentifier.lbi" -->
+				The identifier for the user, as provided by the identify store. If the user signed up using Facebook, this value is a numeric ID; for Google, it is the URI of the user on Google. If the user signed up on the platform, it is a unique identifier for the platform.<!-- #EndLibraryItem --></p>
+				<p>Max length: 256 chars.</p></td>
 		</tr>
 		<tr>
 			<td>profileName</td>
 			<td>string</td>
-			<td>In some instances this field is used for the user's email address.</td>
+			<td><p>In some instances this field is used for the user's email address.</p>
+				<p>Max length: 128 chars.</p></td>
 		</tr>
 		<tr>
 			<td>emailAddress</td>

@@ -61,7 +61,7 @@ Returns information about API contracts for the specified app version, in the fo
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/2mWn90b8Y4C2vL7qCxDW8f38.acmepaymentscorp/contracts?Environment=sandbox</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/vnd.soa.v71+json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -81,15 +81,14 @@ Returns information about API contracts for the specified app version, in the fo
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p>
-	</td>
+			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></p>
+				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p>
+			</td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -161,62 +160,141 @@ Returns information about API contracts for the specified app version, in the fo
 <p><strong>Sample response headers: application/vnd.soa.v72+json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/vnd.soa.v72+json
-Expires: Tue, 05 Jan 2016 20:53:07 GMT</pre>
+Expires: Tue, Thu, 12 Mar 2020 18:39:51 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v72+json</strong></p>
-<pre>
-
-{
-  &quot;Contract&quot; : [ {
-    &quot;ContractID&quot; : &quot;5f9a9c9d-69e9-4a6e-b854-f83446ea61ef.acmepaymentscorp&quot;,
-    &quot;APIVersionID&quot; : &quot;7f37e4ac-0e7e-4826-9103-e2deef13f754.acmepaymentscorp&quot;,
-    &quot;RuntimeID&quot; : &quot;ZgzIfKEG39336phtnW82m3Eo.acmepaymentscorp&quot;,
-    &quot;Environment&quot; : &quot;Production&quot;,
-    &quot;State&quot; : &quot;apicontract.status.activated&quot;,
-    &quot;ContractScope&quot; : {
-      &quot;Restricted&quot; : false,
-      &quot;LicenseID&quot; : [ ]
-    },
-    &quot;Updated&quot; : &quot;2016-01-05T12:56:27Z&quot;,
-    &quot;UpdatedInMillis&quot; : 1451998587000,
-    &quot;TargetResources&quot; : {
-      &quot;TargetResource&quot; : [ {
-        &quot;Name&quot; : &quot;1.0&quot;,
-        &quot;ID&quot; : &quot;7f37e4ac-0e7e-4826-9103-e2deef13f754.acmepaymentscorp&quot;,
-        &quot;Type&quot; : &quot;apiversion&quot;,
-        &quot;Visibility&quot; : &quot;Public&quot;,
-        &quot;IsResourceLevelPermissionSupported&quot; : true
-      }, {
-        &quot;Name&quot; : &quot;SwaggerAPI_Both&quot;,
-        &quot;ID&quot; : &quot;de4b8ee5-e650-4166-a627-becf99f2d282.acmepaymentscorp&quot;,
-        &quot;Type&quot; : &quot;api&quot;,
-        &quot;Image&quot; : {
-          &quot;Url&quot; : &quot;http://www.acmepaymentscorp.com/api/apis/avatar/_VcqKPPQcM1qfe68Ybr-qIWw&quot;,
-          &quot;Title&quot; : &quot;api&quot;,
-          &quot;Link&quot; : &quot;#/api/de4b8ee5-e650-4166-a627-becf99f2d282.acmepaymentscorp/versions/7f37e4ac-0e7e-4826-9103-e2deef13f754.acmepaymentscorp/details&quot;
-        }
-      }, {
-        &quot;Name&quot; : &quot;1.0&quot;,
-        &quot;ID&quot; : &quot;ZgzIfKEG39336phtnW82m3Eo.acmepaymentscorp&quot;,
-        &quot;Type&quot; : &quot;app-version&quot;
-      }, {
-        &quot;Name&quot; : &quot;__SwaggerApp_prod&quot;,
-        &quot;ID&quot; : &quot;93213f5b-7d6b-486a-b69c-28e0531559bd.acmepaymentscorp&quot;,
-        &quot;Type&quot; : &quot;app&quot;,
-        &quot;Image&quot; : {
-          &quot;Url&quot; : &quot;http://www.acmepaymentscorp.com/api/apps/avatar/_VcqKPPQcM1qfe68Ybr-qIWw&quot;,
-          &quot;Title&quot; : &quot;app&quot;,
-          &quot;Link&quot; : &quot;#/app/93213f5b-7d6b-486a-b69c-28e0531559bd.acmepaymentscorp/versions/ZgzIfKEG39336phtnW82m3Eo.acmepaymentscorp/details&quot;
-        }
-      }, {
-        &quot;ID&quot; : &quot;contract_request10085.acmepaymentscorp&quot;,
-        &quot;Type&quot; : &quot;board-item&quot;
-      } ]
-    },
-    &quot;Endpoints&quot; : {
-      &quot;Endpoint&quot; : [ ]
-    },
-    &quot;Status&quot; : &quot;com.soa.apicontract.inforce&quot;
-  } ]
+<pre>{
+  "Contract": [
+    {
+      "ContractID": "79795dce-9eb3-43a9-8ebb-ab487fa41d1a.rcoaless",
+      "APIVersionID": "38fcd5ae-08ae-4161-9fd3-65288dffb92e.rcoaless",
+      "RuntimeID": "fZGCeQYlHJ7LJkbJ34VXADk7ATRQzfLfwvjFZxgA.rcoaless",
+      "Environment": "Production",
+      "State": "apicontract.status.activated",
+      "ContractScope": {
+        "Restricted": false,
+        "LicenseID": []
+      },
+      "Updated": "2020-03-03T16:05:22Z",
+      "UpdatedInMillis": 1583251522000,
+      "TargetResources": {
+        "TargetResource": [
+          {
+            "Name": "v1",
+            "ID": "38fcd5ae-08ae-4161-9fd3-65288dffb92e.rcoaless",
+            "Type": "apiversion",
+            "Visibility": "Public",
+            "IsResourceLevelPermissionSupported": true
+          },
+          {
+            "Name": "Swagger_Petstore_5_Operations",
+            "ID": "f1c665a2-eb4f-4b66-a254-25a4d4ff8aab.rcoaless",
+            "Type": "api",
+            "Image": {
+              "Url": "https://rcoaless.apiportal.akana.com:443/api/apis/avatar/_VyLI9DgFX3uzW1-QNKBAN4w",
+              "Title": "api",
+              "Link": "#/api/f1c665a2-eb4f-4b66-a254-25a4d4ff8aab.rcoaless/versions/38fcd5ae-08ae-4161-9fd3-65288dffb92e.rcoaless/details"
+            }
+          },
+          {
+            "Name": "v1",
+            "ID": "fZGCeQYlHJ7LJkbJ34VXADk7ATRQzfLfwvjFZxgA.rcoaless",
+            "Type": "app-version"
+          },
+          {
+            "Name": "Petstore API Test App",
+            "ID": "7f3ef94a-3ac3-405c-bda6-efba9ff52b75.rcoaless",
+            "Type": "app",
+            "Image": {
+              "Url": "https://rcoaless.apiportal.akana.com:443/api/apps/avatar/_VyLI9DgFX3uzW1-QNKBAN4w",
+              "Title": "app",
+              "Link": "#/app/7f3ef94a-3ac3-405c-bda6-efba9ff52b75.rcoaless/versions/fZGCeQYlHJ7LJkbJ34VXADk7ATRQzfLfwvjFZxgA.rcoaless/details"
+            }
+          },
+          {
+            "ID": "contract_request583207.rcoaless",
+            "Type": "board-item"
+          }
+        ]
+      },
+      "Endpoints": {
+        "Endpoint": [
+          {
+            "Category": "Production",
+            "Uri": "http://api578647live.gateway.akana.com:80/",
+            "CName": "api578647live.gateway.akana.com",
+            "DeploymentZoneRule": "container-1051default-http0",
+            "ConnectionProperties": [
+              {
+                "Name": "virtualHost",
+                "Value": "api578647live.gateway.akana.com"
+              },
+              {
+                "Name": "gateway_hostname",
+                "Value": "api578647live.gateway.akana.com"
+              },
+              {
+                "Name": "visibility",
+                "Value": "public"
+              }
+            ],
+            "BindingQName": "{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+            "BindingType": "binding.http",
+            "EndpointKey": "uddi:cf133f7d-4177-11ea-be1c-b71095ab9d8f",
+            "ImplementationCode": "Live"
+          },
+          {
+            "Category": "Production",
+            "Uri": "https://api578647live.gateway.akana.com:443/",
+            "CName": "api578647live.gateway.akana.com",
+            "DeploymentZoneRule": "container-1051default-https",
+            "ConnectionProperties": [
+              {
+                "Name": "virtualHost",
+                "Value": "api578647live.gateway.akana.com"
+              },
+              {
+                "Name": "gateway_hostname",
+                "Value": "api578647live.gateway.akana.com"
+              },
+              {
+                "Name": "visibility",
+                "Value": "public"
+              }
+            ],
+            "BindingQName": "{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+            "BindingType": "binding.http",
+            "EndpointKey": "uddi:cf629706-4177-11ea-be1c-b71095ab9d8f",
+            "ImplementationCode": "Live"
+          },
+          {
+            "Category": "Production",
+            "Uri": "https://api578647live.mtl-west.gateway.akana.com:443/",
+            "CName": "api578647live.mtl-west.gateway.akana.com",
+            "DeploymentZoneRule": "container-1051mutual-https",
+            "ConnectionProperties": [
+              {
+                "Name": "virtualHost",
+                "Value": "api578647live.mtl-west.gateway.akana.com"
+              },
+              {
+                "Name": "gateway_hostname",
+                "Value": "api578647live.mtl-west.gateway.akana.com"
+              },
+              {
+                "Name": "visibility",
+                "Value": "public"
+              }
+            ],
+            "BindingQName": "{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+            "BindingType": "binding.http",
+            "EndpointKey": "uddi:cfa7683d-4177-11ea-be1c-b71095ab9d8f",
+            "ImplementationCode": "Live"
+          }
+        ]
+      },
+      "Status": "com.soa.apicontract.inforce"
+    }
+  ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -235,14 +313,12 @@ Expires: Tue, 05 Jan 2016 20:53:07 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --></p>
+				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p></td>
 		</tr>
 	</tbody>
 </table>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+	
 <!-- InstanceEndEditable -->
 
 

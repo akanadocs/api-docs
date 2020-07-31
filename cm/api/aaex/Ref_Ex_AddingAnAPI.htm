@@ -1,10 +1,10 @@
 ---
 layout: apipage
-title: Example - Adding an Adding an API by providing the full API definition | How-To Material | Akana API Platform API
+title: Example- Adding an API by providing the full API definition | How-To Material | Akana API Platform API
 description: This example walks you through adding an API to the&nbsp;Akana API Platform&nbsp;by using the platform API rather than the user interface. One use of this sequence is to build code that will load multiple APIs via the platform. This could be useful if you are just getting started on the platform and have many APIs.
 product: cm
 category: ref
-nav-title: Example - Adding an App 
+nav-title: Example- Adding an API by providing the full API definition 
 no-nav: api
 sub-nav: true
 sub-nav-class: aaex
@@ -22,7 +22,7 @@ no-catalog: true
 </ol>
 <p>Once you've completed the above steps, the APIID is returned in the response and the API is ready for further setup (for example, adding legal agreements, adding operations, adding policies, assigning scopes to operations, adding additional API versions) or for use.</p>
 <p>Follow the detailed instructions below.</p>
-<h3>To add an API in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;using the platform API</h3>
+<h4>To add an API in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;using the platform API</h4>
 <ol>
 	<li>Log in via the API, <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
 		<ul>
@@ -226,11 +226,10 @@ no-catalog: true
 		</ul>
 	</li>
 	<li>You should get an HTTP 200 response, with the full API object.Take the APIID and APIVersionID returned in the response object; you will use these later.</li>
-	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_logout.htm">POST&nbsp;/api/login/logout</a></span> operation. Use the following values:
+	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_endSession.htm">GET&nbsp;/api/login/endsession</a></span> operation. Use the following values:
 		<ul>
-			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/logout</strong></li>
+			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
-			<li>Content-Type header: <strong>application/x-www-form-urlencoded</strong></li>
 		</ul>
 	</li>
 </ol>

@@ -32,7 +32,7 @@ The Apps service provides a REST interface and a set of operations for managing 
 		<tr>
 			<td>add app</td>
 			<td><p><a href="apps/m_apps_addApp.htm">POST&nbsp;/api/apps</a></p>
-			<p><strong>Note</strong>: Legacy operation. From version 8.4.11 onwards, use <a href="apps/m_apps_createApp.htm">POST&nbsp;/api/apps</a> with custom headers.</p></td>
+			<p><strong>Note</strong>: Legacy operation.</p></td>
 			<td><!-- #BeginLibraryItem "/Library/desc_addApp.lbi" -->Adds a new app, which includes the first app version. Legacy operation: as of version 8.4.11, this operation is replaced by <span class="apidoc_code"><a href="apps/m_apps_createApp.htm">POST&nbsp;/api/apps</a></span> (extended functionality, different headers). Use the newer operation.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
@@ -69,8 +69,12 @@ Deletes the avatar associated with an app version's public profile.<!-- #EndLibr
 		</tr>
 		<tr>
 			<td>delete app version string</td>
-			<td><a href="apps/m_apps_deleteAppVersionString.htm">DELETE&nbsp;/api/apps/versions/{AppVersionID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_deleteAppVersionString.lbi" -->Deletes the specified version of an app (no response content). Deprecated in version 2019.1.0. Use <span class="apidoc_code"><a href="apps/m_apps_deleteAppVersion.htm">DELETE&nbsp;/api/apps/versions/{AppVersionID}</a> </span>(returns JSON) instead.<!-- #EndLibraryItem --></td>
+			<td><p><a href="apps/m_apps_deleteAppVersionString.htm">DELETE&nbsp;/api/apps/versions/{AppVersionID}</a></p>
+				<p><strong>Note</strong>: Legacy operation.</p></td>
+			<td><!-- #BeginLibraryItem "/Library/desc_deleteAppVersionString.lbi" -->
+<p>Deletes the specified version of an app (no response content).</p>
+<p><strong>NOTE</strong>: Deprecated in version 2019.1.0. Use <span class="apidoc_code"><a href="apps/m_apps_deleteAppVersion.htm">DELETE&nbsp;/api/apps/versions/{AppVersionID}</a> </span>(returns JSON) instead.</p>
+<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td>export app</td>
@@ -305,11 +309,6 @@ Changes one or more values associated with an app version.<!-- #EndLibraryItem -
 			<td>save app OAuth client properties</td>
 			<td><a href="apps/m_apps_saveAppOAuthClientProperties.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}/oauthclient</a></td>
 			<td><!-- #BeginLibraryItem "/Library/desc_saveAppOAuthClientProperties.lbi" -->Updates information about the OAuth Profile for a specific app version.<!-- #EndLibraryItem --></td>
-		</tr>
-		<tr>
-			<td>save app OAuth client properties 71 (legacy)</td>
-			<td><a href="apps/m_apps_saveAppOAuthClient71Properties.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}/oauthclient</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_saveAppOAuthClient71Properties.lbi" -->Updates information about the OAuth Profile for a specific app version. <strong>Legacy operation</strong>. The newer operation is <span class="apidoc_code"><a href="apps/m_apps_saveAppOAuthClientProperties.htm">PUT&nbsp;/api/apps/versions/{AppVersionID}/oauthclient</a></span> (same endpoint with different payload and content-type).<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td>save app public profile</td>

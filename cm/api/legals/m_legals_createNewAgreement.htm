@@ -20,8 +20,8 @@ no-catalog: true
 <p><!-- #BeginLibraryItem "/Library/desc_createNewAgreement_legals.lbi" -->Assigns a document as a legal agreement on the platform, and adds information about the agreement.<!-- #EndLibraryItem --></p>
 <p> Before running this operation, you must upload the legal document using the content API. Follow these steps:</p>
 <ol>
-	<li>Have the legal agreement in place (text or html file).</li>
-	<li>Upload the legal agreement to the resources/home/landing folder either via the user interface (Administration / Config / Resources / Content, navigate down to home/landing folder) or by using the Content API, <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/{path}</a></span> operation.</li>
+	<li>Have the legal agreement in place. For supported file formats, see <a href="../aaref/Ref_Values.htm#values_legalagreement_filetype">Legal Agreement Supported File Types</a>.</li>
+	<li>Upload the legal agreement to the resources/home/landing folder either via the user interface (<strong>More</strong> &gt; <strong>Admin</strong> &gt; <strong>File Manager</strong>, <strong>Content</strong> section, <strong>File Manager</strong> button, navigate down to home/landing folder) or by using the Content API, <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&nbsp;/content/{path}</a></span> operation.</li>
 	<li>Assign the new document to be a platform legal agreement by running this operation.</li>
 </ol>
 <p class="apidoc_note"><strong>Note</strong>: First, make sure there isn't already a portal signup legal agreement. The API platform allows only one signup agreement. If there is one already existing, you'll have to deactivate it first. For instruction on how to do that in the developer portal, refer to the <a href="../../learnmore/site_admin_agreements.htm#platform_legal_agreement_change" target="_blank">developer portal Site Admin help</a>. To deactivate/update using the API, use the <span class="apidoc_code"><a href="../legals/m_legals_updateAgreement.htm">PUT&nbsp;/api/legals/{LegalDocumentID}</a></span> operation.</p>
@@ -64,7 +64,7 @@ no-catalog: true
 <p><strong>Sample request headers</strong></p>
 <pre>Content-Type: application/json
 Accept: text/plain
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   "Name" : "RCOALESS Developer Portal End-User License Agreement",
@@ -107,7 +107,8 @@ Accept: text/plain
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

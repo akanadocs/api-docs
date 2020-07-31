@@ -20,7 +20,7 @@ no-catalog: true
 	<li><a href="#cookies_short_term">Short-term cookies</a></li>
 	<li><a href="#cookies_google_analytics">Optional Google Analytics cookies</a></li>
 </ul>
-<h3 id="cookies_custom">Session Cookies</h3>
+<h3 id="cookies_custom">Session cookies</h3>
 <p>API calls from the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;use the custom cookies shown below. The AtmoAuthToken cookie is quite long&#8212;over 400 characters.</p>
 <p class="apidoc_note"><strong>Note</strong>: The only requirement from the developer using the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API is that the app supports cookies. The&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;takes care of the rest. If your development environment supports automatically capturing and sending the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;cookie you don't need to do anything. If it doesn't, you'll have to make sure the cookie that the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;returns upon login is sent with every request and that the token is renewed when information stored in the token changes, such as when a user adds an app.</p>
 <table class="tableparmsresponse">
@@ -32,9 +32,7 @@ no-catalog: true
 	<tbody>
 		<tr>
 			<td id="cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</td>
-			<td><p>A tenant-specific cookie.
-				<!--In a federation scenario, one cookie is set for each federation member, so there would generally be at least two.-->
-				This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token. This cookie indicates the level of access allowed. It is valid for 30 minutes by default, but the Site Admin can modify the expiration time period (<strong>Admin</strong> &gt; <strong>Settings</strong> &gt; <strong>Login</strong> in the developer portal, <span class="apidoc_code"><a href="../businesses/m_businesses_updateLoginPolicy.htm">PUT&nbsp;/api/businesses/{BusinessID}/loginpolicy</a></span> in the API).</p>
+			<td><p>A tenant-specific cookie. <!--In a federation scenario, one cookie is set for each federation member, so there would generally be at least two.-->This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token. This cookie indicates the level of access allowed. It is valid for 30 minutes by default, but the Site Admin can modify the expiration time period (<strong>Admin</strong> &gt; <strong>Settings</strong> &gt; <strong>Login</strong> in the developer portal, <span class="apidoc_code"><a href="../businesses/m_businesses_updateLoginPolicy.htm">PUT&nbsp;/api/businesses/{BusinessID}/loginpolicy</a></span> in the API).</p>
 				<p> It also includes other information, such as the APIs, apps, and groups the user is a member of. When any of this information changes, the token must be renewed&nbsp;using the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&nbsp;/api/login/renewToken</a></span> operation.</p>
 				<p><strong>Note</strong>: When your app invokes the <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> method, the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;returns the cookie; you don't need to do anything. Your app must support cookies, so that the cookies that are set by the API responses can be sent back as part of the subsequent requests.</p>
 				<p>For an example, see below.</p></td>

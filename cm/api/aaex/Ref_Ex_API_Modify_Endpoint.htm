@@ -4,7 +4,7 @@ title: Example - Modifying an API Endpoint | How-To Material | Akana API Platfor
 description: This example gives you the high-level sequence of operations to run to modify an API endpoint.
 product: cm
 category: ref
-nav-title: Example - Adding a Platform Signup Legal Agreement 
+nav-title: Example - Modifying an API Endpoint 
 no-nav: api
 sub-nav: true
 sub-nav-class: aaex
@@ -67,7 +67,12 @@ no-catalog: true
 
 <h4>Log out</h4>
 <ol>
-	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_logout.htm">POST&nbsp;/api/login/logout</a></span> operation.</li>
+	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_endSession.htm">GET&nbsp;/api/login/endsession</a></span> operation. Use the following values:
+		<ul>
+			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</strong></li>
+			<li>Accept header: <strong>application/json</strong></li>
+		</ul>
+	</li>
 </ol>
 <h2 id="ex_modifyendpoint_ps">Operations to run to modify an endpoint for a physical service</h2>
 <p>The key operation to run for modifying a physical service endpoint is: <span class="apidoc_code"><a href="../apis/m_apis_saveServiceEndpoints.htm">PUT&nbsp;/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/services/{ServiceID}/endpoints</a></span>. Other operations in the example below will help you to get authenticated and then to discover any other IDs or information you'll need to successfully run the operation, such as path parameters and request body. If you already have that information you can skip those operations.</p>
@@ -111,7 +116,12 @@ no-catalog: true
 </ol>
 <h4>Log out</h4>
 <ol>
-	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_logout.htm">POST&nbsp;/api/login/logout</a></span> operation.</li>
+	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_endSession.htm">GET&nbsp;/api/login/endsession</a></span> operation. Use the following values:
+		<ul>
+			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</strong></li>
+			<li>Accept header: <strong>application/json</strong></li>
+		</ul>
+	</li>
 </ol>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

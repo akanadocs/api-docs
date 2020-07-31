@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get API Document | APIs Service | Akana API Platform API
-description:  Returns generated API definition document for the specified API version. With the optional <strong>IncludeDocId</strong> parameter, returns the generated API definition document in the specified format.
+description:  Returns the generated API description document for the specified API version. With the optional <strong>IncludeDocId</strong> parameter, returns the generated API description document in the specified format.
 product: cm
 category: ref
 nav-title: Get API Document 
@@ -19,14 +19,14 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getAPIDocument.lbi" -->
-Returns generated API definition document for the specified API version. With the optional <strong>IncludeDocId</strong> parameter, returns the generated API definition document in the specified format.<!-- #EndLibraryItem --></p>
+Returns the generated API description document for the specified API version. With the optional <strong>IncludeDocId</strong> parameter, returns the generated API description document in the specified format.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: User must have read permission for the API, per the visibility rules below.</p>
-<p><strong>Visibility rules for generated API definition document</strong>: The visibility behavior varies according to the specification for the API, as follows:</p>
+<p><strong>Visibility rules for generated API description document</strong>: The visibility behavior varies according to the specification for the API, as follows:</p>
 <ul>
 	<li><strong>RAML 0.8/WSDL documents</strong>: This operation does not support applying visibility scopes to specific content within RAML/WSDL documents. The platform returns these documents to the user only if the user has permission for the entire API. If the user has partial or no visibility permission for the API, the platform returns an Unauthorized message.</li>
-	<li><strong>Swagger 2.0 or 1.2</strong>: The operation returns the Swagger document with the information that the user has visibility to see. In this scenario, if the user has visibility to certain parts of the API, but not others, the user will see the parts that he or she has permission to view.</li>
+	<li><strong>Open API 3.0, Swagger 2.0 or 1.2</strong>: The operation returns the Swagger document with the information that the user has visibility to see. In this scenario, if the user has visibility to certain parts of the API, but not others, the user sees the authorized portions of the API, as determined by the API settings and the user's permissions.</li>
 </ul>
-<p><strong>Note</strong>: WSDL is generally used for SOAP rather than REST APIs. If you're retrieving the API definition in WSDL format for a REST API it will include proprietary extensions for the Akana platform. For SOAP services it will be standard WSDL.</p>
+<p><strong>Note</strong>: WSDL is generally used for SOAP rather than REST APIs. If you're retrieving the API definition in WSDL format for a REST API, it will include proprietary extensions for the Akana platform. For SOAP services it will be standard WSDL.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
@@ -58,38 +58,46 @@ Returns generated API definition document for the specified API version. With th
 
 
 <!-- InstanceBeginEditable name="Sample Request" -->
-<h2 id="samplerequest">Sample Request #1</h2>
-<p id="id_samplerequest">The example below shows a request for the Swagger document for an API set up on the platform, in the <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> implementation. The API is a subset of the Swagger Petstore API. For the corresponding response, see <a href="#sampleresponse">Sample Response #1</a>.</p>
-<p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/be75b6a5-2e86-4ede-a90e-ce92de827b0c.acmepaymentscorp/definition/swagger?Environment=Production</pre>
+<h2 id="samplerequest">Sample Request #1: Open API 3.0</h2>
+<p id="id_samplerequest">The example below shows a request for the Open API 3.0 document for an API set up on the platform, in the <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> implementation. The API is a subset of the Swagger Petstore API. For the corresponding response, see <a href="#sampleresponse">Sample Response #1</a>.</p>
+<p><strong>Request URL #1: Open API 3.0</strong></p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/oas3?Environment=Production</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET /api/apis/versions/be75b6a5-2e86-4ede-a90e-ce92de827b0c.acmepaymentscorp/definition/swagger?Environment=Production HTTP/1.1
+<pre>GET /api/apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/oas3?Environment=Production HTTP/1.1
 Host: {hostname}
-Accept: application/json, text/javascript, */*; q=0.01
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/hdr_cookie.lbi" -->
-Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/hdr_cookie.lbi" -->Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 
-<h2 id="samplerequest_2">Sample Request #2</h2>
-<p id="id_samplerequest_2">The examples below show requests for the documentation for an API set up on the platform, that is a subset of the Swagger API. The first four use the optional IncludeDocId parameter, and the last does not. For the corresponding responses, see <a href="#sampleresponse_2">Sample Response #2</a>.</p>
+<h2 id="samplerequest_2">Sample Request #2: Swagger 2.0</h2>
+<p id="id_samplerequest_2">The examples below show requests for the documentation for an API set up on the platform, that is a subset of the sample Swagger Petstore API. You can also click through to view the corresponding responses.</p>
 
-<p><strong>Request URL: Swagger 1.2</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/af5da6b1-2dfb-45ff-8803-07f9cf63143a.acmepaymentscorp/definition/swagger1_2/pet</pre>
-<pre>Accept: application/json</pre>
+<p><strong>Request URL #2: Swagger 2.0</strong></p>
+<p>For the response, see <a href="#sampleresponse_2">Sample Response #2: Swagger 2.0</a> below.</p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/swagger</pre>
 
-<p><strong>Request URL: Swagger 2.0</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/af5da6b1-2dfb-45ff-8803-07f9cf63143a.acmepaymentscorp/definition/swagger/pet</pre>
-<pre>Accept: application/json</pre>
 
-<p><strong>Request URL: RAML 0.8</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/af5da6b1-2dfb-45ff-8803-07f9cf63143a.acmepaymentscorp/definition/raml/pet</pre>
-<pre>Accept: application/raml+yaml</pre>
 
-<p><strong>Request URL: WSDL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/d411c74c-cb62-45b0-8963-474efcb42794.acmepaymentscorp/definition/wsdl</pre>
-<p>No Accept header specification needed.</p>
+<h2 id="samplerequest_3">Sample Request #3: Swagger 1.2</h2>
+<p><strong>Request URL #3: Swagger 1.2</strong></p>
+<p>For the response, see <a href="#sampleresponse_3">Sample Response #3: Swagger 1.2</a> below.</p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/swagger1_2</pre>
 
+
+
+<h2 id="samplerequest_4">Sample Request #4: RAML 0.8</h2>
+<p><strong>Request URL #4: RAML 0.8</strong></p>
+<p>For the response, see <a href="#sampleresponse_4">Sample Response #4: RAML 0.8</a> below.</p>
+<p>The example below includes an appropriate Accept header for the response format. However, this is not necessary; the response media type is determined by the specification.</p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/raml
+Accept: application/raml+yaml</pre>
+
+
+
+<h2 id="samplerequest_5">Sample Request #5: WSDL</h2>
+<p><strong>Request URL #5: WSDL</strong></p>
+<p>For the response, see <a href="#sampleresponse_5">Sample Response #5: WSDL</a> below.</p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp/definition/wsdl</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -107,16 +115,17 @@ Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem --></pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p>The Accept header is ignored; the media type is determined by the specification. Use a generic value such as */*, specify an appropriate value for the specification you're using, or leave blank. For example:</p>
+			<td><p>The media type is determined by the specification. Use a generic value such as */*, specify an appropriate value for the specification you're using, or leave blank. For example:</p>
 				<ul class="apidoctable_ul">
+					<li>Open API 3.0, Swagger 2.0, Swagger 1.2: application/json</li>
 					<li>RAML 0.8: application/raml+yaml</li>
-					<li>Swagger: application/json</li>
-					<li>WSDL: none needed</li>
+					<li>WSDL: application/xml</li>
 				</ul></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -153,10 +162,11 @@ Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem --></pre>
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><p>The specification to be used in generating the API definition document. Valid values:</p>
+			<td><p>The specification to be used in generating the API description document. Valid values:</p>
 				<ul class="apidoctable_ul">
 					<li>swagger (defaults to swagger2 which is Swagger 2.0)</li>
 					<li>swagger1_2</li>
+					<li>oas3</li>
 					<li>raml</li>
 					<li>wsdl</li>
 				</ul></td>
@@ -175,13 +185,6 @@ Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem --></pre>
 			<td>Optional</td>
 			<td>Optionally, specify the implementation (Sandbox or <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem -->) for which you want the API description document. If not specified, this parameter returns the API definition for the <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> implementation, if it exists, and for the Sandbox implementation, if there is no <!-- #BeginLibraryItem "/Library/environ_live.lbi" -->Live<!-- #EndLibraryItem --> implementation.</td>
 		</tr>
-<!--		<tr>
-			<td>Implementation</td>
-			<td>Query</td>
-			<td>string</td>
-			<td>Optional</td>
-			<td>Optionally, specify the implementation for which you want the API description document. {[<span class="apidoc_red">PER RS 4/21/16: Implementation parameter is not fully supported. We started, but finished. Please don’t document. I still see the JIRA.</span>}</td>
-		</tr>-->
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -190,489 +193,1080 @@ Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem --></pre>
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h2 id="response">Response</h2>
-<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the requested generated API definition document.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with the API description document in the requested format.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
 <!-- InstanceBeginEditable name="Sample Response" -->
-<h2 id="sampleresponse">Sample Response #1</h2>
-<p id="id_sampleresponse">The example below shows the responses to the API request shown in <a href="#samplerequest">Sample Request #1</a>. In this example, the Swagger document is a customization of the sample Swagger Petstore API.</p>
+<h2 id="sampleresponse">Sample Response #1: Open API 3.0</h2>
+<p id="id_sampleresponse">The example below shows the responses to the API request shown in <a href="#samplerequest">Sample Request #1</a>. The API is a subset of the sample Swagger Petstore API.</p>
 <p><strong>Sample response #1 headers</strong></p>
-<pre>HTTP/1.1 200 OK
-Date: Fri, 05 May 2017 00:54:14 GMT
-Content-Type: application/json;charset=UTF-8</pre>
+<pre>Content-Type: application/json
+Date: Thu, 05 Mar 2020 22:51:14 GMT</pre>
 <p><strong>Sample response #1 body</strong></p>
 <pre>{
-  "swagger":"2.0",
-  "info":{
-    "title":"Swagger_Petstore_Subset",
-    "description":"Swagger_Petstore_Subset",
-    "version":"v1"
+  "openapi": "3.0",
+  "info": {
+    "title": "Swagger_Petstore_4_Operations",
+    "description": "Swagger_Petstore_4_Operations. Based on http://petstore.swagger.io/v2/swagger.json with deletions in API Designer.",
+    "version": "v1"
   },
-  "host":"ubu1464qa-10.local.akana.com:7905",
-  "basePath":"/api10087live",
-  "schemes":[
-    "http"
+  "servers": [
+    {
+      "url": "https://testing.acmepaymentscorp.com:7955/api16098live"
+    },
+    {
+      "url": "http://testing.acmepaymentscorp.com:7905/api16098live"
+    }
   ],
-  "paths":{
-    "/pet":{
-      "post":{
-        "tags":[
+  "paths": {
+    "/pet": {
+      "post": {
+        "tags": [
           "pet"
         ],
-        "summary":"Add a new pet to the store",
-        "operationId":"addPet",
-        "consumes":[
-          "application/json",
-          "application/xml"
-        ],
-        "produces":[
-          "application/xml",
-          "application/json"
-        ],
-        "parameters":[
-          {
-            "in":"body",
-            "name":"body",
-            "description":"Pet object that needs to be added to the store",
-            "required":true,
-            "schema":{
-              "$ref":"#/definitions/Pet"
+        "summary": "Add a new pet to the store",
+        "operationId": "addPet",
+        "requestBody": {
+          "description": "Pet object that needs to be added to the store",
+          "content": {
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Pet"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pet"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "405": {
+            "description": "Invalid input",
+            "content": {
+              "application/xml": {},
+              "application/json": {}
             }
           }
-        ],
-        "responses":{
-          "405":{
-            "description":"Invalid input"
-          }
-        },
-        "deprecated":false
+        }
       }
     },
-    "/pet/{petId}":{
-      "get":{
-        "tags":[
+    "/pet/findByTags": {
+      "get": {
+        "tags": [
           "pet"
         ],
-        "summary":"Find pet by ID",
-        "description":"Returns a single pet",
-        "operationId":"getPetById",
-        "produces":[
-          "application/xml",
-          "application/json"
-        ],
-        "parameters":[
+        "summary": "Finds Pets by tags",
+        "description": "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
+        "operationId": "findPetsByTags",
+        "parameters": [
           {
-            "in":"path",
-            "name":"petId",
-            "description":"ID of pet to return",
-            "type":"integer",
-            "required":true
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to filter by",
+            "required": true,
+            "style": "form",
+            "schema": {
+              "type": "array",
+              "description": "Tags to filter by",
+              "items": {
+                "type": "string"
+              }
+            }
           }
         ],
-        "responses":{
-          "200":{
-            "description":"successful operation",
-            "schema":{
-              "$ref":"#/definitions/Pet"
+        "responses": {
+          "400": {
+            "description": "Invalid tag value",
+            "content": {
+              "application/xml": {},
+              "application/json": {}
             }
           },
-          "400":{
-            "description":"Invalid ID supplied"
-          },
-          "404":{
-            "description":"Pet not found"
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/xml": {},
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Pet"
+                  }
+                }
+              }
+            }
           }
         },
-        "deprecated":false
-      },
-      "delete":{
-        "tags":[
+        "deprecated": true
+      }
+    },
+    "/pet/{petId}": {
+      "get": {
+        "tags": [
           "pet"
         ],
-        "summary":"Deletes a pet",
-        "operationId":"deletePet",
-        "produces":[
-          "application/xml",
-          "application/json"
-        ],
-        "parameters":[
+        "summary": "Find pet by ID",
+        "description": "Returns a single pet",
+        "operationId": "getPetById",
+        "parameters": [
           {
-            "in":"path",
-            "name":"petId",
-            "description":"Pet id to delete",
-            "type":"integer",
-            "required":true
-          },
-          {
-            "in":"header",
-            "name":"api_key",
-            "type":"string",
-            "required":false
+            "name": "petId",
+            "in": "path",
+            "description": "ID of pet to return",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "ID of pet to return",
+              "format": "int64"
+            }
           }
         ],
-        "responses":{
-          "400":{
-            "description":"Invalid ID supplied"
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied",
+            "content": {
+              "application/xml": {},
+              "application/json": {}
+            }
           },
-          "404":{
-            "description":"Pet not found"
+          "404": {
+            "description": "Pet not found",
+            "content": {
+              "application/xml": {},
+              "application/json": {}
+            }
+          },
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pet"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pet"
+                }
+              }
+            }
           }
-        },
-        "deprecated":false
+        }
+      },
+      "delete": {
+        "tags": [
+          "pet"
+        ],
+        "summary": "Deletes a pet",
+        "operationId": "deletePet",
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "null"
+            }
+          },
+          {
+            "name": "petId",
+            "in": "path",
+            "description": "Pet id to delete",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "description": "Pet id to delete",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied",
+            "content": {
+              "application/xml": {},
+              "application/json": {}
+            }
+          },
+          "404": {
+            "description": "Pet not found",
+            "content": {
+              "application/xml": {},
+              "application/json": {}
+            }
+          }
+        }
       }
     }
   },
-  "definitions":{
-    "Category":{
-      "type":"object",
-      "properties":{
-        "id":{
-          "type":"integer",
-          "format":"int64"
+  "components": {
+    "schemas": {
+      "Order": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "petId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shipDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string",
+            "description": "Order Status",
+            "enum": [
+              "placed",
+              "approved",
+              "delivered"
+            ]
+          },
+          "complete": {
+            "type": "boolean"
+          }
         },
-        "name":{
-          "type":"string"
+        "xml": {
+          "name": "Order"
         }
       },
-      "xml":{
-        "name":"Category"
-      }
-    },
-    "Tag":{
-      "type":"object",
-      "properties":{
-        "id":{
-          "type":"integer",
-          "format":"int64"
+      "Category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          }
         },
-        "name":{
-          "type":"string"
+        "xml": {
+          "name": "Category"
         }
       },
-      "xml":{
-        "name":"Tag"
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "username": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "userStatus": {
+            "type": "integer",
+            "description": "User Status",
+            "format": "int32"
+          }
+        },
+        "xml": {
+          "name": "User"
+        }
+      },
+      "Tag": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "Tag"
+        }
+      },
+      "ApiResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "Pet": {
+        "required": [
+          "name",
+          "photoUrls"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "category": {
+            "$ref": "#/components/schemas/Category"
+          },
+          "name": {
+            "type": "string",
+            "example": "doggie"
+          },
+          "photoUrls": {
+            "type": "array",
+            "xml": {
+              "wrapped": true
+            },
+            "items": {
+              "type": "string",
+              "xml": {
+                "name": "photoUrl"
+              }
+            }
+          },
+          "tags": {
+            "type": "array",
+            "xml": {
+              "wrapped": true
+            },
+            "items": {
+              "$ref": "#/components/schemas/Tag"
+            }
+          },
+          "status": {
+            "type": "string",
+            "description": "pet status in the store",
+            "enum": [
+              "available",
+              "pending",
+              "sold"
+            ]
+          }
+        },
+        "xml": {
+          "name": "Pet"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "pet",
+      "description": "Everything about your Pets",
+      "externalDocs": {
+        "url": "http://swagger.io"
       }
     },
-    "Pet":{
-      "type":"object",
-      "required":[
+    {
+      "name": "store",
+      "description": "Access to Petstore orders"
+    },
+    {
+      "name": "user",
+      "description": "Operations about user",
+      "externalDocs": {
+        "url": "http://swagger.io"
+      }
+    }
+  ]
+}</pre>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h2 id="sampleresponse_2">Sample Response  #2: Swagger 2.0</h2>
+<p id="id_sampleresponse_2">The example below shows the responses to the API request shown in <a href="#samplerequest_2">Sample Request #2</a>. The API is a subset of the sample Swagger Petstore API.</p>
+<p><strong>Sample response #2 headers</strong></p>
+<pre>Content-Type: application/json
+Date: Thu, 05 Mar 2020 22:54:49 GMT</pre>
+<p><strong>Sample response #2 body</strong></p>
+<pre>{
+  "swagger": "2.0",
+  "info": {
+    "description": "Swagger_Petstore_4_Operations. Based on http://petstore.swagger.io/v2/swagger.json with deletions in API Designer.",
+    "version": "v1",
+    "title": "Swagger_Petstore_4_Operations"
+  },
+  "host": "testing.acmepaymentscorp.com:7955",
+  "basePath": "/api16098live",
+  "schemes": [
+    "HTTPS",
+    "HTTP"
+  ],
+  "paths": {
+    "/pet": {
+      "post": {
+        "tags": [
+          "pet"
+        ],
+        "summary": "Add a new pet to the store",
+        "operationId": "addPet",
+        "consumes": [
+          "application/xml",
+          "application/json"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Pet object that needs to be added to the store",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Pet"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/pet/findByTags": {
+      "get": {
+        "tags": [
+          "pet"
+        ],
+        "summary": "Finds Pets by tags",
+        "description": "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.",
+        "operationId": "findPetsByTags",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to filter by",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "csv"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Pet"
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid tag value"
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/pet/{petId}": {
+      "get": {
+        "tags": [
+          "pet"
+        ],
+        "summary": "Find pet by ID",
+        "description": "Returns a single pet",
+        "operationId": "getPetById",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "description": "ID of pet to return",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "$ref": "#/definitions/Pet"
+            }
+          },
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Pet not found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "pet"
+        ],
+        "summary": "Deletes a pet",
+        "operationId": "deletePet",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "header",
+            "required": false,
+            "type": "string",
+            "default": "null"
+          },
+          {
+            "name": "petId",
+            "in": "path",
+            "description": "Pet id to delete",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Invalid ID supplied"
+          },
+          "404": {
+            "description": "Pet not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Order": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "petId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "quantity": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "shipDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "description": "Order Status",
+          "enum": [
+            "placed",
+            "approved",
+            "delivered"
+          ]
+        },
+        "complete": {
+          "type": "boolean"
+        }
+      },
+      "xml": {
+        "name": "Order"
+      }
+    },
+    "Category": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Category"
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "username": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "userStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "User Status"
+        }
+      },
+      "xml": {
+        "name": "User"
+      }
+    },
+    "Tag": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Tag"
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "Pet": {
+      "type": "object",
+      "required": [
         "name",
         "photoUrls"
       ],
-      "properties":{
-        "id":{
-          "type":"integer",
-          "format":"int64"
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
         },
-        "category":{
-          "$ref":"#/definitions/Category"
+        "category": {
+          "$ref": "#/definitions/Category"
         },
-        "name":{
-          "type":"string",
-          "example":"doggie"
+        "name": {
+          "type": "string",
+          "example": "doggie"
         },
-        "photoUrls":{
-          "type":"array",
-          "xml":{
-            "name":"photoUrl",
-            "wrapped":true
+        "photoUrls": {
+          "type": "array",
+          "xml": {
+            "wrapped": true
           },
-          "items":{
-            "type":"string"
+          "items": {
+            "type": "string",
+            "xml": {
+              "name": "photoUrl"
+            }
           }
         },
-        "tags":{
-          "type":"array",
-          "xml":{
-            "name":"tag",
-            "wrapped":true
+        "tags": {
+          "type": "array",
+          "xml": {
+            "wrapped": true
           },
-          "items":{
-            "$ref":"#/definitions/Tag"
+          "items": {
+            "$ref": "#/definitions/Tag"
           }
         },
-        "status":{
-          "type":"string",
-          "description":"pet status in the store",
-          "enum":[
+        "status": {
+          "type": "string",
+          "description": "pet status in the store",
+          "enum": [
             "available",
             "pending",
             "sold"
           ]
         }
       },
-      "xml":{
-        "name":"Pet"
+      "xml": {
+        "name": "Pet"
       }
     }
+  },
+  "tags": [
+    {
+      "name": "pet",
+      "description": "Everything about your Pets",
+      "externalDocs": {
+        "url": "http://swagger.io"
+      }
+    },
+    {
+      "name": "store",
+      "description": "Access to Petstore orders"
+    },
+    {
+      "name": "user",
+      "description": "Operations about user",
+      "externalDocs": {
+        "url": "http://swagger.io"
+      }
+    }
+  ]
+}</pre>
+
+
+
+<h2 id="sampleresponse_3">Sample Response  #3: Swagger 1.2</h2>
+<p id="id_sampleresponse_3">The example below shows the responses to the API request shown in <a href="#samplerequest_3">Sample Request #3</a>. The API is a subset of the sample Swagger Petstore API.</p>
+<p><strong>Sample response #3 headers</strong></p>
+<pre>Content-Type: application/json
+Date: Thu, 05 Mar 2020 22:57:18 GMT</pre>
+<p><strong>Sample response #3 body</strong></p>
+<pre>{
+ "swaggerVersion": "1.2",
+ "apis": [
+  {
+   "path": "/pet"
   }
+ ],
+ "info": {
+  "title": "Swagger_Petstore_4_Operations_v1_Live",
+  "description": "Swagger_Petstore_4_Operations. Based on http://petstore.swagger.io/v2/swagger.json with deletions in API Designer."
+ }
 }</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 
-
-<h2 id="sampleresponse_2">Sample Response #2</h2>
-<p id="id_sampleresponse_2">The examples below show the responses to the API requests shown in <a href="#samplerequest_2">Sample Request #2</a>. Click through to a specific example:</p>
-<ul>
-	<li><a href="#apidoc_swagger12">Swagger 1.2</a></li>
-	<li><a href="#apidoc_swagger">Swagger 2.0</a></li>
-	<li><a href="#apidoc_raml">RAML</a></li>
-	<li><a href="#apidoc_wsdl">WSDL</a></li>
-</ul>
-<p id="apidoc_swagger12"><strong>Response: Swagger 1.2</strong></p>
-<pre>{
-  "swaggerVersion":"1.2",
-  "basePath":"http://{hostname}/prod",
-  "apis":[
-    {
-      "path":"/pet",
-      "operations":[
-        {
-          "consumes":[
-            "*/*"
-          ],
-          "produces":[
-            "*/*"
-          ],
-          "nickname":"addPet",
-          "method":"POST",
-          "type":"void",
-          "deprecated":false,
-          "parameters":[
-            {
-              "name":"Body",
-              "paramType":"body"
-            }
-          ],
-          "responseMessages":[
-            {
-              "code":200
-            }
-          ]
-        },
-        {
-          "consumes":[
-            "*/*"
-          ],
-          "produces":[
-            "*/*"
-          ],
-          "nickname":"updatePet",
-          "method":"PUT",
-          "type":"void",
-          "deprecated":false,
-          "parameters":[
-            {
-              "name":"Body",
-              "paramType":"body"
-            }
-          ],
-          "responseMessages":[
-            {
-              "code":200
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "path":"/pet/{petId}",
-      "operations":[
-        {
-          "consumes":[
-            "*/*"
-          ],
-          "produces":[
-            "*/*"
-          ],
-          "nickname":"getPetById",
-          "method":"GET",
-          "type":"void",
-          "deprecated":false,
-          "parameters":[
-            {
-              "name":"petId",
-              "type":"string",
-              "paramType":"path"
-            }
-          ],
-          "responseMessages":[
-            {
-              "code":200
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}</pre>
-<p id="apidoc_swagger"><strong>Response: Swagger 2.0</strong></p>
-<pre>{
-  "swaggerVersion":"1.2",
-  "basePath":"http://{hostname}/prod",
-  "apis":[
-    {
-      "path":"/pet",
-      "operations":[
-        {
-          "consumes":[
-            "*/*"
-          ],
-          "produces":[
-            "*/*"
-          ],
-          "nickname":"addPet",
-          "method":"POST",
-          "type":"void",
-          "deprecated":false,
-          "parameters":[
-            {
-              "name":"Body",
-              "paramType":"body"
-            }
-          ],
-          "responseMessages":[
-            {
-              "code":200
-            }
-          ]
-        },
-        {
-          "consumes":[
-            "*/*"
-          ],
-          "produces":[
-            "*/*"
-          ],
-          "nickname":"updatePet",
-          "method":"PUT",
-          "type":"void",
-          "deprecated":false,
-          "parameters":[
-            {
-              "name":"Body",
-              "paramType":"body"
-            }
-          ],
-          "responseMessages":[
-            {
-              "code":200
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "path":"/pet/{petId}",
-      "operations":[
-        {
-          "consumes":[
-            "*/*"
-          ],
-          "produces":[
-            "*/*"
-          ],
-          "nickname":"getPetById",
-          "method":"GET",
-          "type":"void",
-          "deprecated":false,
-          "parameters":[
-            {
-              "name":"petId",
-              "type":"string",
-              "paramType":"path"
-            }
-          ],
-          "responseMessages":[
-            {
-              "code":200
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
-</pre>
-<p id="apidoc_raml"><strong>Response: RAML 0.8</strong></p>
+<h2 id="sampleresponse_4">Sample Response #4: RAML 0.8</h2>
+<p id="id_sampleresponse_4">The example below shows the responses to the API request shown in <a href="#samplerequest_4">Sample Request #4</a>. The API is a subset of the sample Swagger Petstore API.</p>
+<p><strong>Sample response #4 headers</strong></p>
+<pre>Content-Type: application/raml+yaml
+Date: Thu, 05 Mar 2020 22:59:28 GMT</pre>
+<p><strong>Sample response #4 body</strong></p>
 <pre>#%RAML 0.8
-title: "__SwaggerAPI_Both_1.0_Production_Virtual"
-baseUri: "http://{hostname}/prod"
-protocols: [HTTP]
-"/pet": 
-  post: 
-    body: 
-      "*/*": 
+title: "Swagger_Petstore_4_Operations_v1_Live"
+baseUri: "https://testing.acmepaymentscorp.com:7955/api16098live"
+protocols: [HTTPS, HTTP]
+schemas: 
+  - 
+    "json": '{"ApiResponse":{"type":"object","properties":{"code":{"type":"integer","format":"int32"},"type":{"type":"string"},"message":{"type":"string"}}},"Category":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"}},"xml":{"name":"Category"}},"Order":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"petId":{"type":"integer","format":"int64"},"quantity":{"type":"integer","format":"int32"},"shipDate":{"type":"string","format":"date-time"},"status":{"type":"string","description":"Order Status","enum":["placed","approved","delivered"]},"complete":{"type":"boolean"}},"xml":{"name":"Order"}},"Pet":{"required":["name","photoUrls"],"type":"object","properties":{"id":{"type":"integer","format":"int64"},"category":{"$ref":"#/Category"},"name":{"type":"string","example":"doggie"},"photoUrls":{"type":"array","xml":{"wrapped":true},"items":{"type":"string","xml":{"name":"photoUrl"}}},"tags":{"type":"array","xml":{"wrapped":true},"items":{"$ref":"#/Tag"}},"status":{"type":"string","description":"pet status in the store","enum":["available","pending","sold"]}},"xml":{"name":"Pet"}},"Tag":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"}},"xml":{"name":"Tag"}},"User":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"username":{"type":"string"},"firstName":{"type":"string"},"lastName":{"type":"string"},"email":{"type":"string"},"password":{"type":"string"},"phone":{"type":"string"},"userStatus":{"type":"integer","description":"User Status","format":"int32"}},"xml":{"name":"User"}}}'
+"/pet/findByTags": 
+  get: 
+    description: "Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing."
+    queryParameters: 
+      "tags": 
+        displayName: "tags"
+        description: "Tags to filter by"
+        type: string
+        required: true
+        repeat: true
     responses: 
-      "200": 
+      "400": 
+        description: "Invalid tag value"
         body: 
-          "*/*": 
-  put: 
-    body: 
-      "*/*": 
-    responses: 
+          "application/xml": 
+          "application/json": 
       "200": 
+        description: "successful operation"
         body: 
-          "*/*": 
+          "application/xml": 
+          "application/json": 
+            schema: '{"type":"array","items":{"$ref":"#/Pet"}}'
 "/pet/{petId}": 
   uriParameters: 
     "petId": 
       displayName: "petId"
-      type: string
-      required: false
+      description: "ID of pet to return"
+      type: integer
+      required: true
       repeat: false
   get: 
+    description: "Returns a single pet"
     responses: 
-      "200": 
+      "404": 
+        description: "Pet not found"
         body: 
-          "*/*": 
+          "application/xml": 
+          "application/json": 
+      "200": 
+        description: "successful operation"
+        body: 
+          "application/xml": 
+          "application/json": 
+      "400": 
+        description: "Invalid ID supplied"
+        body: 
+          "application/xml": 
+          "application/json": 
+  delete: 
+    description: "Deletes a pet"
+    headers: 
+      "api_key": 
+        displayName: "api_key"
+        type: string
+        required: false
+        repeat: false
+        default: "null"
+    responses: 
+      "400": 
+        description: "Invalid ID supplied"
+        body: 
+          "application/xml": 
+          "application/json": 
+      "404": 
+        description: "Pet not found"
+        body: 
+          "application/xml": 
+          "application/json": 
+"/pet": 
+  post: 
+    description: "Add a new pet to the store"
+    body: 
+      "application/xml": 
+        schema: '{"$ref":"#/Pet"}'
+      "application/json": 
+        schema: '{"$ref":"#/Pet"}'
+    responses: 
+      "405": 
+        description: "Invalid input"
+        body: 
+          "application/xml": 
+          "application/json": 
 documentation: 
   - 
     title: "description"
-    content: "First version"
-</pre>
+    content: "Swagger_Petstore_4_Operations. Based on http://petstore.swagger.io/v2/swagger.json with deletions in API Designer."</pre>
 
-<p id="apidoc_wsdl"><strong>Response: WSDL</strong></p>
-<p>WSDL is generally used for SOAP rather than REST APIs. If you're retrieving the API definition in WSDL format for a REST API, it will include proprietary extensions for the Akana platform, as shown in the example below. In addition, depending on your browser, you might need to view source in the browser to see it. For SOAP services the response will be standard WSDL.</p>
+
+
+<h2 id="sampleresponse_5">Sample Response #5: WSDL</h2>
+<p>WSDL is generally used for SOAP rather than REST APIs. If you're retrieving the API definition in WSDL format for a REST API, it will include proprietary extensions for the Akana platform, as shown in the example below. In addition, depending on your browser, you might need to view source in the browser to see it. For SOAP services the response is standard WSDL.</p>
+<p id="id_sampleresponse_5">The example below shows the responses to the API request shown in <a href="#samplerequest_5">Sample Request #5</a>. The API is a subset of the sample Swagger Petstore API.</p>
+<p><strong>Sample response #5 headers</strong></p>
+<pre>Content-Type: application/xml
+Date: Fri, 06 Mar 2020 14:42:52 GMT</pre>
+<p><strong>Sample response #5 body</strong></p>
 <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;wsdl:definitions targetNamespace="uri:acmepaymentscorp" xmlns="uri:acmepaymentscorp" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
-xmlns:atmo="uri:acmepaymentscorp" xmlns:tns="uri:acmepaymentscorp" xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-xmlns:shttp="http://soa.com/wsdl/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"&gt;
-  &lt;wsdl:message name="Request_svc_d411c74c-cb62-45b0-8963-474efcb42794.acmepaymentscorp.production.Default_Operation"&gt;
-    &lt;wsdl:part name="path" type="xsd:string"&gt;&lt;/wsdl:part&gt;
+&lt;wsdl:definitions targetNamespace="Swagger_Petstore_4_Operations_v1" xmlns:sdoc="http://soa.com/wsdl/doc" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://soa.com/uri/products/wsdlext/1.0" xmlns:tns="Swagger_Petstore_4_Operations_v1" xmlns:js="http://soa.com/jsonSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:shttp="http://soa.com/wsdl/http"&gt;
+  &lt;wsdl:types&gt;
+    &lt;shttp:schema language="json" targetNamespace="http://soa.com/jsonSchema" xmlns:shttp="http://soa.com/wsdl/http"&gt;&lt;![CDATA[{"ApiResponse":{"type":"object","properties":{"code":{"type":"integer","format":"int32"},"type":{"type":"string"},"message":{"type":"string"}}},"Category":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"}},"xml":{"name":"Category"}},"Order":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"petId":{"type":"integer","format":"int64"},"quantity":{"type":"integer","format":"int32"},"shipDate":{"type":"string","format":"date-time"},"status":{"type":"string","description":"Order Status","enum":["placed","approved","delivered"]},"complete":{"type":"boolean"}},"xml":{"name":"Order"}},"Pet":{"required":["name","photoUrls"],"type":"object","properties":{"id":{"type":"integer","format":"int64"},"category":{"$ref":"#/Category"},"name":{"type":"string","example":"doggie"},"photoUrls":{"type":"array","xml":{"wrapped":true},"items":{"type":"string","xml":{"name":"photoUrl"}}},"tags":{"type":"array","xml":{"wrapped":true},"items":{"$ref":"#/Tag"}},"status":{"type":"string","description":"pet status in the store","enum":["available","pending","sold"]}},"xml":{"name":"Pet"}},"Tag":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"}},"xml":{"name":"Tag"}},"User":{"type":"object","properties":{"id":{"type":"integer","format":"int64"},"username":{"type":"string"},"firstName":{"type":"string"},"lastName":{"type":"string"},"email":{"type":"string"},"password":{"type":"string"},"phone":{"type":"string"},"userStatus":{"type":"integer","description":"User Status","format":"int32"}},"xml":{"name":"User"}}}]]&gt;&lt;/shttp:schema&gt;
+  &lt;/wsdl:types&gt;
+  &lt;wsdl:message name="findPetsByTagsResponseMessage_200"&gt;
+    &lt;wsdl:part name="body" type="xs:anyType"&gt;
+    &lt;/wsdl:part&gt;
   &lt;/wsdl:message&gt;
-  &lt;wsdl:message name="Response_svc_d411c74c-cb62-45b0-8963-474efcb42794.acmepaymentscorp.production.Default_Operation"&gt;
-    &lt;wsdl:part name="Body" type="xsd:anyType"&gt;&lt;/wsdl:part&gt;
+  &lt;wsdl:message name="addPetResponseMessage"&gt;
   &lt;/wsdl:message&gt;
-  &lt;wsdl:portType name="PortType_svc_d411c74c-cb62-45b0-8963-474efcb42794.acmepaymentscorp.production"&gt;
-    &lt;wsdl:operation name="Default_Operation"&gt;
-      &lt;wsdl:input message="Request_svc_d411c74c-cb62-45b0-8963-474efcb42794.acmepaymentscorp.production.Default_Operation"&gt;&lt;/wsdl:input&gt;
-      &lt;wsdl:output message="Response_svc_d411c74c-cb62-45b0-8963-474efcb42794.acmepaymentscorp.production.Default_Operation"&gt;&lt;/wsdl:output&gt;
+  &lt;wsdl:message name="findPetsByTagsFault_400"&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="getPetByIdResponseMessage_200"&gt;
+    &lt;wsdl:part name="body" type="js:Pet"&gt;
+    &lt;/wsdl:part&gt;
+    &lt;wsdl:part name="body" type="js:Pet"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="getPetByIdRequestMessage"&gt;
+    &lt;wsdl:part name="petId" type="xs:int"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="getPetByIdFault_404"&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="findPetsByTagsRequestMessage"&gt;
+    &lt;wsdl:part name="tags" type="xs:string"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="getPetByIdFault_400"&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="deletePetRequestMessage"&gt;
+    &lt;wsdl:part name="api_key" type="xs:string"&gt;
+    &lt;/wsdl:part&gt;
+    &lt;wsdl:part name="petId" type="xs:int"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="deletePetFault_400"&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="deletePetResponseMessage"&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="addPetRequestMessage"&gt;
+    &lt;wsdl:part name="body" type="xs:anyType"&gt;
+    &lt;/wsdl:part&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="addPetFault_405"&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:message name="deletePetFault_404"&gt;
+  &lt;/wsdl:message&gt;
+  &lt;wsdl:portType name="Swagger_Petstore_4_Operations_PortType_0"&gt;
+    &lt;wsdl:operation name="addPet"&gt;
+&lt;wsdl:documentation&gt;&lt;sdoc:displayName&gt;addPet&lt;/sdoc:displayName&gt;&lt;/wsdl:documentation&gt;
+      &lt;wsdl:input message="tns:addPetRequestMessage"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:addPetResponseMessage"&gt;
+    &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name="addPetFault_405" message="tns:addPetFault_405"&gt;
+    &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="findPetsByTags"&gt;
+&lt;wsdl:documentation&gt;&lt;sdoc:displayName&gt;findPetsByTags&lt;/sdoc:displayName&gt;&lt;/wsdl:documentation&gt;
+      &lt;wsdl:input message="tns:findPetsByTagsRequestMessage"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:findPetsByTagsResponseMessage_200"&gt;
+    &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name="findPetsByTagsFault_400" message="tns:findPetsByTagsFault_400"&gt;
+    &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="getPetById"&gt;
+&lt;wsdl:documentation&gt;&lt;sdoc:displayName&gt;getPetById&lt;/sdoc:displayName&gt;&lt;/wsdl:documentation&gt;
+      &lt;wsdl:input message="tns:getPetByIdRequestMessage"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:getPetByIdResponseMessage_200"&gt;
+    &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name="getPetByIdFault_400" message="tns:getPetByIdFault_400"&gt;
+    &lt;/wsdl:fault&gt;
+      &lt;wsdl:fault name="getPetByIdFault_404" message="tns:getPetByIdFault_404"&gt;
+    &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="deletePet"&gt;
+&lt;wsdl:documentation&gt;&lt;sdoc:displayName&gt;deletePet&lt;/sdoc:displayName&gt;&lt;/wsdl:documentation&gt;
+      &lt;wsdl:input message="tns:deletePetRequestMessage"&gt;
+    &lt;/wsdl:input&gt;
+      &lt;wsdl:output message="tns:deletePetResponseMessage"&gt;
+    &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name="deletePetFault_404" message="tns:deletePetFault_404"&gt;
+    &lt;/wsdl:fault&gt;
+      &lt;wsdl:fault name="deletePetFault_400" message="tns:deletePetFault_400"&gt;
+    &lt;/wsdl:fault&gt;
     &lt;/wsdl:operation&gt;
   &lt;/wsdl:portType&gt;
-  &lt;wsdl:binding name="Binding_svc_d411c74c-cb62-45b0-8963-474efcb42794.acmepaymentscorp.production.virtual" type="PortType_svc_d411c74c-cb62-45b0-8963-474efcb42794.acmepaymentscorp.production"&gt;
-    &lt;shttp:binding /&gt;
-    &lt;wsdl:operation name="Default_Operation"&gt;
-      &lt;shttp:operation faultSerialization="*/*" inputSerialization="*/*" location="/pet/{path:.+|}" method="GET" outputSerialization="*/*" /&gt;
+  &lt;wsdl:binding name="Swagger_Petstore_4_Operations_Binding_0" type="tns:Swagger_Petstore_4_Operations_PortType_0"&gt;
+&lt;wsdl:documentation&gt;&lt;sdoc:group path="/pet"/&gt;&lt;sdoc:group path="/pet/findByTags"/&gt;&lt;sdoc:group path="/pet/{petId}"/&gt;&lt;/wsdl:documentation&gt;
+    &lt;shttp:binding/&gt;
+    &lt;wsdl:operation name="addPet"&gt;
+&lt;wsdl:documentation&gt;&lt;sdoc:response code="405" fault="addPetFault_405"&gt;&lt;sdoc:description&gt;&lt;![CDATA[Invalid input]]&gt;&lt;/sdoc:description&gt;&lt;/sdoc:response&gt;&lt;sdoc:displayName&gt;addPet&lt;/sdoc:displayName&gt;&lt;sdoc:summary&gt;&lt;![CDATA[Add a new pet to the store]]&gt;&lt;/sdoc:summary&gt;&lt;sdoc:tag&gt;pet&lt;/sdoc:tag&gt;&lt;/wsdl:documentation&gt;
+    &lt;shttp:operation inputSerialization="application/xml,application/json" location="/pet" method="POST" outputSerialization="application/xml,application/json"/&gt;
       &lt;wsdl:input&gt;
-        &lt;shttp:input name="path" part="path" type="path" /&gt;
+    &lt;shttp:input name="body" part="body" type="entity"&gt;&lt;shttp:schema type="application/xml"&gt;&lt;![CDATA[{"$ref":"#/Pet"}]]&gt;&lt;/shttp:schema&gt;&lt;shttp:schema type="application/json"&gt;&lt;![CDATA[{"$ref":"#/Pet"}]]&gt;&lt;/shttp:schema&gt;&lt;wsdl:documentation&gt;&lt;sdoc:description&gt;&lt;![CDATA[Pet object that needs to be added to the store]]&gt;&lt;/sdoc:description&gt;&lt;sdoc:required&gt;true&lt;/sdoc:required&gt;&lt;/wsdl:documentation&gt;&lt;/shttp:input&gt;
       &lt;/wsdl:input&gt;
-      &lt;wsdl:output&gt;&lt;/wsdl:output&gt;
+      &lt;wsdl:output&gt;
+      &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name="addPetFault_405"&gt;
+    &lt;shttp:output name="body" part="body" type="entity"/&gt;
+      &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="findPetsByTags"&gt;
+&lt;wsdl:documentation&gt;&lt;sdoc:response code="400" fault="findPetsByTagsFault_400"&gt;&lt;sdoc:description&gt;&lt;![CDATA[Invalid tag value]]&gt;&lt;/sdoc:description&gt;&lt;/sdoc:response&gt;&lt;sdoc:response code="200"&gt;&lt;sdoc:description&gt;&lt;![CDATA[successful operation]]&gt;&lt;/sdoc:description&gt;&lt;sdoc:schema type="application/json"&gt;&lt;![CDATA[{"type":"array","items":{"$ref":"#/Pet"}}]]&gt;&lt;/sdoc:schema&gt;&lt;/sdoc:response&gt;&lt;sdoc:displayName&gt;findPetsByTags&lt;/sdoc:displayName&gt;&lt;sdoc:description&gt;&lt;![CDATA[Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.]]&gt;&lt;/sdoc:description&gt;&lt;sdoc:summary&gt;&lt;![CDATA[Finds Pets by tags]]&gt;&lt;/sdoc:summary&gt;&lt;sdoc:tag&gt;pet&lt;/sdoc:tag&gt;&lt;sdoc:deprecated&gt;true&lt;/sdoc:deprecated&gt;&lt;/wsdl:documentation&gt;
+    &lt;shttp:operation location="/pet/findByTags" method="GET" outputSerialization="application/xml,application/json"/&gt;
+      &lt;wsdl:input&gt;
+    &lt;shttp:input name="tags" part="tags" type="query"&gt;&lt;wsdl:documentation&gt;&lt;sdoc:type&gt;array&lt;/sdoc:type&gt;&lt;sdoc:displayName&gt;tags&lt;/sdoc:displayName&gt;&lt;sdoc:description&gt;&lt;![CDATA[Tags to filter by]]&gt;&lt;/sdoc:description&gt;&lt;sdoc:required&gt;true&lt;/sdoc:required&gt;&lt;sdoc:collectionFormat&gt;csv&lt;/sdoc:collectionFormat&gt;&lt;sdoc:type&gt;array&lt;/sdoc:type&gt;&lt;sdoc:items&gt;&lt;sdoc:type&gt;string&lt;/sdoc:type&gt;&lt;/sdoc:items&gt;&lt;/wsdl:documentation&gt;&lt;shttp:schema type="application/json"&gt;&lt;![CDATA[{"type":"array","description":"Tags to filter by","items":{"type":"string"}}]]&gt;&lt;/shttp:schema&gt;&lt;/shttp:input&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+    &lt;shttp:output name="body" part="body" type="entity"&gt;&lt;shttp:schema type="application/json"&gt;&lt;![CDATA[{"type":"array","items":{"$ref":"#/Pet"}}]]&gt;&lt;/shttp:schema&gt;&lt;wsdl:documentation&gt;&lt;sdoc:type&gt;array&lt;/sdoc:type&gt;&lt;sdoc:items&gt;&lt;sdoc:type&gt;array&lt;/sdoc:type&gt;&lt;/sdoc:items&gt;&lt;/wsdl:documentation&gt;&lt;/shttp:output&gt;
+      &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name="findPetsByTagsFault_400"&gt;
+    &lt;shttp:output name="body" part="body" type="entity"/&gt;
+      &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="getPetById"&gt;
+&lt;wsdl:documentation&gt;&lt;sdoc:response code="400" fault="getPetByIdFault_400"&gt;&lt;sdoc:description&gt;&lt;![CDATA[Invalid ID supplied]]&gt;&lt;/sdoc:description&gt;&lt;/sdoc:response&gt;&lt;sdoc:response code="404" fault="getPetByIdFault_404"&gt;&lt;sdoc:description&gt;&lt;![CDATA[Pet not found]]&gt;&lt;/sdoc:description&gt;&lt;/sdoc:response&gt;&lt;sdoc:response code="200"&gt;&lt;sdoc:description&gt;&lt;![CDATA[successful operation]]&gt;&lt;/sdoc:description&gt;&lt;/sdoc:response&gt;&lt;sdoc:displayName&gt;getPetById&lt;/sdoc:displayName&gt;&lt;sdoc:description&gt;&lt;![CDATA[Returns a single pet]]&gt;&lt;/sdoc:description&gt;&lt;sdoc:summary&gt;&lt;![CDATA[Find pet by ID]]&gt;&lt;/sdoc:summary&gt;&lt;sdoc:tag&gt;pet&lt;/sdoc:tag&gt;&lt;/wsdl:documentation&gt;
+    &lt;shttp:operation location="/pet/{petId}" method="GET" outputSerialization="application/xml,application/json"/&gt;
+      &lt;wsdl:input&gt;
+    &lt;shttp:input name="petId" part="petId" type="path"&gt;&lt;wsdl:documentation&gt;&lt;sdoc:type&gt;integer&lt;/sdoc:type&gt;&lt;sdoc:format&gt;int64&lt;/sdoc:format&gt;&lt;sdoc:displayName&gt;petId&lt;/sdoc:displayName&gt;&lt;sdoc:description&gt;&lt;![CDATA[ID of pet to return]]&gt;&lt;/sdoc:description&gt;&lt;sdoc:required&gt;true&lt;/sdoc:required&gt;&lt;/wsdl:documentation&gt;&lt;shttp:schema type="application/json"&gt;&lt;![CDATA[{"type":"integer","description":"ID of pet to return","format":"int64"}]]&gt;&lt;/shttp:schema&gt;&lt;/shttp:input&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+    &lt;shttp:output name="body" part="body" type="entity"/&gt;
+      &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name="getPetByIdFault_400"&gt;
+    &lt;shttp:output name="body" part="body" type="entity"/&gt;
+      &lt;/wsdl:fault&gt;
+      &lt;wsdl:fault name="getPetByIdFault_404"&gt;
+    &lt;shttp:output name="body" part="body" type="entity"/&gt;
+      &lt;/wsdl:fault&gt;
+    &lt;/wsdl:operation&gt;
+    &lt;wsdl:operation name="deletePet"&gt;
+&lt;wsdl:documentation&gt;&lt;sdoc:response code="400" fault="deletePetFault_400"&gt;&lt;sdoc:description&gt;&lt;![CDATA[Invalid ID supplied]]&gt;&lt;/sdoc:description&gt;&lt;/sdoc:response&gt;&lt;sdoc:response code="404" fault="deletePetFault_404"&gt;&lt;sdoc:description&gt;&lt;![CDATA[Pet not found]]&gt;&lt;/sdoc:description&gt;&lt;/sdoc:response&gt;&lt;sdoc:displayName&gt;deletePet&lt;/sdoc:displayName&gt;&lt;sdoc:summary&gt;&lt;![CDATA[Deletes a pet]]&gt;&lt;/sdoc:summary&gt;&lt;sdoc:tag&gt;pet&lt;/sdoc:tag&gt;&lt;/wsdl:documentation&gt;
+    &lt;shttp:operation location="/pet/{petId}" method="DELETE" outputSerialization="application/xml,application/json"/&gt;
+      &lt;wsdl:input&gt;
+    &lt;shttp:input name="api_key" part="api_key" type="header"&gt;&lt;wsdl:documentation&gt;&lt;sdoc:type&gt;string&lt;/sdoc:type&gt;&lt;sdoc:default&gt;null&lt;/sdoc:default&gt;&lt;sdoc:displayName&gt;api_key&lt;/sdoc:displayName&gt;&lt;sdoc:required&gt;false&lt;/sdoc:required&gt;&lt;/wsdl:documentation&gt;&lt;shttp:schema type="application/json"&gt;&lt;![CDATA[{"type":"string","default":"null"}]]&gt;&lt;/shttp:schema&gt;&lt;/shttp:input&gt;
+    &lt;shttp:input name="petId" part="petId" type="path"&gt;&lt;wsdl:documentation&gt;&lt;sdoc:type&gt;integer&lt;/sdoc:type&gt;&lt;sdoc:format&gt;int64&lt;/sdoc:format&gt;&lt;sdoc:displayName&gt;petId&lt;/sdoc:displayName&gt;&lt;sdoc:description&gt;&lt;![CDATA[Pet id to delete]]&gt;&lt;/sdoc:description&gt;&lt;sdoc:required&gt;true&lt;/sdoc:required&gt;&lt;/wsdl:documentation&gt;&lt;shttp:schema type="application/json"&gt;&lt;![CDATA[{"type":"integer","description":"Pet id to delete","format":"int64"}]]&gt;&lt;/shttp:schema&gt;&lt;/shttp:input&gt;
+      &lt;/wsdl:input&gt;
+      &lt;wsdl:output&gt;
+      &lt;/wsdl:output&gt;
+      &lt;wsdl:fault name="deletePetFault_404"&gt;
+    &lt;shttp:output name="body" part="body" type="entity"/&gt;
+      &lt;/wsdl:fault&gt;
+      &lt;wsdl:fault name="deletePetFault_400"&gt;
+    &lt;shttp:output name="body" part="body" type="entity"/&gt;
+      &lt;/wsdl:fault&gt;
     &lt;/wsdl:operation&gt;
   &lt;/wsdl:binding&gt;
-  &lt;wsdl:service name="svc_d411c74c-cb62-45b0-8963-474efcb42794.acmepaymentscorp.production.virtual"&gt;
-    &lt;wsdl:documentation&gt;
-      &lt;sdoc:title xmlns:sdoc="http://soa.com/wsdl/doc"&gt;1AutoConnectApiName_version 1 _Production_Virtual&lt;/sdoc:title&gt;
-      &lt;sdoc:description xmlns:sdoc="http://soa.com/wsdl/doc"&gt;&lt;![CDATA[Api 1 Version]]&gt;&lt;/sdoc:description&gt;
-    &lt;/wsdl:documentation&gt;
-    &lt;wsdl:port name="Binding_svc_d411c74c-cb62-45b0-8963-474efcb42794.acmepaymentscorp.production.virtual_http" binding="Binding_svc_d411c74c-cb62-45b0-8963-474efcb42794.acmepaymentscorp.production.virtual"&gt;
-      &lt;shttp:address location="http://10.1.22.239:8901/apinotused" /&gt;
+  &lt;wsdl:service name="svc_4b8ceb11-d751-499f-ba1a-ff76cec0e064.acmepaymentscorp.live"&gt;
+&lt;wsdl:documentation&gt;&lt;sdoc:title&gt;Swagger_Petstore_4_Operations_v1_Live&lt;/sdoc:title&gt;&lt;sdoc:description&gt;&lt;![CDATA[Swagger_Petstore_4_Operations. Based on http://petstore.swagger.io/v2/swagger.json with deletions in API Designer.]]&gt;&lt;/sdoc:description&gt;&lt;/wsdl:documentation&gt;
+    &lt;wsdl:port name="https1883586292" binding="tns:Swagger_Petstore_4_Operations_Binding_0"&gt;
+    &lt;shttp:address location="https://testing.acmepaymentscorp.com:7955/api16098live"/&gt;
+    &lt;soa:connectionProperty name="gateway_hostname" value="testing.acmepaymentscorp.com" xmlns:soa="http://soa.com/uri/products/wsdlext/1.0"/&gt;
+    &lt;soa:connectionProperty name="visibility" value="public" xmlns:soa="http://soa.com/uri/products/wsdlext/1.0"/&gt;
+    &lt;soa:connectionProperty name="virtualHost" value="testing.acmepaymentscorp.com" xmlns:soa="http://soa.com/uri/products/wsdlext/1.0"/&gt;
+    &lt;/wsdl:port&gt;
+    &lt;wsdl:port name="http1415836027" binding="tns:Swagger_Petstore_4_Operations_Binding_0"&gt;
+    &lt;shttp:address location="http://testing.acmepaymentscorp.com:7905/api16098live"/&gt;
+    &lt;soa:connectionProperty name="gateway_hostname" value="testing.acmepaymentscorp.com" xmlns:soa="http://soa.com/uri/products/wsdlext/1.0"/&gt;
+    &lt;soa:connectionProperty name="visibility" value="public" xmlns:soa="http://soa.com/uri/products/wsdlext/1.0"/&gt;
+    &lt;soa:connectionProperty name="virtualHost" value="testing.acmepaymentscorp.com" xmlns:soa="http://soa.com/uri/products/wsdlext/1.0"/&gt;
     &lt;/wsdl:port&gt;
   &lt;/wsdl:service&gt;
-&lt;/wsdl:definitions&gt;</pre>
+&lt;/wsdl:definitions&gt;
+</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -690,7 +1284,7 @@ xmlns:shttp="http://soa.com/wsdl/http" xmlns:soap="http://schemas.xmlsoap.org/ws
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td>The Content-Type value is determined by the value specified in the Accept request header.</td>
+			<td>The response Content-Type value is determined by the specification.</td>
 		</tr>
 	</tbody>
 </table>

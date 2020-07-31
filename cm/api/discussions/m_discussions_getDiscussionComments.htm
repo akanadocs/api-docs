@@ -52,11 +52,15 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the comments on the specified discussion.</p>
-<p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->discussions/discussion25800.acmepaymentscorp/comments</pre>
+<p><strong>Request URL #1</strong></p>
+<p>Returns all comments for the specified discussion.</p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->discussions/discussion25800.acmepaymentscorp</pre>
+<p><strong>Request URL #2</strong></p>
+<p>Returns the 5 most recent comments for the specified discussion.</p>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->discussions/discussion584195.acmepaymentscorp/comments?start=0&amp;count=5</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -80,7 +84,8 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -122,18 +127,27 @@ no-catalog: true
 				<p>ID of the user retrieving the comment.</p></td>
 		</tr>
 		<tr>
+			<td>IncludeCommentActions</td>
+			<td>Query</td>
+			<td>boolean</td>
+			<td>Optional</td>
+			<td><!-- #BeginLibraryItem "/Library/parm_IncludeCommentActions.lbi" -->Indicates whether workflow actions currently valid for a comment on the board should be included in the results. Default: <strong>false</strong>. For valid workflow actions for comments, see <a href="../aaref/Ref_Values.htm#values_workflowactions_comments">Comments: Valid Workflow Actions</a>.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
 			<td>start</td>
 			<td>Query</td>
 			<td>integer</td>
 			<td>Optional</td>
-			<td>The starting point for the comments to be returned, with 0 as the first comment. For example, if there are 73 comments and the <span class="apidoc_code">start</span> value is <strong>50</strong>, comment number 50 is the first to be returned.</td>
+			<td><p>The starting point for the comments to be returned, with 0 as the first comment. For example, if there are 73 comments and the <span class="apidoc_code">start</span> value is <strong>50</strong>, comment number 50 is the first to be returned.</p>
+				<p><strong>Note</strong>: The&nbsp;comments are counted from the most recent, backwards in time. The most recent comment is the starting point.</p></td>
 		</tr>
 		<tr>
 			<td>count</td>
 			<td>Query</td>
 			<td>integer</td>
 			<td>Optional</td>
-			<td>The number of comments  to be returned, from the specified starting point. If not specified, all comments associated with the specified discussion are returned. For example, if there are 105 comments and <span class="apidoc_code">start</span> is <strong>50</strong> with <span class="apidoc_code">count</span> <strong>50</strong>, comments 50-100 are returned.</td>
+			<td><p>The number of comments  to be returned, from the specified starting point. If not specified, all comments associated with the specified discussion are returned. For example, if there are 105 comments and <span class="apidoc_code">start</span> is <strong>50</strong> with <span class="apidoc_code">count</span> <strong>50</strong>, comments 50-100 are returned.</p>
+				If a value is specified for <strong>count</strong> but the <strong>start</strong> parameter is omitted, the specified number of comments are returned. For example, if <strong>count</strong> is specified as 5, the 5 most recent comments are returned.</td>
 		</tr>
 	</tbody>
 </table>
@@ -154,42 +168,61 @@ no-catalog: true
 <p><strong>Sample response headers</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Date: Mon, 22 Jul 2013 22:01:55 GMT</pre>
+Date: Thu, 12 Mar 2020 20:32:06 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <pre>{
-  &quot;totalResults&quot; : 3,
-  &quot;startIndex&quot; : 0,
-  &quot;Comment&quot; : [ {
-    &quot;CommentID&quot; : &quot;comment25801.acmepaymentscorp&quot;,
-    &quot;CommentSubjectID&quot; : &quot;discussion25800.acmepaymentscorp&quot;,
-    &quot;Content&quot; : &quot;Support for French would be my first choice.&quot;,
-    &quot;Created&quot; : &quot;2013-07-22T21:52:01Z&quot;,
-    &quot;Marks&quot; : 3,
-    &quot;IsMarked&quot; : true,
-    &quot;UserID&quot; : &quot;2d0bc425-49ec-4c04-b272-cc8f6f20e52b.acmepaymentscorp&quot;,
-    &quot;UserName&quot; : &quot;PhilipPirrip&quot;,
-    &quot;AvatarURL&quot; : &quot;http://api.acmepaymentscorp.com/api/users/2d0bc425-49ec-4c04-b272-cc8f6f20e52b.acmepaymentscorp/avatars/ce76ac4e-02db-47a3-a0d4-1f2e66a6cf3e.png&quot;
-  }, {
-    &quot;CommentID&quot; : &quot;comment25802.acmepaymentscorp&quot;,
-    &quot;CommentSubjectID&quot; : &quot;discussion25800.acmepaymentscorp&quot;,
-    &quot;Content&quot; : &quot;Just more of the same; what you have is great but we need more!&quot;,
-    &quot;Created&quot; : &quot;2013-07-22T21:52:44Z&quot;,
-    &quot;Marks&quot; : 3,
-    &quot;IsMarked&quot; : false,
-    &quot;UserID&quot; : &quot;957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp&quot;,
-    &quot;UserName&quot; : &quot;JonathanSwift&quot;,
-    &quot;AvatarURL&quot; : &quot;http://api.acmepaymentscorp.com/api/users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/avatars/12d0fdd6-4707-4262-8c88-28ab3b5036c3.png&quot;
-  }, {
-    &quot;CommentID&quot; : &quot;comment25803.acmepaymentscorp&quot;,
-    &quot;CommentSubjectID&quot; : &quot;discussion25800.acmepaymentscorp&quot;,
-    &quot;Content&quot; : &quot;Bug fix: if I don't close out, when the app times out it hangs my device.&quot;,
-    &quot;Created&quot; : &quot;2013-07-22T21:53:55Z&quot;,
-    &quot;Marks&quot; : 2,
-    &quot;IsMarked&quot; : false,
-    &quot;UserID&quot; : &quot;d4e9b5d9-bd93-4c4e-acfd-bcf23527c729.acmepaymentscorp&quot;,
-    &quot;UserName&quot; : &quot;JenniferMeadows&quot;,
-    &quot;AvatarURL&quot; : &quot;http://api.acmepaymentscorp.com/api/users/d4e9b5d9-bd93-4c4e-acfd-bcf23527c729.acmepaymentscorp/avatars/54855681-ba54-43f0-bc76-a300c4772b8b.png&quot;
-  } ]
+  "totalResults": 3,
+  "startIndex": 0,
+  "Comment": [
+    {
+      "CommentID": "a19dc1c2-3be3-4709-9cec-087666d571c4.acmepaymentscorp",
+      "CommentSubjectID": "discussion584195.acmepaymentscorp",
+      "Content": "Just more of the same; what you have is great but we need more!",
+      "Created": "2020-03-12T20:30:20Z",
+      "Marks": 1,
+      "IsMarked": true,
+      "UserID": "5dbe0d90-eb62-454e-a1fd-23ba5abfbfbc.acmepaymentscorp",
+      "UserName": "JonathanSwift",
+      "AvatarURL": "https://acmepaymentscorp.apiportal.akana.com:443/api/users/5dbe0d90-eb62-454e-a1fd-23ba5abfbfbc.acmepaymentscorp/avatars/cf5141bb-b6e5-42ed-b2c0-673179cb414a.png",
+      "Published": true,
+      "MediaType": "text/markdown",
+      "BoardItemArtifacts": {
+        "BoardItemArtifact": []
+      }
+    },
+    {
+      "CommentID": "05d62744-1232-464f-b1f1-f33440c7b058.acmepaymentscorp",
+      "CommentSubjectID": "discussion584195.acmepaymentscorp",
+      "Content": "Bug fix: if I don't close out, when the app times out it hangs my device.",
+      "Created": "2020-03-12T20:27:37Z",
+      "Marks": 2,
+      "IsMarked": true,
+      "UserID": "31af17ef-38e5-4dc2-9b50-92dad8aa7fa7.acmepaymentscorp",
+      "UserName": "PhilipPirrip",
+      "AvatarURL": "https://acmepaymentscorp.apiportal.akana.com:443/api/users/31af17ef-38e5-4dc2-9b50-92dad8aa7fa7.acmepaymentscorp/avatars/9e9ca10e-56f5-43f9-a2f4-f268a7dd0b69.png",
+      "Published": true,
+      "MediaType": "text/markdown",
+      "BoardItemArtifacts": {
+        "BoardItemArtifact": []
+      }
+    },
+    {
+      "CommentID": "d7f802bf-395b-40a7-a1fb-a9169921e4ea.acmepaymentscorp",
+      "CommentSubjectID": "discussion584195.acmepaymentscorp",
+      "Content": "\"Support for French would be my first choice.",
+      "Created": "2020-03-12T20:26:58Z",
+      "Marks": 2,
+      "IsMarked": true,
+      "UserID": "f1ee5aaa-e58e-4bc7-989e-490ccd854904.acmepaymentscorp",
+      "UserName": "JenMead",
+      "AvatarURL": "https://acmepaymentscorp.apiportal.akana.com:443/api/users/f1ee5aaa-e58e-4bc7-989e-490ccd854904.acmepaymentscorp/avatars/7057fa39-e78d-4055-bbb0-3afa21532f51.png",
+      "Published": true,
+      "MediaType": "text/markdown",
+      "BoardItemArtifacts": {
+        "BoardItemArtifact": []
+      }
+    }
+  ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 

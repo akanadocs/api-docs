@@ -55,7 +55,8 @@ no-catalog: true
 <p><strong>Request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->businesses/tenantbusiness.acmepaymentscorp/appsettings</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: application/json</pre>
+<pre>Accept: application/json<!-- #BeginLibraryItem "/Library/hdr_cookie.lbi" -->Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}<!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -83,7 +84,8 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -135,49 +137,26 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Date: Thu, 21 Jun 2018 23:17:16 GMT</pre>
+Date: Wed, 06 Nov 2019 19:36:25 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
 <pre>{
-    "PublicAppSupport": "com.soa.feature.enabled",
-    "PublicAppBoardSupport": "com.soa.feature.enabled",
-    "PublicAppRatingsSupport": "com.soa.feature.enabled",
-    "PublicAppReviewsSupport": "com.soa.feature.enabled",
-    "PrivateAppSupport": "com.soa.feature.enabled",
-    "PrivateAppBoardSupport": "com.soa.feature.enabled",
-    "PrivateAppRatingsSupport": "com.soa.feature.enabled",
-    "PrivateAppReviewsSupport": "com.soa.feature.enabled",
-    "UserDefinedIdentitySupport": "com.soa.feature.enabled.for.siteadmins",
-    "SimultaneousSandboxProductAccessSupport": "com.soa.feature.enabled",
-    "ReturnPlainTextSharedSecret": "com.soa.feature.enabled",
-    "RegisteredUsersAppSupport": "com.soa.feature.enabled",
-    "RegisteredUsersAppRatingsSupport": "com.soa.feature.enabled",
-    "RegisteredUsersAppReviewsSupport": "com.soa.feature.enabled",
-    "AppPromotionSupport": "com.soa.feature.disabled"
+  "PublicAppSupport":"com.soa.feature.enabled",
+  "PublicAppBoardSupport":"com.soa.feature.enabled",
+  "PublicAppRatingsSupport":"com.soa.feature.enabled",
+  "PublicAppReviewsSupport":"com.soa.feature.enabled",
+  "PrivateAppSupport":"com.soa.feature.enabled",
+  "PrivateAppBoardSupport":"com.soa.feature.enabled",
+  "PrivateAppRatingsSupport":"com.soa.feature.enabled",
+  "PrivateAppReviewsSupport":"com.soa.feature.enabled",
+  "UserDefinedIdentitySupport":"com.soa.feature.enabled.for.siteadmins",
+  "SimultaneousSandboxProductAccessSupport":"com.soa.feature.enabled",
+  "ReturnPlainTextSharedSecret":"com.soa.feature.enabled",
+  "RegisteredUsersAppSupport":"com.soa.feature.enabled",
+  "RegisteredUsersAppRatingsSupport":"com.soa.feature.enabled",
+  "RegisteredUsersAppReviewsSupport":"com.soa.feature.enabled",
+  "AppPromotionSupport":"com.soa.feature.disabled",
+  "ContractPoliciesSupport":"com.soa.feature.enabled"
 }</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/xml</strong></p>
-<pre>Status Code: 200 OK
-Content-Type: application/xml
-Date: Thu, 21 Jun 2018 23:18:45 GMT</pre>
-<p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version="1.0" encoding="UTF-8" standalone="yes"?&gt;
-&lt;BusinessAppSettings xmlns="http://soa.com/xsd/business/1.0" xmlns:ns2="http://soa.com/xsd/dnmodel/1.0" xmlns:ns3="http://soa.com/xsd/api/1.0" xmlns:ns4="http://soa.com/xsd/legals/1.0"&gt;
-  &lt;PublicAppSupport&gt;com.soa.feature.enabled&lt;/PublicAppSupport&gt;
-  &lt;PublicAppBoardSupport&gt;com.soa.feature.enabled&lt;/PublicAppBoardSupport&gt;
-  &lt;PublicAppRatingsSupport&gt;com.soa.feature.enabled&lt;/PublicAppRatingsSupport&gt;
-  &lt;PublicAppReviewsSupport&gt;com.soa.feature.enabled&lt;/PublicAppReviewsSupport&gt;
-  &lt;PrivateAppSupport&gt;com.soa.feature.enabled&lt;/PrivateAppSupport&gt;
-  &lt;PrivateAppBoardSupport&gt;com.soa.feature.enabled&lt;/PrivateAppBoardSupport&gt;
-  &lt;PrivateAppRatingsSupport&gt;com.soa.feature.enabled&lt;/PrivateAppRatingsSupport&gt;
-  &lt;PrivateAppReviewsSupport&gt;com.soa.feature.enabled&lt;/PrivateAppReviewsSupport&gt;
-  &lt;UserDefinedIdentitySupport&gt;com.soa.feature.enabled.for.siteadmins&lt;/UserDefinedIdentitySupport&gt;
-  &lt;SimultaneousSandboxProductAccessSupport&gt;com.soa.feature.enabled&lt;/SimultaneousSandboxProductAccessSupport&gt;
-  &lt;ReturnPlainTextSharedSecret&gt;com.soa.feature.enabled&lt;/ReturnPlainTextSharedSecret&gt;
-  &lt;RegisteredUsersAppSupport&gt;com.soa.feature.enabled&lt;/RegisteredUsersAppSupport&gt;
-  &lt;RegisteredUsersAppRatingsSupport&gt;com.soa.feature.enabled&lt;/RegisteredUsersAppRatingsSupport&gt;
-  &lt;RegisteredUsersAppReviewsSupport&gt;com.soa.feature.enabled&lt;/RegisteredUsersAppReviewsSupport&gt;
-  &lt;AppPromotionSupport&gt;com.soa.feature.disabled&lt;/AppPromotionSupport&gt;
-&lt;/BusinessAppSettings&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 

@@ -63,9 +63,8 @@ no-catalog: true
 <pre>
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
-Content-Type: application/json; charset=UTF-8
-<!-- #BeginLibraryItem "/Library/hdr_cookie.lbi" -->Cookie: AtmoAuthToken_{fedmemberid}=TokenID{ID}<!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+Content-Type: application/json; charset=UTF-8<!-- #BeginLibraryItem "/Library/hdr_cookie.lbi" -->Cookie: AtmoAuthToken_{fedmemberid}={Cookie value (usually starts with TokenID)}<!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body: application/json</strong></p>
 <pre>{
   &quot;Name&quot;:&quot;aaa_Swagger_Production&quot;,
@@ -206,7 +205,7 @@ Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
 AtmoAuthToken_acmepaymentscorp={TokenID_Content}
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body: application/json</strong></p>
 <pre>{
   &quot;APIVersion&quot;:{
@@ -263,7 +262,8 @@ AtmoAuthToken_acmepaymentscorp={TokenID_Content}
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -293,7 +293,8 @@ AtmoAuthToken_acmepaymentscorp={TokenID_Content}
 			<td>Body</td>
 			<td><a href="../obj/o_apis_API.htm">API</a></td>
 			<td>Required</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" --> Includes information about an API.<!-- #EndLibraryItem --></p>
+			<td><p><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" -->
+Contains information about an API.<!-- #EndLibraryItem --></p>
 				<p>The request API object does not include APIID or APIVersionID, or other unique IDs that are assigned when the API is added (such as <strong>InterfaceQName</strong> for operations).</p></td>
 		</tr>
 	</tbody>
@@ -428,118 +429,6 @@ Atmo-Renew-Token: renew</pre>
     &quot;ResourceLevelPermissionsSupported&quot;:false
   }
 }</pre>
-<p><strong>Sample response body: API with New Service: application/xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;API xmlns=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot; xmlns:ns3=&quot;http://soa.com/xsd/legals/1.0&quot; 
-xmlns:ns4=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns5=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
-  &lt;APIID&gt;114f7e50-083f-4249-9e85-d3a1e89f3710.acmepaymentscorp&lt;/APIID&gt;
-  &lt;Name&gt;aaa_Swagger_Production&lt;/Name&gt;
-  &lt;Description&gt;Swagger API on the developer portal&lt;/Description&gt;
-  &lt;Visibility&gt;Public&lt;/Visibility&gt;
-  &lt;APIVersion&gt;
-    &lt;APIVersionID&gt;107624b8-fca3-4d80-88b7-94ea84d388c9.acmepaymentscorp&lt;/APIVersionID&gt;
-    &lt;APIID&gt;114f7e50-083f-4249-9e85-d3a1e89f3710.acmepaymentscorp&lt;/APIID&gt;
-    &lt;Name&gt;1.0&lt;/Name&gt;
-    &lt;Description&gt;First version&lt;/Description&gt;
-    &lt;Type&gt;shttp&lt;/Type&gt;
-    &lt;DefaultProfile&gt;Any in and out&lt;/DefaultProfile&gt;
-    &lt;Tag&gt;swagger&lt;/Tag&gt;
-    &lt;Tag&gt;test&lt;/Tag&gt;
-    &lt;Tag&gt;api&lt;/Tag&gt;
-    &lt;ProductionEndpoint&gt;http://acmepaymentscorp.com/api/swag&lt;/ProductionEndpoint&gt;
-    &lt;Operations&gt;
-      &lt;Operation&gt;
-        &lt;Name&gt;getPetById&lt;/Name&gt;
-        &lt;Method&gt;GET&lt;/Method&gt;
-        &lt;Path&gt;/get /pet/{petId}&lt;/Path&gt;
-        &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-        &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-        &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-        &lt;Input&gt;
-          &lt;Name&gt;petId&lt;/Name&gt;
-          &lt;Type&gt;path&lt;/Type&gt;
-        &lt;/Input&gt;
-        &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_107624b8-fca3-4d80-88b7-94ea84d388c9.acmepaymentscorp.production&lt;/InterfaceQName&gt;
-        &lt;WsdlOperationName&gt;getPetById&lt;/WsdlOperationName&gt;
-      &lt;/Operation&gt;
-      &lt;Operation&gt;
-        &lt;Name&gt;addPet&lt;/Name&gt;
-        &lt;Method&gt;POST&lt;/Method&gt;
-        &lt;Path&gt;/pet&lt;/Path&gt;
-        &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-        &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-        &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-        &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_107624b8-fca3-4d80-88b7-94ea84d388c9.acmepaymentscorp.production&lt;/InterfaceQName&gt;
-        &lt;WsdlOperationName&gt;addPet&lt;/WsdlOperationName&gt;
-      &lt;/Operation&gt;
-    &lt;/Operations&gt;
-    &lt;Endpoints&gt;
-      &lt;Endpoint&gt;
-        &lt;Category&gt;Production&lt;/Category&gt;
-        &lt;Uri&gt;http://acmepaymentscorp.com/api/swag&lt;/Uri&gt;
-        &lt;CName&gt;acmepaymentscorp.com/api&lt;/CName&gt;
-        &lt;DeploymentZoneRule&gt;8c06bf74-5d31-4f7a-9a84-e842ab50default-http0&lt;/DeploymentZoneRule&gt;
-      &lt;/Endpoint&gt;
-    &lt;/Endpoints&gt;
-    &lt;Policies&gt;
-      &lt;Policy&gt;
-        &lt;PolicyKey&gt;10001-acmepaymentscorpApplicationSecurityPolicy&lt;/PolicyKey&gt;
-        &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
-      &lt;/Policy&gt;
-      &lt;Policy&gt;
-        &lt;PolicyKey&gt;10001-CORSAllowAll&lt;/PolicyKey&gt;
-        &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
-      &lt;/Policy&gt;
-      &lt;Policy&gt;
-        &lt;PolicyKey&gt;10001-DetailedAuditing&lt;/PolicyKey&gt;
-        &lt;PolicyType&gt;Operational Policy&lt;/PolicyType&gt;
-      &lt;/Policy&gt;
-    &lt;/Policies&gt;
-    &lt;TargetAPI&gt;
-      &lt;Type&gt;shttp&lt;/Type&gt;
-      &lt;DefaultProfile&gt;Any in and out&lt;/DefaultProfile&gt;
-      &lt;Endpoints&gt;
-        &lt;Endpoint&gt;
-          &lt;Category&gt;Production&lt;/Category&gt;
-          &lt;Uri&gt;http://petstore.swagger.io/v2/&lt;/Uri&gt;
-        &lt;/Endpoint&gt;
-      &lt;/Endpoints&gt;
-      &lt;Operations&gt;
-        &lt;Operation&gt;
-          &lt;Name&gt;getPetById&lt;/Name&gt;
-          &lt;Method&gt;GET&lt;/Method&gt;
-          &lt;Path&gt;/get /pet/{petId}&lt;/Path&gt;
-          &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-          &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-          &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-          &lt;Input&gt;
-            &lt;Name&gt;petId&lt;/Name&gt;
-            &lt;Type&gt;path&lt;/Type&gt;
-          &lt;/Input&gt;
-          &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_107624b8-fca3-4d80-88b7-94ea84d388c9.acmepaymentscorp.production&lt;/InterfaceQName&gt;
-          &lt;WsdlOperationName&gt;getPetById&lt;/WsdlOperationName&gt;
-        &lt;/Operation&gt;
-        &lt;Operation&gt;
-          &lt;Name&gt;addPet&lt;/Name&gt;
-          &lt;Method&gt;POST&lt;/Method&gt;
-          &lt;Path&gt;/pet&lt;/Path&gt;
-          &lt;InputContentType&gt;*/*&lt;/InputContentType&gt;
-          &lt;OutputContentType&gt;*/*&lt;/OutputContentType&gt;
-          &lt;FaultContentType&gt;*/*&lt;/FaultContentType&gt;
-          &lt;InterfaceQName&gt;{uri:acmepaymentscorp}PortType_svc_107624b8-fca3-4d80-88b7-94ea84d388c9.acmepaymentscorp.production&lt;/InterfaceQName&gt;
-          &lt;WsdlOperationName&gt;addPet&lt;/WsdlOperationName&gt;
-        &lt;/Operation&gt;
-      &lt;/Operations&gt;
-      &lt;Policies /&gt;
-    &lt;/TargetAPI&gt;
-    &lt;Visibility&gt;Public&lt;/Visibility&gt;
-    &lt;ProductionEndpointAccessAutoApproved&gt;true&lt;/ProductionEndpointAccessAutoApproved&gt;
-    &lt;SandboxEndpointAccessAutoApproved&gt;true&lt;/SandboxEndpointAccessAutoApproved&gt;
-    &lt;SandboxAnonymousAccessAllowed&gt;false&lt;/SandboxAnonymousAccessAllowed&gt;
-    &lt;ProductionAnonymousAccessAllowed&gt;false&lt;/ProductionAnonymousAccessAllowed&gt;
-    &lt;ResourceLevelPermissionsSupported&gt;true&lt;/ResourceLevelPermissionsSupported&gt;
-  &lt;/APIVersion&gt;
-&lt;/API&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h2 id="sampleresponse_2">Sample Response #2: API with Existing Service</h2>
@@ -621,7 +510,8 @@ AtmoAuthToken_acmepaymentscorp=TokenID%3D68b24a75-c5dc-11e5-b708-...</pre>
 		<tr>
 			<td>API</td>
 			<td><a href="../obj/o_apis_API.htm">API</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" --> Includes information about an API.<!-- #EndLibraryItem --> The response message includes IDs that are assigned when the API is created.</td>
+			<td><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" -->
+Contains information about an API.<!-- #EndLibraryItem -->The response message includes IDs that are assigned when the API is created.</td>
 		</tr>
 	</tbody>
 </table>

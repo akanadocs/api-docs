@@ -1,5 +1,5 @@
 ---
-layout: apipage-noindex
+layout: apipage
 title: User Object | Users Service | Akana API Platform API
 description: Contains information about a platform user.
 product: cm
@@ -50,12 +50,14 @@ The user's name, as set up by the user in the&nbsp;<!-- #BeginLibraryItem "/Libr
 		<tr>
 			<td>FirstName</td>
 			<td>string</td>
-			<td>The user's first name.</td>
+			<td><p>The user's first name.</p>
+				<p>Max length: 64 chars.</p></td>
 		</tr>
 		<tr>
-			<td>LarstName</td>
+			<td>LastName</td>
 			<td>string</td>
-			<td>The user's last name.</td>
+			<td><p>The user's last name.</p>
+				<p>Max length: 64 chars.</p></td>
 		</tr>
 		<tr>
 			<td>AuthIdentifier</td>
@@ -66,7 +68,8 @@ The user's name, as set up by the user in the&nbsp;<!-- #BeginLibraryItem "/Libr
 		<tr>
 			<td>Password</td>
 			<td>string</td>
-			<td>The user's password.</td>
+			<td><p>The user's password.</p>
+				<p>Max length: 256 chars.</p></td>
 		</tr>
 		<tr>
 			<td>Description</td>
@@ -88,12 +91,14 @@ The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a>
 		<tr>
 			<td>Phone</td>
 			<td>string</td>
-			<td>Phone number for the user.</td>
+			<td><p>Phone number for the user.</p>
+				<p>Max length: 32 chars.</p></td>
 		</tr>
 		<tr>
 			<td>Email</td>
 			<td>string</td>
-			<td>The user's email address.</td>
+			<td><p>The user's email address.</p>
+				<p>Max length: 320 chars. Standard email pattern.</p></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a></td>
@@ -190,7 +195,7 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
 			<td>string[&nbsp;]</td>
 			<td><p>One or more unique IDs for platform legal agreements that the user has accepted.</p>
 				<p><strong>Note</strong>: The&nbsp; Site Admin can add a user, but cannot accept the legal agreement on behalf of the user.</p></td>
-			</tr>
+		</tr>
 		<tr>
 			<td>UserIdentificationChallenges</td>
 			<td><a href="o_users_UserIdentificationChallenges.htm">UserIdentificationChallenges</a></td>

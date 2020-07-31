@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Private Viewer Scope | APIs Service | Akana API Platform API
-description: Returns information about scope visibility for a specific API version, for a specific viewer.
+description: Returns information about scope visibility for a specific API version, for a specific group that might visibility of the API.
 product: cm
 category: ref
 nav-title: Get Private Viewer Scope 
@@ -17,9 +17,9 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getPrivateViewerScope.lbi" -->Returns information about scope visibility for a specific API version, for a specific viewer.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_getPrivateViewerScope.lbi" -->Returns information about scope visibility for a specific API version, for a specific group that might visibility of the API.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/permission_read.lbi" -->
- Must have Read permission for the resource. <!-- #EndLibraryItem --></p>
+	Must have Read permission for the resource. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
@@ -52,12 +52,12 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h2 id="samplerequest">Sample Request</h2>
-<p id="id_samplerequest">The example below shows a request for the private viewer scope for the specified API version, specified user.</p>
+<p id="id_samplerequest">The example below shows a request for the private viewer scope for the specified API version, specified group.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmepaymentscorp/viewers/5a462990-fbb4-40e0-908e-0246119fe7e0.acmepaymentscorp/scope</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/38fcd5ae-08ae-4161-9fd3-65288dffb92e.acmepaymentscorp/viewers/1c95952f-a53b-47ad-8a2f-f02d92ed6d26.acmepaymentscorp/scope</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -85,7 +85,8 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -132,14 +133,14 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h2 id="response">Response</h2>
-<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about whether the specified viewer has private viewer scope to the specified API version.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200, with information about whether the specified group has private viewer scope to the specified API version.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
 <!-- InstanceBeginEditable name="Sample Response" -->
-<h2 id="sampleresponse">Sample Response</h2>
-<p id="id_sampleresponse">The sample response below shows successful completion of this operation. The specified viewer does not have restricted scope for the specified API version.</p>
+<h2 id="sampleresponse">Sample Response #1</h2>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation. The specified group does not have restricted scope for the specified API version.</p>
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
@@ -152,21 +153,44 @@ Expires: Wed, 11 Jun 2014 10:20:37 GMT</pre>
   &quot;ViewerType&quot; : &quot;group&quot;,
   &quot;RestrictedScope&quot; : false
 }</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/xml</strong></p>
-<pre>Content-Type: application/xml</pre>
-<p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;VisibilityContractDetails xmlns=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/user/1.0&quot; 
-xmlns:ns3=&quot;http://soa.com/xsd/business/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/legals/1.0&quot;&gt;
-  &lt;ResourceID&gt;5e844469-8bf4-4d16-adc3-00fdf6e56a12.acmepaymentscorp&lt;/ResourceID&gt;
-  &lt;ResourceType&gt;apiversion&lt;/ResourceType&gt;
-  &lt;ViewerID&gt;apiadmin-73691c5e-598a-4251-aac2-2a5b28385207.acmepaymentscorp&lt;/ViewerID&gt;
-  &lt;ViewerType&gt;group&lt;/ViewerType&gt;
-  &lt;RestrictedScope&gt;false&lt;/RestrictedScope&gt;
-&lt;/VisibilityContractDetails&gt;
+
+<h2 id="sampleresponse_02">Sample Response #2</h2>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation. The specified group has restricted scope for the specified API version, so information about the license is included in the response.</p>
+<p><strong>Sample response headers</strong></p>
+<pre>Status Code: 200 OK
+Content-Type: application/json
+Expires: Thu, 12 Mar 2020 18:12:07 GMT</pre>
+<p><strong>Sample response body</strong></p>
+<pre>{
+  "ResourceID": "38fcd5ae-08ae-4161-9fd3-65288dffb92e.acmepaymentscorp",
+  "ResourceType": "apiversion",
+  "ViewerID": "1c95952f-a53b-47ad-8a2f-f02d92ed6d26.acmepaymentscorp",
+  "ViewerType": "group",
+  "RestrictedScope": true,
+  "License": [
+    {
+      "LicenseID": "7e9d49df-108a-4347-a19b-342ac4c5bef6.acmepaymentscorp",
+      "Name": "License 2",
+      "Description": "License 2",
+      "Visibility": "Limited",
+      "SandboxAccessAutoApproved": true,
+      "ProductionAccessAutoApproved": true,
+      "LicenseParts": {
+        "LicensePart": [
+          {
+            "Name": "8a015135-e4c6-42de-a4ee-845cddbf5867",
+            "ResourceID": [
+              "f2cae29e-1bce-4e4f-98b4-061633cb8e79.acmepaymentscorp"
+            ]
+          }
+        ]
+      },
+      "BusinessID": "tenantbusiness.acmepaymentscorp"
+    }
+  ]
+}
 </pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+<p class="apidoc_backtotop"><a href="#top">Back to t</a><a href="#top">op</a></p>
 <!-- InstanceEndEditable -->
 
 
@@ -209,7 +233,7 @@ xmlns:ns3=&quot;http://soa.com/xsd/business/1.0&quot; xmlns:ns4=&quot;http://soa
 		<tr>
 			<td>VisibilityContractDetails</td>
 			<td><a href="../obj/o_resource_VisibilityContractDetails.htm">VisibilityContractDetails</a></td>
-			<td><!-- #BeginLibraryItem "/Library/parm_resource_VisibilityContractDetails.lbi" -->Contains information about a viewer's visibility of a specific resource.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/parm_resource_VisibilityContractDetails.lbi" -->Contains information about a group's visibility of a specific resource.<!-- #EndLibraryItem --></td>
 		</tr>
 	</tbody>
 </table>

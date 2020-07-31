@@ -59,8 +59,7 @@ no-catalog: true
 <pre>POST http://{hostname}/api/apps/versions/9vQtwz5cVjB4Lb0tW7YDoRGm.acmepaymentscorp/keyinfo?wrapInHTML=true HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem -->
-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2Cclaimed_id
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem -->Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2Cclaimed_id
 %3Durn%3Aacmepaymentscorp%3Auser%3Aacmepaymentscorp%3A7222fcd1-fe4b-4b80-ad25-ec86981c7962%2C
 issueTime%3D1421701444022%2CexpirationTime%3D1421703244005%2CAttributesIncluded%3Dfalse%2C
 UserFDN%3D7222fcd1-fe4b-4b80-ad25-ec86981c7962%252Eacmepaymentscorp%2CUserName%3D
@@ -133,7 +132,8 @@ Cm_ERMqGUW2q28agiMT36tJWZ6SN9F8-JG6tRnYjA
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

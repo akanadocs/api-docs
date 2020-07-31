@@ -39,7 +39,7 @@ no-catalog: true
 			<td><a href="#values_modelstate">Model State values</a></td>
 		</tr>
 		<tr>
-			<td><a href="#values_apistate">API States</a></td>
+			<td><a href="#values_apistate">API States/API Version States</a></td>
 			<td><a href="#values_notificationsgroup">Notification Group values</a></td>
 		</tr>
 		<tr>
@@ -135,35 +135,35 @@ no-catalog: true
 			<td><a href="#values_timeintervals">Time Intervals</a></td>
 			</tr>
 		<tr>
-			<td><a href="#values_legalagreementtype">Legal Agreement Types</a></td>
+			<td><a href="#values_legalagreement_filetype">Legal Agreement Supported File Types</a></td>
 			<td><a href="#values_useractions">User Actions on a Resource</a></td>
 			</tr>
 		<tr>
-			<td><a href="#values_legaldocumentstate">Legal Document States</a></td>
+			<td><a href="#values_legalagreementtype">Legal Agreement Types</a></td>
 			<td><a href="#values_userpreferences">User Preferences</a></td>
 			</tr>
 		<tr>
-			<td><a href="#values_licensestate">LicenseState values</a></td>
+			<td><a href="#values_legaldocumentstate">Legal Document States</a></td>
 			<td><a href="#values_usersignupstate">User Signup State values</a></td>
 			</tr>
 		<tr>
-			<td><a href="#values_logininstructiontype">Login Instruction Types</a></td>
+			<td><a href="#values_licensestate">LicenseState values</a></td>
 			<td><a href="#values_userstatus">User Status</a></td>
 			</tr>
 		<tr>
-			<td><a href="#values_loginstate">Login State</a></td>
+			<td><a href="#values_logininstructiontype">Login Instruction Types</a></td>
 			<td><a href="#values_visibilitysettings">Visibility Settings</a></td>
 			</tr>
 		<tr>
-			<td><a href="#values_loginstatus">Login Status</a></td>
+			<td><a href="#values_loginstate">Login State</a></td>
 			<td><a href="#values_workflowactions">Workflow Actions</a></td>
 			</tr>
 		<tr>
-			<td><a href="#values_mediatype">MediaType</a></td>
+			<td><a href="#values_loginstatus">Login Status</a></td>
 			<td><a href="#values_workflowstates">Workflow States</a></td>
 			</tr>
 		<tr>
-			<td>&nbsp;</td>
+			<td><a href="#values_mediatype">MediaType</a></td>
 			<td><a href="#values_workflow_objecttype">Workflow ObjectTypes</a></td>
 			</tr>
 	</tbody>
@@ -243,7 +243,7 @@ no-catalog: true
 
 
 
-<h2 id="values_apistate">API States</h2>
+<h2 id="values_apistate">API States/API Version States</h2>
 <p>API states are used by several operations, including <span class="apidoc_code"><a href="../apis/m_apis_listAPISummaries.htm">GET&nbsp;/api/apis</a></span> and <span class="apidoc_code"><a href="../boards/m_board_getBoard.htm">GET&nbsp;/api/boards/{BoardID}</a></span>.</p>
 <table class="tableparmsresponse">
 	<thead>
@@ -256,9 +256,27 @@ no-catalog: true
 	</thead>
 	<tbody>
 		<tr>
+			<td>com.soa.api.state.draft</td>
+			<td>&nbsp;</td>
+			<td>Yes</td>
+			<td>Used in custom API version workflow. See <span class="apidoc_code"><a href="../apis/m_apis_executeWorkflowAction.htm">POST&nbsp;/api/apis/versions/{ApiVersionID}/action</a></span>.</td>
+		</tr>
+		<tr>
+			<td>com.soa.api.state.pending_approval</td>
+			<td>&nbsp;</td>
+			<td>Yes</td>
+			<td>Used in custom API version workflow. See <span class="apidoc_code"><a href="../apis/m_apis_executeWorkflowAction.htm">POST&nbsp;/api/apis/versions/{ApiVersionID}/action</a></span>.</td>
+		</tr>
+		<tr>
+			<td>com.soa.api.state.rejected</td>
+			<td>&nbsp;</td>
+			<td>Yes</td>
+			<td>Used in custom API version workflow. See <span class="apidoc_code"><a href="../apis/m_apis_executeWorkflowAction.htm">POST&nbsp;/api/apis/versions/{ApiVersionID}/action</a></span>.</td>
+		</tr>
+		<tr>
 			<td>com.soa.api.state.active</td>
 			<td>Yes</td>
-			<td>No</td>
+			<td>Yes</td>
 			<td>The API is active.</td>
 			</tr>
 		<tr>
@@ -278,7 +296,7 @@ no-catalog: true
 			<td>No</td>
 			<td>Yes</td>
 			<td><p>The API version has been closed; users cannot request contracts against the API version.</p>
-				<p><strong>Note</strong>: this state is not used by the user interface.</p></td>
+				<p><strong>Note</strong>:Tthis state is not used by the user interface.</p></td>
 		</tr>
 	</tbody>
 </table>
@@ -898,7 +916,7 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td>com.soa.securitydomain.google.connector</td>
-			<td>Google Connector domain</td>
+			<td>Google Connector domain (deprecated in version: 2020.1.0)</td>
 		</tr>
 		<tr>
 			<td>com.soa.securitydomain.oauth.provider</td>
@@ -957,6 +975,22 @@ no-catalog: true
 <ul>
 	<li><strong>Enabled</strong>: com.soa.feature.enabled</li>
 	<li><strong>Disabled</strong>: com.soa.feature.disabled</li>
+</ul>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h2 id="values_legalagreement_filetype">Legal Agreement Supported File Types</h2>
+<p>The following file formats are supported for legal agreements on the platform:</p>
+<ul>
+	<li>Text (.txt, .text)</li>
+	<li>HTML (.htm, .html)</li>
+	<li>PDF (.pdf)</li>
+</ul>
+<p><strong>Note</strong>: Supported file formats are the same for these two types of legal agreements supported on the platform:</p>
+<ul>
+	<li><strong>Platform signup legal agreement</strong>: If a platform signup legal agreement is in place, all platform users much accept the agreement.</li>
+	<li><strong>API legal agreement</strong>: Specific to an API. Must be accepted as part of requesting access to an API.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -1990,7 +2024,17 @@ no-catalog: true
 
 
 <h2 id="values_workflowactions">Workflow Actions</h2>
-<p>Valid workflow actions for various types of resources are shown in the tables below.</p>
+<p>Valid workflow actions for various types of resources are shown in the tables below. They include:</p>
+<ul>
+	<li><a href="#values_workflowactions_groups_all">All Groups: Valid Workflow Actions</a></li>
+	<li><a href="#values_workflowactions_groups_private">API Scope Groups and Independent Groups: Additional Workflow Actions</a></li>
+	<li><a href="#values_workflowactions_tickets">Tickets: Valid Workflow Actions</a></li>
+	<li><a href="#values_workflowactions_apiversions">API Versions: Valid Workflow Actions</a></li>
+	<li><a href="#values_workflowactions_contracts">App/API Contracts: Valid Workflow Actions</a></li>
+	<li><a href="#values_workflowactions_discussions">Discussions: Valid Workflow Actions</a></li>
+	<li><a href="#values_workflowactions_reviews">Reviews: Valid Workflow Actions</a></li>
+	<li><a href="#values_workflowactions_comments">Comments: Valid Workflow Actions</a></li>
+</ul>
 <p>For more information about workflow actions, including process flow diagrams, see <a href="Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
 
 <h3 id="values_workflowactions_groups_all">All Groups: Valid Workflow Actions</h3><!-- #BeginLibraryItem "/Library/table_workflowactions_groups_all.lbi" --><table class="tableparmsresponse">
@@ -2040,7 +2084,7 @@ no-catalog: true
 		</tr>
 	</tbody>
 </table><!-- #EndLibraryItem --><h3 id="values_workflowactions_tickets">Tickets: Valid Workflow Actions</h3><!-- #BeginLibraryItem "/Library/table_workflowactions_tickets.lbi" -->
-<p>To perform any of the actions listed below, the user must be an app team member, author or submitter of the ticket, or API or Business Administrator. The Site Administrator can delete an action.</p>
+<p>To perform any of the actions listed below, the user must be an app team member, author or submitter of the ticket, or API or Business Administrator. The Site Administrator can delete a ticket.</p>
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -2070,7 +2114,39 @@ no-catalog: true
 			<td>ticket.action.edit.priority</td>
 		</tr>
 	</tbody>
-</table><!-- #EndLibraryItem --><h3 id="values_workflowactions_contracts">App/API Contracts: Valid Workflow Actions</h3><!-- #BeginLibraryItem "/Library/table_workflowactions_contracts.lbi" --><p>The Contracts workflow actions switch an app/API contract from one valid state to another. Again, the two conditions to be met are 1) the requestor is authorized to make the change, and 2) the change is valid for the specific contract. In order for the switch to be valid, the old state must be the current state of the object, and the new state must be a valid change.</p>
+</table><!-- #EndLibraryItem --><h3 id="values_workflowactions_apiversions">API Versions: Valid Workflow Actions</h3>
+<p>The API version workflow is optional. If custom workflow is implemented, these workflow actions govern how API versions are managed on the platform.</p>
+<p>As always with workflow, the user performing the workflow action must be authorized to perform the action, and the action must be valid for the object's current state.</p>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Description</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Submit for Approval</td>
+			<td>apiversion.action.submit.approval</td>
+		</tr>
+		<tr>
+			<td>Approve</td>
+			<td>apiversion.action.approve</td>
+		</tr>
+		<tr>
+			<td>Reject</td>
+			<td>apiversion.action.reject</td>
+		</tr>
+		<tr>
+			<td>Resubmit</td>
+			<td>apiversion.action.resubmit</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<h3 id="values_workflowactions_contracts">App/API Contracts: Valid Workflow Actions</h3><!-- #BeginLibraryItem "/Library/table_workflowactions_contracts.lbi" --><p>The Contracts workflow actions switch an app/API contract from one valid state to another. Again, the two conditions to be met are 1) the requestor is authorized to make the change, and 2) the change is valid for the specific contract. In order for the switch to be valid, the old state must be the current state of the object, and the new state must be a valid change.</p>
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -2209,7 +2285,7 @@ no-catalog: true
 
 <h2 id="values_workflowstates">Workflow States</h2>
 <p>The workflow state values depend on the workflow definition XML file. For details of workflow states for your specific installation, refer to the applicable XML file.</p>
-<p>In the user interface you can find the XML file. First check which workflow file is in use, in the applicable Administration / Config page (APIs, Apps, Tickets, and so forth). Then, go to Administration/Workflows and view or download the file.</p>
+<p>In the user interface you can find the XML file. First check which workflow file is in use, in the applicable Administration / Settings page (APIs, Apps, Tickets, and so forth). Then, go to Administration/Workflows and view or download the file.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 

@@ -60,7 +60,7 @@ no-catalog: true
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json, text/javascript, */*; q=0.01
 Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->{hostname}<!-- #EndLibraryItem -->
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -84,7 +84,8 @@ Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->{hostname}<!-- #EndL
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -224,7 +225,7 @@ Date: Tue, 27 Mar 2018 19:46:48 GMT</pre>
         "Two": 0,
         "One": 0
     },
-    "Identity": "automation-4bU0ODUi2TKUvN16z2nn1XlOnYAPnJ3Ik1VyD6Lr",
+    "Identity": "acmepaymentscorp-4bU0ODUi2TKUvN16z2nn1XlOnYAPnJ3Ik1VyD6Lr",
     "AppVersionSettings": {
         "AppBoardSupport": "com.soa.feature.enabled",
         "AppRatingsSupport": "com.soa.feature.enabled",
@@ -268,7 +269,7 @@ Date: Tue, 27 Mar 2018 19:46:48 GMT</pre>
         &quot;Two&quot;: 0,
         &quot;One&quot;: 0
     },
-    &quot;Identity&quot; : &quot;LdapAutomation1\\myuserid&quot;,
+    &quot;Identity&quot; : &quot;Ldapacmepaymentscorp1\\myuserid&quot;,
     &quot;AppVersionSettings&quot;: {
         &quot;AppRatingsSupport&quot;: &quot;com.soa.feature.enabled&quot;,
         &quot;AppReviewsSupport&quot;: &quot;com.soa.feature.enabled&quot;,

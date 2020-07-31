@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Add Workflow Definition Configuration | Workflow Service | Akana API Platform API
-description: Adds a new workflow for the developer portal.
+description: Uploads a new workflow definition file to the developer portal.
 product: cm
 category: ref
 nav-title: Add Workflow Definition Configuration 
@@ -17,9 +17,8 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_addWorkloadDefinitionConfiguration.lbi" -->Adds a new workflow for the developer portal.<!-- #EndLibraryItem --></p>
+<p><!-- #BeginLibraryItem "/Library/desc_addWorkloadDefinitionConfiguration.lbi" -->Uploads a new workflow definition file to the developer portal.<!-- #EndLibraryItem --></p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must have permission to modify the business information; <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
-<!--<p>@PermissionRequired(action=AuzAction.MODIFY, scope=PermissionScope.TENANT, resourceType="tenant"</p>-->
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
@@ -59,8 +58,7 @@ no-catalog: true
 <pre>POST /api/workflow/definitions HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Content-Type: multipart/form-data
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>The request body is the uploaded workflow document&nbsp;plus associated values.</p>
 <p id="id_samplerequest_02"><strong>Sample request body #2: Postman</strong></p>
@@ -91,7 +89,8 @@ Content-Type: multipart/form-data
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -123,7 +122,7 @@ Content-Type: multipart/form-data
 			<td>Required</td>
 			<td><p>In the request body, you must include values for the following keys:</p>
 				<ul class="apidoctable_ul">
-					<li><strong>FIle</strong>: The XML workflow definition document. For more information, see <a href="../aaref/Ref_ManagingMultipartFormDataUploads.htm">Managing Multipart/Form-Data Uploads</a>.</li>
+					<li><strong>File</strong>: The XML workflow definition document. For more information, see <a href="../aaref/Ref_ManagingMultipartFormDataUploads.htm">Managing Multipart/Form-Data Uploads</a>.</li>
 					<li><strong>Name</strong>: A brief text name for the new&nbsp;workflow.</li>
 					<li><strong>Description</strong>: A text description for the new workflow.</li>
 					<li><strong>ObjectType</strong>: The resource type that&nbsp;the new workflow applies to. For valid values, see <a href="../aaref/Ref_Values.htm#values_workflow_objecttype">Workflow ObjectTypes</a>.</li>
@@ -233,6 +232,10 @@ Content-Type: text/html</pre>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
 			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http406">406</a></td>
+			<td><!-- #BeginLibraryItem "/Library/http_406.lbi" -->Not Acceptable. Returned if there is a problem with the request format. For example, you would get this if you specified an incorrect media type for the Accept header.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>

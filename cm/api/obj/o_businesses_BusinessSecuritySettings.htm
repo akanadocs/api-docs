@@ -1,5 +1,5 @@
 ---
-layout: apipage-noindex
+layout: apipage
 title: BusinessSecuritySettings Object | Businesses Service | Akana API Platform API
 description: Contains information about the security settings for a business.
 product: cm
@@ -62,7 +62,7 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td><p>UserModifyEmail</p>
-				<p><strong>Valid in Version: 2019.0.0</strong></p></td>
+				<p><strong>Valid in version: 2019.0.0</strong></p></td>
 			<td>String</td>
 			<td><p>Indicates whether a platform user can modify the email address associated with his/her account. Valid values:</p>
 				<ul class="apidoctable_ul">
@@ -72,19 +72,24 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td><p>SiteAdminModifyEmail</p>
-				<p><strong>Valid in Version: 2019.0.0</strong></p></td>
+				<p><strong>Valid in version: 2019.0.0</strong></p></td>
 			<td>String</td>
 			<td><p>Indicates whether a Site Admin can initiate user email address update associated with another user's account. Valid values:</p>
 				<ul class="apidoctable_ul">
 					<li>com.soa.feature.enabled</li>
 					<li>com.soa.feature.disabled</li>
+					</ul>
+				<p>The behavior is a little different for platform accounts/third-party accounts:</p>
+				<ul>
+					<li><strong>Platform accounts</strong>: The Site Admin can initiate an email address change on behalf of a platform account. Email notifications are sent to the old and new accounts. To complete the change initiated by the Site Admin, the user must change the password on the account.</li>
+					<li><strong>Third-party accounts (Valid in version: 2020.1.0 and later)</strong>: The Site Admin can change the email address for a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_thirdparty_account">third-party account</a>. Email notifications are sent to the old and new accounts. The change is immediate.</li>
 				</ul></td>
 		</tr>
 		<tr>
 			<td>CaptchaSupport</td>
 			<td>String</td>
 			<td><p>Indicates whether CAPTCHA support is being used. If CAPTCHA support is enabled, <strong>CaptchaSiteKey</strong> and <strong>CaptchaSiteKey</strong> values are required.</p>
-				<p>The feature supports Google reCAPTCHA, reCAPTCHA v2, for validation of users by means of the &quot;Iâm not a robot&quot; checkbox.</p></td>
+				<p>The feature supports Google reCAPTCHA, reCAPTCHA v2, for validation of users by means of the <strong>I am not a robot</strong> checkbox.</p></td>
 		</tr>
 		<tr>
 			<td>CaptchaSiteKey</td>
@@ -109,8 +114,8 @@ no-catalog: true
 			<td>Indicates whether users can view external webpages if they are referenced in platform content pages. Default: <strong>disabled</strong>.</td>
 		</tr>
 		<tr>
-			<td>XssKeywords<br />
-				<strong>Valid in Version: 2019.0.0</strong></td>
+			<td><p>XssKeywords</p>
+				<p><strong>Valid in version: 2019.0.0</strong></p></td>
 			<td>String</td>
 			<td><p>A comma-delimited list of keywords that are disallowed in certain input fields, such as app, API, and group <strong>Name</strong>, <strong>Summary</strong>, and <strong>Description</strong> fields and forum discussions and tickets, to help prevent <a href="../Ref_Glossary_CommunityPlatform.htm#gl_crosssitescripting">cross-site scripting (XSS)</a> attacks.</p>
 				<p>Defaults:</p>
@@ -119,7 +124,7 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td><p>AllowedFileTypes</p>
-				<p><strong>Valid in Version: 2019.1.0</strong></p></td>
+				<p><strong>Valid in version: 2019.1.0</strong></p></td>
 			<td>String</td>
 			<td><p>Allows the Site Admin to restrict the types of files users can upload. Default (*) allows any valid media type. Separator can be comma, space, or both. Examples:</p>
 				<ul>

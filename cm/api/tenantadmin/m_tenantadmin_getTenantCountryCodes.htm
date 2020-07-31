@@ -18,7 +18,8 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_getTenantCountryCodes.lbi" -->Returns a list of telephone country codes for the tenant.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: No permission required.</p>
+<p><strong>Note</strong>: In version 2020.1.0, country names are supported as well as the numeric telephone dialing codes. If your data only includes codes, only the codes are returned. It's best to upgrade your data to include country names as well as codes, using the <span class="apidoc_code"><a href="m_tenantadmin_saveTenantCountryCodes.htm">PUT&nbsp;/api/tenants/{FedmemberID}/countrycodes</a></span> operation. If provided, country names are displayed in the developer portal user interface.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: No permission required. Login is not required.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
@@ -56,7 +57,7 @@ no-catalog: true
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->tenants/acmepaymentscorp/countrycodes</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
-</pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -80,7 +81,8 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -129,20 +131,52 @@ no-catalog: true
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation. In this example, the tenant supports three country codes.</p>
 <p><strong>Sample response headers</strong></p>
-<pre>GET http://{hostname}/api/tenants/acmepaymentscorp/countrycodes?_=1441742341105 HTTP/1.0
+<pre>GET http://{hostname}/api/tenants/acmepaymentscorp/countrycodes HTTP/1.0
 Host: {hostname}
-Accept: application/json, text/javascript, */*; q=0.01
-Expires: Tue, 08 Sep 2015 15:01:21 GMT</pre>
-<p><strong>Sample response body: application/json</strong></p>
+Accept: application/json
+Date: Wed, 04 Mar 2020 20:58:47 GMT</pre>
+
+<p><strong>Sample response body #1: application/json</strong><strong> (versions up to 2020.1.0)</strong></p>
+<p>In versions up to 2020.1.0, only the numeric telephone dialing <strong>id</strong> is supported. For these versions, or in version 2020.1.0 and later if country names were not provided, only the country codes are returned, as shown below.</p>
+<pre>{
+  "CountryCode":[
+    {
+      "id":"+1"
+    },
+    {
+      "id":"+353"
+    },
+    {
+      "id":"+44"
+    },
+    {
+      "id":"+91"
+    }
+  ]
+}</pre>
+
+<p><strong>Sample response body #2: application/json</strong><strong> (valid in version: 2020.1.0 and later)</strong></p>
+<p>Country name is supported in 2020.1.0 and later, as well as country code. If the country names were provided, either via the developer portal user interface or via the <span class="apidoc_code"><a href="m_tenantadmin_saveTenantCountryCodes.htm">PUT&nbsp;/api/tenants/{FedmemberID}/countrycodes</a></span> operation, name and id is returned for each entry, as shown in the example below.</p>
 <pre>[
   {
-    &quot;id&quot;:&quot;+1&quot;
+    "id": "+1",
+    "Name": "United States and Canada"
   },
   {
-    &quot;id&quot;:&quot;+44&quot;
+    "id": "+353",
+    "Name": "Ireland"
   },
   {
-    &quot;id&quot;:&quot;+91&quot;
+    "id": "+44",
+    "Name": "United Kingdom"
+  },
+  {
+    "id": "44-1534",
+    "Name": "Jersey"
+  },
+  {
+    "id": "91",
+    "Name": "India"
   }
 ]</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

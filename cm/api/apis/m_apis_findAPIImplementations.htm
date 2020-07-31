@@ -18,7 +18,6 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_findAPIImplementations.lbi" -->Returns information about API implementations, based on a provided APIID, APIVersionID, Service Key, or implementation code.<!-- #EndLibraryItem --></p>
-<h4 class="stamp">New in API Platform Version: 8.1</h4>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/permission_read.lbi" -->
  Must have Read permission for the resource. <!-- #EndLibraryItem --></p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -53,8 +52,7 @@ no-catalog: true
 
 
 <!-- InstanceBeginEditable name="Sample Request" -->
-<h2 id="samplerequest">Sample Request #1</h2>
-<p id="id_samplerequest">The example below shows a request for API implementation information.</p>
+<h2 id="samplerequest">Sample Request #1</h2><p id="id_samplerequest">The example below shows a request for API implementation information. To view the response, see <a href="#sampleresponse">Sample Response #1</a>.</p>
 <p><strong>Request URL</strong></p>
 <pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/implementations</pre>
 <p><strong>Sample request headers</strong></p>
@@ -64,9 +62,9 @@ no-catalog: true
 <p>Not applicable.</p>
 
 <h2 id="samplerequest_02">Sample Request #2</h2>
-<p id="id_samplerequest_02">The example below shows a request for API implementation information for the specified API.</p>
+<p id="id_samplerequest_02">The example below shows a request for API implementation information for the specified API version. To view the response, see <a href="#sampleresponse_02">Sample Response #2</a>.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/implementations?APIID=2a6138cd-093e-4861-9fc4-2203a662129c.acmepaymentscorp</pre>
+<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/implementations?APIVersionID=4ef0b707-a7f1-45eb-8343-cb6fb443ef02.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
 </pre>
@@ -93,7 +91,8 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -170,60 +169,86 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h2 id="sampleresponse">Sample Response #1</h2>
-<p id="id_sampleresponse">The sample response below shows successful completion of this operation. Information on all implementations is returned.</p>
+<p id="id_sampleresponse">The sample response below shows successful completion of this operation. Information on all implementations is returned. To view the request, see <a href="#samplerequest">Sample Request #1</a>.</p>
 <p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
-<pre>application/vnd.soa.v81+json
-date: Thu, 26 Jul 2018 13:56:43 GMT</pre>
+<pre>Content-Type: application/vnd.soa.v81+json
+Date: Thu, 12 Mar 2020 15:46:15 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
-<pre>
-{
-  "APIImplementationInfo":[
+<pre>{
+  "APIImplementationInfo": [
     {
-      "APIVersionID":"f280d366-1724-486f-891d-2724fcce0f81.acmepaymentscorp",
-      "ImplementationCode":"Live",
-      "Pattern":"com.akana.pattern.proxy",
-      "ServiceKey":"uddi:a0e0492a-90af-11e8-98c0-c211ef2ffc24",
-      "AnonymousAccessAllowed":true,
-      "EndpointAccessAutoApproved":true,
-      "APIOwnedImplementation":true
+      "APIVersionID": "4ef0b707-a7f1-45eb-8343-cb6fb443ef01.acmepaymentscorp",
+      "ImplementationCode": "Live",
+      "Pattern": "com.akana.pattern.proxy",
+      "ServiceKey": "uddi:f77746c7-2e3e-11e9-a4a0-8de6ca732541",
+      "AnonymousAccessAllowed": false,
+      "EndpointAccessAutoApproved": true,
+      "APIOwnedImplementation": true
     },
     {
-      "APIVersionID":"9dfe7acc-b6ac-4d2b-b41a-3fd0b25cbdd8.acmepaymentscorp",
-      "ImplementationCode":"Live",
-      "Pattern":"com.akana.pattern.proxy",
-      "ServiceKey":"uddi:5c48ab36-90d5-11e8-8aa5-a05d223084d5",
-      "AnonymousAccessAllowed":true,
-      "EndpointAccessAutoApproved":true,
-      "APIOwnedImplementation":true
+      "APIVersionID": "b5c1abf8-2c42-47b8-992d-285e2bffd8e1.acmepaymentscorp",
+      "ImplementationCode": "Live",
+      "Pattern": "com.akana.pattern.proxy",
+      "ServiceKey": "uddi:f6e68154-39eb-11e9-a1ea-9aea37a739b1",
+      "AnonymousAccessAllowed": true,
+      "EndpointAccessAutoApproved": true,
+      "APIOwnedImplementation": true
     },
     {
-      "APIVersionID":"86a19fb1-a6f8-45e2-9775-86b575207dd0.acmepaymentscorp",
-      "ImplementationCode":"Live",
-      "Pattern":"com.akana.pattern.proxy",
-      "ServiceKey":"uddi:075b9cc4-90d8-11e8-8aa5-a05d223084d5",
-      "AnonymousAccessAllowed":true,
-      "EndpointAccessAutoApproved":true,
-      "APIOwnedImplementation":true
+      "APIVersionID": "e73b5ce8-f516-4641-9596-4fe51c977031.acmepaymentscorp",
+      "ImplementationCode": "Live",
+      "Pattern": "com.akana.pattern.proxy",
+      "ServiceKey": "uddi:68845a9b-404b-11e9-a1ea-9aea37a739b1",
+      "AnonymousAccessAllowed": true,
+      "EndpointAccessAutoApproved": true,
+      "APIOwnedImplementation": true
+    },
+    {
+      "APIVersionID": "440065bd-7655-42dc-9a14-3387e70f52f1.acmepaymentscorp",
+      "ImplementationCode": "Sandbox",
+      "Pattern": "com.akana.pattern.orchestration",
+      "ServiceKey": "uddi:ee3ae12d-c5d6-11e9-bddb-d3399bf759f1",
+      "AnonymousAccessAllowed": false,
+      "EndpointAccessAutoApproved": true,
+      "APIOwnedImplementation": true
+    },
+    {
+      "APIVersionID": "1ff80b00-de4a-4588-a951-2312bf72a021.acmepaymentscorp",
+      "ImplementationCode": "Live",
+      "Pattern": "com.akana.pattern.proxy",
+      "ServiceKey": "uddi:cc609cb0-d33d-11e9-bddb-d3399bf759f1",
+      "AnonymousAccessAllowed": true,
+      "EndpointAccessAutoApproved": true,
+      "APIOwnedImplementation": true
+    },
+    {
+      "APIVersionID": "38fcd5ae-08ae-4161-9fd3-65288dffb921.acmepaymentscorp",
+      "ImplementationCode": "Live",
+      "Pattern": "com.akana.pattern.proxy",
+      "ServiceKey": "uddi:ce10ea5a-4177-11ea-be1c-b71095ab9d81",
+      "AnonymousAccessAllowed": true,
+      "EndpointAccessAutoApproved": true,
+      "APIOwnedImplementation": true
     }
   ]
 }</pre>
 
-<h2 id="samplerespons_02e">Sample Response #2</h2>
-<p id="id_sampleresponse_02">The sample response below shows successful completion of this operation. API implementation information for the specified API is returned.</p>
+<h2 id="sampleresponse_02">Sample Response #2</h2>
+<p id="id_sampleresponse_02">The sample response below shows successful completion of this operation. In this scenario, the optional APIVersionID parameter was used in the request. API implementation information for the specified API version is returned. To view the request, see <a href="#samplerequest_02">Sample Request #2</a>.</p>
 <p><strong>Sample response headers: application/json</strong></p>
-<pre>application/json
-date:  Thu, 26 Jul 2018 13:51:09 GMT</pre>
-<p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
+<pre>Content-Type: application/json
+date: Thu, 12 Mar 2020 15:49:17 GMT</pre>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  "APIImplementationInfo":[
+  "APIImplementationInfo": [
     {
-      "APIVersionID":"86a19fb1-a6f8-45e2-9775-86b575207dd0.acmepaymentscorp",
-      "ImplementationCode":"Live",
-      "Pattern":"com.akana.pattern.proxy",
-      "ServiceKey":"uddi:075b9cc4-90d8-11e8-8aa5-a05d223084d5",
-      "AnonymousAccessAllowed":true,
-      "EndpointAccessAutoApproved":true,
-      "APIOwnedImplementation":true
+      "APIVersionID": "4ef0b707-a7f1-45eb-8343-cb6fb443ef02.acmepaymentscorp",
+      "ImplementationCode": "Live",
+      "Pattern": "com.akana.pattern.proxy",
+      "ServiceKey": "uddi:f77746c7-2e3e-11e9-a4a0-8de6ca732541",
+      "AnonymousAccessAllowed": false,
+      "EndpointAccessAutoApproved": true,
+      "APIOwnedImplementation": true
     }
   ]
 }</pre>

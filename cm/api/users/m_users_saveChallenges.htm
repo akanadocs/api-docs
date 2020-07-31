@@ -61,7 +61,7 @@ Adds or updates information about the security <a href="../Ref_Glossary_Communit
 <pre>X-Csrf-Token_acmepaymentscorp
 Accept: application/vnd.soa.v72+json
 Content-Type: application/vnd.soa.v72+json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body: application/vnd.soa.v72+json</strong></p>
 <pre>{<br />  &quot;UserIdentificationChallenge&quot; : [ {<br />    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,<br />    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.city.birth&quot;,<br />    &quot;Answer&quot; : &quot;Dubai&quot;<br />  }, {<br />    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,<br />    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.color&quot;,<br />    &quot;Answer&quot; : &quot;Blue&quot;<br />  }, {<br />    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,<br />    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.pet&quot;,<br />    &quot;Answer&quot; : &quot;Bucktastic&quot;<br />  } ]<br />}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -117,7 +117,8 @@ Content-Type: application/vnd.soa.v72+json
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>

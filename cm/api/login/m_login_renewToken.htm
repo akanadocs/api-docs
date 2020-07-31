@@ -100,7 +100,8 @@ Xy1Jly8eEfdvHoCuebRT-1NjKzdEvLyvum1NpPjYDJhg</pre>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -192,7 +193,7 @@ Csrf-Token_acmepaymentscorp=TokenID%3D8326e23b-bad2-11e5-ace7-fd6479c3027f%2Cexp
 			<td>LoginResponse</td>
 			<td><a href="../obj/o_login_LoginResponse.htm">LoginResponse</a></td>
 			<td><p><!-- #BeginLibraryItem "/Library/o_login_LoginResponse.lbi" -->Contains information returned as a result of logging in.<!-- #EndLibraryItem --></p>
-				<p>When renewing the token, the LoginResponse object includes user name and FDN, along with pendingNotifications, status, loginDomainID, avatarURL, and sessionValidUntil/authTokenValidUntil; how long the session will be valid if active/inactive. See example above.</p><!--http://svn.soa.local/nd/trunk/products/api-portal/com.soa.atmosphere.interfaces/src/com/soa/login/model/LoginResponse.java--></td>
+				<p>When renewing the token, the LoginResponse object includes user name and FDN, along with pendingNotifications, status, loginDomainID, avatarURL, and sessionValidUntil/authTokenValidUntil; how long the session will be valid if active/inactive. See example above.</p><!--api-portal/com.soa.atmosphere.interfaces/src/com/soa/login/model/LoginResponse.java--></td>
 		</tr>
 	</tbody>
 </table>

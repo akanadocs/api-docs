@@ -83,7 +83,8 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -135,19 +136,19 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/json
-Date: Tue, 02 Apr 2019 15:19:37 GMT</pre>
+Date: Thu, 11 Jun 2020 21:43:22 GMT</pre>
 <p><strong>Sample response body: application/json</strong></p>
-<pre>
-{
-    "NewsUpdateNotification": "com.soa.feature.enabled",
-    "EnforceChallengesSetupOnLogin": "com.soa.feature.disabled",
-    "SelfSignup": "com.soa.feature.enabled",
-    "InviteUnregisteredUsers": "com.soa.feature.enabled",
-    "ResetValidCodeHours": 48,
-    "UpdateEmailValidCodeHours": 48,
-    "SignupUserValidDays": 7,
-    "AddedUserValidDays": 30,
-    "InvitedUserValidDays": 7
+<pre>{
+  "NewsUpdateNotification": "com.soa.feature.enabled",
+  "EnforceChallengesSetupOnLogin": "com.soa.feature.disabled",
+  "SelfSignup": "com.soa.feature.enabled",
+  "InviteUnregisteredUsers": "com.soa.feature.enabled",
+  "ResetValidCodeHours": 48,
+  "UpdateEmailValidCodeHours": 48,
+  "SignupUserValidDays": 7,
+  "AddedUserValidDays": 30,
+  "InvitedUserValidDays": 7,
+  "TopApisCountAllowed": 10
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->

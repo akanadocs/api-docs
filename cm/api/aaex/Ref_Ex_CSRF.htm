@@ -4,7 +4,7 @@ title: Example - Using the CSRF header | How-To Material | Akana API Platform AP
 description: This exercise uses the example of adding a group to demonstrate how to put together the CSRF header that you'll need for using the developer portal API (POST, PUT, and DELETE operations).
 product: cm
 category: ref
-nav-title: Example - Using the CSRF header
+nav-title: Example - Using the CSRF header 
 no-nav: api
 sub-nav: true
 sub-nav-class: aaex
@@ -49,7 +49,7 @@ no-catalog: true
 }</pre>
 			</li>
 		</ul>
-		<p>The platform API returns the login cookie, which you'll need to send with the request headers for any operation that requires login, and the CSRF cookie, which you'll need to use to put together the CSRF header.</p>
+		<p>The platform API returns the login cookie, which you'll need to send with the request headers for any operation that requires login, and the CSRF cookie (X-Csrf-Token_{fedmemberID}), which you'll need to use to put together the CSRF header.</p>
 	</li>
 	<li>Add the group, using the <span class="apidoc_code"><a href="../groups/m_groups_addGroup.htm">POST&nbsp;/api/groups</a></span> operation. In your API call, use the values below, modifying the URL path as needed, and filling your own values  for all fields in the Request Body (URL encoding not needed). Tags are optional, but all other values are required.
 		<ul>
@@ -79,11 +79,10 @@ no-catalog: true
 		</ol>
 	</li>
 	<li>Send the API call. You will get a 200 response.</li>
-	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_logout.htm">POST&nbsp;/api/login/logout</a></span> operation. Use the following values:
+	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_endSession.htm">GET&nbsp;/api/login/endsession</a></span> operation. Use the following values:
 		<ul>
-			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/logout</strong></li>
+			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
-			<li>Content-Type header: <strong>application/x-www-form-urlencoded</strong></li>
 		</ul>
 	</li>
 </ol>
@@ -113,5 +112,3 @@ no-catalog: true
 	<li><a href="Ref_Ex_Overview.htm">Examples: Overview</a></li>
 </ul> 
 </div><!-- #EndLibraryItem --></div>
-</body>
-</html>

@@ -1,5 +1,5 @@
 ---
-layout: apipage-noindex
+layout: apipage
 title: Graph Object | Shared Service, Performance | Akana API Platform API
 description: Contains metric information.
 product: cm
@@ -36,17 +36,18 @@ no-catalog: true
 		<tr>
 			<td>StartTime</td>
 			<td>dateTime</td>
-			<td>Start time for the graph's data, in format YYYY-MM-DDTHH:MM:SSZ (all date/times are returned in Zulu time).</td>
+			<td>Start time for the graph's data, in format YYYY-MM-DDTHH:MM:SSZ (all date/times are returned in <a href="../Ref_Glossary_CommunityPlatform.htm#gl_zulutime">Zulu time</a>).</td>
 		</tr>
 		<tr>
 			<td>EndTime</td>
 			<td>dateTime</td>
-			<td>End time for the graph's data, in format YYYY-MM-DDTHH:MM:SSZ (all date/times are returned in Zulu time).</td>
+			<td>End time for the graph's data, in format YYYY-MM-DDTHH:MM:SSZ (all date/times are returned in <a href="../Ref_Glossary_CommunityPlatform.htm#gl_zulutime">Zulu time</a>).</td>
 		</tr>
 		<tr>
 			<td>Summary</td>
 			<td><a href="o_performance_SummaryType.htm">SummaryType</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_SummaryType.lbi" -->Contains information about a type of metric summary.<!-- #EndLibraryItem --></td>
+			<td><p><!-- #BeginLibraryItem "/Library/o_SummaryType.lbi" -->Contains information about a type of metric summary.<!-- #EndLibraryItem --></p>
+				<p>Optional.</p></td>
 		</tr>
 		<tr>
 			<td>Summaries</td>
@@ -61,7 +62,7 @@ no-catalog: true
 		<tr>
 			<td>Interval</td>
 			<td><a href="o_performance_IntervalType.htm">IntervalType</a>[&nbsp;]</td>
-			<td>An array of detail intervals. @StartTime is the beginning of the interval, in Zulu time.</td>
+			<td>An array of detail intervals. @StartTime is the beginning of the interval, in <a href="../Ref_Glossary_CommunityPlatform.htm#gl_zulutime">Zulu time</a>.</td>
 		</tr>
 		<tr>
 			<td>Test</td>

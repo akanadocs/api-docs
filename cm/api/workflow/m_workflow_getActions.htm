@@ -84,7 +84,8 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -139,9 +140,10 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
-<p><strong>Sample response headers: application/json</strong></p>
+<p><strong>Sample response headers</strong></p>
 <pre>Content-Type: application/json</pre>
-<p><strong>Sample response body: application/json</strong></p>
+<p id="id_sampleresponse_1"><strong>Sample response body #1</strong></p>
+<p>The example below is for user workflow.</p>
 <pre>{
   &quot;channel&quot; : {
     &quot;title&quot; : &quot;Custom workflow for managing users&quot;,
@@ -158,6 +160,54 @@ no-catalog: true
         &quot;value&quot; : &quot;Change to unmanaged users&quot;
       }
     } ]
+  }
+}</pre>
+
+<p id="id_sampleresponse_2"><strong>Sample response body #2</strong></p>
+<p>The example below is for API version workflow. In this example, the only valid action for the object is <strong>Submit for Approval</strong>.</p>
+<pre>{
+  "channel": {
+    "title": "v1",
+    "WorkflowObject": {
+      "WorkflowDefinitionKey": "aba30718-a086-407c-99e9-76a1f07060a2",
+      "State": [
+        "Draft"
+      ]
+    },
+    "item": [
+      {
+        "guid": {
+          "value": "apiversion.action.submit.approval"
+        }
+      }
+    ]
+  }
+}</pre>
+
+<p id="id_sampleresponse_3"><strong>Sample response body #3</strong></p>
+<p>In example #2 above, the API version was approved using the <span class="apidoc_code"><a href="../apis/m_apis_executeWorkflowAction.htm">POST&nbsp;/api/apis/versions/{ApiVersionID}/action</a></span> operation. The valid workflow actions for the API version are now <strong>Approve</strong> or <strong>Reject</strong>, as shown below.</p>
+
+	<pre>{
+  "channel": {
+    "title": "v1",
+    "WorkflowObject": {
+      "WorkflowDefinitionKey": "aba30718-a086-407c-99e9-76a1f07060a2",
+      "State": [
+        "Pending Approval"
+      ]
+    },
+    "item": [
+      {
+        "guid": {
+          "value": "apiversion.action.approve"
+        }
+      },
+      {
+        "guid": {
+          "value": "apiversion.action.reject"
+        }
+      }
+    ]
   }
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

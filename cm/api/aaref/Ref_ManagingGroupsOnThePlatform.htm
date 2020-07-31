@@ -58,7 +58,7 @@ no-catalog: true
 <ul>
 	<li>Invite additional users to the team.</li>
 	<li>Remove members from the team.</li>
-	<li>Manage tickets associated with the app, including opening, mdifying, closing, and deleting tickets and changing ticket status.</li>
+	<li>Manage tickets associated with the app, including opening, modifying, closing, and deleting tickets and changing ticket status.</li>
 	<li>Manage API access requests including requesting API access, cancelling an API access request, or resubmitting a request.</li>
 	<li>Activate the app so that it goes into live production mode.</li>
 	<li>Make changes to the app including modifying the app, adding, modifying, or deleting app versions, or deleting the app.</li></ul>
@@ -66,7 +66,7 @@ no-catalog: true
 
 
 <h2 id="groups_independentgroup">Independent Group</h2>
-<p>Any user can create a group that isn't specifically tied to an app or API. When a user creates an Independent Group, that user automatically becomes the first Admin for the group. The Admin can invite members to the group. Each user can have one of three group member roles, and there can be multiple users for each role. All roles can view information relating to the group, including reviews, tickets, and discussions.The roles are:</p>
+<p>Any user can create a group that isn't specifically tied to an app or API. When a user creates an Independent Group, that user automatically becomes the first Admin for the group. The Admin can invite members to the group. Each user can have one of three group member roles, and there can be multiple users for each role. All roles can view information relating to the group, including reviews, tickets, and discussions. The roles are:</p>
 <ul>
 	<li><strong>Administrator</strong>: An independent group Administrator has full control over the group. The Administrator can:
 		<ul>
@@ -87,7 +87,12 @@ no-catalog: true
 <p>The Site Admin manages the following functions on the platform:</p>
 <ul>
 	<li><strong>Agreements</strong>&#8212;Manage the platform signup legal agreement.</li>
-	<li><strong>Config</strong>&#8212;Manage site look and feel, including managing custom styles and resources.</li>
+	<li><strong>Challenges</strong><strong> (2020.1.0 and later)</strong>&#8212;Manage security challenge questions.</li>
+	<li><strong>Config (versions prior to 2020.1.0)</strong>&#8212;Manage site look and feel, including managing default settings for APIs, apps, and groups, managing custom styles and resources, and setting up and managing login domains.</li>
+	<li><strong>Country Codes</strong><strong> (2020.1.0 and later)</strong>&#8212;Manage telephone country codes, needed for support of telephone numbers.</li>
+	<li><strong>Customization</strong><strong> (2020.1.0 and later)</strong>&#8212;Manage site look and feel, including uploading and downloading site styles and resources.</li>
+	<li><strong>File Manager</strong><strong> (2020.1.0 and later)</strong>&#8212;Upload and manage developer portal content and customization resource files&nbsp;through the File Manager.</li>
+	<li><strong>Logins</strong><strong> (2020.1.0 and later)</strong>&#8212;Manage login domains.</li>
 	<li><strong>Settings</strong>&#8212;Configure settings for resources on the platform such as alerts, apps, APIs, connections, comments, discussions, groups, tickets, users, reviews, and business security.</li>
 	<li><strong>Site</strong>&#8212;Configure basic site settings such as site URL, contact email address, and themes.</li>
 	<li><strong>Site Admins</strong>&#8212;Manage site admins on the platform, including inviting and removing site admins.</li>
@@ -100,7 +105,7 @@ no-catalog: true
 <h2 id="groups_bizadmin">Business Administrator Group</h2>
 <p>In a federated environment, where a specific tenant has its own instance of the platform, the Business Administrator has some rights that are senior to those of the Site Administrator. There are parts of the user interface, and API operations, that require Business Administrator rights and are closed to other users. For example, Business Administrators can make certain choices that determine options that are available or not available on the platform.</p>
 <p>The Business Administrator has Administrator rights for all APIs and apps in the business.</p>
-<p>In the platform user interface, there is an Administration section available only to Site Administrators and Business Administrators. The table below shows which functions each type of administrator has access to, and for what purpose.</p>
+<p>In the platform user interface, there is an Administration section available only to Site Admins and Business Admins. The table below shows which functions each type of administrator has access to, and for what purpose.</p>
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -112,60 +117,129 @@ no-catalog: true
 	</thead>
 	<tbody>
 		<tr>
-			<td>Users</td>
-			<td>Manage users, including activating new users and enabling or disabling existing users</td>
-			<td>Yes</td>
-			<td>No</td>
-		</tr>
+			<td>Agreements</td>
+			<td>Manage the platform signup legal agreement.</td>
+			<td><strong>Yes</strong></td>
+			<td>--</td>
+			</tr>
 		<tr>
-			<td>Site Admins</td>
-			<td>Manage the Site Admin group (invite, resend invite, remove)</td>
-			<td>Yes</td>
-			<td>No</td>
+			<td>API Gateways</td>
+			<td>Manage API Gateways on the platform.</td>
+			<td>--</td>
+			<td><strong>Yes</strong></td>
 		</tr>
 		<tr>
 			<td>Business Admins</td>
 			<td>Manage the Business Admin group (invite, resend invite, remove)</td>
-			<td>No</td>
-			<td>Yes</td>
+			<td>--</td>
+			<td><strong>Yes</strong></td>
+			</tr>
+		<tr>
+			<td>Challenges</td>
+			<td>Manage security challenge questions.</td>
+			<td><strong>Yes</strong></td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td>Country Codes</td>
+			<td>Manage telephone country codes, needed for support of telephone numbers.</td>
+			<td><strong>Yes</strong></td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td>Customization</td>
+			<td>Manage site look and feel, including managing custom styles and resources.</td>
+			<td><strong>Yes</strong></td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td>Deployment Zones</td>
+			<td>Manage deployment zones on the platform.</td>
+			<td>--</td>
+			<td><strong>Yes</strong></td>
 		</tr>
 		<tr>
 			<td>Domains</td>
 			<td>Add, configure, modify, and delete domains</td>
-			<td>Yes</td>
-			<td>No</td>
+			<td>--</td>
+			<td><strong>Yes</strong></td>
 		</tr>
 		<tr>
-			<td>Config</td>
-			<td><p>Configure:</p>
-				<ul class="apidoctable_ul">
-					<li>Settings for resources such as apps, APIs, and groups</li>
-					<li>Site options such as custom styles, login domains, and resources</li>
-				</ul></td>
-			<td>Yes</td>
-			<td>No</td>
+			<td>File Manager</td>
+			<td>Upload and manage developer portal content and customization resource files&nbsp;through the File Manager.</td>
+			<td><strong>Yes</strong></td>
+			<td>--</td>
 		</tr>
 		<tr>
-			<td>Scopes</td>
-			<td>Manage resources.</td>
-			<td>Yes: View only</td>
-			<td>Yes: Add, modify, delete</td>
+			<td>Forum</td>
+			<td>Manage forum entries, including approving forum entries for publication.</td>
+			<td>--</td>
+			<td><strong>Yes</strong></td>
 		</tr>
 		<tr>
 			<td>Licenses</td>
 			<td>Manage license definitions.</td>
-			<td>Yes: View only</td>
-			<td>Yes: Add, modify, delete</td>
+<td>--</td>
+<td><strong>Yes</strong></td>
 		</tr>
+		<tr>
+			<td>Logins</td>
+			<td>Managing login domains.</td>
+			<td><strong>Yes</strong></td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td>Model Categories</td>
+			<td><p>Adding, modifying, and deleting categories for model objects.</p>
+<p><strong>Note</strong>: Model objects themselves are managed for the specific business organization.</p></td>
+			<td>--</td>
+			<td><strong>Yes</strong></td>
+			</tr>
+		<tr>
+			<td>Scopes</td>
+			<td>Manage resources.</td>
+<td>--</td>
+<td><strong>Yes</strong></td>
+		</tr>
+		<tr>
+			<td>Settings</td>
+			<td>Configure settings for resources on the platform such as alerts, apps, APIs, connections, comments, discussions, groups, tickets, users, reviews, and business security.</td>
+			<td><strong>Yes</strong></td>
+			<td>--</td>
+			</tr>
+		<tr>
+			<td>Site</td>
+			<td>Configure basic site settings such as site URL, contact email address, and themes.</td>
+			<td><strong>Yes</strong></td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td>Site Admins</td>
+			<td>Manage the Site Admin group (invite, resend invite, remove)</td>
+			<td><strong>Yes</strong></td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td>Users</td>
+			<td>Manage users, including activating new users and enabling or disabling existing users</td>
+			<td><strong>Yes</strong></td>
+			<td>--</td>
+		</tr>
+		<tr>
+			<td>Workflows</td>
+			<td>View, add, change, and delete custom and default workflows for platform resources such as tickets and API contracts.</td>
+			<td><strong>Yes</strong></td>
+			<td>--</td>
+			</tr>
 	</tbody>
 </table>
 
 <p>Essentially, the site admin cannot make decisions with regard to the resources on the site, but configures the site and empowers the business admin. The business admin is a superuser for the resources within the business such as apps and APIs.</p>
-<p>The Business Admin can:</p>
+<p>In addition to the above functions for the entire developer portal, the Business Admin has functions for a specific business organization (<strong>More</strong> &gt; <strong>Organizations</strong> &gt; <strong>All Organizations</strong>, choose organization). The Business Admin can:</p>
 <ul>
-	<li>Add, modify, or delete an app or app version.</li>
+<li>Add, modify, or delete an app or app version.</li>
 	<li>Add, modify, or delete an API or API version.</li>
-	<li>Add or remove members of the various types of groups; API administrators, API Scope Groups, app teams, independent groups, and the site administrator group. Where applicable, the Business Admin can also change a group member's status.</li>
+	<li>Add or remove members of the various types of groups: API administrators, API Scope Groups, app teams, independent groups, and the site administrator group. Where applicable, the Business Admin can also change a group member's status.</li>
 	<li>Revoke a user's access to the platform.</li>
 	<li>Revoke an app's access tokens for one or more APIs.</li>
 </ul>

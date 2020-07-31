@@ -1,7 +1,7 @@
 ---
-layout: apipage-noindex
+layout: apipage
 title: API Object | APIs Service | Akana API Platform API
-description:  Includes information about an API.
+description:  Contains information about an API.
 product: cm
 category: ref
 nav-title: API Object 
@@ -14,13 +14,14 @@ no-catalog: true
 <div class="apidocContent">
 <h1 id="top">API Object</h1>
 <p><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" -->
-Includes information about an API.<!-- #EndLibraryItem --></p>
+Contains information about an API.<!-- #EndLibraryItem --></p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
 	<li><span class="apidoc_code"><a href="../apis/m_apis_createAPI.htm">POST&nbsp;/api/apis</a></span> (with vendor-specific headers)</li>
 	<li><span class="apidoc_code"><a href="../apis/m_apis_getAPI.htm">GET&nbsp;/api/apis/{APIID}</a></span></li>
-	<li>Operations that reference the <a href="o_contracts_ContractAPI.htm">ContractAPI</a> object</li>
+	<li>Operations that reference the <a href="o_apis_APIs.htm">APIs</a> object</li>
+<li>Operations that reference the <a href="o_contracts_ContractAPI.htm">ContractAPI</a> object</li>
 	<li>Operations that reference the <a href="o_performance_ReferencedObjects.htm">ReferencedObjects</a> object</li>
 </ul>
 
@@ -148,6 +149,11 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
 			<td>String</td>
 			<td>Organization key for the business organization the API is part of.</td>
 		</tr>
+<tr>
+<td>InUserTop</td>
+<td>boolean</td>
+<td>Indicates whether the API is in included in the user's My Dashboard of top APIs. In response content.</td>
+</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

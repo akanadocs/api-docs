@@ -202,6 +202,19 @@ Indicates the type of compression encoding the server used for the response mess
 			<td><!-- #BeginLibraryItem "/Library/hdrrsp_transfer-encoding.lbi" -->
 If encoding was used to transfer the message safely, this value indicates the encoding method used. Example: <strong>chunked</strong>. For HTTP 1.1 messages, the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API always uses the value <strong>chunked</strong>. For HTTP 1.0, transfer-encoding is not used.<br /><strong>Note</strong>: We recommend using HTTP version 1.1 since it includes several enhancements; chunking is one of them.<!-- #EndLibraryItem --></td>
 		</tr>
+		<tr>
+			<td><a id="xframeoptions_response"></a>X-Frame-Options</td>
+			<td>Response only</td>
+			<td><p>Optional header, set up by the Administrator in the Akana Administration Console, <strong>com.soa.uif</strong> configuration category. Used as a security measure, with services that return content, to indicate whether or not the browser is allowed to render a page in an &lt;iframe&gt; tag. Generally used to prevent clickjacking attacks by ensuring that site content cannot be embedded into another site, displayed in an iFrame. Note that the developer portal displays content in iFrames, so if the <strong>X-Frame-Options</strong> header is set to a value of <strong>deny</strong>, some site content might not display correctly.</p>
+				<p>There are two valid values (case does not matter):</p>
+				<ul class="apidoctable_ul">
+					<li>deny</li>
+					<li>sameorigin</li>
+				</ul>
+				<p><strong>Note</strong>: A third value for the X-Frame-Options header, ALLOW-FROM, is obsolete. Do not use it.</p>
+				<p>For more information about this header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options" title="Link to Mozilla explanation re X-Frame-Options header" target="_blank">https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options</a>.</p>
+				<p>For an example, see <span class="apidoc_code"><a href="../uiapplication/m_uiapps_getPathBasedResource.htm#sampleresponse">GET&nbsp;/ui/apps/atmosphere/{version}/{path:resources/.*}</a></span> (Sample Response section).</p></td>
+		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>

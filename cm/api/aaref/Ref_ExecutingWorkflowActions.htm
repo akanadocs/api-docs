@@ -17,9 +17,11 @@ no-catalog: true
 <p>Some examples of workflow actions are: requesting or approving an API contract, sending a group membership invitation, or changing the status of a ticket.</p>
 <p>These actions, which change a resource from one state to another, are controlled by the Execute Workflow Action operation. This applies to the following services:</p>
 <ul>
-	<li>Groups: the <span class="apidoc_code">POST&nbsp;/api/groups/requests/{MembershipRequestID}/actions</span> operation</li>
-	<li>Tickets: the <span class="apidoc_code">POST&nbsp;tickets/{ticketID}/actions</span> operation</li>
-	<li>Contracts: the <span class="apidoc_code">POST&nbsp;/api/contracts/{ContractDN}/actions</span> operation</li>
+	<li>API Versions: the <span class="apidoc_code"><a href="../apis/m_apis_executeWorkflowAction.htm">POST&nbsp;/api/apis/versions/{ApiVersionID}/action</a></span> operation</li>
+	<li>Contracts: the <span class="apidoc_code"><a href="../contracts/m_contracts_executeWorkflowAction.htm">POST&nbsp;/api/contracts/{ContractID}/actions</a></span> operation </li>
+	<li>Groups: the <span class="apidoc_code"><a href="../groups/m_groups_executeWorkflowAction.htm">POST&nbsp;/api/groups/requests/{MembershipRequestID}/actions</a></span> operation</li>
+	<li>Model objects: the <span class="apidoc_code"><a href="../models/m_models_executeWorkflowAction.htm">POST&nbsp;/api/models/versions/{ModelVersionID}/action</a></span> operation</li>
+	<li>Tickets: the <span class="apidoc_code"><a href="../tickets/m_tickets_executeWorkflowAction.htm">POST&nbsp;/api/tickets/{TicketID}/actions</a></span> operation</li>
 </ul>
 <p>In each case, the operation verifies two things before executing the workflow action:</p>
 <ul>
@@ -30,7 +32,7 @@ no-catalog: true
 			<li>The &quot;to&quot; state is a valid state for the resource to transition to. For example, a ticket can change state from Closed to Reopened but not from Closed to Resolved.</li>
 		</ul></li>
 </ul>
-<p>The sections below provide information on the actions that are valid on these three types of objects and the roles required for each.</p>
+<p>The sections below provide information on the actions that are valid on these types of objects and the roles required for each.</p>
 <ul>
 	<li><a href="#values_workflowactions_groups_all">All Groups: Valid Workflow Actions</a></li>
 	<li><a href="#values_workflowactions_groups_diagram">All Groups: Workflow Diagram</a></li>
@@ -38,7 +40,8 @@ no-catalog: true
 	<li><a href="#values_workflowactions_tickets">Tickets: Valid Workflow Actions</a></li>
 	<li><a href="#values_workflowactions_tickets_diagram">Tickets: Workflow Diagram</a></li>
 	<li><a href="#values_workflowactions_contracts">App/API Contracts: Valid Workflow Actions</a></li>
-	<li><a href="#values_workflowactions_contracts">App/API Contracts: Workflow Diagram</a></li>
+	<li><a href="#values_workflowactions_contracts_diagram">App/API Contracts: Workflow Diagram</a></li>
+	<li><a href="#values_workflowactions_apiversions">API Versions: Valid Workflow Actions</a></li>
 </ul>
 <h3><a id="values_workflowactions_groups_all"></a>All Groups: Valid Workflow Actions</h3><!-- #BeginLibraryItem "/Library/table_workflowactions_groups_all.lbi" --><table class="tableparmsresponse">
 	<thead>
@@ -91,7 +94,7 @@ no-catalog: true
 </table><!-- #EndLibraryItem --><p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3><a id="values_workflowactions_tickets"></a>Tickets: Valid Workflow Actions</h3><!-- #BeginLibraryItem "/Library/table_workflowactions_tickets.lbi" -->
-<p>To perform any of the actions listed below, the user must be an app team member, author or submitter of the ticket, or API or Business Administrator. The Site Administrator can delete an action.</p>
+<p>To perform any of the actions listed below, the user must be an app team member, author or submitter of the ticket, or API or Business Administrator. The Site Administrator can delete a ticket.</p>
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -122,7 +125,7 @@ no-catalog: true
 		</tr>
 	</tbody>
 </table><!-- #EndLibraryItem --><h3><a id="values_workflowactions_tickets_diagram"></a>Tickets: Workflow Diagram</h3>
-<p><img src="../assets/workflow_tickets.jpg" alt="Workflow: Tickets"/></p>
+<p><img src="../assets/workflow_tickets.jpg" alt="Workflow: Tickets" /></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <h3><a id="values_workflowactions_contracts"></a>App/API Contracts: Valid Workflow Actions</h3><!-- #BeginLibraryItem "/Library/table_workflowactions_contracts.lbi" --><p>The Contracts workflow actions switch an app/API contract from one valid state to another. Again, the two conditions to be met are 1) the requestor is authorized to make the change, and 2) the change is valid for the specific contract. In order for the switch to be valid, the old state must be the current state of the object, and the new state must be a valid change.</p>
@@ -164,8 +167,64 @@ no-catalog: true
 		</tr>
 	</tbody>
 </table><!-- #EndLibraryItem --><h3><a id="values_workflowactions_contracts_diagram"></a>App/API Contracts: Workflow Diagram</h3>
-<p><img src="../assets/workflow_contracts.jpg" alt="Workflow: App/API Contracts"/></p>
+<p><img src="../assets/workflow_contracts.jpg" alt="Workflow: App/API Contracts" /></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+<h3 id="values_workflowactions_apiversions">API Versions: Valid Workflow Actions</h3>
+<p>The API version workflow is optional. If custom workflow is implemented, these workflow actions govern how API versions are managed on the platform.</p>
+<p>As always with workflow, the user performing the workflow action must be authorized to perform the action, and the action must be valid for the object's current state.</p>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th>Description</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Submit for Approval</td>
+			<td>apiversion.action.submit.approval</td>
+		</tr>
+		<tr>
+			<td>Approve</td>
+			<td>apiversion.action.approve</td>
+		</tr>
+		<tr>
+			<td>Activate</td>
+			<td>apiversion.action.activate</td>
+		</tr>
+		<tr>
+			<td>Cancel</td>
+			<td>apiversion.action.cancel</td>
+		</tr>
+		<tr>
+			<td>Reject</td>
+			<td>apiversion.action.reject</td>
+		</tr>
+		<tr>
+			<td>Resubmit</td>
+			<td>apiversion.action.resubmit</td>
+		</tr>
+		<tr>
+			<td>Suspend</td>
+			<td>apiversion.action.suspend</td>
+		</tr>
+		<tr>
+			<td>Resume</td>
+			<td>apiversion.action.resume</td>
+		</tr>
+	</tbody>
+</table>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h3><a id="values_workflowactions_contracts_diagram"></a>App/API Contracts: Workflow Diagram</h3>
+<p><img src="../assets/workflow_contracts.jpg" alt="Workflow: App/API Contracts" /></p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
 
 
 <h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->

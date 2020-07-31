@@ -59,7 +59,7 @@ no-catalog: true
 <pre>PUT /api/apis/versions/a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmepaymentscorp/viewers/d7244dd9-5f36-4d3d-979c-5558d50c8ecf.acmepaymentscorp HTTP/1.1
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   &quot;ResourceID&quot;:&quot;a1fa6440-8fa6-4453-a0a0-4db181ab1512.acmepaymentscorp&quot;,
@@ -104,7 +104,8 @@ Content-Type: application/json; charset=UTF-8
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -268,7 +269,7 @@ xmlns:ns3=&quot;http://soa.com/xsd/legals/1.0&quot; xmlns:ns4=&quot;http://soa.c
 		<tr>
 			<td>VisibilityContractDetails</td>
 			<td><a href="../obj/o_resource_VisibilityContractDetails.htm">VisibilityContractDetails</a></td>
-			<td><!-- #BeginLibraryItem "/Library/parm_resource_VisibilityContractDetails.lbi" -->Contains information about a viewer's visibility of a specific resource.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/parm_resource_VisibilityContractDetails.lbi" -->Contains information about a group's visibility of a specific resource.<!-- #EndLibraryItem --></td>
 		</tr>
 	</tbody>
 </table>

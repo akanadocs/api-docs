@@ -1,5 +1,5 @@
 ---
-layout: apipage-noindex
+layout: apipage
 title: BusinessUserSettings Object | Businesses Service | Akana API Platform API
 description: Default settings to apply to all users within the business.
 product: cm
@@ -64,7 +64,7 @@ no-catalog: true
 		</tr>
 		<tr>
 			<td>UpdateEmailValidCodeHours
-				<p><strong>Valid in Version: 2019.0.0</strong></p></td>
+				<p><strong>Valid in version: 2019.0.0</strong></p></td>
 			<td>integer</td>
 			<td><p>The period, in hours, for which the update email confirmation code is valid, that was generated as a user initiating &quot;change email.&quot;</p>
 				<p>Valid values: 2, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 60, 120, 180, 240. You can also set it to 0, and the code will never expire.</p>
@@ -84,6 +84,13 @@ no-catalog: true
 			<td>InvitedUserValidDays</td>
 			<td>integer</td>
 			<td>The period, in days, for which an <a href="../Ref_Glossary_CommunityPlatform.htm#gl_code_user_invitation">invitation code</a> is valid that was generated as a result of a group/team member inviting someone to the group who is not a platform user. After this point the code expires.</td>
+		</tr>
+		<tr>
+			<td><p>TopApisCountAllowed</p>
+				<p><strong>Valid in version: 2020.1.0</strong></p></td>
+			<td>integer</td>
+			<td><p>The maximum number of APIs allowed on a user's API Watchlist (Top APIs list).</p>
+				<p>Default, and maximum allowable, is 10. If needed, you can set it to a lower number. Range: 1&#8211;10.</p></td>
 		</tr>
 	</tbody>
 </table>

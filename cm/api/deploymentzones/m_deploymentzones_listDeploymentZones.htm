@@ -94,7 +94,8 @@ Accept: application/vnd.soa.v84+json</pre>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" --><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -294,20 +295,20 @@ Date: Thu, 23 Jan 2020 23:43:40 GMT</pre>
 {
   "DeploymentZoneInfo": [
     {
-      "DeploymentZoneID": "c377f0a2-70f5-4e32-aa8e-cf957b385595.automation",
+      "DeploymentZoneID": "c377f0a2-70f5-4e32-aa8e-cf957b385595.acmepaymentscorp",
       "Name": "bhJNQX",
       "Description": "ppbABT",
       "ContainerKey": "1652-80ac-4379-aeb3-d391dca8533e",
       "ContainerName": "eapNd",
       "AddressOverrideBehavior": "com.akana.allow",
       "RandomHostNameBehavior": "com.akana.dontallow",
-      "HostName": "automation.akana.roguewave.com",
+      "HostName": "testing.acmepaymentscorp.com",
       "VirtualHostSupported": true,
       "DeploymentZoneAccessPoint": [
         {
           "Protocol": "http",
           "Name": "default-http0",
-          "Address": "http://automation.akana.roguewave.com:7905"
+          "Address": "http://testing.acmepaymentscorp.com:7905"
         }
       ],
       "DZoneEnvImplAssociations": {

@@ -4,7 +4,7 @@ title: Example - Adding an API by importing an API description document | How-To
 description: This example walks you through adding an API to the&nbsp;Akana API Platform&nbsp;by importing an API description document, using the platform API rather than the user interface. This example uses the Swagger Petstore API.
 product: cm
 category: ref
-nav-title: Example - Adding an App 
+nav-title: Example - Adding an API by importing an API description document 
 no-nav: api
 sub-nav: true
 sub-nav-class: aaex
@@ -25,7 +25,7 @@ no-catalog: true
 <p>Once you've completed Step 3, the APIID is returned in the response and the API is ready for use.</p>
 
 
-<h3>To add an API in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;using the platform API</h3>
+<h4>To add an API in the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;using the platform API</h4>
 <ol>
 	<li>Log in via the <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&nbsp;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
 		<ul>
@@ -80,11 +80,10 @@ no-catalog: true
 	<li>You should get an HTTP 200 response, with the full API object. An example is shown below (only a portion of the API response shown).
 		<p><img src="../assets/apis_createAPI_02.jpg" alt="Create API, successful response" /></p>
 	</li>
-	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_logout.htm">POST&nbsp;/api/login/logout</a></span> operation. Use the following values:
+	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_endSession.htm">GET&nbsp;/api/login/endsession</a></span> operation. Use the following values:
 		<ul>
-			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/logout</strong></li>
+			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
-			<li>Content-Type header: <strong>application/x-www-form-urlencoded</strong></li>
 		</ul>
 	</li>
 </ol>
