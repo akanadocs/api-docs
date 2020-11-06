@@ -13,13 +13,13 @@ no-catalog: true
 
 <div class="apidocContent">
 <!-- InstanceBeginEditable name="Heading" -->
-<h1 id="top">POST&nbsp;/content/{path}</h1>
+<h1 id="top">POST&#160;/content/{path}</h1>
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
 <p><!-- #BeginLibraryItem "/Library/desc_content_add.lbi" -->
 Adds a single file of new content to the platform, or adds a new directory.<!-- #EndLibraryItem --></p>
-<p class="apidoc_note"><strong>Note</strong>: When creating or uploading content files, you can use the <span class="apidoc_code"><a href="m_content_upload.htm">POST&nbsp;/content/{path}</a></span> operation (with <strong>multipart/form-data</strong> content type) to upload a single file, or multiple files in a ZIP. You can use the <span class="apidoc_code"><a href="m_content_add.htm">POST&nbsp;/content/{path}</a></span> operation (with <strong>application/x-www-form-urlencoded</strong> content-type) to create a new folder with a default JSON table of contents file in it, as in the example below, or to create a new file. If you are creating a new file, it cannot be empty; you must include the file contents in the payload, and must use the <strong>application/x-www-form-urlencoded</strong> content type.</p>
+<p class="apidoc_note"><strong>Note</strong>: When creating or uploading content files, you can use the <span class="apidoc_code"><a href="m_content_upload.htm">POST&#160;/content/{path}</a></span> operation (with <strong>multipart/form-data</strong> content type) to upload a single file, or multiple files in a ZIP. You can use the <span class="apidoc_code"><a href="m_content_add.htm">POST&#160;/content/{path}</a></span> operation (with <strong>application/x-www-form-urlencoded</strong> content-type) to create a new folder with a default JSON table of contents file in it, as in the example below, or to create a new file. If you are creating a new file, it cannot be empty; you must include the file contents in the payload, and must use the <strong>application/x-www-form-urlencoded</strong> content type.</p>
 
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or other authorized user.</p>
 <!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
@@ -83,7 +83,7 @@ Content-Type: application/x-www-form-urlencoded
 <p>The request body updates the folder table of content to reflect the fact that the API legal agreement has been published, and is now ready to be activated. The request body must be URL-encoded.</p>
 <pre>body=%7B%22toc%22%3A%5B%22api_legal_agreement_rcoaless.txt%22%2C%22api_legal_agreement_rcoaless2.txt%22%5D%2C%22sequence%22%3A%5B%22api_legal_agreement_rcoaless.txt%22%2C%22api_legal_agreement_rcoaless2.txt%22%2C%22toc.ff46365a-ebac-4fd3-9cbd-f1ac20262f80.rcoaless.json%22%5D%2C%22displayNames%22%3A%7B%7D%7D</pre>
 
-<p><strong>Sample request&nbsp; body (request URL #4) in Postman</strong></p>
+<p><strong>Sample request&#160; body (request URL #4) in Postman</strong></p>
 <p>The example below creates the help folder for a corresponding SimpleDev theme, in Postman. In this example, CSRF is turned off, so only the content-type header is required. The <strong>path</strong> path parameter and <strong>folder</strong> form parameters are used.</p>
 <p><img src="../assets/content_add_postman_01.jpg" alt="Content Upload in Postman: URL, uploaded ZIP file, successful result" /></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -113,7 +113,7 @@ Content-Type: application/x-www-form-urlencoded
 		<tr>
 			<td>Cookie</td>
 			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
@@ -174,7 +174,7 @@ Content-Type: application/x-www-form-urlencoded
 
 <!-- InstanceBeginEditable name="Response Description" -->
 <h2 id="response">Response</h2>
-<p id="id_successstatement">If successful, this operation returns HTTP status code 200&nbsp;with no content.</p>
+<p id="id_successstatement">If successful, this operation returns HTTP status code 200&#160;with no content.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -258,7 +258,7 @@ Date: Tue, 1 Jul 2014 20:00:00 GMT</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&nbsp;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&nbsp;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
