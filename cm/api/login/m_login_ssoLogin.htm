@@ -17,7 +17,7 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_ssoLogin.lbi" -->Allows a user to log in by authenticating with an external identity provider that has its own login screen, providing SSO is enabled between the platform and the identity provider. Examples: Facebook, Google. SSO must already be enabled between the platform and the identity provider; the System Admin must have already created the OpenID Connect domain and enabled it for login.<!-- #EndLibraryItem --></p>
+<p>Allows a user to log in by authenticating with an external identity provider that has its own login screen, providing SSO is enabled between the platform and the identity provider. Examples: Facebook, Google. SSO must already be enabled between the platform and the identity provider; the System Admin must have already created the OpenID Connect domain and enabled it for login.</p>
 <p>For example, this operation is generally used when SSO login uses a redirect URL to accomplish the login. In this case, the Domain ID is sent as a query or path parameter rather than POST data.</p>
 <p class="apidoc_note"><strong>Note</strong>: Login domains might support SSO login via POST or GET. For example, an OpenID Connect Relying Party domain might support a response mode of query, fragment, or form_post. If the domain supports form_post, <span class="apidoc_code">POST&#160;/api/login/ssoLogin</span> is used. If the domain supports query or fragment, <span class="apidoc_code">GET&#160;/api/login/ssoLogin</span> is used.</p>
 <p>This operation initiates the login process. Other operations might be needed to move the user through the login process including completing any login tasks.</p>
@@ -30,7 +30,7 @@ no-catalog: true
 </ol>
 <p>If the optional finalURL parameter is included, the identity provider also redirects the user to the specified URL once authentication is complete.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: To complete this operation successfully, a user must have valid credentials for the login connector specified in the domain parameter. Note that support of specific login connectors is configurable and is therefore not the same on all platform instances.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -47,7 +47,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -55,7 +56,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/ssologin</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/login/ssologin</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -104,7 +105,7 @@ Accept: application/json</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -210,7 +211,7 @@ Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D09e80883-fcad-11e3-9389-f3b
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#location_response">Location</a></td>
@@ -236,7 +237,7 @@ Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D09e80883-fcad-11e3-9389-f3b
 		<tr>
 			<td>LoginData</td>
 			<td><a href="../obj/o_login_LoginData.htm">LoginData</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_login_LoginData.lbi" -->Contains data associated with a user's login.<!-- #EndLibraryItem --></td>
+			<td>Contains data associated with a user's login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -262,11 +263,11 @@ Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D09e80883-fcad-11e3-9389-f3b
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -278,5 +279,10 @@ Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D09e80883-fcad-11e3-9389-f3b
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

@@ -37,58 +37,58 @@ no-catalog: true
 		<tr>
 			<td>Apps</td>
 			<td><span class="apidoc_code"><a href="../apps/m_apps_saveKeyInfo.htm">POST&#160;/api/apps/versions/{AppVersionID}/keyinfo</a></span></td>
-			<td><p><!-- #BeginLibraryItem "/Library/desc_saveKeyInfo.lbi" -->Adds an app's public key or certificate (for runtime security).<!-- #EndLibraryItem --></p>
+			<td><p>Adds an app's public key or certificate (for runtime security).</p>
 				<p>For an example, see <span class="apidoc_code"><a href="#fileupload_example_apps_savekeyinfo">Apps Service: Save Key Info</a></span> below.</p></td>
 		</tr>
 		<tr>
 			<td>Boards</td>
 			<td><span class="apidoc_code"><a href="../boards/m_boards_addArtifact.htm">POST&#160;/api/boards/items/{BoardItemID}/artifacts</a></span></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_addArtifact.lbi" -->Adds an artifact, such as an uploaded image or file, to be used in the markdown for a Board item that is being edited (subsequent artifact, after the first).<!-- #EndLibraryItem --></td>
+			<td>Adds an artifact, such as an uploaded image or file, to be used in the markdown for a Board item that is being edited (subsequent artifact, after the first).</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>Boards</td>
 			<td><span class="apidoc_code"><a href="../boards/m_boards_addCommentArtifact.htm">POST&#160;/api/boards/items/comments/{CommentID}/artifacts</a></span></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_addCommentArtifact.lbi" -->Adds an artifact, such as an uploaded image or file, to be used in the markdown for a comment that is being edited (subsequent artifact, after the first).<!-- #EndLibraryItem --></td>
+			<td>Adds an artifact, such as an uploaded image or file, to be used in the markdown for a comment that is being edited (subsequent artifact, after the first).</td>
 		</tr>
 		<tr>
 			<td>Boards</td>
 			<td><span class="apidoc_code"><a href="../boards/m_boards_addFirstArtifact.htm">POST&#160;/api/boards/items/artifacts</a></span></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_addFirstArtifact.lbi" --> Adds the first artifact, such as an uploaded image or file, to be used in the markdown for a Board item that is being created.<!-- #EndLibraryItem --></td>
+			<td> Adds the first artifact, such as an uploaded image or file, to be used in the markdown for a Board item that is being created.</td>
 		</tr>
 		<tr>
 			<td>Boards</td>
 			<td><span class="apidoc_code"><a href="../boards/m_boards_addFirstCommentArtifact.htm">POST&#160;/api/boards/items/comments/artifacts</a></span></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_addFirstCommentArtifact.lbi" -->Adds an artifact, such as an uploaded image or file, to be used in the markdown for a comment that is being created (first artifact).<!-- #EndLibraryItem --></td>
+			<td>Adds an artifact, such as an uploaded image or file, to be used in the markdown for a comment that is being created (first artifact).</td>
 		</tr>
 		<tr>
 			<td>Console Resources</td>
 			<td><span class="apidoc_code"><a href="../consoleresource/m_consoleresource_upload.htm">POST&#160;/resources/{path:.*}</a></span></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_consoleresource_upload.lbi" -->Uploads a developer portal resource, such as a stylesheet, to the /resources/ folder structure.<!-- #EndLibraryItem --></td>
+			<td>Uploads a Community Manager developer portal resource, such as a stylesheet, to the /resources/ folder structure.</td>
 		</tr>
 		<tr>
 			<td>Content</td>
 			<td><span class="apidoc_code"><a href="../content/m_content_upload.htm">POST&#160;/content/{path}</a></span> (with specific content-type)</td>
-			<td><!-- #BeginLibraryItem "/Library/desc_content_upload.lbi" --> Uploads a single file of existing content to the platform, or uploads a ZIP file of existing content and unzips it to the specified location.<!-- #EndLibraryItem --></td>
+			<td> Uploads a single file of existing content to the platform, or uploads a ZIP file of existing content and unzips it to the specified location.</td>
 		</tr>
 		<tr>
 			<td>Dropbox</td>
 			<td><span class="apidoc_code"><a href="../dropbox/m_dropbox_addPicture.htm">POST&#160;/api/dropbox/pictures</a></span></td>
-			<td><p><!-- #BeginLibraryItem "/Library/desc_addPicture.lbi" -->
-        Uploads an image, for a resource such as a user profile, to the Dropbox.<!-- #EndLibraryItem --></p>
+			<td><p>
+        Uploads an image, for a resource such as a user profile, to the Dropbox.</p>
 				<p>For an example, see <span class="apidoc_code"><a href="#fileupload_example_dropbox_addpicture">Dropbox Service: Add Picture</a></span> below.</p></td>
 		</tr>
 		<tr>
 			<td>Tenant Administration</td>
 			<td><span class="apidoc_code"><a href="../tenantadmin/m_tenantadmin_importPackage.htm">POST&#160;/api/tenants/{FedmemberID}/packages</a></span></td>
-			<td><p><!-- #BeginLibraryItem "/Library/desc_importPackage.lbi" -->Imports information that was previously exported from a platform version.<!-- #EndLibraryItem --></p>
+			<td><p>Imports information that was previously exported from a platform version.</p>
 				<p>For an example, see <span class="apidoc_code"><a href="#fileupload_example_tenant_import">Tenant Administration Service: Import Package</a></span> below.</p></td>
 		</tr>
 		<tr>
 			<td>Workflow</td>
 			<td><span class="apidoc_code"><a href="../workflow/m_workflow_addWorkloadDefinitionConfiguration.htm">POST&#160;/api/workflow/definitions</a></span></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_addWorkloadDefinitionConfiguration.lbi" -->Uploads a new workflow definition file to the developer portal.<!-- #EndLibraryItem --></td>
+			<td>Uploads a new workflow definition file to the Community Manager developer portal.</td>
 		</tr>
 	</tbody>
 </table>
@@ -101,7 +101,8 @@ no-catalog: true
 <pre>POST http://{hostname}/api/apps/versions/9vQtwz5cVjB4Lb0tW7YDoRGm.acmepaymentscorp/keyinfo?wrapInHTML=true HTTP/1.1
 Host: {hostname}
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2Cclaimed_id%3Durn%3Aacmepaymentscorp%3Auser%3Aacmepaymentscorp%3A7222fcd1-fe4b-4b80-ad25-ec86981c7962%2CissueTime%3D1421701444022%2CexpirationTime%3D1421703244005%2CAttributesIncluded%3Dfalse%2CUserFDN%3D7222fcd1-fe4b-4b80-ad25-ec86981c7962%252Eacmepaymentscorp%2CUserName%3Dadminacmepaymentscorp%2Csig%3DNE567Vbh1ZdIE1Yx6HlnQF9zFwy2-xKqq-EquYiugI-k2_jzUR9rvV0xkyLDg8_CBL68dAqCfq1VXSghLjvFV2nreg4WLlR-mhBrOa209ZT7pgryPCTg-wlEL3e_zq-9lsoGxPPRSyCvRXqwzurhLLM_9GWokQoZUYsXrTP6Jx8; Csrf-Token_acmepaymentscorp=TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2CexpirationTime%3D1421703244028%2CUserFDN%3D7222fcd1-fe4b-4b80-ad25-ec86981c7962%252Eacmepaymentscorp%2Csig%3DIid5J_crulvfYk5hHYGUt6fCbZvpp4nACDBA7JIqIMGbDZXaaItzW87rrPxPBazCQ-N8BacJcrEsib8bWmeGNZPqWgtXiFtRZcHBakb5zyFwLuSCE9RQK5lu8mg2iFfRH9Cm_ERMqGUW2q28agiMT36tJWZ6SN9F8-JG6tRnYjA
+Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2Cclaimed_id%3Durn%3Aacmepaymentscorp%3Auser%3Aacmepaymentscorp%3A7222fcd1-fe4b-4b80-ad25-ec86981c7962%2CissueTime%3D1421701444022%2CexpirationTime%3D1421703244005%2CAttributesIncluded%3Dfalse%2CUserFDN%3D7222fcd1-fe4b-4b80-ad25-ec86981c7962%252Eacmepaymentscorp%2CUserName%3Dadminacmepaymentscorp%2Csig%3DNE567Vbh1ZdIE1Yx6HlnQF9zFwy2-xKqq-EquYiugI-k2_jzUR9rvV0xkyLDg8_CBL68dAqCfq1VXSghLjvFV2nreg4WLlR-mhBrOa209ZT7pgryPCTg-wlEL3e_zq-9lsoGxPPRSyCvRXqwzurhLLM_9GWokQoZUYsXrTP6Jx8; Csrf-Token_rcoaless=TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2CexpirationTime%3D1421703244028%2CUserFDN%3D7222fcd1-fe4b-4b80-ad25-ec86981c7962%252Eacmepaymentscorp%2Csig%3DIid5J_crulvfYk5hHYGUt6fCbZvpp4nACDBA7JIqIMGbDZXaaItzW87rrPxPBazCQ-N8BacJcrEsib8bWmeGNZPqWgtXiFtRZcHBakb5zyFwLuSCE9RQK5lu8mg2iFfRH9Cm_ERMqGUW2q28agiMT36tJWZ6SN9F8-JG6tRnYjA
+X-Csrf-Token_acmepaymentscorp":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...
 Content-Type: multipart/form-data; boundary=---------------------------138372179114855
 
 -----------------------------138372179114855
@@ -147,7 +148,7 @@ TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2CexpirationTime%3D1421703244028%
 <h4>Settings in Postman</h4>
 <p>The example below uses the <span class="apidoc_code"><a href="../dropbox/m_dropbox_addPicture.htm">POST&#160;/api/dropbox/pictures</a></span> operation.</p>
 <p><strong>Headers</strong></p>
-<p><strong> </strong>No settings are required in the Headers section; the values are set in the Body section.</p>
+<p><strong></strong> No settings are required in the Headers section; the values are set in the Body section.</p>
 <p><img src="../assets/fileupload_dropbox_addPicture_01.jpg" alt="Add Picture in Postman: Headers" /></p>
 
 <p><strong>Body</strong></p>
@@ -192,7 +193,7 @@ TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2CexpirationTime%3D1421703244028%
 
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -204,5 +205,10 @@ TokenID%3Db1f87d98-a01e-11e4-a4c8-c152b79a9472%2CexpirationTime%3D1421703244028%
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

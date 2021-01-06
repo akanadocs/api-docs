@@ -17,9 +17,9 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getActions.lbi" -->Returns information about workflow actions that are valid for the specified resource.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must have visibility of the specified resource.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>Returns information about workflow actions that are valid for the specified resource.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must have visibility of the specified resource.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -36,7 +36,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -44,7 +45,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->workflow/objects/{ObjectID}/actions</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/workflow/objects/{ObjectID}/actions</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -52,8 +53,12 @@ no-catalog: true
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the valid workflow actions for the specified resource.</p>
-<p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->workflow/objects/discussion10121.acmepaymentscorp/actions</pre>
+<p><strong>Request URL #1</strong></p>
+<p>With no options selected. In this example, the object is a discussion.</p>
+<pre>https://{hostname}/api/workflow/objects/discussion10121.acmepaymentscorp/actions</pre>
+<p id="samplerequest_02"><strong>Request URL #2</strong></p>
+<p>With optional parameter to include reserved actions in the response. For the response, see <a href="#id_sampleresponse_4">Sample response body #4</a>. In this example, the object is an app version.</p>
+<pre>https://{hostname}/api/workflow/objects/4pg3oSwgEuGZruzwORllQY8XsYYo4KBMMqcnOjru.rcoaless/actions?IncludeReservedActions</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
 </pre>
@@ -76,20 +81,19 @@ no-catalog: true
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -186,8 +190,7 @@ no-catalog: true
 
 <p id="id_sampleresponse_3"><strong>Sample response body #3</strong></p>
 <p>In example #2 above, the API version was approved using the <span class="apidoc_code"><a href="../apis/m_apis_executeWorkflowAction.htm">POST&#160;/api/apis/versions/{ApiVersionID}/action</a></span> operation. The valid workflow actions for the API version are now <strong>Approve</strong> or <strong>Reject</strong>, as shown below.</p>
-
-	<pre>{
+<pre>{
   "channel": {
     "title": "v1",
     "WorkflowObject": {
@@ -210,6 +213,51 @@ no-catalog: true
     ]
   }
 }</pre>
+
+<p id="id_sampleresponse_4"><strong>Sample response body #4</strong></p>
+<p>In this example, for app version workflow, the optional parameter <strong>IncludeReservedActions</strong> was included in the request (see <a href="#samplerequest_02">Request URL #2</a>), so reserved actions are included in the response.</p>
+<pre>{
+  "channel" : {
+    "title" : "v1",
+    "WorkflowObject" : {
+      "WorkflowDefinitionKey" : "26ff0d25-2176-4e11-82d1-5acb3078cef3",
+      "State" : [ "Setup" ]
+    },
+    "item" : [ {
+      "guid" : {
+        "value" : "@Modify"
+      }
+    }, {
+      "guid" : {
+        "value" : "@Delete"
+      }
+    }, {
+      "guid" : {
+        "value" : "@KeyInfoSaved"
+      }
+    }, {
+      "guid" : {
+        "value" : "@KeyInfoRemoved"
+      }
+    }, {
+      "guid" : {
+        "value" : "@RegeneratedSecret"
+      }
+    }, {
+      "guid" : {
+        "value" : "reserved-allow-cert-upload"
+      }
+    }, {
+      "guid" : {
+        "value" : "reserved-connect-to-api.Sandbox"
+      }
+    }, {
+      "guid" : {
+        "value" : "reserved-connect-to-api.Production"
+      }
+    } ]
+  }
+}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -227,11 +275,11 @@ no-catalog: true
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -241,7 +289,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Response Body" -->
 <h2 id="responsebody">Response Body</h2>
-<p><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" --> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> Each item in the channel represents a valid action for the resource, and includes the information listed below.</p>
+<p> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0. Each item in the channel represents a valid action for the resource, and includes the information listed below.</p>
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -285,7 +333,7 @@ no-catalog: true
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -294,11 +342,11 @@ no-catalog: true
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -310,5 +358,10 @@ no-catalog: true
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

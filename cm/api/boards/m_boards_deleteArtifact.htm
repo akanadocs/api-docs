@@ -17,9 +17,9 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_deleteArtifact.lbi" -->Deletes the specified artifact for the specified BoardItemID.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must be an authorized user for the specific Board item artifact. For more information about how authorization and visibility work for Board operations, see <a href="../aaref/Ref_BoardsInThePortal.htm">Boards in the developer portal</a>.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>Deletes the specified artifact for the specified BoardItemID.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must be an authorized user for the specific Board item artifact. For more information about how authorization and visibility work for Board operations, see <a href="../aaref/Ref_BoardsInThePortal.htm">Boards in the Community Manager developer portal</a>.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -36,7 +36,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">DELETE</p>
 <!-- InstanceEndEditable -->
@@ -44,7 +45,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->boards/items/{BoardItemID}/artifacts/{FileName}</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/boards/items/{BoardItemID}/artifacts/{FileName}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -53,12 +54,12 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to delete an image file that was uploaded to the content window as part of adding a board item with markup support.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->boards/items/artifacts/cad5266e-ef52-4961-b2f4-00ebf80b615a.acmepaymentscorp/img_dollars.jpg</pre>
+<pre>https://{hostname}/api/boards/items/artifacts/cad5266e-ef52-4961-b2f4-00ebf80b615a.acmepaymentscorp/img_dollars.jpg</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>DELETE http://{hostname}/api/boards/items/artifacts/cad5266e-ef52-4961-b2f4-00ebf80b615a.acmepaymentscorp/img_dollars.jpg HTTP/1.0
 Host: {hostname}
 Accept: application/json, text/javascript, */*; q=0.01
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -78,11 +79,11 @@ Accept: application/json, text/javascript, */*; q=0.01
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -108,7 +109,7 @@ Accept: application/json, text/javascript, */*; q=0.01
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_BoardItemID.lbi" -->The unique ID for a specific Board item. For example, if it is an API board, it is the APIID. For information about how to find a BoardItemID, see <a href="../aaref/Ref_IDsOnThePlatform.htm#id_boarditemid">Board Item ID</a>.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific Board item. For example, if it is an API board, it is the APIID. For information about how to find a BoardItemID, see <a href="../aaref/Ref_IDsOnThePlatform.htm#id_boarditemid">Board Item ID</a>.</td>
 		</tr>
 		<tr>
 			<td>FileName</td>
@@ -145,25 +146,6 @@ Expires: Thu, 21 May 2015 18:03:57 GMT</pre>
   &quot;UriPath&quot; : &quot;/api/boards/items/cad5266e-ef52-4961-b2f4-00ebf80b615a.acmepaymentscorp/img_dollars.jpg&quot;
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/xml</strong></p>
-<pre>HTTP/1.1 200 OK
-Content-Type: application/xml
-Expires: Thu, 21 May 2015 19:54:17 GMT</pre>
-<p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;BoardItemArtifact xmlns=&quot;http://soa.com/xsd/board/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/resource/1.0&quot; 
-xmlns:ns3=&quot;http://soa.com/xsd/comment/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/user/1.0&quot; 
-xmlns:ns5=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns6=&quot;http://a9.com/-/spec/opensearch/1.1/&quot; 
-xmlns:ns7=&quot;http://soa.com/xsd/alert/1.0&quot; xmlns:ns8=&quot;http://soa.com/xsd/api/1.0&quot; 
-xmlns:ns9=&quot;http://soa.com/xsd/contract/1.0&quot; xmlns:ns10=&quot;http://soa.com/xsd/ticket/1.0&quot; 
-xmlns:ns11=&quot;http://soa.com/xsd/app/1.0&quot; xmlns:ns12=&quot;http://soa.com/xsd/discussion/1.0&quot; 
-xmlns:ns13=&quot;http://soa.com/xsd/review/1.0&quot;&gt;
-  &lt;ContextID&gt;4077d933-34ae-4d0c-b0ef-790f67695cf0.acmepaymentscorp&lt;/ContextID&gt;
-  &lt;FileName&gt;img_dollars_01.jpg&lt;/FileName&gt;
-  &lt;BaseUri&gt;http://{hostname}&lt;/BaseUri&gt;
-  &lt;UriPath&gt;/api/boards/items/4077d933-34ae-4d0c-b0ef-790f67695cf0.acmepaymentscorp/img_dollars_01.jpg&lt;/UriPath&gt;
-&lt;/BoardItemArtifact&gt;</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
@@ -180,11 +162,11 @@ xmlns:ns13=&quot;http://soa.com/xsd/review/1.0&quot;&gt;
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -206,7 +188,7 @@ xmlns:ns13=&quot;http://soa.com/xsd/review/1.0&quot;&gt;
 		<tr>
 			<td>BoardItemArtifact</td>
 			<td><a href="../obj/o_boards_BoardItemArtifact.htm">BoardItemArtifact</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_boards_BoardItemArtifact.lbi" -->Contains information about an image or other artifact associated with a Board item. Applicable only if the DescriptionMediaType for the Board item is text/markdown.<!-- #EndLibraryItem --></td>
+			<td>Contains information about an image or other artifact associated with a Board item. Applicable only if the DescriptionMediaType for the Board item is text/markdown.</td>
 		</tr>
 	</tbody>
 </table>
@@ -227,7 +209,7 @@ xmlns:ns13=&quot;http://soa.com/xsd/review/1.0&quot;&gt;
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -236,11 +218,11 @@ xmlns:ns13=&quot;http://soa.com/xsd/review/1.0&quot;&gt;
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -252,5 +234,10 @@ xmlns:ns13=&quot;http://soa.com/xsd/review/1.0&quot;&gt;
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

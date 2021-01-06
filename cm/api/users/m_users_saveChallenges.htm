@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Save User Challenges | Users Service | Akana API Platform API
-description:  Adds or updates information about the security <a href="../Ref_Glossary_CommunityPlatform.htm#gl_challengequestion">challenge questions</a> and answers for a specific user.
+description: Adds or updates information about the security <a href="../Ref_Glossary_CommunityPlatform.htm#gl_challengequestion">challenge questions</a> and answers for a specific user.
 product: cm
 category: ref
 nav-title: Save User Challenges 
@@ -17,12 +17,12 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_saveChallenges_Users.lbi" -->
-Adds or updates information about the security <a href="../Ref_Glossary_CommunityPlatform.htm#gl_challengequestion">challenge questions</a> and answers for a specific user.<!-- #EndLibraryItem --></p>
+<p>
+Adds or updates information about the security <a href="../Ref_Glossary_CommunityPlatform.htm#gl_challengequestion">challenge questions</a> and answers for a specific user.</p>
 <p>Note that if constraints are set for the answers to the security challenge questions, the answers must meet the constraints or the request will fail.</p>
 <p>To check what security questions are valid, and what constraints are set, you can run the <span class="apidoc_code"><a href="../businesses/m_businesses_getChallenges.htm">GET&#160;/api/businesses/{BusinessID}/challenges</a></span> operation. If no constraints are returned, none are set.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_self">Self</a> (logged in) or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> (for any user).</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_self">Self</a> (logged in) or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> (for any user).</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -39,7 +39,8 @@ Adds or updates information about the security <a href="../Ref_Glossary_Communit
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">PUT</p>
 <!-- InstanceEndEditable -->
@@ -47,7 +48,7 @@ Adds or updates information about the security <a href="../Ref_Glossary_Communit
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/{UserID}/challenges</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/users/{UserID}/challenges</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -56,35 +57,28 @@ Adds or updates information about the security <a href="../Ref_Glossary_Communit
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to update the security questions and answers for the specified user.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/eceffbe3-3386-495b-80d3-7526f0eb0edc.acmepaymentscorp/challenges</pre>
+<pre>https://{hostname}/api/users/eceffbe3-3386-495b-80d3-7526f0eb0edc.acmepaymentscorp/challenges</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>X-Csrf-Token_acmepaymentscorp
 Accept: application/vnd.soa.v72+json
 Content-Type: application/vnd.soa.v72+json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body: application/vnd.soa.v72+json</strong></p>
-<pre>{<br />  &quot;UserIdentificationChallenge&quot; : [ {<br />    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,<br />    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.city.birth&quot;,<br />    &quot;Answer&quot; : &quot;Dubai&quot;<br />  }, {<br />    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,<br />    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.color&quot;,<br />    &quot;Answer&quot; : &quot;Blue&quot;<br />  }, {<br />    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,<br />    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.pet&quot;,<br />    &quot;Answer&quot; : &quot;Bucktastic&quot;<br />  } ]<br />}</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample request body: application/vnd.soa.v72+xml</strong></p>
-<pre>
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;UserIdentificationChallenges xmlns=&quot;http://soa.com/xsd/user/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot;&gt;
-  &lt;UserIdentificationChallenge&gt;
-    &lt;UserID&gt;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&lt;/UserID&gt;
-    &lt;ChallengeCode&gt;com.soa.challenge.question.city.birth&lt;/ChallengeCode&gt;
-    &lt;Answer&gt;Dubai&lt;/Answer&gt;
-  &lt;/UserIdentificationChallenge&gt;
-  &lt;UserIdentificationChallenge&gt;
-    &lt;UserID&gt;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&lt;/UserID&gt;
-    &lt;ChallengeCode&gt;com.soa.challenge.question.color&lt;/ChallengeCode&gt;
-    &lt;Answer&gt;Blue&lt;/Answer&gt;
-  &lt;/UserIdentificationChallenge&gt;
-  &lt;UserIdentificationChallenge&gt;
-    &lt;UserID&gt;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&lt;/UserID&gt;
-    &lt;ChallengeCode&gt;com.soa.challenge.question.pet&lt;/ChallengeCode&gt;
-    &lt;Answer&gt;Bucktastic&lt;/Answer&gt;
-  &lt;/UserIdentificationChallenge&gt;
-&lt;/UserIdentificationChallenges&gt;</pre>
+<pre>{
+  &quot;UserIdentificationChallenge&quot; : [ {
+    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,
+    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.city.birth&quot;,
+    &quot;Answer&quot; : &quot;Dubai&quot;
+  }, {
+    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,
+    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.color&quot;,
+    &quot;Answer&quot; : &quot;Blue&quot;
+  }, {
+    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,
+    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.pet&quot;,
+    &quot;Answer&quot; : &quot;Bucktastic&quot;
+  } ]
+}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -102,27 +96,26 @@ Content-Type: application/vnd.soa.v72+json
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><p>Any one of the following media types is valid for the request Content-Type:</p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+				<p><strong>application/json</strong> or <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong> or <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong> or <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong> or <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -148,15 +141,15 @@ Content-Type: application/vnd.soa.v72+json
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_UserID.lbi" -->The unique ID for a specific user.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific user.</td>
 		</tr>
 		<tr>
 			<td>UserIdentificationChallenges</td>
 			<td>Body</td>
 			<td><a href="../obj/o_users_UserIdentificationChallenges.htm">UserIdentificationChallenges</a></td>
 			<td>Required</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_users_UserIdentificationChallenges.lbi" -->
-        Contains information about one or more user identification challenge questions applicable to a specific user, and in some cases the answers also.<!-- #EndLibraryItem --></p>
+			<td><p>
+        Contains information about one or more user identification challenge questions applicable to a specific user, and in some cases the answers also.</p>
 				<p><strong>Note</strong>: The answers to the challenge questions must meet any restrictions that are placed on them. Otherwise, the request will fail. If you are not sure what the restrictions are, you can run the <span class="apidoc_code"><a href="../businesses/m_businesses_getChallenges.htm">GET&#160;/api/businesses/{BusinessID}/challenges</a></span> operation. The rules are returned in the response.</p></td>
 		</tr>
 	</tbody>
@@ -180,30 +173,21 @@ Content-Type: application/vnd.soa.v72+json
 Content-Type: application/vnd.soa.v72+json
 Expires: Tue, 06 Jan 2015 14:43:08 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v72+json</strong></p>
-<pre>{<br />  &quot;UserIdentificationChallenge&quot; : [ {<br />    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,<br />    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.city.birth&quot;,<br />    &quot;Answer&quot; : &quot;Dubai&quot;<br />  }, {<br />    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,<br />    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.color&quot;,<br />    &quot;Answer&quot; : &quot;Blue&quot;<br />  }, {<br />    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,<br />    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.pet&quot;,<br />    &quot;Answer&quot; : &quot;Bucktastic&quot;<br />  } ]<br />}</pre>
-<p><strong>Sample response headers: application/vnd.soa.v72+xml</strong></p>
-<pre>Status Code: 200 OK
-Content-Type: application/vnd.soa.v72+xml
-Expires: Tue, 06 Jan 2015 14:43:45 GMT</pre>
-<p><strong>Sample response body: application/vnd.soa.v72+xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;UserIdentificationChallenges xmlns=&quot;http://soa.com/xsd/user/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot;&gt;
-  &lt;UserIdentificationChallenge&gt;
-    &lt;UserID&gt;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&lt;/UserID&gt;
-    &lt;ChallengeCode&gt;com.soa.challenge.question.city.birth&lt;/ChallengeCode&gt;
-    &lt;Answer&gt;Dubai&lt;/Answer&gt;
-  &lt;/UserIdentificationChallenge&gt;
-  &lt;UserIdentificationChallenge&gt;
-    &lt;UserID&gt;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&lt;/UserID&gt;
-    &lt;ChallengeCode&gt;com.soa.challenge.question.color&lt;/ChallengeCode&gt;
-    &lt;Answer&gt;Blue&lt;/Answer&gt;
-  &lt;/UserIdentificationChallenge&gt;
-  &lt;UserIdentificationChallenge&gt;
-    &lt;UserID&gt;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&lt;/UserID&gt;
-    &lt;ChallengeCode&gt;com.soa.challenge.question.pet&lt;/ChallengeCode&gt;
-    &lt;Answer&gt;Bucktastic&lt;/Answer&gt;
-  &lt;/UserIdentificationChallenge&gt;
-&lt;/UserIdentificationChallenges&gt;</pre>
+<pre>{
+  &quot;UserIdentificationChallenge&quot; : [ {
+    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,
+    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.city.birth&quot;,
+    &quot;Answer&quot; : &quot;Dubai&quot;
+  }, {
+    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,
+    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.color&quot;,
+    &quot;Answer&quot; : &quot;Blue&quot;
+  }, {
+    &quot;UserID&quot; : &quot;9e4351af-c642-4992-89e0-262a9bfaf223.acmepaymentscorp&quot;,
+    &quot;ChallengeCode&quot; : &quot;com.soa.challenge.question.pet&quot;,
+    &quot;Answer&quot; : &quot;Bucktastic&quot;
+  } ]
+}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -221,10 +205,10 @@ Expires: Tue, 06 Jan 2015 14:43:45 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -246,8 +230,8 @@ Expires: Tue, 06 Jan 2015 14:43:45 GMT</pre>
 		<tr>
 			<td>UserIdentificationChallenges</td>
 			<td><a href="../obj/o_users_UserIdentificationChallenges.htm">UserIdentificationChallenges</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_users_UserIdentificationChallenges.lbi" -->
-Contains information about one or more user identification challenge questions applicable to a specific user, and in some cases the answers also.<!-- #EndLibraryItem --></td>
+			<td>
+Contains information about one or more user identification challenge questions applicable to a specific user, and in some cases the answers also.</td>
 		</tr>
 	</tbody>
 </table>
@@ -266,11 +250,11 @@ Contains information about one or more user identification challenge questions a
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
-			<td><!-- #BeginLibraryItem "/Library/http_400.lbi" -->Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.<!-- #EndLibraryItem -->For example, you might get this response if you send malformed XML in your request, or if you use the wrong HTTP verb.</td>
+			<td>Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you send malformed XML in your request, or if you use the wrong HTTP verb.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -281,11 +265,11 @@ Contains information about one or more user identification challenge questions a
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -297,5 +281,10 @@ Contains information about one or more user identification challenge questions a
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

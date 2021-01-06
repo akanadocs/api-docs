@@ -13,7 +13,7 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">BusinessSecuritySettings Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_businesses_BusinessSecuritySettings.lbi" -->Contains information about the security settings for a business.<!-- #EndLibraryItem --></p>
+<p>Contains information about the security settings for a business.</p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
@@ -94,13 +94,13 @@ no-catalog: true
 		<tr>
 			<td>CaptchaSiteKey</td>
 			<td>String</td>
-			<td><p>The unique key for the account being used for CAPTCHA functionality on the developer portal.</p>
+			<td><p>The unique key for the account being used for CAPTCHA functionality on the Community Manager developer portal.</p>
 				<p>Required in request if <strong>CaptchaSupport</strong> is enabled.</p></td>
 		</tr>
 		<tr>
 			<td>CaptchaSiteSecret</td>
 			<td>String</td>
-			<td><p>The site secret value for the account being used for CAPTCHA functionality on the developer portal. Required in request if <strong>CaptchaSupport</strong> is enabled.</p>
+			<td><p>The site secret value for the account being used for CAPTCHA functionality on the Community Manager developer portal. Required in request if <strong>CaptchaSupport</strong> is enabled.</p>
 				<p>Not returned in responses.</p></td>
 		</tr>
 		<tr>
@@ -133,12 +133,46 @@ no-catalog: true
 					<li>application/json image/jpg application/pdf</li>
 			</ul></td>
 		</tr>
+<tr>
+<td><p>WhiteListKeywordsSupport</p>
+<p>/</p>
+<p>WhiteListKeywords</p>
+<p><strong>Valid in version: 2019.1.11</strong></p></td>
+<td>String</td>
+<td><p>Indicates whether an allowlist is enforced.</p>
+<p>A comma-delimited list of keywords that are disallowed in certain input fields, such as app, API, and group <strong>Name</strong>, <strong>Summary</strong>, and <strong>Description</strong> fields and forum discussions and tickets, to help prevent <a href="../Ref_Glossary_CommunityPlatform.htm#gl_crosssitescripting">cross-site scripting (XSS)</a> attacks.</p>
+<p>&#160;</p>
+<p>If <strong>WhiteListKeywordsSupport</strong> is enabled, only characters on the allowlist are accepted in certain input fields, such as app and API Name, Summary, and Description, for cross-site scripting prevention.</p>
+<p>You can also  define a list of additional characters that are allowed, in addition to platform defaults, when the allowlist is enforced. Default characters allowed are:</p>
+<ul>
+<li>alphanumeric characters (a&#8211;z, A&#8211;Z, 0&#8211;9)</li>
+<li>comma (,)</li>
+<li>period (.)</li>
+<li>hyphen (-)</li>
+<li>space ( )</li>
+</ul>
+<p>Specify additional characters, without spaces. Example: <strong>()/</strong> allows these three characters in addition to the defaults.</p>
+<p>Default value:</p>
+<ul>
+<li><strong>Version 2019.1.11 to 2019.1.18</strong>: Enforce Allowlist (previously called Enforce Whitelisting) is disabled by default, and all characters are allowed.</li>
+<li><strong>Version 2019.1.19 and later</strong>: Enforce Allowlist  is enabled by default, with the following list of additional characters allowed:
+<pre>/#[]()'&quot;;?!_&lt;=&gt;@`~&amp;</pre>
+</li>
+</ul></td>
+</tr>
+<tr>
+<td><p>AllowedFileTypesStrictPolicy</p>
+<p><strong>Valid in version: 2020.1.2 and later</strong></p></td>
+<td>String</td>
+<td><p>Only applicable if the <strong>AllowedFileTypes</strong> setting is enabled. Optional security feature to apply stricter rules for limiting file types.</p>
+<p>With strict policy enabled, only the exact specified media types are allowed. If this setting is disabled, supertypes of the allowed file types are allowed. For example, if text/plain is allowed, then html, application/json, and other text-based media types are allowed.</p></td>
+</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -150,5 +184,10 @@ no-catalog: true
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

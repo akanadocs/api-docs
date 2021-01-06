@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Example - Using the CSRF header | How-To Material | Akana API Platform API
-description: This exercise uses the example of adding a group to demonstrate how to put together the CSRF header that you'll need for using the developer portal API (POST, PUT, and DELETE operations).
+description: This exercise uses the example of adding a group to demonstrate how to put together the CSRF header that you'll need for using the Community Manager developer portal API (POST, PUT, and DELETE operations).
 product: cm
 category: ref
 nav-title: Example - Using the CSRF header 
@@ -13,14 +13,14 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">Example: Using the CSRF header</h1>
-<p>This exercise uses the example of adding a group to demonstrate how to put together the CSRF header that you'll need for using the developer portal API (POST, PUT, and DELETE operations).</p>
+<p>This exercise uses the example of adding a group to demonstrate how to put together the CSRF header that you'll need for using the Community Manager developer portal API (POST, PUT, and DELETE operations).</p>
 <p>It includes:</p>
 <ul>
 	<li><a href="#s01">Overview</a></li>
 	<li><a href="#s02">Instructions</a></li>
 	<li><a href="#s03">Training video</a></li>
 </ul>
-<p><strong>Note</strong>: The requirement for the CSRF header is determined by the developer portal security settings. It could be configured to be required for all operations, or not required at all. By default, the CSRF header is not required for GET operations, but is required for all other operations.</p>
+<p><strong>Note</strong>: The requirement for the CSRF header is determined by the Community Manager developer portal security settings. It could be configured to be required for all operations, or not required at all. By default, the CSRF header is not required for GET operations, but is required for all other operations.</p>
 
 
 <h2 id="s01">Overview</h2>
@@ -34,12 +34,12 @@ no-catalog: true
 
 <h2 id="s02">Instructions</h2>
 <p>Follow the detailed instructions below.</p>
-<h4>To use the CSRF header to add a group in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;using the API</h4>
+<h4>To use the CSRF header to add a group in the Akana API Platform using the API</h4>
 <ol>
 	<li>Log in via the API, <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&#160;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
 		<ul>
 			<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --></span>login</strong></li>
+			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>login</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
 			<li>Request Body:
@@ -54,7 +54,7 @@ no-catalog: true
 	<li>Add the group, using the <span class="apidoc_code"><a href="../groups/m_groups_addGroup.htm">POST&#160;/api/groups</a></span> operation. In your API call, use the values below, modifying the URL path as needed, and filling your own values  for all fields in the Request Body (URL encoding not needed). Tags are optional, but all other values are required.
 		<ul>
 					<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --></span>groups</strong></li>
+			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>groups</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
 			<li>Request Body (this example includes the optional website address, but you can delete that value, keeping the line with an empty value):
@@ -81,7 +81,7 @@ no-catalog: true
 	<li>Send the API call. You will get a 200 response.</li>
 	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_endSession.htm">GET&#160;/api/login/endsession</a></span> operation. Use the following values:
 		<ul>
-			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</strong></li>
+			<li>URL: <strong>https://{hostname}/api/login/endsession</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 		</ul>
 	</li>
@@ -98,7 +98,7 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -110,5 +110,9 @@ no-catalog: true
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+</div>

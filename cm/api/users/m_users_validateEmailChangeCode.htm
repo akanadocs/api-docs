@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Validate Email Change Code | Users Service | Akana API Platform API
-description:  Validates the email change code that a user provides. The code is generated, and sent to the user, in response to a request to change the email address on the account, whether initiated by the user or the Site Admin.
+description: Validates the email change code that a user provides. The code is generated, and sent to the user, in response to a request to change the email address on the account, whether initiated by the user or the Site Admin.
 product: cm
 category: ref
 nav-title: Validate Email Change Code 
@@ -17,10 +17,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_validateEmailChangeCode.lbi" -->
-Validates the email change code that a user provides. The code is generated, and sent to the user, in response to a request to change the email address on the account, whether initiated by the user or the Site Admin.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --></p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>
+Validates the email change code that a user provides. The code is generated, and sent to the user, in response to a request to change the email address on the account, whether initiated by the user or the Site Admin.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -37,7 +37,8 @@ Validates the email change code that a user provides. The code is generated, and
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
 <!-- InstanceEndEditable -->
@@ -45,7 +46,7 @@ Validates the email change code that a user provides. The code is generated, and
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/validateEmailChangeCode</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/users/validateEmailChangeCode</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -54,12 +55,12 @@ Validates the email change code that a user provides. The code is generated, and
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to validate the email change code and therefore change the email address for the user. The change code is issued by the system in response to the <span class="apidoc_code"><a href="m_users_sendEmailChangeCode.htm">POST&#160;/api/users/{UserID}/sendEmailChangeCode</a></span> operation.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/validateEmailChangeCode</pre>
+<pre>https://{hostname}/api/users/validateEmailChangeCode</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST /api/users/validateEmailChangeCode
 Accept: application/json
 Content-Type: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   "changeCode":"pKhdsgdTvdL6DwI7gWgRCZrK8AUzc1I4sH6W9pCRslY6NkcMscqpzapHV5rIxbKnfKuq51EOIhqVTWsigIerWx_hdTy8iwiNq6gvKRdpK6OIlw-HaZ-jk1D4FTZctoiLLzrFl0mkKqlNrCy4iM91Xg65Zppp6dYSuWQHeZSHvx6dF4Pp0",
@@ -82,21 +83,20 @@ Content-Type: application/json
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><p>Any one of the following media types is valid for the request Content-Type:</p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p></td>
+				<p><strong>application/json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -122,7 +122,7 @@ Content-Type: application/json
 			<td>Body</td>
 			<td><a href="../obj/o_users_EmailChangeRequest.htm">EmailChangeRequest</a></td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_users_EmailChangeRequest.lbi" -->Contains information needed to complete a request to change the email address on a user account.<!-- #EndLibraryItem --></td>
+			<td>Contains information needed to complete a request to change the email address on a user account.</td>
 		</tr>
 	</tbody>
 </table>
@@ -166,7 +166,7 @@ Date: Thu, 18 Apr 2019 17:51:15 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -188,7 +188,7 @@ Date: Thu, 18 Apr 2019 17:51:15 GMT</pre>
 		<tr>
 			<td>EmailChangeResponse</td>
 			<td><a href="../obj/o_users_EmailChangeResponse.htm">EmailChangeResponse</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_users_EmailChangeResponse.lbi" -->Contains information about a completed request to change the email address on a user account.<!-- #EndLibraryItem --></td>
+			<td>Contains information about a completed request to change the email address on a user account.</td>
 		</tr>
 	</tbody>
 </table>
@@ -209,7 +209,7 @@ Date: Thu, 18 Apr 2019 17:51:15 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -218,11 +218,11 @@ Date: Thu, 18 Apr 2019 17:51:15 GMT</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -234,5 +234,10 @@ Date: Thu, 18 Apr 2019 17:51:15 GMT</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

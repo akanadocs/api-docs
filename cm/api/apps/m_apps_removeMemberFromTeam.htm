@@ -17,9 +17,9 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_removeMemberFromTeam_apps.lbi" -->Removes a member from the team for the specified resource.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/Library/permission_modify.lbi" -->Must have Modify permission for the resource. <!-- #EndLibraryItem --><a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>, </strong>or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>Removes a member from the team for the specified resource.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must have Modify permission for the resource. <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>,</strong> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a>.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -36,7 +36,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">DELETE</p>
 <!-- InstanceEndEditable -->
@@ -44,22 +45,22 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/{AppID}/members/{UserID}[?Comment={Comment}]</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apps/{AppID}/members/{UserID}[?Comment={Comment}]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h2 id="samplerequest">Sample Request</h2>
-<p id="id_samplerequest">In the example shown below, user <strong>user10021.acmepaymentscorp</strong> is removed from the app team for <strong>app10017.acmepaymentscorp</strong> with the comment, &quot;Removing inactive members.&quot;</p>
+<p id="id_samplerequest">The example below shows a request to remove a member from the app team.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/app16964.acmepaymentscorp/members/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp?Comment=Removing%20Jonathan%20from%20the%20team%20at%20his%20request.</pre>
+<pre>https://{hostname}/api/apps/7508586f-f637-45b7-b6a9-5949907263c6.acmepaymentscorp/members/0f2b1b02-74be-4201-a489-632bc5f81806.acmepaymentscorp?Comment=Removing%20Jonathan%20from%20the%20team%20at%20his%20request.</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>DELETE&#160;/api/apps/app16964.acmepaymentscorp/members/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp?Comment=Removing%20Jonathan%20from%20the%20team%20at%20his%20request. HTTP/1.1
+<pre>DELETE&#160;/api/apps/7508586f-f637-45b7-b6a9-5949907263c6.acmepaymentscorp/members/0f2b1b02-74be-4201-a489-632bc5f81806.acmepaymentscorp?Comment=Removing%20Jonathan%20from%20the%20team%20at%20his%20request. HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -79,20 +80,19 @@ Content-Type: application/json
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/operation_acceptheader.lbi" -->Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, */*.<!-- #EndLibraryItem --></td>
+			<td>Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, */*.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_any.lbi" --><strong>Any format (*/*)</strong><!-- #EndLibraryItem --></td>
+			<td><strong>Any format (*/*)</strong></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -118,14 +118,14 @@ Content-Type: application/json
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->The unique ID for a specific app.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific app.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_userid">UserID</a></td>
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_UserID.lbi" -->The unique ID for a specific user.<!-- #EndLibraryItem -->In this case it is the user being removed from the team.</td>
+			<td>The unique ID for a specific user.In this case it is the user being removed from the team.</td>
 		</tr>
 		<tr>
 			<td>Comment</td>
@@ -153,9 +153,12 @@ Content-Type: application/json
 <p><strong>Sample response headers</strong></p>
 <pre>HTTP/1.1 200 OK
 Content-Type: text/plain
-Date: Thu, 30 May 2013 00:10:02 GMT</pre>
+Date: Wed, 25 Nov 2020 21:43:29 GMT
+Atmo-Renew-Token: renew
+Set-Cookie: Csrf-Token_rcoaless=TokenID%3D68b24a75-c5dc- ...
+AtmoAuthToken_rcoaless=TokenID%3D68b24a75-c5dc-11e5-b708-...</pre>
 <p><strong>Sample response body</strong></p>
-<pre>957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp</pre>
+<pre>0f2b1b02-74be-4201-a489-632bc5f81806.acmepaymentscorp</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -173,7 +176,11 @@ Date: Thu, 30 May 2013 00:10:02 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+			<td><strong>text/plain</strong></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
+			<td><strong>renew</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -195,7 +202,7 @@ Date: Thu, 30 May 2013 00:10:02 GMT</pre>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_userid">UserID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_UserID.lbi" -->The unique ID for a specific user.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific user.</td>
 		</tr>
 	</tbody>
 </table>
@@ -214,7 +221,7 @@ Date: Thu, 30 May 2013 00:10:02 GMT</pre>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -229,11 +236,11 @@ Date: Thu, 30 May 2013 00:10:02 GMT</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -245,5 +252,10 @@ Date: Thu, 30 May 2013 00:10:02 GMT</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

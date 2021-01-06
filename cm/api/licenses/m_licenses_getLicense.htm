@@ -17,9 +17,9 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getLicense.lbi" -->Returns information about the specified license.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_login.lbi" -->Must be logged in and have permission to view the requested resources. If the user is logged in but doesn't have permission to view certain resources, the operation works, but limited (or empty) results are returned.<!-- #EndLibraryItem --></p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>Returns information about the specified license.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be logged in and have permission to view the requested resources. If the user is logged in but doesn't have permission to view certain resources, the operation works, but limited (or empty) results are returned.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -36,7 +36,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -44,7 +45,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->licenses/{LicenseID}</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/licenses/{LicenseID}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -53,7 +54,7 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for information about the specified license.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->businesses/licenses/d6d35c0f-6a88-49ff-943f-3e2549d1b06c.acmepaymentscorp</pre>
+<pre>https://{hostname}/api/businesses/licenses/d6d35c0f-6a88-49ff-943f-3e2549d1b06c.acmepaymentscorp</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET http://{hostname}/api/businesses/licenses/d6d35c0f-6a88-49ff-943f-3e2549d1b06c.acmepaymentscorp?_=1434480531621 HTTP/1.0
 Host: {hostname}
@@ -77,20 +78,19 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -116,7 +116,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_LicenseID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_license">license</a>.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_license">license</a>.</td>
 		</tr>
 	</tbody>
 </table>
@@ -172,45 +172,6 @@ Content-Type: application/json</pre>
   }
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/xml</strong></p>
-<pre>HTTP/1.1 200 OK
-Date: Tue, 16 Jun 2015 18:51:48 GMT
-Content-Type: application/xml</pre>
-<p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;LicenseDetails xmlns=&quot;http://soa.com/xsd/business/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/legals/1.0&quot; 
-xmlns:ns3=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/api/1.0&quot;&gt;
-  &lt;LicenseID&gt;d6d35c0f-6a88-49ff-943f-3e2549d1b06c.acmepaymentscorp&lt;/LicenseID&gt;
-  &lt;Name&gt;Gold&lt;/Name&gt;
-  &lt;Description&gt;Full access, monthly fee.&lt;/Description&gt;
-  &lt;Visibility&gt;Public&lt;/Visibility&gt;
-  &lt;SandboxAccessAutoApproved&gt;false&lt;/SandboxAccessAutoApproved&gt;
-  &lt;ProductionAccessAutoApproved&gt;false&lt;/ProductionAccessAutoApproved&gt;
-  &lt;LicensePartsDetails&gt;
-    &lt;LicensePartDetails&gt;
-      &lt;Name&gt;09b3d3fb-fc8e-415c-84e2-c8d5f83943f7&lt;/Name&gt;
-      &lt;Resource&gt;
-        &lt;ResourceID&gt;e954361a-e1fd-4fb1-b110-7ff3386a08d3.acmepaymentscorp&lt;/ResourceID&gt;
-        &lt;Name&gt;FullScope&lt;/Name&gt;
-        &lt;ShortDescription&gt;Full access to all operations.&lt;/ShortDescription&gt;
-        &lt;LongDescription&gt;Full access to all operations.&lt;/LongDescription&gt;
-        &lt;Visibility&gt;Public&lt;/Visibility&gt;
-        &lt;SandboxAnonymousAccessAllowed&gt;false&lt;/SandboxAnonymousAccessAllowed&gt;
-        &lt;ProductionAnonymousAccessAllowed&gt;false&lt;/ProductionAnonymousAccessAllowed&gt;
-        &lt;ResourcePath&gt;&lt;/ResourcePath&gt;
-        &lt;OAuthGrantDefaultResource&gt;true&lt;/OAuthGrantDefaultResource&gt;
-        &lt;OAuthGrantUserAuthorizationRequired&gt;true&lt;/OAuthGrantUserAuthorizationRequired&gt;
-        &lt;BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/BusinessID&gt;
-      &lt;/Resource&gt;
-    &lt;/LicensePartDetails&gt;
-  &lt;/LicensePartsDetails&gt;
-  &lt;BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/BusinessID&gt;
-  &lt;Active&gt;true&lt;/Active&gt;
-  &lt;Environment&gt;Production&lt;/Environment&gt;
-  &lt;Environment&gt;Sandbox&lt;/Environment&gt;
-  &lt;AgreementDetails /&gt;
-&lt;/LicenseDetails&gt;</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
@@ -227,11 +188,11 @@ xmlns:ns3=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns4=&quot;http://soa.
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -253,7 +214,7 @@ xmlns:ns3=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns4=&quot;http://soa.
 		<tr>
 			<td>LicenseDetails</td>
 			<td><a href="../obj/o_businesses_LicenseDetails.htm">LicenseDetails</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_businesses_LicenseDetails.lbi" -->Contains details about a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_license">license</a>.<!-- #EndLibraryItem --></td>
+			<td>Contains details about a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_license">license</a>.</td>
 		</tr>
 	</tbody>
 </table>
@@ -274,7 +235,7 @@ xmlns:ns3=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns4=&quot;http://soa.
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -283,11 +244,11 @@ xmlns:ns3=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns4=&quot;http://soa.
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -299,5 +260,10 @@ xmlns:ns3=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns4=&quot;http://soa.
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

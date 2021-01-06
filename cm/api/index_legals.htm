@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Legals Service | Overview | Akana API Platform API
-description:  The Legals service provides the ability to manage legal agreements in the&#160;Akana API Platform. Note that these operations are for managing legal agreements general to the platform, such as end-user license agreements. Operations relating to legal agreements for access to a specific API are part of the <a href="index_apis.htm">APIs</a> service.
+description: The Legals service provides the ability to manage legal agreements in the Akana API Platform. Note that these operations are for managing legal agreements general to the platform, such as end-user license agreements. Operations relating to legal agreements for access to a specific API are part of the <a href="index_apis.htm">APIs</a> service.
 product: cm
 category: ref
 nav-title: Legals Service 
@@ -13,10 +13,10 @@ no-catalog: false
 
 <div class="apidocContent">
 <h1 id="top">Legals Service: Overview</h1>
-<p><!-- #BeginLibraryItem "/Library/descsvc_legals.lbi" -->
-The Legals service provides the ability to manage legal agreements in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->. Note that these operations are for managing legal agreements general to the platform, such as end-user license agreements. Operations relating to legal agreements for access to a specific API are part of the <a href="index_apis.htm">APIs</a> service.<!-- #EndLibraryItem --></p>
+<p>
+The Legals service provides the ability to manage legal agreements in the Akana API Platform. Note that these operations are for managing legal agreements general to the platform, such as end-user license agreements. Operations relating to legal agreements for access to a specific API are part of the <a href="index_apis.htm">APIs</a> service.</p>
 <p>For more information about managing legal agreements, see <a href="aaref/Ref_ManagingLegalAgreementsOnThePlatform.htm">Managing Legal Agreements on the Platform</a>.</p>
-<p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->legals</span></p>
+<p><strong>URL</strong>: <span class="apidoc_code">https://{hostname}/api/legals</span></p>
 <p><span class="apidoc_note"><strong>Note</strong>: For information about IDs used in path parameters, see <a href="aaref/Ref_IDsOnThePlatform.htm">IDs on the Platform</a>.</span></p>
 
 <table class="tableparmsresponse">
@@ -31,40 +31,42 @@ The Legals service provides the ability to manage legal agreements in the&#160;<
 		<tr>
 			<td>accept agreement</td>
 			<td><a href="legals/m_legals_acceptAgreement.htm">POST&#160;/api/legals/agreements</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_acceptAgreement.lbi" -->
-Records the user's acceptance of a legal agreement document for the platform.<!-- #EndLibraryItem --></td>
+			<td>
+Records the user's acceptance of a legal agreement document for the platform.</td>
 		</tr>
 		<tr>
 			<td>create new agreement</td>
 			<td><a href="legals/m_legals_createNewAgreement.htm">POST&#160;/api/legals</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_createNewAgreement_legals.lbi" -->Assigns a document as a legal agreement on the platform, and adds information about the agreement.<!-- #EndLibraryItem --></td>
+			<td>Assigns a document as a legal agreement on the platform, and adds information about the agreement.</td>
 		</tr>
 		<tr>
 			<td>get agreement document</td>
 			<td><a href="legals/m_legals_getAgreementDocument.htm">GET&#160;/api/legals/{LegalDocumentID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getAgreementDocument.lbi" -->Returns a summary of information about a specified legal agreement document on the platform.<!-- #EndLibraryItem --></td>
+			<td>Returns a summary of information about a specified legal agreement document on the platform.</td>
 		</tr>
 		<tr>
 			<td>get agreement documents</td>
 			<td><a href="legals/m_legals_getAgreementDocuments.htm">GET&#160;/api/legals?AgreementType={LegalAgreementType}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getAgreementDocuments.lbi" -->Returns a summary of information about a specific type of legal agreement documents on the platform, in the form of an RSS feed.<!-- #EndLibraryItem --></td>
+			<td>Returns a summary of information about a specific type of legal agreement documents on the platform, in the form of an RSS feed.</td>
 		</tr>
 		<tr>
 			<td>list agreement documents</td>
 			<td><a href="legals/m_legals_listAgreementDocuments.htm">GET&#160;/api/legals?AgreementType={LegalAgreementType}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_listAgreementDocuments.lbi" -->Returns information about all legal agreement documents matching the specified criteria, in the form of a JSON or XML object.<!-- #EndLibraryItem --></td>
+			<td>Returns information about all legal agreement documents matching the specified criteria, in the form of a JSON or XML object.</td>
 		</tr>
 		<tr>
 			<td>update agreement</td>
 			<td><a href="legals/m_legals_updateAgreement.htm">PUT&#160;/api/legals/{LegalDocumentID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_updateAgreement.lbi" -->Updates information about the platform legal agreement. You can use this operation to change or deactivate the existing legal agreement.<!-- #EndLibraryItem --></td>
+			<td>Updates information about the platform legal agreement. You can use this operation to change or deactivate the existing legal agreement.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+
+
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="index.htm">Akana API Platform API: Overview</a></li>
@@ -76,5 +78,9 @@ Records the user's acceptance of a legal agreement document for the platform.<!-
 	<li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+</div>

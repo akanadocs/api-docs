@@ -13,7 +13,7 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">TenantRegistrationRequest Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_tenants_TenantRegistrationRequest.lbi" -->Contains information about a request to add a tenant to the API Platform.<!-- #EndLibraryItem --></p>
+<p>Contains information about a request to add a tenant to the API Platform.</p>
 <p class="usedby">This object is used by the following operation:</p>
 <ul>
 	<li><span class="apidoc_code"><a href="../tenantmgmt/m_tenantmgmt_addNewTenant.htm">POST&#160;/platform/subscriptions</a></span> (in the request)</li>
@@ -30,7 +30,8 @@ no-catalog: true
 		<tr>
 			<td>TenantID</td>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_fedmemberid">FedmemberID</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_FedMemberID.lbi" -->Unique ID for a specific tenant, in a federation (multi-tenant) scenario; for example, <strong>acmepaymentscorp</strong>.<!-- #EndLibraryItem --></p>
+			<td><p>
+Unique ID for a specific tenant. Same as <strong>TenantID</strong>.</p>
 				<p>In this model object, TenantID is the FedmemberID.</p>
 				<p>Required.</p>
 				<p>When choosing this value, it's best to choose an ID that's all lowercase, and as short as possible, since it's used in many other IDs, URLs, and message payload content. Keep it simple, and do not include any special characters.</p></td>
@@ -40,19 +41,19 @@ no-catalog: true
 		<tr>
 			<td>TenantName</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_TenantName.lbi" -->Name of the tenant.<!-- #EndLibraryItem --> If this value isn't provided, the platform uses the value provided for the TenantID as the TenantName.</td>
+			<td>Name of the tenant. If this value isn't provided, the platform uses the value provided for the TenantID as the TenantName.</td>
 		</tr>
 		<tr>
 			<td>ApiAddress</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_ApiAddress.lbi" -->
-The base URL of the tenant. This is the default address from which the tenant is accessed. Multiple additional virtual hostnames are allowed, but the hostname provided in this property is the primary hostname. Corresponds to the <strong>--address</strong> parameter in the installation Jython script.<!-- #EndLibraryItem --></td>
+			<td>
+The base URL of the tenant. This is the default address from which the tenant is accessed. Multiple additional virtual hostnames are allowed, but the hostname provided in this property is the primary hostname. Corresponds to the <strong>--address</strong> parameter in the installation Jython script.</td>
 		</tr>
 		<tr>
 			<td>PortalAddress</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_PortalAddress.lbi" -->
-The base URL of the tenant and also the context in which the API Platform is running. This is the full URL that will be used in the browser when accessing the UI. Corresponds to the <strong>--consoleAddress</strong> parameter in the installation Jython script.<!-- #EndLibraryItem --></td>
+			<td>
+The base URL of the tenant and also the context in which the API Platform is running. This is the full URL that will be used in the browser when accessing the UI. Corresponds to the <strong>--consoleAddress</strong> parameter in the installation Jython script.</td>
 		</tr>
 		<tr>
 			<td>DefaultTheme</td>
@@ -78,7 +79,7 @@ The base URL of the tenant and also the context in which the API Platform is run
 		<tr>
 			<td>DefaultUserAccounts</td>
 			<td><a href="o_tenants_TenantUserAccount.htm">TenantUserAccount</a>[&#160;]</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_tenants_TenantUserAccount.lbi" -->Contains information about a user account for a tenant administrator.<!-- #EndLibraryItem --></p>
+			<td><p>Contains information about a user account for a tenant administrator.</p>
 				<p>One or more. Corresponds to the <strong>--email</strong> parameter in the installation Jython script.</p></td>
 		</tr>
 		<tr>
@@ -94,8 +95,8 @@ The base URL of the tenant and also the context in which the API Platform is run
 		<tr>
 			<td>SupportEmailAddress</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_SupportEmailAddress.lbi" -->
-The email address that users should contact for help with any issues in the tenant. This address is used in some links in tenant pages; for example, in the footer template for platform pages. Corresponds to the <strong>--consoleAddress</strong> parameter in the installation Jython script.<!-- #EndLibraryItem --></td>
+			<td>
+The email address that users should contact for help with any issues in the tenant. This address is used in some links in tenant pages; for example, in the footer template for platform pages. Corresponds to the <strong>--consoleAddress</strong> parameter in the installation Jython script.</td>
 		</tr>
 		<tr>
 			<td>NotificationsSenderEmailAddress</td>
@@ -106,7 +107,7 @@ The email address that users should contact for help with any issues in the tena
 			<td>ApiEndpointCName</td>
 			<td>string</td>
 			<td><p>The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_cname">CNAME</a> for the API endpoint, that will be used in the Proxy URL path for APIs on the tenant (gateway hostname)</p>
-				<p>Corresponds to the<strong> --cname</strong> parameter in the installation Jython script.</p></td>
+				<p>Corresponds to the <strong>--cname</strong> parameter in the installation Jython script.</p></td>
 		</tr>
 		<tr>
 			<td>CDNRoot</td>
@@ -136,14 +137,14 @@ The email address that users should contact for help with any issues in the tena
 		<tr>
 			<td>LaaSIntegrationSupport</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_LaaSIntegrationSupport.lbi" -->Indicates whether the Lifecycle Manager integration feature is turned on. For valid values, see <a href="../aaref/Ref_Values.htm#values_laasintegrationsupport">LaaSIntegrationSupport values</a>. Optional.<!-- #EndLibraryItem --></td>
+			<td>Indicates whether the Lifecycle Manager integration feature is turned on. For valid values, see <a href="../aaref/Ref_Values.htm#values_laasintegrationsupport">LaaSIntegrationSupport values</a>. Optional.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -155,5 +156,10 @@ The email address that users should contact for help with any issues in the tena
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

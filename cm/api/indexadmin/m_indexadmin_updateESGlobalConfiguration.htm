@@ -17,10 +17,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_updateESGlobalConfiguration.lbi" -->Updates the global configuration settings for Elasticsearch on the Akana API Platform.<!-- #EndLibraryItem --></p>
+<p>Updates the global configuration settings for Elasticsearch on the Akana API Platform.</p>
 <p><strong>Note</strong>: To check the existing global configuration settings before modifying them, run the <a href="m_indexadmin_getESGlobalConfiguration.htm"><span class="apidoc_code">GET&#160;/api/indexadmin/config</span></a> operation.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_sysadmin">System Administrator</a> only.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -37,7 +37,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">PUT</p>
 <!-- InstanceEndEditable -->
@@ -45,7 +46,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->indexadmin/config</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/indexadmin/config</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -54,11 +55,11 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows updating the settings for the Elasticsearch cluster to change the port number.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->indexadmin/config</pre>
+<pre>https://{hostname}/api/indexadmin/config</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>Accept: applicatoin/json
+<pre>Accept: application/json
 Content-Type: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
   "clientUrl": "localhost:9370",
@@ -82,11 +83,11 @@ Content-Type: application/json
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_85.lbi" --><strong>application/vnd.soa.v85+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v85+json</strong></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_85.lbi" --><strong>application/vnd.soa.v85+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v85+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -112,7 +113,7 @@ Content-Type: application/json
 			<td>ESGlobalConfig</td>
 			<td>ESGlobalConfig</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_indexadmin_ESGlobalConfig.lbi" -->Contains information about the Elasticsearch global configuration settings.<!-- #EndLibraryItem --></td>
+			<td>Contains information about the Elasticsearch global configuration settings.</td>
 		</tr>
 	</tbody>
 </table>
@@ -158,7 +159,7 @@ Content-Type: application/json</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_85.lbi" --><strong>application/vnd.soa.v85+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v85+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -180,7 +181,7 @@ Content-Type: application/json</pre>
 		<tr>
 			<td>ESGlobalConfig</td>
 			<td>ESGlobalConfig</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_indexadmin_ESGlobalConfig.lbi" -->Contains information about the Elasticsearch global configuration settings.<!-- #EndLibraryItem --></p>
+			<td><p>Contains information about the Elasticsearch global configuration settings.</p>
 				<p>The updated settings are returned in the response.</p></td>
 		</tr>
 	</tbody>
@@ -202,7 +203,7 @@ Content-Type: application/json</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -211,11 +212,11 @@ Content-Type: application/json</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -227,5 +228,10 @@ Content-Type: application/json</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

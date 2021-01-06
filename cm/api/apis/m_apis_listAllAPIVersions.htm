@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: List All API Versions | APIs Service | Akana API Platform API
-description:  Returns information about API versions for all APIs, in the form of a JSON or XML object.
+description: Returns information about API versions for all APIs, in the form of a JSON or XML object.
 product: cm
 category: ref
 nav-title: List All API Versions 
@@ -17,13 +17,13 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_llistAllAPIVersions.lbi" -->
-Returns information about API versions for all APIs, in the form of a JSON or XML object.<!-- #EndLibraryItem --></p>
+<p>
+Returns information about API versions for all APIs, in the form of a JSON or XML object.</p>
 <p><strong>V</strong>ersion information does not include operations. For information about operations for a specific API version, use <span class="apidoc_code"><a href="m_apis_getAPIVersion.htm">GET&#160;/api/apis/versions/{APIVersionID}</a></span> with the optional <strong>includeOperations</strong> parameter.</p>
 <p><span class="apidoc_code"><a href="m_apis_listAPIVersions.htm">GET&#160;/api/apis/versions</a></span> with text/xml or application/json content-type returns API version information in the form of an RSS channel; <span class="apidoc_code">GET&#160;/api/apis/versions</span> (this operation) returns it as a JSON or XML object. Both operations return the same information; only the structure/format is different.</p>
 <p class="apidoc_note"><strong>Note</strong>: this operation might return a large amount of content. If you want to view versions for a specific API, use the <span class="apidoc_code"><a href="m_apis_getAPIVersions.htm">GET&#160;apis/{APIID}/versions</a></span> operation instead.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must be authorized to view all APIs on the developer portal: <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must be authorized to view all APIs on the Community Manager developer portal: <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -40,7 +40,8 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -48,7 +49,7 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -57,10 +58,10 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
 <h2 id="samplerequest">Sample Request</h2>
 <p><strong>Request URL #1</strong></p>
 <p>Returns all API versions.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions</pre>
+<pre>https://{hostname}/api/apis/versions</pre>
 <p><strong>Request URL #2</strong></p>
 <p>Returns deleted API versions.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions?State=com.soa.api.state.deleted</pre>
+<pre>https://{hostname}/api/apis/versions?State=com.soa.api.state.deleted</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/vnd.soa.v72+json</pre>
 <p><strong>Sample request body</strong></p>
@@ -82,18 +83,17 @@ Returns information about API versions for all APIs, in the form of a JSON or XM
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -184,41 +184,6 @@ Expires: Wed, 01 Apr 2015 15:35:29 GMT</pre>
   }  ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/vnd.soa.v72+xml</strong></p>
-<pre>Status Code: 200 OK
-Content-Type: application/vnd.soa.v72+xml
-Expires: Wed, 01 Apr 2015 15:48:56 GMT</pre>
-<p><strong>Sample response body: application/vnd.soa.v72+xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;APIVersions xmlns=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot; 
-xmlns:ns3=&quot;http://soa.com/xsd/legals/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/dnmodel/1.0&quot; 
-xmlns:ns5=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
-  &lt;APIVersion&gt;
-    &lt;APIVersionID&gt;aa556d1d-a35c-44b8-8aa9-85c68ece27cb.acmepaymentscorp&lt;/APIVersionID&gt;
-    &lt;APIID&gt;931b94ae-f5f0-4c3e-844a-a375e28b82af.acmepaymentscorp&lt;/APIID&gt;
-    &lt;Name&gt;ACME Payments API (1.0)&lt;/Name&gt;
-    &lt;Description&gt;First release&lt;/Description&gt;
-    &lt;Type&gt;shttp&lt;/Type&gt;
-    &lt;Visibility&gt;Limited&lt;/Visibility&gt;
-    &lt;Created&gt;2015-04-01T16:28:54Z&lt;/Created&gt;
-    &lt;Updated&gt;2015-04-01T20:38:57Z&lt;/Updated&gt;
-    &lt;State&gt;com.soa.api.state.deleted&lt;/State&gt;
-    &lt;ProductionEndpointAccessAutoApproved&gt;true&lt;/ProductionEndpointAccessAutoApproved&gt;
-    &lt;SandboxEndpointAccessAutoApproved&gt;true&lt;/SandboxEndpointAccessAutoApproved&gt;
-    &lt;SandboxAnonymousAccessAllowed&gt;false&lt;/SandboxAnonymousAccessAllowed&gt;
-    &lt;ProductionAnonymousAccessAllowed&gt;false&lt;/ProductionAnonymousAccessAllowed&gt;
-    &lt;ResourceLevelPermissionsSupported&gt;true&lt;/ResourceLevelPermissionsSupported&gt;
-    &lt;APIOwnedImplementations&gt;true&lt;/APIOwnedImplementations&gt;
-    &lt;ns4:TargetResources&gt;
-      &lt;ns4:TargetResource&gt;
-        &lt;ns4:Name&gt;ACME Payments API&lt;/ns4:Name&gt;
-        &lt;ns4:ID&gt;931b94ae-f5f0-4c3e-844a-a375e28b82af.acmepaymentscorp&lt;/ns4:ID&gt;
-        &lt;ns4:Type&gt;api&lt;/ns4:Type&gt;
-      &lt;/ns4:TargetResource&gt;
-    &lt;/ns4:TargetResources&gt;
-  &lt;/APIVersion&gt;
-&lt;/APIVersions&gt;</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
@@ -235,9 +200,9 @@ xmlns:ns5=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -259,7 +224,7 @@ xmlns:ns5=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
 		<tr>
 			<td>APIVersions</td>
 			<td><a href="../obj/o_apis_APIVersions.htm">APIVersions</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_APIVersions.lbi" -->Contains information about one or more API versions.<!-- #EndLibraryItem --></td>
+			<td>Contains information about one or more API versions.</td>
 		</tr>
 	</tbody>
 </table>
@@ -280,7 +245,7 @@ xmlns:ns5=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -289,11 +254,11 @@ xmlns:ns5=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -305,5 +270,10 @@ xmlns:ns5=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

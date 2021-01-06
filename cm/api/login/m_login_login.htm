@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Log In | Login Service | Akana API Platform API
-description:  Initiates the login process by verifying the credentials of a user who is attempting to log in to the platform. If there are pending login tasks, this operation directs the user to the next task; if there are no pending tasks, it logs the user in, returning an authentication cookie that is used to make authenticated calls to the platform. The cookie is valid for 30 minutes. To renew it, use the <span class="apidoc_code"><a href="m_login_renewToken.htm">POST&#160;/api/login/renewToken</a></span> operation.
+description: Initiates the login process by verifying the credentials of a user who is attempting to log in to the platform. If there are pending login tasks, this operation directs the user to the next task; if there are no pending tasks, it logs the user in, returning an authentication cookie that is used to make authenticated calls to the platform. The cookie is valid for 30 minutes. To renew it, use the <span class="apidoc_code"><a href="m_login_renewToken.htm">POST&#160;/api/login/renewToken</a></span> operation.
 product: cm
 category: ref
 nav-title: Log In 
@@ -17,8 +17,8 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_login_.lbi" -->
-Initiates the login process by verifying the credentials of a user who is attempting to log in to the platform. If there are pending login tasks, this operation directs the user to the next task; if there are no pending tasks, it logs the user in, returning an authentication cookie that is used to make authenticated calls to the platform. The cookie is valid for 30 minutes. To renew it, use the <span class="apidoc_code"><a href="m_login_renewToken.htm">POST&#160;/api/login/renewToken</a></span> operation.<!-- #EndLibraryItem --></p>
+<p>
+Initiates the login process by verifying the credentials of a user who is attempting to log in to the platform. If there are pending login tasks, this operation directs the user to the next task; if there are no pending tasks, it logs the user in, returning an authentication cookie that is used to make authenticated calls to the platform. The cookie is valid for 30 minutes. To renew it, use the <span class="apidoc_code"><a href="m_login_renewToken.htm">POST&#160;/api/login/renewToken</a></span> operation.</p>
 <p>When a new user is logging in for the first time, depending on platform configuration, there might be tasks that the user must complete. The login operation checks whether any of those tasks are pending. If there are one or more pending tasks, the response specifies the next task to be completed. When all tasks are complete, login is complete. Pending tasks are prioritized as follows:</p>
 <ol>
 	<li>Changing the password (this requirement can be specified by the Site Admin when adding a user by invoking the <span class="apidoc_code"><a href="../users/m_users_addUser.htm">POST&#160;/api/users</a></span> operation). To complete this task using the API, invoke the <span class="apidoc_code"><a href="../users/m_users_modifyPassword.htm">PUT&#160;/api/users/{UserID}/password</a></span> operation.</li>
@@ -27,7 +27,7 @@ Initiates the login process by verifying the credentials of a user who is attemp
 </ol>
 <p><strong>Note</strong>:In versions prior to 8.0, this operation returned the <strong>AtmoAuthToken</strong> in the response. From 8.0 onwards it returns the token in the Set-Cookie header.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: To complete this operation successfully, a user must be registered on the platform or be in process of registering.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -44,7 +44,8 @@ Initiates the login process by verifying the credentials of a user who is attemp
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
 <!-- InstanceEndEditable -->
@@ -52,7 +53,7 @@ Initiates the login process by verifying the credentials of a user who is attemp
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/login</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -61,10 +62,10 @@ Initiates the login process by verifying the credentials of a user who is attemp
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below sends the username and password for authentication of the user logging in.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login</pre>
+<pre>https://{hostname}/api/login</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST&#160;/api/login HTTP/1.1
-Host:<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->{hostname}<!-- #EndLibraryItem -->
+Host:{hostname}
 Accept: application/json, text/javascript, */*; q=0.01
 Content-Type: application/json; charset=UTF-8</pre>
 <p><strong>Sample request body</strong></p>
@@ -73,7 +74,7 @@ Content-Type: application/json; charset=UTF-8</pre>
   &quot;password&quot;:&quot;Mypwd_12345&quot;
 }</pre>
 <p id=samplerequest_curl><strong>Sample request: Curl</strong></p>
-<pre>curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -i '<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login' --data '{
+<pre>curl -X POST -H 'Content-Type: application/json' -H 'Accept: application/json' -i 'https://{hostname}/api/login' --data '{
   "email":"administrator@acmepaymentscorp",
   "password":"Pa$sW0rd_12345",
   "federationLogins":true
@@ -95,12 +96,12 @@ Content-Type: application/json; charset=UTF-8</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><p>Any one of the following media types is valid for the request Content-Type:</p>
-<p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p></td>
+<p><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -149,7 +150,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 Content-Type: application/json
 Expires: Mon, 27 Jul 2015 12:36:55 GMT
 Set-Cookie: AtmoAuthToken_acmepaymentscorp=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2Cclaimed_id%3Durn%3Aacmepaymentscorp%3Auser%3Aacmepaymentscorp%3A5a48b51d-b726-460f-bec5-8fb4e392137c%2CissueTime%3D1438018615951%2CexpirationTime%3D1438020415922%2CAttributesIncluded%3Dfalse%2CUserFDN%3D5a48b51d-b726-460f-bec5-8fb4e392137c%252Eacmepaymentscorp%2CUserName%3Dadminacmepaymentscorp%2Csig%3DcoY4laDvxkQ4vLLg6Tkfc9X35THApqFPh3hONnbCwXsNNjaKxUu9Ce98jf88kPEcrImd69Ry2N8XIrzICKTaUdCIni2ETKNCccpbYfBWftTQoUNVpQffzUTCP965GKqPLf6Zo0ol48TCRn4bWepqz8pycFczAhlsrl-WQBq0Adg;path=/;expires=Mon, 27 Jul 2015 18:01:55 GMT;HttpOnly
-Csrf-Token_acmepaymentscorp=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2CexpirationTime%3D1438020415969%2CUserFDN%3D5a48b51d-b726-460f-bec5-8fb4e392137c%252Eacmepaymentscorp%2Csig%3DMKd7acZkLzsMIalD2LFhmuLPy58xa-NlxoWucWi3WVfO8UTsz_t88fCjQIQHKH-pRol_1wsGVHRnz3riAl7eKrRYEo68XOMn1UnoMYXQUX9mTGtGoTXgu61Dk7vIIiVhBJV1AIRZiHKoDim04hq-tjw8NIeHdH6DV7M2COAaTZA;path=/;expires=Mon, 27-Jul-2015 18:01:55 GMT</pre>
+Csrf-Token_rcoaless=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2CexpirationTime%3D1438020415969%2CUserFDN%3D5a48b51d-b726-460f-bec5-8fb4e392137c%252Eacmepaymentscorp%2Csig%3DMKd7acZkLzsMIalD2LFhmuLPy58xa-NlxoWucWi3WVfO8UTsz_t88fCjQIQHKH-pRol_1wsGVHRnz3riAl7eKrRYEo68XOMn1UnoMYXQUX9mTGtGoTXgu61Dk7vIIiVhBJV1AIRZiHKoDim04hq-tjw8NIeHdH6DV7M2COAaTZA;path=/;expires=Mon, 27-Jul-2015 18:01:55 GMT</pre>
 <h4>Sample response body #1</h4>
 <p id="id_sampleresponse_1">In the example below, the Site Admin added the user (using the <span class="apidoc_code"><a href="../users/m_users_addUser.htm">POST&#160;/api/users</a></span> operation) and the user is now logging in for the first time. The Site Admin specified that the user must change password on first login (<strong>ForcePasswordChangeOnLogin</strong> parameter in the Add User operation); therefore, change password is listed as a pending task. Tokens have been abbreviated.</p>
 <p>To change the password, invoke the <span class="apidoc_code"><a href="../users/m_users_modifyPassword.htm">PUT&#160;/api/users/{UserID}/password</a></span> operation.</p>
@@ -297,7 +298,7 @@ Csrf-Token_acmepaymentscorp=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2Cexp
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 		<tr>
 			<td>Set-Cookie</td>
@@ -323,7 +324,7 @@ Csrf-Token_acmepaymentscorp=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2Cexp
 		<tr>
 			<td>LoginResponse</td>
 			<td><a href="../obj/o_login_LoginResponse.htm">LoginResponse</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_login_LoginResponse.lbi" -->Contains information returned as a result of logging in.<!-- #EndLibraryItem --> User name and FDN, along with an authorization token and the pending notifications count for the user.<!--api-portal/com.soa.atmosphere.interfaces/src/com/soa/login/model/LoginResponse.java--></td>
+			<td>Contains information returned as a result of logging in. User name and FDN, along with an authorization token and the pending notifications count for the user.<!--api-portal/com.soa.atmosphere.interfaces/src/com/soa/login/model/LoginResponse.java--></td>
 		</tr>
 	</tbody>
 </table>
@@ -354,11 +355,11 @@ Csrf-Token_acmepaymentscorp=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2Cexp
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -370,5 +371,10 @@ Csrf-Token_acmepaymentscorp=TokenID%3D13544611-3486-11e5-9f5c-cb8d33c7f3c7%2Cexp
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

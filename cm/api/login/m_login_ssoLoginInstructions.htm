@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: SSO Login Instructions | Login Service | Akana API Platform API
-description:  Returns applicable instructions for logging in the user, depending on the login option the user has selected.
+description: Returns applicable instructions for logging in the user, depending on the login option the user has selected.
 product: cm
 category: ref
 nav-title: SSO Login Instructions 
@@ -17,11 +17,11 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_login_ssoLoginInstructions.lbi" -->
-Returns applicable instructions for logging in the user, depending on the login option the user has selected.<!-- #EndLibraryItem --></p>
+<p>
+Returns applicable instructions for logging in the user, depending on the login option the user has selected.</p>
 <p>If the login domain needs credentials, the response indicates this and indicates which credentials are needed. If the login domain requires a redirect to the authentication provider, the response indicates NeedRedirect and indicates the redirect URL for the applicable login provider.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: No permissions required.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -38,7 +38,8 @@ Returns applicable instructions for logging in the user, depending on the login 
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -46,7 +47,7 @@ Returns applicable instructions for logging in the user, depending on the login 
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/ssoLoginInstructions?domain={domain}</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/login/ssoLoginInstructions?domain={domain}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -55,7 +56,7 @@ Returns applicable instructions for logging in the user, depending on the login 
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a login request when the user has selected LDAP as the login option. The second example shows request headers when the user has selected Google.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/ssoLoginInstructions?domain=Ldapacmepaymentscorp</pre>
+<pre>https://{hostname}/api/login/ssoLoginInstructions?domain=Ldapacmepaymentscorp</pre>
 <p><strong>Sample request headers #1: login using LDAP</strong></p>
 <pre>
 GET /api/login/ssoLoginInstructions?domain=Ldapacmepaymentscorp HTTP/1.1
@@ -85,7 +86,7 @@ Accept: */*</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -160,7 +161,7 @@ Content-Type: application/json</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -182,7 +183,7 @@ Content-Type: application/json</pre>
 		<tr>
 			<td>LoginData</td>
 			<td><a href="../obj/o_login_LoginData.htm">LoginData</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_login_LoginData.lbi" -->Contains data associated with a user's login.<!-- #EndLibraryItem --></td>
+			<td>Contains data associated with a user's login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -208,11 +209,11 @@ Content-Type: application/json</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -224,5 +225,10 @@ Content-Type: application/json</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

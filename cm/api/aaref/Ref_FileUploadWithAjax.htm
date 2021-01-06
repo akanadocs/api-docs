@@ -28,10 +28,10 @@ no-catalog: true
 
 
 <h2 id="sameoriginpolicyrestrictions">Same-Origin Policy Restrictions</h2>
-<p>The&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;is an Ajax-based browser application. In supporting file upload with this type of application, one of the challenges is dealing with the browser's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_sameoriginpolicy">Same-Origin Policy</a> restrictions. These restrictions prevent browser-based applications from invoking an Ajax call to a different domain.</p>
+<p>The Akana API Platform is an Ajax-based browser application. In supporting file upload with this type of application, one of the challenges is dealing with the browser's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_sameoriginpolicy">Same-Origin Policy</a> restrictions. These restrictions prevent browser-based applications from invoking an Ajax call to a different domain.</p>
 <p>To work around this restriction, there are multiple mechanisms that apps can use, such as JSONP, XDR, CORS, postMessage, and Flash policies. Each has its advantages and limitations; some only work for certain browsers or only work for HTTP GET&#160;calls. Some we do not support.</p>
 <p>To work with these security restrictions when uploading files, the platform uses a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_jquery">jQuery</a> plug-in to facilitate file upload. In simple terms, the plug-in creates an invisible iframe, instructs the server to return the response to the iframe, and sets the domain for the iframe to match the domain for the parent page. When the message is submitted, the main page is not refreshed, but the iframe is created and the response is returned to the iframe. Because the domain for the iframe matches the domain for the parent page, the platform can access the response.</p>
-<p>Whenever we use this mechanism to support file upload in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;user interface, we pass the wrapInHTML request parameter. In response, the API returns a script tag, with the security domain set, wrapped in HTML.</p>
+<p>Whenever we use this mechanism to support file upload in the Akana API Platform user interface, we pass the wrapInHTML request parameter. In response, the API returns a script tag, with the security domain set, wrapped in HTML.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -39,7 +39,7 @@ no-catalog: true
 <h2 id="wrapinhtmlparameter">The &quot;Wrap In HTML&quot; Parameter</h2>
 <p>In order to work with the Same Origin security policy when uploading files, in file upload operations the platform passes  a <span class="apidoc_code">wrapInHTML</span> request query parameter. In the response, which is read programmatically, the API returns a script tag, with the security domain set, to an HTML iframe. The response is wrapped in HTML so that the iframe can read it. The HTML response is also padded to ensure it is readable to all browsers (see <a href="#browserlimitationworkaround">Browser Limitation Workaround</a> below).</p>
 <p>The sample request for the <span class="apidoc_code"><a href="../apps/m_apps_saveKeyInfo.htm">POST&#160;/api/apps/versions/{AppVersionID}/keyinfo</a></span> operation is an example of this, as shown below:</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmepaymentscorp/keyinfo?<strong>wrapInHTML=true</strong></pre>
+<pre>https://{hostname}/api/apps/versions/4iXro2Uxs2h4LviCshR9pK9w.acmepaymentscorp/keyinfo?<strong>wrapInHTML=true</strong></pre>
 
 <p>Below is an example of code you can use to create the iframe:</p>
 <pre>&lt;iframe id="ifFileManager" style="width:100%;height:100%;" 
@@ -101,13 +101,13 @@ eu sapien massa, vitae rutrum sapien. Aenean id condimentum sem. Suspendisse tem
 <h2 id="wrapinhtmlbackground">Background</h2>
 <p>The wrapInHtml parameter is only needed if a browser-based client is making the call using AJAX, and only in the scenario of a single-page application.</p>
 <p>In a single-page application, the browser&rsquo;s address bar never changes, or changes only after the hash character. This is done so that a JavaScript context/cache is maintained in the page memory for a long time.</p>
-<p>Browsers do not allow retrieval of the contents of a file in JavaScript for security reasons. Because of this, the only way to make a multi-part request is to use the form submit. But, the form submit will change the address, which doesn't work in the context of a single-page application. Therefore, the developer portal uses an HTML iframe as the form submit output. But the JavaScript running in the single-page application must be able to read the contents of the HTML iframe. There are different kinds of issues with reading from an HTML iframe in different browsers; in addition, in a federation scenario, the file upload might be on a site that is different from the site where the application is accessed.</p>
-<p>To work around these browser restrictions to read from an HTML iframe, the developer portal wraps the output of this REST API call in HTML so that the single-page JavaScript application can read the response.</p>
+<p>Browsers do not allow retrieval of the contents of a file in JavaScript for security reasons. Because of this, the only way to make a multi-part request is to use the form submit. But, the form submit will change the address, which doesn't work in the context of a single-page application. Therefore, the Community Manager developer portal uses an HTML iframe as the form submit output. But the JavaScript running in the single-page application must be able to read the contents of the HTML iframe. There are different kinds of issues with reading from an HTML iframe in different browsers.</p>
+<p>To work around these browser restrictions to read from an HTML iframe, the Community Manager developer portal wraps the output of this REST API call in HTML so that the single-page JavaScript application can read the response.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -119,5 +119,10 @@ eu sapien massa, vitae rutrum sapien. Aenean id condimentum sem. Suspendisse tem
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

@@ -17,12 +17,12 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_consoleresource_get.lbi" -->Returns the platform resource, such as a CSS file, specified in the path. Can also return a folder and its contents in a ZIP file.<!-- #EndLibraryItem --></p>
+<p>Returns the platform resource, such as a CSS file, specified in the path. Can also return a folder and its contents in a ZIP file.</p>
 <p>The response is cached for one hour unless the ResourceVersionKey in the resource path changes.</p>
 <p class="apidoc_note"><strong>Note</strong>: There is another operation you can use to retrieve platform resources: in the UI Application service: <span class="apidoc_code"><a href="../uiapplication/m_uiapps_getPathBasedResource.htm">GET&#160;/ui/apps/{application}/{version}/{path:resources/.*}</a></span>. We recommend using that operation rather than this one. The functionality is essentially the same. Content retrieved using this API is cached for 1 hour; content retrieved using the UI Application service is cached for 1 month.</p>
 <p><strong>Authorization Roles/Permissions</strong>: No permission needed. Anyone can run this operation.</p>
 <p class="apidoc_note"><strong>Note</strong>: The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csrf_header">CSRF header</a> is never required for this operation, regardless of platform settings.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -39,7 +39,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -54,7 +55,7 @@ no-catalog: true
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h2 id="samplerequest">Sample Request</h2>
-<p id="id_samplerequest">The example below shows a request for the <strong>reset.css</strong> file used by the online help for the developer portal.</p>
+<p id="id_samplerequest">The example below shows a request for the <strong>reset.css</strong> file used by the online help for the Community Manager developer portal.</p>
 <p><strong>Request URL #1: views the file</strong></p>
 <pre>http://acmepaymentscorp.com/resources/style/reset.css</pre>
 <p><strong>Request URL #2: downloads the file</strong></p>
@@ -187,7 +188,7 @@ a,</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#xframeoptions_response">X-Frame-Options</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_xframeoptions.lbi" -->Optional header sometimes used as a security measure&#160;to control whether content can be displayed within an &lt;iframe&gt; tag.<!-- #EndLibraryItem --></td>
+			<td>Optional header sometimes used as a security measure&#160;to control whether content can be displayed within an &lt;iframe&gt; tag.</td>
 		</tr>
 	</tbody>
 </table>
@@ -220,11 +221,11 @@ a,</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -236,5 +237,10 @@ a,</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

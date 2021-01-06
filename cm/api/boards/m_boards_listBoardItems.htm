@@ -17,10 +17,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_listBoardItems.lbi" -->Returns Board items for the specified Board, in the form of a JSON or XML object.<!-- #EndLibraryItem --></p>
+<p>Returns Board items for the specified Board, in the form of a JSON or XML object.</p>
 <p class="apidoc_note"><strong>Note</strong>: There are two operations with essentially the same signature that return the same data in different formats, depending on the Accept header you use. <span class="apidoc_code"><a href="m_boards_getBoardItems.htm">GET&#160;/api/boards/{BoardID}/board</a></span><a href="m_boards_getBoardItems.htm"></a> with JSON or XML headers returns an RSS feed, and <span class="apidoc_code"><a href="m_boards_listBoardItems.htm">GET&#160;/api/boards/{BoardID}/board</a></span> (this operation) with vendor-specific JSON or XML headers returns the information in the form of a JSON or XML object.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: <!-- #BeginLibraryItem "/Library/roles_login.lbi" -->Must be logged in and have permission to view the requested resources. If the user is logged in but doesn't have permission to view certain resources, the operation works, but limited (or empty) results are returned.<!-- #EndLibraryItem --> For more information about how authorization and visibility work for Board operations, see <a href="../aaref/Ref_BoardsInThePortal.htm">Boards in the developer portal</a>.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be logged in and have permission to view the requested resources. If the user is logged in but doesn't have permission to view certain resources, the operation works, but limited (or empty) results are returned. For more information about how authorization and visibility work for Board operations, see <a href="../aaref/Ref_BoardsInThePortal.htm">Boards in the Community Manager developer portal</a>.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -37,7 +37,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -45,7 +46,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->boards/{BoardID}/board</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/boards/{BoardID}/board</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -54,7 +55,7 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the Support Board for the specified tenant.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->boards/supportboard.acmepaymentscorp/board</pre>
+<pre>https://{hostname}/api/boards/supportboard.acmepaymentscorp/board</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/vnd.soa.v72+json</pre>
 <p><strong>Sample request body</strong></p>
@@ -76,19 +77,18 @@ no-catalog: true
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -114,21 +114,21 @@ no-catalog: true
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_BoardID_UserDefined.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_board_userdefined">user-defined board</a>.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_board_userdefined">user-defined board</a>.</td>
 		</tr>
 		<tr>
 			<td>ItemType</td>
 			<td>Query</td>
 			<td>string[ ]</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_ItemType.lbi" -->A filtering parameter, specifying one or more <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">board item (forum entry)</a> types to be returned, such as an alert, discussion, or ticket. For valid values, see <a href="../aaref/Ref_Values.htm#values_boarditemtypes">Board Item Types</a>.<!-- #EndLibraryItem --></td>
+			<td>A filtering parameter, specifying one or more <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">board item (forum entry)</a> types to be returned, such as an alert, discussion, or ticket. For valid values, see <a href="../aaref/Ref_Values.htm#values_boarditemtypes">Board Item Types</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_itemid">ItemID</a></td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">forum entry</a>.<!-- #EndLibraryItem --></p>
+			<td><p>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">forum entry</a>.</p>
 				<p>If specified, results are limited to information relating to that item ID. If not specified, no filter is applied.</p></td>
 		</tr>
 		<tr>
@@ -136,7 +136,7 @@ no-catalog: true
 			<td>Query</td>
 			<td>string[</td>
 			<td>Optional</td>
-			<td><p><!-- #BeginLibraryItem "/Library/parm_Tag.lbi" -->A user-defined <a href="../Ref_Glossary_CommunityPlatform.htm#gl_tag">tag</a>. <!-- #EndLibraryItem --></p>
+			<td><p>A user-defined <a href="../Ref_Glossary_CommunityPlatform.htm#gl_tag">tag</a>. </p>
 				<p>If specified, results are limited to board items relating to that tag. If not specified, no filter is applied.</p></td>
 		</tr>
 		<tr>
@@ -144,65 +144,65 @@ no-catalog: true
 			<td>Query</td>
 			<td>boolean</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apps_IncludeComments.lbi" --> Indicates whether comments should be included in the information returned. Default: <strong>true</strong>. If set to <strong>false</strong>, comments are excluded.<!-- #EndLibraryItem --></td>
+			<td> Indicates whether comments should be included in the information returned. Default: <strong>true</strong>. If set to <strong>false</strong>, comments are excluded.</td>
 		</tr>
 		<tr>
 			<td>NumberOfComments</td>
 			<td>Query</td>
 			<td>integer</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apps_NumberOfComments.lbi" --> The number of comments to be returned (if IncludeComments is not set to <strong>false</strong>). Default value: <strong>2</strong>.<!-- #EndLibraryItem --></td>
+			<td> The number of comments to be returned (if IncludeComments is not set to <strong>false</strong>). Default value: <strong>2</strong>.</td>
 		</tr>
 		<tr>
 			<td>IncludeActions</td>
 			<td>Query</td>
 			<td>boolean</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apps_IncludeActions_def_true.lbi" -->Indicates whether workflow actions currently valid for the resource should be included in the results. Default: <strong>true</strong>. For valid workflow actions, see <a href="../aaref/Ref_Values.htm#values_workflowactions">Workflow Actions</a>.<!-- #EndLibraryItem --></td>
+			<td>Indicates whether workflow actions currently valid for the resource should be included in the results. Default: <strong>true</strong>. For valid workflow actions, see <a href="../aaref/Ref_Values.htm#values_workflowactions">Workflow Actions</a>.</td>
 		</tr>
 		<tr>
 			<td>start</td>
 			<td>Query</td>
 			<td>integer</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_start.lbi" --> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
+			<td> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.</td>
 		</tr>
 		<tr>
 			<td>count</td>
 			<td>Query</td>
 			<td>integer</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_count.lbi" -->The number of results to be returned, from the specified starting point. If not specified, all matching results are returned.<!-- #EndLibraryItem --></td>
+			<td>The number of results to be returned, from the specified starting point. If not specified, all matching results are returned.</td>
 		</tr>
 		<tr>
 			<td>SortBy</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_SortBy.lbi" --> An optional parameter allowing users to sort results by a specific value; for example, <strong>com.soa.sort.order.updated</strong> sorts with the most updated entries first. For valid values, see <a href="../aaref/Ref_Values.htm#values_sortby">Sort By Values</a>. If not specified, items are returned in the sort order of <strong>DescendingDate</strong>, which means that the most recent items are first.<!-- #EndLibraryItem --></td>
+			<td> An optional parameter allowing users to sort results by a specific value; for example, <strong>com.soa.sort.order.updated</strong> sorts with the most updated entries first. For valid values, see <a href="../aaref/Ref_Values.htm#values_sortby">Sort By Values</a>. If not specified, items are returned in the sort order of <strong>DescendingDate</strong>, which means that the most recent items are first.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_retrievinguserid">RetrievingUserID</a></td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_RetrievingUserID.lbi" -->The unique UserID of the user performing a specific action.<!-- #EndLibraryItem --></td>
+			<td>The unique UserID of the user performing a specific action.</td>
 		</tr>
 		<tr>
 			<td>IncludeSelfAuthored</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_IncludeSelfAuthored.lbi" --><p>Indicates whether resources authored by the requestor should be included.</p>
-<p>Default: <strong>true</strong>.</p><!-- #EndLibraryItem --></td>
+			<td><p>Indicates whether resources authored by the requestor should be included.</p>
+<p>Default: <strong>true</strong>.</p></td>
 		</tr>
 		<tr>
 			<td>PublishedState</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_PublishedState.lbi" --><p>Indicates that only resources in a specific state should be returned. Valid values: <strong>published</strong> or <strong>unpublished</strong>.</p>
-				<p>Default: <strong>published</strong>, indicating that only resources that have been published are returned.</p><!-- #EndLibraryItem --></td>
+			<td><p>Indicates that only resources in a specific state should be returned. Valid values: <strong>published</strong> or <strong>unpublished</strong>.</p>
+				<p>Default: <strong>published</strong>, indicating that only resources that have been published are returned.</p></td>
 		</tr>
 	</tbody>
 </table>
@@ -269,56 +269,6 @@ Expires: Fri, 27 Mar 2015 20:06:42 GMT</pre>
   } ]
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/vnd.soa.v72+xml</strong></p>
-<pre>Status Code: 200 OK
-Content-Type: application/vnd.soa.v72+xml
-Expires: Fri, 27 Mar 2015 20:07:51 GMT</pre>
-<p><strong>Sample response body: application/vnd.soa.v72+xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;BoardItems xmlns=&quot;http://soa.com/xsd/board/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/comment/1.0&quot; xmlns:ns3=&quot;http://soa.com/xsd/user/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns5=&quot;http://a9.com/-/spec/opensearch/1.1/&quot; xmlns:ns6=&quot;http://soa.com/xsd/alert/1.0&quot; xmlns:ns7=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns8=&quot;http://soa.com/xsd/contract/1.0&quot; xmlns:ns9=&quot;http://soa.com/xsd/ticket/1.0&quot; xmlns:ns10=&quot;http://soa.com/xsd/app/1.0&quot; xmlns:ns11=&quot;http://soa.com/xsd/discussion/1.0&quot; xmlns:ns12=&quot;http://soa.com/xsd/review/1.0&quot; xmlns:ns13=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
-  &lt;BoardItem&gt;
-    &lt;BoardItemID&gt;discussion11784.acmepaymentscorp&lt;/BoardItemID&gt;
-    &lt;Title&gt;Extended Support hours&lt;/Title&gt;
-    &lt;Description&gt;We are considering extending our technical support hours. Gathering data on which times would be best.&lt;/Description&gt;
-    &lt;Author&gt;2a20e13e-9888-4ed6-969e-c3efa73772af.acmepaymentscorp&lt;/Author&gt;
-    &lt;PubDate&gt;2015-03-28T01:05:15Z&lt;/PubDate&gt;
-    &lt;CreatedDts&gt;2015-03-28T01:05:15Z&lt;/CreatedDts&gt;
-    &lt;Archivable&gt;true&lt;/Archivable&gt;
-    &lt;ResourceID&gt;supportboard.acmepaymentscorp&lt;/ResourceID&gt;
-    &lt;Type&gt;Discussion&lt;/Type&gt;
-    &lt;MarkCount&gt;0&lt;/MarkCount&gt;
-    &lt;IsMarked&gt;false&lt;/IsMarked&gt;
-    &lt;CommentCount&gt;0&lt;/CommentCount&gt;
-    &lt;Tag&gt;extend&lt;/Tag&gt;
-    &lt;Tag&gt;hours&lt;/Tag&gt;
-    &lt;Tag&gt;support&lt;/Tag&gt;
-    &lt;Visibility&gt;Public&lt;/Visibility&gt;
-    &lt;CommentsAllowed&gt;true&lt;/CommentsAllowed&gt;
-    &lt;State&gt;com.soa.board.item.open&lt;/State&gt;
-    &lt;ns4:AuthoringUser&gt;
-      &lt;ns4:UserID&gt;2a20e13e-9888-4ed6-969e-c3efa73772af.acmepaymentscorp&lt;/ns4:UserID&gt;
-      &lt;ns4:Name&gt;adminacmepaymentscorp&lt;/ns4:Name&gt;
-      &lt;ns4:Image&gt;
-        &lt;ns4:Url&gt;http://{hostname}/api/users/2a20e13e-9888-4ed6-969e-c3efa73772af.acmepaymentscorp/avatar&lt;/ns4:Url&gt;
-        &lt;ns4:Title&gt;adminacmepaymentscorp&lt;/ns4:Title&gt;
-        &lt;ns4:Link&gt;#/users/2a20e13e-9888-4ed6-969e-c3efa73772af.acmepaymentscorp/details&lt;/ns4:Link&gt;
-      &lt;/ns4:Image&gt;
-    &lt;/ns4:AuthoringUser&gt;
-    &lt;ns4:TargetResources&gt;
-      &lt;ns4:TargetResource&gt;
-        &lt;ns4:Name&gt;Support&lt;/ns4:Name&gt;
-        &lt;ns4:ID&gt;supportboard.acmepaymentscorp&lt;/ns4:ID&gt;
-        &lt;ns4:Type&gt;board&lt;/ns4:Type&gt;
-        &lt;ns4:Image /&gt;
-      &lt;/ns4:TargetResource&gt;
-    &lt;/ns4:TargetResources&gt;
-    &lt;ns2:CommentsPreview&gt;
-      &lt;ns2:Count&gt;0&lt;/ns2:Count&gt;
-    &lt;/ns2:CommentsPreview&gt;
-    &lt;Published&gt;true&lt;/Published&gt;
-  &lt;/BoardItem&gt;
-&lt;/BoardItems&gt;</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
@@ -335,10 +285,10 @@ Expires: Fri, 27 Mar 2015 20:07:51 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -360,7 +310,7 @@ Expires: Fri, 27 Mar 2015 20:07:51 GMT</pre>
 		<tr>
 			<td>BoardItems</td>
 			<td><a href="../obj/o_boards_BoardItems.htm">BoardItems</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_boards_BoardItems.lbi" -->Contains information about one or more board items.<!-- #EndLibraryItem --></td>
+			<td>Contains information about one or more board items.</td>
 		</tr>
 	</tbody>
 </table>
@@ -386,11 +336,11 @@ Expires: Fri, 27 Mar 2015 20:07:51 GMT</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -402,5 +352,10 @@ Expires: Fri, 27 Mar 2015 20:07:51 GMT</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

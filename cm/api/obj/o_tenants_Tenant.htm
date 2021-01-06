@@ -13,7 +13,7 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">Tenant Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_tenants_Tenant.lbi" -->Contains information about a tenant on the API Platform.<!-- #EndLibraryItem --></p>
+<p>Contains information about a tenant on the API Platform.</p>
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
 	<li><span class="apidoc_code"><a href="../tenantmgmt/m_tenantmgmt_addNewTenant.htm">POST&#160;/platform/subscriptions</a></span> (in the response)</li>
@@ -35,12 +35,13 @@ no-catalog: true
 		<tr>
 			<td>FedMemberID</td>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_fedmemberid">FedmemberID</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_FedMemberID.lbi" -->Unique ID for a specific tenant, in a federation (multi-tenant) scenario; for example, <strong>acmepaymentscorp</strong>.<!-- #EndLibraryItem --></td>
+			<td>
+Unique ID for a specific tenant. Same as <strong>TenantID</strong>.</td>
 		</tr>
 		<tr>
 			<td>TenantName</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_TenantName.lbi" -->Name of the tenant.<!-- #EndLibraryItem --></td>
+			<td>Name of the tenant.</td>
 		</tr>
 		<tr>
 			<td>Description</td>
@@ -55,12 +56,12 @@ no-catalog: true
 		<tr>
 			<td>AvatarURL</td>
 			<td>anyURI</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_AvatarURL.lbi" --> URL for the avatar uploaded for the resource, if any. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td> URL for the avatar uploaded for the resource, if any. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>Business</td>
 			<td><a href="o_businesses_Business.htm">Business</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_businesses_Business.lbi" -->Contains information about a business on the platform.<!-- #EndLibraryItem --></td>
+			<td>Contains information about a business on the platform.</td>
 		</tr>
 		<tr>
 			<td>IndexTargets</td>
@@ -99,7 +100,7 @@ no-catalog: true
 		<tr>
 			<td>ConsoleAddress</td>
 			<td>string</td>
-			<td><p>Optional. The full URL that will be used in the browser when accessing the developer portal user interface. The browser then redirects to the default login page.</p>
+			<td><p>Optional. The full URL that will be used in the browser when accessing the Community Manager developer portal user interface. The browser then redirects to the default login page.</p>
 				<p>Corresponds to the <strong>consoleAddress</strong> element in the installation Jython script.</p></td>
 		</tr>
 		<tr>
@@ -110,7 +111,7 @@ no-catalog: true
 		<tr>
 			<td>ContactEmailAddress</td>
 			<td>string</td>
-			<td><p>Optional. The email address used in any &quot;contact us&quot; context for the developer portal, including certain emails and notifications that include contact information.</p>
+			<td><p>Optional. The email address used in any &quot;contact us&quot; context for the Community Manager developer portal, including certain emails and notifications that include contact information.</p>
 				<p>Corresponds to the <strong>contactEmailAddress</strong> element in the installation Jython script.</p></td>
 		</tr>
 		<tr>
@@ -132,19 +133,19 @@ no-catalog: true
 		<tr>
 			<td>LaaSIntegrationSupport</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_LaaSIntegrationSupport.lbi" -->Indicates whether the Lifecycle Manager integration feature is turned on. For valid values, see <a href="../aaref/Ref_Values.htm#values_laasintegrationsupport">LaaSIntegrationSupport values</a>. Optional.<!-- #EndLibraryItem --></td>
+			<td>Indicates whether the Lifecycle Manager integration feature is turned on. For valid values, see <a href="../aaref/Ref_Values.htm#values_laasintegrationsupport">LaaSIntegrationSupport values</a>. Optional.</td>
 		</tr>
 		<tr>
 			<td>ForwardProxyAllowedHosts</td>
 			<td>string</td>
-			<td>Optional. In a scenario where forward proxy activity is limited to one or more specified hosts, those hosts are specified in this property. Any other hosts are rejected as unauthorized, with a message that the host is not allowed. To allow all, use the asterisk wildcard (*). To allow multiple hosts, use a comma separator; for example, host1,host2,host3. Corresponds to the following setting in the developer portal: <strong>Administration</strong> &gt; <strong>Site</strong> &gt; <strong>Limit forward proxy feature to allow only these hosts</strong>.</td>
+			<td>Optional. In a scenario where forward proxy activity is limited to one or more specified hosts, those hosts are specified in this property. Any other hosts are rejected as unauthorized, with a message that the host is not allowed. To allow all, use the asterisk wildcard (*). To allow multiple hosts, use a comma separator; for example, host1,host2,host3. Corresponds to the following setting in the Community Manager developer portal: <strong>Administration</strong> &gt; <strong>Site</strong> &gt; <strong>Limit forward proxy feature to allow only these hosts</strong>.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -156,5 +157,10 @@ no-catalog: true
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

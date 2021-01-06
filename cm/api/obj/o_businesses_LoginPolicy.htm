@@ -13,7 +13,7 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">LoginPolicy Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_businesses_LoginPolicy.lbi" -->Contains details about login policy settings for a business on the platform<!-- #EndLibraryItem --></p>
+<p>Contains details about login policy settings for a business on the platform</p>
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
 	<li><span class="apidoc_code"><a href="../businesses/m_businesses_updateLoginPolicy.htm">PUT&#160;/api/businesses/{BusinessID}/loginpolicy</a></span></li>
@@ -56,18 +56,18 @@ no-catalog: true
 			<td>LoginSessionTimeout</td>
 			<td>integer</td>
 			<td><p><strong>Deprecated</strong>: supported for backward compatibility only. Replaced by <strong>ActiveSessionTimeout</strong> and <strong>InactiveSessionTimeout</strong>.</p>
-				<p>Indicates the period of time, in minutes, after which the user is automatically logged out of the developer portal user interface if the session is inactive. Default: 30 minutes.</p></td>
+				<p>Indicates the period of time, in minutes, after which the user is automatically logged out of the Community Manager developer portal user interface if the session is inactive. Default: 30 minutes.</p></td>
 		</tr>
 		<tr>
 			<td>ActiveSessionTimeout</td>
 			<td>integer</td>
-			<td><p>Indicates the period of time, in minutes, after which the user is automatically logged out of the developer portal user interface even if the session is active. Default: 30 minutes.</p>
-				<p><strong>Note</strong>: <strong>ActiveSessionTimeout</strong> is the only timeout setting that is applicable to API users who are not using the developer portal user interface.</p></td>
+			<td><p>Indicates the period of time, in minutes, after which the user is automatically logged out of the Community Manager developer portal user interface even if the session is active. Default: 30 minutes.</p>
+				<p><strong>Note</strong>: <strong>ActiveSessionTimeout</strong> is the only timeout setting that is applicable to API users who are not using the Community Manager developer portal user interface.</p></td>
 		</tr>
 		<tr>
 			<td>InactiveSessionTimeout</td>
 			<td>integer</td>
-			<td><p>Indicates the period of time, in minutes, after which the user is automatically logged out of the developer portal user interface if the session is inactive. Default: 30 minutes.</p>
+			<td><p>Indicates the period of time, in minutes, after which the user is automatically logged out of the Community Manager developer portal user interface if the session is inactive. Default: 30 minutes.</p>
 				<p><strong>Note</strong>: the <strong>InactiveSessionTimeout</strong> setting takes precedence over <strong>LoginSessionTimeout</strong> which will be deprecated.</p></td>
 		</tr>
 		<tr>
@@ -75,12 +75,18 @@ no-catalog: true
 			<td>Boolean</td>
 			<td>Indicates whether the session cookie persists when the browser is closed. Default; <strong>true</strong>. If set to <strong>false</strong>, the cookie expires when the browser is closed.</td>
 		</tr>
+<tr>
+<td><p>ConcurrentLogin</p>
+<p><strong>Valid in version: 2020.1.2</strong></p></td>
+<td>Boolean</td>
+<td>Indicates whether a user can have more than one session running concurrently in multiple browsers or on multiple devices. Default: <strong>true</strong>, which allows multiple sessions. If set to <strong>false</strong>, only one session is allowed.</td>
+</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -92,5 +98,10 @@ no-catalog: true
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

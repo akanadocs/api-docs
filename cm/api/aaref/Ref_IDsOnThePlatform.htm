@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: IDs on the Platform | Reference Material | Akana API Platform API
-description: The&#160;Akana API Platform&#160;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.
+description: The Akana API Platform uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.
 product: cm
 category: ref
 nav-title: IDs on the Platform 
@@ -13,15 +13,15 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">IDs on the Platform</h1>
-<p>The&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
+<p>The Akana API Platform uses a number of unique identifiers to identify different resources and other objects commonly referenced on the platform, such as apps, APIs, tickets, discussions, users, reviews, notifications, and many others.</p>
 <p>These IDs are assigned by the back end, and are essentially simple strings. However, they generally have a two-part construction, such as:</p>
 <ul>
 	<li><strong>{uniqueid for object/tenant}.{tenant name}</strong></li>
 </ul>
-<p>For example, a unique UserID for a user on&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;might be <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong>. In this example:</p>
+<p>For example, a unique UserID for a user on Akana API Platform might be <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc.acmepaymentscorp</strong>. In this example:</p>
 <ul>
-	<li><strong>eceffbe3-3386-495b-80d3-7526f0eb0edc </strong>is unique to&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->, so the unique user record can be located in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;database.</li>
-	<li><strong><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></strong> indicates the tenant name. Including the tenant name after the period increases the usefulness of the object, because even if two tenants both have a user <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc</strong>, each ID is unique across the entirety of the platform in a federated scenario where there might be many tenants.</li>
+	<li><strong>eceffbe3-3386-495b-80d3-7526f0eb0edc</strong> is unique to the Akana API Platform, so the unique user record can be located in the Akana API Platform database.</li>
+	<li><strong>acmepaymentscorp</strong> indicates the tenant name. Including the tenant name after the period increases the usefulness of the object, because even if two tenants both have a user <strong>eceffbe3-3386-495b-80d3-7526f0eb0edc</strong>, each ID is unique across the entirety of the platform in a federated scenario where there might be many tenants.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -38,71 +38,71 @@ no-catalog: true
 	<tbody>
 		<tr>
 			<td><a id="id_actionid"></a>ActionID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ActionID.lbi" -->The unique ID for a specific workflow action.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific workflow action.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_admingroupid"></a>AdminGroupID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AdminGroupID.lbi" -->
-The unique ID for the Admin Group associated with a specific resource, such as an API or business, comprised of all administrators associated with that resource. Only used in response messages. <!--Example usage: &lt;span class=&quot;code&quot;&gt;getAPIAdministrators&lt;/span&gt; returns a list of administrators. Alternatively you can use the groupID and invoke the group API, getMembers operation. Or if you want to add an administrator you can get the groupID and invoke the inviteMemberToGroup operation.In the group API you would use it as the group ID. We return the team ID of the app and use it to manage the app team members using the group API. AdminGroupID is always applicable to an API group.--><!-- #EndLibraryItem --></td>
-			<td>group18970.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for the Admin Group associated with a specific resource, such as an API or business, comprised of all administrators associated with that resource. Only used in response messages. <!--Example usage: &lt;span class=&quot;code&quot;&gt;getAPIAdministrators&lt;/span&gt; returns a list of administrators. Alternatively you can use the groupID and invoke the group API, getMembers operation. Or if you want to add an administrator you can get the groupID and invoke the inviteMemberToGroup operation.In the group API you would use it as the group ID. We return the team ID of the app and use it to manage the app team members using the group API. AdminGroupID is always applicable to an API group.--></td>
+			<td>group18970.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_admingrouprecipientobjectid"></a>AdminGroupRecipientObjectID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AdminGroupRecipientObjectID.lbi" -->
-The unique ID for a user group whose members will receive a specific notification.<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for a user group whose members will receive a specific notification.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_agreementid"></a>AgreementID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AgreementID.lbi" -->The unique ID for a specific legal agreement associated with an API.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific legal agreement associated with an API.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_agreementscopeid"></a>AgreementScopeID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_AgreementScopeID.lbi" -->The unique ID for the scope of a legal agreement.<!-- #EndLibraryItem --></p>
+			<td><p>The unique ID for the scope of a legal agreement.</p>
 				<p> In the case of an API access request, the AgreementScopeID is the <a href="#id_appversionid">AppVersionID</a>. When an app version is connecting to an API version, the app developer must accept any legal agreements configured for the specific API version and the agreements configured for licenses that are part of the scope of the API contract being set up.</p></td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_alertid"></a>AlertID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AlertID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_alert">alert</a>.<!-- #EndLibraryItem --></td>
-			<td>alert11639.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_alert">alert</a>.</td>
+			<td>alert11639.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_apiid"></a>APIID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->The unique ID for a specific API.<!-- #EndLibraryItem --></td>
-			<td>8bebe599-3b97-45bc-a6a7-73542af275a7.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API.</td>
+			<td>8bebe599-3b97-45bc-a6a7-73542af275a7.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_apiversionid"></a>APIVersionID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
-			<td>48692e9f-f452-4a17-b793-5368b1b116c3.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API version.</td>
+			<td>48692e9f-f452-4a17-b793-5368b1b116c3.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_appid"></a>AppID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->The unique ID for a specific app.<!-- #EndLibraryItem --></p>
-				<p><strong>Note</strong>: The AppID field in the developer portal is actually the <a href="#id_appruntimeid">AppRuntimeID</a>, see below.</p></td>
-			<td>5883f204-5e28-4a90-8c6f-3287b1f18a12.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td><p>The unique ID for a specific app.</p>
+				<p><strong>Note</strong>: The AppID field in the Community Manager developer portal is actually the <a href="#id_appruntimeid">AppRuntimeID</a>, see below.</p></td>
+			<td>5883f204-5e28-4a90-8c6f-3287b1f18a12.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_appruntimeid"></a>AppRuntimeID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AppRuntimeID.lbi" --><p>Unique ID used at runtime by the app version.</p>
-<p><strong>Note</strong>: By default, the RuntimeID for an app and the AppVersionID are essentially the same, but the values are reversed. In some cases, the RuntimeID can be user-defined. It is not case-sensitive and must be a unique set of alphanumeric characters.</p><!-- #EndLibraryItem --></td>
-			<td><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem -->.72zNE5InKlf2z00y8fWSp3AU</td>
+			<td><p>Unique ID used at runtime by the app version.</p>
+<p><strong>Note</strong>: By default, the RuntimeID for an app and the AppVersionID are essentially the same, but the values are reversed. In some cases, the RuntimeID can be user-defined. It is not case-sensitive and must be a unique set of alphanumeric characters.</p></td>
+			<td>acmepaymentscorp.72zNE5InKlf2z00y8fWSp3AU</td>
 		</tr>
 		<tr>
 			<td><a id="id_appversionid"></a>AppVersionID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" -->
-The unique ID for a specific app version.<!-- #EndLibraryItem --></p>
+			<td><p>
+The unique ID for a specific app version.</p>
 				<p>The App Version ID is made up of two elements, separated by a dot: an <a href="../Ref_Glossary_CommunityPlatform.htm#gl_rdn">RDN</a>, which is a 24-character hex value randomly generated when the version is created, and the <a href="#id_fedmemberid">FedmemberID</a> (tenant name).</p>
 				<p><strong>Note</strong>: <a href="#id_appruntimeid">AppRuntimeID</a> and AppVersionID are the same value. When this appears in a form parameter, the API uses AppVersionID; when it's part of a request or response object, the API uses AppRuntimeID.</p></td>
-			<td>72zNE5InKlf2z00y8fWSp3AU.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>72zNE5InKlf2z00y8fWSp3AU.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_appversiondn"></a>AppVersionDN</td>
 			<td>Same as <a href="#id_appversionid">AppVersionID</a>, see above.</td>
-			<td>72zNE5InKlf2z00y8fWSp3AU.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>72zNE5InKlf2z00y8fWSp3AU.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_assetid"></a>AssetID</td>
@@ -116,12 +116,12 @@ The unique ID for a specific app version.<!-- #EndLibraryItem --></p>
 		</tr>
 		<tr>
 			<td><a id="id_avatarversionid"></a>AvatarVersionID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AvatarVersionID.lbi" -->The unique ID for a specific version of an avatar. Each time an avatar is assigned to a resource such as an app or API, the platform assigns a unique ID to the avatar. If a different avatar is then assigned to the same resource, the new avatar has a different AvatarID.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific version of an avatar. Each time an avatar is assigned to a resource such as an app or API, the platform assigns a unique ID to the avatar. If a different avatar is then assigned to the same resource, the new avatar has a different AvatarID.</td>
 			<td>b49540e4-a45e-4186-807f-a4e74d94fd83.png</td>
 		</tr>
 		<tr>
 			<td><a id="id_boardid"></a>BoardID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_BoardID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forum">forum (board)</a>, such as an app, API, or group forum or a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_board_userdefined">user-defined forum</a>.<!-- #EndLibraryItem --></p>
+			<td><p>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forum">forum (board)</a>, such as an app, API, or group forum or a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_board_userdefined">user-defined forum</a>.</p>
 				<p>In the <a href="../index_boards.htm">Boards service</a>, operations that use the BoardID are generally for user-defined boards.</p></td>
 			<td>&#160;</td>
 		</tr>
@@ -142,17 +142,17 @@ The unique ID for a specific app version.<!-- #EndLibraryItem --></p>
 		</tr>
 		<tr>
 			<td><a id="id_businessadmingroupid"></a>BusinessAdminGroupID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_BusinessAdminGroupID.lbi" -->The unique <a href="Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a> for the Business Admin group on the platform.<!-- #EndLibraryItem --></p>
+			<td><p>The unique <a href="Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a> for the Business Admin group on the platform.</p>
 				<p>To find out what the BusinessAdminGroupID is for your business, you can run the <span class="apidoc_code"><a href="../properties/m_properties_getTenantProperties.htm">GET&#160;/api/properties</a></span> operation.</p></td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_businessid"></a>BusinessID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" -->
-The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></p>
+			<td><p>
+The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.</p>
 				<p>When the tenant is configured, as part of the post-install configuration with the jython script, a business is created, and has a unique Business ID.</p>
 To find out what the Business ID is for your installation, you can run the <span class="apidoc_code"><a href="../properties/m_properties_getTenantProperties.htm">GET&#160;/api/properties</a></span> operation. It is the <strong>TenantBusinessID</strong> value.</td>
-			<td>tenantbusiness.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>tenantbusiness.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_businesskey"></a>BusinessKey</td>
@@ -164,55 +164,55 @@ To find out what the Business ID is for your installation, you can run the <span
 		</tr>
 		<tr>
 			<td><a id="id_clientid">ClientID</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ClientID.lbi" -->
-The unique ID for a specific OAuth client, as set up with the OAuth Provider. In the context of the platform, the ClientID is the same as the app's <a href="Ref_IDsOnThePlatform.htm#id_runtimeid">RuntimeID</a>.<!-- #EndLibraryItem --></td>
-			<td><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem -->-9ezRSOnifci8EYNndZu79U6w.</td>
+			<td>
+The unique ID for a specific OAuth client, as set up with the OAuth Provider. In the context of the platform, the ClientID is the same as the app's <a href="Ref_IDsOnThePlatform.htm#id_runtimeid">RuntimeID</a>.</td>
+			<td>acmepaymentscorp-9ezRSOnifci8EYNndZu79U6w.</td>
 		</tr>
 		<tr>
 			<td><a id="id_commentid"></a>CommentID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_CommentID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_comment">comment</a>.<!-- #EndLibraryItem --></p>
+			<td><p>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_comment">comment</a>.</p>
 				<p>In the <a href="../index_boards.htm">Boards service</a>, operations that take the CommentID as a path parameter can generally be used for any time of board.</p></td>
-			<td><p>3a7e2509-0474-4938-8bcd-2aee1d9ecae1.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></p>
+			<td><p>3a7e2509-0474-4938-8bcd-2aee1d9ecae1.acmepaymentscorp</p>
 				<p>1039801c-27fc-45cf-ae80-09990fc321f9</p></td>
 		</tr>
 		<tr>
 			<td><a id="id_commentsubjectid"></a>CommentSubjectID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_CommentSubjectID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_comment">comment</a> subject.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_comment">comment</a> subject.</td>
 			<td>discussion10550.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_contextobjectid"></a>ContextObjectID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ContextObjectID.lbi" -->
-The unique ID of the object that a group belongs to, if applicable. For an app team it is the <strong>AppID</strong>; for an API Scope Group it is the <strong>APIVersionID</strong>.<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID of the object that a group belongs to, if applicable. For an app team it is the <strong>AppID</strong>; for an API Scope Group it is the <strong>APIVersionID</strong>.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_contractid"></a>ContractID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_ContractID.lbi" --> The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></p>
+			<td><p> The unique ID for a specific contract between an app version and an API version.</p>
 				<p><strong>Note</strong>: ContractID and APIAccessRequest are synonymous.</p></td>
-			<td>contract17172.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>contract17172.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_defaultversionid"></a>DefaultVersionID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_DefaultVersionID.lbi" -->
-Unique ID for the latest or only version of an app.<!-- #EndLibraryItem --></td>
+			<td>
+Unique ID for the latest or only version of an app.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_deploymentzoneid"></a>DeploymentZoneID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_DeploymentZoneID.lbi" -->Unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.<!-- #EndLibraryItem --> (DeploymentZoneID and DZoneID are the same.)</td>
+			<td>Unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>. (DeploymentZoneID and DZoneID are the same.)</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_discussionid"></a>DiscussionID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_DiscussionID.lbi" -->
-The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussion</a>.<!-- #EndLibraryItem --></td>
-			<td>063fe661-a74f-40d2-a242-9d49ec426e81.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussion</a>.</td>
+			<td>063fe661-a74f-40d2-a242-9d49ec426e81.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_discussionsubjectid"></a>DiscussionSubjectID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_DiscussionSubjectID.lbi" -->The unique ID for the specific resource that a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussion</a> relates to; for example, the <a href="Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a>, <a href="Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>, <a href="Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a>, or a custom <a href="Ref_IDsOnThePlatform.htm#id_boardid">BoardID</a>.<!-- #EndLibraryItem --></td>
-			<td>4iXro2Uxs2h4LviCshR9pK9w.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for the specific resource that a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_discussion">discussion</a> relates to; for example, the <a href="Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a>, <a href="Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>, <a href="Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a>, or a custom <a href="Ref_IDsOnThePlatform.htm#id_boardid">BoardID</a>.</td>
+			<td>4iXro2Uxs2h4LviCshR9pK9w.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_documentid"></a>DocumentID</td>
@@ -226,60 +226,61 @@ The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_d
 		</tr>
 		<tr>
 			<td><a id="id_dropboxfileid"></a>DropboxFileId</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_id_DropboxFileId.lbi" -->A temporary ID for an API description document file uploaded to the platform. The DropboxFileId is assigned by the Dropbox when the file is first uploaded to the platform, using the Dropbox service, as part of adding or updating the resource. <!-- #EndLibraryItem --></p>
+			<td><p>A temporary ID for an API description document file uploaded to the platform. The DropboxFileId is assigned by the Dropbox when the file is first uploaded to the platform, using the Dropbox service, as part of adding or updating the resource. </p>
 			<p>Note: Most IDs are strings but <strong>DropboxFileId</strong> and <strong>PictureID</strong> have a data type of <strong>long</strong>.</p></td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_dropboxid"></a>DropboxId</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_id_DropboxId.lbi" -->
-A temporary ID for a file uploaded to the platform. The DropboxId is assigned by the Dropbox when the file is first uploaded to the platform, using the Dropbox service, as part of adding or updating the resource. <!-- #EndLibraryItem --></p>
+			<td><p>
+A temporary ID for a file uploaded to the platform. The DropboxId is assigned by the Dropbox when the file is first uploaded to the platform, using the Dropbox service, as part of adding or updating the resource. </p>
 			<p>Note: Most IDs are strings, but <strong>DropboxId</strong> and <strong>PictureID</strong> have a data type of <strong>long</strong>.</p></td>
 			<td>1021</td>
 		</tr>
 		<tr>
 			<td><a id="id_dzoneid"></a>DZoneID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_DeploymentZoneID.lbi" -->Unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.<!-- #EndLibraryItem --> (DeploymentZoneID and DZoneID are the same.)</td>
+			<td>Unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>. (DeploymentZoneID and DZoneID are the same.)</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_fedmemberid"></a>FedmemberID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_FedMemberID.lbi" -->Unique ID for a specific tenant, in a federation (multi-tenant) scenario; for example, <strong>acmepaymentscorp</strong>.<!-- #EndLibraryItem --></p>
-				<p>The FedmemberID is the last part of most IDs. In most of the examples in this table,&#160;</p>				<p><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem -->&#160;is the FedmemberID.</p>
+			<td><p>
+Unique ID for a specific tenant. Same as <strong>TenantID</strong>.</p>
+				<p>The FedmemberID is the last part of most IDs. In most of the examples in this table, acmepaymentscorp is the FedmemberID.</p>
 				<p>To find out what the FedmemberID is for your installation, you can run the <span class="apidoc_code"><a href="../properties/m_properties_getTenantProperties.htm">GET&#160;/api/properties</a></span> operation.</p></td>
-			<td><p>Tenant01</p><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td><p>Tenant01</p>acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_followedid"></a>FollowedID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_FollowedID.lbi" --> The unique identifier for a resource that is being followed by an individual.<!-- #EndLibraryItem --></td>
+			<td> The unique identifier for a resource that is being followed by an individual.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_followingid"></a>FollowingID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_FollowingID.lbi" -->
-The unique ID for a &quot;following&quot; relationship between a user and a specific resource the user is following (app or API).<!-- #EndLibraryItem --></td>
-			<td>follow15927.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for a &quot;following&quot; relationship between a user and a specific resource the user is following (app or API).</td>
+			<td>follow15927.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_grantid"></a>GrantID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_GrantID.lbi" -->The unique ID for a specific instance of an OAuth grant.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific instance of an OAuth grant.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_groupid"></a>GroupID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_GroupID.lbi" -->The unique ID for a specific group.<!-- #EndLibraryItem --></p>
+			<td><p>The unique ID for a specific group.</p>
 				<p>If you're not sure of the ID for a specific group, and you're a member of the group yourself, you can run the <span class="apidoc_code"><a href="../users/m_users_getMyGroups.htm">GET&#160;/api/users/{UserID}/groups</a></span> operation to get the IDs of groups you're a member of.</p>
-				<p>The Site Admin group name is: <strong>tenantadmin.{tenantid}</strong>. For example: tenantadmin.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem -->.</p></td>
-			<td>73691c5e-598a-4251-aac2-2a5b28385207.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+				<p>The Site Admin group name is: <strong>tenantadmin.{tenantid}</strong>. For example: tenantadmin.acmepaymentscorp.</p></td>
+			<td>73691c5e-598a-4251-aac2-2a5b28385207.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_groupmembershipid"></a>GroupMembershipID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_GroupMembershipID.lbi" -->The unique ID for a specific user's membership in a specific group.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific user's membership in a specific group.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_itemid"></a>ItemID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ItemID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">forum entry</a>.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_forumentry">forum entry</a>.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
@@ -296,20 +297,20 @@ The unique ID for a &quot;following&quot; relationship between a user and a spec
 		</tr>
 		<tr>
 			<td><a id="id_latestversionid"></a>LatestVersionID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_LatestVersionID.lbi" -->The ID for the latest version of a versioned resource that's available to the requesting user.<!-- #EndLibraryItem --></p>
+			<td><p>The ID for the latest version of a versioned resource that's available to the requesting user.</p>
 				<p>For example, for an API: Depending on the user's permissions, this might be the actual latest version of the API; however, if the user doesn't have access permission for the latest version, but has access to one or more earlier versions, it will be the latest version the user has access to.</p></td>
-			<td>cf84cf31-69b8-4e1b-81b4-181dbae5d1ca.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>cf84cf31-69b8-4e1b-81b4-181dbae5d1ca.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_legaldocumentid"></a>LegalDocumentID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_LegalDocumentID.lbi" -->The unique ID for the association of a specific legal document with a resource such as an API version, license, or the platform.<!-- #EndLibraryItem --></p>
+			<td><p>The unique ID for the association of a specific legal document with a resource such as an API version, license, or the platform.</p>
 				<p>LegalDocumentID and <a href="#id_documentid">DocumentID</a> are the same.</p></td>
-			<td>f894c83d-9c7a-44cd-8138-47df88b47583.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>f894c83d-9c7a-44cd-8138-47df88b47583.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_licenseid"></a>LicenseID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_LicenseID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_license">license</a>.<!-- #EndLibraryItem --></td>
-			<td>759aa82d-aeb7-4fa0-8dd1-e62d7f38e858.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_license">license</a>.</td>
+			<td>759aa82d-aeb7-4fa0-8dd1-e62d7f38e858.acmepaymentscorp</td>
 		</tr>
 
 		<tr>
@@ -319,8 +320,8 @@ The unique ID for a &quot;following&quot; relationship between a user and a spec
 		</tr>
 		<tr>
 			<td><a id="id_logindomainid"></a>LoginDomainID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_LoginDomainID.lbi" -->The unique ID for a user's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domain</a>; either the platform, for a local account, or an additional login domain such as Google or Facebook. The login domains supported by a specific platform version are configured by the Site Admin.<!-- #EndLibraryItem --></td>
-			<td>siteusers.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a user's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domain</a>; either the platform, for a local account, or an additional login domain such as Google or Facebook. The login domains supported by a specific platform version are configured by the Site Admin.</td>
+			<td>siteusers.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_logoid"></a>LogoID</td>
@@ -334,33 +335,33 @@ The unique ID for a &quot;following&quot; relationship between a user and a spec
 		</tr>
 		<tr>
 			<td><a id="id_membershiprequestid"></a>MembershipRequestID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_MembershipRequestID.lbi" -->
-The unique Board Item ID for a specific group membership request.<!-- #EndLibraryItem --></td>
-			<td>group_member_req10034.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>
+The unique Board Item ID for a specific group membership request.</td>
+			<td>group_member_req10034.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_modelid"></a>ModelID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_id_ModelID.lbi" -->The unique ID for a model object defined for a business organization.<!-- #EndLibraryItem --></td>
-			<td>cf84cf31-69b8-4e1b-81b4-181dbae5d1ca.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a model object defined for a business organization.</td>
+			<td>cf84cf31-69b8-4e1b-81b4-181dbae5d1ca.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_modelversionid"></a>ModelVersionID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_id_ModelVersionID.lbi" -->The unique ID for a specific version of a model object defined for a business organization. Same format as <a href="Ref_IDsOnThePlatform.htm#id_modelid">ModelID</a>.<!-- #EndLibraryItem --></td>
-			<td>cf84cf31-69b8-4e1b-81b4-181dbae5d1ca.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific version of a model object defined for a business organization. Same format as <a href="Ref_IDsOnThePlatform.htm#id_modelid">ModelID</a>.</td>
+			<td>cf84cf31-69b8-4e1b-81b4-181dbae5d1ca.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_notificationid"></a>NotificationID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_NotificationID.lbi" --> The unique ID for a specific instance of a notification on a specific user's Dashboard.<!-- #EndLibraryItem --></td>
+			<td> The unique ID for a specific instance of a notification on a specific user's Dashboard.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_notificationsubjectid"></a>NotificationSubjectID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_LegalDocumentID.lbi" -->The unique ID for the association of a specific legal document with a resource such as an API version, license, or the platform.<!-- #EndLibraryItem --></td>
-			<td>notification30170.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for the association of a specific legal document with a resource such as an API version, license, or the platform.</td>
+			<td>notification30170.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_oauthclientid"></a>OAuthClientID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_id_OAuthClientID.lbi" -->Unique ID for the OAuth Client.<!-- #EndLibraryItem --></td>
+			<td>Unique ID for the OAuth Client.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
@@ -380,39 +381,39 @@ The unique Board Item ID for a specific group membership request.<!-- #EndLibrar
 		</tr>
 		<tr>
 			<td><a id="id_parentbusinessid"></a>ParentBusinessID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ParentBusinessID.lbi" -->The unique <a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a> for the parent organization (senior in the organization hierarchy) of a business organization on the platform.<!-- #EndLibraryItem --></td>
+			<td>The unique <a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a> for the parent organization (senior in the organization hierarchy) of a business organization on the platform.</td>
 			<td>&#8212;</td>
 		</tr>
 		<tr>
 			<td><a id="id_pictureid"></a>PictureID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_PictureID.lbi" -->
-A temporary ID for a picture on the platform, such as the avatar for an app, API, or user. The PictureID is assigned by the Dropbox when the picture is first uploaded to the server, using the Dropbox service, as part of adding or updating the resource. PictureID is essentially the same as <a href="Ref_IDsOnThePlatform.htm#id_dropboxid">DropboxId</a>.<!-- #EndLibraryItem --></td>
+			<td>
+A temporary ID for a picture on the platform, such as the avatar for an app, API, or user. The PictureID is assigned by the Dropbox when the picture is first uploaded to the server, using the Dropbox service, as part of adding or updating the resource. PictureID is essentially the same as <a href="Ref_IDsOnThePlatform.htm#id_dropboxid">DropboxId</a>.</td>
 			<td>1285</td>
 		</tr>
 		<tr>
 			<td><a id="id_processid"></a>ProcessID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ProcessID.lbi" -->
-A unique ID for a workflow process.<!-- #EndLibraryItem --></td>
+			<td>
+A unique ID for a workflow process.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_providerid"></a>ProviderId</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ProviderId.lbi" -->
-The ID of the third party providing validation for the user, such as Facebook&reg; or Google&reg;.<!-- #EndLibraryItem --></td>
+			<td>
+The ID of the third party providing validation for the user, such as Facebook&reg; or Google&reg;.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_resourceid"></a>ResourceID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_ResourceID.lbi" -->The unique ID for a specific resource; for example, the <a href="Ref_IDsOnThePlatform.htm#id_scopeid">ScopeID</a> or the <a href="Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>.<!-- #EndLibraryItem --></p>
+			<td><p>The unique ID for a specific resource; for example, the <a href="Ref_IDsOnThePlatform.htm#id_scopeid">ScopeID</a> or the <a href="Ref_IDsOnThePlatform.htm#id_apiversionid">APIVersionID</a>.</p>
 				<p>Usage examples:</p>
 				<ul class="apidoctable_ul">
 					<li>The <span class="apidoc_code"><a href="../users/m_users_getUserRoles.htm">GET&#160;/api/users/{UserID}/roles?ResourceID={ResourceID}</a></span> operation references a <a href="#id_userid">UserID</a> as a resource ID</li>
 					<li>The <span class="apidoc_code"><a href="../apis/m_apis_getTxLogsForOperation.htm">GET&#160;/api/apis/versions/{APIVersionID}/resources</a></span> response message references a <a href="#id_scopeid">ScopeID</a> as a resourceID.</li>
 				</ul>
 				<p>The ResourceID could also be the ID for another platform resource; for example, an <a href="#id_alertid">AlertID</a>, <a href="#id_discussionid">DiscussionID</a>, <a href="#id_ticketid">TicketID</a>, <a href="#id_reviewid">ReviewID</a>, <a href="#id_commentid">CommentID</a>, or <a href="#id_businessid">BusinessID</a>.</p></td>
-			<td><p>user13967.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></p>
-				<p>5e0a3c2a-8afe-478d-a1dc-67772939d191.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></p>
-				<p>tenantbusiness.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></p></td>
+			<td><p>user13967.acmepaymentscorp</p>
+				<p>5e0a3c2a-8afe-478d-a1dc-67772939d191.acmepaymentscorp</p>
+				<p>tenantbusiness.acmepaymentscorp</p></td>
 		</tr>
 		<tr>
 			<td><a id="id_resourceversionkey"></a>ResourceVersionKey</td>
@@ -423,62 +424,62 @@ The ID of the third party providing validation for the user, such as Facebook&re
 		</tr>
 		<tr>
 			<td><a id="id_resourceownerid"></a>ResourceOwnerID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_id_ResourceOwnerID.lbi" -->The unique ID for the resource owner in the context of a specific OAuth transaction<!-- #EndLibraryItem --></td>
+			<td>The unique ID for the resource owner in the context of a specific OAuth transaction</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_reviewid"></a>ReviewID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ReviewID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_review">review</a>.<!-- #EndLibraryItem --></td>
-			<td>review24085.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_review">review</a>.</td>
+			<td>review24085.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_reviewauthorid"></a>ReviewAuthorID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ReviewAuthorID.lbi" -->
-The unique UserID for the author of a specific review.<!-- #EndLibraryItem --></td>
-			<td>user23531.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>
+The unique UserID for the author of a specific review.</td>
+			<td>user23531.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_reviewsubjectid"></a>ReviewSubjectID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ReviewSubjectID.lbi" -->The unique ID for the resource being reviewed; for example, an App ID.<!-- #EndLibraryItem --></td>
-			<td>gbGPCs7Uvz4VV8D0Zuvzdq6C.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for the resource being reviewed; for example, an App ID.</td>
+			<td>gbGPCs7Uvz4VV8D0Zuvzdq6C.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_retrievinguserid"></a>RetrievingUserID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_RetrievingUserID.lbi" -->The unique UserID of the user performing a specific action.<!-- #EndLibraryItem --></td>
-			<td>eceffbe3-3386-495b-80d3-7526f0eb0edc.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique UserID of the user performing a specific action.</td>
+			<td>eceffbe3-3386-495b-80d3-7526f0eb0edc.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_runtimeid"></a>RuntimeID</td>
 			<td><p>See <a href="#id_appruntimeid">AppRuntimeID</a>.</p></td>
-			<td><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem -->-9ezRSOnifci8EYNndZu79U6w.</td>
+			<td>acmepaymentscorp-9ezRSOnifci8EYNndZu79U6w.</td>
 		</tr>
 		<tr>
 			<td><a id="id_serviceid"></a>ServiceID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ServiceID.lbi" -->
-The unique ID for a specific service; either a proxied API service or a physical service. Sometimes also called the <strong>ServiceKey</strong>. If you're not sure how to find this value, run the <span class="apidoc_code"><a href="../apis/m_apis_getAPIImplementation.htm">GET&#160;/api/apis/versions/{APIVersionID}/implementations/{ImplCode}</a></span> operation. For an explanation of where the physical and virtual service keys occur in the response, see <a href="../aaex/Ref_Ex_API_Modify_Endpoint.htm#phys_svc_id">Get the Service ID for the physical service</a>.<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for a specific service; either a proxied API service or a physical service. Sometimes also called the <strong>ServiceKey</strong>. If you're not sure how to find this value, run the <span class="apidoc_code"><a href="../apis/m_apis_getAPIImplementation.htm">GET&#160;/api/apis/versions/{APIVersionID}/implementations/{ImplCode}</a></span> operation. For an explanation of where the physical and virtual service keys occur in the response, see <a href="../aaex/Ref_Ex_API_Modify_Endpoint.htm#phys_svc_id">Get the Service ID for the physical service</a>.</td>
 			<td>uddi:d26f2232-3bfe-11e7-8c53-f1aac8715c11</td>
 		</tr>
 		<tr>
 			<td><a id="id_scopeid"></a>ScopeID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ScopeID.lbi" -->A unique ID indicating the scope of a user's permissions.<!-- #EndLibraryItem --></td>
+			<td>A unique ID indicating the scope of a user's permissions.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_scriptversionkey"></a>ScriptVersionKey</td>
-			<td><p>In general, resources in the developer portal use a unique ID in the URL, <a href="#id_resourceversionkey">ResourceVersionKey</a>, to indicate the version of a resource. This key is used to help manage caching. These resources can be cached for a month; however, if certain changes are made to the developer portal, such as changes in settings, the ResourceVersionKey is updated. Because resources using this key now have a new URL, new versions of the resources are retrieved.</p>
+			<td><p>In general, resources in the Community Manager developer portal use a unique ID in the URL, <a href="#id_resourceversionkey">ResourceVersionKey</a>, to indicate the version of a resource. This key is used to help manage caching. These resources can be cached for a month; however, if certain changes are made to the Community Manager developer portal, such as changes in settings, the ResourceVersionKey is updated. Because resources using this key now have a new URL, new versions of the resources are retrieved.</p>
 <p>Certain files in the platform, such as the <strong>production.js</strong> file, use a different key, ScriptVersionKey. This is only used for files when the file version will not change between releases. The ScriptVersionKey value is only updated when a new version of the platform is installed.</p>
 </td>
 			<td>_VZDDEgXYVpd_dBFe6W7zNnQ</td>
 		</tr>
 		<tr>
 			<td><a id="id_siteadmingroupid"></a>SiteAdminGroupID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_SiteAdminGroupID.lbi" -->The unique <a href="Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a> for the Site Admin group on the platform.<!-- #EndLibraryItem --></p>
+			<td><p>The unique <a href="Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a> for the Site Admin group on the platform.</p>
 				<p>To find out what the SiteAdminGroupID is for your installation, you can run the <span class="apidoc_code"><a href="../properties/m_properties_getTenantProperties.htm">GET&#160;/api/properties</a></span> operation.</p></td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_sourceid"></a>SourceID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_SourceID.lbi" -->The unique ID assigned to the source of an RSS feed.<!-- #EndLibraryItem --></td>
+			<td>The unique ID assigned to the source of an RSS feed.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
@@ -493,51 +494,52 @@ The unique ID for a specific service; either a proxied API service or a physical
 		</tr>
 		<tr>
 			<td><a id="id_teamid"></a>TeamID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_TeamID.lbi" -->The unique ID for the app team associated with the app.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for the app team associated with the app.</td>
 			<td>&#160;</td>
 		</tr>
 		<tr>
 			<td><a id="id_tenantbusinessid"></a>TenantBusinessID</td>
 			<td>The unique ID for the tenant business; same as the <a href="#id_businessid">BusinessID</a> for the business.</td>
-			<td>tenantbusiness.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>tenantbusiness.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_tenantid"></a>TenantID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_FedMemberID.lbi" -->Unique ID for a specific tenant, in a federation (multi-tenant) scenario; for example, <strong>acmepaymentscorp</strong>.<!-- #EndLibraryItem --></p>
+			<td><p>
+Unique ID for a specific tenant. Same as <strong>TenantID</strong>.</p>
 				<p><strong>Note</strong>: The value normally used to identify a tenant is the <a href="#id_fedmemberid">FedmemberID</a>.</p></td>
 			<td>10001</td>
 		</tr>
 		<tr>
 			<td>TenantFedMemberID</td>
 			<td>Same as <a href="#id_fedmemberid">FedmemberID</a>.</td>
-			<td><!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_ticketid"></a>TicketID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_TicketID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_ticket">ticket</a>.<!-- #EndLibraryItem --></td>
-			<td>ticket25687.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_ticket">ticket</a>.</td>
+			<td>ticket25687.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_transactionid"></a>TransactionID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_TransactionID.lbi" -->
-The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_transaction">transaction</a>.<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_transaction">transaction</a>.</td>
 			<td>f209d402-b406-11e2-a29e-c564ec007eb4</td>
 		</tr>
 		<tr>
 			<td><a id="id_userid"></a>UserID</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_UserID.lbi" -->The unique ID for a specific user.<!-- #EndLibraryItem --></p>
+			<td><p>The unique ID for a specific user.</p>
 				<p>Also called userFdn in some model objects.</p>
 				<p>The UserID is returned in the response to the <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&#160;/api/login</a></span> operation (userFDN parameter in the response body). If you're a Site Admin you can also use the <span class="apidoc_code"><a href="../search/m_search_search.htm">GET&#160;/api/search</a></span> operation with user parameter (GET /api/search?q=type:user) to return a list of users.</p></td>
-			<td>e437a7ea-108f-498e-9065-afd3776b2a08.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>e437a7ea-108f-498e-9065-afd3776b2a08.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_viewerid"></a>ViewerID</td>
 			<td>The unique ID of the viewer of a resource. This might be the unique ID of a viewer of a Discussion, Ticket, Alert, Review, or Comment; or it might be the <a href="#id_groupid">GroupID</a> of a group viewing an API. For example, the <span class="apidoc_code"><a href="../apis/m_apis_uninvitePrivateViewer.htm">DELETE&#160;/api/apis/versions/{APIVersionID}/viewers/{ViewerID}</a></span> operation has the ViewerID as an input parameter.</td>
-			<td>1c95952f-a53b-47ad-8a2f-f02d92ed6d26.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem --></td>
+			<td>1c95952f-a53b-47ad-8a2f-f02d92ed6d26.acmepaymentscorp</td>
 		</tr>
 		<tr>
 			<td><a id="id_visibletoid"></a>VisibleToID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_VisibleToID.lbi" -->A unique ID identifying the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> of a Board item.<!-- #EndLibraryItem --></td>
+			<td>A unique ID identifying the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> of a Board item.</td>
 			<td>&#160;</td>
 		</tr>
 	</tbody>
@@ -545,7 +547,7 @@ The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_t
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -557,5 +559,10 @@ The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_t
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

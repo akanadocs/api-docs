@@ -15,7 +15,7 @@ no-catalog: false
 <h1 id="top">Index Administration Service: Overview</h1>
 <p>The Index Administration service provides operations for managing the Elasticsearch cluster.</p>
 <p>Note: This service requires Administrator rights. For information about assigning the System Administrator role, refer to <a href="../../ag/security_admin/roles.htm#role_assign">Assigning a role to a user</a> (Policy Manager help).</p>
-<p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->indexadmin</span></p>
+<p><strong>URL</strong>: <span class="apidoc_code">https://{hostname}/api/indexadmin</span></p>
 
 <table class="tableparmsresponse">
 	<thead>
@@ -27,26 +27,28 @@ no-catalog: false
 		<tr>
 			<td>get cluster health</td>
 			<td><a href="indexadmin/m_indexadmin_getClusterHealth.htm">GET&#160;/api/indexadmin/cluster/health</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getClusterHealth.lbi" -->Returns information about the Elasticsearch cluster.<!-- #EndLibraryItem --></td>
+			<td>Returns information about the Elasticsearch cluster.</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>get Elasticsearch global configuration</td>
 			<td><a href="indexadmin/m_indexadmin_getESGlobalConfiguration.htm">GET&#160;/api/indexadmin/config</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getESGlobalConfiguration.lbi" -->Returns information about the global configuration settings for Elasticsearch on the Akana API Platform.<!-- #EndLibraryItem --></td>
+			<td>Returns information about the global configuration settings for Elasticsearch on the Akana API Platform.</td>
 		</tr>
 		<tr>
 			<td>update Elasticsearch global configuration</td>
 			<td><a href="indexadmin/m_indexadmin_updateESGlobalConfiguration.htm">PUT&#160;/api/indexadmin/config</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_updateESGlobalConfiguration.lbi" -->Updates the global configuration settings for Elasticsearch on the Akana API Platform.<!-- #EndLibraryItem --></td>
+			<td>Updates the global configuration settings for Elasticsearch on the Akana API Platform.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+
+
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="index.htm">Akana API Platform API: Overview</a></li>
@@ -58,5 +60,9 @@ no-catalog: false
 	<li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+</div>

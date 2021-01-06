@@ -16,10 +16,10 @@ no-catalog: true
 <h1 id="top">GET&#160;/api/apis/versions/{APIVersionID}/environments/{Environment}/operations/{OperationName}/txlogs</h1><!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getTxLogsForOperation.lbi" -->Returns transaction logs for the specified operation in the specified environment.<!-- #EndLibraryItem --></p>
+<p>Returns transaction logs for the specified operation in the specified environment.</p>
 <p>Optional parameters allow you to further narrow down a transaction range; for example, by date range.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must be a user with Monitor permission for the API; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must be a user with Monitor permission for the API; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -36,7 +36,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -44,7 +45,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/environments/{Environment}/operations/{OperationName}/txlogs[?]
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/environments/{Environment}/operations/{OperationName}/txlogs[?]
 &amp;[StartDate={StartDate}]&amp;[EndDate={EndDate}]&amp;[TimeZone={TimeZone}]&amp;[Duration={Duration}]&amp;[start={start}][&amp;count={count}]</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -53,7 +54,7 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the first five transactions for the specified environment/operation.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/0f14e2b3-671a-49e4-98ac-eef610a58a81.acmepaymentscorp/environments/Production/operations/getPetById/txlogs?count=2</pre>
+<pre>https://{hostname}/api/apis/versions/0f14e2b3-671a-49e4-98ac-eef610a58a81.acmepaymentscorp/environments/Production/operations/getPetById/txlogs?count=2</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -75,19 +76,18 @@ no-catalog: true
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->,<!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>,<strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -113,7 +113,7 @@ no-catalog: true
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API version.</td>
 		</tr>
 		<tr>
 			<td>Environment</td>
@@ -134,37 +134,37 @@ no-catalog: true
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_StartDate.lbi" -->The beginning point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>StartDate=2011-01-01T11:55:22</strong>. If StartDate is not specified, the operation uses EndDate minus Duration. If both StartDate and EndDate are unspecified, the operation returns information for the Duration value, and if Duration is also unspecified it returns default Duration value of 2 hours.<!-- #EndLibraryItem --></td>
+			<td>The beginning point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>StartDate=2011-01-01T11:55:22</strong>. If StartDate is not specified, the operation uses EndDate minus Duration. If both StartDate and EndDate are unspecified, the operation returns information for the Duration value, and if Duration is also unspecified it returns default Duration value of 2 hours.</td>
 		</tr>
 		<tr>
 			<td>EndDate</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_EndDate.lbi" -->
-The ending point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>EndDate=2011-01-02T11:55:22</strong>. If not specified, defaults to the current date/time of the API call.<!-- #EndLibraryItem --></td>
+			<td>
+The ending point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>EndDate=2011-01-02T11:55:22</strong>. If not specified, defaults to the current date/time of the API call.</td>
 		</tr>
 		<tr>
 			<td>TimeZone</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_TimeZone.lbi" -->The time zone for the information. If a time zone isn't specified, the information is returned in GMT. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.<!-- #EndLibraryItem --></td>
+			<td>The time zone for the information. If a time zone isn't specified, the information is returned in GMT. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.</td>
 		</tr>
 		<tr>
 			<td>Duration</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->
-The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. For example, you might want metric information for a 24-hour period or only for an hour. The StartDate, EndDate, and Duration fields work together to define the information to be returned. If not specified, defaults to two hours (2h). <!-- #EndLibraryItem --></td>
+			<td>
+The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. For example, you might want metric information for a 24-hour period or only for an hour. The StartDate, EndDate, and Duration fields work together to define the information to be returned. If not specified, defaults to two hours (2h). </td>
 		</tr>
 		<tr>
 			<td>start</td>
 			<td>Query</td>
 			<td>integer</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_start.lbi" --> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
+			<td> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.</td>
 		</tr>
 		<tr>
 			<td>count</td>
@@ -179,7 +179,7 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 			<td>Query</td>
 			<td>integer</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Status.lbi" -->One more more specific HTTP status values. If Status is specified, only transactions with that status are included in the results. For valid values, see <a href="../aaref/Ref_Values.htm#values_status">Status (HTTP)</a>.<!-- #EndLibraryItem --></td>
+			<td>One more more specific HTTP status values. If Status is specified, only transactions with that status are included in the results. For valid values, see <a href="../aaref/Ref_Values.htm#values_status">Status (HTTP)</a>.</td>
 		</tr>
 		<tr>
 			<td><p>FromResponseTime</p>
@@ -265,88 +265,6 @@ Date: Wed, 30 Dec 2015 17:49:10 GMT</pre>
     &quot;HttpVerb&quot; : &quot;GET&quot;
   } ]
 }</pre>
-<p><strong>Sample response headers: application/xml</strong></p>
-<pre>Status Code: 200 OK
-Content-Type: application/xml
-Date:  Wed, 06 Jan 2016 18:16:51 GMT</pre>
-<p><strong>Sample response body: application/xml</strong></p>
-<pre>
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;TransactionsInfo xmlns=&quot;http://soa.com/xsd/performance/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot; 
-xmlns:ns3=&quot;http://soa.com/xsd/contract/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/api/1.0&quot; 
-xmlns:ns5=&quot;http://soa.com/xsd/app/1.0&quot; xmlns:ns6=&quot;http://soa.com/xsd/legals/1.0&quot; 
-xmlns:ns7=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns8=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
-  &lt;TransactionInfo&gt;
-    &lt;TransactionID&gt;5c90f9df-b4a0-11e5-867b-832f054c50dc&lt;/TransactionID&gt;
-    &lt;APIID&gt;93e5dfba-3b21-43f7-8553-e3cfe952c02c.acmepaymentscorp&lt;/APIID&gt;
-    &lt;APIName&gt;SwaggerAPI_Both&lt;/APIName&gt;
-    &lt;APIVersionID&gt;c984f021-eea6-4aa8-a14e-4c6ff3aebfe5.acmepaymentscorp&lt;/APIVersionID&gt;
-    &lt;MethodName&gt;getPetById&lt;/MethodName&gt;
-    &lt;AppID&gt;4249e762-7385-4434-9e34-e053ed27ecfd.acmepaymentscorp&lt;/AppID&gt;
-    &lt;AppName&gt;__SwaggerApp_prod&lt;/AppName&gt;
-    &lt;AppVersionID&gt;8f79KOC5hVjat8oaR8WKs5Uu.acmepaymentscorp&lt;/AppVersionID&gt;
-    &lt;RequestDateTime&gt;2016-01-06T18:07:34Z&lt;/RequestDateTime&gt;
-    &lt;ResponseStatusCode&gt;200&lt;/ResponseStatusCode&gt;
-    &lt;ClientHost&gt;10.1.22.242&lt;/ClientHost&gt;
-    &lt;APIVersionName&gt;1.0&lt;/APIVersionName&gt;
-    &lt;MethodKey&gt;5c90f9df-b4a0-11e5-867b-832f054c50dc&lt;/MethodKey&gt;
-    &lt;AppVersionName&gt;1.0&lt;/AppVersionName&gt;
-    &lt;AppRuntimeID&gt;8f79KOC5hVjat8oaR8WKs5Uu&lt;/AppRuntimeID&gt;
-    &lt;ResponseTime&gt;P0Y0M0DT0H0M0.075S&lt;/ResponseTime&gt;
-    &lt;RequestMessageSize&gt;0&lt;/RequestMessageSize&gt;
-    &lt;ResponseMessageSize&gt;160&lt;/ResponseMessageSize&gt;
-    &lt;APIResponseTime&gt;P0Y0M0DT0H0M0.068S&lt;/APIResponseTime&gt;
-    &lt;APIURL&gt;http://www.acmepaymentscorp.com/prod/pet/1452103486957&lt;/APIURL&gt;
-    &lt;HttpVerb&gt;GET&lt;/HttpVerb&gt;
-  &lt;/TransactionInfo&gt;
-  &lt;TransactionInfo&gt;
-    &lt;TransactionID&gt;5c2abdfd-b4a0-11e5-867b-832f054c50dc&lt;/TransactionID&gt;
-    &lt;APIID&gt;93e5dfba-3b21-43f7-8553-e3cfe952c02c.acmepaymentscorp&lt;/APIID&gt;
-    &lt;APIName&gt;SwaggerAPI_Both&lt;/APIName&gt;
-    &lt;APIVersionID&gt;c984f021-eea6-4aa8-a14e-4c6ff3aebfe5.acmepaymentscorp&lt;/APIVersionID&gt;
-    &lt;MethodName&gt;getPetById&lt;/MethodName&gt;
-    &lt;AppID&gt;4249e762-7385-4434-9e34-e053ed27ecfd.acmepaymentscorp&lt;/AppID&gt;
-    &lt;AppName&gt;__SwaggerApp_prod&lt;/AppName&gt;
-    &lt;AppVersionID&gt;8f79KOC5hVjat8oaR8WKs5Uu.acmepaymentscorp&lt;/AppVersionID&gt;
-    &lt;RequestDateTime&gt;2016-01-06T18:07:33Z&lt;/RequestDateTime&gt;
-    &lt;ResponseStatusCode&gt;200&lt;/ResponseStatusCode&gt;
-    &lt;ClientHost&gt;10.1.22.242&lt;/ClientHost&gt;
-    &lt;APIVersionName&gt;1.0&lt;/APIVersionName&gt;
-    &lt;MethodKey&gt;5c2abdfd-b4a0-11e5-867b-832f054c50dc&lt;/MethodKey&gt;
-    &lt;AppVersionName&gt;1.0&lt;/AppVersionName&gt;
-    &lt;AppRuntimeID&gt;8f79KOC5hVjat8oaR8WKs5Uu&lt;/AppRuntimeID&gt;
-    &lt;ResponseTime&gt;P0Y0M0DT0H0M0.087S&lt;/ResponseTime&gt;
-    &lt;RequestMessageSize&gt;0&lt;/RequestMessageSize&gt;
-    &lt;ResponseMessageSize&gt;160&lt;/ResponseMessageSize&gt;
-    &lt;APIResponseTime&gt;P0Y0M0DT0H0M0.068S&lt;/APIResponseTime&gt;
-    &lt;APIURL&gt;http://www.acmepaymentscorp.com/prod/pet/1452103486957&lt;/APIURL&gt;
-    &lt;HttpVerb&gt;GET&lt;/HttpVerb&gt;
-  &lt;/TransactionInfo&gt;
-  &lt;TransactionInfo&gt;
-    &lt;TransactionID&gt;448baef8-b4a0-11e5-867b-832f054c50dc&lt;/TransactionID&gt;
-    &lt;APIID&gt;93e5dfba-3b21-43f7-8553-e3cfe952c02c.acmepaymentscorp&lt;/APIID&gt;
-    &lt;APIName&gt;SwaggerAPI_Both&lt;/APIName&gt;
-    &lt;APIVersionID&gt;c984f021-eea6-4aa8-a14e-4c6ff3aebfe5.acmepaymentscorp&lt;/APIVersionID&gt;
-    &lt;MethodName&gt;getPetById&lt;/MethodName&gt;
-    &lt;AppID&gt;4249e762-7385-4434-9e34-e053ed27ecfd.acmepaymentscorp&lt;/AppID&gt;
-    &lt;AppName&gt;__SwaggerApp_prod&lt;/AppName&gt;
-    &lt;AppVersionID&gt;8f79KOC5hVjat8oaR8WKs5Uu.acmepaymentscorp&lt;/AppVersionID&gt;
-    &lt;RequestDateTime&gt;2016-01-06T18:06:54Z&lt;/RequestDateTime&gt;
-    &lt;ResponseStatusCode&gt;200&lt;/ResponseStatusCode&gt;
-    &lt;ClientHost&gt;10.1.22.242&lt;/ClientHost&gt;
-    &lt;APIVersionName&gt;1.0&lt;/APIVersionName&gt;
-    &lt;MethodKey&gt;448baef8-b4a0-11e5-867b-832f054c50dc&lt;/MethodKey&gt;
-    &lt;AppVersionName&gt;1.0&lt;/AppVersionName&gt;
-    &lt;AppRuntimeID&gt;8f79KOC5hVjat8oaR8WKs5Uu&lt;/AppRuntimeID&gt;
-    &lt;ResponseTime&gt;P0Y0M0DT0H0M0.782S&lt;/ResponseTime&gt;
-    &lt;RequestMessageSize&gt;0&lt;/RequestMessageSize&gt;
-    &lt;ResponseMessageSize&gt;167&lt;/ResponseMessageSize&gt;
-    &lt;APIResponseTime&gt;P0Y0M0DT0H0M0.141S&lt;/APIResponseTime&gt;
-    &lt;APIURL&gt;http://www.acmepaymentscorp.com/prod/pet/1452087586438&lt;/APIURL&gt;
-    &lt;HttpVerb&gt;GET&lt;/HttpVerb&gt;
-  &lt;/TransactionInfo&gt;
-&lt;/TransactionsInfo&gt;
-</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -364,7 +282,7 @@ xmlns:ns7=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns8=&quot;http://soa.
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/xml</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong>, <strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -405,7 +323,7 @@ xmlns:ns7=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns8=&quot;http://soa.
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -416,11 +334,11 @@ xmlns:ns7=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns8=&quot;http://soa.
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -432,5 +350,10 @@ xmlns:ns7=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns8=&quot;http://soa.
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

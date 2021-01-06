@@ -1,7 +1,7 @@
 ---
 layout: apipage-noindex
 title: API Object | APIs Service | Akana API Platform API
-description:  Contains information about an API.
+description: Contains information about an API.
 product: cm
 category: ref
 nav-title: API Object 
@@ -13,8 +13,7 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">API Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_apis_API.lbi" -->
-Contains information about an API.<!-- #EndLibraryItem --></p>
+<p>Contains information about an API.</p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
@@ -38,7 +37,7 @@ Contains information about an API.<!-- #EndLibraryItem --></p>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiid">APIID</a></td>
 			<td>string</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->The unique ID for a specific API.<!-- #EndLibraryItem --></p>
+			<td><p>The unique ID for a specific API.</p>
 				<p><strong>Required</strong> except when adding an API.</p></td>
 		</tr>
 		<tr>
@@ -54,12 +53,12 @@ Contains information about an API.<!-- #EndLibraryItem --></p>
 		<tr>
 			<td>Summary</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Summary_api.lbi" -->A brief, plain-text description of the API. Optional.<!-- #EndLibraryItem --></td>
+			<td>A brief, plain-text description of the API. Optional.</td>
 		</tr>
 		<tr>
 			<td>Visibility</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Visibility_all.lbi" --> The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.<!-- #EndLibraryItem --></td>
+			<td> The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_latestversionid">LatestVersionID</a></td>
@@ -71,7 +70,7 @@ Contains information about an API.<!-- #EndLibraryItem --></p>
 			<td>Tag</td>
 			<td>string[&#160;]</td>
 			<td><p>One or more user-defined tags assigned to the API, separated by commas. Used only in response messages.</p>
-				<p><strong>Note</strong>: You can also assign specific tags to each API version. In the developer portal user interface, only the tags assigned at the API version level are displayed.</p></td>
+				<p><strong>Note</strong>: You can also assign specific tags to each API version. In the Community Manager developer portal user interface, only the tags assigned at the API version level are displayed.</p></td>
 		</tr>
 		<tr>
 			<td>IsFollowed</td>
@@ -86,7 +85,7 @@ Contains information about an API.<!-- #EndLibraryItem --></p>
 		<tr>
 			<td>RatingSummary</td>
 			<td><a href="../obj/o_res_RatingSummary.htm">RatingSummary</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_RatingSummary.lbi" --> An aggregated, averaged summary of individual user ratings for the resource, including the current ratings count for each possible value (1, 2, 3, 4, or 5). Used only in response messages.<!-- #EndLibraryItem --> The API rating summary is an aggregated average of ratings for all API versions.</td>
+			<td> An aggregated, averaged summary of individual user ratings for the resource, including the current ratings count for each possible value (1, 2, 3, 4, or 5). Used only in response messages. The API rating summary is an aggregated average of ratings for all API versions.</td>
 		</tr>
 		<tr>
 			<td>APIVersion</td>
@@ -106,43 +105,43 @@ Contains information about an API.<!-- #EndLibraryItem --></p>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_admingroupid">AdminGroupID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AdminGroupID.lbi" -->
-The unique ID for the Admin Group associated with a specific resource, such as an API or business, comprised of all administrators associated with that resource. Only used in response messages. <!--Example usage: &lt;span class=&quot;code&quot;&gt;getAPIAdministrators&lt;/span&gt; returns a list of administrators. Alternatively you can use the groupID and invoke the group API, getMembers operation. Or if you want to add an administrator you can get the groupID and invoke the inviteMemberToGroup operation.In the group API you would use it as the group ID. We return the team ID of the app and use it to manage the app team members using the group API. AdminGroupID is always applicable to an API group.--><!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for the Admin Group associated with a specific resource, such as an API or business, comprised of all administrators associated with that resource. Only used in response messages. <!--Example usage: &lt;span class=&quot;code&quot;&gt;getAPIAdministrators&lt;/span&gt; returns a list of administrators. Alternatively you can use the groupID and invoke the group API, getMembers operation. Or if you want to add an administrator you can get the groupID and invoke the inviteMemberToGroup operation.In the group API you would use it as the group ID. We return the team ID of the app and use it to manage the app team members using the group API. AdminGroupID is always applicable to an API group.--></td>
 		</tr>
 		<tr>
 			<td>Created</td>
 			<td>dateTime</td>
-			<td><!-- #BeginLibraryItem "/Library/o_Created.lbi" -->
-        The date/time stamp when the resource was first created. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>
+        The date/time stamp when the resource was first created. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>Updated</td>
 			<td>dateTime</td>
-			<td><!-- #BeginLibraryItem "/Library/o_Updated.lbi" -->
-        The date/time stamp when the resource was last updated. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>
+        The date/time stamp when the resource was last updated. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>AvatarURL</td>
 			<td>anyURI</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_AvatarURL.lbi" -->
-URL for the avatar uploaded for the resource, if any. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>
+URL for the avatar uploaded for the resource, if any. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>APISettings</td>
 			<td><a href="o_apis_APISettings.htm">APISettings</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_APISettings.lbi" -->Includes information about the settings for an API; for example, whether access is auto approved and whether ratings and reviews are supported.<!-- #EndLibraryItem --></td>
+			<td>Includes information about the settings for an API; for example, whether access is auto approved and whether ratings and reviews are supported.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a></td>
 			<td>string</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" -->
-        The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></p>
+			<td><p>
+        The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.</p>
 				<p>Returned if the API is assigned to a business.</p></td>
 		</tr>
 		<tr>
 			<td>TargetResources</td>
 			<td><a href="o_dn_model_TargetResources.htm">TargetResources</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_dn_model_TargetResources.lbi" -->Contains information about one or more resources associated with the current resource. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>Contains information about one or more resources associated with the current resource. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>apiOrganizationKey</td>
@@ -159,7 +158,7 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -171,5 +170,10 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

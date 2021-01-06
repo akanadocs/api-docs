@@ -13,7 +13,7 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">User  Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_users_User.lbi" -->Contains information about a platform user.<!-- #EndLibraryItem --></p>
+<p>Contains information about a platform user.</p>
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
 	<li><span class="apidoc_code"><a href="../users/m_users_signupUser.htm">POST&#160;/api/users/signupUser[/{InvitationCode}]</a></span> (in the request)</li>
@@ -39,13 +39,13 @@ no-catalog: true
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_userid">UserID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_UserID.lbi" -->The unique ID for a specific user.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific user.</td>
 		</tr>
 		<tr>
 			<td>UserName</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_users_UserName.lbi" -->
-The user's name, as set up by the user in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->. For a Facebook user, the user name is a numeric ID. For a Google user it is a URL.<!-- #EndLibraryItem --></td>
+			<td>
+The user's name, as set up by the user in the Akana API Platform. For a Facebook user, the user name is a numeric ID. For a Google user it is a URL.</td>
 		</tr>
 		<tr>
 			<td>FirstName</td>
@@ -62,8 +62,8 @@ The user's name, as set up by the user in the&#160;<!-- #BeginLibraryItem "/Libr
 		<tr>
 			<td>AuthIdentifier</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_users_authIdentifier.lbi" -->
-        The identifier for the user, as provided by the identify store. If the user signed up using Facebook, this value is a numeric ID; for Google, it is the URI of the user on Google. If the user signed up on the platform, it is a unique identifier for the platform.<!-- #EndLibraryItem --></td>
+			<td>
+        The identifier for the user, as provided by the identify store. If the user signed up using Facebook, this value is a numeric ID; for Google, it is the URI of the user on Google. If the user signed up on the platform, it is a unique identifier for the platform.</td>
 		</tr>
 		<tr>
 			<td>Password</td>
@@ -84,8 +84,8 @@ The user's name, as set up by the user in the&#160;<!-- #BeginLibraryItem "/Libr
 		<tr>
 			<td>Visibility</td>
 			<td>string</td>
-			<td><p><!-- #BeginLibraryItem "/Library/parm_Visibility_all.lbi" -->
-The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.<!-- #EndLibraryItem --></p>
+			<td><p>
+The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.</p>
 				<p>Currently, the visibility of all users is Public.</p></td>
 		</tr>
 		<tr>
@@ -103,8 +103,8 @@ The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" -->
-The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.</td>
 		</tr>
 		<tr>
 			<td>Title</td>
@@ -139,7 +139,7 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 		<tr>
 			<td>AvatarProvider</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_AvatarProvider.lbi" -->The avatar provider, such as Gravatar, if applicable.<!-- #EndLibraryItem --></td>
+			<td>The avatar provider, such as Gravatar, if applicable.</td>
 		</tr>
 		<tr>
 			<td>HasPicture</td>
@@ -149,26 +149,26 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 		<tr>
 			<td>State</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_State_user.lbi" -->
-        The current signup state of the user; for example, pending_validation. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_usersignupstate">User Signup State Values</a>.<!-- #EndLibraryItem --></td>
+			<td>
+        The current signup state of the user; for example, pending_validation. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_usersignupstate">User Signup State Values</a>.</td>
 		</tr>
 		<tr>
 			<td>Created</td>
 			<td>dateTime</td>
-			<td><!-- #BeginLibraryItem "/Library/o_Created.lbi" -->
-        The date/time stamp when the resource was first created. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>
+        The date/time stamp when the resource was first created. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>Updated</td>
 			<td>dateTime</td>
-			<td><!-- #BeginLibraryItem "/Library/o_Updated.lbi" -->
-        The date/time stamp when the resource was last updated. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>
+        The date/time stamp when the resource was last updated. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>AvatarURL</td>
 			<td>anyURI</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_AvatarURL.lbi" -->
-URL for the avatar uploaded for the resource, if any. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>
+URL for the avatar uploaded for the resource, if any. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>Domain</td>
@@ -194,18 +194,18 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
 			<td>AcceptedAgreementID</td>
 			<td>string[&#160;]</td>
 			<td><p>One or more unique IDs for platform legal agreements that the user has accepted.</p>
-				<p><strong>Note</strong>: The&#160; Site Admin can add a user, but cannot accept the legal agreement on behalf of the user.</p></td>
+				<p><strong>Note</strong>: The Site Admin can add a user, but cannot accept the legal agreement on behalf of the user.</p></td>
 		</tr>
 		<tr>
 			<td>UserIdentificationChallenges</td>
 			<td><a href="o_users_UserIdentificationChallenges.htm">UserIdentificationChallenges</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_users_UserIdentificationChallenges.lbi" -->
-Contains information about one or more user identification challenge questions applicable to a specific user, and in some cases the answers also.<!-- #EndLibraryItem --></td>
+			<td>
+Contains information about one or more user identification challenge questions applicable to a specific user, and in some cases the answers also.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_logindomainid">LoginDomainID</a></td>
 			<td>LoginDomainID</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_LoginDomainID.lbi" -->The unique ID for a user's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domain</a>; either the platform, for a local account, or an additional login domain such as Google or Facebook. The login domains supported by a specific platform version are configured by the Site Admin.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a user's <a href="../Ref_Glossary_CommunityPlatform.htm#gl_logindomain">login domain</a>; either the platform, for a local account, or an additional login domain such as Google or Facebook. The login domains supported by a specific platform version are configured by the Site Admin.</td>
 		</tr>
 		<tr>
 			<td>ForcePasswordChangeOnLogin</td>
@@ -231,26 +231,26 @@ Contains information about one or more user identification challenge questions a
 		<tr>
 			<td>UserPhones</td>
 			<td><a href="o_users_UserPhones.htm">UserPhones</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_users_UserPhones.lbi" -->Contains information about one or more phone numbers associated with the user.<!-- #EndLibraryItem --></td>
+			<td>Contains information about one or more phone numbers associated with the user.</td>
 		</tr>
 		<tr>
 			<td>classifiers</td>
 			<td>classifiers</td>
-			<td><!-- #BeginLibraryItem "/Library/o_classifiers.lbi" --><p>Applicable with Lifecycle Repository integration only. Contains a property name and an array of one or more values for the property. For an example, see <span class="apidoc_code"><a href="../users/m_users_completeSignUpAdvanced.htm#samplerequest">POST&#160;/api/users/completeSignup</a></span>.</p>
-<p>The user interface shows custom properties as a single concept, but on the API, app, or user they exist as classifiers and artifacts. The artifacts have URLs ("<strong>by-ref</strong>" artifacts). Classifiers and artifacts are only applicable if the Repository Extension is enabled and custom properties configured.</p><!-- #EndLibraryItem --></td>
+			<td><p>Applicable with Lifecycle Repository integration only. Contains a property name and an array of one or more values for the property. For an example, see <span class="apidoc_code"><a href="../users/m_users_completeSignUpAdvanced.htm#samplerequest">POST&#160;/api/users/completeSignup</a></span>.</p>
+<p>The user interface shows custom properties as a single concept, but on the API, app, or user they exist as classifiers and artifacts. The artifacts have URLs ("<strong>by-ref</strong>" artifacts). Classifiers and artifacts are only applicable if the Repository Extension is enabled and custom properties configured.</p></td>
 		</tr>
 		<tr>
 			<td>artifacts</td>
 			<td>artifacts</td>
-			<td><!-- #BeginLibraryItem "/Library/o_artifacts.lbi" --><p>Applicable with Lifecycle Repository integration only. Contains entries with an artifact name and value. The value is always a URL. For an example, see <span class="apidoc_code"><a href="../users/m_users_completeSignUpAdvanced.htm#samplerequest">POST&#160;/api/users/completeSignup</a></span>.</p>
-<p>The user interface shows custom properties as a single concept, but on the API, app, or user they exist as classifiers and artifacts. The artifacts have URLs ("<strong>by-ref</strong>" artifacts). Classifiers and artifacts are only applicable if the Repository Extension is enabled and custom properties configured.</p><!-- #EndLibraryItem --></td>
+			<td><p>Applicable with Lifecycle Repository integration only. Contains entries with an artifact name and value. The value is always a URL. For an example, see <span class="apidoc_code"><a href="../users/m_users_completeSignUpAdvanced.htm#samplerequest">POST&#160;/api/users/completeSignup</a></span>.</p>
+<p>The user interface shows custom properties as a single concept, but on the API, app, or user they exist as classifiers and artifacts. The artifacts have URLs ("<strong>by-ref</strong>" artifacts). Classifiers and artifacts are only applicable if the Repository Extension is enabled and custom properties configured.</p></td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -262,5 +262,10 @@ Contains information about one or more user identification challenge questions a
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

@@ -17,11 +17,11 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_deleteApp.lbi" -->Deletes an app (all versions).<!-- #EndLibraryItem --></p>
-<p><!-- #BeginLibraryItem "/Library/desc_deleteApp_note.lbi" -->
-<strong>Note</strong>: If you want to completely remove an app, use <span class="apidoc_code"><a href="m_apps_deleteApp.htm">DELETE&#160;/api/apps/{AppID}</a></span>. If you want to delete the only existing app version, but keep the app, first add a new version, using <span class="apidoc_code"><a href="m_apps_addVersion.htm">POST&#160;/api/apps/{AppID}/versions</a></span>, and then delete the old version using <span class="apidoc_code"><a href="m_apps_deleteAppVersion.htm">DELETE&#160;/api/apps/versions/{AppVersionID}</a></span>. An app cannot exist in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;without at least one valid version.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a></p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>Deletes an app (all versions).</p>
+<p>
+<strong>Note</strong>: If you want to completely remove an app, use <span class="apidoc_code"><a href="m_apps_deleteApp.htm">DELETE&#160;/api/apps/{AppID}</a></span>. If you want to delete the only existing app version, but keep the app, first add a new version, using <span class="apidoc_code"><a href="m_apps_addVersion.htm">POST&#160;/api/apps/{AppID}/versions</a></span>, and then delete the old version using <span class="apidoc_code"><a href="m_apps_deleteAppVersion.htm">DELETE&#160;/api/apps/versions/{AppVersionID}</a></span>. An app cannot exist in the Akana API Platform without at least one valid version.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a></p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -38,7 +38,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">DELETE</p>
 <!-- InstanceEndEditable -->
@@ -46,7 +47,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><span class="apidoc_backtotop"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/{AppID}</span>[?comment]</pre>
+<pre class="soaapidoc_endpoint"><span class="apidoc_backtotop">https://{hostname}/api/apps/{AppID}</span>[?comment]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -55,13 +56,12 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to delete a specific app.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/app10035.acmepaymentscorp</pre>
+<pre>https://{hostname}/api/apps/eed508de-422a-4a66-823b-4309dca3ebfe.rcoaless</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>
-DELETE&#160;/api/apps/app10035.acmepaymentscorp HTTP/1.1
-Content-Type: text/plain
-Accept: text/plain
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+DELETE&#160;/api/apps/eed508de-422a-4a66-823b-4309dca3ebfe.rcoaless HTTP/1.1
+Host:{hostname}
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -81,20 +81,19 @@ Accept: text/plain
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+			<td><strong>text/plain</strong></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_contenttype_any.lbi" --><strong>Any format (*/*)</strong><!-- #EndLibraryItem --></td>
+			<td><strong>Any format (*/*)</strong></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -121,7 +120,7 @@ Accept: text/plain
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->The unique ID for a specific app.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific app.</td>
 		</tr>
 		<tr>
 			<td>Comment</td>
@@ -148,11 +147,13 @@ Accept: text/plain
 <p id="id_sampleresponse">The sample response below shows that the deletion was successful.</p>
 <p><strong>Sample response headers</strong></p>
 <pre>Status Code: 200 OK
-Atmo-Renew-Token: renew
+Date: Wed, 25 Nov 2020 22:15:13 GMT
 Content-Type: text/plain
-Date: Tue, 02 Oct 2012 18:18:40 GMT</pre>
+Atmo-Renew-Token: renew
+Set-Cookie: Csrf-Token_rcoaless=TokenID%3D68b24a75-c5dc- ...
+AtmoAuthToken_rcoaless=TokenID%3D68b24a75-c5dc-11e5-b708-...</pre>
 <p><strong>Sample response body</strong></p>
-<pre>app10035.acmepaymentscorp</pre>
+<pre>eed508de-422a-4a66-823b-4309dca3ebfe.rcoaless</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -170,7 +171,7 @@ Date: Tue, 02 Oct 2012 18:18:40 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+			<td><strong>text/plain</strong></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#atmorenewtoken">Atmo-Renew-Token</a></td>
@@ -196,7 +197,7 @@ Date: Tue, 02 Oct 2012 18:18:40 GMT</pre>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_AppID">AppID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->The unique ID for a specific app.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific app.</td>
 		</tr>
 	</tbody>
 </table>
@@ -215,7 +216,7 @@ Date: Tue, 02 Oct 2012 18:18:40 GMT</pre>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -226,11 +227,11 @@ Date: Tue, 02 Oct 2012 18:18:40 GMT</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -242,5 +243,10 @@ Date: Tue, 02 Oct 2012 18:18:40 GMT</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

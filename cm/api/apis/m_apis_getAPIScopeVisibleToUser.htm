@@ -17,11 +17,11 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getAPIScopeVisibleToUser.lbi" -->Returns information about the current user's visibility of the API, based on an aggregate of all the visibility scopes assigned to all the groups that the user is a member of, for the specified API version.<!-- #EndLibraryItem --></p>
+<p>Returns information about the current user's visibility of the API, based on an aggregate of all the visibility scopes assigned to all the groups that the user is a member of, for the specified API version.</p>
 <p>This operation returns information about the portions of the API version that the user has visibility to (licenses, operations, and scopes) based on group membership; but if the user is an API Admin, Business Admin, or Site Admin, the AllAPIVisible property is true and the user has full visibility of the API, independent of the visibility information returned in the response.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/permission_read.lbi" -->
- Must have Read permission for the resource. <!-- #EndLibraryItem -->Note that if the allAPIVisible parameter is returned with a value of <strong>true</strong>, the user has full permission to view the API, which might exceed the specific scope, license, and operation results returned.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:
+ Must have Read permission for the resource. Note that if the allAPIVisible parameter is returned with a value of <strong>true</strong>, the user has full permission to view the API, which might exceed the specific scope, license, and operation results returned.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -38,7 +38,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -46,7 +47,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/scope</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/scope</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -55,10 +56,10 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the current user's visibility of the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/2f12dfe6-2777-43a6-80e5-2348aff02ac8.acmepaymentscorp/scope</pre>
+<pre>https://{hostname}/api/apis/versions/2f12dfe6-2777-43a6-80e5-2348aff02ac8.acmepaymentscorp/scope</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>None.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -78,20 +79,19 @@ no-catalog: true
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -117,7 +117,7 @@ no-catalog: true
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API version.</td>
 		</tr>
 	</tbody>
 </table>
@@ -280,163 +280,6 @@ no-catalog: true
   &quot;AllAPIVisible&quot; : true
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/xml</strong></p>
-<pre>Accept: application/xml</pre>
-<p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;APIVisibilityScope xmlns=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot; 
-xmlns:ns3=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/legals/1.0&quot;&gt;
-  &lt;Visible&gt;true&lt;/Visible&gt;
-  &lt;RestrictedScope&gt;false&lt;/RestrictedScope&gt;
-  &lt;ns2:License&gt;
-    &lt;ns2:LicenseID&gt;a8ea43ac-0330-4cce-bf0d-3605ec119b2f.acmepaymentscorp&lt;/ns2:LicenseID&gt;
-    &lt;ns2:Name&gt;Bronze&lt;/ns2:Name&gt;
-    &lt;ns2:Description&gt;Read-only access at no charge. Both environments, public, approval required.&lt;/ns2:Description&gt;
-    &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
-    &lt;ns2:SandboxAccessAutoApproved&gt;false&lt;/ns2:SandboxAccessAutoApproved&gt;
-    &lt;ns2:ProductionAccessAutoApproved&gt;false&lt;/ns2:ProductionAccessAutoApproved&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ns2:BusinessID&gt;
-    &lt;ns2:Active&gt;true&lt;/ns2:Active&gt;
-  &lt;/ns2:License&gt;
-  &lt;ns2:License&gt;
-    &lt;ns2:LicenseID&gt;8ce9a929-3c68-4c27-abe1-f7848b4bd8c4.acmepaymentscorp&lt;/ns2:LicenseID&gt;
-    &lt;ns2:Name&gt;Gold&lt;/ns2:Name&gt;
-    &lt;ns2:Description&gt;Full access, monthly fee.&lt;/ns2:Description&gt;
-    &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
-    &lt;ns2:SandboxAccessAutoApproved&gt;false&lt;/ns2:SandboxAccessAutoApproved&gt;
-    &lt;ns2:ProductionAccessAutoApproved&gt;false&lt;/ns2:ProductionAccessAutoApproved&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ns2:BusinessID&gt;
-    &lt;ns2:Active&gt;true&lt;/ns2:Active&gt;
-  &lt;/ns2:License&gt;
-  &lt;Operation&gt;
-    &lt;Name&gt;addPayment&lt;/Name&gt;
-    &lt;Method&gt;&lt;/Method&gt;
-    &lt;Path&gt;&lt;/Path&gt;
-    &lt;InputContentType&gt;&lt;/InputContentType&gt;
-    &lt;OutputContentType&gt;&lt;/OutputContentType&gt;
-  &lt;/Operation&gt;
-  &lt;Operation&gt;
-    &lt;Name&gt;deletePayment&lt;/Name&gt;
-    &lt;Method&gt;&lt;/Method&gt;
-    &lt;Path&gt;&lt;/Path&gt;
-    &lt;InputContentType&gt;&lt;/InputContentType&gt;
-    &lt;OutputContentType&gt;&lt;/OutputContentType&gt;
-  &lt;/Operation&gt;
-  &lt;Operation&gt;
-    &lt;Name&gt;modifyPayment&lt;/Name&gt;
-    &lt;Method&gt;&lt;/Method&gt;
-    &lt;Path&gt;&lt;/Path&gt;
-    &lt;InputContentType&gt;&lt;/InputContentType&gt;
-    &lt;OutputContentType&gt;&lt;/OutputContentType&gt;
-  &lt;/Operation&gt;
-  &lt;ns2:Resource&gt;
-    &lt;ns2:ResourceID&gt;bc0f8b1b-e7a6-4f42-b835-a694fb76d92c.acmepaymentscorp&lt;/ns2:ResourceID&gt;
-    &lt;ns2:Name&gt;ReadOnly_Scope&lt;/ns2:Name&gt;
-    &lt;ns2:ShortDescription&gt;Read-only operations.&lt;/ns2:ShortDescription&gt;
-    &lt;ns2:LongDescription&gt;Read-only operations. Public visibility&lt;/ns2:LongDescription&gt;
-    &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
-    &lt;ns2:SandboxAnonymousAccessAllowed&gt;false&lt;/ns2:SandboxAnonymousAccessAllowed&gt;
-    &lt;ns2:ProductionAnonymousAccessAllowed&gt;false&lt;/ns2:ProductionAnonymousAccessAllowed&gt;
-    &lt;ns2:ResourcePath&gt;&lt;/ns2:ResourcePath&gt;
-    &lt;ns2:OAuthGrantDefaultResource&gt;true&lt;/ns2:OAuthGrantDefaultResource&gt;
-    &lt;ns2:OAuthGrantUserAuthorizationRequired&gt;true&lt;/ns2:OAuthGrantUserAuthorizationRequired&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ns2:BusinessID&gt;
-  &lt;/ns2:Resource&gt;
-  &lt;ns2:Resource&gt;
-    &lt;ns2:ResourceID&gt;7bf71695-c016-4661-b85c-19334480d2dd.acmepaymentscorp&lt;/ns2:ResourceID&gt;
-    &lt;ns2:Name&gt;Full_Scope&lt;/ns2:Name&gt;
-    &lt;ns2:ShortDescription&gt;Full access to all operations.&lt;/ns2:ShortDescription&gt;
-    &lt;ns2:LongDescription&gt;Full access to all operations.&lt;/ns2:LongDescription&gt;
-    &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
-    &lt;ns2:SandboxAnonymousAccessAllowed&gt;false&lt;/ns2:SandboxAnonymousAccessAllowed&gt;
-    &lt;ns2:ProductionAnonymousAccessAllowed&gt;false&lt;/ns2:ProductionAnonymousAccessAllowed&gt;
-    &lt;ns2:ResourcePath&gt;&lt;/ns2:ResourcePath&gt;
-    &lt;ns2:OAuthGrantDefaultResource&gt;true&lt;/ns2:OAuthGrantDefaultResource&gt;
-    &lt;ns2:OAuthGrantUserAuthorizationRequired&gt;true&lt;/ns2:OAuthGrantUserAuthorizationRequired&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ns2:BusinessID&gt;
-  &lt;/ns2:Resource&gt;
-  &lt;ns2:Resource&gt;
-    &lt;ns2:ResourceID&gt;8227b5a5-54f9-4705-ae9c-88e9eb606ba3.acmepaymentscorp&lt;/ns2:ResourceID&gt;
-    &lt;ns2:Name&gt;publicScopeCa2&lt;/ns2:Name&gt;
-    &lt;ns2:ShortDescription&gt;Scopes to be used for testing&lt;/ns2:ShortDescription&gt;
-    &lt;ns2:LongDescription&gt;&lt;/ns2:LongDescription&gt;
-    &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
-    &lt;ns2:SandboxAnonymousAccessAllowed&gt;false&lt;/ns2:SandboxAnonymousAccessAllowed&gt;
-    &lt;ns2:ProductionAnonymousAccessAllowed&gt;false&lt;/ns2:ProductionAnonymousAccessAllowed&gt;
-    &lt;ns2:ResourcePath&gt;&lt;/ns2:ResourcePath&gt;
-    &lt;ns2:OAuthGrantDefaultResource&gt;true&lt;/ns2:OAuthGrantDefaultResource&gt;
-    &lt;ns2:OAuthGrantUserAuthorizationRequired&gt;true&lt;/ns2:OAuthGrantUserAuthorizationRequired&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ns2:BusinessID&gt;
-  &lt;/ns2:Resource&gt;
-  &lt;ns2:Resource&gt;
-    &lt;ns2:ResourceID&gt;a981920b-6276-4fa4-b32c-1ed76659dcb3.acmepaymentscorp&lt;/ns2:ResourceID&gt;
-    &lt;ns2:Name&gt;PublicChildScopeCa2&lt;/ns2:Name&gt;
-    &lt;ns2:ShortDescription&gt;just for testing&lt;/ns2:ShortDescription&gt;
-    &lt;ns2:LongDescription&gt;&lt;/ns2:LongDescription&gt;
-    &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
-    &lt;ns2:ParentResourceID&gt;8227b5a5-54f9-4705-ae9c-88e9eb606ba3.acmepaymentscorp&lt;/ns2:ParentResourceID&gt;
-    &lt;ns2:SandboxAnonymousAccessAllowed&gt;false&lt;/ns2:SandboxAnonymousAccessAllowed&gt;
-    &lt;ns2:ProductionAnonymousAccessAllowed&gt;false&lt;/ns2:ProductionAnonymousAccessAllowed&gt;
-    &lt;ns2:ResourcePath&gt;&lt;/ns2:ResourcePath&gt;
-    &lt;ns2:OAuthGrantDefaultResource&gt;true&lt;/ns2:OAuthGrantDefaultResource&gt;
-    &lt;ns2:OAuthGrantUserAuthorizationRequired&gt;true&lt;/ns2:OAuthGrantUserAuthorizationRequired&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ns2:BusinessID&gt;
-  &lt;/ns2:Resource&gt;
-  &lt;ns2:Resource&gt;
-    &lt;ns2:ResourceID&gt;419bfb47-528a-48c9-9379-4800a98b2b3a.acmepaymentscorp&lt;/ns2:ResourceID&gt;
-    &lt;ns2:Name&gt;public-scope-1&lt;/ns2:Name&gt;
-    &lt;ns2:ShortDescription&gt;Scopes to be used for testing&lt;/ns2:ShortDescription&gt;
-    &lt;ns2:LongDescription&gt;&lt;/ns2:LongDescription&gt;
-    &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
-    &lt;ns2:SandboxAnonymousAccessAllowed&gt;false&lt;/ns2:SandboxAnonymousAccessAllowed&gt;
-    &lt;ns2:ProductionAnonymousAccessAllowed&gt;false&lt;/ns2:ProductionAnonymousAccessAllowed&gt;
-    &lt;ns2:ResourcePath&gt;&lt;/ns2:ResourcePath&gt;
-    &lt;ns2:OAuthGrantDefaultResource&gt;true&lt;/ns2:OAuthGrantDefaultResource&gt;
-    &lt;ns2:OAuthGrantUserAuthorizationRequired&gt;true&lt;/ns2:OAuthGrantUserAuthorizationRequired&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ns2:BusinessID&gt;
-  &lt;/ns2:Resource&gt;
-  &lt;ns2:Resource&gt;
-    &lt;ns2:ResourceID&gt;c4e7f12c-7c78-4f48-b3ae-a54ead927c49.acmepaymentscorp&lt;/ns2:ResourceID&gt;
-    &lt;ns2:Name&gt;public-scope-2&lt;/ns2:Name&gt;
-    &lt;ns2:ShortDescription&gt;Scopes to be used for testing&lt;/ns2:ShortDescription&gt;
-    &lt;ns2:LongDescription&gt;&lt;/ns2:LongDescription&gt;
-    &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
-    &lt;ns2:SandboxAnonymousAccessAllowed&gt;false&lt;/ns2:SandboxAnonymousAccessAllowed&gt;
-    &lt;ns2:ProductionAnonymousAccessAllowed&gt;false&lt;/ns2:ProductionAnonymousAccessAllowed&gt;
-    &lt;ns2:ResourcePath&gt;&lt;/ns2:ResourcePath&gt;
-    &lt;ns2:OAuthGrantDefaultResource&gt;true&lt;/ns2:OAuthGrantDefaultResource&gt;
-    &lt;ns2:OAuthGrantUserAuthorizationRequired&gt;true&lt;/ns2:OAuthGrantUserAuthorizationRequired&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ns2:BusinessID&gt;
-  &lt;/ns2:Resource&gt;
-  &lt;ns2:Resource&gt;
-    &lt;ns2:ResourceID&gt;f48a34a7-3bc5-424e-9b90-886d41e7d286.acmepaymentscorp&lt;/ns2:ResourceID&gt;
-    &lt;ns2:Name&gt;ScopeOne3AB&lt;/ns2:Name&gt;
-    &lt;ns2:ShortDescription&gt;Scopes to be used for testing&lt;/ns2:ShortDescription&gt;
-    &lt;ns2:LongDescription&gt;&lt;/ns2:LongDescription&gt;
-    &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
-    &lt;ns2:SandboxAnonymousAccessAllowed&gt;false&lt;/ns2:SandboxAnonymousAccessAllowed&gt;
-    &lt;ns2:ProductionAnonymousAccessAllowed&gt;false&lt;/ns2:ProductionAnonymousAccessAllowed&gt;
-    &lt;ns2:ResourcePath&gt;&lt;/ns2:ResourcePath&gt;
-    &lt;ns2:OAuthGrantDefaultResource&gt;true&lt;/ns2:OAuthGrantDefaultResource&gt;
-    &lt;ns2:OAuthGrantUserAuthorizationRequired&gt;true&lt;/ns2:OAuthGrantUserAuthorizationRequired&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ns2:BusinessID&gt;
-  &lt;/ns2:Resource&gt;
-  &lt;ns2:Resource&gt;
-    &lt;ns2:ResourceID&gt;171a6c53-b42e-455f-b5eb-32792e6726a7.acmepaymentscorp&lt;/ns2:ResourceID&gt;
-    &lt;ns2:Name&gt;ScopeTwo3AB&lt;/ns2:Name&gt;
-    &lt;ns2:ShortDescription&gt;Scopes to be used for testing&lt;/ns2:ShortDescription&gt;
-    &lt;ns2:LongDescription&gt;&lt;/ns2:LongDescription&gt;
-    &lt;ns2:Visibility&gt;Public&lt;/ns2:Visibility&gt;
-    &lt;ns2:SandboxAnonymousAccessAllowed&gt;false&lt;/ns2:SandboxAnonymousAccessAllowed&gt;
-    &lt;ns2:ProductionAnonymousAccessAllowed&gt;false&lt;/ns2:ProductionAnonymousAccessAllowed&gt;
-    &lt;ns2:ResourcePath&gt;&lt;/ns2:ResourcePath&gt;
-    &lt;ns2:OAuthGrantDefaultResource&gt;true&lt;/ns2:OAuthGrantDefaultResource&gt;
-    &lt;ns2:OAuthGrantUserAuthorizationRequired&gt;true&lt;/ns2:OAuthGrantUserAuthorizationRequired&gt;
-    &lt;ns2:BusinessID&gt;tenantbusiness.acmepaymentscorp&lt;/ns2:BusinessID&gt;
-  &lt;/ns2:Resource&gt;
-  &lt;AllAPIVisible&gt;true&lt;/AllAPIVisible&gt;
-&lt;/APIVisibilityScope&gt;</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
@@ -453,11 +296,11 @@ xmlns:ns3=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns4=&quot;http://soa
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -479,7 +322,7 @@ xmlns:ns3=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns4=&quot;http://soa
 		<tr>
 			<td>APIVisibilityScope</td>
 			<td><a href="../obj/o_apis_APIVisibilityScope.htm">APIVisibilityScope</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_apis_APIVisibilityScope.lbi" -->Contains information about the visibility of an API scope.<!-- #EndLibraryItem --></p>
+			<td><p>Contains information about the visibility of an API scope.</p>
 				<p><strong>Note</strong>: if the value of the <strong>AllAPIVisible</strong> response property is <strong>true</strong>, the current user has full visibility of the API. In this case, the operation still returns an aggregate of all the visibility scopes assigned to all the groups that the user is a member of, which might not be a full reflection of the user's visibility into the API. For example, the user might be a member of groups that do not have visibility into all scopes, but if the user is an API Admin or Business Admin he/she will have visibility of all scopes that apply to the API.</p></td>
 		</tr>
 	</tbody>
@@ -499,7 +342,7 @@ xmlns:ns3=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns4=&quot;http://soa
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -514,11 +357,11 @@ xmlns:ns3=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns4=&quot;http://soa
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -530,5 +373,10 @@ xmlns:ns3=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns4=&quot;http://soa
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

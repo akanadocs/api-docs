@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Export Usage Logs | Apps Service | Akana API Platform API
-description:  Exports the transaction log for an app version's usage of an API, to a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file.
+description: Exports the transaction log for an app version's usage of an API, to a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file.
 product: cm
 category: ref
 nav-title: Export Usage Logs 
@@ -17,10 +17,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_exportUsageLogs_app.lbi" -->
-Exports the transaction log for an app version's usage of an API, to a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must have monitor permission for the app; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>,</strong> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> for an API that the app has a contract with.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>
+Exports the transaction log for an app version's usage of an API, to a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_csv">CSV</a> file.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must have monitor permission for the app; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>,</strong> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> for an API that the app has a contract with.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -37,7 +37,8 @@ Exports the transaction log for an app version's usage of an API, to a <a href="
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -45,7 +46,7 @@ Exports the transaction log for an app version's usage of an API, to a <a href="
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/{AppVersionID}/txlogs/export</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apps/versions/{AppVersionID}/txlogs/export</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -54,14 +55,14 @@ Exports the transaction log for an app version's usage of an API, to a <a href="
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows successful completion of this operation. The usage logs are exported to a CSV file.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/7FuucUjB7B3AYcUVvQpEVv1B.demo/txlogs/export?Environment=Sandbox
+<pre>https://{hostname}/api/apps/versions/7FuucUjB7B3AYcUVvQpEVv1B.demo/txlogs/export?Environment=Sandbox
 &amp;Duration=1d&amp;TimeZone=America/New_York&amp;count=100&amp;start=0</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET /api/apps/versions/7FuucUjB7B3AYcUVvQpEVv1B.demo/txlogs/export?Environment=Sandbox&amp;Duration=1d
 &amp;TimeZone=America/New_York&amp;count=100&amp;start=0 HTTP/1.1
 Host: acmepaymentscorp.com
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -85,12 +86,11 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -116,59 +116,59 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" -->
-The unique ID for a specific app version.<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for a specific app version.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a></td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ContractID.lbi" --> The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></td>
+			<td> The unique ID for a specific contract between an app version and an API version.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">ApiVersionID</a></td>
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API version.</td>
 		</tr>
 		<tr>
 			<td>Environment</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Environment.lbi" --> The <a href="../aaref/Ref_Values.htm#values_environment">environment (implementation)</a> (Sandbox or Production).<!-- #EndLibraryItem --> If not specified, defaults to <strong>Production</strong>.</td>
+			<td> The <a href="../aaref/Ref_Values.htm#values_environment">environment (implementation)</a> (Sandbox or Production). If not specified, defaults to <strong>Production</strong>.</td>
 		</tr>
 		<tr>
 			<td>StartDate</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_StartDate.lbi" -->The beginning point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>StartDate=2011-01-01T11:55:22</strong>. If StartDate is not specified, the operation uses EndDate minus Duration. If both StartDate and EndDate are unspecified, the operation returns information for the Duration value, and if Duration is also unspecified it returns default Duration value of 2 hours.<!-- #EndLibraryItem --></td>
+			<td>The beginning point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>StartDate=2011-01-01T11:55:22</strong>. If StartDate is not specified, the operation uses EndDate minus Duration. If both StartDate and EndDate are unspecified, the operation returns information for the Duration value, and if Duration is also unspecified it returns default Duration value of 2 hours.</td>
 		</tr>
 		<tr>
 			<td>EndDate</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_EndDate.lbi" -->
-The ending point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>EndDate=2011-01-02T11:55:22</strong>. If not specified, defaults to the current date/time of the API call.<!-- #EndLibraryItem --></td>
+			<td>
+The ending point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>EndDate=2011-01-02T11:55:22</strong>. If not specified, defaults to the current date/time of the API call.</td>
 		</tr>
 		<tr>
 			<td>TimeZone</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_TimeZone.lbi" -->The time zone for the information. If a time zone isn't specified, the information is returned in GMT. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.<!-- #EndLibraryItem --></td>
+			<td>The time zone for the information. If a time zone isn't specified, the information is returned in GMT. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.</td>
 		</tr>
 		<tr>
 			<td>Duration</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->
-The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. For example, you might want metric information for a 24-hour period or only for an hour. The StartDate, EndDate, and Duration fields work together to define the information to be returned. If not specified, defaults to two hours (2h). <!-- #EndLibraryItem --></td>
+			<td>
+The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. For example, you might want metric information for a 24-hour period or only for an hour. The StartDate, EndDate, and Duration fields work together to define the information to be returned. If not specified, defaults to two hours (2h). </td>
 		</tr>
 		<tr>
 			<td><p>OperationName</p>
@@ -184,7 +184,7 @@ The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the
 			<td>Query</td>
 			<td>integer</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Status.lbi" -->One more more specific HTTP status values. If Status is specified, only transactions with that status are included in the results. For valid values, see <a href="../aaref/Ref_Values.htm#values_status">Status (HTTP)</a>.<!-- #EndLibraryItem --></td>
+			<td>One more more specific HTTP status values. If Status is specified, only transactions with that status are included in the results. For valid values, see <a href="../aaref/Ref_Values.htm#values_status">Status (HTTP)</a>.</td>
 			</tr>
 		<tr>
 			<td><p>FromResponseTime</p>
@@ -300,7 +300,7 @@ Date: Wed, 16 Apr 2014 21:26:23 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></p>
+			<td><p>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</p>
 				<p>You would also get this response if you hadn't completed login before running the operation.</p></td>
 		</tr>
 		<tr>
@@ -310,11 +310,11 @@ Date: Wed, 16 Apr 2014 21:26:23 GMT</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -326,5 +326,10 @@ Date: Wed, 16 Apr 2014 21:26:23 GMT</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

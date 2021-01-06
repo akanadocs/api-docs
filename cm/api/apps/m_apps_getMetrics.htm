@@ -17,12 +17,12 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getMetrics_apps.lbi" --> Returns a summary of metric information for an app, in JSON format, that can be used to create a chart.<!-- #EndLibraryItem --></p>
+<p> Returns a summary of metric information for an app, in JSON format, that can be used to create a chart.</p>
 <p>If the optional ContractID or APIVersionID are not included in the call, this operation returns metrics information for all valid API contracts for the specified app version (if the ShowSummary parameter is set to <strong>true</strong>).</p>
-<p><!-- #BeginLibraryItem "/Library/ref_Metrics.lbi" -->For additional information regarding the set of operations dealing with metric information, see <a href="../aaref/Ref_MetricsOnThePlatform.htm">Metrics on the Platform</a>.<!-- #EndLibraryItem --></p>
+<p>For additional information regarding the set of operations dealing with metric information, see <a href="../aaref/Ref_MetricsOnThePlatform.htm">Metrics on the Platform</a>.</p>
 <p><strong>Note</strong>: This operation returns metric data as a JSON object that can be used in a chart; the <span class="apidoc_code"><a href="m_apps_exportMetrics.htm">GET&#160;/api/apps/versions/{AppVersionID}/metrics/export</a></span> operation returns the data as an exported CSV file.</p>
-<p><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must have monitor permission for the app; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>,</strong> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> for an API that the app has a contract with.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must have monitor permission for the app; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a><strong>,</strong> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> for an API that the app has a contract with.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -39,7 +39,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -47,7 +48,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/{AppVersionID}/metrics[?][ReportType={ReportType}]
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apps/versions/{AppVersionID}/metrics[?][ReportType={ReportType}]
 &amp;[ContractID={ContractID}]&amp;[APIVersionID={APIVersionID}]&amp;[Environment={Environment}]
 &amp;[StartDate={StartDate}]&amp;[EndDate={EndDate}]&amp;[TimeZone={TimeZone}]
 &amp;[TimeInterval={TimeInterval}]&amp;[Duration={Duration}]&amp;[ShowSummary={ShowSummary}]
@@ -60,13 +61,13 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for metric information for a specific app version. The <strong>Time Interval</strong>, <strong>Duration</strong>, and <strong>Time Zone</strong> parameters are specified in the URL.</p>
 <p><strong>Sample request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?Duration=1d&amp;Duration=1d&amp;Environment=Sandbox</pre>
+<pre>https://{hostname}/api/apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?Duration=1d&amp;Duration=1d&amp;Environment=Sandbox</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET /api/apps/versions/7FZJvSXlIP12IHKF3DufbL1W.acmepaymentscorp/metrics?Duration=1d&amp;Duration=1d
 &amp;Environment=Sandbox HTTP/1.1
 Host: {hostname}
 Accept: */*
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -86,16 +87,15 @@ Accept: */*
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -121,103 +121,103 @@ Accept: */*
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" -->
-The unique ID for a specific app version.<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for a specific app version.</td>
 		</tr>
 		<tr>
 			<td>ReportType</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_ReportType.lbi" -->The type of metric information. For valid values, see <a href="../aaref/Ref_Values.htm#values_reporttype">ReportType</a>.<!-- #EndLibraryItem --></td>
+			<td>The type of metric information. For valid values, see <a href="../aaref/Ref_Values.htm#values_reporttype">ReportType</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a></td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ContractID.lbi" --> The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></td>
+			<td> The unique ID for a specific contract between an app version and an API version.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">ApiVersionID</a></td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API version.</td>
 		</tr>
 		<tr>
 			<td>OperationName</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_operationName_02.lbi" --><p>The specific operation for which information should be returned.</p>
-<p><strong>Note</strong>: Must be used in combination with the ApiVersionID parameter.</p><!-- #EndLibraryItem --></td>
+			<td><p>The specific operation for which information should be returned.</p>
+<p><strong>Note</strong>: Must be used in combination with the ApiVersionID parameter.</p></td>
 		</tr>
 		<tr>
 			<td>Environment</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Environment.lbi" --> The <a href="../aaref/Ref_Values.htm#values_environment">environment (implementation)</a> (Sandbox or Production).<!-- #EndLibraryItem --> If not specified, defaults to Sandbox.</td>
+			<td> The <a href="../aaref/Ref_Values.htm#values_environment">environment (implementation)</a> (Sandbox or Production). If not specified, defaults to Sandbox.</td>
 		</tr>
 		<tr>
 			<td>StartDate</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_StartDate.lbi" -->The beginning point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>StartDate=2011-01-01T11:55:22</strong>. If StartDate is not specified, the operation uses EndDate minus Duration. If both StartDate and EndDate are unspecified, the operation returns information for the Duration value, and if Duration is also unspecified it returns default Duration value of 2 hours.<!-- #EndLibraryItem --></td>
+			<td>The beginning point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>StartDate=2011-01-01T11:55:22</strong>. If StartDate is not specified, the operation uses EndDate minus Duration. If both StartDate and EndDate are unspecified, the operation returns information for the Duration value, and if Duration is also unspecified it returns default Duration value of 2 hours.</td>
 		</tr>
 		<tr>
 			<td>EndDate</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_EndDate.lbi" -->
-The ending point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>EndDate=2011-01-02T11:55:22</strong>. If not specified, defaults to the current date/time of the API call.<!-- #EndLibraryItem --></td>
+			<td>
+The ending point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>EndDate=2011-01-02T11:55:22</strong>. If not specified, defaults to the current date/time of the API call.</td>
 		</tr>
 		<tr>
 			<td>TimeZone</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_TimeZone.lbi" -->The time zone for the information. If a time zone isn't specified, the information is returned in GMT. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.<!-- #EndLibraryItem --></td>
+			<td>The time zone for the information. If a time zone isn't specified, the information is returned in GMT. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.</td>
 		</tr>
 		<tr>
 			<td>TimeInterval</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_TimeInterval.lbi" -->The time interval for the metric information to be returned. For example, you might want data points every 10 seconds. If not specified, defaults to five-second intervals (5s). The StartDate, EndDate, and Duration fields work together to define the information to be returned; the TimeInterval determines the data points. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.
-<!-- #EndLibraryItem --></td>
+			<td>The time interval for the metric information to be returned. For example, you might want data points every 10 seconds. If not specified, defaults to five-second intervals (5s). The StartDate, EndDate, and Duration fields work together to define the information to be returned; the TimeInterval determines the data points. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.
+</td>
 		</tr>
 		<tr>
 			<td>Duration</td>
 			<td>Query</td>
 			<td>string[&#160;]</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Duration.lbi" -->
-The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. For example, you might want metric information for a 24-hour period or only for an hour. The StartDate, EndDate, and Duration fields work together to define the information to be returned. If not specified, defaults to two hours (2h). <!-- #EndLibraryItem --></td>
+			<td>
+The <a href="../aaref/Ref_DataTypes.htm#datatypes_duration">duration</a> for the metric information. For example, you might want metric information for a 24-hour period or only for an hour. The StartDate, EndDate, and Duration fields work together to define the information to be returned. If not specified, defaults to two hours (2h). </td>
 		</tr>
 		<tr>
 			<td>ShowSummary</td>
 			<td>Query</td>
 			<td>boolean</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_ShowSummary.lbi" -->Indicates whether a summary of the metric information should be included in the information returned. For example, if the metric information includes daily metrics for 7 days, the summary would include one set of totals. If not specified, this defaults to false, meaning that no summary is included.<!-- #EndLibraryItem --></td>
+			<td>Indicates whether a summary of the metric information should be included in the information returned. For example, if the metric information includes daily metrics for 7 days, the summary would include one set of totals. If not specified, this defaults to false, meaning that no summary is included.</td>
 		</tr>
 		<tr>
 			<td>ShowSLAs</td>
 			<td>Query</td>
 			<td>boolean</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_ShowSLAs.lbi" --> Indicates whether SLAs should be included in the information returned. If not specified, defaults to false, meaning that SLAs are not returned.<!-- #EndLibraryItem --></td>
+			<td> Indicates whether SLAs should be included in the information returned. If not specified, defaults to false, meaning that SLAs are not returned.</td>
 		</tr>
 		<tr>
 			<td>ShowIntervalData</td>
 			<td>Query</td>
 			<td>boolean</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_ShowIntervalData.lbi" -->Indicates whether the metric information that's returned should be broken up by time interval. For example, if the TimeInterval value is five minutes (5m) and the Duration value is one hour (1h), and ShowIntervalData is set to true, the results would include 12 sets of information, one for each five-minute interval. Time interval data can be used to create a bar chart.<!-- #EndLibraryItem --></td>
+			<td>Indicates whether the metric information that's returned should be broken up by time interval. For example, if the TimeInterval value is five minutes (5m) and the Duration value is one hour (1h), and ShowIntervalData is set to true, the results would include 12 sets of information, one for each five-minute interval. Time interval data can be used to create a bar chart.</td>
 		</tr>
 	</tbody>
 </table>
@@ -337,7 +337,7 @@ Content-Type: application/json</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -359,7 +359,7 @@ Content-Type: application/json</pre>
 		<tr>
 			<td>Graph</td>
 			<td><a href="../obj/o_performance_Graph.htm">Graph</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_performance_Graph.lbi" -->Contains metric information.<!-- #EndLibraryItem --></td>
+			<td>Contains metric information.</td>
 		</tr>
 	</tbody>
 </table>
@@ -378,7 +378,7 @@ Content-Type: application/json</pre>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -389,11 +389,11 @@ Content-Type: application/json</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -405,5 +405,10 @@ Content-Type: application/json</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

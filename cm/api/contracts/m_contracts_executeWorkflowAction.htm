@@ -17,14 +17,14 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_executeWorkflowAction_contracts.lbi" -->Executes a workflow action associated with a specific change of contract status.<!-- #EndLibraryItem --></p>
-<p><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must have permission to modify the contract. To complete this operation successfully, a user must be a member of the applicable team (<a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>). However, the workflow itself might enforce additional requirements:</p>
+<p>Executes a workflow action associated with a specific change of contract status.</p>
+<p><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must have permission to modify the contract. To complete this operation successfully, a user must be a member of the applicable team (<a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>). However, the workflow itself might enforce additional requirements:</p>
 <ul>
 	<li>The specific workflow action to be executed must be valid for the specific contract the action will be performed on.</li>
 	<li>In addition, each action might require its own conditions. Some workflow actions can only be performed by an API Admin, some by an app admin, and so forth. Depending on the combination of action name and ContractID, this operation might require different roles. For example, Activate can only be done by an API admin or business admin; Resubmit can be done by app team members or API admins. Custom workflow definitions could require different roles for different actions.</li>
 </ul>
 <p>For more information, see <a href="../aaref/Ref_ExecutingWorkflowActions.htm">Executing Workflow Actions</a>.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -41,7 +41,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
 <!-- InstanceEndEditable -->
@@ -49,7 +50,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->contracts/{ContractID}/actions</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/contracts/{ContractID}/actions</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -64,13 +65,13 @@ no-catalog: true
 	<li><a href="#samplerequest_04">Sample request body #4: Cancels a contract.</a></li>
 </ul>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.acmepaymentscorp/actions</pre>
+<pre>https://{hostname}/api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.acmepaymentscorp/actions</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST /api/contracts/e31f8041-ff77-4153-8d4b-4a86795b2865.acmepaymentscorp/actions HTTP/1.1
 Host: {hostname}
 Accept: */*
 Content-Type: application/json; charset=UTF-8
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p id="samplerequest_01"><strong>Sample request body #1</strong></p>
 <p>Activates a contract.</p>
 <pre>{
@@ -114,25 +115,24 @@ Content-Type: application/json; charset=UTF-8
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+			<td><strong>text/plain</strong></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><p>Any one of the following media types is valid for the request Content-Type:</p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+				<p><strong>application/json</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong> or <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong> or <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong> or <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong> or <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -158,14 +158,14 @@ Content-Type: application/json; charset=UTF-8
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ContractID.lbi" --> The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></td>
+			<td> The unique ID for a specific contract between an app version and an API version.</td>
 		</tr>
 		<tr>
 			<td>Action</td>
 			<td>Body</td>
 			<td><a href="../obj/o_workflow_Action.htm">Action</a></td>
 			<td>Required</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_workflow_Action.lbi" -->Contains information about an action performed on a resource as part of a <a href="../aaref/Ref_ExecutingWorkflowActions.htm">workflow-related activity</a>.<!-- #EndLibraryItem --> For information on possible values for groups, see <a href="../aaref/Ref_Values.htm#values_workflowactions_groups_all">All Groups: Valid Workflow Actions</a>. For app/API contracts, see <a href="../aaref/Ref_Values.htm#values_workflowactions_contracts">App/API Contracts: Valid Workflow Actions</a>.  For tickets, see <a href="../aaref/Ref_Values.htm#values_workflowactions_tickets">Tickets: Valid Workflow Actions</a>.</p>
+			<td><p>Contains information about an action performed on a resource as part of a <a href="../aaref/Ref_ExecutingWorkflowActions.htm">workflow-related activity</a>. For information on possible values for groups, see <a href="../aaref/Ref_Values.htm#values_workflowactions_groups_all">All Groups: Valid Workflow Actions</a>. For app/API contracts, see <a href="../aaref/Ref_Values.htm#values_workflowactions_contracts">App/API Contracts: Valid Workflow Actions</a>.  For tickets, see <a href="../aaref/Ref_Values.htm#values_workflowactions_tickets">Tickets: Valid Workflow Actions</a>.</p>
 				<p>Additional actions might be defined in custom workflows.</p></td>
 		</tr>
 	</tbody>
@@ -229,7 +229,7 @@ Date: Wed, 10 Jul 2013 19:57:49 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
+			<td><strong>text/plain</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -270,7 +270,7 @@ Date: Wed, 10 Jul 2013 19:57:49 GMT</pre>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -280,8 +280,8 @@ Date: Wed, 10 Jul 2013 19:57:49 GMT</pre>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http405">405</a></td>
-			<td><!-- #BeginLibraryItem "/Library/http_405.lbi" -->
-Method Not Allowed. You might get this if there is an error in the URL, or if you used the wrong HTTP verb.<!-- #EndLibraryItem --> You would also get this if you provided incorrect values in the body of the request message.</td>
+			<td>
+Method Not Allowed. You might get this if there is an error in the URL, or if you used the wrong HTTP verb. You would also get this if you provided incorrect values in the body of the request message.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http409">409</a></td>
@@ -294,11 +294,11 @@ Method Not Allowed. You might get this if there is an error in the URL, or if yo
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -310,5 +310,10 @@ Method Not Allowed. You might get this if there is an error in the URL, or if yo
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

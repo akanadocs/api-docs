@@ -17,9 +17,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/listWorkflowDefinitions.lbi" -->Retrieves information about all workflows defined on the platform.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must have permission to view the business information: <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>Retrieves information about all workflows defined on the platform.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must have permission to view the business information: <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a></p>
+
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -36,7 +37,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -44,7 +46,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->workflow/definitions</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/workflow/definitions</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -54,10 +56,10 @@ no-catalog: true
 <p id="id_samplerequest">The example below shows a request for the workflow definitions for the platform.</p>
 <p><strong>Request URL #1</strong></p>
 <p>Returns all workflows.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->workflow/definitions</pre>
+<pre>https://{hostname}/api/workflow/definitions</pre>
 <p><strong>Request URL #2</strong></p>
 <p>Returns all workflows for tickets.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->workflow/definitions?ObjectType=ticket</pre>
+<pre>https://{hostname}/api/workflow/definitions?ObjectType=ticket</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -79,20 +81,19 @@ no-catalog: true
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -118,14 +119,14 @@ no-catalog: true
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" --> The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.</td>
 			</tr>
 		<tr>
 			<td>ObjectType</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_ObjectType.lbi" -->The type of resource the workflow is for. For valid values, see <a href="../aaref/Ref_Values.htm#values_workflow_objecttype">Workflow Object Types</a>.<!-- #EndLibraryItem --></td>
+			<td>The type of resource the workflow is for. For valid values, see <a href="../aaref/Ref_Values.htm#values_workflow_objecttype">Workflow Object Types</a>.</td>
 		</tr>
 	</tbody>
 </table>
@@ -278,105 +279,6 @@ Expires: Mon, 09 Feb 2015 12:32:02 GMT</pre>
   &quot;version&quot; : &quot;1.0&quot;
 </pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/xml</strong></p>
-<pre>Status Code: 200 OK
-Content-Type: application/xml
-Expires: Mon, 09 Feb 2015 12:34:26 GMT</pre>
-<p><a id="rss_workflowdefinitions_xml"></a><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;rss xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot; xmlns:ns3=&quot;http://soa.com/xsd/rss/1.0&quot; 
-xmlns:ns4=&quot;http://soa.com/xsd/user/1.0&quot; xmlns:ns5=&quot;http://soa.com/xsd/comment/1.0&quot; 
-xmlns:ns6=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns7=&quot;http://a9.com/-/spec/opensearch/1.1/&quot; 
-xmlns:ns8=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns9=&quot;http://soa.com/xsd/legals/1.0&quot; 
-xmlns:ns10=&quot;http://soa.com/xsd/fault/1.0&quot; xmlns:ns11=&quot;http://soa.com/xsd/api/1.0&quot; 
-xmlns:ns12=&quot;http://soa.com/xsd/board/1.0&quot; xmlns:ns13=&quot;http://soa.com/xsd/review/1.0&quot; 
-xmlns:ns14=&quot;http://soa.com/xsd/ticket/1.0&quot; xmlns:ns15=&quot;http://soa.com/xsd/app/1.0&quot; 
-xmlns:ns16=&quot;http://soa.com/xsd/discussion/1.0&quot; xmlns:ns17=&quot;http://soa.com/xsd/alert/1.0&quot; 
-xmlns:ns18=&quot;http://soa.com/xsd/contract/1.0&quot; xmlns:ns19=&quot;http://soa.com/xsd/search/1.0&quot; 
-xmlns:ns20=&quot;http://soa.com/xsd/workflow/1.0&quot; version=&quot;1.0&quot;&gt;
-  &lt;channel&gt;
-    &lt;title&gt;Workflow Definitions&lt;/title&gt;
-    &lt;description&gt;tenantbusiness.acmepaymentscorp&lt;/description&gt;
-    &lt;item&gt;
-      &lt;title&gt;workflow:definition:oauth:grant:default:1.0.0&lt;/title&gt;
-      &lt;description&gt;Default OAuth Grant Workflow&lt;/description&gt;
-      &lt;category domain=&quot;soa.com:workflow.definition:object.type&quot;&gt;oauth-grant&lt;/category&gt;
-      &lt;guid&gt;workflow:definition:oauth:grant:default:1.0.0&lt;/guid&gt;
-      &lt;pubDate&gt;Mon, 09 Feb 2015 06:58:56 +0000&lt;/pubDate&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;workflow:definition:user&lt;/title&gt;
-      &lt;description&gt;Default User Workflow&lt;/description&gt;
-      &lt;category domain=&quot;soa.com:workflow.definition:object.type&quot;&gt;user&lt;/category&gt;
-      &lt;guid&gt;workflow:definition:user&lt;/guid&gt;
-      &lt;pubDate&gt;Mon, 09 Feb 2015 06:52:49 +0000&lt;/pubDate&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;workflow:definition:apicontract:laas-supplementaryconfig01&lt;/title&gt;
-      &lt;description&gt;API Contract workflow with LaaS integration&lt;/description&gt;
-      &lt;category domain=&quot;soa.com:workflow.definition:object.type&quot;&gt;apicontract&lt;/category&gt;
-      &lt;guid&gt;workflow:definition:apicontract:laas-supplementaryconfig01&lt;/guid&gt;
-      &lt;pubDate&gt;Mon, 09 Feb 2015 06:58:56 +0000&lt;/pubDate&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;workflow:definition:comment&lt;/title&gt;
-      &lt;description&gt;Default Comment Workflow&lt;/description&gt;
-      &lt;category domain=&quot;soa.com:workflow.definition:object.type&quot;&gt;comment&lt;/category&gt;
-      &lt;guid&gt;workflow:definition:comment&lt;/guid&gt;
-      &lt;pubDate&gt;Mon, 09 Feb 2015 06:52:49 +0000&lt;/pubDate&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;workflow:definition:appversion-workflow-template1&lt;/title&gt;
-      &lt;description&gt;App Version Workflow Template1&lt;/description&gt;
-      &lt;category domain=&quot;soa.com:workflow.definition:object.type&quot;&gt;app-version&lt;/category&gt;
-      &lt;guid&gt;workflow:definition:appversion-workflow-template1&lt;/guid&gt;
-      &lt;pubDate&gt;Mon, 09 Feb 2015 06:52:49 +0000&lt;/pubDate&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;workflow:definition:discussion&lt;/title&gt;
-      &lt;description&gt;Default Discussion Workflow&lt;/description&gt;
-      &lt;category domain=&quot;soa.com:workflow.definition:object.type&quot;&gt;discussion&lt;/category&gt;
-      &lt;guid&gt;workflow:definition:discussion&lt;/guid&gt;
-      &lt;pubDate&gt;Mon, 09 Feb 2015 06:52:49 +0000&lt;/pubDate&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;workflow:definition:apicontract:v72&lt;/title&gt;
-      &lt;description&gt;Default API Contract Workflow with Revise Support&lt;/description&gt;
-      &lt;category domain=&quot;soa.com:workflow.definition:object.type&quot;&gt;apicontract&lt;/category&gt;
-      &lt;guid&gt;workflow:definition:apicontract:v72&lt;/guid&gt;
-      &lt;pubDate&gt;Mon, 09 Feb 2015 06:52:49 +0000&lt;/pubDate&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;workflow:definition:review&lt;/title&gt;
-      &lt;description&gt;Default Review Workflow&lt;/description&gt;
-      &lt;category domain=&quot;soa.com:workflow.definition:object.type&quot;&gt;review&lt;/category&gt;
-      &lt;guid&gt;workflow:definition:review&lt;/guid&gt;
-      &lt;pubDate&gt;Mon, 09 Feb 2015 06:52:49 +0000&lt;/pubDate&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;workflow:definition:application-team-mbr&lt;/title&gt;
-      &lt;description&gt;Default Application Team Member Workflow&lt;/description&gt;
-      &lt;category domain=&quot;soa.com:workflow.definition:object.type&quot;&gt;grpmbrship&lt;/category&gt;
-      &lt;guid&gt;workflow:definition:application-team-mbr&lt;/guid&gt;
-      &lt;pubDate&gt;Mon, 09 Feb 2015 06:52:49 +0000&lt;/pubDate&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;workflow:definition:ticket&lt;/title&gt;
-      &lt;description&gt;Default Ticket Workflow&lt;/description&gt;
-      &lt;category domain=&quot;soa.com:workflow.definition:object.type&quot;&gt;ticket&lt;/category&gt;
-      &lt;guid&gt;workflow:definition:ticket&lt;/guid&gt;
-      &lt;pubDate&gt;Mon, 09 Feb 2015 06:52:49 +0000&lt;/pubDate&gt;
-    &lt;/item&gt;
-    &lt;item&gt;
-      &lt;title&gt;workflow:definition:apicontract&lt;/title&gt;
-      &lt;description&gt;Default API Contract Workflow&lt;/description&gt;
-      &lt;category domain=&quot;soa.com:workflow.definition:object.type&quot;&gt;apicontract&lt;/category&gt;
-      &lt;guid&gt;workflow:definition:apicontract&lt;/guid&gt;
-      &lt;pubDate&gt;Mon, 09 Feb 2015 06:52:49 +0000&lt;/pubDate&gt;
-    &lt;/item&gt;
-  &lt;/channel&gt;
-&lt;/rss&gt;</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
@@ -393,11 +295,11 @@ xmlns:ns20=&quot;http://soa.com/xsd/workflow/1.0&quot; version=&quot;1.0&quot;&g
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -407,7 +309,7 @@ xmlns:ns20=&quot;http://soa.com/xsd/workflow/1.0&quot; version=&quot;1.0&quot;&g
 
 <!-- InstanceBeginEditable name="Response Body" -->
 <h2 id="responsebody">Response Body</h2>
-<p><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" --> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The title of the RSS channel is<strong>Workflow Definitions</strong>. Each item in the channel represents one workflow definition, and includes the information listed below.</p>
+<p> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0. The title of the RSS channel is<strong>Workflow Definitions</strong>. Each item in the channel represents one workflow definition, and includes the information listed below.</p>
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -464,11 +366,11 @@ xmlns:ns20=&quot;http://soa.com/xsd/workflow/1.0&quot; version=&quot;1.0&quot;&g
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -480,5 +382,10 @@ xmlns:ns20=&quot;http://soa.com/xsd/workflow/1.0&quot; version=&quot;1.0&quot;&g
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

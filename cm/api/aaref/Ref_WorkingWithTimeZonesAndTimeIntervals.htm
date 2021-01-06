@@ -24,6 +24,7 @@ no-catalog: true
 	<li><a href="#flexibilityofdatapoints">Flexibility of Data Points</a></li>
 	<li><a href="#accuracyvsefficiency">Accuracy Versus Efficiency</a></li>
 	<li><a href="#summary">Summary</a></li>
+<li><a href="#metrics_api_operations">API Operations for Managing Metrics Information</a></li>
 </ul>
 
 
@@ -42,7 +43,7 @@ no-catalog: true
 
 <h2 id="supportedtimezones">Supported Time Zones</h2>
 <p>By default, the platform can support all time zones defined in the tz database, also called the IANA Time Zone Database. These time zones follow a basic continent/area format; for example, America/Los_Angeles, Europe/Paris, or Pacific/Fiji. The standard also includes a category, Etc, to support the GMT offset format; GMT+6, GMT-4, and so forth. For example, Etc/GMT-5 represents US Eastern Standard Time. For more information, refer to <a href="http://en.wikipedia.org/wiki/IANA_time_zone_database" target="_blank">the Wikipedia article on the tz database</a>.</p>
-<p>Although this standard identifies a very large number of time zones, each installation of the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;can be configured based on requirements, resources, and efficiency, and might therefore support only a subset. For example, a specific installation might have users in only one time zone, and might therefore be configured to support one time zone, which would increase efficiency.</p>
+<p>Although this standard identifies a very large number of time zones, each installation of the Akana API Platform can be configured based on requirements, resources, and efficiency, and might therefore support only a subset. For example, a specific installation might have users in only one time zone, and might therefore be configured to support one time zone, which would increase efficiency.</p>
 
 
 <h2 id="timezoneoffsets">Time Zone Offsets</h2>
@@ -51,7 +52,7 @@ no-catalog: true
 
 
 
-<h2 id="availablemetrics">Available Metrics and Increments</h2><!-- #BeginLibraryItem "/Library/values_metrics.lbi" --><p>By default, the platform supports tracking of metrics in the increments shown below.</p>
+<h2 id="availablemetrics">Available Metrics and Increments</h2><p>By default, the platform supports tracking of metrics in the increments shown below.</p>
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -96,7 +97,7 @@ no-catalog: true
 			<td>Monthly increments (1M, 2M, etc.)</td>
 		</tr>
 	</tbody>
-</table><!-- #EndLibraryItem --><p>Note that there is a limitation with regard to the increments for seconds and minutes. For example, you cannot track metrics in 12-second increments or 10-minute increments. Seconds must be in multiples of 5s, and minutes in multiples of 15m.</p>
+</table><p>Note that there is a limitation with regard to the increments for seconds and minutes. For example, you cannot track metrics in 12-second increments or 10-minute increments. Seconds must be in multiples of 5s, and minutes in multiples of 15m.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -120,7 +121,7 @@ no-catalog: true
 <p>If you set up the metrics on your API so that information is measured at 5-second intervals (5s), and there are a large number of transactions being processed, this will soon accumulate an enormous amount of data. This leads to storage and maintenance costs. It's a matter of judgment to determine not only the metric intervals, but also how long to store the data.</p>
 <p>One approach is to store information of a very fine level of granularity only for short periods of time. If you create a 5-second data point, there will soon be many of these data points, and this can overload the system. Instead, you could delete the 5-second data points after two days, keep 15-minute data points for two weeks, keep hourly data points for a month, and store daily data points for a year. This gives a balance between detail and efficiency.</p>
 <p>Here is another scenario: You want to provide hourly data metrics to all your users. Most of the team members are in New York but some are in Bangalore. Your hourly data metrics will not work for Bangalore because it has a time zone offset that isn't in whole hours (see <a href="#timezoneoffsets">Time Zone Offsets</a> above). In this scenario, you might decide to track your data at intervals of 30 minutes (30m) so that you can match those data points to the times in both locations. Alternatively, you might decide to keep only the hourly metric information, which would require only half as much data storage, and tell the Bangalore users that they must use the New York metrics (or vice versa).</p>
-<p>Note that in the above scenario, a configuration setting would also need to be changed, in the underlying infrastructure, to set the configuration rollup offset to 30 minutes. This is an Administrator task, in the Akana Administration Console for the container: <strong>Configuration</strong> &gt; <strong>com.soa.rollup.configuration</strong> > <strong>monitoring.rollup.configuration.hourRollupMinutesOffsets</strong>. The default value is <strong>0</strong>, which means that rollups are per hour, on the hour. When this value is set to <strong>0,30</strong>, rollups are also created for each hour, on the half-hour.</p>
+<p>Note that in the above scenario, a configuration setting would also need to be changed, in the underlying infrastructure, to set the configuration rollup offset to 30 minutes. This is an Administrator task, in the Akana Administration Console for the container: <strong>Configuration</strong> &gt; <strong>com.soa.rollup.configuration</strong> &gt; <strong>monitoring.rollup.configuration.hourRollupMinutesOffsets</strong>. The default value is <strong>0</strong>, which means that rollups are per hour, on the hour. When this value is set to <strong>0,30</strong>, rollups are also created for each hour, on the half-hour.</p>
 <p>Adding a value, rather than changing the default, will result in two sets of rollup data. If you only have one group of users, in the offset time zone, you can replace the default. If you have users in different time zones, add the value.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -130,10 +131,45 @@ no-catalog: true
 <p>Generally, the important factors are to make sure you choose data points that are compatible with any limitations preset by your implementation, and that satisfy any reporting requirements you might have.</p>
 <p>Satisfying user requirements while maintaining performance and efficiency of your implementation are also important considerations.</p>
 <p>You can modify data points later if needed.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="metrics_api_operations">API Operations for Managing Metrics Information</h2>
+<p>There are several operations that you can use for managing metrics information. Most of these offer various parameters that you can use to adjust your selection criteria as explained above.</p>
+<p>Metrics-related API operationas are in two main services, <a href="../index_apis.htm">APIs Service</a> and <a href="../index_apps.htm">Apps Service</a>, and include:</p>
+<ul>
+	<li>Get metrics information:
+		<ul>
+			<li><span class="apidoc_code"><a href="../apis/m_apis_getMetrics.htm">GET&#160;/api/apis/versions/{APIVersionID}/metrics</a></span></li>
+			<li><span class="apidoc_code"><a href="../apps/m_apps_getMetrics.htm">GET&#160;/api/apps/versions/{AppVersionID}/metrics</a></span></li>
+		</ul>
+	</li>
+	<li>Export metrics:
+		<ul>
+			<li><span class="apidoc_code"><a href="../apis/m_apis_exportMetrics.htm">GET&#160;/api/apis/versions/{APIVersionID}/metrics/export</a></span></li>
+			<li><span class="apidoc_code"><a href="../apps/m_apps_exportMetrics.htm">GET&#160;/api/apps/versions/{AppVersionID}/metrics/export</a></span></li>
+		</ul>
+	</li>
+	<li>Get transaction logs:
+		<ul>
+			<li><span class="apidoc_code"><a href="../apis/m_apis_getTxLogs.htm">GET&#160;/api/apis/versions/{APIVersionID}/txlogs</a></span></li>
+			<li><span class="apidoc_code"><a href="../apps/m_apps_getTxLogs.htm">GET&#160;/api/apps/versions/{AppVersionID}/txlogs</a></span></li>
+		</ul>
+	</li>
+	<li>Export transaction logs:
+		<ul>
+			<li><span class="apidoc_code"><a href="../apis/m_apis_exportUsageLogs.htm">GET&#160;/api/apis/versions/{APIVersionID}/txlogs/export</a></span></li>
+			<li><span class="apidoc_code"><a href="../apps/m_apps_exportUsageLogs.htm">GET&#160;/api/apps/versions/{AppVersionID}/txlogs/export</a></span></li>
+		</ul>
+	</li>
+</ul>
+<p><strong>Note</strong>: The above is a selection of metric-related operations, not a full list.</p>
+<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
+
+
+
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -145,5 +181,10 @@ no-catalog: true
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

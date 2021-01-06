@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Followings | Users Service | Akana API Platform API
-description:  Returns information about the resources the specified user is following.
+description: Returns information about the resources the specified user is following.
 product: cm
 category: ref
 nav-title: Get Followings 
@@ -17,11 +17,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getFollowings.lbi" -->
-Returns information about the resources the specified user is following.<!-- #EndLibraryItem --></p>
-<!--FM-->
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_self">Self</a> (logged in) or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> (for any user).</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>
+Returns information about the resources the specified user is following.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_self">Self</a> (logged in) or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_siteadmin">Site Admin</a> (for any user).</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -38,7 +37,8 @@ Returns information about the resources the specified user is following.<!-- #En
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -46,7 +46,7 @@ Returns information about the resources the specified user is following.<!-- #En
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/{UserID}/followings[?Type=type]</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/users/{UserID}/followings[?Type=type]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -55,7 +55,7 @@ Returns information about the resources the specified user is following.<!-- #En
 <h2 id="samplerequest">Sample Request #1</h2>
 <p id="id_samplerequest">Requests a list of resources the specified user is following.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/followings</pre>
+<pre>https://{hostname}/api/users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/followings</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
 </pre>
@@ -64,7 +64,7 @@ Returns information about the resources the specified user is following.<!-- #En
 <h2 id="samplerequest_2">Sample Request #2</h2>
 <p>Requests a list of APIs the specified user is following, using the optional <strong>Type</strong> parameter.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/followings[?Type=api]</pre>
+<pre>https://{hostname}/api/users/957482b9-ck7f-0gk5-ae07-9flgok5djtus.acmepaymentscorp/followings[?Type=api]</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -82,16 +82,15 @@ Returns information about the resources the specified user is following.<!-- #En
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -117,7 +116,7 @@ Returns information about the resources the specified user is following.<!-- #En
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_UserID.lbi" -->The unique ID for a specific user.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific user.</td>
 		</tr>
 		<tr>
 			<td>Type</td>
@@ -168,7 +167,7 @@ Date: Wed, 15 May 2013 20:22:02 GMT</pre>
       &quot;Rating&quot; : 4.75,
       &quot;Followers&quot; : 3,
       &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/api18969.acmepaymentscorp/avatars/341c5162-1d42-4a59-b7a7-41d14c4ab662.png&quot;
+        &quot;Url&quot; : &quot;https://{hostname}/api/apis/api18969.acmepaymentscorp/avatars/341c5162-1d42-4a59-b7a7-41d14c4ab662.png&quot;
       },
       &quot;EntityReferences&quot; : {
         &quot;EntityReference&quot; : [ {
@@ -203,7 +202,7 @@ Date: Wed, 15 May 2013 20:22:02 GMT</pre>
       &quot;Rating&quot; : 3.2,
       &quot;Followers&quot; : 3,
       &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/app16964.acmepaymentscorp/avatar&quot;
+        &quot;Url&quot; : &quot;https://{hostname}/api/apps/app16964.acmepaymentscorp/avatar&quot;
       },
       &quot;EntityReferences&quot; : {
         &quot;EntityReference&quot; : [ {
@@ -249,7 +248,7 @@ Date: Wed, 15 May 2013 20:22:02 GMT</pre>
       &quot;Rating&quot; : 4.75,
       &quot;Followers&quot; : 3,
       &quot;Image&quot; : {
-        &quot;Url&quot; : &quot;<!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/api18969.acmepaymentscorp/avatars/341c5162-1d42-4a59-b7a7-41d14c4ab662.png&quot;
+        &quot;Url&quot; : &quot;https://{hostname}/api/apis/api18969.acmepaymentscorp/avatars/341c5162-1d42-4a59-b7a7-41d14c4ab662.png&quot;
       },
       &quot;EntityReferences&quot; : {
         &quot;EntityReference&quot; : [ {
@@ -290,7 +289,7 @@ Date: Wed, 15 May 2013 20:22:02 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -300,7 +299,7 @@ Date: Wed, 15 May 2013 20:22:02 GMT</pre>
 
 <!-- InstanceBeginEditable name="Response Body" -->
 <h2 id="responsebody">Response Body</h2>
-<p><!-- #BeginLibraryItem "/Library/_rss_responsetable_intro.lbi" --> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0.<!-- #EndLibraryItem --> The title of the RSS channel is the username, and there is also a place for a description of the user. Each item in the channel represents one resource the user is following, and includes the information listed below.</p>
+<p> The response body is in the form of an RSS channel, and includes the items listed below. The RSS version is 1.0. The title of the RSS channel is the username, and there is also a place for a description of the user. Each item in the channel represents one resource the user is following, and includes the information listed below.</p>
 <table class="tableparmsresponse">
 	<thead>
 		<tr>
@@ -369,7 +368,7 @@ Date: Wed, 15 May 2013 20:22:02 GMT</pre>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -380,11 +379,11 @@ Date: Wed, 15 May 2013 20:22:02 GMT</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -396,5 +395,10 @@ Date: Wed, 15 May 2013 20:22:02 GMT</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

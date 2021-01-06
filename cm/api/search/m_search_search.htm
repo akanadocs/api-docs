@@ -17,12 +17,11 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_search.lbi" -->Returns search results for a specified string.<!-- #EndLibraryItem --></p>
+<p>Returns search results for a specified string.</p>
 <p>Search results vary according to the user's status. If the user is not logged in, the search results include information about public APIs and public apps. However, if the user logs in, and is a member of one or more API Scope Groups or app teams, search results will include information about the apps and APIs that the user is authorized to access.</p>
 <p>For more examples of using the Search&#160;feature, see <a href="../aaref/Ref_UsingSearchOnThePlatform.htm">Using Search on the Platform</a>.</p>
-<!--FM-->
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Login is not required for search. However, if the user doesn't have permission to view certain resources, those resources are excluded from search results.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -39,7 +38,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -47,7 +47,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?{q}={SearchExpression}&amp;sort={sort}&amp;sortBy={sortBy}&amp;start={start}&amp;count={count}</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/search?{q}={SearchExpression}&amp;sort={sort}&amp;sortBy={sortBy}&amp;start={start}&amp;count={count}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -58,22 +58,22 @@ no-catalog: true
 <p><strong>Note</strong>: For additional examples, see <a href="../aaref/Ref_UsingSearchOnThePlatform.htm#samplesearchurls">Using Search on the Platform (Sample Search URLs section)</a>.</p>
 <p id="id_samplerequest01"><strong>Sample request URL #1</strong></p>
 <p>The example below shows a search for groups, requesting the first two responses. This query returns the first two groups that the user has visibility of. See <a href="#search_response_01">Sample response body #1</a>.</p>
-<pre><span class="apidoc_div_codeendpoint"></span><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?count=2&amp;start=0&amp;q=type:group</pre>
+<pre><span class="apidoc_div_codeendpoint"></span>https://{hostname}/api/search?count=2&amp;start=0&amp;q=type:group</pre>
 
 <p id="id_samplerequest02"><strong>Sample request URL #2</strong></p>
 <p>The example below shows a request for information based on a specific unique ID. This query returns the response shown in <a href="#search_response_02_postman">Sample response body #2: Postman</a>.</p>
-<pre><span class="apidoc_div_codeendpoint"></span><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?q=d37990e2-800a-4963-b3b9-908b6a87dbcc.rcoaless</pre>
+<pre><span class="apidoc_div_codeendpoint"></span>https://{hostname}/api/search?q=d37990e2-800a-4963-b3b9-908b6a87dbcc.rcoaless</pre>
 
 <p id="id_samplerequest03"><strong>Sample request URL #3</strong></p>
 <p>the example below shows a search for model objects.This query returns the response shown in <a href="#search_response_03">Sample response body #3</a>.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?q=type:model</pre>
+<pre>https://{hostname}/api/search?q=type:model</pre>
 <p id="id_samplerequest04"><strong>Sample request URL #4</strong></p>
 <p>The example below shows a search for <strong>oauth</strong>.</p>
-<pre><span class="apidoc_div_codeendpoint"></span><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?count=20&amp;start=0&amp;q=type:*%20AND%20oauth</pre>
+<pre><span class="apidoc_div_codeendpoint"></span>https://{hostname}/api/search?count=20&amp;start=0&amp;q=type:*%20AND%20oauth</pre>
 
 <p id="id_samplerequest05"><strong>Sample request URL #5</strong></p>
 <p>The example below shows a search for the list of all users.</p>
-<pre><span class="apidoc_div_codeendpoint"></span><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->search?sort=asc&amp;sortBy=com.soa.sort.order.title_sort&amp;Federation=false&amp;count=20&amp;start=0&amp;q=type:user</pre>
+<pre><span class="apidoc_div_codeendpoint"></span>https://{hostname}/api/search?sort=asc&amp;sortBy=com.soa.sort.order.title_sort&amp;Federation=false&amp;count=20&amp;start=0&amp;q=type:user</pre>
 
 <p><strong>Sample request headers</strong></p>
 <pre>accept: application/json
@@ -123,7 +123,7 @@ no-catalog: true
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><p>The search term or phrase; for example, Payments. Use encoding for spaces between words; for example, ACME%20Payments for ACME Payments. You can use<strong> q=type:</strong> to specify a type of resource you want to search. For valid values, see <a href="../aaref/Ref_Values.htm#values_search_type">Search &quot;Type&quot; Values</a>.</p>
+			<td><p>The search term or phrase; for example, Payments. Use encoding for spaces between words; for example, ACME%20Payments for ACME Payments. You can use <strong>q=type:</strong> to specify a type of resource you want to search. For valid values, see <a href="../aaref/Ref_Values.htm#values_search_type">Search &quot;Type&quot; Values</a>.</p>
 				<p>For more information about search expressions, see <a href="../aaref/Ref_UsingSearchOnThePlatform.htm">Using Search on the Platform</a>.</p></td>
 		</tr>
 		<tr>
@@ -138,7 +138,7 @@ no-catalog: true
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_SortBy.lbi" --> An optional parameter allowing users to sort results by a specific value; for example, <strong>com.soa.sort.order.updated</strong> sorts with the most updated entries first. For valid values, see <a href="../aaref/Ref_Values.htm#values_sortby">Sort By Values</a>. If not specified, items are returned in the sort order of <strong>DescendingDate</strong>, which means that the most recent items are first.<!-- #EndLibraryItem --></td>
+			<td> An optional parameter allowing users to sort results by a specific value; for example, <strong>com.soa.sort.order.updated</strong> sorts with the most updated entries first. For valid values, see <a href="../aaref/Ref_Values.htm#values_sortby">Sort By Values</a>. If not specified, items are returned in the sort order of <strong>DescendingDate</strong>, which means that the most recent items are first.</td>
 		</tr>
 		<tr>
 			<td>start</td>
@@ -197,8 +197,7 @@ no-catalog: true
 <h2 id="sampleresponse">Sample Response</h2>
 <p>The examples below show successful use of this operation.</p>
 <p><strong>Sample response headers #1</strong></p>
-<pre>
-Status Code: 200 OK
+<pre>Status Code: 200 OK
 Content-Type: application/json
 Date: Thu, 21 May 2020 20:26:11 GMT</pre>
 rss_search_json
@@ -278,7 +277,7 @@ search_response_01
 <p><img src="../assets/search_postman_uniqueid.jpg" alt="Search example using Postman" /></p>
 
 <p><strong><a id="search_response_03"></a>Sample response #3: Models List</strong></p>
-<p>The example below illustrates the list of models returned by the developer portal user interface on the <strong>{Business}</strong> > <strong>Models</strong> page. This response corresponds to <a href="#id_samplerequest03">sample request URL #3</a>.</p>
+<p>The example below illustrates the list of models returned by the Community Manager developer portal user interface on the <strong>{Business}</strong> &gt; <strong>Models</strong> page. This response corresponds to <a href="#id_samplerequest03">sample request URL #3</a>.</p>
 <pre>{
   "channel": {
     "title": "Search Results",
@@ -440,7 +439,7 @@ search_response_01
 		</tr>
 		<tr>
 			<td>totalResults</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_totalResults.lbi" -->The total number of results matching the request, even if a subset of total results is returned.<!-- #EndLibraryItem --></td>
+			<td>The total number of results matching the request, even if a subset of total results is returned.</td>
 		</tr>
 		<tr>
 			<td>itemsPerPage</td>
@@ -476,7 +475,7 @@ search_response_01
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -487,11 +486,11 @@ search_response_01
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -503,5 +502,10 @@ search_response_01
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: End Session | Login Service | Akana API Platform API
-description:  Ends the current session for the user, either on user logout or on session timeout. If user is actively logging out, and had logged in via an external identity provider or remote tenant, this operation also initiates single logout with the external provider or remote tenant.
+description: Ends the current session for the user, either on user logout or on session timeout. If user is actively logging out, and had logged in via an external identity provider or remote tenant, this operation also initiates single logout with the external provider or remote tenant.
 product: cm
 category: ref
 nav-title: End Session 
@@ -17,12 +17,12 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_endSession.lbi" -->
-Ends the current session for the user, either on user logout or on session timeout. If user is actively logging out, and had logged in via an external identity provider or remote tenant, this operation also initiates single logout with the external provider or remote tenant.<!-- #EndLibraryItem --></p>
-<p>Used when the user initiates logout; also used by the developer portal user interface to log the user out when a session times out due to inactivity.</p>
+<p>
+Ends the current session for the user, either on user logout or on session timeout. If user is actively logging out, and had logged in via an external identity provider or remote tenant, this operation also initiates single logout with the external provider or remote tenant.</p>
+<p>Used when the user initiates logout; also used by the Community Manager developer portal user interface to log the user out when a session times out due to inactivity.</p>
 <p class="apidoc_note"><strong>Note</strong>: we recommend using this operation to end the user's session, rather than the <span class="apidoc_code"><a href="m_login_logout.htm">POST&#160;/api/login/logout</a></span> operation which will be deprecated.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --></p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -39,7 +39,8 @@ Ends the current session for the user, either on user logout or on session timeo
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -47,16 +48,16 @@ Ends the current session for the user, either on user logout or on session timeo
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/login/endsession</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h2 id="samplerequest">Sample Request</h2>
-<p id="id_samplerequest">The example below shows a request for ending the session, initiated by the user; for example, the user clicks the <strong>Log Out</strong> button in the developer portal.</p>
+<p id="id_samplerequest">The example below shows a request for ending the session, initiated by the user; for example, the user clicks the <strong>Log Out</strong> button in the Community Manager developer portal.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</pre>
+<pre>https://{hostname}/api/login/endsession</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET http://{hostname}/api/login/endsession  HTTP/1.0
 Host: {hostname}
@@ -80,7 +81,7 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -114,14 +115,14 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 			<td>event</td>
 			<td>string</td>
 			<td>optional</td>
-			<td>If the user's session times out due to inactivity, the developer portal sends this parameter with a value of <strong>session_timeout</strong>. If the event is a timeout, the operation logs the user out of the platform, removing any session cookies, but does not initiate SLO (single logout) with the identity provider, in scenarios where a third-party identity provider is used.</td>
+			<td>If the user's session times out due to inactivity, the Community Manager developer portal sends this parameter with a value of <strong>session_timeout</strong>. If the event is a timeout, the operation logs the user out of the platform, removing any session cookies, but does not initiate SLO (single logout) with the identity provider, in scenarios where a third-party identity provider is used.</td>
 		</tr>
 		<tr>
 			<td>postlogouturl</td>
 			<td>postlogouturl</td>
 			<td>string</td>
 			<td>optional</td>
-			<td><p>Used with external domains that support SLO (for example, CA SiteMinder), to pass the developer portal home URL to the external domain so that the external domain can use this value to replace placeholders, if any exist, or to add a query parameter with this value in the configured logout URL in the external domain. This value determines where the user-agent is redirected after logout from the external domain is complete.</p>
+			<td><p>Used with external domains that support SLO (for example, CA SiteMinder), to pass the Community Manager developer portal home URL to the external domain so that the external domain can use this value to replace placeholders, if any exist, or to add a query parameter with this value in the configured logout URL in the external domain. This value determines where the user-agent is redirected after logout from the external domain is complete.</p>
 				<p>The URL must be URL-safe, using escape characters as needed. For example, instead of <strong>HTTP://</strong>, use <strong>http%3A%2F%2F</strong>.</p></td>
 		</tr>
 	</tbody>
@@ -144,11 +145,12 @@ Accept: application/json, text/javascript, */*; q=0.01</pre>
 <pre>HTTP/1.1 200 OK
 Content-Type: application/json
 Expires: Wed, 22 Apr 2015 11:56:38 GMT
-Set-Cookie: Csrf-Token_acmepaymentscorp=none;path=/;expires=Wed, 22 Apr 2015 11:56:38 GMT
+Set-Cookie: Csrf-Token_rcoaless=none;path=/;expires=Wed, 22 Apr 2015 11:56:38 GMT
 AtmoAuthToken_acmepaymentscorp=none;path=/;expires=Wed, 22-Apr-2015 11:56:38 GMT;HttpOnly</pre>
 <p><strong>Sample response body #1</strong></p>
 <p>Returned for local logout. In this example, the user logged in locally, so there is no content in the response.</p>
-<pre>{<br />}</pre>
+<pre>{
+}</pre>
 <p><strong>Sample response body #2</strong></p>
 <p>Returned on session timeout in a federated scenario.</p>
 <pre>{ 
@@ -209,7 +211,7 @@ AtmoAuthToken_acmepaymentscorp=none;path=/;expires=Wed, 22-Apr-2015 11:56:38 GMT
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -232,13 +234,13 @@ AtmoAuthToken_acmepaymentscorp=none;path=/;expires=Wed, 22-Apr-2015 11:56:38 GMT
 			<td>LogoutResponse</td>
 			<td>LogoutResponse</td>
 			<td><p>Depending on the specific logout scenario, this object might be empty or might include information that might be needed by another tenant or by an external identity provider to perform single logout. Here are some scenarios:</p>
-				<p>If the session times out, the developer portal:</p>
+				<p>If the session times out, the Community Manager developer portal:</p>
 				<ul class="apidoctable_ul">
 					<li>Ignores the <strong>returninstructions</strong> parameter.</li>
 					<li>Ends the userâs session and expires the cookies (AtmoAuthToken, and possibly CSRF).</li>
 					<li>Returns the <strong>LogoutResponse</strong> JSON object with <strong>RPLogoutInfo</strong> for each remote federation member.</li>
 				</ul>
-				<p>If the user actively ends the session, the developer portal:</p>
+				<p>If the user actively ends the session, the Community Manager developer portal:</p>
 				<ul class="apidoctable_ul">
 					<li>Ends the userâs session and expires the cookies (AtmoAuthToken, and possibly CSRF).</li>
 					<li>If the <strong>returninstructions</strong> parameter is set to <strong>true</strong>, returns the <strong>LogoutResponse</strong> JSON object with <strong>IDPLogoutInfo</strong> if the user is logged in via a third-party provider and <strong>RPLogoutInfo</strong> for each remote federation member.</li>
@@ -263,7 +265,7 @@ AtmoAuthToken_acmepaymentscorp=none;path=/;expires=Wed, 22-Apr-2015 11:56:38 GMT
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
-			<td><!-- #BeginLibraryItem "/Library/http_400.lbi" -->Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.<!-- #EndLibraryItem -->For example, you might get this response if you didn't include the required headers.</td>
+			<td>Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you didn't include the required headers.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -274,11 +276,11 @@ AtmoAuthToken_acmepaymentscorp=none;path=/;expires=Wed, 22-Apr-2015 11:56:38 GMT
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -290,5 +292,10 @@ AtmoAuthToken_acmepaymentscorp=none;path=/;expires=Wed, 22-Apr-2015 11:56:38 GMT
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

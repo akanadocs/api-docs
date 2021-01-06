@@ -14,7 +14,7 @@ no-catalog: false
 <div class="apidocContent">
 <h1 id="top">Alerts Service: Overview</h1>
 <p>The Alerts service provides operations that allow you to manage alerts on APIs, including adding, retrieving, and deleting alerts, commenting on an alert, and retrieving comments.</p>
-<p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->alerts</span></p>
+<p><strong>URL</strong>: <span class="apidoc_code">https://{hostname}/api/alerts</span></p>
 
 <table class="tableparmsresponse">
 	<thead>
@@ -26,41 +26,43 @@ no-catalog: false
 		<tr>
 			<td>comment on alert</td>
 			<td><a href="alerts/m_alerts_commentOnAlert.htm">POST&#160;/api/alerts/{AlertID}/comments</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_commentOnAlert.lbi" -->Adds a comment to the specified alert.<!-- #EndLibraryItem --></td>
+			<td>Adds a comment to the specified alert.</td>
 		</tr>
 		<tr>
 			<td>create alert</td>
 			<td><a href="alerts/m_alerts_createAlert.htm">POST&#160;/api/alerts</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_createAlert.lbi" --> Adds an alert on an API.<!-- #EndLibraryItem --></td>
+			<td> Adds an alert on an API.</td>
 		</tr>
 		<tr>
 			<td>delete alert</td>
 			<td><a href="alerts/m_alerts_deleteAlert.htm">DELETE&#160;/api/alerts/{AlertID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_deleteAlert.lbi" -->Deletes the specified alert.<!-- #EndLibraryItem --></td>
+			<td>Deletes the specified alert.</td>
 		</tr>
 		<tr>
 			<td>get alert</td>
 			<td><a href="alerts/m_alerts_getAlert.htm">GET&#160;/api/alerts/{AlertID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getAlert.lbi" -->Returns information about the specified alert.<!-- #EndLibraryItem --></td>
+			<td>Returns information about the specified alert.</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>get alert comments</td>
 			<td><a href="alerts/m_alerts_getAlertComments.htm">GET&#160;/api/alerts/{AlertID}/comments</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getAlertComments.lbi" -->Returns the comments associated with the specified alert.<!-- #EndLibraryItem --></td>
+			<td>Returns the comments associated with the specified alert.</td>
 		</tr>
 		<tr>
 			<td>get alerts</td>
 			<td><a href="alerts/m_alerts_getAlerts.htm">GET&#160;/api/alerts</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getAlerts.lbi" -->Returns information about alerts for the specified resource, in the form of an RSS channel.<!-- #EndLibraryItem --></td>
+			<td>Returns information about alerts for the specified resource, in the form of an RSS channel.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+
+
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="index.htm">Akana API Platform API: Overview</a></li>
@@ -72,5 +74,9 @@ no-catalog: false
 	<li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+</div>

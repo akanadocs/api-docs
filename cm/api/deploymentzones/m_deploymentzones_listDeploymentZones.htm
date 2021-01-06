@@ -17,11 +17,11 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_listDeploymentZones.lbi" -->Returns a list of valid <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zones</a> on the platform, in the form of a JSON or XML object.<!-- #EndLibraryItem --></p>
+<p>Returns a list of valid <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zones</a> on the platform, in the form of a JSON or XML object.</p>
 <p><strong>Note</strong>: Be sure to include a valid Accept header with this operation. If you don't include the Accept header, the operation might fail.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --><!-- #BeginLibraryItem "/Library/permission_read.lbi" -->
- Must have Read permission for the resource. <!-- #EndLibraryItem -->For example, a <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.
+ Must have Read permission for the resource. For example, a <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a>.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -38,7 +38,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -46,10 +47,10 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones[?][Implementation={implementation}][&amp;][{Environment={environment}]
+<pre class="soaapidoc_endpoint">https://{hostname}/api/deploymentzones[?][Implementation={implementation}][&amp;][{Environment={environment}]
 [&amp;][APIImplementationPattern={implementationpattern}][&amp;][DzoneID={dzone1}][&amp;][DzoneID={dzone2}]</pre>
 <p>In the context of a specific business:</p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones?ContextID={BusinessID}[&amp;][Implementation={implementation}][&amp;][{Environment={environment}]
+<pre class="soaapidoc_endpoint">https://{hostname}/api/deploymentzones?ContextID={BusinessID}[&amp;][Implementation={implementation}][&amp;][{Environment={environment}]
 [&amp;][APIImplementationPattern={implementationpattern}][&amp;][DzoneID={dzone1}][&amp;][DzoneID={dzone2}][&amp;][ContextID={ContextID}]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -59,12 +60,12 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below show a request for the deployment zone information.</p>
 <p><strong>Request URL #1</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones</pre>
+<pre>https://{hostname}/api/deploymentzones</pre>
 <p><strong>Request URL #2</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones?ContextID=87da343c-e260-43e2-8fbf-2fab7fae9203.acmepaymentscorp</pre>
+<pre>https://{hostname}/api/deploymentzones?ContextID=87da343c-e260-43e2-8fbf-2fab7fae9203.acmepaymentscorp</pre>
 <p><strong>Request URL #3</strong></p>
 <p>In the example below, the OrgKey parameter is included. This supersedes the ContextID.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones?OrgKey=uddi%3Asoa.com%3Aatmosphere%3Abusiness%3A89535988-cfe8-44e0-8fdb-15f8ebf2109f</pre>
+<pre>https://{hostname}/api/deploymentzones?OrgKey=uddi%3Asoa.com%3Aatmosphere%3Abusiness%3A89535988-cfe8-44e0-8fdb-15f8ebf2109f</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET /api/deploymentzones HTTP/1.1
 Host: {hostname}
@@ -88,17 +89,16 @@ Accept: application/vnd.soa.v84+json</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_84.lbi" --><strong>application/vnd.soa.v84+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_84.lbi" --><strong>application/vnd.soa.v84+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p>
+				<p><strong>application/vnd.soa.v84+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -154,7 +154,7 @@ Accept: application/vnd.soa.v84+json</pre>
 			<td>string</td>
 			<td>Optional</td>
 			<td><p>In this scenario, the ContextID is the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a> of a sub-organization.</p>
-				<p>If you're creating an API within the context of a specific organization level, it's important to include the optional ContextID in the request. This allows the developer portal to determine that the user has the correct permissions to create an API for that organization.</p>
+				<p>If you're creating an API within the context of a specific organization level, it's important to include the optional ContextID in the request. This allows the Community Manager developer portal to determine that the user has the correct permissions to create an API for that organization.</p>
 				<p>Notes:</p>
 				<ul class="apidoctable_ul">
 					<li>If ContextID is provided, the deployment zone permissions are checked against the context.</li>
@@ -342,7 +342,7 @@ Date: Thu, 23 Jan 2020 23:43:40 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -364,7 +364,7 @@ Date: Thu, 23 Jan 2020 23:43:40 GMT</pre>
 		<tr>
 			<td>DeploymentZoneInfoList</td>
 			<td><a href="../obj/o_deployment_DeploymentZoneInfoList.htm">DeploymentZoneInfoList</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_deployment_DeploymentZoneInfoList.lbi" -->Contains information about deployment zones for a specific tenant, in the form of a list.<!-- #EndLibraryItem --></td>
+			<td>Contains information about deployment zones for a specific tenant, in the form of a list.</td>
 		</tr>
 	</tbody>
 </table>
@@ -385,7 +385,7 @@ Date: Thu, 23 Jan 2020 23:43:40 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -394,11 +394,11 @@ Date: Thu, 23 Jan 2020 23:43:40 GMT</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -410,5 +410,10 @@ Date: Thu, 23 Jan 2020 23:43:40 GMT</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

@@ -13,7 +13,7 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">Group Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_groups_Group.lbi" -->Contains information about a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_group">group</a> on the platform.<!-- #EndLibraryItem --></p>
+<p>Contains information about a <a href="../Ref_Glossary_CommunityPlatform.htm#gl_group">group</a> on the platform.</p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
@@ -35,7 +35,7 @@ no-catalog: true
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_groupid">GroupID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_GroupID.lbi" --> The unique ID for a specific group.<!-- #EndLibraryItem --> Required when updating a group.</td>
+			<td> The unique ID for a specific group. Required when updating a group.</td>
 		</tr>
 		<tr>
 			<td>Name</td>
@@ -65,14 +65,14 @@ no-catalog: true
 		<tr>
 			<td>Visibility</td>
 			<td>string</td>
-			<td><p><!-- #BeginLibraryItem "/Library/parm_Visibility_all.lbi" --> The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.<!-- #EndLibraryItem --></p>
+			<td><p> The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.</p>
 				<p>In request messages, defaults to <strong>Public</strong> if not specified.</p></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_pictureid">PictureID</a></td>
 			<td>long</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_ID_PictureID.lbi" -->
-A temporary ID for a picture on the platform, such as the avatar for an app, API, or user. The PictureID is assigned by the Dropbox when the picture is first uploaded to the server, using the Dropbox service, as part of adding or updating the resource. PictureID is essentially the same as <a href="../aaref/Ref_IDsOnThePlatform.htm#id_dropboxid">DropboxId</a>. <!-- #EndLibraryItem --></p>
+			<td><p>
+A temporary ID for a picture on the platform, such as the avatar for an app, API, or user. The PictureID is assigned by the Dropbox when the picture is first uploaded to the server, using the Dropbox service, as part of adding or updating the resource. PictureID is essentially the same as <a href="../aaref/Ref_IDsOnThePlatform.htm#id_dropboxid">DropboxId</a>. </p>
 				<p>The app invokes the Dropbox API to upload the avatar using the PictureID. The image is then associated with the groupl</p>
 				<p>Used only in request messages.</p></td>
 		</tr>
@@ -84,8 +84,8 @@ A temporary ID for a picture on the platform, such as the avatar for an app, API
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_contextobjectid">ContextObjectID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ContextObjectID.lbi" -->
-The unique ID of the object that a group belongs to, if applicable. For an app team it is the <strong>AppID</strong>; for an API Scope Group it is the <strong>APIVersionID</strong>.<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID of the object that a group belongs to, if applicable. For an app team it is the <strong>AppID</strong>; for an API Scope Group it is the <strong>APIVersionID</strong>.</td>
 		</tr>
 		<tr>
 			<td>State</td>
@@ -95,17 +95,17 @@ The unique ID of the object that a group belongs to, if applicable. For an app t
 		<tr>
 			<td>Created</td>
 			<td>dateTime</td>
-			<td><!-- #BeginLibraryItem "/Library/o_Created.lbi" --> The date/time stamp when the resource was first created. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td> The date/time stamp when the resource was first created. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>Updated</td>
 			<td>dateTime</td>
-			<td><!-- #BeginLibraryItem "/Library/o_Updated.lbi" --> The date/time stamp when the resource was last updated. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td> The date/time stamp when the resource was last updated. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>RatingSummary</td>
 			<td><a href="../obj/o_res_RatingSummary.htm">RatingSummary</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_RatingSummary.lbi" --> An aggregated, averaged summary of individual user ratings for the resource, including the current ratings count for each possible value (1, 2, 3, 4, or 5). Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td> An aggregated, averaged summary of individual user ratings for the resource, including the current ratings count for each possible value (1, 2, 3, 4, or 5). Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>MemberCount</td>
@@ -120,25 +120,25 @@ The unique ID of the object that a group belongs to, if applicable. For an app t
 		<tr>
 			<td>IsFollowed</td>
 			<td>boolean</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_IsFollowed.lbi" -->A flag indicating whether the resource is being followed.<!-- #EndLibraryItem --></td>
+			<td>A flag indicating whether the resource is being followed.</td>
 		</tr>
 		<tr>
 			<td>AvatarURL</td>
 			<td>anyURI</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_AvatarURL.lbi" -->
-URL for the avatar uploaded for the resource, if any. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>
+URL for the avatar uploaded for the resource, if any. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>GroupSettings</td>
 			<td><a href="o_groups_GroupSettings.htm">GroupSettings</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_groups_GroupSettings.lbi" -->Provides information about the settings for the specified group.<!-- #EndLibraryItem --></td>
+			<td>Provides information about the settings for the specified group.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -150,5 +150,10 @@ URL for the avatar uploaded for the resource, if any. Used only in response mess
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

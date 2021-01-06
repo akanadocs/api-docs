@@ -16,12 +16,12 @@ no-catalog: true
 <h1 id="top">GET&#160;/api/apis/versions/{APIVersionID}/txlogs/{TransactionID}</h1><!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getTransactionRecord_apis.lbi" -->Returns information about a specific transaction for an API version.<!-- #EndLibraryItem --></p>
-<p><!-- #BeginLibraryItem "/Library/ref_Metrics.lbi" -->For additional information regarding the set of operations dealing with metric information, see <a href="../aaref/Ref_MetricsOnThePlatform.htm">Metrics on the Platform</a>.<!-- #EndLibraryItem --></p>
+<p>Returns information about a specific transaction for an API version.</p>
+<p>For additional information regarding the set of operations dealing with metric information, see <a href="../aaref/Ref_MetricsOnThePlatform.htm">Metrics on the Platform</a>.</p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must be a user with Monitor permission for the API; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must be a user with Monitor permission for the API; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a> or an app developer who has a contract with the API.</p>
 
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -38,7 +38,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -46,7 +47,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/txlogs/{TransactionID}</pre><!-- InstanceEndEditable -->
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/txlogs/{TransactionID}</pre><!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
@@ -54,10 +55,10 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for a specific transaction record for a specific API.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/6929b1a5-c1ce-4285-b02b-6659ba879dda.acmepaymentscorp2020-1/txlogs/9d830e55-698a-4464-ae8f-9b7425f6dc06</pre>
+<pre>https://{hostname}/api/apis/versions/6929b1a5-c1ce-4285-b02b-6659ba879dda.acmepaymentscorp2020-1/txlogs/9d830e55-698a-4464-ae8f-9b7425f6dc06</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -77,20 +78,19 @@ no-catalog: true
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_textxml.lbi" --><strong>text/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>text/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -116,29 +116,29 @@ no-catalog: true
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API version.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_transactionid">TransactionID</a></td>
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_TransactionID.lbi" -->
-        The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_transaction">transaction</a>.<!-- #EndLibraryItem --></td>
+			<td>
+        The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_transaction">transaction</a>.</td>
 		</tr>
 		<tr>
 			<td>TimeZone</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_TimeZone.lbi" -->The time zone for the information. If a time zone isn't specified, the information is returned in GMT. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.<!-- #EndLibraryItem --></td>
+			<td>The time zone for the information. If a time zone isn't specified, the information is returned in GMT. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.</td>
 		</tr>
 		<tr>
 			<td>IncludeMessageContents</td>
 			<td>Query</td>
 			<td>boolean</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_IncludeMessageContents.lbi" -->To include the transaction message contents in the response, set to <strong>true</strong>. Default: <strong>false</strong> (message contents are not included).<!-- #EndLibraryItem --></td>
+			<td>To include the transaction message contents in the response, set to <strong>true</strong>. Default: <strong>false</strong> (message contents are not included).</td>
 		</tr>
 	</tbody>
 </table>
@@ -176,7 +176,7 @@ Date: Tue, 21 Jul 2020 20:10:09 GMT</pre>
       {
         "MessageName":"APPLICATION",
         "MessageCapturedTime":"2020-07-17T17:12:00.404Z",
-        "TransportHeaders":"GET /api15427live/887868768 HTTP/1.1\nAtmo-Forward-To: http://akana-qa-44:7905/api15427live/887868768\nAccept: */*\nConnection: keep-alive\nReferer: http://api.acmepaymentscorp.com:7900/atmosphere/\nAccept-Encoding: gzip, deflate\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36\nAccept-Language: en-US,en;q=0.9\nAtmo-Forwarded-From: http://api.acmepaymentscorp.com:7900/forwardproxy/1595005920374\nCookie: _ga=GA1.2.996176145.1593173632; Cookie=null; JSESSIONID_eap=1q6gsghts0g6113l42veogu54x; AtmoAuthToken_acmepaymentscorp=TokenID%3D62ac354c-d3aa-424e-80d3-1af9ccc07523%2Cclaimed_id%3Durn%3Aatmosphere%3Auser%3Aacmepaymentscorp%3A8a9eaad3-d8e6-47fe-aebc-36c4206e579f%2CissueTime%3D1595004343183%2CexpirationTime%3D1595006203178%2CUserName%3Dadminacmepaymentscorp%2CUserFDN%3D8a9eaad3-d8e6-47fe-aebc-36c4206e579f%252Eacmepaymentscorp%2CAttributesIncluded%3Dfalse%2Csig%3DgXil6x1aiQkYG4lvouhDKbfzCDGxhRt_ylTmGawOPLdea65mryg462cxGJJG3sqQs7XaxZjI5Z0Iq4pRenIKacDRPTcsOTL9hVjbNOMbyXcEd3Vl21Kkw0j2vuywc6seHZ0xX4Vdb17v8nN1_dO2zDkzQ0XAcSGQrNM9MgplrfEO17VeVpBBtOvtpZbf0FNdRYFDEvQtjDBWRZZy6ZmDcJTFedAxnG3AZR5XCdfbVEME13Q539fXqEdOlonpXdh6H0oPgkzicKbaNOyD6MeF-xZO--H8gjCizGzPmtJ0aEU13ShhFm6dR8DJjbaCvCxKCQO9YGSUyDzT9rOVsSxFsQ\nHost: akana-qa-44:7905\n",
+        "TransportHeaders":"GET /api15427live/887868768 HTTP/1.1\nAtmo-Forward-To: http://akana-qa-44:7905/api15427live/887868768\nAccept: */*\nConnection: keep-alive\nReferer: http://api.acmepaymentscorp.com/atmosphere/\nAccept-Encoding: gzip, deflate\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36\nAccept-Language: en-US,en;q=0.9\nAtmo-Forwarded-From: http://api.acmepaymentscorp.com/forwardproxy/1595005920374\nCookie: _ga=GA1.2.996176145.1593173632; Cookie=null; JSESSIONID_eap=1q6gsghts0g6113l42veogu54x; AtmoAuthToken_acmepaymentscorp=TokenID%3D62ac354c-d3aa-424e-80d3-1af9ccc07523%2Cclaimed_id%3Durn%3Aatmosphere%3Auser%3Aacmepaymentscorp%3A8a9eaad3-d8e6-47fe-aebc-36c4206e579f%2CissueTime%3D1595004343183%2CexpirationTime%3D1595006203178%2CUserName%3Dadminacmepaymentscorp%2CUserFDN%3D8a9eaad3-d8e6-47fe-aebc-36c4206e579f%252Eacmepaymentscorp%2CAttributesIncluded%3Dfalse%2Csig%3DgXil6x1aiQkYG4lvouhDKbfzCDGxhRt_ylTmGawOPLdea65mryg462cxGJJG3sqQs7XaxZjI5Z0Iq4pRenIKacDRPTcsOTL9hVjbNOMbyXcEd3Vl21Kkw0j2vuywc6seHZ0xX4Vdb17v8nN1_dO2zDkzQ0XAcSGQrNM9MgplrfEO17VeVpBBtOvtpZbf0FNdRYFDEvQtjDBWRZZy6ZmDcJTFedAxnG3AZR5XCdfbVEME13Q539fXqEdOlonpXdh6H0oPgkzicKbaNOyD6MeF-xZO--H8gjCizGzPmtJ0aEU13ShhFm6dR8DJjbaCvCxKCQO9YGSUyDzT9rOVsSxFsQ\nHost: akana-qa-44:7905\n",
         "Category":[
           "APPLICATION",
           "request",
@@ -439,11 +439,11 @@ Date: Tue, 21 Jul 2020 20:10:09 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_textxml.lbi" --><strong>text/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>text/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -495,11 +495,11 @@ Date: Tue, 21 Jul 2020 20:10:09 GMT</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -511,5 +511,10 @@ Date: Tue, 21 Jul 2020 20:10:09 GMT</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

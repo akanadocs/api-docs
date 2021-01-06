@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Example - Adding an API Legal Agreement | How-To Material | Akana API Platform API
-description: This example walks you through adding a new legal agreement to an existing API in&#160;Akana API Platform&#160;by using the API rather than the user interface.
+description: This example walks you through adding a new legal agreement to an existing API in Akana API Platform by using the API rather than the user interface.
 product: cm
 category: ref
 nav-title: Example - Adding an API Legal Agreement 
@@ -13,13 +13,13 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">Example: Adding an API Legal Agreement</h1>
-<p>This example walks you through adding a new legal agreement to an existing API in&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;by using the API rather than the user interface.</p>
-<p>This exercise assumes that you already have a valid login for&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;and are an API admin for the API.</p>
+<p>This example walks you through adding a new legal agreement to an existing API in Akana API Platform by using the API rather than the user interface.</p>
+<p>This exercise assumes that you already have a valid login for Akana API Platform and are an API admin for the API.</p>
 <p class="apidoc_note"><strong>Note</strong>: If you added the API, you automatically become the first API Administrator. See <span class="apidoc_code"><a href="../apis/m_apis_createAPI.htm">POST&#160;/api/apis</a></span>.</p>
 <p>Essentially, you'll need to complete these four activities, in sequence:</p>
 <ol>
 	<li>Log in using your authorized user profile you've already set up. Operation: <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&#160;/api/login</a></span>.</li>
-	<li>Upload a legal agreement to the developer portal. Operation: <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&#160;/content/{path}</a></span></li>
+	<li>Upload a legal agreement to the Community Manager developer portal. Operation: <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&#160;/content/{path}</a></span></li>
 	<li>Publish the legal agreement. Operation: <span class="apidoc_code"><a href="../content/m_content_add.htm">POST&#160;/content/{path}</a></span>.</li>
 	<li>Activate the legal agreement. Operation: <span class="apidoc_code"><a href="../apis/m_apis_createNewAgreement.htm">POST&#160;/api/apis/versions/{APIVersionID}/legals</a></span>.</li>
 </ol>
@@ -30,13 +30,13 @@ no-catalog: true
 	<li>The APIVersionID.</li>
 </ul>
 <p>For more information about legal agreements, refer to <a href="../aaref/Ref_ManagingLegalAgreementsOnThePlatform.htm">Managing Legal Agreements on the Platform</a>.</p>
-<h3>To add an API legal agreement in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;using the API</h3>
+<h3>To add an API legal agreement in the Akana API Platform using the API</h3>
 <p>The example below creates a file named <strong>eula.txt</strong> in the Legals folder for the MyAPIName API created in an earlier exercise (see <a href="Ref_Ex_AddingAnAPI.htm">Example: Adding an API by providing the full API definition</a>). The file content will be the text <strong>End-user license agreement</strong>. There are no other documents in the folder, so the JSON table of contents for the folder is very simple.</p>
 <ol>
 	<li>Log in via the API, <span class="apidoc_code"><a href="../login/m_login_login.htm">POST&#160;/api/login</a></span> operation, using your own email and password in the body of the operation instead of the placeholder values given below.
 		<ul>
 			<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --></span>login</strong></li>
+			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>login</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
 			<li>Request Body:
@@ -59,13 +59,13 @@ no-catalog: true
 		<ul>
 			<li>HTTP method: POST</li>
 			<li>URL: <strong>https://{hostname}/content/api/{APIID}/legal/toc.{APIVersionID}.json?body=%7B%22toc%22%3A%5B%22eula.txt%22%5D%2C%22sequence%22%3A%5B%22eula.txt%22%5D%2C%22displayNames%22%3A%7B%7D%7D</strong></li>
-			<li>Content-Type header:<strong> application/x-www-form-urlencoded</strong></li>
+			<li>Content-Type header: <strong>application/x-www-form-urlencoded</strong></li>
 		</ul>
 	</li>
 	<li><strong>Activate</strong> the legal agreement using the <span class="apidoc_code"><a href="../apis/m_apis_createNewAgreement.htm">POST&#160;/api/apis/versions/{APIVersionID}/legals</a></span> operation. Once it's activated, developers see it and are required to accept it when requesting access to your API. In your API call, use the following, substituting the correct APIVersionID in the URL and the correct APIID in the request body:
 		<ul>
 			<li>HTTP method: POST</li>
-			<li>URL: <strong><span class="apidoc_div_codeendpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem --></span>apis/versions/{APIVersionID}/legals</strong></li>
+			<li>URL: <strong><span class="apidoc_div_codeendpoint">https://{hostname}/api/</span>apis/versions/{APIVersionID}/legals</strong></li>
 			<li>Accept header: <strong>text/plain</strong></li>
 			<li>Content-Type header: <strong>application/json</strong></li>
 			<li>CSRF header: include it if needed. If you are not sure whether it's needed or not, refer to <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm#checking_if_csrf_is_required">CSRF Prevention on the Platform</a>.</li>
@@ -82,7 +82,7 @@ no-catalog: true
 	</li>
 	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_endSession.htm">GET&#160;/api/login/endsession</a></span> operation. Use the following values:
 		<ul>
-			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</strong></li>
+			<li>URL: <strong>https://{hostname}/api/login/endsession</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 		</ul>
 	</li>
@@ -90,7 +90,7 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -102,5 +102,9 @@ no-catalog: true
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+</div>

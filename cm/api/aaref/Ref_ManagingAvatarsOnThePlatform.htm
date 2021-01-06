@@ -102,7 +102,7 @@ no-catalog: true
 <h2 id="processflowexample">Process Flow: Example</h2>
 <p>Let's say a user, Jane Mead, adds an avatar to her user profile. She then decides to change the image; she removes the existing avatar and adds a different one. This process flow uses the following operations:</p>
 <ol>
-	<li>User uploads an image to the developer portal: <a href="../dropbox/m_dropbox_addPicture.htm">POST&#160;/api/dropbox/pictures</a>. Image is saved to the Dropbox and PictureID is returned.</li>
+	<li>User uploads an image to the Community Manager developer portal: <a href="../dropbox/m_dropbox_addPicture.htm">POST&#160;/api/dropbox/pictures</a>. Image is saved to the Dropbox and PictureID is returned.</li>
 	<li>Image is retrieved for user to crop: <a href="../dropbox/m_dropbox_getPicture.htm">GET&#160;/api/dropbox/pictures/{PictureID}</a>.</li>
 	<li>User crops picture: <a href="../dropbox/m_dropbox_cropPicture.htm">PUT&#160;/api/dropbox/pictures/{PictureID}</a>. Cropped image is saved to database and PictureID is returned (same PictureID).</li>
 	<li>Cropped image is retrieved for use: <a href="../resource/m_getDefaultAvatar.htm">GET&#160;/api/users/UserID/avatar</a>.</li>
@@ -121,7 +121,7 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -133,5 +133,10 @@ no-catalog: true
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

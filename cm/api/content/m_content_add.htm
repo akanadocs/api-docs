@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Add Content | Content Service | Akana API Platform API
-description:  Adds a single file of new content to the platform, or adds a new directory.
+description: Adds a single file of new content to the platform, or adds a new directory.
 product: cm
 category: ref
 nav-title: Add Content 
@@ -17,12 +17,12 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_content_add.lbi" -->
-Adds a single file of new content to the platform, or adds a new directory.<!-- #EndLibraryItem --></p>
+<p>
+Adds a single file of new content to the platform, or adds a new directory.</p>
 <p class="apidoc_note"><strong>Note</strong>: When creating or uploading content files, you can use the <span class="apidoc_code"><a href="m_content_upload.htm">POST&#160;/content/{path}</a></span> operation (with <strong>multipart/form-data</strong> content type) to upload a single file, or multiple files in a ZIP. You can use the <span class="apidoc_code"><a href="m_content_add.htm">POST&#160;/content/{path}</a></span> operation (with <strong>application/x-www-form-urlencoded</strong> content-type) to create a new folder with a default JSON table of contents file in it, as in the example below, or to create a new file. If you are creating a new file, it cannot be empty; you must include the file contents in the payload, and must use the <strong>application/x-www-form-urlencoded</strong> content type.</p>
 
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or other authorized user.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> or other authorized user.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -39,7 +39,8 @@ Adds a single file of new content to the platform, or adds a new directory.<!-- 
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
 <!-- InstanceEndEditable -->
@@ -47,7 +48,7 @@ Adds a single file of new content to the platform, or adds a new directory.<!-- 
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint">https://<!-- #BeginLibraryItem "/Library/_endpointhost.lbi" -->{hostname}<!-- #EndLibraryItem -->/content/{path}</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/content/{path}</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -75,7 +76,7 @@ legal/toc.ff46365a-ebac-4fd3-9cbd-f1ac20262f80.rcoaless.json</pre>
 Host: {hostname}
 Accept: */*
 Content-Type: application/x-www-form-urlencoded
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p id="contentadd_req_body_01"><strong>Sample request body (request URL #1)</strong></p>
 <pre>body=%7B%7D</pre>
 
@@ -83,7 +84,7 @@ Content-Type: application/x-www-form-urlencoded
 <p>The request body updates the folder table of content to reflect the fact that the API legal agreement has been published, and is now ready to be activated. The request body must be URL-encoded.</p>
 <pre>body=%7B%22toc%22%3A%5B%22api_legal_agreement_rcoaless.txt%22%2C%22api_legal_agreement_rcoaless2.txt%22%5D%2C%22sequence%22%3A%5B%22api_legal_agreement_rcoaless.txt%22%2C%22api_legal_agreement_rcoaless2.txt%22%2C%22toc.ff46365a-ebac-4fd3-9cbd-f1ac20262f80.rcoaless.json%22%5D%2C%22displayNames%22%3A%7B%7D%7D</pre>
 
-<p><strong>Sample request&#160; body (request URL #4) in Postman</strong></p>
+<p><strong>Sample request body (request URL #4) in Postman</strong></p>
 <p>The example below creates the help folder for a corresponding SimpleDev theme, in Postman. In this example, CSRF is turned off, so only the content-type header is required. The <strong>path</strong> path parameter and <strong>folder</strong> form parameters are used.</p>
 <p><img src="../assets/content_add_postman_01.jpg" alt="Content Upload in Postman: URL, uploaded ZIP file, successful result" /></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -112,12 +113,11 @@ Content-Type: application/x-www-form-urlencoded
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -247,7 +247,7 @@ Date: Tue, 1 Jul 2014 20:00:00 GMT</pre>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -258,11 +258,11 @@ Date: Tue, 1 Jul 2014 20:00:00 GMT</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -274,5 +274,10 @@ Date: Tue, 1 Jul 2014 20:00:00 GMT</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

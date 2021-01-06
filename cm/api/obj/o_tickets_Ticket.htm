@@ -13,11 +13,11 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">Ticket Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_tickets_Ticket.lbi" -->Includes information about a ticket.<!-- #EndLibraryItem --></p>
+<p>Includes information about a ticket.</p>
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
-	<li><span class="apidoc_code"><a href="../tickets/m_tickets_submitTicket.htm">POST&#160;/api/tickets</a></span> (<!-- #BeginLibraryItem "/Library/desc_submitTicket.lbi" -->Opens a new ticket.<!-- #EndLibraryItem -->)</li>
-	<li><span class="apidoc_code"><a href="../tickets/m_tickets_getTicket.htm">GET&#160;/api/tickets/{TicketID}</a></span> (<!-- #BeginLibraryItem "/Library/desc_getTicket.lbi" -->Returns information about a specific ticket.<!-- #EndLibraryItem -->)</li>
+	<li><span class="apidoc_code"><a href="../tickets/m_tickets_submitTicket.htm">POST&#160;/api/tickets</a></span> (Opens a new ticket.)</li>
+	<li><span class="apidoc_code"><a href="../tickets/m_tickets_getTicket.htm">GET&#160;/api/tickets/{TicketID}</a></span> (Returns information about a specific ticket.)</li>
 	<li>Operations that reference the <a href="o_tickets_Tickets.htm">Tickets</a> object</li>
 </ul>
 
@@ -34,18 +34,19 @@ no-catalog: true
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_ticketid">TicketID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_TicketID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_ticket">ticket</a>.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_ticket">ticket</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiid">APIID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIID.lbi" -->The unique ID for a specific API.<!-- #EndLibraryItem -->It is the ID for the API the ticket is associated with, if applicable.</td>
+			<td><p>The unique ID for a specific API.</p>
+			<p>It is the ID for the API the ticket is associated with, if applicable.</p></td>
 		</tr>
 
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_AppID">AppID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->The unique ID for a specific app.<!-- #EndLibraryItem -->It is the ID of the app the ticket is associated with.</td>
+			<td>The unique ID for a specific app.It is the ID of the app the ticket is associated with.</td>
 		</tr>
 		<tr>
 			<td>Title</td>
@@ -65,12 +66,12 @@ no-catalog: true
 		<tr>
 			<td>State</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_tickets_State.lbi" -->The current <a href="../Ref_Glossary_CommunityPlatform.htm#gl_state">state</a> of the ticket. For valid values, see <a href="../aaref/Ref_Values.htm#values_ticketstate">Ticket State Values</a>.<!-- #EndLibraryItem --></td>
+			<td>The current <a href="../Ref_Glossary_CommunityPlatform.htm#gl_state">state</a> of the ticket. For valid values, see <a href="../aaref/Ref_Values.htm#values_ticketstate">Ticket State Values</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_userid">UserID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_UserID.lbi" -->The unique ID for a specific user.<!-- #EndLibraryItem -->It is the ID of the user who created the ticket.</td>
+			<td>The unique ID for a specific user.It is the ID of the user who created the ticket.</td>
 		</tr>
 		<tr>
 			<td>UserName</td>
@@ -80,13 +81,13 @@ no-catalog: true
 		<tr>
 			<td>Created</td>
 			<td>dateTime</td>
-			<td><!-- #BeginLibraryItem "/Library/o_Created.lbi" --> The date/time stamp when the resource was first created. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td> The date/time stamp when the resource was first created. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>Label</td>
 			<td>string[&#160;]</td>
-			<td><p><!-- #BeginLibraryItem "/Library/parm_Label_tickets.lbi" -->
-        One or more ticket <a href="../Ref_Glossary_CommunityPlatform.htm#gl_label_ticket">labels</a> indicating the priority of the ticket. When setting priority, specify only one value. For valid values, see <a href="../aaref/Ref_Values.htm#values_ticketlabel">Ticket Label Values</a>.<!-- #EndLibraryItem --></p>
+			<td><p>
+        One or more ticket <a href="../Ref_Glossary_CommunityPlatform.htm#gl_label_ticket">labels</a> indicating the priority of the ticket. When setting priority, specify only one value. For valid values, see <a href="../aaref/Ref_Values.htm#values_ticketlabel">Ticket Label Values</a>.</p>
 				<p>Required when adding a ticket.</p></td>
 		</tr>
 		<tr>
@@ -102,17 +103,17 @@ no-catalog: true
 		<tr>
 			<td>Marks</td>
 			<td>integer</td>
-			<td><!-- #BeginLibraryItem "/Library/o_parm_Marks.lbi" -->The number of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_mark">marks</a> on the resource.<!-- #EndLibraryItem --></td>
+			<td>The number of <a href="../Ref_Glossary_CommunityPlatform.htm#gl_mark">marks</a> on the resource.</td>
 		</tr>
 		<tr>
 			<td>IsMarked</td>
 			<td>boolean</td>
-			<td><!-- #BeginLibraryItem "/Library/o_IsMarked.lbi" -->Indicates whether there are any <a href="../Ref_Glossary_CommunityPlatform.htm#gl_mark">marks</a> on the resource or not.<!-- #EndLibraryItem --></td>
+			<td>Indicates whether there are any <a href="../Ref_Glossary_CommunityPlatform.htm#gl_mark">marks</a> on the resource or not.</td>
 		</tr>
 		<tr>
 			<td>Visibility</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Visibility_apis.lbi" -->The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting for the API; either Public, which is visible to all users, or Limited, which is visible only to API Administrators and API Scope Group members.<!-- #EndLibraryItem --></td>
+			<td>The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility_api">visibility</a> setting for the API; either Public, which is visible to all users, or Limited, which is visible only to API Administrators and API Scope Group members.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_RSSChannelsOnThePlatform.htm#rss_pubdate">pubDate</a></td>
@@ -122,23 +123,23 @@ no-catalog: true
 		<tr>
 			<td>Action</td>
 			<td><a href="o_dn_model_Action.htm">Action</a>[&#160;]</td>
-			<td><!-- #BeginLibraryItem "/Library/o_dn_model_Action.lbi" --><p>An extensibility element for a workflow action event that possibly could be taken on a specific resource. Used to call a JavaScript action.</p>
-				<p>A list of actions available on the resource.</p><!-- #EndLibraryItem --></td>
+			<td><p>An extensibility element for a workflow action event that possibly could be taken on a specific resource. Used to call a JavaScript action.</p>
+				<p>A list of actions available on the resource.</p></td>
 		</tr>
 		<tr>
 			<td>TargetResources</td>
 			<td><a href="o_dn_model_TargetResources.htm">TargetResources</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_dn_model_TargetResources.lbi" -->Contains information about one or more resources associated with the current resource. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>Contains information about one or more resources associated with the current resource. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>Image</td>
 			<td><a href="o_dn_model_Image.htm">Image</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_dn_model_Image.lbi" --> Contains information about an avatar associated with a resource.<!-- #EndLibraryItem --></td>
+			<td> Contains information about an avatar associated with a resource.</td>
 		</tr>
 		<tr>
 			<td>CommentsPreview</td>
 			<td><a href="o_comment_CommentsPreview.htm">CommentsPreview</a></td>
-			<td><!-- #BeginLibraryItem "/Library/parm_CommentsPreview.lbi" -->A preview of the comments added to the resource (the last two comments plus total count).<!-- #EndLibraryItem --></td>
+			<td>A preview of the comments added to the resource (the last two comments plus total count).</td>
 		</tr>
 <!--		<tr>
 			<td>Link</td>
@@ -155,7 +156,7 @@ no-catalog: true
 		<tr>
 			<td>AuthoringUser</td>
 			<td><a href="o_dn_model_AuthoringUser.htm">AuthoringUser</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_dn_model_AuthoringUser.lbi" -->Contains information about the author of a resource.<!-- #EndLibraryItem --></p>
+			<td><p>Contains information about the author of a resource.</p>
 				<p>The author who created the ticket.</p></td>
 		</tr>
 		<tr>
@@ -166,20 +167,20 @@ no-catalog: true
 		<tr>
 			<td>DescriptionMediaType</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/desc_DescriptionMediaType.lbi" -->
-Indicates the media type for the description of an artifact associated with a Board item. Valid values: <a href="../aaref/Ref_MediaTypes.htm#mediatype_textmarkdown"><strong>text/markdown</strong></a> (the default if platform settings support markdown) or <strong>text/plain</strong> (the default if markdown is not supported).<!-- #EndLibraryItem --></td>
+			<td>
+Indicates the media type for the description of an artifact associated with a Board item. Valid values: <a href="../aaref/Ref_MediaTypes.htm#mediatype_textmarkdown"><strong>text/markdown</strong></a> (the default if platform settings support markdown) or <strong>text/plain</strong> (the default if markdown is not supported).</td>
 		</tr>
 		<tr>
 			<td>BoardItemArtifacts</td>
 			<td><a href="o_boards_BoardItemArtifacts.htm">BoardItemArtifacts</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_boards_BoardItemArtifact.lbi" -->Contains information about an image or other artifact associated with a Board item. Applicable only if the DescriptionMediaType for the Board item is text/markdown.<!-- #EndLibraryItem --></td>
+			<td>Contains information about an image or other artifact associated with a Board item. Applicable only if the DescriptionMediaType for the Board item is text/markdown.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -191,5 +192,10 @@ Indicates the media type for the description of an artifact associated with a Bo
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

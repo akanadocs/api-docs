@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Complete Signup (Deprecated) | Users Service | Akana API Platform API
-description:  Deprecated. Registers the user, so that the user can log in and perform authenticated actions. As of version 8.4, this operation is replaced by <span class="apidoc_code"><a href="m_users_completeSignUpAdvanced.htm">POST&#160;/api/users/completeSignup</a></span> (extended functionality, different headers). The pre-existing operation is supported for backwards compatibility, but it's best to use the new operation instead.
+description: Deprecated. Registers the user, so that the user can log in and perform authenticated actions. As of version 8.4, this operation is replaced by <span class="apidoc_code"><a href="m_users_completeSignUpAdvanced.htm">POST&#160;/api/users/completeSignup</a></span> (extended functionality, different headers). The pre-existing operation is supported for backwards compatibility, but it's best to use the new operation instead.
 product: cm
 category: ref
 nav-title: Complete Signup (Deprecated) 
@@ -17,10 +17,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_completeSignup.lbi" -->
-Deprecated. Registers the user, so that the user can log in and perform authenticated actions. As of version 8.4, this operation is replaced by <span class="apidoc_code"><a href="m_users_completeSignUpAdvanced.htm">POST&#160;/api/users/completeSignup</a></span> (extended functionality, different headers). The pre-existing operation is supported for backwards compatibility, but it's best to use the new operation instead.<!-- #EndLibraryItem --></p>
+<p>
+Deprecated. Registers the user, so that the user can log in and perform authenticated actions. As of version 8.4, this operation is replaced by <span class="apidoc_code"><a href="m_users_completeSignUpAdvanced.htm">POST&#160;/api/users/completeSignup</a></span> (extended functionality, different headers). The pre-existing operation is supported for backwards compatibility, but it's best to use the new operation instead.</p>
 <p>Before: The user clicks the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_code_user_signup">signup code</a> in the notification email, and then puts in the password. Those actions serve to validate the user input; processing of the new user registration can now be completed by means of the <span class="apidoc_code">completeSignup</span> operation.</p>
-<p>After: When this operation is complete, the user is logged in and can begin using the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->.</p>
+<p>After: When this operation is complete, the user is logged in and can begin using the Akana API Platform.</p>
 <p>This operation can be used in two ways:</p>
 <ul>
 	<li>The operation sends a signup code from a signup email.</li>
@@ -28,7 +28,7 @@ Deprecated. Registers the user, so that the user can log in and perform authenti
 </ul>
 <p>After a successful call, any subsequent attempt to sign up using the same email address results in an error.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Anyone can use this operation; login is not required. This is because the operation is used in the signup process.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -45,7 +45,8 @@ Deprecated. Registers the user, so that the user can log in and perform authenti
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
 <!-- InstanceEndEditable -->
@@ -53,16 +54,16 @@ Deprecated. Registers the user, so that the user can log in and perform authenti
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/completeSignup</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/users/completeSignup</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
 <!-- InstanceBeginEditable name="Sample Request" -->
 <h2 id="samplerequest">Sample Request</h2>
-<p id="id_samplerequest">The example below shows the password and signup code passed as URL parameters. In this example the user is completing the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;signup process rather than using Google&reg; or Facebook&reg;.</p>
+<p id="id_samplerequest">The example below shows the password and signup code passed as URL parameters. In this example the user is completing the Akana API Platform signup process rather than using Google&reg; or Facebook&reg;.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/completeSignup?password=Margaret23&amp;signupCode=TjXfXSiqJBmRIoMGHyTD5kxBSRosu8Nqj4YBDXNYH-DkjnRxl84Wzw</pre>
+<pre>https://{hostname}/api/users/completeSignup?password=Margaret23&amp;signupCode=TjXfXSiqJBmRIoMGHyTD5kxBSRosu8Nqj4YBDXNYH-DkjnRxl84Wzw</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: */*
 Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
@@ -85,11 +86,11 @@ Content-Type: application/x-www-form-urlencoded; charset=UTF-8</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/x-www-form-urlencoded</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -212,11 +213,11 @@ expires=Mon, 17-Sep-2012 23:56:17 GMT;HttpOnly;Version=1</pre>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><p>Any one of the following media types is valid for the request Content-Type:</p>
-<p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p></td>
+<p><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></p></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#setcookie_response">Set-Cookie</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_setcookie.lbi" --> The set-cookie response header sets, updates, or expires the platform cookie to reflect changes made by the operation.<!-- #EndLibraryItem --></td>
+			<td> The set-cookie response header sets, updates, or expires the platform cookie to reflect changes made by the operation.</td>
 		</tr>
 	</tbody>
 </table>
@@ -250,11 +251,11 @@ expires=Mon, 17-Sep-2012 23:56:17 GMT;HttpOnly;Version=1</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -266,5 +267,10 @@ expires=Mon, 17-Sep-2012 23:56:17 GMT;HttpOnly;Version=1</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

@@ -1,7 +1,7 @@
 ---
 layout: apipage-noindex
 title: Policy Object | APIs Service | Akana API Platform API
-description:  Contains information about a policy that is enforced for an API version.
+description: Contains information about a policy that is enforced for an API version. Depending on where this appears, the policy might be enforced at the service level or at the operation level.
 product: cm
 category: ref
 nav-title: Policy Object 
@@ -13,13 +13,15 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">Policy Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_apis_Policy.lbi" -->
-Contains information about a policy that is enforced for an API version.<!-- #EndLibraryItem --></p>
+<p>
+Contains information about a policy that is enforced for an API version. Depending on where this appears, the policy might be enforced at the service level or at the operation level.</p>
 <p><strong>Note</strong>: For specific information regarding which policies are available/required, refer to the <span class="apidoc_code"><a href="../policies/m_policies_getPolicies.htm">GET&#160;/api/policies</a></span> operation.</p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
 	<li>Operations that reference the <a href="o_apis_Policies.htm">Policies</a> object</li>
+	<li>Operations that reference the <a href="o_apis_ApiPolicies.htm">ApiPolicies</a> object (in 2020.2.0 and later)</li>
+	<li>Operations that reference the <a href="o_apis_ApiOperationPolicy.htm">ApiOperationPolicy</a> object (in 2020.2.0 and later)</li>
 </ul>
 
 <p>The properties included in the <strong>Policy</strong> object are listed below. Properties are optional unless otherwise noted.</p>
@@ -65,8 +67,8 @@ Contains information about a policy that is enforced for an API version.<!-- #En
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_BusinessID.lbi" -->
-The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform.htm#gl_organization">organization</a> on the platform.</td>
 		</tr>
 		<tr>
 			<td>PolicyConfiguration</td>
@@ -78,7 +80,7 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -90,5 +92,10 @@ The unique ID for a specific business <a href="../Ref_Glossary_CommunityPlatform
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

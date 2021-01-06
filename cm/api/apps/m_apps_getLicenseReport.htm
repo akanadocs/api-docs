@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get License Report | Apps Service | Akana API Platform API
-description:  Returns the report definition relating to licenses for the specified app version, for the specified ReportType.
+description: Returns the report definition relating to licenses for the specified app version, for the specified ReportType.
 product: cm
 category: ref
 nav-title: Get License Report 
@@ -17,10 +17,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getLicenseReport_apps.lbi" -->
-Returns the report definition relating to licenses for the specified app version, for the specified ReportType.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must be a user with Monitor permission for the app; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>, or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> for an API that has a contract with the app.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>
+Returns the report definition relating to licenses for the specified app version, for the specified ReportType.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must be a user with Monitor permission for the app; an <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_appadmin">App team member</a>, <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_bizadmin">Business Admin</a>, or <a href="../aaref/Ref_AuthorizationRolesOnThePlatform.htm#authroles_apiadmin">API Admin</a> for an API that has a contract with the app.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -37,7 +37,8 @@ Returns the report definition relating to licenses for the specified app version
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -45,7 +46,7 @@ Returns the report definition relating to licenses for the specified app version
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/versions/{AppVersionID}/licensereport</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apps/versions/{AppVersionID}/licensereport</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -54,10 +55,10 @@ Returns the report definition relating to licenses for the specified app version
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for a specific license report for the specified app version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apps/apps/versions/3Bq6K4CcMGb6YYpaMxJ2miAk.acmepaymentscorp/licensereport?ReportType=app.usage.api.quotas</pre>
+<pre>https://{hostname}/api/apps/apps/versions/3Bq6K4CcMGb6YYpaMxJ2miAk.acmepaymentscorp/licensereport?ReportType=app.usage.api.quotas</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -77,20 +78,19 @@ Returns the report definition relating to licenses for the specified app version
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -114,7 +114,7 @@ Returns the report definition relating to licenses for the specified app version
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AppVersionID.lbi" --> The unique ID for a specific app version.<!-- #EndLibraryItem --></td>
+			<td> The unique ID for a specific app version.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -123,14 +123,14 @@ Returns the report definition relating to licenses for the specified app version
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_LicenseID.lbi" -->The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_license">license</a>.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_license">license</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_apiversionid">ApiVersionID</a></td>
 			<td>Path</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API version.</td>
 		</tr>
 		<tr>
 			<td>MetricName</td>
@@ -144,7 +144,7 @@ Returns the report definition relating to licenses for the specified app version
 			<td>Query</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_ReportType_License.lbi" -->The type of metric information used in the license report. For valid values, see <a href="../aaref/Ref_Values.htm#values_reporttype_license">ReportType: License Report</a>.<!-- #EndLibraryItem --></td>
+			<td>The type of metric information used in the license report. For valid values, see <a href="../aaref/Ref_Values.htm#values_reporttype_license">ReportType: License Report</a>.</td>
 		</tr>
 		<tr>
 			<td>Environment</td>
@@ -158,22 +158,22 @@ Returns the report definition relating to licenses for the specified app version
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_StartDate.lbi" -->The beginning point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>StartDate=2011-01-01T11:55:22</strong>. If StartDate is not specified, the operation uses EndDate minus Duration. If both StartDate and EndDate are unspecified, the operation returns information for the Duration value, and if Duration is also unspecified it returns default Duration value of 2 hours.<!-- #EndLibraryItem --></td>
+			<td>The beginning point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>StartDate=2011-01-01T11:55:22</strong>. If StartDate is not specified, the operation uses EndDate minus Duration. If both StartDate and EndDate are unspecified, the operation returns information for the Duration value, and if Duration is also unspecified it returns default Duration value of 2 hours.</td>
 		</tr>
 		<tr>
 			<td>EndDate</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_EndDate.lbi" -->
-The ending point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>EndDate=2011-01-02T11:55:22</strong>. If not specified, defaults to the current date/time of the API call.<!-- #EndLibraryItem --></td>
+			<td>
+The ending point for the date range of metric information requested. Format: YYYY-MM-DD:THH:MM:SS. Example: <strong>EndDate=2011-01-02T11:55:22</strong>. If not specified, defaults to the current date/time of the API call.</td>
 		</tr>
 		<tr>
 			<td>TimeZone</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_TimeZone.lbi" -->The time zone for the information. If a time zone isn't specified, the information is returned in GMT. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.<!-- #EndLibraryItem --></td>
+			<td>The time zone for the information. If a time zone isn't specified, the information is returned in GMT. For more information, refer to <a href="../aaref/Ref_WorkingWithTimeZonesAndTimeIntervals.htm">Working with Time Zones and Time Intervals</a>.</td>
 		</tr>
 		<tr>
 			<td>Duration</td>
@@ -258,70 +258,6 @@ Expires: Wed, 22 Apr 2015 19:29:14 GMT</pre>
   }
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
-<p><strong>Sample response headers: application/xml</strong></p>
-<pre>Status Code: 200 OK
-Content-Type: application/xml
-Expires: Wed, 22 Apr 2015 19:31:25 GMT</pre>
-<p><strong>Sample response body: application/xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;Report xmlns=&quot;http://soa.com/xsd/performance/1.0&quot; xmlns:ns2=&quot;http://soa.com/xsd/business/1.0&quot; 
-xmlns:ns3=&quot;http://soa.com/xsd/contract/1.0&quot; xmlns:ns4=&quot;http://soa.com/xsd/api/1.0&quot; 
-xmlns:ns5=&quot;http://soa.com/xsd/app/1.0&quot; xmlns:ns6=&quot;http://soa.com/xsd/legals/1.0&quot; 
-xmlns:ns7=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns8=&quot;http://soa.com/xsd/resource/1.0&quot;&gt;
-  &lt;ReferencedObjects&gt;
-    &lt;ns4:APIVersion&gt;
-      &lt;ns4:APIVersionID&gt;8cd656b4-a585-4e79-b669-db693fca46cf.acmepaymentscorp&lt;/ns4:APIVersionID&gt;
-      &lt;ns4:APIID&gt;02b2c3c9-90c0-4dce-8b3a-71f578c19ba0.acmepaymentscorp&lt;/ns4:APIID&gt;
-      &lt;ns4:Name&gt;v2&lt;/ns4:Name&gt;
-      &lt;ns4:Description&gt;v2&lt;/ns4:Description&gt;
-      &lt;ns4:Type&gt;shttp&lt;/ns4:Type&gt;
-      &lt;ns4:Tag&gt;payments&lt;/ns4:Tag&gt;
-      &lt;ns4:Visibility&gt;Public&lt;/ns4:Visibility&gt;
-      &lt;ns4:Created&gt;2015-04-22T19:48:47Z&lt;/ns4:Created&gt;
-      &lt;ns4:Updated&gt;2015-04-23T00:13:42Z&lt;/ns4:Updated&gt;
-      &lt;ns4:State&gt;com.soa.api.state.open&lt;/ns4:State&gt;
-      &lt;ns4:ProductionEndpointAccessAutoApproved&gt;true&lt;/ns4:ProductionEndpointAccessAutoApproved&gt;
-      &lt;ns4:SandboxEndpointAccessAutoApproved&gt;true&lt;/ns4:SandboxEndpointAccessAutoApproved&gt;
-      &lt;ns4:SandboxAnonymousAccessAllowed&gt;false&lt;/ns4:SandboxAnonymousAccessAllowed&gt;
-      &lt;ns4:ProductionAnonymousAccessAllowed&gt;false&lt;/ns4:ProductionAnonymousAccessAllowed&gt;
-      &lt;ns4:ResourceLevelPermissionsSupported&gt;true&lt;/ns4:ResourceLevelPermissionsSupported&gt;
-      &lt;ns4:APIOwnedImplementations&gt;true&lt;/ns4:APIOwnedImplementations&gt;
-      &lt;ns4:ProductionServiceKey&gt;uddi:976acd47-e928-11e4-bbb3-cf1bd1a9e489&lt;/ns4:ProductionServiceKey&gt;
-      &lt;ns4:SandboxServiceKey&gt;uddi:98b88338-e928-11e4-bbb3-cf1bd1a9e489&lt;/ns4:SandboxServiceKey&gt;
-    &lt;/ns4:APIVersion&gt;
-    &lt;ns5:ApplicationVersion&gt;
-      &lt;ns5:RuntimeID&gt;3Bq6K4CcMGb6YYpaMxJ2miAk.acmepaymentscorp&lt;/ns5:RuntimeID&gt;
-      &lt;ns5:AppID&gt;5d31dd70-a68a-424b-a9fc-3108587f5c20.acmepaymentscorp&lt;/ns5:AppID&gt;
-      &lt;ns5:Name&gt;1.0&lt;/ns5:Name&gt;
-      &lt;ns5:Description&gt;s&lt;/ns5:Description&gt;
-      &lt;ns5:WebsiteAddress&gt;&lt;/ns5:WebsiteAddress&gt;
-      &lt;ns5:Visibility&gt;Public&lt;/ns5:Visibility&gt;
-      &lt;ns5:InitialEnvironment&gt;Sandbox&lt;/ns5:InitialEnvironment&gt;
-      &lt;ns5:CurrentEnvironment&gt;Sandbox&lt;/ns5:CurrentEnvironment&gt;
-      &lt;ns5:HasKeyInfo&gt;false&lt;/ns5:HasKeyInfo&gt;
-      &lt;ns5:Created&gt;2015-04-22T14:22:11Z&lt;/ns5:Created&gt;
-      &lt;ns5:Updated&gt;2015-04-23T00:12:00Z&lt;/ns5:Updated&gt;
-      &lt;ns5:State&gt;com.soa.app.state.review&lt;/ns5:State&gt;
-      &lt;ns5:SecurityMechanisms&gt;com.soa.security.mechanism.sharedsecret&lt;/ns5:SecurityMechanisms&gt;
-      &lt;ns5:Identity&gt;acmepaymentscorp-3Bq6K4CcMGb6YYpaMxJ2miAk&lt;/ns5:Identity&gt;
-    &lt;/ns5:ApplicationVersion&gt;
-    &lt;ns5:Application&gt;
-      &lt;ns5:AppID&gt;5d31dd70-a68a-424b-a9fc-3108587f5c20.acmepaymentscorp&lt;/ns5:AppID&gt;
-      &lt;ns5:Name&gt;crosfhocal&lt;/ns5:Name&gt;
-      &lt;ns5:Description&gt;s&lt;/ns5:Description&gt;
-      &lt;ns5:Visibility&gt;Public&lt;/ns5:Visibility&gt;
-      &lt;ns5:DefaultVersionID&gt;3Bq6K4CcMGb6YYpaMxJ2miAk.acmepaymentscorp&lt;/ns5:DefaultVersionID&gt;
-      &lt;ns5:IsFollowed&gt;true&lt;/ns5:IsFollowed&gt;
-      &lt;ns5:State&gt;com.soa.app.state.active&lt;/ns5:State&gt;
-      &lt;ns5:Created&gt;2015-04-22T14:22:11Z&lt;/ns5:Created&gt;
-      &lt;ns5:Updated&gt;2015-04-23T00:12:00Z&lt;/ns5:Updated&gt;
-      &lt;ns5:AvatarURL&gt;http://{hostname}/api/apps/5d31dd70-a68a-424b-a9fc-3108587f5c20.acmepaymentscorp/avatar&lt;/ns5:AvatarURL&gt;
-      &lt;ns5:TeamID&gt;appteam-5d31dd70-a68a-424b-a9fc-3108587f5c20.acmepaymentscorp&lt;/ns5:TeamID&gt;
-    &lt;/ns5:Application&gt;
-  &lt;/ReferencedObjects&gt;
-&lt;/Report&gt;
-</pre>
-<p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
 
@@ -338,11 +274,11 @@ xmlns:ns7=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns8=&quot;http://soa.
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_71.lbi" --><strong>application/vnd.soa.v71+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_72.lbi" --><strong>application/vnd.soa.v72+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_80.lbi" --><strong>application/vnd.soa.v80+xml</strong><!-- #EndLibraryItem --></p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></p></td>
+			<td><p><strong>application/json</strong>, <strong>application/xml</strong></p>
+				<p><strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v71+xml</strong></p>
+				<p><strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v72+xml</strong></p>
+				<p><strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v80+xml</strong></p>
+				<p><strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -364,7 +300,7 @@ xmlns:ns7=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns8=&quot;http://soa.
 		<tr>
 			<td>Report</td>
 			<td><a href="../obj/o_performance_Report.htm">Report</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_performance_Report.lbi" -->Contains information about a performance report for an app or API.<!-- #EndLibraryItem --></td>
+			<td>Contains information about a performance report for an app or API.</td>
 		</tr>
 	</tbody>
 </table>
@@ -383,13 +319,13 @@ xmlns:ns7=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns8=&quot;http://soa.
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
-			<td><!-- #BeginLibraryItem "/Library/http_400.lbi" -->Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.<!-- #EndLibraryItem -->For example, you might get this response if you didn't include the required <strong>ReportType</strong> parameter in the request.</td>
+			<td>Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you didn't include the required <strong>ReportType</strong> parameter in the request.</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -398,11 +334,11 @@ xmlns:ns7=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns8=&quot;http://soa.
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -414,5 +350,10 @@ xmlns:ns7=&quot;http://soa.com/xsd/dnmodel/1.0&quot; xmlns:ns8=&quot;http://soa.
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

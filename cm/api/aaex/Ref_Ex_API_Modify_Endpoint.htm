@@ -17,7 +17,7 @@ no-catalog: true
 <p>The steps are different depending on whether you're updating the endpoint for:</p>
 <ul>
 	<li><strong>The physical service</strong>&#8212;the actual API endpoint. For example: <strong>http://petstore.swagger.io/v2/</strong>.</li>
-	<li><strong>The virtual service</strong>&#8212;the endpoint that you'll use if your API is hosted on the <!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->. API users send messages to the virtual endpoint, and the platform applies policies, monitors traffic etc. and relays messages to the physical service endpoint. For example: <strong>http://api.acmepaymentscorp.com/api10410live</strong>.</li>
+	<li><strong>The virtual service</strong>&#8212;the endpoint that you'll use if your API is hosted on the Akana API Platform. API users send messages to the virtual endpoint, and the platform applies policies, monitors traffic etc. and relays messages to the physical service endpoint. For example: <strong>http://api.acmepaymentscorp.com/api10410live</strong>.</li>
 </ul>
 <p>Before starting, you'll need:</p>
 <ul>
@@ -54,7 +54,7 @@ no-catalog: true
 <h4>Modify the endpoint</h4>
 <ol>
 	<li>Update the endpoint. Operation: <span class="apidoc_code"><a href="../apis/m_apis_modifyAPIImplementationDeployments.htm">PUT&#160;/api/apis/versions/{APIVersionID}/implementations/{ImplCode}/deployments</a></span>.
-		<p>Use the response from the previous operation in the request body, and modify the endpoint (<strong>EndpointPath</strong> value). For example, you might change the context path from<strong> /api10411live</strong> to <strong>/api12345live</strong>. Do not change the hostname since it is hosted on the developer portal. Make sure you change it in all three places:</p>
+		<p>Use the response from the previous operation in the request body, and modify the endpoint (<strong>EndpointPath</strong> value). For example, you might change the context path from <strong>/api10411live</strong> to <strong>/api12345live</strong>. Do not change the hostname since it is hosted on the Community Manager developer portal. Make sure you change it in all three places:</p>
 		<ul>
 			<li>EndpointPath</li>
 			<li>Path</li>
@@ -63,13 +63,13 @@ no-catalog: true
 	</li>
 	<li>Review the response. You'll see that the new endpoint appears&#160;in the response, in the<strong>EndpointPath</strong>, <strong>Path</strong>, and <strong>Url</strong> fields for the deployment zone, and the <strong>URI</strong> field for the endpoint.</li>
 </ol>
-	<p><strong>Note</strong>: To perform this operation in the developer portal, go to: <strong>API</strong> &gt; <strong>Implementations</strong> &gt; choose implementation &gt; <strong>Deployments</strong> section &gt; click <strong>Edit</strong> and update the <strong>Context Path</strong> field.</p>
+	<p><strong>Note</strong>: To perform this operation in the Community Manager developer portal, go to: <strong>API</strong> &gt; <strong>Implementations</strong> &gt; choose implementation &gt; <strong>Deployments</strong> section &gt; click <strong>Edit</strong> and update the <strong>Context Path</strong> field.</p>
 
 <h4>Log out</h4>
 <ol>
 	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_endSession.htm">GET&#160;/api/login/endsession</a></span> operation. Use the following values:
 		<ul>
-			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</strong></li>
+			<li>URL: <strong>https://{hostname}/api/login/endsession</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 		</ul>
 	</li>
@@ -118,7 +118,7 @@ no-catalog: true
 <ol>
 	<li>When done, remember to log out using the <span class="apidoc_code"><a href="../login/m_login_endSession.htm">GET&#160;/api/login/endsession</a></span> operation. Use the following values:
 		<ul>
-			<li>URL: <strong><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->login/endsession</strong></li>
+			<li>URL: <strong>https://{hostname}/api/login/endsession</strong></li>
 			<li>Accept header: <strong>application/json</strong></li>
 		</ul>
 	</li>
@@ -126,7 +126,7 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -138,5 +138,9 @@ no-catalog: true
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+</div>

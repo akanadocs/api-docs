@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Deployment Zones Service | Overview | Akana API Platform API
-description:  The Deployment Zones service allows you to retrieve a list of deployment zones for the platform.
+description: The Deployment Zones service allows you to retrieve a list of deployment zones for the platform.
 product: cm
 category: ref
 nav-title: Deployment Zones Service 
@@ -13,9 +13,9 @@ no-catalog: false
 
 <div class="apidocContent">
 <h1 id="top">Deployment Zones Service: Overview</h1>
-<p><!-- #BeginLibraryItem "/Library/descsvc_deploymentzones.lbi" -->
-The Deployment Zones service allows you to retrieve a list of deployment zones for the platform.<!-- #EndLibraryItem --></p>
-<p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->deploymentzones</span></p>
+<p>
+The Deployment Zones service allows you to retrieve a list of deployment zones for the platform.</p>
+<p><strong>URL</strong>: <span class="apidoc_code">https://{hostname}/api/deploymentzones</span></p>
 <p><span class="apidoc_note"><strong>Note</strong>: Most of these operations take the <a href="aaref/Ref_IDsOnThePlatform.htm#id_dzoneid">DZoneID</a> as a parameter. You can get this value from the response to the <span class="apidoc_code"><a href="deploymentzones/m_deploymentzones_getDeploymentZones.htm">GET&#160;/api/deploymentzones</a></span> operation. For information about any other IDs used in path parameters, see <a href="aaref/Ref_IDsOnThePlatform.htm">IDs on the Platform</a>.</span></p>
 
 <table class="tableparmsresponse">
@@ -30,50 +30,52 @@ The Deployment Zones service allows you to retrieve a list of deployment zones f
 		<tr>
 			<td>addDeploymentZone</td>
 			<td><a href="deploymentzones/m_deploymentzones_addDeploymentZone.htm">POST&#160;/api/deploymentzones</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_addDeploymentZone.lbi" -->Adds a <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a> on the platform.<!-- #EndLibraryItem --></td>
+			<td>Adds a <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a> on the platform.</td>
 		</tr>
 		<tr>
 			<td>deleteDeploymentZoneInfo</td>
 			<td><a href="deploymentzones/m_deploymentzones_deleteDeploymentZoneInfo.htm">DELETE&#160;/api/deploymentzones/{DZoneID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_deleteDeploymentZoneInfo.lbi" -->Deletes a <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a> on the platform.<!-- #EndLibraryItem --></td>
+			<td>Deletes a <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a> on the platform.</td>
 		</tr>
 		<tr>
 			<td>getDeploymentZoneAssociations</td>
 			<td><a href="deploymentzones/m_deploymentzones_getDeploymentZoneAssociations.htm">GET&#160;/api/deploymentzones/{DZoneID}/associations</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getDeploymentZoneAssociations.lbi" -->Returns information about the implementation/environment associations for a <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.<!-- #EndLibraryItem --></td>
+			<td>Returns information about the implementation/environment associations for a <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.</td>
 		</tr>
 		<tr>
 			<td>get deployment zones</td>
 			<td><a href="deploymentzones/m_deploymentzones_getDeploymentZones.htm">GET&#160;/api/deploymentzones</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getDeploymentZones.lbi" -->Returns a list of valid <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zones</a> on the platform, in the form of an RSS channel.<!-- #EndLibraryItem --></td>
+			<td>Returns a list of valid <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zones</a> on the platform, in the form of an RSS channel.</td>
 		</tr>
 		<tr>
 			<td>get deployment zone info</td>
 			<td><a href="deploymentzones/m_deploymentzones_getDeploymentZoneInfo.htm">GET&#160;/api/deploymentzones/{DZoneID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getDeploymentZoneInfo.lbi" -->Returns information about the specified <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.<!-- #EndLibraryItem --></td>
+			<td>Returns information about the specified <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.</td>
 		</tr>
 		<tr>
 			<td>list deployment zones</td>
 			<td><a href="deploymentzones/m_deploymentzones_listDeploymentZones.htm">GET&#160;/api/deploymentzones</a> (with specific headers)</td>
-			<td><!-- #BeginLibraryItem "/Library/desc_listDeploymentZones.lbi" -->Returns a list of valid <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zones</a> on the platform, in the form of a JSON or XML object.<!-- #EndLibraryItem --></td>
+			<td>Returns a list of valid <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zones</a> on the platform, in the form of a JSON or XML object.</td>
 		</tr>
 		<tr>
 			<td>updateDeploymentZone</td>
 			<td><a href="deploymentzones/m_deploymentzones_updateDeploymentZone.htm">PUT&#160;/api/deploymentzones/{DZoneID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_updateDeploymentZone.lbi" -->Updates information about a <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a> on the platform.<!-- #EndLibraryItem --></td>
+			<td>Updates information about a <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a> on the platform.</td>
 		</tr>
 		<tr>
 			<td>updateDeploymentZoneAssociations</td>
 			<td><a href="deploymentzones/m_deploymentzones_updateDeploymentZoneAssociations.htm">PUT&#160;/api/deploymentzones/{DZoneID}/associations</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_updateDeploymentZoneAssociations.lbi" -->
-Updates information about the implementation/environment associations for a <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.<!-- #EndLibraryItem --></td>
+			<td>
+Updates information about the implementation/environment associations for a <a href="Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+
+
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="index.htm">Akana API Platform API: Overview</a></li>
@@ -85,5 +87,9 @@ Updates information about the implementation/environment associations for a <a h
 	<li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+</div>

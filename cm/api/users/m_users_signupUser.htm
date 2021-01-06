@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Sign Up User | Users Service | Akana API Platform API
-description:  Initiates the signup process by sending the user's signup information to the database; in some cases, sends an email to the user. Once the user has provided the required signup information, the signup is complete.
+description: Initiates the signup process by sending the user's signup information to the database; in some cases, sends an email to the user. Once the user has provided the required signup information, the signup is complete.
 product: cm
 category: ref
 nav-title: Sign Up User 
@@ -17,16 +17,16 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_signupUser.lbi" -->
-Initiates the signup process by sending the user's signup information to the database; in some cases, sends an email to the user.<!-- #EndLibraryItem --> Once the user has provided the required signup information, the signup is complete.</p>
+<p>
+Initiates the signup process by sending the user's signup information to the database; in some cases, sends an email to the user. Once the user has provided the required signup information, the signup is complete.</p>
 <p><strong>Before</strong>: Either of the following two scenarios can occur before this operation is run:</p>
 <ol>
-	<li><strong>User initiates signup</strong>: on the developer portal  <strong>Sign Up</strong> page, the user:
+	<li><strong>User initiates signup</strong>: on the Community Manager developer portal  <strong>Sign Up</strong> page, the user:
 		<ul>
 			<li>Provides first name, last name, and email address</li>
 			<li>Provides phone number (if required based on platform settings)</li>
 			<li>Answers one or more security challenge questions  (if required based on platform settings)</li>
-			<li>Accepts the platform terms and conditions/legal agreement&#160; (if required based on platform settings)</li>
+			<li>Accepts the platform terms and conditions/legal agreement (if required based on platform settings)</li>
 		</ul>
 	<p>An email is then sent to the user, with a confirmation code. The user clicks the email link to confirm ownership of the email address and provides the password. The cookie is set and the user is now logged in.</p></li>
 	<li><strong>User is invited</strong>: The user is invited by another user; for example, to an API Scope Group or app team: user extending the invitation provides email address. The invited user clicks the link, thus confirming ownership of the email address. The user then provides the same information as in #1 above. The cookie is set and the user is now logged in.</li>
@@ -43,7 +43,8 @@ Initiates the signup process by sending the user's signup information to the dat
 </ul>
 <p id="id_settings"><strong>Settings</strong>: This operation checks whether the setting that allows users to sign themselves up for the platform is set to allow self-signup. If the setting (SelfSignup) is disabled, the operation will fail. To check this setting, run the <span class="apidoc_code"><a href="../businesses/m_businesses_getUserSettings.htm">GET&#160;/api/businesses/{BusinessID}/usersettings</a></span> operation.</p>
 <p id="id_roles"><strong>Authorization Roles/Permissions</strong>: None required.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -60,7 +61,8 @@ Initiates the signup process by sending the user's signup information to the dat
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
 <!-- InstanceEndEditable -->
@@ -68,7 +70,7 @@ Initiates the signup process by sending the user's signup information to the dat
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/signupUser[/{InvitationCode}]</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/users/signupUser[/{InvitationCode}]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -77,7 +79,7 @@ Initiates the signup process by sending the user's signup information to the dat
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The examples below shows the user's signup information sent in the request body.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->users/signupUser/qEntsGgwk452385-UBl9q5MLRMuDoYE6p7KPAANZrOtL3o_JLXQ_Nw</pre>
+<pre>https://{hostname}/api/users/signupUser/qEntsGgwk452385-UBl9q5MLRMuDoYE6p7KPAANZrOtL3o_JLXQ_Nw</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST&#160;/api/users/signupUser/qEntsGgwk452385-UBl9q5MLRMuDoYE6p7KPAANZrOtL3o_JLXQ_Nw HTTP/1.1
 Accept: application/json, text/javascript, */*; q=0.01
@@ -170,12 +172,12 @@ Content-Type: application/json; charset=UTF-8</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><p>Any one of the following media types is valid for the request Content-Type:</p>
-<p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p></td>
+<p><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></p></td>
 		</tr>
 	</tbody>
 </table>
@@ -201,7 +203,7 @@ Content-Type: application/json; charset=UTF-8</pre>
 			<td>Body</td>
 			<td><a href="../obj/o_users_User.htm">User</a></td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_users_User.lbi" -->Contains information about a platform user.<!-- #EndLibraryItem --></td>
+			<td>Contains information about a platform user.</td>
 		</tr>
 		<tr>
 			<td>InvitationCode</td>
@@ -280,11 +282,11 @@ JCuZAmPNMAE8NagE</pre>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><p>Any one of the following media types is valid for the request Content-Type:</p>
-<p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p></td>
+<p><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong></p></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#setcookie_response">Set-Cookie</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_setcookie.lbi" --> The set-cookie response header sets, updates, or expires the platform cookie to reflect changes made by the operation.<!-- #EndLibraryItem --></td>
+			<td> The set-cookie response header sets, updates, or expires the platform cookie to reflect changes made by the operation.</td>
 		</tr>
 	</tbody>
 </table>
@@ -306,7 +308,7 @@ JCuZAmPNMAE8NagE</pre>
 		<tr>
 			<td>Response</td>
 			<td><a href="../obj/o_users_SignupResponse.htm">SignupResponse</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_users_SignupResponse.lbi" --> Contains basic signup information about the user, including the unique user ID assigned by the platform.<!-- #EndLibraryItem --></td>
+			<td> Contains basic signup information about the user, including the unique user ID assigned by the platform.</td>
 		</tr>
 	</tbody>
 </table>
@@ -327,7 +329,7 @@ JCuZAmPNMAE8NagE</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
-			<td><!-- #BeginLibraryItem "/Library/http_400.lbi" -->Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.<!-- #EndLibraryItem -->For example, you might get this response if a value was not provided for the email field in the request.</td>
+			<td>Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if a value was not provided for the email field in the request.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -336,11 +338,11 @@ JCuZAmPNMAE8NagE</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -352,5 +354,10 @@ JCuZAmPNMAE8NagE</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

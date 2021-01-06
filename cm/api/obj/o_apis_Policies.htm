@@ -13,16 +13,15 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">Policies Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_apis_Policies.lbi" -->Contains information about one or more policies that are enforced for the API version, if applicable.<!-- #EndLibraryItem --></p>
+<p>Contains information about one or more policies that are enforced for the API version, if applicable.</p>
 <p>For a list of valid policies, see <a href="../aaref/Ref_Values.htm#values_client_auth_policy_options">Client Authorization Policy Options</a>.</p>
 <p>To retrieve a list of available policies, including PolicyKey and PolicyType, use the <span class="apidoc_code"><a href="../policies/m_policies_getPolicies.htm">GET&#160;/api/policies</a></span> operation.</p>
 <p><strong>Note</strong>: For specific information regarding which policies are available/required, refer to the <span class="apidoc_code"><a href="../policies/m_policies_getPolicies.htm">GET&#160;/api/policies</a></span> operation.</p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
-	<li><span class="apidoc_code"><a href="../apis/m_apis_modifyAPIImplementationPolicies.htm">PUT&#160;/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/policies</a></span> (in request and response)</li>
-	<li><span class="apidoc_code"><a href="../apis/m_apis_getAPIImplementationPolicies.htm">GET&#160;/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/policies</a></span> (in the response)</li>
-	<li>Operations that reference the <a href="o_apis_APIVersion.htm">APIVersion</a> object</li>
+	<li><span class="apidoc_code"><a href="../policies/m_policies_getPoliciesList.htm">GET&#160;/api/policies</a></span> (with specific headers) (in the response)</li>
+<li>Operations that reference the <a href="o_apis_APIVersion.htm">APIVersion</a> object</li>
 	<li>Operations that reference the <a href="o_apis_TargetAPI.htm">TargetAPI</a> object</li>
 	<li>Operations that reference the <a href="o_businesses_LicensePartDetails.htm">LicensePartDetails</a> object</li>
 	<li>Operations that reference the <a href="o_apis_APIImplementation.htm">APIImplementation</a> object</li>
@@ -43,8 +42,8 @@ no-catalog: true
 		<tr>
 			<td>Policy</td>
 			<td><a href="../obj/o_apis_Policy.htm">Policy</a>[&#160;]</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_apis_Policy.lbi" -->
-        Contains information about a policy that is enforced for an API version.<!-- #EndLibraryItem --></p>
+			<td><p>
+Contains information about a policy that is enforced for an API version. Depending on where this appears, the policy might be enforced at the service level or at the operation level.</p>
 				<p>One or more.</p></td>
 		</tr>
 	</tbody>
@@ -52,7 +51,7 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -64,5 +63,10 @@ no-catalog: true
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

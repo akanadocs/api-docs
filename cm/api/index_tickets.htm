@@ -14,7 +14,7 @@ no-catalog: false
 <div class="apidocContent">
 <h1 id="top">Tickets Service: Overview</h1>
 <p>The Tickets service provides operations for managing tickets about apps or APIs, including the ticket <a href="Ref_Glossary_CommunityPlatform.htm#gl_label_ticket">label</a> and the associated comments and <a href="Ref_Glossary_CommunityPlatform.htm#gl_mark">marks</a>.</p>
-<p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->tickets</span></p>
+<p><strong>URL</strong>: <span class="apidoc_code">https://{hostname}/api/tickets</span></p>
 
 <p><span class="apidoc_note"><strong>Note</strong>: Most of these operations take the <a href="aaref/Ref_IDsOnThePlatform.htm#id_ticketid">TicketID</a> as a parameter. You can get this value from the response to the <span class="apidoc_code"><a href="tickets/m_tickets_getTickets.htm">GET&#160;/api/tickets</a></span> operation. For information about any other IDs used in path parameters, see <a href="aaref/Ref_IDsOnThePlatform.htm">IDs on the Platform</a>.</span></p>
 <table class="tableparmsresponse">
@@ -29,71 +29,73 @@ no-catalog: false
 		<tr>
 			<td>comment on ticket</td>
 			<td><a href="tickets/m_tickets_commentOnTicket.htm">POST&#160;/api/tickets/{ticketID}/comments</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_commentOnTicket.lbi" -->Adds a comment to the specified ticket.<!-- #EndLibraryItem --></td>
+			<td>Adds a comment to the specified ticket.</td>
 		</tr>
 		<tr>
 			<td>delete ticket</td>
 			<td><a href="tickets/m_tickets_deleteTicket.htm">DELETE&#160;/api/tickets/{ticketID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_deleteTicket.lbi" -->Deletes a ticket.<!-- #EndLibraryItem --></td>
+			<td>Deletes a ticket.</td>
 		</tr>
 		<tr>
 			<td>execute workflow action</td>
 			<td><a href="tickets/m_tickets_executeWorkflowAction.htm">POST&#160;/api/tickets/{ticketID}/actions</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_executeWorkflowAction_ticket.lbi" -->
-        Executes an action on the specified ticket.<!-- #EndLibraryItem --></td>
+			<td>
+        Executes an action on the specified ticket.</td>
 		</tr>
 		<tr>
 			<td>get supported labels</td>
 			<td><a href="tickets/m_tickets_getSupportedLabels.htm">GET&#160;/api/tickets/labels</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getSupportedLabels.lbi" -->
-Returns a list of <a href="Ref_Glossary_CommunityPlatform.htm#gl_label_ticket">labels</a> that can be applied to tickets.<!-- #EndLibraryItem --></td>
+			<td>
+Returns a list of <a href="Ref_Glossary_CommunityPlatform.htm#gl_label_ticket">labels</a> that can be applied to tickets.</td>
 		</tr>
 		<tr>
 			<td>get ticket</td>
 			<td><a href="tickets/m_tickets_getTicket.htm">GET&#160;/api/tickets/{ticketID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getTicket.lbi" -->
-Returns information about a specific ticket.<!-- #EndLibraryItem --></td>
+			<td>
+Returns information about a specific ticket.</td>
 		</tr>
 		<tr>
 			<td>get tickets</td>
 			<td><a href="tickets/m_tickets_getTickets.htm">GET&#160;/api/tickets</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getTickets.lbi" -->Returns information about tickets.<!-- #EndLibraryItem --></td>
+			<td>Returns information about tickets.</td>
 		</tr>
 		<tr>
 			<td>get ticket comments</td>
 			<td><a href="tickets/m_tickets_getTicketComments.htm">GET&#160;/api/tickets/{TicketID}/comments</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getTicketComments.lbi" --> Returns the comments for the specified ticket.<!-- #EndLibraryItem --></td>
+			<td> Returns the comments for the specified ticket.</td>
 		</tr>
 
 		<tr>
 			<td>mark ticket</td>
 			<td><a href="tickets/m_tickets_markTicket.htm">POST&#160;/api/tickets/{ticketID}/marks</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_markTicket.lbi" -->
-<a href="Ref_Glossary_CommunityPlatform.htm#gl_mark">Marks</a> a ticket.<!-- #EndLibraryItem --></td>
+			<td>
+<a href="Ref_Glossary_CommunityPlatform.htm#gl_mark">Marks</a> a ticket.</td>
 		</tr>
 		<tr>
 			<td>submit ticket</td>
 			<td><a href="tickets/m_tickets_submitTicket.htm">POST&#160;/api/tickets</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_submitTicket.lbi" -->Opens a new ticket.<!-- #EndLibraryItem --></td>
+			<td>Opens a new ticket.</td>
 		</tr>
 		<tr>
 			<td>unmark ticket</td>
 			<td><a href="tickets/m_tickets_unmarkTicket.htm">DELETE&#160;/api/tickets/{ticketID}/marks/{UserID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_unmarkTicket.lbi" -->
-Removes the user's <a href="Ref_Glossary_CommunityPlatform.htm#gl_mark">mark</a> from a ticket that the user has previously marked.<!-- #EndLibraryItem --></td>
+			<td>
+Removes the user's <a href="Ref_Glossary_CommunityPlatform.htm#gl_mark">mark</a> from a ticket that the user has previously marked.</td>
 		</tr>
 		<tr>
 			<td>update ticket labels</td>
 			<td><a href="tickets/m_tickets_updateTicketLabels.htm">POST&#160;/api/tickets/{ticketID}/labels</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_updateTicketLabels.lbi" -->
-Updates the label associated with a ticket.<!-- #EndLibraryItem --></td>
+			<td>
+Updates the label associated with a ticket.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+
+
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="index.htm">Akana API Platform API: Overview</a></li>
@@ -105,5 +107,9 @@ Updates the label associated with a ticket.<!-- #EndLibraryItem --></td>
 	<li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+</div>

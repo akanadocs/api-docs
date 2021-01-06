@@ -13,8 +13,8 @@ no-catalog: false
 
 <div class="apidocContent">
 <h1 id="top">Reviews Service: Overview</h1>
-<p><!-- #BeginLibraryItem "/Library/descsvc_reviews.lbi" -->Provides operations that allow you to manage <a href="Ref_Glossary_CommunityPlatform.htm#gl_review">reviews</a> of apps, APIs, or groups on the platform, including creating, deleting, and listing reviews and marking reviews as helpful.<!-- #EndLibraryItem --></p>
-<p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->reviews</span></p>
+<p>Provides operations that allow you to manage <a href="Ref_Glossary_CommunityPlatform.htm#gl_review">reviews</a> of apps, APIs, or groups on the platform, including creating, deleting, and listing reviews and marking reviews as helpful.</p>
+<p><strong>URL</strong>: <span class="apidoc_code">https://{hostname}/api/reviews</span></p>
 <p><span class="apidoc_note"><strong>Note</strong>: Most of these operations take the <a href="aaref/Ref_IDsOnThePlatform.htm#id_reviewid">ReviewID</a> as a parameter. You can get this value from the response to the <span class="apidoc_code"><a href="reviews/m_reviews_listReviews.htm">GET&#160;/api/reviews</a></span> operation. For information about any other IDs used in path parameters, see <a href="aaref/Ref_IDsOnThePlatform.htm">IDs on the Platform</a>.</span></p>
 
 <table class="tableparmsresponse">
@@ -29,50 +29,52 @@ no-catalog: false
 		<tr>
 			<td>add review</td>
 			<td><a href="reviews/m_reviews_addReview.htm">POST&#160;/api/reviews</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_addReview.lbi" -->Adds a <a href="Ref_Glossary_CommunityPlatform.htm#gl_review">review</a> of a resource.<!-- #EndLibraryItem --></td>
+			<td>Adds a <a href="Ref_Glossary_CommunityPlatform.htm#gl_review">review</a> of a resource.</td>
 		</tr>
 		<tr>
 			<td>delete review</td>
 			<td><a href="reviews/m_reviews_deleteReview.htm">DELETE&#160;/api/reviews/{ReviewID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_deleteReview.lbi" -->Deletes the specified review.<!-- #EndLibraryItem --></td>
+			<td>Deletes the specified review.</td>
 		</tr>
 		<tr>
 			<td>get review</td>
 			<td><a href="reviews/m_reviews_getReview.htm">GET&#160;/api/reviews/{ReviewID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getReview.lbi" -->Returns the specified review.<!-- #EndLibraryItem --></td>
+			<td>Returns the specified review.</td>
 		</tr>
 		<tr>
 			<td>get review details</td>
 			<td><a href="reviews/m_reviews_getReviewDetails.htm">GET&#160;/api/reviews/{ReviewID}/details</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getReviewDetails.lbi" -->Returns information about the specified review.<!-- #EndLibraryItem --></td>
+			<td>Returns information about the specified review.</td>
 		</tr>
 		<tr>
 			<td>list reviews</td>
 			<td><a href="reviews/m_reviews_listReviews.htm">GET&#160;/api/reviews</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getReviews.lbi" -->Returns a list of all reviews.<!-- #EndLibraryItem --></td>
+			<td>Returns a list of all reviews.</td>
 		</tr>
 		<tr>
 			<td>mark a review</td>
 			<td><a href="reviews/m_reviews_markReview.htm">POST&#160;/api/reviews/{ReviewID}/marks</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_markReview.lbi" -->Adds a <a href="Ref_Glossary_CommunityPlatform.htm#gl_mark">mark</a> to a review.<!-- #EndLibraryItem --></td>
+			<td>Adds a <a href="Ref_Glossary_CommunityPlatform.htm#gl_mark">mark</a> to a review.</td>
 		</tr>
 		<tr>
 			<td>unmark a review</td>
 			<td><a href="reviews/m_reviews_unmarkReview.htm">DELETE&#160;/api/reviews/{ReviewID}/marks/{UserID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_unmarkReview.lbi" -->
-Removes the specified user's <a href="Ref_Glossary_CommunityPlatform.htm#gl_mark">mark</a> from a review that the user has previously marked.<!-- #EndLibraryItem --></td>
+			<td>
+Removes the specified user's <a href="Ref_Glossary_CommunityPlatform.htm#gl_mark">mark</a> from a review that the user has previously marked.</td>
 		</tr>
 		<tr>
 			<td>update a review</td>
 			<td><a href="reviews/m_reviews_updateReview.htm">PUT&#160;/api/reviews/{ReviewID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_updateReview.lbi" -->Updates the specified <a href="Ref_Glossary_CommunityPlatform.htm#gl_review">review</a>.<!-- #EndLibraryItem --></td>
+			<td>Updates the specified <a href="Ref_Glossary_CommunityPlatform.htm#gl_review">review</a>.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+
+
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="index.htm">Akana API Platform API: Overview</a></li>
@@ -84,5 +86,9 @@ Removes the specified user's <a href="Ref_Glossary_CommunityPlatform.htm#gl_mark
 	<li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+</div>

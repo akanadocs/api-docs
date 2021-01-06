@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get API Version | APIs Service | Akana API Platform API
-description:  Returns the specified API version.
+description: Returns information about the specified API version.
 product: cm
 category: ref
 nav-title: Get API Version 
@@ -17,10 +17,12 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getAPIVersion.lbi" --> Returns the specified API version.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/permission_read.lbi" -->
- Must have Read permission for the resource. <!-- #EndLibraryItem --></p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>
+Returns information about the specified API version.</p>
+<p><strong>Note</strong>: If the API version has only one implementation, this operation returns information for that implementation. If there are two implementations, it returns information for the Live implementation.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:
+ Must have Read permission for the resource. </p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -37,7 +39,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -45,9 +48,8 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}[?][includeTargetAPI=boolean]&amp;[includeOperations=boolean]
-&amp;[includeTargetAPI={Boolean}]&amp;[includeSettings={Boolean}]&amp;[ContractID={ContractID}]
-</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}[?][includeTargetAPI=boolean]&amp;[includeOperations={Boolean}]
+&amp;[includeTargetAPI={Boolean}]&amp;[includeSettings={Boolean}]&amp;[ContractID={ContractID}]&amp;[includeTargetResources={Boolean}]</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -56,15 +58,15 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for specific API version information.</p>
 <p><strong>Sample request URL #1</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/d5de1637-7b00-46ba-9e8c-9d81d762f58e.acmepaymentscorp</pre>
+<pre>https://{hostname}/api/apis/versions/d5de1637-7b00-46ba-9e8c-9d81d762f58e.acmepaymentscorp</pre>
 <p><strong>Sample request URL #2</strong></p>
 <p>Includes the optional <span class="apidoc_code">includeOperations</span> parameter.</p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp?includeOperations=true</pre>
+<pre>https://{hostname}/api/apis/versions/8205b5a9-0bea-4ae3-907b-d48f0b2336c7.acmepaymentscorp?includeOperations=true</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>GET&#160;/api/apis/versions/9e3846ee-bbbf-4982-82ca-5a2411ec619b.acmepaymentscorp HTTP/1.1
+<pre>GET&#160;/api/apis/versions/8205b5a9-0bea-4ae3-907b-d48f0b2336c7.acmepaymentscorp HTTP/1.1
 Host: {hostname}
-Accept: application/vnd.soa.v81+json, text/javascript, */*; q=0.01
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+Accept: application/json
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -84,16 +86,15 @@ Accept: application/vnd.soa.v81+json, text/javascript, */*; q=0.01
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->,<!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><strong>application/vnd.soa.v2019+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong>,<strong>application/vnd.soa.v2019+json</strong></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -119,7 +120,7 @@ Accept: application/vnd.soa.v81+json, text/javascript, */*; q=0.01
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API version.</td>
 		</tr>
 		<tr>
 			<td>includeOperations</td>
@@ -147,19 +148,19 @@ Accept: application/vnd.soa.v81+json, text/javascript, */*; q=0.01
 			<td>Query</td>
 			<td>boolean</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_IncludeSettings.lbi" -->Indicates whether the settings for the resource should be included in the response. If not specified, defaults to <strong>false</strong>.<!-- #EndLibraryItem --></td>
+			<td>Indicates whether the settings for the resource should be included in the response. If not specified, defaults to <strong>false</strong>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_contractid">ContractID</a></td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ContractID.lbi" --> The unique ID for a specific contract between an app version and an API version.<!-- #EndLibraryItem --></td>
+			<td> The unique ID for a specific contract between an app version and an API version.</td>
 		</tr>
 		<tr>
 			<td>includeTargetResources</td>
 			<td>Query</td>
-			<td>string</td>
+			<td>boolean</td>
 			<td>Optional</td>
 			<td>Default: <strong>false</strong>. If set to <strong>true</strong>, information about the API is included in the response, since the API is a resource associated with the API version.</td>
 		</tr>
@@ -219,372 +220,359 @@ Content-Type: application/vnd.soa.v81+json</pre>
   &quot;BindingType&quot; : [ &quot;binding.http&quot; ]
 }</pre>
 <h4 id="sampleresponse_2">Sample Response #2: Includes the optional includeOperations parameter</h4>
-<p>The sample response below (response to <strong>sample request URL #2</strong>) shows API version information for a rendition of the Swagger Petstore API (<a href="http://petstore.swagger.io/" target="_blank">http://petstore.swagger.io/</a>), set up on the platform. In this example, the request message included the optional <span class="apidoc_code">includeOperations</span> parameter, so information about the operations is in the response.</p>
+<p>Example from  version: 2020.2.0</p>
+<p>The sample response below (response to <strong>sample request URL #2</strong>) shows API version information for a subset of the Swagger Petstore API (<a href="http://petstore.swagger.io/" target="_blank">http://petstore.swagger.io/</a>), set up on the platform. In this example, the request message included the optional <span class="apidoc_code">includeOperations</span> parameter, so information about the operations is in the response.</p>
 <p><strong>Sample response headers</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/vnd.soa.v81+json
-Date: Mon, 29 Feb 2016 16:39:21 GMT</pre>
+Date: Thu, 19 Nov 2020 15:36:53 GMT</pre>
 <p><strong>Sample response body</strong></p>
 <pre>{
-  &quot;APIVersionID&quot; : &quot;95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp&quot;,
-  &quot;APIID&quot; : &quot;96c84d2c-8e2e-42c0-9f2b-8506c6febdc5.acmepaymentscorp&quot;,
-  &quot;Name&quot; : &quot;1.0&quot;,
-  &quot;Description&quot; : &quot;First version&quot;,
-  &quot;Environment&quot; : &quot;default&quot;,
-  &quot;Type&quot; : &quot;shttp&quot;,
-  &quot;DefaultProfile&quot; : &quot;Any in and out&quot;,
-  &quot;Tag&quot; : [ &quot;swagger&quot;, &quot;test&quot;, &quot;api&quot; ],
-  &quot;Operations&quot; : {
-    &quot;Operation&quot; : [ {
-      &quot;Name&quot; : &quot;getPetById&quot;,
-      &quot;Method&quot; : &quot;GET&quot;,
-      &quot;Path&quot; : &quot;/pet/{petId}&quot;,
-      &quot;InputContentType&quot; : &quot;*/*&quot;,
-      &quot;OutputContentType&quot; : &quot;*/*&quot;,
-      &quot;FaultContentType&quot; : &quot;*/*&quot;,
-      &quot;Input&quot; : [ {
-        &quot;Name&quot; : &quot;petId&quot;,
-        &quot;Type&quot; : &quot;path&quot;
-      } ],
-      &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production&quot;,
-      &quot;WsdlOperationName&quot; : &quot;getPetById&quot;
-    }, {
-      &quot;Name&quot; : &quot;addPet&quot;,
-      &quot;Method&quot; : &quot;POST&quot;,
-      &quot;Path&quot; : &quot;/pet&quot;,
-      &quot;InputContentType&quot; : &quot;*/*&quot;,
-      &quot;OutputContentType&quot; : &quot;*/*&quot;,
-      &quot;FaultContentType&quot; : &quot;*/*&quot;,
-      &quot;Input&quot; : [ {
-        &quot;Name&quot; : &quot;Body&quot;,
-        &quot;Type&quot; : &quot;entity&quot;
-      } ],
-      &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production&quot;,
-      &quot;WsdlOperationName&quot; : &quot;addPet&quot;
-    }, {
-      &quot;Name&quot; : &quot;updatePet&quot;,
-      &quot;Method&quot; : &quot;PUT&quot;,
-      &quot;Path&quot; : &quot;/pet&quot;,
-      &quot;InputContentType&quot; : &quot;*/*&quot;,
-      &quot;OutputContentType&quot; : &quot;*/*&quot;,
-      &quot;FaultContentType&quot; : &quot;*/*&quot;,
-      &quot;Input&quot; : [ {
-        &quot;Name&quot; : &quot;Body&quot;,
-        &quot;Type&quot; : &quot;entity&quot;
-      } ],
-      &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production&quot;,
-      &quot;WsdlOperationName&quot; : &quot;updatePet&quot;
-    } ]
-  },
-  &quot;Endpoints&quot; : {
-    &quot;Endpoint&quot; : [ ]
-  },
-  &quot;Policies&quot; : {
-    &quot;Policy&quot; : [ {
-      &quot;PolicyKey&quot; : &quot;acmepaymentscorp-acmepaymentscorpApplicationSecurityPolicy&quot;,
-      &quot;Name&quot; : &quot;AtmosphereApplicationSecurityPolicy&quot;,
-      &quot;Description&quot; : &quot;&quot;,
-      &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-      &quot;PolicySubType&quot; : &quot;policy.apisec&quot;
-    }, {
-      &quot;PolicyKey&quot; : &quot;Atmosphere-CORSAllowAll&quot;,
-      &quot;Name&quot; : &quot;CORSAllowAll&quot;,
-      &quot;Description&quot; : &quot;&quot;,
-      &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-      &quot;PolicySubType&quot; : &quot;policy.cors&quot;
-    }, {
-      &quot;PolicyKey&quot; : &quot;Atmosphere-DetailedAuditing&quot;,
-      &quot;Name&quot; : &quot;DetailedAuditing&quot;,
-      &quot;Description&quot; : &quot;&quot;,
-      &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-      &quot;PolicySubType&quot; : &quot;policy.auditservice&quot;
-    }, {
-      &quot;PolicyKey&quot; : &quot;Atmosphere-OAuthSecurity&quot;,
-      &quot;Name&quot; : &quot;OAuthSecurity&quot;,
-      &quot;Description&quot; : &quot;&quot;,
-      &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-      &quot;PolicySubType&quot; : &quot;policy.oauth&quot;
-    } ]
-  },
-  &quot;Visibility&quot; : &quot;Public&quot;,
-  &quot;Created&quot; : &quot;2016-02-29T13:03:12Z&quot;,
-  &quot;Updated&quot; : &quot;2016-02-29T13:03:25Z&quot;,
-  &quot;State&quot; : &quot;com.soa.api.state.open&quot;,
-  &quot;ProductionEndpointAccessAutoApproved&quot; : true,
-  &quot;SandboxEndpointAccessAutoApproved&quot; : true,
-  &quot;RatingSummary&quot; : {
-    &quot;Five&quot; : 0,
-    &quot;Four&quot; : 0,
-    &quot;Three&quot; : 0,
-    &quot;Two&quot; : 0,
-    &quot;One&quot; : 0
-  },
-  &quot;SandboxAnonymousAccessAllowed&quot; : false,
-  &quot;ProductionAnonymousAccessAllowed&quot; : false,
-  &quot;ResourceLevelPermissionsSupported&quot; : true,
-  &quot;APIOwnedImplementations&quot; : true,
-  &quot;ProductionServiceKey&quot; : &quot;uddi:ca039472-dee4-11e5-be7a-c898302e047e&quot;,
-  &quot;SandboxServiceKey&quot; : &quot;uddi:cba73282-dee4-11e5-be7a-c898302e047e&quot;,
-  &quot;APIImplementations&quot; : {
-    &quot;APIImplementation&quot; : [ {
-      &quot;Name&quot; : &quot;__SwaggerAPI_Both_1.0_Production_Virtual&quot;,
-      &quot;ImplementationCode&quot; : &quot;Live&quot;,
-      &quot;Description&quot; : &quot;First version&quot;,
-      &quot;Pattern&quot; : &quot;com.akana.pattern.physical.service&quot;,
-      &quot;ServiceKey&quot; : &quot;uddi:ca039472-dee4-11e5-be7a-c898302e047e&quot;,
-      &quot;APIBindings&quot; : {
-        &quot;APIBinding&quot; : [ {
-          &quot;BindingQName&quot; : &quot;{uri:acmepaymentscorp}Binding_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production.virtual&quot;,
-          &quot;BindingKey&quot; : &quot;uddi:5a12ac80-1dcc-eede-8f67-7d1a5d53d74e&quot;,
-          &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production&quot;,
-          &quot;InterfaceKey&quot; : &quot;uddi:6f948c82-2717-bb91-da74-8b280151cfa7&quot;,
-          &quot;BindingType&quot; : &quot;binding.http&quot;,
-          &quot;BindingOperations&quot; : {
-            &quot;BindingOperation&quot; : [ {
-              &quot;OperationName&quot; : &quot;getPetById&quot;,
-              &quot;WsdlOperationName&quot; : &quot;getPetById&quot;,
-              &quot;HttpOperation&quot; : {
-                &quot;Method&quot; : &quot;GET&quot;,
-                &quot;Path&quot; : &quot;/pet/{petId}&quot;,
-                &quot;InputContentType&quot; : &quot;*/*&quot;,
-                &quot;OutputContentType&quot; : &quot;*/*&quot;,
-                &quot;FaultContentType&quot; : &quot;*/*&quot;,
-                &quot;Input&quot; : [ {
-                  &quot;Name&quot; : &quot;petId&quot;,
-                  &quot;Type&quot; : &quot;path&quot;
-                } ]
-              }
-            }, {
-              &quot;OperationName&quot; : &quot;addPet&quot;,
-              &quot;WsdlOperationName&quot; : &quot;addPet&quot;,
-              &quot;HttpOperation&quot; : {
-                &quot;Method&quot; : &quot;POST&quot;,
-                &quot;Path&quot; : &quot;/pet&quot;,
-                &quot;InputContentType&quot; : &quot;*/*&quot;,
-                &quot;OutputContentType&quot; : &quot;*/*&quot;,
-                &quot;FaultContentType&quot; : &quot;*/*&quot;,
-                &quot;Input&quot; : [ {
-                  &quot;Name&quot; : &quot;Body&quot;,
-                  &quot;Type&quot; : &quot;entity&quot;
-                } ]
-              }
-            }, {
-              &quot;OperationName&quot; : &quot;updatePet&quot;,
-              &quot;WsdlOperationName&quot; : &quot;updatePet&quot;,
-              &quot;HttpOperation&quot; : {
-                &quot;Method&quot; : &quot;PUT&quot;,
-                &quot;Path&quot; : &quot;/pet&quot;,
-                &quot;InputContentType&quot; : &quot;*/*&quot;,
-                &quot;OutputContentType&quot; : &quot;*/*&quot;,
-                &quot;FaultContentType&quot; : &quot;*/*&quot;,
-                &quot;Input&quot; : [ {
-                  &quot;Name&quot; : &quot;Body&quot;,
-                  &quot;Type&quot; : &quot;entity&quot;
-                } ]
-              }
-            } ]
+  "APIVersionID":"4a1a513f-2758-48a9-8103-d869793e2ac8.acmepaymentscorp",
+  "APIID":"38f286d3-9628-47fd-bf6a-bc6f2ebd72ef.acmepaymentscorp",
+  "Name":"v1",
+  "Description":"Swagger_Petstore_5_Operations. Based on http://petstore.swagger.io/v2/swagger.json with deletions in API Designer.",
+  "Environment":"Production",
+  "Type":"shttp",
+  "Tag":[
+    "pet",
+    "store",
+    "user"
+  ],
+  "ProductionEndpoint":"http://10.250.24.112:7905/api10083live",
+  "Operations":{
+    "Operation":[
+      {
+        "Name":"addPet",
+        "Method":"POST",
+        "Path":"/pet",
+        "InputContentType":"application/xml,application/json",
+        "OutputContentType":"application/xml,application/json",
+        "FaultContentType":"",
+        "Input":[
+          {
+            "Name":"body",
+            "Type":"entity"
           }
-        } ]
+        ],
+        "OperationKey":"4f30020e-5304-4f6e-a9cb-8a986caecde8",
+        "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+        "WsdlOperationName":"addPet"
       },
-      &quot;APIInterfaces&quot; : {
-        &quot;APIInterface&quot; : [ {
-          &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production&quot;,
-          &quot;InterfaceKey&quot; : &quot;uddi:6f948c82-2717-bb91-da74-8b280151cfa7&quot;,
-          &quot;InterfaceOperations&quot; : {
-            &quot;InterfaceOperation&quot; : [ {
-              &quot;OperationName&quot; : &quot;getPetById&quot;,
-              &quot;WsdlOperationName&quot; : &quot;getPetById&quot;
-            }, {
-              &quot;OperationName&quot; : &quot;addPet&quot;,
-              &quot;WsdlOperationName&quot; : &quot;addPet&quot;
-            }, {
-              &quot;OperationName&quot; : &quot;updatePet&quot;,
-              &quot;WsdlOperationName&quot; : &quot;updatePet&quot;
-            } ]
+      {
+        "Name":"findPetsByStatus",
+        "Method":"GET",
+        "Path":"/pet/findByStatus",
+        "InputContentType":"",
+        "OutputContentType":"application/xml,application/json",
+        "FaultContentType":"",
+        "Input":[
+          {
+            "Name":"status",
+            "Type":"query"
           }
-        } ]
-      },
-      &quot;Endpoints&quot; : {
-        &quot;Endpoint&quot; : [ ]
-      },
-      &quot;Policies&quot; : {
-        &quot;Policy&quot; : [ {
-          &quot;PolicyKey&quot; : &quot;Atmosphere-AtmosphereApplicationSecurityPolicy&quot;,
-          &quot;Name&quot; : &quot;AtmosphereApplicationSecurityPolicy&quot;,
-          &quot;Description&quot; : &quot;&quot;,
-          &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-          &quot;PolicySubType&quot; : &quot;policy.apisec&quot;
-        }, {
-          &quot;PolicyKey&quot; : &quot;Atmosphere-CORSAllowAll&quot;,
-          &quot;Name&quot; : &quot;CORSAllowAll&quot;,
-          &quot;Description&quot; : &quot;&quot;,
-          &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-          &quot;PolicySubType&quot; : &quot;policy.cors&quot;
-        }, {
-          &quot;PolicyKey&quot; : &quot;Atmosphere-DetailedAuditing&quot;,
-          &quot;Name&quot; : &quot;DetailedAuditing&quot;,
-          &quot;Description&quot; : &quot;&quot;,
-          &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-          &quot;PolicySubType&quot; : &quot;policy.auditservice&quot;
-        }, {
-          &quot;PolicyKey&quot; : &quot;Atmosphere-OAuthSecurity&quot;,
-          &quot;Name&quot; : &quot;OAuthSecurity&quot;,
-          &quot;Description&quot; : &quot;&quot;,
-          &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-          &quot;PolicySubType&quot; : &quot;policy.oauth&quot;
-        } ]
-      },
-      &quot;APIImplementationDeployments&quot; : {
-      },
-      &quot;Operations&quot; : {
-        &quot;Operation&quot; : [ {
-          &quot;Name&quot; : &quot;addPet&quot;,
-          &quot;OperationKey&quot; : &quot;ca518d69-dee4-11e5-be7a-c898302e047e&quot;,
-          &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production&quot;,
-          &quot;WsdlOperationName&quot; : &quot;addPet&quot;
-        }, {
-          &quot;Name&quot; : &quot;getPetById&quot;,
-          &quot;OperationKey&quot; : &quot;ca4f9196-dee4-11e5-be7a-c898302e047e&quot;,
-          &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production&quot;,
-          &quot;WsdlOperationName&quot; : &quot;getPetById&quot;
-        }, {
-          &quot;Name&quot; : &quot;updatePet&quot;,
-          &quot;OperationKey&quot; : &quot;ca53b04c-dee4-11e5-be7a-c898302e047e&quot;,
-          &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.production&quot;,
-          &quot;WsdlOperationName&quot; : &quot;updatePet&quot;
-        } ]
+        ],
+        "OperationKey":"d45d2614-9f22-4cc0-893e-10c0b4338d5f",
+        "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+        "WsdlOperationName":"findPetsByStatus"
       }
-    }, {
-      &quot;Name&quot; : &quot;__SwaggerAPI_Both_1.0_Sandbox_Virtual&quot;,
-      &quot;ImplementationCode&quot; : &quot;Sandbox&quot;,
-      &quot;Description&quot; : &quot;First version&quot;,
-      &quot;Pattern&quot; : &quot;com.akana.pattern.physical.service&quot;,
-      &quot;ServiceKey&quot; : &quot;uddi:cba73282-dee4-11e5-be7a-c898302e047e&quot;,
-      &quot;APIBindings&quot; : {
-        &quot;APIBinding&quot; : [ {
-          &quot;BindingQName&quot; : &quot;{uri:acmepaymentscorp}Binding_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox.virtual&quot;,
-          &quot;BindingKey&quot; : &quot;uddi:e4b1fe2b-0e43-9d93-e6c1-e0ad7714bf68&quot;,
-          &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox&quot;,
-          &quot;InterfaceKey&quot; : &quot;uddi:b17209b4-d4e0-5e99-4870-d8adb404d767&quot;,
-          &quot;BindingType&quot; : &quot;binding.http&quot;,
-          &quot;BindingOperations&quot; : {
-            &quot;BindingOperation&quot; : [ {
-              &quot;OperationName&quot; : &quot;getPetById&quot;,
-              &quot;WsdlOperationName&quot; : &quot;getPetById&quot;,
-              &quot;HttpOperation&quot; : {
-                &quot;Method&quot; : &quot;GET&quot;,
-                &quot;Path&quot; : &quot;/pet/{petId}&quot;,
-                &quot;InputContentType&quot; : &quot;*/*&quot;,
-                &quot;OutputContentType&quot; : &quot;*/*&quot;,
-                &quot;FaultContentType&quot; : &quot;*/*&quot;,
-                &quot;Input&quot; : [ {
-                  &quot;Name&quot; : &quot;petId&quot;,
-                  &quot;Type&quot; : &quot;path&quot;
-                } ]
-              }
-            }, {
-              &quot;OperationName&quot; : &quot;addPet&quot;,
-              &quot;WsdlOperationName&quot; : &quot;addPet&quot;,
-              &quot;HttpOperation&quot; : {
-                &quot;Method&quot; : &quot;POST&quot;,
-                &quot;Path&quot; : &quot;/pet&quot;,
-                &quot;InputContentType&quot; : &quot;*/*&quot;,
-                &quot;OutputContentType&quot; : &quot;*/*&quot;,
-                &quot;FaultContentType&quot; : &quot;*/*&quot;,
-                &quot;Input&quot; : [ {
-                  &quot;Name&quot; : &quot;Body&quot;,
-                  &quot;Type&quot; : &quot;entity&quot;
-                } ]
-              }
-            }, {
-              &quot;OperationName&quot; : &quot;updatePet&quot;,
-              &quot;WsdlOperationName&quot; : &quot;updatePet&quot;,
-              &quot;HttpOperation&quot; : {
-                &quot;Method&quot; : &quot;PUT&quot;,
-                &quot;Path&quot; : &quot;/pet&quot;,
-                &quot;InputContentType&quot; : &quot;*/*&quot;,
-                &quot;OutputContentType&quot; : &quot;*/*&quot;,
-                &quot;FaultContentType&quot; : &quot;*/*&quot;,
-                &quot;Input&quot; : [ {
-                  &quot;Name&quot; : &quot;Body&quot;,
-                  &quot;Type&quot; : &quot;entity&quot;
-                } ]
-              }
-            } ]
-          }
-        } ]
-      },
-      &quot;APIInterfaces&quot; : {
-        &quot;APIInterface&quot; : [ {
-          &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox&quot;,
-          &quot;InterfaceKey&quot; : &quot;uddi:b17209b4-d4e0-5e99-4870-d8adb404d767&quot;,
-          &quot;InterfaceOperations&quot; : {
-            &quot;InterfaceOperation&quot; : [ {
-              &quot;OperationName&quot; : &quot;getPetById&quot;,
-              &quot;WsdlOperationName&quot; : &quot;getPetById&quot;
-            }, {
-              &quot;OperationName&quot; : &quot;addPet&quot;,
-              &quot;WsdlOperationName&quot; : &quot;addPet&quot;
-            }, {
-              &quot;OperationName&quot; : &quot;updatePet&quot;,
-              &quot;WsdlOperationName&quot; : &quot;updatePet&quot;
-            } ]
-          }
-        } ]
-      },
-      &quot;Endpoints&quot; : {
-        &quot;Endpoint&quot; : [ ]
-      },
-      &quot;Policies&quot; : {
-        &quot;Policy&quot; : [ {
-          &quot;PolicyKey&quot; : &quot;Atmosphere-AtmosphereApplicationSecurityPolicy&quot;,
-          &quot;Name&quot; : &quot;AtmosphereApplicationSecurityPolicy&quot;,
-          &quot;Description&quot; : &quot;&quot;,
-          &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-          &quot;PolicySubType&quot; : &quot;policy.apisec&quot;
-        }, {
-          &quot;PolicyKey&quot; : &quot;Atmosphere-CORSAllowAll&quot;,
-          &quot;Name&quot; : &quot;CORSAllowAll&quot;,
-          &quot;Description&quot; : &quot;&quot;,
-          &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-          &quot;PolicySubType&quot; : &quot;policy.cors&quot;
-        }, {
-          &quot;PolicyKey&quot; : &quot;Atmosphere-DetailedAuditing&quot;,
-          &quot;Name&quot; : &quot;DetailedAuditing&quot;,
-          &quot;Description&quot; : &quot;&quot;,
-          &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-          &quot;PolicySubType&quot; : &quot;policy.auditservice&quot;
-        }, {
-          &quot;PolicyKey&quot; : &quot;Atmosphere-OAuthSecurity&quot;,
-          &quot;Name&quot; : &quot;OAuthSecurity&quot;,
-          &quot;Description&quot; : &quot;&quot;,
-          &quot;PolicyType&quot; : &quot;Operational Policy&quot;,
-          &quot;PolicySubType&quot; : &quot;policy.oauth&quot;
-        } ]
-      },
-      &quot;APIImplementationDeployments&quot; : {
-      },
-      &quot;Operations&quot; : {
-        &quot;Operation&quot; : [ {
-          &quot;Name&quot; : &quot;addPet&quot;,
-          &quot;OperationKey&quot; : &quot;cbfd8fe9-dee4-11e5-be7a-c898302e047e&quot;,
-          &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox&quot;,
-          &quot;WsdlOperationName&quot; : &quot;addPet&quot;
-        }, {
-          &quot;Name&quot; : &quot;getPetById&quot;,
-          &quot;OperationKey&quot; : &quot;cbfb9416-dee4-11e5-be7a-c898302e047e&quot;,
-          &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox&quot;,
-          &quot;WsdlOperationName&quot; : &quot;getPetById&quot;
-        }, {
-          &quot;Name&quot; : &quot;updatePet&quot;,
-          &quot;OperationKey&quot; : &quot;cc0000ec-dee4-11e5-be7a-c898302e047e&quot;,
-          &quot;InterfaceQName&quot; : &quot;{uri:acmepaymentscorp}PortType_svc_95e2d445-4603-443c-ba15-c50b922d3d1f.acmepaymentscorp.sandbox&quot;,
-          &quot;WsdlOperationName&quot; : &quot;updatePet&quot;
-        } ]
-      }
-    } ]
+    ]
   },
-  &quot;BindingType&quot; : [ &quot;binding.http&quot; ]
+  "Endpoints":{
+    "Endpoint":[
+      {
+        "Category":"Production",
+        "Uri":"http://10.250.24.112:7905/api10083live",
+        "CName":"10.250.24.112",
+        "DeploymentZoneRule":"690f-8a53-4a53-a774-9df79ca961b2default-http0",
+        "ConnectionProperties":[
+          {
+            "Name":"virtualHost",
+            "Value":"10.250.24.112"
+          },
+          {
+            "Name":"gateway_hostname",
+            "Value":"10.250.24.112"
+          },
+          {
+            "Name":"visibility",
+            "Value":"public"
+          }
+        ],
+        "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+        "BindingType":"binding.http",
+        "EndpointKey":"uddi:a78a8f48-7041-4ee6-a4ca-1ccd32550bac",
+        "EndpointImplementationDetails":{
+          "DeploymentZoneEndpoint":{
+            "DeploymentZoneID":"079d6161-5d70-481a-8421-7d33f276cd60.acmepaymentscorp",
+            "EndpointKey":"uddi:a78a8f48-7041-4ee6-a4ca-1ccd32550bac",
+            "ListenerName":"default-http0",
+            "ContainerKey":"690f-8a53-4a53-a774-9df79ca961b2",
+            "GatewayHostName":"10.250.24.112",
+            "GatewayHostPath":"/",
+            "EndpointHostName":"10.250.24.112",
+            "EndpointPath":"/api10083live",
+            "Protocol":"http",
+            "Path":"/api10083live",
+            "Url":"http://10.250.24.112:7905/api10083live",
+            "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+            "BindingType":"binding.http",
+            "Public":true
+          }
+        },
+        "ImplementationCode":"Live"
+      }
+    ]
+  },
+  "Visibility":"Public",
+  "Created":"2020-11-20T14:07:54Z",
+  "Updated":"2020-11-20T14:24:41Z",
+  "State":"com.soa.api.state.open",
+  "ProductionEndpointAccessAutoApproved":true,
+  "SandboxEndpointAccessAutoApproved":false,
+  "RatingSummary":{
+    "Five":0,
+    "Four":0,
+    "Three":0,
+    "Two":0,
+    "One":0
+  },
+  "SandboxAnonymousAccessAllowed":false,
+  "ProductionAnonymousAccessAllowed":true,
+  "ResourceLevelPermissionsSupported":false,
+  "APIOwnedImplementations":true,
+  "ProductionServiceKey":"uddi:3c58a95d-5446-4458-a109-08cc0423a621",
+  "APIImplementations":{
+    "APIImplementation":[
+      {
+        "Environment":"Production",
+        "Name":"Swagger_Petstore_5_Operations_v1_Live",
+        "ImplementationCode":"Live",
+        "Description":"Swagger_Petstore_5_Operations. Based on http://petstore.swagger.io/v2/swagger.json with deletions in API Designer.",
+        "Pattern":"com.akana.pattern.proxy",
+        "ServiceKey":"uddi:3c58a95d-5446-4458-a109-08cc0423a621",
+        "APIBindings":{
+          "APIBinding":[
+            {
+              "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+              "BindingKey":"uddi:6d615e18-8633-144f-f525-a20e8f8b0c89",
+              "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+              "InterfaceKey":"uddi:03bed5c1-1db4-4cd1-b4d9-70c828cd3c69",
+              "BindingType":"binding.http",
+              "BindingOperations":{
+                "BindingOperation":[
+                  {
+                    "OperationName":"addPet",
+                    "WsdlOperationName":"addPet",
+                    "HttpOperation":{
+                      "Method":"POST",
+                      "Path":"/pet",
+                      "InputContentType":"application/xml,application/json",
+                      "OutputContentType":"application/xml,application/json",
+                      "FaultContentType":"",
+                      "Input":[
+                        {
+                          "Name":"body",
+                          "Type":"entity"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "OperationName":"findPetsByStatus",
+                    "WsdlOperationName":"findPetsByStatus",
+                    "HttpOperation":{
+                      "Method":"GET",
+                      "Path":"/pet/findByStatus",
+                      "InputContentType":"",
+                      "OutputContentType":"application/xml,application/json",
+                      "FaultContentType":"",
+                      "Input":[
+                        {
+                          "Name":"status",
+                          "Type":"query"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "APIInterfaces":{
+          "APIInterface":[
+            {
+              "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+              "InterfaceKey":"uddi:03bed5c1-1db4-4cd1-b4d9-70c828cd3c69",
+              "InterfaceOperations":{
+                "InterfaceOperation":[
+                  {
+                    "OperationName":"addPet",
+                    "WsdlOperationName":"addPet"
+                  },
+                  {
+                    "OperationName":"findPetsByStatus",
+                    "WsdlOperationName":"findPetsByStatus"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "Endpoints":{
+          "Endpoint":[
+            {
+              "Category":"Production",
+              "Uri":"http://10.250.24.112:7905/api10083live",
+              "CName":"10.250.24.112",
+              "DeploymentZoneRule":"690f-8a53-4a53-a774-9df79ca961b2default-http0",
+              "ConnectionProperties":[
+                {
+                  "Name":"virtualHost",
+                  "Value":"10.250.24.112"
+                },
+                {
+                  "Name":"gateway_hostname",
+                  "Value":"10.250.24.112"
+                },
+                {
+                  "Name":"visibility",
+                  "Value":"public"
+                }
+              ],
+              "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+              "BindingType":"binding.http",
+              "EndpointKey":"uddi:a78a8f48-7041-4ee6-a4ca-1ccd32550bac",
+              "EndpointImplementationDetails":{
+                "DeploymentZoneEndpoint":{
+                  "DeploymentZoneID":"079d6161-5d70-481a-8421-7d33f276cd60.acmepaymentscorp",
+                  "EndpointKey":"uddi:a78a8f48-7041-4ee6-a4ca-1ccd32550bac",
+                  "ListenerName":"default-http0",
+                  "ContainerKey":"690f-8a53-4a53-a774-9df79ca961b2",
+                  "GatewayHostName":"10.250.24.112",
+                  "GatewayHostPath":"/",
+                  "EndpointHostName":"10.250.24.112",
+                  "EndpointPath":"/api10083live",
+                  "Protocol":"http",
+                  "Path":"/api10083live",
+                  "Url":"http://10.250.24.112:7905/api10083live",
+                  "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+                  "BindingType":"binding.http",
+                  "Public":true
+                }
+              },
+              "ImplementationCode":"Live"
+            }
+          ]
+        },
+        "Policies":{
+          "Policy":[
+            {
+              "PolicyKey":"acmepaymentscorp-AtmosphereApplicationSecurityPolicy",
+              "Name":"AtmosphereApplicationSecurityPolicy",
+              "Description":"",
+              "PolicyType":"Operational Policy",
+              "PolicySubType":"policy.apisec"
+            }
+          ]
+        },
+        "APIImplementationDeployments":{
+          "DeploymentZonesHostingInfo":[
+            {
+              "DeploymentZoneID":"079d6161-5d70-481a-8421-7d33f276cd60.acmepaymentscorp",
+              "DeploymentZoneEndpoint":[
+                {
+                  "DeploymentZoneID":"079d6161-5d70-481a-8421-7d33f276cd60.acmepaymentscorp",
+                  "EndpointKey":"uddi:a78a8f48-7041-4ee6-a4ca-1ccd32550bac",
+                  "ListenerName":"default-http0",
+                  "ContainerKey":"690f-8a53-4a53-a774-9df79ca961b2",
+                  "GatewayHostName":"10.250.24.112",
+                  "GatewayHostPath":"/",
+                  "EndpointHostName":"10.250.24.112",
+                  "EndpointPath":"/api10083live",
+                  "Protocol":"http",
+                  "Path":"/api10083live",
+                  "Url":"http://10.250.24.112:7905/api10083live",
+                  "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+                  "BindingType":"binding.http",
+                  "Public":true
+                }
+              ]
+            }
+          ]
+        },
+        "Operations":{
+          "Operation":[
+            {
+              "Name":"addPet",
+              "OperationKey":"4f30020e-5304-4f6e-a9cb-8a986caecde8",
+              "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+              "WsdlOperationName":"addPet"
+            },
+            {
+              "Name":"findPetsByStatus",
+              "OperationKey":"d45d2614-9f22-4cc0-893e-10c0b4338d5f",
+              "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+              "WsdlOperationName":"findPetsByStatus"
+            }
+          ]
+        },
+        "AnonymousAccessAllowed":true,
+        "EndpointAccessAutoApproved":true,
+        "ProxyImplementationDetails":{
+          "ProxiedService":{
+            "ServiceKey":"uddi:55672d61-0b0a-4fcc-891f-ecd6fc0cabb3",
+            "ServiceName":"Swagger_Petstore_5_Operations_v1_Live_Target",
+            "OrganizationKey":"uddi:988986fc-ae6a-4994-85fb-8eec32fb4599",
+            "Endpoints":{
+              "Endpoint":[
+                {
+                  "Uri":"HTTP://api577172live.gateway.akana.com:80/",
+                  "ConnectionProperties":[
+                    
+                  ],
+                  "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+                  "BindingType":"binding.http",
+                  "EndpointKey":"uddi:d374a3b8-662a-4d0f-aa55-49330790f22b"
+                },
+                {
+                  "Uri":"HTTPS://api577172live.gateway.akana.com:80/",
+                  "ConnectionProperties":[
+                    
+                  ],
+                  "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+                  "BindingType":"binding.http",
+                  "EndpointKey":"uddi:5ebc854f-42fa-41af-a810-43444e91e6ab"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "APIDesign":{
+    "BindingType":[
+      "binding.http"
+    ],
+    "CommonDesign":true,
+    "DesignServiceKey":"uddi:cdd5b591-fd75-48db-99cd-941eb7186c08"
+  },
+  "Links":[
+    {
+      "rel":"design",
+      "href":"/api/apis/versions/4a1a513f-2758-48a9-8103-d869793e2ac8.acmepaymentscorp/design?specification=swagger2",
+      "type":"GET",
+      "title":"Swagger2"
+    },
+    {
+      "rel":"design",
+      "href":"/api/apis/versions/4a1a513f-2758-48a9-8103-d869793e2ac8.acmepaymentscorp/design?specification=oas3",
+      "type":"GET",
+      "title":"OAS3"
+    }
+  ]
 }</pre>
 <h4 id="sampleresponse_3">Sample Response #3: Multiple OAuth providers</h4>
 <p>The sample response below shows API version information when there are multiple OAuth providers set up for the API.</p>
@@ -1575,7 +1563,7 @@ Date: Mon, 29 Feb 2016 16:39:21 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_71.lbi" --><strong>application/vnd.soa.v71+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_72.lbi" --><strong>application/vnd.soa.v72+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_80.lbi" --><strong>application/vnd.soa.v80+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->,<!-- #BeginLibraryItem "/Library/hdrval_appjson_2019.lbi" --><strong>application/vnd.soa.v2019+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v71+json</strong>, <strong>application/vnd.soa.v72+json</strong>, <strong>application/vnd.soa.v80+json</strong>, <strong>application/vnd.soa.v81+json</strong>,<strong>application/vnd.soa.v2019+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -1597,7 +1585,8 @@ Date: Mon, 29 Feb 2016 16:39:21 GMT</pre>
 		<tr>
 			<td>APIVersion</td>
 			<td><a href="../obj/o_apis_APIVersion.htm">APIVersion</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_APIVersion.lbi" -->Includes information about an API version.<!-- #EndLibraryItem --></td>
+			<td><p>Includes information about an API version.</p>
+				<p><strong>Note</strong> (2020.2.0 and later): Implementation-level policy information is returned. For operation-level policies, use the <span class="apidoc_code"><a href="m_apis_getAPIImplementationPolicies.htm">GET&#160;/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/policies</a></span> operation.</p></td>
 		</tr>
 	</tbody>
 </table>
@@ -1616,7 +1605,7 @@ Date: Mon, 29 Feb 2016 16:39:21 GMT</pre>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 	</thead>
 	<tbody>
@@ -1631,11 +1620,11 @@ Date: Mon, 29 Feb 2016 16:39:21 GMT</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -1647,5 +1636,10 @@ Date: Mon, 29 Feb 2016 16:39:21 GMT</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

@@ -17,15 +17,15 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_modifyAPIImplementationDeployments.lbi" -->Modifies an existing deployment of an <a href="../Ref_Glossary_CommunityPlatform.htm#gl_implementation">implementation</a> (virtual service) for a specific API version.<!-- #EndLibraryItem --></p>
+<p>Modifies an existing deployment of an <a href="../Ref_Glossary_CommunityPlatform.htm#gl_implementation">implementation</a> (virtual service) for a specific API version.</p>
 <p>Notes:</p>
 <ul>
 	<li>To see the format of the model object and current values for your implementation, use the <span class="apidoc_code"><a href="m_apis_getAPIImplementationDeploymentSuggestions.htm">GET&#160;/api/apis/versions/{APIVersionID}/implementations/{ImplCode}/deploymentsuggestions</a></span> operation.</li>
 	<li>To modify endpoints for the physical service, use the <span class="apidoc_code"><a href="m_apis_saveServiceEndpoints.htm">PUT&#160;/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/services/{ServiceID}/endpoints</a></span> operation.</li>
 	<li>For a&#160;step-by-step exercise, see <a href="../aaex/Ref_Ex_API_Modify_Endpoint.htm">Example: Modifying an API Endpoint</a>.</li>
 </ul>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> Must have Modify permission for this API.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must have Modify permission for this API.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -42,7 +42,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">PUT</p>
 <!-- InstanceEndEditable -->
@@ -50,7 +51,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/implementations/{ImplName}/deployments</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/implementations/{ImplName}/deployments</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -59,49 +60,38 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to modify the specified deployment (one deployment zone has been removed, two are left).</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/3cf571cf-f8df-4720-a961-4d89a7b9065f.acmepaymentscorp/implementations/Sandbox/deployments</pre>
+<pre>https://{hostname}/api/apis/versions/d7c7104f-8341-4da6-a45f-47114b4d3d7d.acmepaymentscorp/implementations/Live/deployments</pre>
 <p><strong>Sample request headers</strong></p>
-<pre>PUT /api/apis/versions/3cf571cf-f8df-4720-a961-4d89a7b9065f.acmepaymentscorp/implementations/Sandbox/deployments HTTP/1.1
+<pre>PUT /api/apis/versions/c8089c94-ac0d-48b3-ae1a-0ca1c9b7d7b9.acmepaymentscorp/implementations/Live/deployments HTTP/1.1
 Host: {hostname}
-Accept: application/vnd.soa.v81+json
-Content-Type: application/vnd.soa.v81+json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+Accept: application/json
+Content-Type: application/json
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <pre>{
-  &quot;DeploymentZonesHostingInfo&quot;:[
+  "DeploymentZonesHostingInfo":[
     {
-      &quot;DeploymentZoneID&quot;:&quot;973897d1-f36a-4bfb-ac93-d0707275.acmepaymentscorp&quot;,
-      &quot;DeploymentZoneEndpoint&quot;:[
+      "DeploymentZoneEndpoint":[
         {
-          &quot;DeploymentZoneID&quot;:&quot;973897d1-f36a-4bfb-ac93-d0707275.acmepaymentscorp&quot;,
-          &quot;EndpointKey&quot;:&quot;uddi:cd5917be-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-          &quot;Protocol&quot;:&quot;http&quot;,
-          &quot;ListenerName&quot;:&quot;default-http0&quot;,
-          &quot;ContainerKey&quot;:&quot;973897d1-f36a-4bfb-ac93-d0707275&quot;,
-          &quot;VirtualHost&quot;:&quot;api11195sandboxacmepaymentscorp.com&quot;,
-          &quot;Url&quot;:&quot;http://api11195sandboxacmepaymentscorp.com:9903/&quot;,
-          &quot;Path&quot;:&quot;/&quot;,
-          &quot;BindingQName&quot;:&quot;{swagger_petstore.json}Swagger_Petstore_Binding_0&quot;,
-          &quot;BindingType&quot;:&quot;binding.http&quot;
-        }
-      ]
-    },
-    {
-      &quot;DeploymentZoneID&quot;:&quot;c5013c6d-6adf-4885-abc6-e4d00eee.acmepaymentscorp&quot;,
-      &quot;DeploymentZoneEndpoint&quot;:[
+          "DeploymentZoneID":"1c64704a-03cd-46c4-ba07-3786f8f82a8c.acmepaymentscorp",
+          "EndpointKey":"uddi:bb999b1d-1d5e-457d-ae2c-ae3ef3f152a9",
+          "ListenerName":"default-https",
+          "EndpointHostName":"akana-qa-2.aws.akana.roguewave.com",
+          "EndpointPath":"/api16982live",
+          "Protocol":"https",
+          "Public":false
+        },
         {
-          &quot;DeploymentZoneID&quot;:&quot;c5013c6d-6adf-4885-abc6-e4d00eee.acmepaymentscorp&quot;,
-          &quot;EndpointKey&quot;:&quot;uddi:ccd47e6c-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-          &quot;Protocol&quot;:&quot;http&quot;,
-          &quot;ListenerName&quot;:&quot;default-http0&quot;,
-          &quot;ContainerKey&quot;:&quot;c5013c6d-6adf-4885-abc6-e4d00eee&quot;,
-          &quot;VirtualHost&quot;:&quot;api11195sandboxacmepaymentscorp.com&quot;,
-          &quot;Url&quot;:&quot;http://api11195sandboxacmepaymentscorp.com:9901/&quot;,
-          &quot;Path&quot;:&quot;/&quot;,
-          &quot;BindingQName&quot;:&quot;{swagger_petstore.json}Swagger_Petstore_Binding_0&quot;,
-          &quot;BindingType&quot;:&quot;binding.http&quot;
+          "DeploymentZoneID":"1c64704a-03cd-46c4-ba07-3786f8f82a8c.acmepaymentscorp",
+          "EndpointKey":"uddi:508db7c5-2b8b-446c-be36-494cf67ec28f",
+          "ListenerName":"default-http0",
+          "EndpointHostName":"10.250.24.9",
+          "EndpointPath":"/api16982live",
+          "Protocol":"http",
+          "Public":false
         }
-      ]
+      ],
+      "DeploymentZoneID":"1c64704a-03cd-46c4-ba07-3786f8f82a8c.acmepaymentscorp"
     }
   ]
 }</pre>
@@ -122,21 +112,20 @@ Content-Type: application/vnd.soa.v81+json
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
 			<td><p>Any one of the following media types is valid for the request Content-Type:</p>
-				<p><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --> or <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></p></td>
+				<p><strong>application/json</strong> or <strong>application/vnd.soa.v81+json</strong></p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -162,22 +151,22 @@ Content-Type: application/vnd.soa.v81+json
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API version.</td>
 		</tr>
 		<tr>
 			<td>ImplCode</td>
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_ImplCode.lbi" -->
-A code for a specific implementation. Valid values: <strong>Live</strong> or <strong>Sandbox</strong>.<!-- #EndLibraryItem --></td>
+			<td>
+A code for a specific implementation. Valid values: <strong>Live</strong> or <strong>Sandbox</strong>.</td>
 		</tr>
 		<tr>
 			<td>APIImplementationDeployments</td>
 			<td>Body</td>
 			<td><a href="../obj/o_apis_APIImplementationDeployments.htm">APIImplementationDeployments</a></td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_APIImplementationDeployments.lbi" -->Contains information about the deployment zones associated with a specific API version implementation, or that a specific API version implementation is eligible for based on the API version definition and deployment zone definitions.<!-- #EndLibraryItem --></td>
+			<td>Contains information about the deployment zones associated with a specific API version implementation, or that a specific API version implementation is eligible for based on the API version definition and deployment zone definitions.</td>
 		</tr>
 	</tbody>
 </table>
@@ -195,573 +184,358 @@ A code for a specific implementation. Valid values: <strong>Live</strong> or <st
 <!-- InstanceBeginEditable name="Sample Response" -->
 <h2 id="sampleresponse">Sample Response</h2>
 <p id="id_sampleresponse">The sample response below shows successful completion of this operation.</p>
-<p><strong>Sample response headers: application/vnd.soa.v81+json</strong></p>
+<p><strong>Sample response headers: application/json</strong></p>
 <pre>HTTP/1.1 200 OK
-Date: Tue, 08 Mar 2016 01:26:57 GMT
-Content-Type: application/vnd.soa.v81+json</pre>
-<p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
+Date: Wed, 11 Nov 2020 20:50:58 GMT
+Content-Type: application/json</pre>
+<p><strong>Sample response body: application/json</strong></p>
 <pre>{
-  &quot;Name&quot; : &quot;Swagger_Petstore_v1_Sandbox_Virtual&quot;,
-  &quot;ImplementationCode&quot; : &quot;Sandbox&quot;,
-  &quot;Description&quot; : &quot;Sample Swagger petstore API.&quot;,
-  &quot;Pattern&quot; : &quot;com.akana.pattern.proxy&quot;,
-  &quot;ServiceKey&quot; : &quot;uddi:c7e2c641-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-  &quot;APIBindings&quot; : {
-    &quot;APIBinding&quot; : [ {
-      &quot;BindingQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_Binding_0&quot;,
-      &quot;BindingKey&quot; : &quot;uddi:ac46cc0f-04ac-ff72-ff63-a818183c7ed7&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;InterfaceKey&quot; : &quot;uddi:c6620054-dd24-6605-f9a1-a95744818973&quot;,
-      &quot;BindingType&quot; : &quot;binding.http&quot;,
-      &quot;BindingOperations&quot; : {
-        &quot;BindingOperation&quot; : [ {
-          &quot;OperationName&quot; : &quot;addPet&quot;,
-          &quot;WsdlOperationName&quot; : &quot;addPet&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;POST&quot;,
-            &quot;Path&quot; : &quot;/pet&quot;,
-            &quot;InputContentType&quot; : &quot;application/json,application/xml&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;body&quot;,
-              &quot;Type&quot; : &quot;entity&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;updatePet&quot;,
-          &quot;WsdlOperationName&quot; : &quot;updatePet&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;PUT&quot;,
-            &quot;Path&quot; : &quot;/pet&quot;,
-            &quot;InputContentType&quot; : &quot;application/json,application/xml&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;body&quot;,
-              &quot;Type&quot; : &quot;entity&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;findPetsByStatus&quot;,
-          &quot;WsdlOperationName&quot; : &quot;findPetsByStatus&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;GET&quot;,
-            &quot;Path&quot; : &quot;/pet/findByStatus&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;status&quot;,
-              &quot;Type&quot; : &quot;query&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;findPetsByTags&quot;,
-          &quot;WsdlOperationName&quot; : &quot;findPetsByTags&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;GET&quot;,
-            &quot;Path&quot; : &quot;/pet/findByTags&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;tags&quot;,
-              &quot;Type&quot; : &quot;query&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;updatePetWithForm&quot;,
-          &quot;WsdlOperationName&quot; : &quot;updatePetWithForm&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;POST&quot;,
-            &quot;Path&quot; : &quot;/pet/{petId}&quot;,
-            &quot;InputContentType&quot; : &quot;application/x-www-form-urlencoded&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;petId&quot;,
-              &quot;Type&quot; : &quot;path&quot;
-            }, {
-              &quot;Name&quot; : &quot;name&quot;,
-              &quot;Type&quot; : &quot;form&quot;
-            }, {
-              &quot;Name&quot; : &quot;status&quot;,
-              &quot;Type&quot; : &quot;form&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;getPetById&quot;,
-          &quot;WsdlOperationName&quot; : &quot;getPetById&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;GET&quot;,
-            &quot;Path&quot; : &quot;/pet/{petId}&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;petId&quot;,
-              &quot;Type&quot; : &quot;path&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;deletePet&quot;,
-          &quot;WsdlOperationName&quot; : &quot;deletePet&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;DELETE&quot;,
-            &quot;Path&quot; : &quot;/pet/{petId}&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;api_key&quot;,
-              &quot;Type&quot; : &quot;header&quot;
-            }, {
-              &quot;Name&quot; : &quot;petId&quot;,
-              &quot;Type&quot; : &quot;path&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;uploadFile&quot;,
-          &quot;WsdlOperationName&quot; : &quot;uploadFile&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;POST&quot;,
-            &quot;Path&quot; : &quot;/pet/{petId}/uploadImage&quot;,
-            &quot;InputContentType&quot; : &quot;multipart/form-data&quot;,
-            &quot;OutputContentType&quot; : &quot;application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;petId&quot;,
-              &quot;Type&quot; : &quot;path&quot;
-            }, {
-              &quot;Name&quot; : &quot;additionalMetadata&quot;,
-              &quot;Type&quot; : &quot;form&quot;
-            }, {
-              &quot;Name&quot; : &quot;file&quot;,
-              &quot;Type&quot; : &quot;form&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;getInventory&quot;,
-          &quot;WsdlOperationName&quot; : &quot;getInventory&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;GET&quot;,
-            &quot;Path&quot; : &quot;/store/inventory&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;placeOrder&quot;,
-          &quot;WsdlOperationName&quot; : &quot;placeOrder&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;POST&quot;,
-            &quot;Path&quot; : &quot;/store/order&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;body&quot;,
-              &quot;Type&quot; : &quot;entity&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;getOrderById&quot;,
-          &quot;WsdlOperationName&quot; : &quot;getOrderById&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;GET&quot;,
-            &quot;Path&quot; : &quot;/store/order/{orderId}&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;orderId&quot;,
-              &quot;Type&quot; : &quot;path&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;deleteOrder&quot;,
-          &quot;WsdlOperationName&quot; : &quot;deleteOrder&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;DELETE&quot;,
-            &quot;Path&quot; : &quot;/store/order/{orderId}&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;orderId&quot;,
-              &quot;Type&quot; : &quot;path&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;createUser&quot;,
-          &quot;WsdlOperationName&quot; : &quot;createUser&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;POST&quot;,
-            &quot;Path&quot; : &quot;/user&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;body&quot;,
-              &quot;Type&quot; : &quot;entity&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;createUsersWithArrayInput&quot;,
-          &quot;WsdlOperationName&quot; : &quot;createUsersWithArrayInput&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;POST&quot;,
-            &quot;Path&quot; : &quot;/user/createWithArray&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;body&quot;,
-              &quot;Type&quot; : &quot;entity&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;createUsersWithListInput&quot;,
-          &quot;WsdlOperationName&quot; : &quot;createUsersWithListInput&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;POST&quot;,
-            &quot;Path&quot; : &quot;/user/createWithList&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;body&quot;,
-              &quot;Type&quot; : &quot;entity&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;loginUser&quot;,
-          &quot;WsdlOperationName&quot; : &quot;loginUser&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;GET&quot;,
-            &quot;Path&quot; : &quot;/user/login&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;username&quot;,
-              &quot;Type&quot; : &quot;query&quot;
-            }, {
-              &quot;Name&quot; : &quot;password&quot;,
-              &quot;Type&quot; : &quot;query&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;logoutUser&quot;,
-          &quot;WsdlOperationName&quot; : &quot;logoutUser&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;GET&quot;,
-            &quot;Path&quot; : &quot;/user/logout&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;getUserByName&quot;,
-          &quot;WsdlOperationName&quot; : &quot;getUserByName&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;GET&quot;,
-            &quot;Path&quot; : &quot;/user/{username}&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;username&quot;,
-              &quot;Type&quot; : &quot;path&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;deleteUser&quot;,
-          &quot;WsdlOperationName&quot; : &quot;deleteUser&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;DELETE&quot;,
-            &quot;Path&quot; : &quot;/user/{username}&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;username&quot;,
-              &quot;Type&quot; : &quot;path&quot;
-            } ]
-          }
-        }, {
-          &quot;OperationName&quot; : &quot;updateUser&quot;,
-          &quot;WsdlOperationName&quot; : &quot;updateUser&quot;,
-          &quot;HttpOperation&quot; : {
-            &quot;Method&quot; : &quot;PUT&quot;,
-            &quot;Path&quot; : &quot;/user/{username}&quot;,
-            &quot;InputContentType&quot; : &quot;&quot;,
-            &quot;OutputContentType&quot; : &quot;application/xml,application/json&quot;,
-            &quot;FaultContentType&quot; : &quot;&quot;,
-            &quot;Input&quot; : [ {
-              &quot;Name&quot; : &quot;username&quot;,
-              &quot;Type&quot; : &quot;path&quot;
-            }, {
-              &quot;Name&quot; : &quot;body&quot;,
-              &quot;Type&quot; : &quot;entity&quot;
-            } ]
-          }
-        } ]
-      }
-    } ]
-  },
-  &quot;APIInterfaces&quot; : {
-    &quot;APIInterface&quot; : [ {
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;InterfaceKey&quot; : &quot;uddi:c6620054-dd24-6605-f9a1-a95744818973&quot;,
-      &quot;InterfaceOperations&quot; : {
-        &quot;InterfaceOperation&quot; : [ {
-          &quot;OperationName&quot; : &quot;addPet&quot;,
-          &quot;WsdlOperationName&quot; : &quot;addPet&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;updatePet&quot;,
-          &quot;WsdlOperationName&quot; : &quot;updatePet&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;findPetsByStatus&quot;,
-          &quot;WsdlOperationName&quot; : &quot;findPetsByStatus&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;findPetsByTags&quot;,
-          &quot;WsdlOperationName&quot; : &quot;findPetsByTags&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;updatePetWithForm&quot;,
-          &quot;WsdlOperationName&quot; : &quot;updatePetWithForm&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;getPetById&quot;,
-          &quot;WsdlOperationName&quot; : &quot;getPetById&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;deletePet&quot;,
-          &quot;WsdlOperationName&quot; : &quot;deletePet&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;uploadFile&quot;,
-          &quot;WsdlOperationName&quot; : &quot;uploadFile&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;getInventory&quot;,
-          &quot;WsdlOperationName&quot; : &quot;getInventory&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;placeOrder&quot;,
-          &quot;WsdlOperationName&quot; : &quot;placeOrder&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;getOrderById&quot;,
-          &quot;WsdlOperationName&quot; : &quot;getOrderById&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;deleteOrder&quot;,
-          &quot;WsdlOperationName&quot; : &quot;deleteOrder&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;createUser&quot;,
-          &quot;WsdlOperationName&quot; : &quot;createUser&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;createUsersWithArrayInput&quot;,
-          &quot;WsdlOperationName&quot; : &quot;createUsersWithArrayInput&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;createUsersWithListInput&quot;,
-          &quot;WsdlOperationName&quot; : &quot;createUsersWithListInput&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;loginUser&quot;,
-          &quot;WsdlOperationName&quot; : &quot;loginUser&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;logoutUser&quot;,
-          &quot;WsdlOperationName&quot; : &quot;logoutUser&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;getUserByName&quot;,
-          &quot;WsdlOperationName&quot; : &quot;getUserByName&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;deleteUser&quot;,
-          &quot;WsdlOperationName&quot; : &quot;deleteUser&quot;
-        }, {
-          &quot;OperationName&quot; : &quot;updateUser&quot;,
-          &quot;WsdlOperationName&quot; : &quot;updateUser&quot;
-        } ]
-      }
-    } ]
-  },
-  &quot;Endpoints&quot; : {
-    &quot;Endpoint&quot; : [ {
-      &quot;Category&quot; : &quot;Sandbox&quot;,
-      &quot;Uri&quot; : &quot;http://api11195sandboxacmepaymentscorp.com:9903/&quot;,
-      &quot;ConnectionProperties&quot; : [ ],
-      &quot;BindingQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_Binding_0&quot;,
-      &quot;BindingType&quot; : &quot;binding.http&quot;,
-      &quot;EndpointKey&quot; : &quot;uddi:cd5917be-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;EndpointImplementationDetails&quot; : {
-        &quot;DeploymentZoneEndpoint&quot; : {
-          &quot;DeploymentZoneID&quot; : &quot;973897d1-f36a-4bfb-ac93-d0707275.acmepaymentscorp&quot;,
-          &quot;EndpointKey&quot; : &quot;uddi:cd5917be-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-          &quot;Protocol&quot; : &quot;http&quot;,
-          &quot;ListenerName&quot; : &quot;default-http0&quot;,
-          &quot;ContainerKey&quot; : &quot;973897d1-f36a-4bfb-ac93-d0707275&quot;,
-          &quot;VirtualHost&quot; : &quot;api11195sandboxacmepaymentscorp.com&quot;,
-          &quot;Url&quot; : &quot;http://api11195sandboxacmepaymentscorp.com:9903/&quot;,
-          &quot;Path&quot; : &quot;/&quot;,
-          &quot;BindingQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_Binding_0&quot;,
-          &quot;BindingType&quot; : &quot;binding.http&quot;
+  "Name":"Swagger_Petstore_5_Operations_v1_Live",
+  "ImplementationCode":"Live",
+  "Description":"Swagger_Petstore_5_Operations. Based on http://petstore.swagger.io/v2/swagger.json with deletions in API Designer.",
+  "Pattern":"com.akana.pattern.proxy",
+  "ServiceKey":"uddi:677f6db5-befe-49ef-9143-76fc26a9e43c",
+  "APIBindings":{
+    "APIBinding":[
+      {
+        "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+        "BindingKey":"uddi:6d615e18-8633-144f-f525-a20e8f8b0c89",
+        "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+        "InterfaceKey":"uddi:03bed5c1-1db4-4cd1-b4d9-70c828cd3c69",
+        "BindingType":"binding.http",
+        "BindingOperations":{
+          "BindingOperation":[
+            {
+              "OperationName":"addPet",
+              "WsdlOperationName":"addPet",
+              "HttpOperation":{
+                "Method":"POST",
+                "Path":"/pet",
+                "InputContentType":"application/xml,application/json",
+                "OutputContentType":"application/xml,application/json",
+                "FaultContentType":"",
+                "Input":[
+                  {
+                    "Name":"body",
+                    "Type":"entity"
+                  }
+                ]
+              }
+            },
+            {
+              "OperationName":"findPetsByStatus",
+              "WsdlOperationName":"findPetsByStatus",
+              "HttpOperation":{
+                "Method":"GET",
+                "Path":"/pet/findByStatus",
+                "InputContentType":"",
+                "OutputContentType":"application/xml,application/json",
+                "FaultContentType":"",
+                "Input":[
+                  {
+                    "Name":"status",
+                    "Type":"query"
+                  }
+                ]
+              }
+            },
+            {
+              "OperationName":"findPetsByTags",
+              "WsdlOperationName":"findPetsByTags",
+              "HttpOperation":{
+                "Method":"GET",
+                "Path":"/pet/findByTags",
+                "InputContentType":"",
+                "OutputContentType":"application/xml,application/json",
+                "FaultContentType":"",
+                "Input":[
+                  {
+                    "Name":"tags",
+                    "Type":"query"
+                  }
+                ]
+              }
+            },
+            {
+              "OperationName":"getPetById",
+              "WsdlOperationName":"getPetById",
+              "HttpOperation":{
+                "Method":"GET",
+                "Path":"/pet/{petId}",
+                "InputContentType":"",
+                "OutputContentType":"application/xml,application/json",
+                "FaultContentType":"",
+                "Input":[
+                  {
+                    "Name":"petId",
+                    "Type":"path"
+                  }
+                ]
+              }
+            },
+            {
+              "OperationName":"deletePet",
+              "WsdlOperationName":"deletePet",
+              "HttpOperation":{
+                "Method":"DELETE",
+                "Path":"/pet/{petId}",
+                "InputContentType":"",
+                "OutputContentType":"application/xml,application/json",
+                "FaultContentType":"",
+                "Input":[
+                  {
+                    "Name":"api_key",
+                    "Type":"header"
+                  },
+                  {
+                    "Name":"petId",
+                    "Type":"path"
+                  }
+                ]
+              }
+            }
+          ]
         }
-      },
-      &quot;ImplementationCode&quot; : &quot;Sandbox&quot;
-    }, {
-      &quot;Category&quot; : &quot;Sandbox&quot;,
-      &quot;Uri&quot; : &quot;http://api11195sandboxacmepaymentscorp.com:9901/&quot;,
-      &quot;ConnectionProperties&quot; : [ ],
-      &quot;BindingQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_Binding_0&quot;,
-      &quot;BindingType&quot; : &quot;binding.http&quot;,
-      &quot;EndpointKey&quot; : &quot;uddi:ccd47e6c-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;EndpointImplementationDetails&quot; : {
-        &quot;DeploymentZoneEndpoint&quot; : {
-          &quot;DeploymentZoneID&quot; : &quot;c5013c6d-6adf-4885-abc6-e4d00eee.acmepaymentscorp&quot;,
-          &quot;EndpointKey&quot; : &quot;uddi:ccd47e6c-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-          &quot;Protocol&quot; : &quot;http&quot;,
-          &quot;ListenerName&quot; : &quot;default-http0&quot;,
-          &quot;ContainerKey&quot; : &quot;c5013c6d-6adf-4885-abc6-e4d00eee&quot;,
-          &quot;VirtualHost&quot; : &quot;api11195sandboxacmepaymentscorp.com&quot;,
-          &quot;Url&quot; : &quot;http://api11195sandboxacmepaymentscorp.com:9901/&quot;,
-          &quot;Path&quot; : &quot;/&quot;,
-          &quot;BindingQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_Binding_0&quot;,
-          &quot;BindingType&quot; : &quot;binding.http&quot;
+      }
+    ]
+  },
+  "APIInterfaces":{
+    "APIInterface":[
+      {
+        "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+        "InterfaceKey":"uddi:03bed5c1-1db4-4cd1-b4d9-70c828cd3c69",
+        "InterfaceOperations":{
+          "InterfaceOperation":[
+            {
+              "OperationName":"addPet",
+              "WsdlOperationName":"addPet"
+            },
+            {
+              "OperationName":"findPetsByStatus",
+              "WsdlOperationName":"findPetsByStatus"
+            },
+            {
+              "OperationName":"findPetsByTags",
+              "WsdlOperationName":"findPetsByTags"
+            },
+            {
+              "OperationName":"getPetById",
+              "WsdlOperationName":"getPetById"
+            },
+            {
+              "OperationName":"deletePet",
+              "WsdlOperationName":"deletePet"
+            }
+          ]
         }
+      }
+    ]
+  },
+  "Endpoints":{
+    "Endpoint":[
+      {
+        "Category":"Production",
+        "Uri":"https://akana-qa-2.aws.akana.roguewave.com:9443/api16982live",
+        "CName":"akana-qa-2.aws.akana.roguewave.com",
+        "DeploymentZoneRule":"9d5d-ffd4-4e6a-9334-bd850387eed9default-https",
+        "ConnectionProperties":[
+          {
+            "Name":"virtualHost",
+            "Value":"akana-qa-2.aws.akana.roguewave.com"
+          },
+          {
+            "Name":"gateway_hostname",
+            "Value":"akana-qa-2.aws.akana.roguewave.com"
+          },
+          {
+            "Name":"visibility",
+            "Value":"private"
+          }
+        ],
+        "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+        "BindingType":"binding.http",
+        "EndpointKey":"uddi:bb999b1d-1d5e-457d-ae2c-ae3ef3f152a9",
+        "EndpointImplementationDetails":{
+          "DeploymentZoneEndpoint":{
+            "DeploymentZoneID":"1c64704a-03cd-46c4-ba07-3786f8f82a8c.acmepaymentscorp",
+            "EndpointKey":"uddi:bb999b1d-1d5e-457d-ae2c-ae3ef3f152a9",
+            "ListenerName":"default-https",
+            "ContainerKey":"9d5d-ffd4-4e6a-9334-bd850387eed9",
+            "GatewayHostName":"akana-qa-2.aws.akana.roguewave.com",
+            "GatewayHostPath":"/",
+            "EndpointHostName":"akana-qa-2.aws.akana.roguewave.com",
+            "EndpointPath":"/api16982live",
+            "Protocol":"https",
+            "Path":"/api16982live",
+            "Url":"https://akana-qa-2.aws.akana.roguewave.com:9443/api16982live",
+            "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+            "BindingType":"binding.http",
+            "Public":false
+          }
+        },
+        "ImplementationCode":"Live"
       },
-      &quot;ImplementationCode&quot; : &quot;Sandbox&quot;
-    } ]
+      {
+        "Category":"Production",
+        "Uri":"http://10.250.24.9:7905/api16982live",
+        "CName":"10.250.24.9",
+        "DeploymentZoneRule":"9d5d-ffd4-4e6a-9334-bd850387eed9default-http0",
+        "ConnectionProperties":[
+          {
+            "Name":"virtualHost",
+            "Value":"10.250.24.9"
+          },
+          {
+            "Name":"gateway_hostname",
+            "Value":"10.250.24.9"
+          },
+          {
+            "Name":"visibility",
+            "Value":"private"
+          }
+        ],
+        "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+        "BindingType":"binding.http",
+        "EndpointKey":"uddi:508db7c5-2b8b-446c-be36-494cf67ec28f",
+        "EndpointImplementationDetails":{
+          "DeploymentZoneEndpoint":{
+            "DeploymentZoneID":"1c64704a-03cd-46c4-ba07-3786f8f82a8c.acmepaymentscorp",
+            "EndpointKey":"uddi:508db7c5-2b8b-446c-be36-494cf67ec28f",
+            "ListenerName":"default-http0",
+            "ContainerKey":"9d5d-ffd4-4e6a-9334-bd850387eed9",
+            "GatewayHostName":"10.250.24.9",
+            "GatewayHostPath":"/",
+            "EndpointHostName":"10.250.24.9",
+            "EndpointPath":"/api16982live",
+            "Protocol":"http",
+            "Path":"/api16982live",
+            "Url":"http://10.250.24.9:7905/api16982live",
+            "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+            "BindingType":"binding.http",
+
+            "Public":false
+          }
+        },
+        "ImplementationCode":"Live"
+      }
+    ]
   },
-  &quot;APIImplementationDeployments&quot; : {
-    &quot;DeploymentZonesHostingInfo&quot; : [ {
-      &quot;DeploymentZoneID&quot; : &quot;973897d1-f36a-4bfb-ac93-d0707275.acmepaymentscorp&quot;,
-      &quot;DeploymentZoneEndpoint&quot; : [ {
-        &quot;DeploymentZoneID&quot; : &quot;973897d1-f36a-4bfb-ac93-d0707275.acmepaymentscorp&quot;,
-        &quot;EndpointKey&quot; : &quot;uddi:cd5917be-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-        &quot;Protocol&quot; : &quot;http&quot;,
-        &quot;ListenerName&quot; : &quot;default-http0&quot;,
-        &quot;ContainerKey&quot; : &quot;973897d1-f36a-4bfb-ac93-d0707275&quot;,
-        &quot;VirtualHost&quot; : &quot;api11195sandboxacmepaymentscorp.com&quot;,
-        &quot;Url&quot; : &quot;http://api11195sandboxacmepaymentscorp.com:9903/&quot;,
-        &quot;Path&quot; : &quot;/&quot;,
-        &quot;BindingQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_Binding_0&quot;,
-        &quot;BindingType&quot; : &quot;binding.http&quot;
-      } ]
-    }, {
-      &quot;DeploymentZoneID&quot; : &quot;c5013c6d-6adf-4885-abc6-e4d00eee.acmepaymentscorp&quot;,
-      &quot;DeploymentZoneEndpoint&quot; : [ {
-        &quot;DeploymentZoneID&quot; : &quot;c5013c6d-6adf-4885-abc6-e4d00eee.acmepaymentscorp&quot;,
-        &quot;EndpointKey&quot; : &quot;uddi:ccd47e6c-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-        &quot;Protocol&quot; : &quot;http&quot;,
-        &quot;ListenerName&quot; : &quot;default-http0&quot;,
-        &quot;ContainerKey&quot; : &quot;c5013c6d-6adf-4885-abc6-e4d00eee&quot;,
-        &quot;VirtualHost&quot; : &quot;api11195sandboxacmepaymentscorp.com&quot;,
-        &quot;Url&quot; : &quot;http://api11195sandboxacmepaymentscorp.com:9901/&quot;,
-        &quot;Path&quot; : &quot;/&quot;,
-        &quot;BindingQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_Binding_0&quot;,
-        &quot;BindingType&quot; : &quot;binding.http&quot;
-      } ]
-    } ]
+  "Policies":{
+    "Policy":[
+      {
+        "PolicyKey":"acmepaymentscorp-AtmosphereApplicationSecurityPolicy",
+        "Name":"AtmosphereApplicationSecurityPolicy",
+        "Description":"",
+        "PolicyType":"Operational Policy",
+        "PolicySubType":"policy.apisec"
+      }
+    ]
   },
-  &quot;Operations&quot; : {
-    &quot;Operation&quot; : [ {
-      &quot;Name&quot; : &quot;addPet&quot;,
-      &quot;OperationKey&quot; : &quot;c8363d77-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;addPet&quot;
-    }, {
-      &quot;Name&quot; : &quot;createUser&quot;,
-      &quot;OperationKey&quot; : &quot;c85c152a-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;createUser&quot;
-    }, {
-      &quot;Name&quot; : &quot;createUsersWithArrayInput&quot;,
-      &quot;OperationKey&quot; : &quot;c85ed44d-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;createUsersWithArrayInput&quot;
-    }, {
-      &quot;Name&quot; : &quot;createUsersWithListInput&quot;,
-      &quot;OperationKey&quot; : &quot;c8631a10-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;createUsersWithListInput&quot;
-    }, {
-      &quot;Name&quot; : &quot;deleteOrder&quot;,
-      &quot;OperationKey&quot; : &quot;c858e0d5-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;deleteOrder&quot;
-    }, {
-      &quot;Name&quot; : &quot;deletePet&quot;,
-      &quot;OperationKey&quot; : &quot;c849c592-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;deletePet&quot;
-    }, {
-      &quot;Name&quot; : &quot;deleteUser&quot;,
-      &quot;OperationKey&quot; : &quot;c8720e3e-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;deleteUser&quot;
-    }, {
-      &quot;Name&quot; : &quot;findPetsByStatus&quot;,
-      &quot;OperationKey&quot; : &quot;c83d4261-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;findPetsByStatus&quot;
-    }, {
-      &quot;Name&quot; : &quot;findPetsByTags&quot;,
-      &quot;OperationKey&quot; : &quot;c8402895-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;findPetsByTags&quot;
-    }, {
-      &quot;Name&quot; : &quot;getInventory&quot;,
-      &quot;OperationKey&quot; : &quot;c84f91fa-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;getInventory&quot;
-    }, {
-      &quot;Name&quot; : &quot;getOrderById&quot;,
-      &quot;OperationKey&quot; : &quot;c855ac80-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;getOrderById&quot;
-    }, {
-      &quot;Name&quot; : &quot;getPetById&quot;,
-      &quot;OperationKey&quot; : &quot;c846913d-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;getPetById&quot;
-    }, {
-      &quot;Name&quot; : &quot;getUserByName&quot;,
-      &quot;OperationKey&quot; : &quot;c86abb39-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;getUserByName&quot;
-    }, {
-      &quot;Name&quot; : &quot;loginUser&quot;,
-      &quot;OperationKey&quot; : &quot;c865d933-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;loginUser&quot;
-    }, {
-      &quot;Name&quot; : &quot;logoutUser&quot;,
-      &quot;OperationKey&quot; : &quot;c8687147-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;logoutUser&quot;
-    }, {
-      &quot;Name&quot; : &quot;placeOrder&quot;,
-      &quot;OperationKey&quot; : &quot;c8529f3c-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;placeOrder&quot;
-    }, {
-      &quot;Name&quot; : &quot;updatePet&quot;,
-      &quot;OperationKey&quot; : &quot;c83998db-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;updatePet&quot;
-    }, {
-      &quot;Name&quot; : &quot;updatePetWithForm&quot;,
-      &quot;OperationKey&quot; : &quot;c8430ec9-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;updatePetWithForm&quot;
-    }, {
-      &quot;Name&quot; : &quot;updateUser&quot;,
-      &quot;OperationKey&quot; : &quot;c875b7c3-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;updateUser&quot;
-    }, {
-      &quot;Name&quot; : &quot;uploadFile&quot;,
-      &quot;OperationKey&quot; : &quot;c84cf9e7-e4cb-11e5-a7b2-cafcbae268ac&quot;,
-      &quot;InterfaceQName&quot; : &quot;{swagger_petstore.json}Swagger_Petstore_PortType_0&quot;,
-      &quot;WsdlOperationName&quot; : &quot;uploadFile&quot;
-    } ]
+  "APIImplementationDeployments":{
+    "DeploymentZonesHostingInfo":[
+      {
+        "DeploymentZoneID":"1c64704a-03cd-46c4-ba07-3786f8f82a8c.acmepaymentscorp",
+        "DeploymentZoneEndpoint":[
+          {
+            "DeploymentZoneID":"1c64704a-03cd-46c4-ba07-3786f8f82a8c.acmepaymentscorp",
+            "EndpointKey":"uddi:bb999b1d-1d5e-457d-ae2c-ae3ef3f152a9",
+            "ListenerName":"default-https",
+            "ContainerKey":"9d5d-ffd4-4e6a-9334-bd850387eed9",
+            "GatewayHostName":"akana-qa-2.aws.akana.roguewave.com",
+            "GatewayHostPath":"/",
+            "EndpointHostName":"akana-qa-2.aws.akana.roguewave.com",
+            "EndpointPath":"/api16982live",
+            "Protocol":"https",
+            "Path":"/api16982live",
+            "Url":"https://akana-qa-2.aws.akana.roguewave.com:9443/api16982live",
+            "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+            "BindingType":"binding.http",
+            "Public":false
+          },
+          {
+            "DeploymentZoneID":"1c64704a-03cd-46c4-ba07-3786f8f82a8c.acmepaymentscorp",
+            "EndpointKey":"uddi:508db7c5-2b8b-446c-be36-494cf67ec28f",
+            "ListenerName":"default-http0",
+            "ContainerKey":"9d5d-ffd4-4e6a-9334-bd850387eed9",
+            "GatewayHostName":"10.250.24.9",
+            "GatewayHostPath":"/",
+            "EndpointHostName":"10.250.24.9",
+            "EndpointPath":"/api16982live",
+            "Protocol":"http",
+            "Path":"/api16982live",
+            "Url":"http://10.250.24.9:7905/api16982live",
+            "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+            "BindingType":"binding.http",
+            "Public":false
+          }
+        ]
+      }
+    ]
+  },
+  "Operations":{
+    "Operation":[
+      {
+        "Name":"addPet",
+        "OperationKey":"a427df55-57fa-4473-b020-22683e4cafe1",
+        "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+        "WsdlOperationName":"addPet"
+      },
+      {
+        "Name":"deletePet",
+        "OperationKey":"793c0b47-5a58-4d6a-b298-28c6831b9a8e",
+        "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+        "WsdlOperationName":"deletePet"
+      },
+      {
+        "Name":"findPetsByStatus",
+        "OperationKey":"f37bd500-10bb-4e99-a1c1-db530e292ce4",
+        "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+        "WsdlOperationName":"findPetsByStatus"
+      },
+      {
+        "Name":"findPetsByTags",
+        "OperationKey":"47eac814-e379-495a-8746-42698f4bc187",
+        "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+        "WsdlOperationName":"findPetsByTags"
+      },
+      {
+        "Name":"getPetById",
+        "OperationKey":"b3277e80-0e01-410e-b6bb-6bc891f37172",
+        "InterfaceQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_PortType_0",
+        "WsdlOperationName":"getPetById"
+      }
+    ]
+  },
+  "AnonymousAccessAllowed":true,
+  "EndpointAccessAutoApproved":true,
+  "ProxyImplementationDetails":{
+    "ProxiedService":{
+      "ServiceKey":"uddi:c163d2c6-f432-4a16-adc8-7f01d5e56238",
+      "ServiceName":"Swagger_Petstore_5_Operations_v1_Live_Target",
+      "OrganizationKey":"uddi:8c3807c7-2b1c-4846-bbce-9901f591bad0",
+      "Endpoints":{
+        "Endpoint":[
+          {
+            "Uri":"HTTP://api577172live.gateway.akana.com:80/",
+            "ConnectionProperties":[
+              
+            ],
+            "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+            "BindingType":"binding.http",
+            "EndpointKey":"uddi:51cdbce3-4dc5-42dc-a2d2-e92797e9f5e1"
+          },
+          {
+            "Uri":"HTTPS://api577172live.gateway.akana.com:80/",
+            "ConnectionProperties":[
+              
+            ],
+            "BindingQName":"{Swagger_Petstore_5_Operations_v1}Swagger_Petstore_5_Operations_Binding_0",
+            "BindingType":"binding.http",
+            "EndpointKey":"uddi:9c2d8b6f-0045-42f2-b70e-530e216000cb"
+          }
+        ]
+      }
+    }
   }
 }</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -781,7 +555,7 @@ Content-Type: application/vnd.soa.v81+json</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -803,7 +577,7 @@ Content-Type: application/vnd.soa.v81+json</pre>
 		<tr>
 			<td>APIImplementation</td>
 			<td><a href="../obj/o_apis_APIImplementation.htm">APIImplementation</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_APIImplementation.lbi" -->Contains information about an implementation for a specific API version.<!-- #EndLibraryItem --></td>
+			<td>Contains information about an implementation for a specific API version.</td>
 		</tr>
 	</tbody>
 </table>
@@ -824,7 +598,7 @@ Content-Type: application/vnd.soa.v81+json</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -833,11 +607,11 @@ Content-Type: application/vnd.soa.v81+json</pre>
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -849,5 +623,10 @@ Content-Type: application/vnd.soa.v81+json</pre>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

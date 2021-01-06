@@ -15,7 +15,7 @@ no-catalog: false
 <h1 id="top">Roles Service: Overview</h1>
 <p>The operations in the Roles service allow you to manage security roles on the platform, including adding and deleting roles, modifying user/role assignments, and retrieving information about roles.</p>
 <p><span class="apidoc_note"><strong>Note</strong>: These operations take the <a href="aaref/Ref_IDsOnThePlatform.htm#id_resourceid">ResourceID</a> as a parameter. In the context of platform roles, this value is the same as the <a href="aaref/Ref_IDsOnThePlatform.htm#id_businessid">BusinessID</a> for the default tenant business organization. To find out this value, you can run the <span class="apidoc_code"><a href="properties/m_properties_getTenantProperties.htm">GET&#160;/api/properties</a></span> operation (TenantBusinessID parameter in the response). To get the RoleName, used in some operations, use the <span class="apidoc_code"><a href="roles/m_roles_getRoles.htm">GET&#160;/api/roles/{ResourceID}</a></span> operation (see below).</span></p>
-<p><strong>URL</strong>: <span class="apidoc_code"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->roles</span></p>
+<p><strong>URL</strong>: <span class="apidoc_code">https://{hostname}/api/roles</span></p>
 
 <table class="tableparmsresponse">
 	<thead>
@@ -27,26 +27,28 @@ no-catalog: false
 		<tr>
 			<td>get role</td>
 			<td><a href="roles/m_roles_getRole.htm">GET&#160;/api/roles/{ResourceID}/{RoleName}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getRole.lbi" -->Returns information about the specified security role on the API platform and the users who are assigned to it.<!-- #EndLibraryItem --></td>
+			<td>Returns information about the specified security role on the API platform and the users who are assigned to it.</td>
 		</tr>
 		<tr>
 			<td>get roles</td>
 			<td><a href="roles/m_roles_getRoles.htm">GET&#160;/api/roles/{ResourceID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_getRoles.lbi" -->Returns information about the security roles defined on the API platform.<!-- #EndLibraryItem --></td>
+			<td>Returns information about the security roles defined on the API platform.</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<td>update users assigned to role</td>
 			<td><a href="roles/m_roles_updateUsersAssignedToRole.htm">PUT&#160;/api/roles/{ResourceID}/{RoleName}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/desc_updateUsersAssignedToRole.lbi" -->Updates information about the users assigned to the specified platform role.<!-- #EndLibraryItem --></td>
+			<td>Updates information about the users assigned to the specified platform role.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+
+
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="index.htm">Akana API Platform API: Overview</a></li>
@@ -58,5 +60,9 @@ no-catalog: false
 	<li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+</div>

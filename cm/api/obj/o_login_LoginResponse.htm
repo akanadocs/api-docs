@@ -13,7 +13,8 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">LoginResponse Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_login_LoginResponse.lbi" -->Contains information returned as a result of logging in.<!-- #EndLibraryItem --></p>
+<p>Contains information returned as a result of logging in.</p>
+
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
 	<li><span class="apidoc_code"><a href="../login/m_login_login.htm">POST&#160;/api/login</a></span></li>
@@ -39,7 +40,7 @@ no-catalog: true
 		<tr>
 			<td>pendingNotifications</td>
 			<td>integer</td>
-			<td><!-- #BeginLibraryItem "/Library/o_users_pendingNotifications.lbi" -->The number of notifications pending for the user.<!-- #EndLibraryItem --></td>
+			<td>The number of notifications pending for the user.</td>
 		</tr>
 		<tr>
 			<td>userName</td>
@@ -60,7 +61,7 @@ no-catalog: true
 		<tr>
 			<td>AvatarURL</td>
 			<td>anyURI</td>
-			<td><p><!-- #BeginLibraryItem "/Library/parm_AvatarURL.lbi" --> URL for the avatar uploaded for the resource, if any. Used only in response messages.<!-- #EndLibraryItem --></p>
+			<td><p> URL for the avatar uploaded for the resource, if any. Used only in response messages.</p>
 				<p>If no avatar is specified, it is the URL for the default user avatar.</p></td>
 		</tr>
 		<tr>
@@ -115,13 +116,13 @@ no-catalog: true
 		<tr>
 			<td>sessionValidUntil</td>
 			<td>dateTime</td>
-			<td><p>This property is used to determine how long the session will be valid if the session remains active (active sesion timeout), if active session timeout is set up in the developer portal. If active session timeout is not set, authTokenValidUntil is not present in the response. If it is present, the user&rsquo;s session will be invalid after the timestamp, even if the token is renewed. The developer portal uses this value to determine when to end the user's sesssion.</p>
+			<td><p>This property is used to determine how long the session will be valid if the session remains active (active sesion timeout), if active session timeout is set up in the Community Manager developer portal. If active session timeout is not set, authTokenValidUntil is not present in the response. If it is present, the user&rsquo;s session will be invalid after the timestamp, even if the token is renewed. The Community Manager developer portal uses this value to determine when to end the user's sesssion.</p>
 				<p>This property is constructed using login time and active session timeout value.</p></td>
 		</tr>
 		<tr>
 			<td>authTokenValidUntil</td>
 			<td>dateTime</td>
-			<td><p>How long the session will be valid. This property is used to determine the active session timeout, if active session timeout is set in the developer portal. If active session timeout is not set, <strong>authTokenValidUntil</strong> is not present in the response. If it is present, the user&rsquo;s session will be invalid after the timestamp, even if the token is renewed. The developer portal uses this value to determine when to end the user's session.</p>
+			<td><p>How long the session will be valid. This property is used to determine the active session timeout, if active session timeout is set in the Community Manager developer portal. If active session timeout is not set, <strong>authTokenValidUntil</strong> is not present in the response. If it is present, the user&rsquo;s session will be invalid after the timestamp, even if the token is renewed. The Community Manager developer portal uses this value to determine when to end the user's session.</p>
 				<p>For more information on how session timeout works, see <a href="../aaref/Ref_SessionTime.htm">Session Time / Session Timeout</a>.</p></td>
 		</tr>
 	</tbody>
@@ -129,7 +130,7 @@ no-catalog: true
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -141,5 +142,10 @@ no-catalog: true
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

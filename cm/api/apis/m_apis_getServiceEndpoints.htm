@@ -1,7 +1,7 @@
 ---
 layout: apipage
 title: Get Service Endpoints | APIs Service | Akana API Platform API
-description:  Returns information about one or more endpoints (<a href="../Ref_Glossary_CommunityPlatform.htm#gl_physicalserviceendpoint">physical service</a> or <a href="../Ref_Glossary_CommunityPlatform.htm#gl_virtualservice">virtual service</a>) for a specific API version, implementation, service.
+description: Returns information about one or more endpoints (<a href="../Ref_Glossary_CommunityPlatform.htm#gl_physicalserviceendpoint">physical service</a> or <a href="../Ref_Glossary_CommunityPlatform.htm#gl_virtualservice">virtual service</a>) for a specific API version, implementation, service.
 product: cm
 category: ref
 nav-title: Get Service Endpoints 
@@ -17,16 +17,16 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getServiceEndpoints_api.lbi" -->
-Returns information about one or more endpoints (<a href="../Ref_Glossary_CommunityPlatform.htm#gl_physicalserviceendpoint">physical service</a> or <a href="../Ref_Glossary_CommunityPlatform.htm#gl_virtualservice">virtual service</a>) for a specific API version, implementation, service.<!-- #EndLibraryItem --></p>
+<p>
+Returns information about one or more endpoints (<a href="../Ref_Glossary_CommunityPlatform.htm#gl_physicalserviceendpoint">physical service</a> or <a href="../Ref_Glossary_CommunityPlatform.htm#gl_virtualservice">virtual service</a>) for a specific API version, implementation, service.</p>
 <p><strong>Notes:</strong></p>
 <ul>
 	<li>If you need to update the physical service, use the response to this operation as the body content for <span class="apidoc_code"><a href="m_apis_saveServiceEndpoints.htm">PUT&#160;/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/services/{ServiceID}/endpoints</a></span>, with a modified endpoint.</li>
 	<li>If you need to update the virtual service, use <span class="apidoc_code"><a href="../apis/m_apis_getAPIImplementationDeploymentSuggestions.htm">GET&#160;/api/apis/versions/{APIVersionID}/implementations/{ImplCode}/deploymentsuggestions</a></span> and then <span class="apidoc_code"><a href="../apis/m_apis_modifyAPIImplementationDeployments.htm">PUT&#160;/api/apis/versions/{APIVersionID}/implementations/{ImplCode}/deployments</a></span>.</li>
 </ul>
 <p>For more information, see <a href="../aaex/Ref_Ex_API_Modify_Endpoint.htm">Example: Modifying an API Endpoint</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/roles_user.lbi" --> Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>.<!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/Library/AuzActionREAD_API.lbi" -->Must be a user with Read authorization to view information about the API.<!-- #EndLibraryItem --></p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>: Must be <a href="../Ref_Glossary_CommunityPlatform.htm#gl_login">logged in</a>. Must be a user with Read authorization to view information about the API.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -43,7 +43,8 @@ Returns information about one or more endpoints (<a href="../Ref_Glossary_Commun
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -51,7 +52,7 @@ Returns information about one or more endpoints (<a href="../Ref_Glossary_Commun
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/{ApiVersionID}/implementations/{ImplCode}/services/{ServiceID}/endpoints</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{ApiVersionID}/implementations/{ImplCode}/services/{ServiceID}/endpoints</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -60,11 +61,11 @@ Returns information about one or more endpoints (<a href="../Ref_Glossary_Commun
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the service endpoints for a specific API version implementation.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/apis/versions/46bf4ba-3812-4233-beb6-2801a3ea7c3d.acmepaymentscorp/implementations/Live/services/{ServiceID}/endpoints</pre>
+<pre>https://{hostname}/api/apis/versions/apis/versions/46bf4ba-3812-4233-beb6-2801a3ea7c3d.acmepaymentscorp/implementations/Live/services/{ServiceID}/endpoints</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/vnd.soa.v81+json
 Cookie: {cookie}
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -84,16 +85,15 @@ Cookie: {cookie}
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -119,22 +119,22 @@ Cookie: {cookie}
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API version.</td>
 		</tr>
 		<tr>
 			<td>ImplCode</td>
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_ImplCode.lbi" --> A code for a specific implementation. Valid values: <strong>Live</strong> or <strong>Sandbox</strong>.<!-- #EndLibraryItem --></td>
+			<td>A code for a specific implementation. Valid values: <strong>Live</strong> or <strong>Sandbox</strong>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_serviceid">ServiceID</a></td>
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_ServiceID.lbi" -->
-The unique ID for a specific service; either a proxied API service or a physical service. Sometimes also called the <strong>ServiceKey</strong>. If you're not sure how to find this value, run the <span class="apidoc_code"><a href="m_apis_getAPIImplementation.htm">GET&#160;/api/apis/versions/{APIVersionID}/implementations/{ImplCode}</a></span> operation. For an explanation of where the physical and virtual service keys occur in the response, see <a href="../aaex/Ref_Ex_API_Modify_Endpoint.htm#phys_svc_id">Get the Service ID for the physical service</a>.<!-- #EndLibraryItem --></td>
+			<td>
+The unique ID for a specific service; either a proxied API service or a physical service. Sometimes also called the <strong>ServiceKey</strong>. If you're not sure how to find this value, run the <span class="apidoc_code"><a href="m_apis_getAPIImplementation.htm">GET&#160;/api/apis/versions/{APIVersionID}/implementations/{ImplCode}</a></span> operation. For an explanation of where the physical and virtual service keys occur in the response, see <a href="../aaex/Ref_Ex_API_Modify_Endpoint.htm#phys_svc_id">Get the Service ID for the physical service</a>.</td>
 		</tr>
 	</tbody>
 </table>
@@ -226,7 +226,7 @@ Date: Thu, 16 Aug 2018 20:25:46 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/vnd.soa.v81+json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -248,8 +248,8 @@ Date: Thu, 16 Aug 2018 20:25:46 GMT</pre>
 		<tr>
 			<td>Endpoints</td>
 			<td><a href="../obj/o_apis_Endpoints.htm">Endpoints</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_Endpoints.lbi" -->
-Includes information about the set of Endpoint objects containing the URL hosting the API, and the category of each. The TargetAPI can have endpoints for Live or Sandbox implementations and can also have more than one of each.<!-- #EndLibraryItem --></td>
+			<td>
+Includes information about the set of Endpoint objects containing the URL hosting the API, and the category of each. The TargetAPI can have endpoints for Live or Sandbox implementations and can also have more than one of each.</td>
 		</tr>
 	</tbody>
 </table>
@@ -270,11 +270,11 @@ Includes information about the set of Endpoint objects containing the URL hostin
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http400">400</a></td>
-			<td><!-- #BeginLibraryItem "/Library/http_400.lbi" -->Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.<!-- #EndLibraryItem -->For example, you might get this response if you left one of the placeholder values in your URL, instead of using a valid value.</td>
+			<td>Bad request: Returned if the client sends a malformed request; for example, invalid parameters or body content.For example, you might get this response if you left one of the placeholder values in your URL, instead of using a valid value.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
@@ -287,11 +287,11 @@ Includes information about the set of Endpoint objects containing the URL hostin
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -303,5 +303,10 @@ Includes information about the set of Endpoint objects containing the URL hostin
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

@@ -17,10 +17,10 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_getAPIImplementationDeploymentSuggestions.lbi" -->Returns information about suggested deployment zones for an API version (virtual service) based on the API definition and deployment zone definitions.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:<!-- #BeginLibraryItem "/Library/permission_read.lbi" -->
- Must have Read permission for the resource. <!-- #EndLibraryItem --></p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>Returns information about suggested deployment zones for an API version (virtual service) based on the API definition and deployment zone definitions.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions</strong>:
+ Must have Read permission for the resource. </p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -37,7 +37,8 @@ no-catalog: true
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div>
+<h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -45,7 +46,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/{APIVersionID}/implementations/{ImplCode}/deploymentsuggestions</pre>
+<pre class="soaapidoc_endpoint">https://{hostname}/api/apis/versions/{APIVersionID}/implementations/{ImplCode}/deploymentsuggestions</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -54,12 +55,12 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for information about eligible deployment zones for the specified API version.</p>
 <p><strong>Request URL</strong></p>
-<pre><!-- #BeginLibraryItem "/Library/_endpointbase.lbi" -->https://{hostname}/api/<!-- #EndLibraryItem -->apis/versions/8fff41fb-1dcf-4843-95d2-d96b5d41c956.acmepaymentscorp/implementations/live/deploymentsuggestions</pre>
+<pre>https://{hostname}/api/apis/versions/8fff41fb-1dcf-4843-95d2-d96b5d41c956.acmepaymentscorp/implementations/live/deploymentsuggestions</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET /api/apis/versions/8fff41fb-1dcf-4843-95d2-d96b5d41c956.acmepaymentscorp/implementations/live/deploymentsuggestions HTTP/1.1
 Host: {hostname}
 Accept: application/vnd.soa.v81+json
-<!-- #BeginLibraryItem "/Library/hdr_xcsrf.lbi" -->X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...<!-- #EndLibraryItem --></pre>
+X-Csrf-Token_rcoaless":"TokenID%3D8ed70a13-8469-11e8-b37a-b155e4eabeb8%2CexpirationTime%3D153...</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -79,16 +80,15 @@ Accept: application/vnd.soa.v81+json
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/xml</strong>, <strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.<!-- #EndLibraryItem --></td>
+			<td><a href="../aaref/Ref_CookiesOnThePlatform.htm#cookie_atmoauthtoken">AtmoAuthToken_{fedmemberid}={cookie value, which usually starts with TokenID}</a>&#8212;The platform cookie. This is the Akana API Platform authorization token, and must be sent with every API request that requires login. For more information and an example, see <a href="../aaref/Ref_CookiesOnThePlatform.htm#cookies_custom">Session cookies</a>.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#csrf_token_request">X-Csrf-Token_{fedmemberID}</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hrdval_csrf.lbi" -->The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.<!-- #EndLibraryItem --></td>
+			<td>The CSRF prevention header; may or may not be required, depending on platform settings. See <a href="../aaref/Ref_CSRFPreventionOnThePlatform.htm">CSRF Prevention on the Platform</a>. By default, the CSRF header is not required for GET operations and is required for all others, with a few exceptions relating to user login.</td>
 		</tr>
 	</tbody>
 </table>
@@ -114,22 +114,22 @@ Accept: application/vnd.soa.v81+json
 			<td>Path</td>
 			<td>String</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_APIVersionID.lbi" -->The unique ID for a specific API version.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific API version.</td>
 		</tr>
 		<tr>
 			<td>ImplCode</td>
 			<td>Path</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_ImplCode.lbi" -->
-A code for a specific implementation. Valid values: <strong>Live</strong> or <strong>Sandbox</strong>.<!-- #EndLibraryItem --></td>
+			<td>
+A code for a specific implementation. Valid values: <strong>Live</strong> or <strong>Sandbox</strong>.</td>
 		</tr>
 		<tr>
 			<td>DeploymentZoneID</td>
 			<td>Query</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_DeploymentZoneID.lbi" -->Unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.<!-- #EndLibraryItem --></td>
+			<td>Unique ID for a specific <a href="../Ref_Glossary_CommunityPlatform.htm#gl_deploymentzone">deployment zone</a>.</td>
 		</tr>
 	</tbody>
 </table>
@@ -150,97 +150,70 @@ A code for a specific implementation. Valid values: <strong>Live</strong> or <st
 <p><strong>Sample response headers: application/json</strong></p>
 <pre>Status Code: 200 OK
 Content-Type: application/vnd.soa.v81+json
-Date: Thu, 27 Apr 2017 14:56:32 GMT</pre>
+Date: Wed, 11 Nov 2020 20:35:45 GMT</pre>
 <p><strong>Sample response body: application/vnd.soa.v81+json</strong></p>
 <pre>{
-  &quot;DeploymentZonesHostingInfo&quot; : [ {
-    &quot;DeploymentZoneID&quot; : &quot;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&quot;,
-    &quot;DeploymentZoneEndpoint&quot; : [ {
-      &quot;DeploymentZoneID&quot; : &quot;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&quot;,
-      &quot;ListenerName&quot; : &quot;default-http0&quot;,
-      &quot;ContainerKey&quot; : &quot;fae3-b808-4fc6-85aa-88518e2a81d7&quot;,
-      &quot;GatewayHostName&quot; : &quot;api10063live.ubu1464qa-10.local.akana.com&quot;,
-      &quot;GatewayHostPath&quot; : &quot;&quot;,
-      &quot;EndpointHostName&quot; : &quot;api10063live.ubu1464qa-10.local.akana.com&quot;,
-      &quot;EndpointPath&quot; : &quot;/&quot;,
-      &quot;Protocol&quot; : &quot;http&quot;,
-      &quot;Path&quot; : &quot;&quot;,
-      &quot;Url&quot; : &quot;http://api10063live.ubu1464qa-10.local.akana.com:7905&quot;
-    }, {
-      &quot;DeploymentZoneID&quot; : &quot;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&quot;,
-      &quot;ListenerName&quot; : &quot;https&quot;,
-      &quot;ContainerKey&quot; : &quot;fae3-b808-4fc6-85aa-88518e2a81d7&quot;,
-      &quot;GatewayHostName&quot; : &quot;api10063live.ubu1464qa-10.local.akana.com&quot;,
-      &quot;GatewayHostPath&quot; : &quot;&quot;,
-      &quot;EndpointHostName&quot; : &quot;api10063live.ubu1464qa-10.local.akana.com&quot;,
-      &quot;EndpointPath&quot; : &quot;/&quot;,
-      &quot;Protocol&quot; : &quot;https&quot;,
-      &quot;Path&quot; : &quot;&quot;,
-      &quot;Url&quot; : &quot;https://api10063live.ubu1464qa-10.local.akana.com:7908&quot;
-    }, {
-      &quot;DeploymentZoneID&quot; : &quot;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&quot;,
-      &quot;ListenerName&quot; : &quot;http2&quot;,
-      &quot;ContainerKey&quot; : &quot;fae3-b808-4fc6-85aa-88518e2a81d7&quot;,
-      &quot;GatewayHostName&quot; : &quot;api10063live.ubu1464qa-10.local.akana.com&quot;,
-      &quot;GatewayHostPath&quot; : &quot;&quot;,
-      &quot;EndpointHostName&quot; : &quot;api10063live.ubu1464qa-10.local.akana.com&quot;,
-      &quot;EndpointPath&quot; : &quot;/&quot;,
-      &quot;Protocol&quot; : &quot;http&quot;,
-      &quot;Path&quot; : &quot;&quot;,
-      &quot;Url&quot; : &quot;http://api10063live.ubu1464qa-10.local.akana.com:7906&quot;
-    } ]
-  } ]
+  "DeploymentZonesHostingInfo":[
+    {
+      "DeploymentZoneID":"1c64704a-03cd-46c4-ba07-3786f8f82a8c.acmepaymentscorp",
+      "DeploymentZoneEndpoint":[
+        {
+          "DeploymentZoneID":"1c64704a-03cd-46c4-ba07-3786f8f82a8c.acmepaymentscorp",
+          "ListenerName":"default-http0",
+          "ContainerKey":"9d5d-ffd4-4e6a-9334-bd850387eed9",
+          "GatewayHostName":"10.250.24.9",
+          "GatewayHostPath":"",
+          "EndpointHostName":"10.250.24.9",
+          "EndpointPath":"/api17135live",
+          "Protocol":"http",
+          "Path":"/api17135live",
+          "Url":"http://10.250.24.9:7905/api17135live"
+        },
+        {
+          "DeploymentZoneID":"1c64704a-03cd-46c4-ba07-3786f8f82a8c.acmepaymentscorp",
+          "ListenerName":"default-https",
+          "ContainerKey":"9d5d-ffd4-4e6a-9334-bd850387eed9",
+          "GatewayHostName":"akana-qa-2.aws.akana.roguewave.com",
+          "GatewayHostPath":"",
+          "EndpointHostName":"akana-qa-2.aws.akana.roguewave.com",
+          "EndpointPath":"/api17135live",
+          "Protocol":"https",
+          "Path":"/api17135live",
+          "Url":"https://akana-qa-2.aws.akana.roguewave.com:9443/api17135live"
+        }
+      ]
+    },
+    {
+      "DeploymentZoneID":"62bcbae7-e212-43cf-93b2-b03935eca52e.acmepaymentscorp",
+      "DeploymentZoneEndpoint":[
+        {
+          "DeploymentZoneID":"62bcbae7-e212-43cf-93b2-b03935eca52e.acmepaymentscorp",
+          "ListenerName":"default-http0",
+          "ContainerKey":"9d5d-ffd4-4e6a-9334-bd850387eed9",
+          "GatewayHostName":"acmepaymentscorp.akana.roguewave.com",
+          "GatewayHostPath":"",
+          "EndpointHostName":"acmepaymentscorp.akana.roguewave.com",
+          "EndpointPath":"/api17135live",
+          "Protocol":"http",
+          "Path":"",
+          "Url":"http://acmepaymentscorp.akana.roguewave.com:7905"
+        },
+        {
+          "DeploymentZoneID":"62bcbae7-e212-43cf-93b2-b03935eca52e.acmepaymentscorp",
+          "ListenerName":"default-https",
+          "ContainerKey":"9d5d-ffd4-4e6a-9334-bd850387eed9",
+          "GatewayHostName":"acmepaymentscorp.akana.roguewave.com",
+          "GatewayHostPath":"",
+          "EndpointHostName":"acmepaymentscorp.akana.roguewave.com",
+          "EndpointPath":"/api17135live",
+          "Protocol":"https",
+          "Path":"",
+          "Url":"https://acmepaymentscorp.akana.roguewave.com:9443"
+        }
+      ]
+    }
+  ]
 }</pre>
-
-<p><strong>Sample response headers: application/vnd.soa.v81+xml</strong></p>
-<pre>Status Code: 200 OK
-Content-Type: application/vnd.soa.v81+xml
-Date: Thu, 27 Apr 2017 14:59:51 GMT</pre>
-<p><strong>Sample response body: application/vnd.soa.v81+xml</strong></p>
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
-&lt;ns7:APIImplementationDeployments xmlns:ns2=&quot;http://soa.com/xsd/resource/1.0&quot; xmlns:ns3=&quot;http://soa.com/xsd/business/1.0&quot; 
-xmlns:ns4=&quot;http://soa.com/xsd/deploymentzone/1.0&quot; xmlns:ns5=&quot;http://soa.com/xsd/asset/1.0&quot; xmlns:ns6=&quot;http://soa.com/xsd/dnmodel/1.0&quot; 
-xmlns:ns7=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns8=&quot;http://soa.com/xsd/legals/1.0&quot;&gt;
-  &lt;ns7:DeploymentZonesHostingInfo&gt;
-    &lt;ns4:DeploymentZoneID&gt;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&lt;/ns4:DeploymentZoneID&gt;
-    &lt;ns7:DeploymentZoneEndpoint&gt;
-      &lt;ns4:DeploymentZoneID&gt;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&lt;/ns4:DeploymentZoneID&gt;
-      &lt;ns7:ListenerName&gt;default-http0&lt;/ns7:ListenerName&gt;
-      &lt;ns7:ContainerKey&gt;fae3-b808-4fc6-85aa-88518e2a81d7&lt;/ns7:ContainerKey&gt;
-      &lt;ns7:GatewayHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:GatewayHostName&gt;
-      &lt;ns7:GatewayHostPath&gt;&lt;/ns7:GatewayHostPath&gt;
-      &lt;ns7:EndpointHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:EndpointHostName&gt;
-      &lt;ns7:EndpointPath&gt;/&lt;/ns7:EndpointPath&gt;
-      &lt;ns7:Protocol&gt;http&lt;/ns7:Protocol&gt;
-      &lt;ns7:Path&gt;&lt;/ns7:Path&gt;
-      &lt;ns7:Url&gt;http://api10063live.ubu1464qa-10.local.akana.com:7905&lt;/ns7:Url&gt;
-    &lt;/ns7:DeploymentZoneEndpoint&gt;
-    &lt;ns7:DeploymentZoneEndpoint&gt;
-      &lt;ns4:DeploymentZoneID&gt;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&lt;/ns4:DeploymentZoneID&gt;
-      &lt;ns7:ListenerName&gt;https&lt;/ns7:ListenerName&gt;
-      &lt;ns7:ContainerKey&gt;fae3-b808-4fc6-85aa-88518e2a81d7&lt;/ns7:ContainerKey&gt;
-      &lt;ns7:GatewayHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:GatewayHostName&gt;
-      &lt;ns7:GatewayHostPath&gt;&lt;/ns7:GatewayHostPath&gt;
-      &lt;ns7:EndpointHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:EndpointHostName&gt;
-      &lt;ns7:EndpointPath&gt;/&lt;/ns7:EndpointPath&gt;
-      &lt;ns7:Protocol&gt;https&lt;/ns7:Protocol&gt;
-      &lt;ns7:Path&gt;&lt;/ns7:Path&gt;
-      &lt;ns7:Url&gt;https://api10063live.ubu1464qa-10.local.akana.com:7908&lt;/ns7:Url&gt;
-    &lt;/ns7:DeploymentZoneEndpoint&gt;
-    &lt;ns7:DeploymentZoneEndpoint&gt;
-      &lt;ns4:DeploymentZoneID&gt;9561a62d-cf13-47de-b746-a1306796cc00.acmepaymentscorp&lt;/ns4:DeploymentZoneID&gt;
-      &lt;ns7:ListenerName&gt;http2&lt;/ns7:ListenerName&gt;
-      &lt;ns7:ContainerKey&gt;fae3-b808-4fc6-85aa-88518e2a81d7&lt;/ns7:ContainerKey&gt;
-      &lt;ns7:GatewayHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:GatewayHostName&gt;
-      &lt;ns7:GatewayHostPath&gt;&lt;/ns7:GatewayHostPath&gt;
-      &lt;ns7:EndpointHostName&gt;api10063live.ubu1464qa-10.local.akana.com&lt;/ns7:EndpointHostName&gt;
-      &lt;ns7:EndpointPath&gt;/&lt;/ns7:EndpointPath&gt;
-      &lt;ns7:Protocol&gt;http&lt;/ns7:Protocol&gt;
-      &lt;ns7:Path&gt;&lt;/ns7:Path&gt;
-      &lt;ns7:Url&gt;http://api10063live.ubu1464qa-10.local.akana.com:7906&lt;/ns7:Url&gt;
-    &lt;/ns7:DeploymentZoneEndpoint&gt;
-  &lt;/ns7:DeploymentZonesHostingInfo&gt;
-&lt;/ns7:APIImplementationDeployments&gt;</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -258,7 +231,7 @@ xmlns:ns7=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns8=&quot;http://soa.com/
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml_81.lbi" --><strong>application/vnd.soa.v81+xml</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong>, <strong>application/xml</strong>, <strong>application/vnd.soa.v81+json</strong>, <strong>application/vnd.soa.v81+xml</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -280,7 +253,7 @@ xmlns:ns7=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns8=&quot;http://soa.com/
 		<tr>
 			<td>APIImplementationDeployments</td>
 			<td><a href="../obj/o_apis_APIImplementationDeployments.htm">APIImplementationDeployments</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_APIImplementationDeployments.lbi" -->Contains information about the deployment zones associated with a specific API version implementation, or that a specific API version implementation is eligible for based on the API version definition and deployment zone definitions.<!-- #EndLibraryItem --></td>
+			<td>Contains information about the deployment zones associated with a specific API version implementation, or that a specific API version implementation is eligible for based on the API version definition and deployment zone definitions.</td>
 		</tr>
 	</tbody>
 </table>
@@ -301,7 +274,7 @@ xmlns:ns7=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns8=&quot;http://soa.com/
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-			<td><!-- #BeginLibraryItem "/Library/401_CSRF.lbi" -->Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.<!-- #EndLibraryItem --></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the custom <a href="../Ref_Glossary_CommunityPlatform.htm#gl_xcsrf_token_fedmemberid">X-Csrf-Token_{fedmemberID}</a> header in the request, when it was required by the platform settings; or if you included an invalid or expired value for this header. You would also get this response for any operation that requires login (almost all) if the login cookie was missing.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
@@ -310,11 +283,11 @@ xmlns:ns7=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns8=&quot;http://soa.com/
 	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana API Platform API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -326,5 +299,10 @@ xmlns:ns7=&quot;http://soa.com/xsd/api/1.0&quot; xmlns:ns8=&quot;http://soa.com/
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

@@ -13,7 +13,7 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">ApplicationVersion Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_apps_ApplicationVersion.lbi" -->Contains information about a version of an app.<!-- #EndLibraryItem --></p>
+<p>Contains information about a version of an app.</p>
 <p>For example, this object is returned by the <span class="apidoc_code"><a href="../apps/m_apps_getVersion.htm">GET&#160;/api/apps/versions/{AppVersionID}</a></span> method.</p>
 
 <p class="usedby">This object is used by the following operations:</p>
@@ -38,22 +38,22 @@ no-catalog: true
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_runtimeid">RuntimeID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_RuntimeID_AppVersionID.lbi" --> Although this field is labeled <a href="../aaref/Ref_IDsOnThePlatform.htm#id_runtimeid">RuntimeID</a> it is actually the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a>; the unique ID for the specific app version.<!-- #EndLibraryItem --></td>
+			<td> Although this field is labeled <a href="../aaref/Ref_IDsOnThePlatform.htm#id_runtimeid">RuntimeID</a> it is actually the <a href="../aaref/Ref_IDsOnThePlatform.htm#id_appversionid">AppVersionID</a>; the unique ID for the specific app version.</td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_IDsOnThePlatform.htm#id_appid">AppID</a></td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_ID_AppID.lbi" -->The unique ID for a specific app.<!-- #EndLibraryItem --></td>
+			<td>The unique ID for a specific app.</td>
 		</tr>
 		<tr>
 			<td>Name</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apps_Name.lbi" --> The display name of the app version; for example, 1.0.<!-- #EndLibraryItem --> Required when adding or modifying an app version. When adding an app version, <strong>Name</strong> is the minimum input required. AppID is also required&#160;information, but is part of the URL so is not required in the request object.</td>
+			<td> The display name of the app version; for example, 1.0. Required when adding or modifying an app version. When adding an app version, <strong>Name</strong> is the minimum input required. AppID is also required&#160;information, but is part of the URL so is not required in the request object.</td>
 		</tr>
 		<tr>
 			<td>Description</td>
 			<td>string</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_apps_Description.lbi" -->Text description of the app.<!-- #EndLibraryItem --></p>
+			<td><p>Text description of the app.</p>
 				<p>Optional.</p></td>
 		</tr>
 		<tr>
@@ -64,64 +64,64 @@ no-catalog: true
 		<tr>
 			<td>Visibility</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Visibility_all.lbi" --> The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.<!-- #EndLibraryItem -->				<p>Required when adding an app version.</p></td>
+			<td> The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_visibility">visibility</a> setting for this resource. For a list of valid values, see <a href="../aaref/Ref_Values.htm#values_visibilitysettings">Visibility Settings</a>.				<p>Required when adding an app version.</p></td>
 		</tr>
 		<tr>
 			<td>InitialEnvironment</td>
 			<td>string</td>
-			<td><p><!-- #BeginLibraryItem "/Library/o_apps_InitialEnvironment.lbi" -->The initial environment for the app (normally Sandbox).<!-- #EndLibraryItem --></p>
+			<td><p>The initial environment for the app (normally Sandbox).</p>
 				<p>Required when adding or modifying an app version.</p></td>
 		</tr>
 		<tr>
 			<td>CurrentEnvironment</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apps_CurrentEnvironment.lbi" -->The current environment for the app (Sandbox or Production).<!-- #EndLibraryItem --></td>
+			<td>The current environment for the app (Sandbox or Production).</td>
 		</tr>
 		<tr>
 			<td>Tag</td>
 			<td>string[&#160;]</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apps_Tag.lbi" --> One or more user-defined tags for the app version.<!-- #EndLibraryItem --></td>
+			<td> One or more user-defined tags for the app version.</td>
 		</tr>
 		<tr>
 			<td>HasKeyInfo</td>
 			<td>boolean</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apps_HasKeyInfo.lbi" -->
-        Indicates whether or not the app has a security key certificate loaded (<strong>true</strong> or <strong>false</strong>).<!-- #EndLibraryItem --></td>
+			<td>
+        Indicates whether or not the app has a security key certificate loaded (<strong>true</strong> or <strong>false</strong>).</td>
 		</tr>
 		<tr>
 			<td>Created</td>
 			<td>dateTime</td>
-			<td><!-- #BeginLibraryItem "/Library/o_Created.lbi" -->
-        The date/time stamp when the resource was first created. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>
+        The date/time stamp when the resource was first created. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>Updated</td>
 			<td>dateTime</td>
-			<td><!-- #BeginLibraryItem "/Library/o_Updated.lbi" -->
-        The date/time stamp when the resource was last updated. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>
+        The date/time stamp when the resource was last updated. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>State</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apps_State.lbi" -->
-The current <a href="../Ref_Glossary_CommunityPlatform.htm#gl_state">state</a> of the app. For valid values, see <a href="../aaref/Ref_Values.htm#values_appstate">App State Values</a>.<!-- #EndLibraryItem --></td>
+			<td>
+The current <a href="../Ref_Glossary_CommunityPlatform.htm#gl_state">state</a> of the app. For valid values, see <a href="../aaref/Ref_Values.htm#values_appstate">App State Values</a>.</td>
 		</tr>
 		<tr>
 			<td>SecurityMechanisms</td>
 			<td>string[&#160;]</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apps_SecurityMechanisms.lbi" -->
-        One or more security mechanisms being used by the app version. For more information, see <a href="../aaref/Ref_Values.htm#values_appsecuritymechanisms">App Security Mechanisms</a>.<!-- #EndLibraryItem --></td>
+			<td>
+        One or more security mechanisms being used by the app version. For more information, see <a href="../aaref/Ref_Values.htm#values_appsecuritymechanisms">App Security Mechanisms</a>.</td>
 		</tr>
 		<tr>
 			<td>RatingSummary</td>
 			<td><a href="o_res_RatingSummary.htm">RatingSummary</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_RatingSummary.lbi" --> An aggregated, averaged summary of individual user ratings for the resource, including the current ratings count for each possible value (1, 2, 3, 4, or 5). Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td> An aggregated, averaged summary of individual user ratings for the resource, including the current ratings count for each possible value (1, 2, 3, 4, or 5). Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>Identity</td>
 			<td>string</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_Identity_app.lbi" -->
-When adding an app version, you can specify a custom identity name for the app version (Runtime Identity). If no custom value is specified, in response messages this property defaults to the reverse of the AppVersionID, with a dash. For example, if the AppVersionID is <strong>6CYql2jSyfK9vaGZrvNkb7Am.acmepaymentscorp</strong>, the value for the Identity property will be <strong>acmepaymentscorp-6CYql2jSyfK9vaGZrvNkb7Am</strong>.<!-- #EndLibraryItem --></td>
+			<td>
+When adding an app version, you can specify a custom identity name for the app version (Runtime Identity). If no custom value is specified, in response messages this property defaults to the reverse of the AppVersionID, with a dash. For example, if the AppVersionID is <strong>6CYql2jSyfK9vaGZrvNkb7Am.acmepaymentscorp</strong>, the value for the Identity property will be <strong>acmepaymentscorp-6CYql2jSyfK9vaGZrvNkb7Am</strong>.</td>
 		</tr>
 		<tr>
 			<td>SharedSecret</td>
@@ -138,31 +138,31 @@ When adding an app version, you can specify a custom identity name for the app v
 		<tr>
 			<td>AppVersionSettings</td>
 			<td><a href="o_apps_AppVersionSettings.htm">AppVersionSettings</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_apps_AppVersionSettings.lbi" -->Contains information about the settings for an app version.<!-- #EndLibraryItem --></td>
+			<td>Contains information about the settings for an app version.</td>
 		</tr>
 		<tr>
 			<td>TargetResources</td>
 			<td><a href="o_dn_model_TargetResources.htm">TargetResources</a></td>
-			<td><!-- #BeginLibraryItem "/Library/o_dn_model_TargetResources.lbi" -->Contains information about one or more resources associated with the current resource. Used only in response messages.<!-- #EndLibraryItem --></td>
+			<td>Contains information about one or more resources associated with the current resource. Used only in response messages.</td>
 		</tr>
 		<tr>
 			<td>classifiers</td>
 			<td>classifiers</td>
-			<td><!-- #BeginLibraryItem "/Library/o_classifiers.lbi" --><p>Applicable with Lifecycle Repository integration only. Contains a property name and an array of one or more values for the property. For an example, see <span class="apidoc_code"><a href="../users/m_users_completeSignUpAdvanced.htm#samplerequest">POST&#160;/api/users/completeSignup</a></span>.</p>
-<p>The user interface shows custom properties as a single concept, but on the API, app, or user they exist as classifiers and artifacts. The artifacts have URLs ("<strong>by-ref</strong>" artifacts). Classifiers and artifacts are only applicable if the Repository Extension is enabled and custom properties configured.</p><!-- #EndLibraryItem --></td>
+			<td><p>Applicable with Lifecycle Repository integration only. Contains a property name and an array of one or more values for the property. For an example, see <span class="apidoc_code"><a href="../users/m_users_completeSignUpAdvanced.htm#samplerequest">POST&#160;/api/users/completeSignup</a></span>.</p>
+<p>The user interface shows custom properties as a single concept, but on the API, app, or user they exist as classifiers and artifacts. The artifacts have URLs ("<strong>by-ref</strong>" artifacts). Classifiers and artifacts are only applicable if the Repository Extension is enabled and custom properties configured.</p></td>
 		</tr>
 		<tr>
 			<td>artifacts</td>
 			<td>artifacts</td>
-			<td><!-- #BeginLibraryItem "/Library/o_artifacts.lbi" --><p>Applicable with Lifecycle Repository integration only. Contains entries with an artifact name and value. The value is always a URL. For an example, see <span class="apidoc_code"><a href="../users/m_users_completeSignUpAdvanced.htm#samplerequest">POST&#160;/api/users/completeSignup</a></span>.</p>
-<p>The user interface shows custom properties as a single concept, but on the API, app, or user they exist as classifiers and artifacts. The artifacts have URLs ("<strong>by-ref</strong>" artifacts). Classifiers and artifacts are only applicable if the Repository Extension is enabled and custom properties configured.</p><!-- #EndLibraryItem --></td>
+			<td><p>Applicable with Lifecycle Repository integration only. Contains entries with an artifact name and value. The value is always a URL. For an example, see <span class="apidoc_code"><a href="../users/m_users_completeSignUpAdvanced.htm#samplerequest">POST&#160;/api/users/completeSignup</a></span>.</p>
+<p>The user interface shows custom properties as a single concept, but on the API, app, or user they exist as classifiers and artifacts. The artifacts have URLs ("<strong>by-ref</strong>" artifacts). Classifiers and artifacts are only applicable if the Repository Extension is enabled and custom properties configured.</p></td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -174,5 +174,10 @@ When adding an app version, you can specify a custom identity name for the app v
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

@@ -13,12 +13,13 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">Operation Object</h1>
-<p><!-- #BeginLibraryItem "/Library/o_apis_Operation.lbi" -->Includes information about an operation supported by an API.<!-- #EndLibraryItem --></p>
+<p>Includes information about an operation supported by an API.</p>
 
 <p class="usedby">This object is used by the following operations:</p>
 <ul>
 	<li>Operations that reference the <a href="o_apis_Operations.htm">Operations</a> object</li>
 	<li>Operations that reference the <a href="o_apis_APIVisibilityScope.htm">APIVisibilityScope</a> object</li>
+	<li>Operations that reference the <a href="o_apis_ApiOperationPolicy.htm">ApiOperationPolicy</a> object (in 2020.2.0 and later)</li>
 </ul>
 
 <p>The properties included in the <strong>Operation</strong> object are listed below.</p>
@@ -56,28 +57,28 @@ no-catalog: true
 			<td>InputContentType</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_InputContentType.lbi" -->
-The content type (MIME type) valid for request messages for this operation. Multiple media types are comma-separated.<!-- #EndLibraryItem --></td>
+			<td>
+The content type (MIME type) valid for request messages for this operation. Multiple media types are comma-separated.</td>
 		</tr>
 		<tr>
 			<td>OutputContentType</td>
 			<td>string</td>
 			<td>Required</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_OutputContentType.lbi" -->
-The content type (MIME type) valid for response messages for this operation. Multiple media types are comma-separated.<!-- #EndLibraryItem --></td>
+			<td>
+The content type (MIME type) valid for response messages for this operation. Multiple media types are comma-separated.</td>
 		</tr>
 		<tr>
 			<td>FaultContentType</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_FaultContentType.lbi" -->
-The content type (MIME type) valid for fault response messages for this operation. Multiple media types are comma-separated.<!-- #EndLibraryItem --></td>
+			<td>
+The content type (MIME type) valid for fault response messages for this operation. Multiple media types are comma-separated.</td>
 		</tr>
 		<tr>
 			<td>Input</td>
 			<td><a href="../obj/o_apis_Input.htm">Input</a>[&#160;]</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_Input.lbi" -->Information about one or more valid input parameters for the operation, expressed as an array.<!-- #EndLibraryItem --></td>
+			<td>Information about one or more valid input parameters for the operation, expressed as an array.</td>
 		</tr>
 		<tr>
 			<td>OperationKey</td>
@@ -89,33 +90,33 @@ The content type (MIME type) valid for fault response messages for this operatio
 			<td>OAuthDetails</td>
 			<td><a href="o_apis_OperationOAuthDetails.htm">OperationOAuthDetails</a></td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_OperationOAuthDetails.lbi" --> Includes information about OAuth details applicable to a specific operation.<!-- #EndLibraryItem --></td>
+			<td> Includes information about OAuth details applicable to a specific operation.</td>
 		</tr>
 		<tr>
 			<td>OperationResourceDetails</td>
 			<td><a href="o_apis_OperationResourceDetails.htm">OperationResourceDetails</a></td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/o_apis_OperationResourceDetails.lbi" --> Contains details about operations associated with an API version and the scopes assigned to them, if operation-specific scope mapping is in use for the API version.<!-- #EndLibraryItem --></td>
+			<td> Contains details about operations associated with an API version and the scopes assigned to them, if operation-specific scope mapping is in use for the API version.</td>
 		</tr>
 		<tr>
 			<td>InterfaceQName</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_InterfaceQName.lbi" -->
-The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_qname">QName</a> for the API interface; a unique ID, for internal use only.<!-- #EndLibraryItem --></td>
+			<td>
+The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_qname">QName</a> for the API interface; a unique ID, for internal use only.</td>
 		</tr>
 		<tr>
 			<td>WsdlOperationName</td>
 			<td>string</td>
 			<td>Optional</td>
-			<td><!-- #BeginLibraryItem "/Library/parm_WsdlOperationName.lbi" -->The name of the operation as it is represented in the WSDL.<!-- #EndLibraryItem --></td>
+			<td>The name of the operation as it is represented in the WSDL.</td>
 		</tr>
 	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
@@ -127,5 +128,10 @@ The <a href="../Ref_Glossary_CommunityPlatform.htm#gl_qname">QName</a> for the A
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_API_Reference.htm">Akana API Platform API: Reference Material</a></li>
 	<li><a href="../aaex/Ref_Ex_Overview.htm">Examples: Overview</a></li>
-</ul> 
-</div><!-- #EndLibraryItem --></div>
+</ul>
+</div>
+
+
+
+
+</div>

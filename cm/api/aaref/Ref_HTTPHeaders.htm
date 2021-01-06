@@ -19,12 +19,12 @@ no-catalog: true
 	<li><a href="#ref_httpresponseheaders">HTTP Response Headers</a></li>
 </ul>
 <h2 id="ref_httprequestheaders">HTTP Request Headers</h2>
-<p>The&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API uses the HTTP request headers shown in the table below.<!-- For general information about each header field, refer to the applicable glossary entries.--> The significant headers are:</p>
+<p>The Akana API Platform API uses the HTTP request headers shown in the table below.<!-- For general information about each header field, refer to the applicable glossary entries.--> The significant headers are:</p>
 <ul>
 	<li><a href="#acceptheader">Accept</a></li>
 	<li>For operations other than GET, <a href="#contenttype_request">Content-Type</a></li>
 	<li><a href="#host_request">Host</a></li>
-	<li>Cookie (certain cookies, see <a href="Ref_CookiesOnThePlatform.htm">Cookies in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --></a>)</li>
+	<li>Cookie (certain cookies, see <a href="Ref_CookiesOnThePlatform.htm">Cookies in the Akana API Platform</a>)</li>
 </ul>
 <table class="tableparmsresponse">
 	<thead>
@@ -38,8 +38,8 @@ no-catalog: true
 		<tr>
 			<td><a id="acceptheader"></a>Accept</td>
 			<td>Request Only</td>
-			<td><p><!-- #BeginLibraryItem "/Library/hdrreq_accept.lbi" -->
-Lists one or more data formats that are valid in the response. For example,<strong> application/json or text/xml</strong>. It's a good idea to list only the required format, or at least include it as the first on the list.<!-- #EndLibraryItem --></p>
+			<td><p>
+Lists one or more data formats that are valid in the response. For example, <strong>application/json or text/xml</strong>. It's a good idea to list only the required format, or at least include it as the first on the list.</p>
 				<p>For information on valid values, see <a href="Ref_MediaTypes.htm">Media Types</a>.</p>
 				<p><strong>Note</strong>: In many cases, an operation works even if you don't specify an Accept header, since a missing Accept header implies a value of */*. In this case, the operation returns the media type that was defined as the default for that operation.</p>
 				<p>The API Platform API uses the Accept header media type to determine which version of the API response the client is expecting. For this reason, it's important to include the specific Accept header so that the response message is compatible to the API version that the client is tested with, even if the platform is upgraded to a new version.</p>
@@ -53,7 +53,7 @@ Lists one or more data formats that are valid in the response. For example,<stro
 		<tr>
 			<td>Accept-Language</td>
 			<td>Request Only</td>
-			<td>Lists one or more languages that are valid for the response. <strong>en-us</strong> is preferred, <strong>en</strong> is valid. For example:<strong> en-us,en;q=0.5</strong></td>
+			<td>Lists one or more languages that are valid for the response. <strong>en-us</strong> is preferred, <strong>en</strong> is valid. For example: <strong>en-us,en;q=0.5</strong></td>
 		</tr>
 
 		<tr>
@@ -64,13 +64,13 @@ Lists one or more data formats that are valid in the response. For example,<stro
 		<tr>
 			<td>Cache-Control</td>
 			<td>Both</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrboth_cache-control.lbi" -->
-Used in both request and response to specify whether the message can be cached between the client and the server.&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).<!-- #EndLibraryItem --></td>
+			<td>
+Used in both request and response to specify whether the message can be cached between the client and the server. Akana API Platform operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).</td>
 		</tr>
 		<tr>
 			<td>Connection</td>
 			<td>Request Only</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrreq_connection.lbi" -->Instructs the server what to do with the connection once the request is received. The <strong>keep-alive</strong> value for this header means that the connection is kept open for the response.<!-- #EndLibraryItem --></td>
+			<td>Instructs the server what to do with the connection once the request is received. The <strong>keep-alive</strong> value for this header means that the connection is kept open for the response.</td>
 		</tr>
 		<tr>
 			<td>Content-Length</td>
@@ -80,27 +80,27 @@ Used in both request and response to specify whether the message can be cached b
 		<tr>
 			<td><a id="contenttype_request"></a>Content-Type</td>
 			<td>Both</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrreq_content-type.lbi" -->
+			<td>
 <p>Specifies the media type of a request or response message body.</p>
-<p>For request messages, content-type is used for POST&#160;and PUT&#160;but not for GET&#160;or DELETE. Most&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;operations that use this header use <strong>application/json</strong> in the request message. Methods involving file upload use <strong>multipart/form-data</strong>. Methods with POST&#160;parameters might use <strong>application/x-www-form-urlencoded</strong>; for example, the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&#160;/api/login/renewToken</a></span> operation.</p><!-- #EndLibraryItem --><p>For information on valid values, see <a href="Ref_MediaTypes.htm">Media Types</a>.</p></td>
+<p>For request messages, content-type is used for POST&#160;and PUT&#160;but not for GET&#160;or DELETE. Most Akana API Platform operations that use this header use <strong>application/json</strong> in the request message. Methods involving file upload use <strong>multipart/form-data</strong>. Methods with POST&#160;parameters might use <strong>application/x-www-form-urlencoded</strong>; for example, the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&#160;/api/login/renewToken</a></span> operation.</p><p>For information on valid values, see <a href="Ref_MediaTypes.htm">Media Types</a>.</p></td>
 		</tr>
 		<tr>
 			<td>Cookie</td>
 			<td>Request Only</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrreq_cookie.lbi" -->
-An extension header used for client identification and tracking. In the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API the cookie parameter contains the session ID.<!-- #EndLibraryItem -->For more information, see <a href="Ref_CookiesOnThePlatform.htm">Cookies in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem --></a>.</td>
+			<td>
+An extension header used for client identification and tracking. In the Akana API Platform API the cookie parameter contains the session ID.For more information, see <a href="Ref_CookiesOnThePlatform.htm">Cookies in the Akana API Platform</a>.</td>
 		</tr>
 		<tr>
 			<td><a id="host_request"></a>Host</td>
 			<td>Request Only</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrreq_host.lbi" -->
-The hostname and port number of the machine sending the message. Example: <strong>api.acmepaymentscorp.com.</strong><!-- #EndLibraryItem --></td>
+			<td>
+The hostname and port number of the machine sending the message. Example: <strong>api.acmepaymentscorp.com.</strong></td>
 		</tr>
 		<tr>
 			<td>Referer</td>
 			<td>Request Only</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrreq_referer.lbi" -->
-The URL from which the request originated. Example: <strong>https://api.acmepaymentscorp.com</strong>.<!-- #EndLibraryItem --></td>
+			<td>
+The URL from which the request originated. Example: <strong>https://api.acmepaymentscorp.com</strong>.</td>
 		</tr>
 		<tr>
 			<td>User-Agent</td>
@@ -110,7 +110,7 @@ The URL from which the request originated. Example: <strong>https://api.acmepaym
 		<tr>
 			<td>X-Requested-With</td>
 			<td>Request Only</td>
-			<td>An extension header used to identify Ajax requests. Wherever the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API uses this header, the value is <strong>XMLHttpRequest</strong>.</td>
+			<td>An extension header used to identify Ajax requests. Wherever the Akana API Platform API uses this header, the value is <strong>XMLHttpRequest</strong>.</td>
 		</tr>
 		<tr>
 			<td><a id="csrf_token_request"></a>X-Csrf-Token_{<a href="Ref_IDsOnThePlatform.htm#id_fedmemberid">fedmemberid</a>}</td>
@@ -125,7 +125,7 @@ The URL from which the request originated. Example: <strong>https://api.acmepaym
 
 
 <h2 id="ref_httpresponseheaders">HTTP Response Headers</h2>
-<p>The&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API uses the HTTP response headers shown in the table below.<!-- For general information about each header field, refer to the applicable glossary entries.--> The significant headers are:</p>
+<p>The Akana API Platform API uses the HTTP response headers shown in the table below.<!-- For general information about each header field, refer to the applicable glossary entries.--> The significant headers are:</p>
 <ul>
 	<li>Content-Type</li>
 	<li>For the specific operations that require it, Atmo-Renew-Token</li>
@@ -147,21 +147,25 @@ The URL from which the request originated. Example: <strong>https://api.acmepaym
 		<tr>
 			<td><a id="atmorenewtoken"></a>Atmo-Renew-Token</td>
 			<td>Response only</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrrsp_atmo-renew-token.lbi" -->
-<strong>renew</strong>. This is a custom response header used when the action of the method causes a change in a value  that's stored in the token. The token includes information on the user's apps, APIs, and groups, so actions such as adding an app or accepting an invitation to join an app team require update of the token. A value of <strong>renew</strong> means that the operation has changed some information that's stored in the token, and you must therefore renew the token using the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&#160;/api/login/renewToken</a></span> operation.<!-- #EndLibraryItem --></td>
+			<td><p>A custom response header used when an action, by the current user or another user, causes a change in a value that's stored in the token. The token includes information on the user's permissions to apps, APIs, and groups, so actions such as adding an app or accepting an invitation to join an app team require update of the token.</p>
+			<p>Two possible values:</p>				<ul>
+				<li>
+A value of <strong>renew</strong> indicates that the operation has changed some information that's stored in the token, and you must therefore renew the token using the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&#160;/api/login/renewToken</a></span> operation.<p>This is the more common value for the Atmo-Renew-Token.</p></li>
+				<li><strong>force-renew</strong>. Indicates that an action has been taken by another user, which should force a change in the current user's permissions as represented in the token. For example, if the current user is an API Admin for a private API, and another user removes that role, the next action that the current user takes that might require permissions returns the Atmo-Renew-Token with a value of <strong>force-renew</strong>, and the token must then be renewed. You can renew the token using the <span class="apidoc_code"><a href="../login/m_login_renewToken.htm">POST&#160;/api/login/renewToken</a></span> operation.</li>
+			</ul>				</td>
 		</tr>
 
 		<tr>
 			<td><a id="cachecontrol"></a>Cache-Control</td>
 			<td>Both</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrboth_cache-control.lbi" -->
-Used in both request and response to specify whether the message can be cached between the client and the server.&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).<!-- #EndLibraryItem --></td>
+			<td>
+Used in both request and response to specify whether the message can be cached between the client and the server. Akana API Platform operations generally do not cache responses, so the value is generally <strong>no-cache</strong>. In some instances, such as with avatars and content, it is more efficient to cache the information. In these cases, we set a value in the Cache-Control response header. For example: <strong>Cache-Control: public, max-age=604800</strong>. This sets the content to be cached for 604800 seconds (one week).</td>
 		</tr>
 		<tr>
 			<td>Content-Encoding</td>
 			<td>Response only</td>
-			<td><!-- #BeginLibraryItem "/Library/hrdrsp_content-encoding.lbi" -->
-Indicates the type of compression encoding the server used for the response message, so that the client can decode the message. This is the counterpart to the <strong>Accept-Encoding</strong> request header which specifies which types of compression are acceptable in the response. Example: <strong>gzip</strong>. The&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API always returns a gzip-encoded response if the request header indicates that gzip encoding is accepted for responses.<!-- #EndLibraryItem --></td>
+			<td>
+Indicates the type of compression encoding the server used for the response message, so that the client can decode the message. This is the counterpart to the <strong>Accept-Encoding</strong> request header which specifies which types of compression are acceptable in the response. Example: <strong>gzip</strong>. The Akana API Platform API always returns a gzip-encoded response if the request header indicates that gzip encoding is accepted for responses.</td>
 		</tr>
 		<tr>
 			<td><a id="contentdisposition_response"></a>Content-Disposition</td>
@@ -174,8 +178,8 @@ Indicates the type of compression encoding the server used for the response mess
 			<td><p>Specifies the media type of a request or response message  body.</p>
 <p>For response messages, content-type is always used. Refer to  specific methods for valid values. Some typical scenarios:</p>
 <ul class="apidoctable_ul">
-	<li>Generally, response messages use <!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->, or <strong><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></strong>. In many cases, values include vendor-specific versions for <!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --> and <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem -->; for example, <!-- #BeginLibraryItem "/Library/hdrval_appjson_81.lbi" --><strong>application/vnd.soa.v81+json</strong><!-- #EndLibraryItem -->. For more information, see <a href="Ref_MediaTypes.htm">Media Types</a>.</li>
-	<li>Methods returning an RSS feed generally use <!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --> unless another format is requested in the request message's accept  header.</li>
+	<li>Generally, response messages use <strong>application/json</strong>, <strong>application/xml</strong>, or <strong>text/plain</strong>. In many cases, values include vendor-specific versions for <strong>application/json</strong> and <strong>application/xml</strong>; for example, <strong>application/vnd.soa.v81+json</strong>. For more information, see <a href="Ref_MediaTypes.htm">Media Types</a>.</li>
+	<li>Methods returning an RSS feed generally use <strong>application/json</strong> unless another format is requested in the request message's accept  header.</li>
 	<li>Methods involving file upload use <strong>multipart/form-data</strong>. When binary data is included in the response, different content-types are used based on the type of the data; for example, <strong>image/gif</strong>, <strong>image/jpeg</strong>, <strong>image/png</strong>, or <strong>application/zip</strong>.
 		<p>For more information about uploading files to the platform with the multipart/form-data media type, see <a href="Ref_ManagingMultipartFormDataUploads.htm">Managing Multipart/Form-Data Uploads</a>.</p></li>
 </ul></td>
@@ -183,7 +187,7 @@ Indicates the type of compression encoding the server used for the response mess
 		<tr>
 			<td>Date</td>
 			<td>Response only</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrrsp_date.lbi" -->A date/timestamp representing the time on the server when the message response was sent. Example: <strong>Wed, 22 Jan 2014 21:09:23 GMT</strong>.<!-- #EndLibraryItem --></td>
+			<td>A date/timestamp representing the time on the server when the message response was sent. Example: <strong>Wed, 22 Jan 2014 21:09:23 GMT</strong>.</td>
 		</tr>
 		<tr>
 			<td><a id="location_response"></a>Location</td>
@@ -199,13 +203,14 @@ Indicates the type of compression encoding the server used for the response mess
 		<tr>
 			<td>Transfer-Encoding</td>
 			<td>Response only</td>
-			<td><!-- #BeginLibraryItem "/Library/hdrrsp_transfer-encoding.lbi" -->
-If encoding was used to transfer the message safely, this value indicates the encoding method used. Example: <strong>chunked</strong>. For HTTP 1.1 messages, the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API always uses the value <strong>chunked</strong>. For HTTP 1.0, transfer-encoding is not used.<br /><strong>Note</strong>: We recommend using HTTP version 1.1 since it includes several enhancements; chunking is one of them.<!-- #EndLibraryItem --></td>
+			<td>
+				<p>If encoding was used to transfer the message safely, this value indicates the encoding method used. Example: <strong>chunked</strong>. For HTTP 1.1 messages, the Akana API Platform API always uses the value <strong>chunked</strong>. For HTTP 1.0, transfer-encoding is not used.</p>
+				<p><strong>Note</strong>: We recommend using HTTP version 1.1 since it includes several enhancements; chunking is one of them.</p></td>
 		</tr>
 		<tr>
 			<td><a id="xframeoptions_response"></a>X-Frame-Options</td>
 			<td>Response only</td>
-			<td><p>Optional header, set up by the Administrator in the Akana Administration Console, <strong>com.soa.uif</strong> configuration category. Used as a security measure, with services that return content, to indicate whether or not the browser is allowed to render a page in an &lt;iframe&gt; tag. Generally used to prevent clickjacking attacks by ensuring that site content cannot be embedded into another site, displayed in an iFrame. Note that the developer portal displays content in iFrames, so if the <strong>X-Frame-Options</strong> header is set to a value of <strong>deny</strong>, some site content might not display correctly.</p>
+			<td><p>Optional header, set up by the Administrator in the Akana Administration Console, <strong>com.soa.uif</strong> configuration category. Used as a security measure, with services that return content, to indicate whether or not the browser is allowed to render a page in an &lt;iframe&gt; tag. Generally used to prevent clickjacking attacks by ensuring that site content cannot be embedded into another site, displayed in an iFrame. Note that the Community Manager developer portal displays content in iFrames, so if the <strong>X-Frame-Options</strong> header is set to a value of <strong>deny</strong>, some site content might not display correctly.</p>
 				<p>There are two valid values (case does not matter):</p>
 				<ul class="apidoctable_ul">
 					<li>deny</li>
@@ -223,7 +228,7 @@ If encoding was used to transfer the message safely, this value indicates the en
 
 <h2>Related Topics</h2>
 <ul>
-	<li><a href="../index.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana API Platform<!-- #EndLibraryItem -->&#160;API: Overview</a></li>
+	<li><a href="../index.htm">Akana API Platform API: Overview</a></li>
 	<li><a href="../Ref_AuthenticationAndSecurity.htm">Authentication and Security</a></li>
 	<li><a href="../Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
 	<li><a href="../Ref_Glossary_CommunityPlatform.htm">Glossary of Terms</a></li>
