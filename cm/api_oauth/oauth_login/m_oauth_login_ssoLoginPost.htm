@@ -17,35 +17,35 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_oauth_login_ssoLoginPost.lbi" -->Allows a user to log in for OAuth authorization purposes by authenticating with an identity provider that has its own login screen, providing SSO is enabled for the OAuth Provider and the identity provider it's using. Examples: Facebook, Google. Sets the <a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a> cookie and redirects the user. Also for LDAP users. Uses HTTP POST.<!-- #EndLibraryItem --></p>
+<p>Allows a user to log in for OAuth authorization purposes by authenticating with an identity provider that has its own login screen, providing SSO is enabled for the OAuth Provider and the identity provider it's using. Examples: Facebook, Google. Sets the <a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a> cookie and redirects the user. Also for LDAP users. Uses HTTP POST.</p>
 <p>In the payload, the domain name is required. Other parameters will be required depending on the domain. For example:</p>
 <ul>
-  <li>For a SAML Web SSO domain, the SAML assertion will be in the payload.</li>
-  <li>For an LDAP domain, the LDAP username and password will be in the payload.</li>
-  <li>For a CA SiteMinder domain configured with username/password, those are the required values; for a CA SiteMinder domain that uses the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_smsession_cookie">SMSESSION</a> cookie, there is no content in the payload other than the domain, but the information is sent in the cookie.</li>
-  <li>For an OpenID Connect Relying Party domain, the ID token will be in the payload.</li>
+	<li>For a SAML Web SSO domain, the SAML assertion will be in the payload.</li>
+	<li>For an LDAP domain, the LDAP username and password will be in the payload.</li>
+	<li>For a CA SiteMinder domain configured with username/password, those are the required values; for a CA SiteMinder domain that uses the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_smsession_cookie">SMSESSION</a> cookie, there is no content in the payload other than the domain, but the information is sent in the cookie.</li>
+	<li>For an OpenID Connect Relying Party domain, the ID token will be in the payload.</li>
 </ul>
 <p><span class="apidoc_note">For information on why you might choose one or the other, see <a href="../aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a></span></p>
 <p class="apidoc_note"><strong>Note</strong>: If the LDAP domain name includes special characters, such as %, &amp;, or #, remember to encode them in the Domain input parameter. For example, for a domain name of OpenID Connector, you'd need to encode the URL with %25, like this: http://{oauth-provider-hostname}/oauth/login/ssoLogin?Domain=OpenID%25Connector.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
-  <li><a href="#httpmethod">HTTP Method</a></li>
-  <li><a href="#endpoint">URL</a></li>
-  <li><a href="#samplerequest">Sample Request</a></li>
-  <li><a href="#requestheaders">Request Headers</a></li>
-  <li><a href="#requestparameters">Request Parameters</a></li>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
 </ul>
 <ul>
-  <li><a href="#response">Response</a></li>
-  <li><a href="#sampleresponse">Sample Response</a></li>
-  <li><a href="#responseheaders">Response Headers</a></li>
-  <li><a href="#responsebody">Response Body</a></li>
-  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
 <!-- InstanceEndEditable -->
@@ -53,7 +53,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->login/ssoLogin</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/login/ssoLogin</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -62,7 +62,7 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows an SSO login request.</p>
 <p><strong>Request URL</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->login/ssoLogin</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/login/ssoLogin</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Content-Type: application/x-www-form-urlencoded
 Accept: application/json</pre>
@@ -80,22 +80,22 @@ Accept: application/json</pre>
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td><strong>application/json</strong></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+			<td><strong>application/x-www-form-urlencoded</strong></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -105,38 +105,38 @@ Accept: application/json</pre>
 <h2 id="requestparameters">Request Parameters</h2>
 <p>Request parameters are determined by the authentication domain. For more information, see <a href="../aaref/Ref_SSOLogin_oauth.htm">Managing SSO Login for OAuth on the Platform</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:11%">Parameter</th>
-      <th style="width:9%">Parm Type</th>
-      <th style="width:11%">Data Type</th>
-      <th style="width:11%">Required</th>
-      <th style="width:58%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Domain</td>
-      <td>Path</td>
-      <td>string</td>
-      <td>Optional</td>
-      <td>Optional domain name parameter. If this parameter is missing, the platform uses the resource owner authentication domain.</td>
-    </tr>
-    <tr>
-      <td>identity_xxxx</td>
-      <td>Path</td>
-      <td>string</td>
-      <td>&#160;</td>
-      <td>All parameters that start with identity_ are used as identity parameters. For LDAP and OpenID Connect Relying Party domains, use identity_username.</td>
-    </tr>
-    <tr>
-      <td>secret_xxxx</td>
-      <td>Path</td>
-      <td>string</td>
-      <td>&#160;</td>
-      <td>All parameters that start with secret_ are used as secret parameters. For LDAP and OpenID Connect Relying Party domains, use secret_password.</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:11%">Parameter</th>
+			<th style="width:9%">Parm Type</th>
+			<th style="width:11%">Data Type</th>
+			<th style="width:11%">Required</th>
+			<th style="width:58%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Domain</td>
+			<td>Path</td>
+			<td>string</td>
+			<td>Optional</td>
+			<td>Optional domain name parameter. If this parameter is missing, the platform uses the resource owner authentication domain.</td>
+		</tr>
+		<tr>
+			<td>identity_xxxx</td>
+			<td>Path</td>
+			<td>string</td>
+			<td>&#160;</td>
+			<td>All parameters that start with identity_ are used as identity parameters. For LDAP and OpenID Connect Relying Party domains, use identity_username.</td>
+		</tr>
+		<tr>
+			<td>secret_xxxx</td>
+			<td>Path</td>
+			<td>string</td>
+			<td>&#160;</td>
+			<td>All parameters that start with secret_ are used as secret parameters. For LDAP and OpenID Connect Relying Party domains, use secret_password.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -181,18 +181,18 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Set-Cookie</td>
-      <td>The <a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a> cookie.</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Set-Cookie</td>
+			<td>The <a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a> cookie.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -209,25 +209,25 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Item</th>
-      <th style="width:80%">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
-      <td>An error occurred processing the call. </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Item</th>
+			<th style="width:80%">Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call. </td>
+		</tr>
+	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -237,5 +237,5 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div><hr />
 </div>

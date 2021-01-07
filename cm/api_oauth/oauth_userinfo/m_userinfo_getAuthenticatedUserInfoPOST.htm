@@ -1,7 +1,7 @@
 ---
 layout: oauthapipage
 title: Get Authenticated User Info (POST) | OAuth Authorization Server UserInfo Service | Akana OAuth API
-description:  Returns information about the authenticated user. Uses HTTP POST.
+description: Returns information about the authenticated user. Uses HTTP POST.
 product: cm
 category: ref
 nav-title: Get Authenticated User Info (POST) 
@@ -17,12 +17,13 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_oauth_getAuthenticatedUserInfoPOST.lbi" -->
-Returns information about the authenticated user. Uses HTTP POST.<!-- #EndLibraryItem --></p>
+<p>
+Returns information about the authenticated user. Uses HTTP POST.</p>
 <p>The platform's OAuth Provider supports retrieval of claims about the end-user via its UserInfo endpoint. This API is an OAuth 2.0-protected resource. To obtain the requested claims about an end-user, the Client should make a request to the UserInfo API using an Access Token obtained through OpenID Connect Authentication. These Claims are normally represented by a JSON object that contains a collection of name and value pairs for the Claims.</p>
 <p>The Client can include the access token in the request parameters, query, or post, depending on the HTTP method used to invoke the UserInfo API or as an Authorization header with <strong>Bearer</strong> scheme.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p class="apidoc_note"><strong>Note</strong>: We recommend that the request use the HTTP GET method (<span class="apidoc_code"><a href="m_userinfo_getAuthenticatedUserInfoGET.htm">GET&#160;/oauth/userinfo</a></span>), sending the access token in the Authorization header. For information on why you might choose one or the other, see <a href="../aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a></p>
+<p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
@@ -39,7 +40,7 @@ Returns information about the authenticated user. Uses HTTP POST.<!-- #EndLibrar
 	<li><a href="#responsebody">Response Body</a></li>
 	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
 <!-- InstanceEndEditable -->
@@ -47,7 +48,7 @@ Returns information about the authenticated user. Uses HTTP POST.<!-- #EndLibrar
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->userinfo</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/userinfo</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -57,9 +58,9 @@ Returns information about the authenticated user. Uses HTTP POST.<!-- #EndLibrar
 <p>The access token can be sent in the query parameters, as an Authorization header, or as POST body.</p>
 <p id="id_samplerequest">The first example below shows a request for the user info, with an access token sent in the request URL.</p>
 <p><strong>Request URL #1: access token is in parameter</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->userinfo?access_token={bearer_token_value}</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/userinfo?access_token={bearer_token_value}</pre>
 <p><strong>Request URL #2: access token is in request body:</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->userinfo</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/userinfo</pre>
 
 <p><strong>Sample request headers</strong></p>
 <p>The example below shows the access token sent in the Authorization header (for either GET or POST). But if the token is sent as a request parameter, or in the request body, the Authorization header is not needed.</p>
@@ -87,11 +88,11 @@ Content-Type: application/x-www-form-urlencoded</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong></td>
 		</tr>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/x-www-form-urlencoded</strong></td>
 		</tr>
 <tr>
 <td>Host</td>
@@ -163,7 +164,7 @@ Date: Fri, 18 Sep 2020 16:35:21 GMT</pre>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
 	<thead>
-		<tr bgcolor="#DDDDDD">
+		<tr>
 			<th style="width:20%">Header</th>
 			<th style="width:80%">Description</th>
 		</tr>
@@ -171,7 +172,7 @@ Date: Fri, 18 Sep 2020 16:35:21 GMT</pre>
 	<tbody>
 		<tr>
 			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-			<td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
+			<td><strong>application/json</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -197,43 +198,43 @@ Date: Fri, 18 Sep 2020 16:35:21 GMT</pre>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Item</th>
-      <th style="width:80%">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-      <td><p>This operation might return a 401 for any of the following reasons:</p>
-        <ul class="apidoctable_ul">
-          <li>The request does not contain an access token (query/form parameter or Authorization header)</li>
-          <li>The access token is invalid</li>
-          <li>The access token is valid but was not obtained through OpenID Connect Authentication (<strong>openid</strong> scope was not part of the end-user authorization)</li>
-        </ul></td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
-      <td><p>This operation might return a 404 for any of the following reasons:</p>
-        <ul class="apidoctable_ul">
-          <li>OpenID Connect is not enabled in the OAuth provider</li>
-          <li>The host name is not mapped to the OAuth provider correctly</li>
-          <li>The URL is accessed over HTTP but the provider is configured to accept only HTTPS requests </li>
-        </ul></td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
-      <td>An error occurred processing the call. </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Item</th>
+			<th style="width:80%">Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+			<td><p>This operation might return a 401 for any of the following reasons:</p>
+				<ul class="apidoctable_ul">
+					<li>The request does not contain an access token (query/form parameter or Authorization header)</li>
+					<li>The access token is invalid</li>
+					<li>The access token is valid but was not obtained through OpenID Connect Authentication (<strong>openid</strong> scope was not part of the end-user authorization)</li>
+				</ul></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
+			<td><p>This operation might return a 404 for any of the following reasons:</p>
+				<ul class="apidoctable_ul">
+					<li>OpenID Connect is not enabled in the OAuth provider</li>
+					<li>The host name is not mapped to the OAuth provider correctly</li>
+					<li>The URL is accessed over HTTP but the provider is configured to accept only HTTPS requests </li>
+				</ul></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call. </td>
+		</tr>
+	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -243,5 +244,5 @@ Date: Fri, 18 Sep 2020 16:35:21 GMT</pre>
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div><hr />
 </div>

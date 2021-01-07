@@ -17,27 +17,27 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_oauth_login_logout.lbi" -->Destroys any authentication cookies associated with the current OAuth session.<!-- #EndLibraryItem --></p>
+<p>Destroys any authentication cookies associated with the current OAuth session.</p>
 <p>Once the API calls are made, the logout API removes the OAuthToken cookie and forces users to log in again before invoking any protected API calls.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
-  <li><a href="#httpmethod">HTTP Method</a></li>
-  <li><a href="#endpoint">URL</a></li>
-  <li><a href="#samplerequest">Sample Request</a></li>
-  <li><a href="#requestheaders">Request Headers</a></li>
-  <li><a href="#requestparameters">Request Parameters</a></li>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
 </ul>
 <ul>
-  <li><a href="#response">Response</a></li>
-  <li><a href="#sampleresponse">Sample Response</a></li>
-  <li><a href="#responseheaders">Response Headers</a></li>
-  <li><a href="#responsebody">Response Body</a></li>
-  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -45,7 +45,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->login/logout</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/login/logout</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -54,7 +54,7 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request to log out.</p>
 <p><strong>Request URL</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->login/logout</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/login/logout</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json</pre>
 <p><strong>Sample request body</strong></p>
@@ -67,18 +67,18 @@ no-catalog: true
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td><strong>application/json</strong></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -114,18 +114,18 @@ no-catalog: true
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+			<td><strong>application/json</strong></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -142,25 +142,25 @@ no-catalog: true
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Item</th>
-      <th style="width:80%">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
-      <td>An error occurred processing the call. </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Item</th>
+			<th style="width:80%">Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call. </td>
+		</tr>
+	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -170,5 +170,5 @@ no-catalog: true
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div><hr />
 </div>

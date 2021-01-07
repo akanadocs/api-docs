@@ -17,30 +17,30 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_oauth_oauth10_generateRequestTokenPOST.lbi" -->Generates a request to the OAuth Provider for an OAuth 1.0a token, using HTTP POST.<!-- #EndLibraryItem --></p>
+<p>Generates a request to the OAuth Provider for an OAuth 1.0a token, using HTTP POST.</p>
 <p>The client obtains a set of temporary credentials from the server by making an authenticated HTTP (GET/POST) request to the Temporary Credential Request endpoint.</p>
 <p>This is a standard OAuth operation per the OAuth 1.0a specification. See section 1.2: <a href="http://tools.ietf.org/html/rfc5849#section-1.2" target="_blank">http://tools.ietf.org/html/rfc5849#section-1.2</a>. This section of the specification includes details about the request and response messages.</p>
 <p class="apidoc_note"><strong>Note</strong>: there is a corresponding operation that performs the same action using HTTP GET: <a href="m_oauth10_generateRequestTokenGET_.htm"><span class="apidoc_code">GET&#160;/oauth/oauth10/initiate</span></a>. However, we recommend using POST. For information on why you might choose one or the other, see <a href="../aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a></p>
 <p>For a broader picture of how OAuth 1.0a token management works, and how this operation files into the process flow, see <a href="../aaref/Ref_OAuth_Tokens_10a.htm">OAuth: Using Tokens with OAuth 1.0a</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
-  <li><a href="#httpmethod">HTTP Method</a></li>
-  <li><a href="#endpoint">URL</a></li>
-  <li><a href="#samplerequest">Sample Request</a></li>
-  <li><a href="#requestheaders">Request Headers</a></li>
-  <li><a href="#requestparameters">Request Parameters</a></li>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
 </ul>
 <ul>
-  <li><a href="#response">Response</a></li>
-  <li><a href="#sampleresponse">Sample Response</a></li>
-  <li><a href="#responseheaders">Response Headers</a></li>
-  <li><a href="#responsebody">Response Body</a></li>
-  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
 <!-- InstanceEndEditable -->
@@ -48,7 +48,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->oauth10/initiate</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/oauth10/initiate</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -57,7 +57,7 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for an OAuth 1.0a access token.</p>
 <p><strong>Request URL</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->oauth10/initiate</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/oauth10/initiate</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>POST /oauth/oauth10/initiate HTTP/1.1
 Authorization: OAuth oauth_callback="http%3A%2F%2Facmepaymentscorp.com%3A9900%2Fui%2Fapps%2F2Facmepaymentscorp
@@ -77,35 +77,35 @@ Host: {hostname}</pre>
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>Authorization</td>
-      <td><p>The Authorization request header authenticates the client with the server. Values:</p>
-        <ul class="apidoctable_ul">
-          <li><strong>oauth_callback</strong>: The URI to which the server will redirect the resource owner when authorization is complete.</li>
-          <li><strong>oauth_signature</strong>: A unique value calculated by the client using client secret and token secret values. For details, refer to the section of the specification: <a href="http://tools.ietf.org/html/rfc5849#section-3.4" target="_blank">http://tools.ietf.org/html/rfc5849#section-3.4</a>.</li>
-          <li><strong>scope</strong>: A parameter unique to the platform, indicating a platform scope that the request applies to.</li>
-          <li><strong>oauth_version</strong>: An optional parameter which, if present, must be set to <strong>1.0</strong>.</li>
-          <li><strong>oauth_nonce</strong>: The unique nonce value for the request.</li>
-          <li><strong>oauth_signature_method</strong>: The name of the signature method used to sign the request. For valid values, see <a href="../aaref/Ref_Values.htm#values_oauth_signature_method">OAuth Signature Method (1.0a) values</a>.</li>
-          <li><strong>oauth_timestamp</strong>: Timestamp for the request. May be omitted for PLAINTEXT signature method.</li>
-        </ul></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.</td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+			<td><strong>application/x-www-form-urlencoded</strong></td>
+		</tr>
+		<tr>
+			<td>Authorization</td>
+			<td><p>The Authorization request header authenticates the client with the server. Values:</p>
+				<ul class="apidoctable_ul">
+					<li><strong>oauth_callback</strong>: The URI to which the server will redirect the resource owner when authorization is complete.</li>
+					<li><strong>oauth_signature</strong>: A unique value calculated by the client using client secret and token secret values. For details, refer to the section of the specification: <a href="http://tools.ietf.org/html/rfc5849#section-3.4" target="_blank">http://tools.ietf.org/html/rfc5849#section-3.4</a>.</li>
+					<li><strong>scope</strong>: A parameter unique to the platform, indicating a platform scope that the request applies to.</li>
+					<li><strong>oauth_version</strong>: An optional parameter which, if present, must be set to <strong>1.0</strong>.</li>
+					<li><strong>oauth_nonce</strong>: The unique nonce value for the request.</li>
+					<li><strong>oauth_signature_method</strong>: The name of the signature method used to sign the request. For valid values, see <a href="../aaref/Ref_Values.htm#values_oauth_signature_method">OAuth Signature Method (1.0a) values</a>.</li>
+					<li><strong>oauth_timestamp</strong>: Timestamp for the request. May be omitted for PLAINTEXT signature method.</li>
+				</ul></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -142,18 +142,18 @@ Expires: Mon, 05 Oct 2015 15:19:12 GMT</pre>
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+			<td><strong>text/plain</strong></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -163,30 +163,30 @@ Expires: Mon, 05 Oct 2015 15:19:12 GMT</pre>
 <h2 id="responsebody">Response Body</h2>
 <p>The response body is per the OAuth 1.0a specification. See section 1.2: <a href="http://tools.ietf.org/html/rfc5849#section-1.2" target="_blank">http://tools.ietf.org/html/rfc5849#section-1.2</a></p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Name</th>
-      <th style="width:15%">Type</th>
-      <th style="width:65%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>oauth_token</td>
-      <td>String</td>
-      <td>The temporary credentials identifier.</td>
-      </tr>
-    <tr>
-      <td>oauth_token_secret</td>
-      <td>String</td>
-      <td>The temporary credentials shared secret value.</td>
-      </tr>
-    <tr>
-      <td>oauth_callback_confirmed</td>
-      <td>Boolean</td>
-      <td>For a successful response, the value is always <strong>true</strong>.</td>
-      </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Name</th>
+			<th style="width:15%">Type</th>
+			<th style="width:65%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>oauth_token</td>
+			<td>String</td>
+			<td>The temporary credentials identifier.</td>
+			</tr>
+		<tr>
+			<td>oauth_token_secret</td>
+			<td>String</td>
+			<td>The temporary credentials shared secret value.</td>
+			</tr>
+		<tr>
+			<td>oauth_callback_confirmed</td>
+			<td>Boolean</td>
+			<td>For a successful response, the value is always <strong>true</strong>.</td>
+			</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -196,25 +196,25 @@ Expires: Mon, 05 Oct 2015 15:19:12 GMT</pre>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Item</th>
-      <th style="width:80%">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
-      <td>An error occurred processing the call. </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Item</th>
+			<th style="width:80%">Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call. </td>
+		</tr>
+	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -224,5 +224,5 @@ Expires: Mon, 05 Oct 2015 15:19:12 GMT</pre>
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div><hr />
 </div>

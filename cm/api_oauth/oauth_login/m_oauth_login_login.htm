@@ -1,7 +1,7 @@
 ---
 layout: oauthapipage
 title: Login | OAuth Authorization Server Login Service | Akana OAuth API
-description:  Allows a person to log in for the purposes of OAuth, and returns the OAuth authentication cookie. For users signed up on the platform; other users log in using the <span class="apidoc_code"><a href="m_oauth_login_ssoLoginPost.htm">POST&#160;/oauth/login/ssoLogin</a></span> operation.
+description: Allows a person to log in for the purposes of OAuth, and returns the OAuth authentication cookie. For users signed up on the platform; other users log in using the <span class="apidoc_code"><a href="m_oauth_login_ssoLoginPost.htm">POST&#160;/oauth/login/ssoLogin</a></span> operation.
 product: cm
 category: ref
 nav-title: Login 
@@ -17,27 +17,27 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_oauth_login.lbi" -->
-Allows a person to log in for the purposes of OAuth, and returns the OAuth authentication cookie. For users signed up on the platform; other users log in using the <span class="apidoc_code"><a href="m_oauth_login_ssoLoginPost.htm">POST&#160;/oauth/login/ssoLogin</a></span> operation.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>
+Allows a person to log in for the purposes of OAuth, and returns the OAuth authentication cookie. For users signed up on the platform; other users log in using the <span class="apidoc_code"><a href="m_oauth_login_ssoLoginPost.htm">POST&#160;/oauth/login/ssoLogin</a></span> operation.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
-  <li><a href="#httpmethod">HTTP Method</a></li>
-  <li><a href="#endpoint">URL</a></li>
-  <li><a href="#samplerequest">Sample Request</a></li>
-  <li><a href="#requestheaders">Request Headers</a></li>
-  <li><a href="#requestparameters">Request Parameters</a></li>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
 </ul>
 <ul>
-  <li><a href="#response">Response</a></li>
-  <li><a href="#sampleresponse">Sample Response</a></li>
-  <li><a href="#responseheaders">Response Headers</a></li>
-  <li><a href="#responsebody">Response Body</a></li>
-  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">POST</p>
 <!-- InstanceEndEditable -->
@@ -45,7 +45,7 @@ Allows a person to log in for the purposes of OAuth, and returns the OAuth authe
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->login</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/login</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -54,7 +54,7 @@ Allows a person to log in for the purposes of OAuth, and returns the OAuth authe
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a login request.</p>
 <p><strong>Request URL</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->login</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/login</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Content-Type: application/x-www-form-urlencoded
 Accept: application/json</pre>
@@ -72,22 +72,22 @@ Accept: application/json</pre>
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td><strong>application/json</strong></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+			<td><strong>application/x-www-form-urlencoded</strong></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -96,28 +96,29 @@ Accept: application/json</pre>
 <!-- InstanceBeginEditable name="Request Parameters" -->
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:11%">Parameter</th>
-      <th style="width:9%">Parm Type</th>
-      <th style="width:11%">Data Type</th>
-      <th style="width:11%">Required</th>
-      <th style="width:58%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Domain</td>
-      <td>Path</td>
-      <td>string</td>
-      <td>See notes</td>
-      <td><p>Domain name parameter:</p>
-        <ul class="apidoctable_ul">
-          <li>If logging in as a site user, this parameter is not valid.</li>
-          <li class="apidoctable_ul">If logging in as the OAuth Administrator, this parameter is required.</li>
-        </ul>        </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:11%">Parameter</th>
+			<th style="width:9%">Parm Type</th>
+			<th style="width:11%">Data Type</th>
+			<th style="width:11%">Required</th>
+			<th style="width:58%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Domain</td>
+			<td>Path</td>
+			<td>string</td>
+			<td>See notes</td>
+			<td><p>Domain name parameter:</p>
+				<ul class="apidoctable_ul">
+					<li>If logging in as a site user, this parameter is not valid.</li>
+					<li class="apidoctable_ul">If logging in as the OAuth Administrator, this parameter is required.</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -127,8 +128,8 @@ Accept: application/json</pre>
 <h2 id="response">Response</h2>
 <p id="id_successstatement">If successful, this operation returns HTTP status code 200, with:</p>
 <ul>
-  <li>A cookie that will be used for subsequent requests. For non-browser scenarios, the application must save this cookie and include it in every request. The cookie name includes the OAuth Provider name. Cookie name: OAuthToken_{OAuthProviderName}.</li>
-  <li>The UserName and DomainName of the user. Example: { "DomainName" : "Local Domain", "UserName" : "Rep1" }.</li>
+	<li>A cookie that will be used for subsequent requests. For non-browser scenarios, the application must save this cookie and include it in every request. The cookie name includes the OAuth Provider name. Cookie name: OAuthToken_{OAuthProviderName}.</li>
+	<li>The UserName and DomainName of the user. Example: { "DomainName" : "Local Domain", "UserName" : "Rep1" }.</li>
 </ul>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -147,7 +148,10 @@ JhS6wiuaeEGceIL2X_82onuUr49iZWvU_srymQuc0gZtWXbOwTBy5c9Ywlyq8wvZ-odIvupThsaASzZd
 z3vWwQIcya77SID6tGGhvjynwSXrst5of2sZ37Cw</pre>
 <p><strong>Sample response body</strong></p>
 <p>The example below is the response after redirects are done.</p>
-<pre>{<br />   &quot;DomainName&quot;: &quot;Local Domain&quot;,<br />   &quot;UserName&quot;: &quot;adminAcmepaymentscorp&quot;<br />}</pre>
+<pre>{
+  &quot;DomainName&quot;: &quot;Local Domain&quot;,
+  &quot;UserName&quot;: &quot;adminAcmepaymentscorp&quot;
+}</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 <!-- InstanceEndEditable -->
@@ -157,22 +161,22 @@ z3vWwQIcya77SID6tGGhvjynwSXrst5of2sZ37Cw</pre>
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>Set-Cookie</td>
-      <td>OAuthToken_{OAuthProviderName}</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+			<td><strong>application/json</strong></td>
+		</tr>
+		<tr>
+			<td>Set-Cookie</td>
+			<td>OAuthToken_{OAuthProviderName}</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -181,20 +185,20 @@ z3vWwQIcya77SID6tGGhvjynwSXrst5of2sZ37Cw</pre>
 <!-- InstanceBeginEditable name="Response Body" -->
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Name</th>
-      <th style="width:15%">Type</th>
-      <th style="width:65%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>LoginResponse</td>
-      <td><a href="../obj/o_oauth_LoginResponse.htm">LoginResponse</a></td>
-      <td><!-- #BeginLibraryItem "/Library/o_oauth_LoginResponse.lbi" -->Contains information about the response to an OAuth login request.<!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Name</th>
+			<th style="width:15%">Type</th>
+			<th style="width:65%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>LoginResponse</td>
+			<td><a href="../obj/o_oauth_LoginResponse.htm">LoginResponse</a></td>
+			<td>Contains information about the response to an OAuth login request.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -204,25 +208,25 @@ z3vWwQIcya77SID6tGGhvjynwSXrst5of2sZ37Cw</pre>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Item</th>
-      <th style="width:80%">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
-      <td>An error occurred processing the call. </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Item</th>
+			<th style="width:80%">Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call. </td>
+		</tr>
+	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -232,5 +236,5 @@ z3vWwQIcya77SID6tGGhvjynwSXrst5of2sZ37Cw</pre>
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div><hr />
 </div>

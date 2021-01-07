@@ -29,82 +29,82 @@ no-catalog: true
 
 <h4>Request</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>URL</td>
-      <td>{oauth-provider-url}/oauth/oauth10/initiate</td>
-    </tr>
-    <tr>
-      <td>Action</td>
-      <td>GET/POST</td>
-    </tr>
-    <tr>
-      <td>Request Headers</td>
-      <td><p>Content-Type: application/x-www-form-urlencoded (if POST)<br />
-Authorization: OAuth realm=[realm],<br />
-&#160;&#160;oauth_consumer_key=[Client ID],<br />
-&#160;&#160;oauth_signature_method=[Signature Method],<br />
-&#160;&#160;oauth_callback=[Client Redirect URI],<br />
-&#160;&#160;oauth_timestamp=[Timestamp],<br />
-&#160;&#160;oauth_nonce=[Nonce],</p>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>URL</td>
+			<td>{oauth-provider-url}/oauth/oauth10/initiate</td>
+		</tr>
+		<tr>
+			<td>Action</td>
+			<td>GET/POST</td>
+		</tr>
+		<tr>
+			<td>Request Headers</td>
+			<td><p>Content-Type: application/x-www-form-urlencoded (if POST)</p>
+				<p> Authorization: OAuth realm=[realm],</p>
+				<p> &#160;&#160;oauth_consumer_key=[Client ID],</p>
+				<p> &#160;&#160;oauth_signature_method=[Signature Method],</p>
+				<p> &#160;&#160;oauth_callback=[Client Redirect URI],</p>
+				<p> &#160;&#160;oauth_timestamp=[Timestamp],</p>
+				<p> &#160;&#160;oauth_nonce=[Nonce],</p>
 &#160;&#160;oauth_signature=[Signature]</td>
-    </tr>
-  </tbody>
+		</tr>
+	</tbody>
 </table>
 
 
 <h4>Request Parameters</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>oauth_callback</td>
-      <td>An absolute URI back to which the server will redirect the resource owner when the Resource Owner Authorization is completed. If the client is unable to receive callbacks or a callback URI has been established via other means, the parameter value MUST be set to &quot;oob&quot; (case sensitive), to indicate an out-of-band configuration.</td>
-      </tr>
-    <tr>
-      <td>oauth_consumer_key</td>
-      <td>The client identifier.</td>
-    </tr>
-    <tr>
-      <td>oauth_signature_method</td>
-      <td>The signature method. For valid values, see <a href="Ref_Values.htm#values_oauth_signature_method">OAuth Signature Method (1.0a) values</a>.</td>
-    </tr>
-    <tr>
-      <td>realm</td>
-      <td><!-- #BeginLibraryItem "/Library/oauth_realm.lbi" -->The domain name for the OAuth provider. For more information, see <a href="http://tools.ietf.org/html/rfc2617#section-1.2" target="_blank">http://tools.ietf.org/html/rfc2617#section-1.2</a>.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>oauth_nonce</td>
-      <td>The random <a href="../Ref_Glossary_CommunityPlatform.htm#gl_nonce">nonce</a> value. The nonce value <strong>must</strong> be unique across all requests with the same timestamp, client credentials, and token combinations.</td>
-    </tr>
-    <tr>
-      <td>oauth_timestamp</td>
-      <td>The timestamp value. Must be a positive integer. The timestamp is expressed in the number of seconds since January 1, 1970 00:00:00 GMT.</td>
-    </tr>
-    <tr>
-      <td>oauth_signature</td>
-      <td><p>The signature base string: a consistent, reproducible concatenation of several of the HTTP request elements into a single string. The string is used as an input to the signature method.</p>
-        <p>The signature base string includes the following components of the HTTP request:</p>
-        <ul class="apidoctable_ul">
-        <li>The HTTP request method (GET or POST).</li>
-        <li>The authority, as declared by the HTTP <strong>host</strong> field in the request header.</li>
-        <li>The path and query components of the request resource URI.</li>
-        <li>The protocol parameters, excluding the <strong>oauth_signature</strong>.</li>
-        </ul>
-        <p>The signature base string does not cover the entire HTTP request. Most important, it does not include the entity-body in most requests, nor does it include most HTTP entity-headers. It is important to note that the server cannot verify the authenticity of the excluded request components without using additional protections such as SSL/TLS or other methods.</p></td>
-    </tr>
-    </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>oauth_callback</td>
+			<td>An absolute URI back to which the server will redirect the resource owner when the Resource Owner Authorization is completed. If the client is unable to receive callbacks or a callback URI has been established via other means, the parameter value MUST be set to &quot;oob&quot; (case sensitive), to indicate an out-of-band configuration.</td>
+			</tr>
+		<tr>
+			<td>oauth_consumer_key</td>
+			<td>The client identifier.</td>
+		</tr>
+		<tr>
+			<td>oauth_signature_method</td>
+			<td>The signature method. For valid values, see <a href="Ref_Values.htm#values_oauth_signature_method">OAuth Signature Method (1.0a) values</a>.</td>
+		</tr>
+		<tr>
+			<td>realm</td>
+			<td>The domain name for the OAuth provider. For more information, see <a href="http://tools.ietf.org/html/rfc2617#section-1.2" target="_blank">http://tools.ietf.org/html/rfc2617#section-1.2</a>.</td>
+		</tr>
+		<tr>
+			<td>oauth_nonce</td>
+			<td>The random <a href="../Ref_Glossary_CommunityPlatform.htm#gl_nonce">nonce</a> value. The nonce value <strong>must</strong> be unique across all requests with the same timestamp, client credentials, and token combinations.</td>
+		</tr>
+		<tr>
+			<td>oauth_timestamp</td>
+			<td>The timestamp value. Must be a positive integer. The timestamp is expressed in the number of seconds since January 1, 1970 00:00:00 GMT.</td>
+		</tr>
+		<tr>
+			<td>oauth_signature</td>
+			<td><p>The signature base string: a consistent, reproducible concatenation of several of the HTTP request elements into a single string. The string is used as an input to the signature method.</p>
+				<p>The signature base string includes the following components of the HTTP request:</p>
+				<ul class="apidoctable_ul">
+				<li>The HTTP request method (GET or POST).</li>
+				<li>The authority, as declared by the HTTP <strong>host</strong> field in the request header.</li>
+				<li>The path and query components of the request resource URI.</li>
+				<li>The protocol parameters, excluding the <strong>oauth_signature</strong>.</li>
+				</ul>
+				<p>The signature base string does not cover the entire HTTP request. Most important, it does not include the entity-body in most requests, nor does it include most HTTP entity-headers. It is important to note that the server cannot verify the authenticity of the excluded request components without using additional protections such as SSL/TLS or other methods.</p></td>
+		</tr>
+		</tbody>
 </table>
 
 <h4>Response</h4>
@@ -112,26 +112,26 @@ Authorization: OAuth realm=[realm],<br />
 
 <h4>Response Parameters</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>oauth_token</td>
-      <td>The temporary credentials identifier.</td>
-    </tr>
-    <tr>
-      <td>oauth_token_secret</td>
-      <td>The temporary credentials shared secret value.</td>
-    </tr>
-    <tr>
-      <td>oauth_callback_confirmed</td>
-      <td>Must be set to <strong>true</strong>.</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>oauth_token</td>
+			<td>The temporary credentials identifier.</td>
+		</tr>
+		<tr>
+			<td>oauth_token_secret</td>
+			<td>The temporary credentials shared secret value.</td>
+		</tr>
+		<tr>
+			<td>oauth_callback_confirmed</td>
+			<td>Must be set to <strong>true</strong>.</td>
+		</tr>
+	</tbody>
 </table>
 
 
@@ -146,85 +146,85 @@ Authorization: OAuth realm=[realm],<br />
 <p>The client obtains a set of token credentials from the server by making an authenticated HTTP (GET/POST) request to the Token Request endpoint.</p>
 <h4>Request</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th>Header</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>URL</td>
-      <td>{oauth-provider-url}/oauth/oauth10/token</td>
-    </tr>
-    <tr>
-      <td>Action</td>
-      <td>GET/POST</td>
-    </tr>
-    <tr>
-      <td>Request Headers</td>
-      <td><p>Content-Type: application/x-www-form-urlencoded (if POST)<br />
-        Authorization: OAuth realm=[realm],<br />
-        oauth_consumer_key=[Client ID],<br />
-        oauth_token=[Request Token],<br />
-        oauth_signature_method=[Signature Method],<br />
-        oauth_timestamp=[Timestamp],<br />
-        oauth_nonce=[Nonce],<br />
-        oauth_verifier=[Verification Code],<br />
-        oauth_signature=[Signature]</p></td>
-    </tr>
-    </tbody>
+	<thead>
+		<tr>
+			<th>Header</th>
+			<th>Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>URL</td>
+			<td>{oauth-provider-url}/oauth/oauth10/token</td>
+		</tr>
+		<tr>
+			<td>Action</td>
+			<td>GET/POST</td>
+		</tr>
+		<tr>
+			<td>Request Headers</td>
+			<td><p>Content-Type: application/x-www-form-urlencoded (if POST)</p>
+<p>Authorization: OAuth realm=[realm],</p>
+<p>oauth_consumer_key=[Client ID],</p>
+<p>oauth_token=[Request Token],</p>
+<p>oauth_signature_method=[Signature Method],</p>
+<p>oauth_timestamp=[Timestamp],</p>
+<p>oauth_nonce=[Nonce],</p>
+<p>oauth_verifier=[Verification Code],</p>
+<p>oauth_signature=[Signature]</p></td>
+		</tr>
+		</tbody>
 </table>
 <h4>Request Parameters</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>oauth_token</td>
-      <td>The temporary token (request token) received from the OAuth server.</td>
-    </tr>
-    <tr>
-      <td>oauth_consumer_key</td>
-      <td>The client identifier.</td>
-    </tr>
-    <tr>
-      <td>oauth_signature_method</td>
-      <td>The signature method. For valid values, see <a href="Ref_Values.htm#values_oauth_signature_method">OAuth Signature Method (1.0a) values</a>.</td>
-    </tr>
-    <tr>
-      <td>realm</td>
-      <td><!-- #BeginLibraryItem "/Library/oauth_realm.lbi" -->The domain name for the OAuth provider. For more information, see <a href="http://tools.ietf.org/html/rfc2617#section-1.2" target="_blank">http://tools.ietf.org/html/rfc2617#section-1.2</a>.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>oauth_nonce</td>
-      <td>The random <a href="../Ref_Glossary_CommunityPlatform.htm#gl_nonce">nonce</a> value. The nonce value <strong>must</strong> be unique across all requests with the same timestamp, client credentials, and token combinations.</td>
-    </tr>
-    <tr>
-      <td>oauth_timestamp</td>
-      <td>The timestamp value. Must be a positive integer. The timestamp is expressed in the number of seconds since January 1, 1970 00:00:00 GMT.</td>
-    </tr>
-    <tr>
-      <td>oauth_verifier</td>
-      <td>The verification code received from the OAuth server in the authorization step.</td>
-    </tr>
-    <tr>
-      <td>oauth_signature</td>
-      <td><p>The signature base string: a consistent, reproducible concatenation of several of the HTTP request elements into a single string. The string is used as an input to the signature method.</p>
-        <p>The signature base string includes the following components of the HTTP request:</p>
-        <ul class="apidoctable_ul">
-          <li>The HTTP request method (GET or POST).</li>
-          <li>The authority, as declared by the HTTP <strong>host</strong> field in the request header.</li>
-          <li>The path and query components of the request resource URI.</li>
-          <li>The protocol parameters, excluding the <strong>oauth_signature</strong>.</li>
-        </ul>
-        <p>The signature base string does not cover the entire HTTP request. Most important, it does not include the entity-body in most requests, nor does it include most HTTP entity-headers. It is important to note that the server cannot verify the authenticity of the excluded request components without using additional protections such as SSL/TLS or other methods.</p></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>oauth_token</td>
+			<td>The temporary token (request token) received from the OAuth server.</td>
+		</tr>
+		<tr>
+			<td>oauth_consumer_key</td>
+			<td>The client identifier.</td>
+		</tr>
+		<tr>
+			<td>oauth_signature_method</td>
+			<td>The signature method. For valid values, see <a href="Ref_Values.htm#values_oauth_signature_method">OAuth Signature Method (1.0a) values</a>.</td>
+		</tr>
+		<tr>
+			<td>realm</td>
+			<td>The domain name for the OAuth provider. For more information, see <a href="http://tools.ietf.org/html/rfc2617#section-1.2" target="_blank">http://tools.ietf.org/html/rfc2617#section-1.2</a>.</td>
+		</tr>
+		<tr>
+			<td>oauth_nonce</td>
+			<td>The random <a href="../Ref_Glossary_CommunityPlatform.htm#gl_nonce">nonce</a> value. The nonce value <strong>must</strong> be unique across all requests with the same timestamp, client credentials, and token combinations.</td>
+		</tr>
+		<tr>
+			<td>oauth_timestamp</td>
+			<td>The timestamp value. Must be a positive integer. The timestamp is expressed in the number of seconds since January 1, 1970 00:00:00 GMT.</td>
+		</tr>
+		<tr>
+			<td>oauth_verifier</td>
+			<td>The verification code received from the OAuth server in the authorization step.</td>
+		</tr>
+		<tr>
+			<td>oauth_signature</td>
+			<td><p>The signature base string: a consistent, reproducible concatenation of several of the HTTP request elements into a single string. The string is used as an input to the signature method.</p>
+				<p>The signature base string includes the following components of the HTTP request:</p>
+				<ul class="apidoctable_ul">
+					<li>The HTTP request method (GET or POST).</li>
+					<li>The authority, as declared by the HTTP <strong>host</strong> field in the request header.</li>
+					<li>The path and query components of the request resource URI.</li>
+					<li>The protocol parameters, excluding the <strong>oauth_signature</strong>.</li>
+				</ul>
+				<p>The signature base string does not cover the entire HTTP request. Most important, it does not include the entity-body in most requests, nor does it include most HTTP entity-headers. It is important to note that the server cannot verify the authenticity of the excluded request components without using additional protections such as SSL/TLS or other methods.</p></td>
+		</tr>
+	</tbody>
 </table>
 
 <h4>Response</h4>
@@ -232,22 +232,22 @@ Authorization: OAuth realm=[realm],<br />
 
 <h4>Response Parameters</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>oauth_token</td>
-      <td>The token identifier.</td>
-    </tr>
-    <tr>
-      <td>oauth_token_secret</td>
-      <td>The token shared secret value.</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>oauth_token</td>
+			<td>The token identifier.</td>
+		</tr>
+		<tr>
+			<td>oauth_token_secret</td>
+			<td>The token shared secret value.</td>
+		</tr>
+	</tbody>
 </table>
 
 
@@ -257,7 +257,7 @@ Authorization: OAuth realm=[realm],<br />
 
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -267,5 +267,9 @@ Authorization: OAuth realm=[realm],<br />
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div>
+
+
+
+
 </div>

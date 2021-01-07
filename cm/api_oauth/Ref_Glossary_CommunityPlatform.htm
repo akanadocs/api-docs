@@ -6,9 +6,9 @@ product: cm
 category: ref
 nav-title: Glossary 
 no-nav: oauthapi
-sub-nav: true
-sub-nav-class: ref
-no-catalog: true
+sub-nav: false
+sub-nav-class: oauth/Ref_Glossary_CommunityPlatform
+no-catalog: false
 ---
 
 <div class="apidocContent">
@@ -33,22 +33,22 @@ no-catalog: true
 
 
 <dt id="gl_api">API</dt>
-<dd>A key resource in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content.</dd>
+<dd>A key resource in the Akana API Platform. An API provides a business with a way of using the Internet to extend business capabilities to connect with new customers in new ways. In this context an API is a Web service exposed outside the enterprise, typically using RESTful design principles, and often with JSON content.</dd>
 
 
 
 <dt id="gl_app">app</dt>
-<dd>An app (application) is a piece of software that delivers specific capabilities to its users. In the context of the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->, an app is a piece of software that consumes one or more APIs.</dd>
+<dd>An app (application) is a piece of software that delivers specific capabilities to its users. In the context of the Akana API Platform, an app is a piece of software that consumes one or more APIs.</dd>
 
 
 
 <dt id="gl_appteammember">app team member</dt>
-<dd>One of the roles defined in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's Board, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights.</dd>
+<dd>One of the roles defined in the Akana API Platform is that of the app team member. Each app most have at least one team member and can have more. An app team member initiates contract requests, such as API access requests, moderates the app's Board, and views and manages trouble tickets relating to the app. The app team member can also view performance and usage data for the app's API usage, and can invite others to be team members for the same app. All app team members have the same rights.</dd>
 
 
 
 <dt id="gl_appid">AppID</dt>
-<dd>When a user registers an app in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;platform, the app is assigned an AppID. The AppID is the unique identifier for the app within the platform. All API calls include the AppID.</dd>
+<dd>When a user registers an app in the Akana API Platform, the app is assigned an AppID. The AppID is the unique identifier for the app within the platform. All API calls include the AppID.</dd>
 
 
 
@@ -140,12 +140,12 @@ no-catalog: true
 
 
 <dt id="gl_connection">connection</dt>
-<dd>A relationship between resources in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;&#8212;such as the API access relationship between an app and an API that it's using.</dd>
+<dd>A relationship between resources in the Akana API Platform &#8212;such as the API access relationship between an app and an API that it's using.</dd>
 
 
 
 <dt id="gl_coordinateduniversaltime">Coordinated Universal Time (UTC)</dt>
-<dd>Coordinated Universal Time (UTC), also called Zulu time, is the primary time standard in general use. It essentially equates to Greenwich Mean Time (GMT), but is more scientifically precise. In the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API, time values are represented in the standard UTC date/time format <strong>YYYY-MM-DDTHH:MM:SSZ</strong>. Example: <strong>2013-12-31T15:45:00-04:00Z</strong>.</dd>
+<dd>Coordinated Universal Time (UTC), also called Zulu time, is the primary time standard in general use. It essentially equates to Greenwich Mean Time (GMT), but is more scientifically precise. In the Akana OAuth API, time values are represented in the standard UTC date/time format <strong>YYYY-MM-DDTHH:MM:SSZ</strong>. Example: <strong>2013-12-31T15:45:00-04:00Z</strong>.</dd>
 <dd>Epoch time, also called Unix time, is defined as the number of seconds that have elapsed since 00:00:00 Coordinated Universal Time; Thursday, 1 January 1970. In some cases we use this value in response messages, expressed in milliseconds.</dd>
 
 
@@ -166,7 +166,7 @@ no-catalog: true
 
 
 <dt id="gl_policy_denialofservice">denial of service policy</dt>
-<dd><!-- #BeginLibraryItem "/Library/policy_denialofservice.lbi" -->A policy that defines conditions for protecting against, and/or dealing with, a Denial of Service attack.<!-- #EndLibraryItem --></dd>
+<dd>A policy that defines conditions for protecting against, and/or dealing with, a Denial of Service attack.</dd>
 
 
 
@@ -185,7 +185,7 @@ no-catalog: true
 
 
 <dt id="gl_entityreferences">entity references</dt>
-<dd><!-- #BeginLibraryItem "/Library/define_entityreferences.lbi" -->When an HTTP GET operation in the platform returns information in the form of an RSS channel, it very often includes entity references. Where an RSS item represents an object, the entity references include additional information about the object. For example, if the RSS channel returns information about an app version, the entity reference might include information about the app to which the app version belongs. All relevant relationships to the object returned in the RSS response are represented in the entity references.<!-- #EndLibraryItem --></dd>
+<dd>When an HTTP GET operation in the platform returns information in the form of an RSS channel, it very often includes entity references. Where an RSS item represents an object, the entity references include additional information about the object. For example, if the RSS channel returns information about an app version, the entity reference might include information about the app to which the app version belongs. All relevant relationships to the object returned in the RSS response are represented in the entity references.</dd>
 
 
 
@@ -222,13 +222,8 @@ no-catalog: true
 
 
 <dt id="gl_federation">federation</dt>
-<dd>Two or more&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;<a href="#gl_tenant">tenants</a> who have unified to create a community in which APIs can be shared by users of both tenants.</dd>
+<dd>Two or more Akana API Platform <a href="#gl_tenant">tenants</a> who have unified to create a community in which APIs can be shared by users of both tenants.</dd>
 <dd>The systems that participate in a federation (federation members, tenants) share information without requiring duplication of that information in each member and without relinquishing control of the information. Developers who sign up as users of one federation member can access information from a second federation member directly, without the need for signup or authentication by the second member. A federation setup requires the establishment of a trust relationship between federation members.</dd>
-
-
-
-<dt id="gl_federationmember">federation member</dt>
-<dd>An individual member of a <a href="#gl_federation">federation</a>.</dd>
 
 
 
@@ -270,12 +265,12 @@ no-catalog: true
 
 
 <dt id="gl_identity_app">identity (app)</dt>
-<dd><!-- #BeginLibraryItem "/Library/parm_Identity_app.lbi" -->When adding an app version, you can specify a custom identity name for the app version. If no custom value is specified, in response messages this property defaults to the reverse of the RuntimeID, with a dash. For example, if the RuntimeID is <strong>123456.acmepaymentscorp</strong>, the value for the Identity property would be <strong>open-123456</strong>.<!-- #EndLibraryItem --></dd>
+<dd>When adding an app version, you can specify a custom identity name for the app version. If no custom value is specified, in response messages this property defaults to the reverse of the RuntimeID, with a dash. For example, if the RuntimeID is <strong>123456.acmepaymentscorp</strong>, the value for the Identity property would be <strong>open-123456</strong>.</dd>
 
 
 
 <dt id="gl_identityprovider">identity provider</dt>
-<dd>An identity provider (sometimes abbreviated as IdP) is an entity responsible for verifying user identity and issuing identity information, usually in the form of a token. A common example is a website that allows users to log in using a Facebook or Google identiy; in this scenario, Facebook and Google are identity providers. In <a href="#gl_openidconnect">OpenID Connect</a>, the identity provider is called the Connect provider.</dd>
+<dd>An identity provider (sometimes abbreviated as IdP) is an entity responsible for verifying user identity and issuing identity information, usually in the form of a token. A common example is a website that allows users to log in using a Facebook or Google identity; in this scenario, Facebook and Google are identity providers. In <a href="#gl_openidconnect">OpenID Connect</a>, the identity provider is called the Connect provider.</dd>
 <dd>In terms of <a href="#gl_saml">SAML</a>, the identity provider verifies the identity of the user in response to a request by the Service Provider, and then responds with a SAML assertion.</dd>
 
 
@@ -306,13 +301,13 @@ no-catalog: true
 
 
 <dt id="gl_jwt_token">JWT token (OpenID Connect)</dt>
-<dd>Acronym for <a href="#gl_json">JSON</a> Web Token. In the context of OpenID Connect, a JWT token is a a compact, URL-safe means of representing <a href="#gl_claim_jwt">claims</a> to be sent from one party to another over the web. The claims in a JWT are encoded as a JSON object that is used either as the payload of a JSON Web Signature (JWS) structure or as the plain text of a JSON Web Encryption (JWE) structure. This enables the claims to be digitally signed and/or encrypted.</dd>
+<dd>Acronym for <a href="#gl_json">JSON</a> Web Token. In the context of OpenID Connect, a JWT token is a compact, URL-safe means of representing <a href="#gl_claim_jwt">claims</a> to be sent from one party to another over the web. The claims in a JWT are encoded as a JSON object that is used either as the payload of a JSON Web Signature (JWS) structure or as the plain text of a JSON Web Encryption (JWE) structure. This enables the claims to be digitally signed and/or encrypted.</dd>
 <dd>The OpenID Connect Provider can issue a JWT token from either the Authorization Endpoint or the Token Endpoint. This is one of the two ways offered by the OpenID Connect specification for the app to learn information about the end user. The other is by publishing a <a href="#gl_userinfoendpoint">UserInfo endpoint</a>.</dd>
 
 
 
 <dt id="gl_laas">LaaS</dt>
-<dd>Lifecycle as a Service (LaaS) is a set of products from Akana that exposes Lifecycle Manager asset configuration as a service/API. LaaS provides a way to integrate Lifecycle Manager functionality into&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->. Since Lifecycle Manager is more configurable, this facilitates the introduction of a more complex workflow, which can be used for purposes such as API governance.</dd>
+<dd>Lifecycle as a Service (LaaS) is a set of products from Akana that exposes Lifecycle Manager asset configuration as a service/API. LaaS provides a way to integrate Lifecycle Manager functionality into the Akana API Platform. Since Lifecycle Manager is more configurable, this facilitates the introduction of a more complex workflow, which can be used for purposes such as API governance.</dd>
 <dd>As of version 2018.0.0, LAAS is no longer a separate installation component. Instead, there are two separate features:
 	<ul>
 		<li><a href="#gl_lc">Lifecycle Coordinator</a></li>
@@ -322,7 +317,7 @@ no-catalog: true
 
 
 <dt id="gl_label_ticket">label (for a ticket)</dt>
-<dd>A label assigned to a ticket to indicate the tickets's priority rating.</dd>
+<dd>A label assigned to a ticket to indicate the ticket's priority rating.</dd>
 
 
 
@@ -446,7 +441,7 @@ no-catalog: true
 
 
 <dt id="gl_oauth_refreshtoken">OAuth refresh token</dt>
-<dd>In OAuth 2.0, certain grant types support use of refresh tokens to facilitate longer access periods. This is useful in scenarios that extend over time, such as as a regular monthly payment amount.</dd>
+<dd>In OAuth 2.0, certain grant types support use of refresh tokens to facilitate longer access periods. This is useful in scenarios that extend over time, such as a regular monthly payment amount.</dd>
 <dd>In OAuth 1.0a, once an <a href="#gl_oauth_accesstoken">access token</a> is generated it is valid until revoked by the user. OAuth 1.0a does not support refresh tokens.</dd>
 <dd>OAuth 2.0 introduces expiration of access tokens and adds a second type of token, a refresh token, that can be used in conjunction with the access token to allow users to give long-term permissions but yet maintain security. This process helps ensure that if a specific access token is compromised, a new one can be generated from the refresh token, which can be stored in the database on the server.</dd>
 <dd>The access token grants immediate access but only for a limited time. The access token comes with two additional values: expires_in, which indicates the life of the access token, and refresh_token which can be used to get a new access token when the current token expires. Additional user approval is not needed, but the expiration and renewal add security to the process. When (or before) the access token expires, the refresh token can be used to generate a new access token.</dd>
@@ -516,13 +511,13 @@ no-catalog: true
 
 
 <dt id="gl_proxyapi">proxy API</dt>
-<dd>When you set up your API on the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
+<dd>When you set up your API on the Akana API Platform and choose to use the Proxy feature, all traffic to your API endpoints is channeled via the platform. This offers significant benefits, including the ability to apply policies and monitor traffic at the proxy.</dd>
 
 
 
 <dt id="gl_pki">public key integration (PKI)</dt>
-<dd>When a user registers an app in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->, the Shared Secret security option is the default. App owners who want to use Public Key Infrastructure (PKI) for secure message signing must specify Public Key Integration as the security option in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;user interface, on the App Details page.</dd>
-<dd>To implement PKI, the app owner must get a public/private key pair, upload the public key to the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->, and use the private key for signing the API requests. The&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API verifies each incoming request using the public key.</dd>
+<dd>When a user registers an app in the Akana API Platform, the Shared Secret security option is the default. App owners who want to use Public Key Infrastructure (PKI) for secure message signing must specify Public Key Integration as the security option in the Akana API Platform user interface, on the App Details page.</dd>
+<dd>To implement PKI, the app owner must get a public/private key pair, upload the public key to the Akana OAuth API verifies each incoming request using the public key.</dd>
 
 
 
@@ -554,7 +549,7 @@ no-catalog: true
 
 <dt id="gl_realm">realm</dt>
 <dd>A pattern that represents the part of URL-space for which an authentication request is valid. In OpenID or OpenID Connect, a realm is designed to give the end user an indication of the scope of the authentication request. The <a href="#gl_identityprovider">identity provider</a> must present the realm when requesting the end-user's approval for an authentication request. The realm must be used by the identity provider to uniquely identify the <a href="#gl_relyingparty">relying party</a>.<!-- The identity provider can use the realm to allow the end-user to automate approval of authentication requests.--> </dd>
-<dd>OAuth: <!-- #BeginLibraryItem "/Library/oauth_realm.lbi" -->The domain name for the OAuth provider. For more information, see <a href="http://tools.ietf.org/html/rfc2617#section-1.2" target="_blank">http://tools.ietf.org/html/rfc2617#section-1.2</a>.<!-- #EndLibraryItem --></dd>
+<dd>OAuth: The domain name for the OAuth provider. For more information, see <a href="http://tools.ietf.org/html/rfc2617#section-1.2" target="_blank">http://tools.ietf.org/html/rfc2617#section-1.2</a>.</dd>
 
 
 
@@ -570,7 +565,7 @@ no-catalog: true
 
 
 <dt id="gl_relyingparty">relying party</dt>
-<dd>In <a href="#gl_openid">OpenID</a> and <a href="#gl_openidconnect">OpenID Connect</a>, the service provider is called the relying party. The relying party trusts the <a href="#gl_connectprovider">Connect provider</a> to authenticate the user. In the context of the<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->, the platform is the service provider and the Site Admin sets up the Connect provider in Domains setup.</dd>
+<dd>In <a href="#gl_openid">OpenID</a> and <a href="#gl_openidconnect">OpenID Connect</a>, the service provider is called the relying party. The relying party trusts the <a href="#gl_connectprovider">Connect provider</a> to authenticate the user. In the context of the Akana API Platform, the platform is the service provider and the Site Admin sets up the Connect provider in Domains setup.</dd>
 
 
 
@@ -591,7 +586,7 @@ no-catalog: true
 
 
 <dt id="gl_resource">resource (platform)</dt>
-<dd>In the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->, a Resource is an item, such as an App or API, which has its own Board and set of activities. There are six resource types: <a href="#gl_api">API</a>, <a href="#gl_app">app</a>, business, contract, group, and <a href="#gl_user">user</a>. In some instances, an app or API <a href="#gl_version">version</a> is treated as a separate resource, since there might be multiple versions for a single app or API. In the platform API, scopes are also called Resources.</dd>
+<dd>In the Akana API Platform, a Resource is an item, such as an App or API, which has its own Board and set of activities. There are six resource types: <a href="#gl_api">API</a>, <a href="#gl_app">app</a>, business, contract, group, and <a href="#gl_user">user</a>. In some instances, an app or API <a href="#gl_version">version</a> is treated as a separate resource, since there might be multiple versions for a single app or API. In the platform API, scopes are also called Resources.</dd>
 
 
 
@@ -602,13 +597,13 @@ no-catalog: true
 
 <dt id="gl_rss">RSS</dt>
 <dd>RSS is a widely used technology that allows users to subscribe to website content they're interested in. Once users subscribe to RSS feeds, updated content is automatically delivered to them in the form of an <a href="#gl_rsschannel">RSS channel</a>, without the users having to check the individual websites for updates.</dd>
-<dd>In the context of the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->, many GET&#160;operations return the results in the format of an RSS channel.</dd>
+<dd>In the context of the Akana API Platform, many GET operations return the results in the format of an RSS channel.</dd>
 
 
 
 <dt id="gl_rsschannel">RSS channel</dt>
 <dd>The format in which information is conveyed using the RSS technology is called an RSS feed, web feed, RSS channel, or RSS document. It includes full or summarized text plus metadata (information about the text).</dd>
-<dd>Many of the operations in the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API use RSS in the response. In general, GET&#160;methods that return any type of list return the information as an RSS channel, usually in either JSON or XML format as specified in the request message.</dd>
+<dd>Many of the operations in the Akana OAuth API use RSS in the response. In general, GET methods that return any type of list return the information as an RSS channel, usually in either JSON or XML format as specified in the request message.</dd>
 
 
 
@@ -619,7 +614,7 @@ no-catalog: true
 
 <dt id="gl_saml">SAML</dt>
 <dd>Acronym for Security Assertion Markup Language. SAML is an identity federation standard that enables single sign-on. It is an XML-based standard for exchanging authentication and authorization data between a <a href="#gl_saml_service_provider">service provider</a> (providing a service to the user) and an <a href="#gl_identityprovider">identity provider</a> (providing user identity verification for the service provider).</dd>
-<dd>One usage, in the context of the platform, is by OpenID Connect where it is used to provide single sign-on. The plaform acts as the <a href="#gl_relyingparty">relying party</a>.</dd>
+<dd>One usage, in the context of the platform, is by OpenID Connect where it is used to provide single sign-on. The platform acts as the <a href="#gl_relyingparty">relying party</a>.</dd>
 
 
 <dt id="gl_saml_artifact">SAML Artifact</dt>
@@ -669,7 +664,7 @@ no-catalog: true
 
 
 <dt id="gl_sharedsecret">shared secret</dt>
-<dd>When you register your app, the AppID and Shared Secret are automatically generated. The Shared Secret is a binary hashed value, generated within the secure environment of the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;and known only to you and to the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->. In the Security Credentials section of your app homepage you'll see that the Shared Secret option is the default security mechanism.</dd>
+<dd>When you register your app, the AppID and Shared Secret are automatically generated. The Shared Secret is a binary hashed value, generated within the secure environment of the Akana API Platform. In the Security Credentials section of your app homepage you'll see that the Shared Secret option is the default security mechanism.</dd>
 <dd>The Shared Secret approach follows the WS-Security digest authentication mechanism.</dd>
 
 
@@ -706,7 +701,7 @@ no-catalog: true
 
 
 <dt id="gl_swagger_properties">Swagger properties file</dt>
-<dd>Once the Swagger documentation is generated, the user can add comments and additional information. This information is stored in a Swagger properties file named {APIVersionID}.properties; for example, <strong>apiversion17171.<!-- #BeginLibraryItem "/Library/_productname_lowercase.lbi" -->acmepaymentscorp<!-- #EndLibraryItem -->.properties</strong>. When a user views the API documentation in the platform, the user sees a merged combination of the automatically-generated Swagger <a href="#gl_swagger_resource">resource documentation</a> and the user-generated information stored in the Swagger properties file.</dd>
+<dd>Once the Swagger documentation is generated, the user can add comments and additional information. This information is stored in a Swagger properties file named {APIVersionID}.properties; for example, <strong>apiversion17171.acmepaymentscorp.properties</strong>. When a user views the API documentation in the platform, the user sees a merged combination of the automatically-generated Swagger <a href="#gl_swagger_resource">resource documentation</a> and the user-generated information stored in the Swagger properties file.</dd>
 
 
 
@@ -726,12 +721,12 @@ no-catalog: true
 
 
 <dt id="gl_tenant">tenant</dt>
-<dd>An individual member of a <a href="#gl_federation">federation</a>. Each tenant generally has its own look and feel. A tenant will typically be a customer that is hosted within a shared system but wants to have some separation from other customers or tenants, while still being able to share information.</dd>
+<dd>An individual instance of the Community Manager developer portal. Each tenant generally has its own look and feel. A tenant will typically be a customer that is hosted within a shared system but wants to have some separation from other customers or tenants, while still being able to share information.</dd>
 
 
 
 <dt id="gl_testclient">Test Client</dt>
-<dd>The platform includes an API testing interface, Test Client, that acts as an easy-to-use testing tool for any API that is set up in the developer portal. This test tool allows developers to thoroughly test all capabilities of the API.</dd>
+<dd>The platform includes an API testing interface, Test Client, that acts as an easy-to-use testing tool for any API that is set up in the Community Manager developer portal. This test tool allows developers to thoroughly test all capabilities of the API.</dd>
 <dd>It can be used for prototyping, testing, and troubleshooting apps against an API. It includes OAuth support for retrieving the OAuth token in order to process the message.</dd>
 
 
@@ -759,7 +754,7 @@ no-catalog: true
 
 
 <dt id="gl_transaction">transaction</dt>
-<dd>In the context of the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API, a transaction is one instance of an app making a call to an API.</dd>
+<dd>In the context of the Akana OAuth API, a transaction is one instance of an app making a call to an API.</dd>
 
 
 
@@ -778,9 +773,9 @@ no-catalog: true
 
 
 
-<dt id="gl_user">user</dt>
-<dd>A person with a registered login ID to the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->. All users must complete the registration process so that the system can gather required information about them before granting access. Each user can choose to define a new username/password combination that will be managed within the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->, or can leverage the integration of&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;with external security providers such as Facebook&reg; for authentication. By completing the signup process, each individual is assigned the role of User; users can then assume other roles, such as API Administrator or App team member.</dd>
-<dd><strong>Note</strong>: To use the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API, users must sign up with the&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;rather than using a third-party authentication provider.</dd>
+	<dt id="gl_user">user</dt>
+	<dd>A person with a registered login ID to the Akana API Platform. All users must complete the registration process so that the system can gather required information about them before granting access. Each user can choose to define a new username/password combination that will be managed within the Akana API Platform, or can leverage the integration of Akana API Platform with external security providers such as Facebook&reg; for authentication. By completing the signup process, each individual is assigned the role of User; users can then assume other roles, such as API Administrator or App team member (depending on platform settings).</dd>
+	<dd><strong>Note</strong>: To use the Akana API Platform API, users must sign up with the Akana API Platform rather than using a third-party authentication provider.</dd>
 
 
 
@@ -824,7 +819,7 @@ no-catalog: true
 
 
 <dt id="gl_authenticate">WWW-Authenticate response header</dt>
-<dd >A standard HTTP response header used as part of the authentication process used in&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API calls. When the server receives the request message, it challenges the client for valid authentication via the WWW-Authenticate response header. The client returns the authentication information in an <a href="#gl_authorization">Authorization header</a>. The server validates the client information and then acts on the request message.</dd>
+<dd >A standard HTTP response header used as part of the authentication process used in Akana OAuth API calls. When the server receives the request message, it challenges the client for valid authentication via the WWW-Authenticate response header. The client returns the authentication information in an <a href="#gl_authorization">Authorization header</a>. The server validates the client information and then acts on the request message.</dd>
 
 
 
@@ -855,11 +850,13 @@ no-catalog: true
 
 <h2 id="relatedtopics">Related Topics</h2>
 <ul>
-  
-  <li><a href="index.htm">OAuth Services: Overview</a></li>
-  <li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
-  <li><a href="Ref_API_Reference.htm"><!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API Reference Material</a></li>
-  <li><a href="Ref_DocConventions.htm">Documentation Conventions</a></li>
+	<li><a href="index.htm">OAuth Services: Overview</a></li>
+	<li><a href="Ref_TroubleshootingAndSupport.htm">Troubleshooting and Support</a></li>
+	<li><a href="Ref_API_Reference.htm">Akana OAuth API Reference Material</a></li>
+	<li><a href="Ref_DocConventions.htm">Documentation Conventions</a></li>
 </ul>
-<hr />
+
+
+
+
 </div>

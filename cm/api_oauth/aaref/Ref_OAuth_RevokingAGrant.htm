@@ -1,7 +1,7 @@
 ---
 layout: oauthapipage
 title: OAuth - Revoking a Grant | Reference Material | Akana OAuth API
-description: The developer portal doesn't currently support revoking an OAuth grant; however, you can accomplish this task using the OAuth API.
+description: The Community Manager developer portal doesn't currently support revoking an OAuth grant; however, you can accomplish this task using the OAuth API.
 product: cm
 category: ref
 nav-title: OAuth - Revoking a Grant 
@@ -13,46 +13,46 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">OAuth: Revoking a Grant</h1>
-<p>The developer portal doesn't currently support revoking an OAuth grant; however, you can accomplish this task using the OAuth API.</p>
-<p><span class="apidoc_note"><strong>Note</strong>: Workflow actions relating to OAuth are controlled by the OAuth workflow, which you can customize if needed. For more information, review the <a href="../assets/workflow-workflow_definition_oauth_grant_default_1.0.0.xml">default OAuth grant workflow</a> (8.4 version attached) or download the latest version in the developer portal: <strong>Administration</strong> &gt; <strong>Workflows</strong> &gt; <strong>workflow:definition:oauth:grant:default:1.0.0</strong>.</span></p>
+<p>The Community Manager developer portal doesn't currently support revoking an OAuth grant; however, you can accomplish this task using the OAuth API.</p>
+<p><span class="apidoc_note"><strong>Note</strong>: Workflow actions relating to OAuth are controlled by the OAuth workflow, which you can customize if needed. For more information, review the <a href="../assets/workflow-workflow_definition_oauth_grant_default_1.0.0.xml">default OAuth grant workflow</a> (8.4 version attached) or download the latest version in the Community Manager developer portal: <strong>Administration</strong> &gt; <strong>Workflows</strong> &gt; <strong>workflow:definition:oauth:grant:default:1.0.0</strong>.</span></p>
 <p>For revoking a grant, you'll use some or all of the operations summarized below. The key operations are log in, execute workflow action, and log out.</p>
-<table class="tableparmsresponse" summary="table description">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Action</th>
-      <th style="width:20%">Endpoint</th>
-      <th style="width:60%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Log in</strong></td>
-      <td><a href="../oauth_login/m_oauth_login_login.htm">POST&#160;/oauth/login</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_oauth_login.lbi" -->
-Allows a person to log in for the purposes of OAuth, and returns the OAuth authentication cookie. For users signed up on the platform; other users log in using the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_ssoLoginPost.htm">POST&#160;/oauth/login/ssoLogin</a></span> operation.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>list grants</td>
-      <td><a href="../oauth_admin/m_admin_listGrants.htm">GET&#160;/oauth/admin/grants</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_oauth_admin_listGrants.lbi" -->Returns information about OAuth grants.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td><strong>execute workflow action to cancel or revoke a grant</strong></td>
-      <td><a href="../oauth_admin/m_admin_executeWorkflowAction.htm">POST&#160;/oauth/admin/grants/{GrantID}/actions</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_oauth_admin_executeWorkflowAction_grants.lbi" -->Executes a valid workflow action associated with the specified OAuth grant.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td><strong>log out</strong></td>
-      <td><a href="../oauth_login/m_oauth_login_logout.htm">GET&#160;/oauth/login/logout</a></td>
-      <td><!-- #BeginLibraryItem "/Library/desc_oauth_login_logout.lbi" -->Destroys any authentication cookies associated with the current OAuth session.<!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+<table class="tableparmsresponse">
+	<thead>
+		<tr>
+			<th style="width:20%">Action</th>
+			<th style="width:20%">Endpoint</th>
+			<th style="width:60%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><strong>Log in</strong></td>
+			<td><a href="../oauth_login/m_oauth_login_login.htm">POST&#160;/oauth/login</a></td>
+			<td>
+Allows a person to log in for the purposes of OAuth, and returns the OAuth authentication cookie. For users signed up on the platform; other users log in using the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_ssoLoginPost.htm">POST&#160;/oauth/login/ssoLogin</a></span> operation.</td>
+		</tr>
+		<tr>
+			<td>list grants</td>
+			<td><a href="../oauth_admin/m_admin_listGrants.htm">GET&#160;/oauth/admin/grants</a></td>
+			<td>Returns information about OAuth grants.</td>
+		</tr>
+		<tr>
+			<td><strong>execute workflow action to cancel or revoke a grant</strong></td>
+			<td><a href="../oauth_admin/m_admin_executeWorkflowAction.htm">POST&#160;/oauth/admin/grants/{GrantID}/actions</a></td>
+			<td>Executes a valid workflow action associated with the specified OAuth grant.</td>
+		</tr>
+		<tr>
+			<td><strong>log out</strong></td>
+			<td><a href="../oauth_login/m_oauth_login_logout.htm">GET&#160;/oauth/login/logout</a></td>
+			<td>Destroys any authentication cookies associated with the current OAuth session.</td>
+		</tr>
+	</tbody>
 </table>
 <p>For information about other tasks relating to managing OAuth grants, see <a href="Ref_OAuth_UsingTheGrantAdminAPI.htm">OAuth: Using the Grant Admin API</a>.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -62,5 +62,9 @@ Allows a person to log in for the purposes of OAuth, and returns the OAuth authe
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div>
+
+
+
+
 </div>

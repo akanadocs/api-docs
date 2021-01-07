@@ -17,26 +17,26 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_oauth_auz_getGrantDetails.lbi" -->Returns detailed information about the specified OAuth grant, including the list of scopes.<!-- #EndLibraryItem --></p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Must be the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_oauth_resourceowner">resource owner</a>.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p>Returns detailed information about the specified OAuth grant, including the list of scopes.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Must be the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_oauth_resourceowner">resource owner</a>.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
-  <li><a href="#httpmethod">HTTP Method</a></li>
-  <li><a href="#endpoint">URL</a></li>
-  <li><a href="#samplerequest">Sample Request</a></li>
-  <li><a href="#requestheaders">Request Headers</a></li>
-  <li><a href="#requestparameters">Request Parameters</a></li>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
 </ul>
 <ul>
-  <li><a href="#response">Response</a></li>
-  <li><a href="#sampleresponse">Sample Response</a></li>
-  <li><a href="#responseheaders">Response Headers</a></li>
-  <li><a href="#responsebody">Response Body</a></li>
-  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -44,7 +44,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->auz/grants/{GrantID}/details</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/auz/grants/{GrantID}/details</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -53,11 +53,11 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for the details associated with the specified grant.</p>
 <p><strong>Request URL</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->auz/grants/mkset3es9h1l/details</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/auz/grants/mkset3es9h1l/details</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET /oauth/auz/grants/ge6ij9k4fbea/details HTTP/1.1
 Accept: */*
-Cookie:&#160;<!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenID)}<!-- #EndLibraryItem --></pre>
+Cookie:&#160;OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenID)}</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
@@ -68,22 +68,22 @@ Cookie:&#160;<!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToke
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>&#160;</td>
-      <td>&#160;</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td><strong>application/json</strong></td>
+		</tr>
+		<tr>
+			<td>&#160;</td>
+			<td>&#160;</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -92,24 +92,24 @@ Cookie:&#160;<!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToke
 <!-- InstanceBeginEditable name="Request Parameters" -->
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:11%">Parameter</th>
-      <th style="width:9%">Parm Type</th>
-      <th style="width:11%">Data Type</th>
-      <th style="width:11%">Required</th>
-      <th style="width:58%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GrantID</td>
-      <td>Path</td>
-      <td>string</td>
-      <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_GrantID.lbi" -->The unique ID for a specific instance of an OAuth grant.<!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:11%">Parameter</th>
+			<th style="width:9%">Parm Type</th>
+			<th style="width:11%">Data Type</th>
+			<th style="width:11%">Required</th>
+			<th style="width:58%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>GrantID</td>
+			<td>Path</td>
+			<td>string</td>
+			<td>Required</td>
+			<td>The unique ID for a specific instance of an OAuth grant.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -177,18 +177,18 @@ Expires: Wed, 22 Jul 2015 14:23:30 GMT</pre>
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+			<td><strong>application/json</strong></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -197,20 +197,20 @@ Expires: Wed, 22 Jul 2015 14:23:30 GMT</pre>
 <!-- InstanceBeginEditable name="Response Body" -->
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Name</th>
-      <th style="width:15%">Type</th>
-      <th style="width:65%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GrantDetail</td>
-      <td><a href="../obj/o_oauth_GrantDetail.htm">GrantDetail</a></td>
-      <td><!-- #BeginLibraryItem "/Library/o_oauth_GrantDetail.lbi" -->Contains information details about an OAuth grant.<!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Name</th>
+			<th style="width:15%">Type</th>
+			<th style="width:65%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>GrantDetail</td>
+			<td><a href="../obj/o_oauth_GrantDetail.htm">GrantDetail</a></td>
+			<td>Contains information details about an OAuth grant.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -220,29 +220,29 @@ Expires: Wed, 22 Jul 2015 14:23:30 GMT</pre>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Item</th>
-      <th style="width:80%">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
-      <td>Invalid GrantID.</td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
-      <td>An error occurred processing the call. </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Item</th>
+			<th style="width:80%">Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>Invalid GrantID.</td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call. </td>
+		</tr>
+	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -252,5 +252,5 @@ Expires: Wed, 22 Jul 2015 14:23:30 GMT</pre>
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div><hr />
 </div>

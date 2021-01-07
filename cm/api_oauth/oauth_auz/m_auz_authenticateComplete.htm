@@ -17,34 +17,34 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_oauth_auz_authenticateComplete.lbi" -->Supports redirect from the identity provider after the resource owner's login with the identity provider is complete.<!-- #EndLibraryItem --></p>
-<p><strong>Note</strong>: These operations render the authorization page:</p>
+<p>Supports redirect from the identity provider after the resource owner's login with the identity provider is complete.</p>
+<p><strong>Note</strong>: There are three related operations that render the authorization page:</p>
 <ul>
-<li><span class="apidoc_code">GET&#160;/oauth/auz/grants/provider/authcomplete{domainid:(/[^/]+?)?}</span> (this operation) uses HTTP GET. You can use this if you do not need to maintain a static callback URI. The GrantID is a path parameter.</li>
-  <li><span class="apidoc_code"><a href="m_auz_authenticateCompletePOST.htm">POST&#160;/oauth/auz/grants/provider/authcomplete{domainid:(/[^/]+?)?}</a></span> uses HTTP POST. You can use this if you do not need to maintain a static callback URI and prefer to use HTTP POST. The GrantID is relayed in form URL-encoded POST content.</li>
+	<li><span class="apidoc_code">GET&#160;/oauth/auz/grants/provider/authcomplete{domainid:(/[^/]+?)?}</span> (this operation) performs the same action using HTTP GET. You can use this if you do not need to maintain a static callback URI. The GrantID is a path parameter.</li>
+	<li><span class="apidoc_code"><a href="m_auz_authenticateCompletePOST.htm">POST&#160;/oauth/auz/grants/provider/authcomplete{domainid:(/[^/]+?)?}</a></span> performs the same action using HTTP POST. You can use this if you do not need to maintain a static callback URI and prefer to use HTTP POST. The GrantID is relayed in form URL-encoded POST content.</li>
 </ul>
 
 <p>Corresponds to the Login Complete operation in the Login API, but relates to the resource owner's authentication with the Authorization Server, for the purposes of an OAuth grant, rather than authentication for the purpose of platform access.</p>
 <p class="apidoc_note"><strong>Note</strong>: The operations in the Authorization Server Authorization Service are intended for use by the Resource Owner. There are corresponding operations in other services for other scenarios. Where applicable, use the corresponding operations in the OAuth Login service (Login Complete GET and POST).</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
-  <li><a href="#httpmethod">HTTP Method</a></li>
-  <li><a href="#endpoint">URL</a></li>
-  <li><a href="#samplerequest">Sample Request</a></li>
-  <li><a href="#requestheaders">Request Headers</a></li>
-  <li><a href="#requestparameters">Request Parameters</a></li>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
 </ul>
 <ul>
-  <li><a href="#response">Response</a></li>
-  <li><a href="#sampleresponse">Sample Response</a></li>
-  <li><a href="#responseheaders">Response Headers</a></li>
-  <li><a href="#responsebody">Response Body</a></li>
-  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -52,7 +52,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->auz/grants/{GrantID}/authcomplete</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/auz/grants/{GrantID}/authcomplete</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -61,7 +61,7 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a call to this operation.</p>
 <p><strong>Request URL</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->auz/grants/mehpkurlkhnn/auzcomplete</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/auz/grants/mehpkurlkhnn/auzcomplete</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>GET /oauth/auz/grants/mehpkurlkhnn/auzcomplete HTTP/1.1
 Host: {oauth-provider-hostname}
@@ -76,18 +76,18 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td>This operation does not validate the Accept header. Any value is accepted. The operation returns <strong>html</strong>, to support the browser.</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td>This operation does not validate the Accept header. Any value is accepted. The operation returns <strong>html</strong>, to support the browser.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -96,24 +96,24 @@ Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <!-- InstanceBeginEditable name="Request Parameters" -->
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:11%">Parameter</th>
-      <th style="width:9%">Parm Type</th>
-      <th style="width:11%">Data Type</th>
-      <th style="width:11%">Required</th>
-      <th style="width:58%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GrantID</td>
-      <td>Path</td>
-      <td>string</td>
-      <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/o_ID_GrantID.lbi" -->The unique ID for a specific instance of an OAuth grant.<!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:11%">Parameter</th>
+			<th style="width:9%">Parm Type</th>
+			<th style="width:11%">Data Type</th>
+			<th style="width:11%">Required</th>
+			<th style="width:58%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>GrantID</td>
+			<td>Path</td>
+			<td>string</td>
+			<td>Required</td>
+			<td>The unique ID for a specific instance of an OAuth grant.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -156,23 +156,23 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td>Returns text/html response.</td>
-    </tr>
-    <tr>
-      <td>Cookie</td>
-      <td><!-- #BeginLibraryItem "/Library/oauthtoken_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a>&#8212;The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&#160;/oauth/login</a></span> operation.<!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+			<td>Returns text/html response.</td>
+		</tr>
+		<tr>
+			<td>Cookie</td>
+			<td>
+<a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a>&#8212;The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&#160;/oauth/login</a></span> operation.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -189,25 +189,25 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Item</th>
-      <th style="width:80%">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
-      <td>An error occurred processing the call. </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Item</th>
+			<th style="width:80%">Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call. </td>
+		</tr>
+	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -217,5 +217,5 @@ thq0I1hJvMJ7xlWj8haU3OvM4b6I3LgGWGvw5_Uws935JKLW57xiti_UC2IvxFDrAIg4xx2k-x-icqUD
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div><hr />
 </div>

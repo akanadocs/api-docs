@@ -13,15 +13,15 @@ no-catalog: true
 
 <div class="apidocContent">
 <h1 id="top">POST&#160;/oauth/auz/authorize</h1>
-<p><!-- #BeginLibraryItem "/Library/desc_oauth_auz_requestResourceOwnerAuthorizationPOST.lbi" -->Starts the authentication of the resource owner. On success, the user sees a login page based on the resource owner domain configured by the OAuth provider, so the user can complete authentication. Similar functionality to SSO Login in the Login service. Supported by both OAuth and OpenID Connect; OpenID Connect introduces some additional parameters, or additional values to existing parameters. Uses HTTP POST.<!-- #EndLibraryItem --></p>
+<p>Starts the authentication of the resource owner. On success, the user sees a login page based on the resource owner domain configured by the OAuth provider, so the user can complete authentication. Similar functionality to SSO Login in the Login service. Supported by both OAuth and OpenID Connect; OpenID Connect introduces some additional parameters, or additional values to existing parameters. Uses HTTP POST.</p>
 <p class="apidoc_note"><strong>Note</strong>: there is a corresponding operation that performs the same action using HTTP GET: <a href="m_auz_requestResourceOwnerAuthorizationGET.htm"><span class="apidoc_code">GET&#160;/oauth/auz/authorize</span></a>. For information on why you might choose one or the other, see <a href="../aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a></p>
 <p>In general, GET is more popular for this operation.</span> For full details about how to run this operation, refer to the documentation for <a href="m_auz_requestResourceOwnerAuthorizationGET.htm"><span class="apidoc_code">GET&#160;/oauth/auz/authorize</span></a>.</p>
-<p><strong>Note</strong>: the <strong>query</strong> parameters for the GET operation are <strong>form</strong> parameters for the POST operation.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation.</p>
+<p><strong>Note</strong>: the parameters are <strong>query</strong> parameters for the GET operation and <strong>form</strong> parameters for the POST operation.</p>
+<p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
 
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -31,5 +31,9 @@ no-catalog: true
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div>
+
+
+
+
 </div>

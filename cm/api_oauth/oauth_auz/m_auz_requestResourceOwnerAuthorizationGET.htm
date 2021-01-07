@@ -17,27 +17,27 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_oauth_auz_requestResourceOwnerAuthorizationGET.lbi" -->Starts the authentication of the resource owner. On success, the user sees a login page based on the resource owner domain configured by the OAuth provider, so the user can complete authentication. Similar functionality to SSO Login in the Login service. Uses HTTP GET.<!-- #EndLibraryItem --></p>
+<p>Starts the authentication of the resource owner. On success, the user sees a login page based on the resource owner domain configured by the OAuth provider, so the user can complete authentication. Similar functionality to SSO Login in the Login service. Uses HTTP GET.</p>
 <p class="apidoc_note"><strong>Note</strong>: there is a corresponding operation that performs the same action using HTTP POST: <span class="apidoc_code"><a href="m_auz_requestResourceOwnerAuthorizationPOST_.htm">POST&#160;/oauth/auz/authorize</a></span>. For information on why you might choose one or the other, see <a href="../aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a> In general, GET is more popular for this operation.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
-  <li><a href="#httpmethod">HTTP Method</a></li>
-  <li><a href="#endpoint">URL</a></li>
-  <li><a href="#samplerequest">Sample Request</a></li>
-  <li><a href="#requestheaders">Request Headers</a></li>
-  <li><a href="#requestparameters">Request Parameters</a></li>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
 </ul>
 <ul>
-  <li><a href="#response">Response</a></li>
-  <li><a href="#sampleresponse">Sample Response</a></li>
-  <li><a href="#responseheaders">Response Headers</a></li>
-  <li><a href="#responsebody">Response Body</a></li>
-  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -45,7 +45,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->auz/authorize</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/auz/authorize</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -54,30 +54,37 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows an authorization request.</p>
 <p><strong>Request URL #1</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->auz/authorize?client_id=acmepaymentscorp-75nxGKQE2kf2ZV4gq05Pn03l
-&amp;redirect_uri=http%3A%2F%2Facmepaymentscorp%2Fui%2Fapps%2Facmepaymentscorp%2F_VcuNfhlXb0PE8hHDxAx9OhA%2Fresources%2F
-console%2Fglobal%2Foauthclientredirect.html%3Fdynamic%3Dtrue&amp;scope=Scope1&amp;response_type=code</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/auz/authorize?response_type=code&state=
+&client_id=smoke-7kkCMrRcgpdhKNBTF7tbcM7dTlieLwPRQo1E8Rb4&scope=scope
+&redirect_uri=http%3A%2F%2Fsmokecloud-ubuntu1664-mysql57.aws.akana.roguewave.com%3A7900%2F
+&code_challenge=Fo9h7PBBSXlHHfHmICjVNVlj36PrntQ1wOZpG99iuAM&code_challenge_method=plain</pre>
 
 <p><strong>Request URL #2</strong></p>
 <p>OAuth 1.0a authorization request.</p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->auz/authorize?oauth_token=45c8npv52e48</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/auz/authorize?oauth_token=45c8npv52e48</pre>
 
+<p id="id_samplerequest_pkce"><strong>Request URL #3 (PKCE)</strong></p>
+<p>OAuth2.0 authorization request with PKCE support enabled (2020.2.0 and later). The two PKCE values are provided: <strong>code_challenge</strong> is included and <strong>code_challenge_method</strong> is <strong>plain</strong>. If successful, the server presents the authorization page. Line breaks have been added. For the response, see <a href="#id_sampleresponse_pkce">Sample response example #2 (PKCE)</a> below.</p>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/auz/authorize?response_type=code&amp;state=
+&amp;client_id=smoke-7kkCMrRcgpdhKNBTF7tbcM7dTlieLwPRQo1E8Rb4&amp;scope=scope
+&amp;redirect_uri=http%3A%2F%2Fsmokecloud-ubuntu1664-mysql57.aws.akana.roguewave.com%3A7900%2F
+&amp;code_challenge=Fo9h7PBBSXlHHfHmICjVNVlj36PrntQ1wOZpG99iuAM&amp;code_challenge_method=plain HTTP/1.1</pre>
 
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</pre>
 <p><strong>Sample request body</strong></p>
 <p>Not applicable.</p>
 
-<p><strong>Sample request #3</strong></p>
+<p><strong>Sample request #4</strong></p>
 <p>In the example below, each parameter is shown on a different line, for clarity.</p>
 <pre>https://op.example.com/authorize?
 response_type=code
 &client_id=client
 &redirect_uri=[https://client.example.com|https://client.example.com/]
 &scope=openid
-&claims=\{"userinfo" : {"access_group": { "value" : "e70bb324-e2fa-4b09-a490-2116dfb80d49"} } , "id_token" : {" access_group":
+&claims=\{"userinfo" : {"access_group": { "value" : "e70bb324-e2fa-4b09-a490-2116dfb80d49"}} , "id_token" : {" access_group":
 { "value" : "e70bb324-e2fa-4b09-a490-2116dfb80d49" }
-} }</pre>
+}}</pre>
 
 
 <!-- InstanceEndEditable -->
@@ -87,18 +94,18 @@ response_type=code
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td>None required however the response is an HTML page.</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td>None required; however, the response is an HTML page.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -108,81 +115,81 @@ response_type=code
 <h2 id="requestparameters">Request Parameters</h2>
 <p><strong>Note</strong>: the <strong>query</strong> parameters for the GET operation are <strong>form</strong> parameters for the POST operation.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:11%">Parameter</th>
-      <th style="width:9%">Parm Type</th>
-      <th style="width:11%">Data Type</th>
-      <th style="width:11%">Required</th>
-      <th style="width:58%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>oauth_token</td>
-      <td>Query</td>
-      <td>String</td>
-      <td>Optional</td>
-      <td>The OAuth 1.0 token; could be a GrantID.</td>
-    </tr>
-    <tr>
-      <td>oauth_verifier</td>
-      <td>Query</td>
-      <td>String</td>
-      <td>Optional</td>
-      <td>The OAuth 1.0 verifier; an internal value used as a temporary authorization code for the grant.</td>
-    </tr>
-    <tr>
-      <td>response_type</td>
-      <td>Query</td>
-      <td>String</td>
-      <td>Required</td>
-      <td><p>OAuth 2.0: standard response_type parameter.</p>
-        <p>The response type value is derived based on the grant types.</p></td>
-    </tr>
-    <tr>
-      <td>client_id</td>
-      <td>Query</td>
-      <td>String</td>
-      <td>Required</td>
-      <td>OAuth 2.0: standard client_id parameter. The client identifier.</td>
-    </tr>
-    <tr>
-      <td>redirect_uri</td>
-      <td>Query</td>
-      <td>String</td>
-      <td>Required</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_oauth_redirect_uri.lbi" -->OAuth 2.0: standard redirect_uri parameter. The redirect URI configured by the app. For more information, see <a href="../aaref/Ref_OAuthParameters.htm">OAuth Parameters</a>.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>scope</td>
-      <td>Query</td>
-      <td>String</td>
-      <td>Optional</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_oauth_scope.lbi" -->OAuth 2.0: standard scope parameter. One or more <a href="../Ref_Glossary_CommunityPlatform.htm#gl_oauth_scope">scopes</a> configured in the OAuth provider. Space separator for multiple scopes.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>state</td>
-      <td>Query</td>
-      <td>String</td>
-      <td>&#160;</td>
-      <td>OAuth 2.0: standard state parameter.</td>
-    </tr>
-    <tr>
-      <td>nonce</td>
-      <td>Query</td>
-      <td>String</td>
-      <td>Optional</td>
-      <td><p>Used in the OpenID Connect implicit flow. Based on the response type, nonce might be required.</p>
-        <p>A nonce value for the openid request&#8212;a random string that is uniquely generated for each request.</p></td>
-      </tr>
-    <tr>
-      <td>response_mode</td>
-      <td>Query</td>
-      <td>String</td>
-      <td>Optional</td>
-      <td>The response will be returned based on the response_mode value. Supported values for the platform's OpenID Connect Relying Party domain: <strong>form_post</strong>, <strong>query</strong>, or <strong>fragment</strong> (see <a href="../aaref/Ref_Values.htm#values_oidc_response_mode">OpenID Connect Relying Party Response Mode values</a>).</td>
-      </tr>
+	<thead>
+		<tr>
+			<th style="width:11%">Parameter</th>
+			<th style="width:9%">Parm Type</th>
+			<th style="width:11%">Data Type</th>
+			<th style="width:11%">Required</th>
+			<th style="width:58%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>oauth_token</td>
+			<td>Query</td>
+			<td>String</td>
+			<td>Optional</td>
+			<td>The OAuth 1.0 token; could be a GrantID.</td>
+		</tr>
+		<tr>
+			<td>oauth_verifier</td>
+			<td>Query</td>
+			<td>String</td>
+			<td>Optional</td>
+			<td>The OAuth 1.0 verifier; an internal value used as a temporary authorization code for the grant.</td>
+		</tr>
+		<tr>
+			<td>response_type</td>
+			<td>Query</td>
+			<td>String</td>
+			<td>Required</td>
+			<td><p>OAuth 2.0: standard response_type parameter.</p>
+				<p>The response type value is derived based on the grant types.</p></td>
+		</tr>
+		<tr>
+			<td>client_id</td>
+			<td>Query</td>
+			<td>String</td>
+			<td>Required</td>
+			<td>OAuth 2.0: standard client_id parameter. The client identifier.</td>
+		</tr>
+		<tr>
+			<td>redirect_uri</td>
+			<td>Query</td>
+			<td>String</td>
+			<td>Required</td>
+			<td>OAuth 2.0: standard redirect_uri parameter. The redirect URI configured by the app. For more information, see <a href="../aaref/Ref_OAuthParameters.htm">OAuth Parameters</a>.</td>
+		</tr>
+		<tr>
+			<td>scope</td>
+			<td>Query</td>
+			<td>String</td>
+			<td>Optional</td>
+			<td>OAuth 2.0: standard scope parameter. One or more <a href="../Ref_Glossary_CommunityPlatform.htm#gl_oauth_scope">scopes</a> configured in the OAuth provider. Space separator for multiple scopes.</td>
+		</tr>
+		<tr>
+			<td>state</td>
+			<td>Query</td>
+			<td>String</td>
+			<td>&#160;</td>
+			<td>OAuth 2.0: standard state parameter.</td>
+		</tr>
+		<tr>
+			<td>nonce</td>
+			<td>Query</td>
+			<td>String</td>
+			<td>Optional</td>
+			<td><p>Used in the OpenID Connect implicit flow. Based on the response type, nonce might be required.</p>
+				<p>A nonce value for the openid request&#8212;a random string that is uniquely generated for each request.</p></td>
+			</tr>
+		<tr>
+			<td>response_mode</td>
+			<td>Query</td>
+			<td>String</td>
+			<td>Optional</td>
+			<td>The response will be returned based on the response_mode value. Supported values for the platform's OpenID Connect Relying Party domain: <strong>form_post</strong>, <strong>query</strong>, or <strong>fragment</strong> (see <a href="../aaref/Ref_Values.htm#values_oidc_response_mode">OpenID Connect Relying Party Response Mode values</a>).</td>
+			</tr>
 <tr>
 <td>claims</td>
 <td>Query</td>
@@ -191,7 +198,21 @@ response_type=code
 <td><p>Used to request that specific Claims be returned. The value is a JSON object listing the requested Claims, as covered by the OpenID Connect specification: <a href="https://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter" title="Link to OpenID Connect specification, section re Claims request parameter" target="_blank">https://openid.net/specs/openid-connect-core-1_0.html#ClaimsParameter</a>.</p>
 <p>OAuth 2.0 only.</p></td>
 </tr>
-    </tbody>
+<tr>
+	<td>code_challenge</td>
+	<td>Query</td>
+	<td>String</td>
+	<td>Optional</td>
+	<td>Used for <a href="../../learnmore/basics_glossary.htm#gl_pkce">PKCE</a> support, when using Authorization Code grant type with PKCE, to send the code challenge value to the authorization endpoint. For more information on PKCE, see <a href="../aaref/Ref_OAuth_PKCE.htm">PKCE support with the Authorization Code grant type</a>.</td>
+</tr>
+<tr>
+	<td>code_challenge_method</td>
+	<td>Query</td>
+	<td>String</td>
+	<td>Optional</td>
+	<td>Used for <a href="../../learnmore/basics_glossary.htm#gl_pkce">PKCE</a> support, when using Authorization Code grant type with PKCE, to send the code challenge method to the authorization endpoint. For the API call to be successful, the value much match the value specified in the OAuth Provider configuration. Possible values: <strong>plain</strong>, <strong>S256</strong>. For more information on PKCE, see <a href="../aaref/Ref_OAuth_PKCE.htm">PKCE support with the Authorization Code grant type</a>.</td>
+</tr>
+</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -212,8 +233,11 @@ response_type=code
 Expires: Thu, 09 Jul 2015 13:57:23 GMT
 Location: http://{oauth-provider-hostname}/oauthauz/#/grant/viit0bmhe2vl/authenticate</pre>
 <p><strong>Sample response body</strong></p>
-<p>The response is a redirect back to the client URL as specified in the Location header.</p>
+<p>The response is a redirect back to the client URL as specified in the Location header, for client authorization.</p>
 <p>None.</p>
+<p id="id_sampleresponse_pkce"><strong>Sample response example #2 (PKCE)</strong></p>
+<p>The image below shows a successful request and response with PKCE enabled. The response is a 302 redirect to the URL specified in the Location header.</p>
+<p><img src="../assets/auz_requestResourceOwnerAuthorizationGET.png" alt=""/></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
 
@@ -222,19 +246,19 @@ Location: http://{oauth-provider-hostname}/oauthauz/#/grant/viit0bmhe2vl/authent
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#location_response">Location</a></td>
-      <td><p>The URL to which the resource owner is redirected after authentication is successful. The redirect URL, previously provided by the client to the identity provider and/or specified in the <strong>redirect_uri</strong> request parameter, is provided as the value for the Location header.</p>
-        <p>The GrantID is included in the Location header.</p></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#location_response">Location</a></td>
+			<td><p>The URL to which the resource owner is redirected after authentication is successful. The redirect URL, previously provided by the client to the identity provider and/or specified in the <strong>redirect_uri</strong> request parameter, is provided as the value for the Location header.</p>
+				<p>The GrantID is included in the Location header.</p></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -251,58 +275,58 @@ Location: http://{oauth-provider-hostname}/oauthauz/#/grant/viit0bmhe2vl/authent
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Item</th>
-      <th style="width:80%">Value</th>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
-      <td><p>Client id null.</p>
-        <p>Invalid_request. The request is missing a required parameter or includes an invalid parameter.</p></td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
-      <td>Invalid response type. The response type is not supported.</td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
-      <td><p>Nonce (required for hybrid grant types). </p>
-        <p>Nonce is a mandatory parameter for OpenID Connect implicit flow authentication requests.</p></td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
-      <td><p>Client ID not valid.</p>
-        <p>The client is not authorized to request an authorization code.</p></td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
-      <td><p>Scope not valid (if openid scope not present and corresponding response types are present). </p>
-        <p>The response type is not supported.</p></td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
-      <td><p>Scope not valid (if the scope configured is not present in the request).</p>
-        <p>The requested scope is invalid or missing.</p></td>
-    </tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http302">302</a></td>
-      <td>Invalid redirect_uri. </td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
-      <td>An error occurred processing the call. </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Item</th>
+			<th style="width:80%">Value</th>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
+			<td><p>Client id null.</p>
+				<p>Invalid_request. The request is missing a required parameter or includes an invalid parameter.</p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
+			<td>Invalid response type. The response type is not supported.</td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
+			<td><p>Nonce (required for hybrid grant types). </p>
+				<p>Nonce is a mandatory parameter for OpenID Connect implicit flow authentication requests.</p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
+			<td><p>Client ID not valid.</p>
+				<p>The client is not authorized to request an authorization code.</p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
+			<td><p>Scope not valid (if openid scope not present and corresponding response types are present). </p>
+				<p>The response type is not supported.</p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http200">200</a></td>
+			<td><p>Scope not valid (if the scope configured is not present in the request).</p>
+				<p>The requested scope is invalid or missing.</p></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http302">302</a></td>
+			<td>Invalid redirect_uri. </td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call. </td>
+		</tr>
+	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -312,5 +336,5 @@ Location: http://{oauth-provider-hostname}/oauthauz/#/grant/viit0bmhe2vl/authent
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div><hr />
 </div>

@@ -36,9 +36,9 @@ no-catalog: true
 <p>Option 1 or option 2 are the most common scenarios.</p>
 <p>Below are the request/response formats for all three use cases:</p>
 <ul>
-<li><a href="#oauth_usecase_01">Use case 1: Log in by providing email address and password of the user registered in Community Manager  </a></li>
-<li><a href="#oauth_usecase_02">Use case 2: Log in by providing the username/password of the LDAP domain user or OpenID Connect Relying Party Domain user  </a></li>
-<li><a href="#oauth_usecase_03">Use case 3: SSO login with user authenticating to the identity provider and OAuth provider authenticating to SSO token  </a></li>
+<li><a href="#oauth_usecase_01">Use case 1: Log in by providing email address and password of the user registered in Community Manager</a></li>
+<li><a href="#oauth_usecase_02">Use case 2: Log in by providing the username/password of the LDAP domain user or OpenID Connect Relying Party Domain user</a></li>
+<li><a href="#oauth_usecase_03">Use case 3: SSO login with user authenticating to the identity provider and OAuth provider authenticating to SSO token</a></li>
 </ul>
 
 
@@ -46,27 +46,27 @@ no-catalog: true
 <p>Operation: <a href="../oauth_login/m_oauth_login_login.htm">POST&#160;/oauth/login</a>.</p>
 <h4>Request</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>URL</td>
-      <td>[oauth-provider-host]/oauth/login</td>
-    </tr>
-    <tr>
-      <td>Action</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>Request Headers</td>
-      <td><p>Content-Type: application/x-www-form-urlencoded</p>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>URL</td>
+			<td>[oauth-provider-host]/oauth/login</td>
+		</tr>
+		<tr>
+			<td>Action</td>
+			<td>POST</td>
+		</tr>
+		<tr>
+			<td>Request Headers</td>
+			<td><p>Content-Type: application/x-www-form-urlencoded</p>
 Accept: application/json</td>
-    </tr>
-  </tbody>
+		</tr>
+	</tbody>
 </table>
 
 
@@ -83,52 +83,52 @@ Accept: application/json</td>
 <p>Operation: <a href="../oauth_login/m_oauth_login_ssoLoginPost.htm">POST&#160;/oauth/login/ssoLogin</a>.</p>
 <h4>Request</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>URL</td>
-      <td>[oauth-provider-host]/oauth/login/ssoLogin</td>
-    </tr>
-    <tr>
-      <td>Action</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>Request Headers</td>
-      <td><p>Content-Type: application/x-www-form-urlencoded</p>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>URL</td>
+			<td>[oauth-provider-host]/oauth/login/ssoLogin</td>
+		</tr>
+		<tr>
+			<td>Action</td>
+			<td>POST</td>
+		</tr>
+		<tr>
+			<td>Request Headers</td>
+			<td><p>Content-Type: application/x-www-form-urlencoded</p>
         Accept: application/json</td>
-    </tr>
-  </tbody>
+		</tr>
+	</tbody>
 </table>
 
 
 <h4>Request Parameters</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Domain: (Optional)</td>
-      <td>Optional domain name parameter. If this parameter is missing, the platform uses the resource owner authentication domain.</td>
-    </tr>
-    <tr>
-      <td>identity_xxxx</td>
-      <td>All parameters that start with identity_ are used as identity parameters. For LDAP and OpenID Connect Relying Party domains, use identity_username.</td>
-    </tr>
-    <tr>
-      <td>secret_xxxx</td>
-      <td>All parameters that start with secret_ are used as secret parameters. For LDAP and OpenID Connect Relying Party domains, use secret_password.</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Domain: (Optional)</td>
+			<td>Optional domain name parameter. If this parameter is missing, the platform uses the resource owner authentication domain.</td>
+		</tr>
+		<tr>
+			<td>identity_xxxx</td>
+			<td>All parameters that start with identity_ are used as identity parameters. For LDAP and OpenID Connect Relying Party domains, use identity_username.</td>
+		</tr>
+		<tr>
+			<td>secret_xxxx</td>
+			<td>All parameters that start with secret_ are used as secret parameters. For LDAP and OpenID Connect Relying Party domains, use secret_password.</td>
+		</tr>
+	</tbody>
 </table>
 <h4>Example</h4>
 <pre>identity_username=[USERNAME]&amp;secret_password=[PASSWORD]&amp;Domain=[domain-name]</pre>
@@ -145,26 +145,26 @@ Accept: application/json</td>
 
 <h4>Request</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>URL</td>
-      <td>[oauth-provider-host]/oauth/login/ssoLogin</td>
-    </tr>
-    <tr>
-      <td>Action</td>
-      <td>Both GET and POST are supported</td>
-    </tr>
-    <tr>
-      <td>Request Headers</td>
-      <td>None required. However, if the domain uses a cookie to authenticate, include the cookie.</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>URL</td>
+			<td>[oauth-provider-host]/oauth/login/ssoLogin</td>
+		</tr>
+		<tr>
+			<td>Action</td>
+			<td>Both GET and POST are supported</td>
+		</tr>
+		<tr>
+			<td>Request Headers</td>
+			<td>None required. However, if the domain uses a cookie to authenticate, include the cookie.</td>
+		</tr>
+	</tbody>
 </table>
 
 
@@ -188,31 +188,31 @@ Accept: application/json</td>
 <p>Operation: <a href="../oauth_login/m_oauth_login_renewTokenPOST.htm">POST&#160;/oauth/login/renewToken</a> or <a href="../oauth_login/m_oauth_login_ssoLoginGET_.htm">GET&#160;/oauth/login/ssoLogin</a>.</p>
 <h4>Request</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>URL</td>
-      <td>[oauth-provider-host]/oauth/login/renewToken</td>
-    </tr>
-    <tr>
-      <td>Action</td>
-      <td>Both GET and POST are supported</td>
-      </tr>
-    <tr>
-      <td>Request Headers</td>
-      <td><p>Content-Type: application/x-www-form-urlencoded</p>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>URL</td>
+			<td>[oauth-provider-host]/oauth/login/renewToken</td>
+		</tr>
+		<tr>
+			<td>Action</td>
+			<td>Both GET and POST are supported</td>
+			</tr>
+		<tr>
+			<td>Request Headers</td>
+			<td><p>Content-Type: application/x-www-form-urlencoded</p>
 Accept: application/json</td>
-    </tr>
-    <tr>
-      <td>Request Headers</td>
-      <td>None</td>
-    </tr>
-  </tbody>
+		</tr>
+		<tr>
+			<td>Request Headers</td>
+			<td>None</td>
+		</tr>
+	</tbody>
 </table>
 
 
@@ -232,26 +232,26 @@ Accept: application/json</td>
 <p>Operation: <a href="../oauth_login/m_oauth_login_logout.htm">GET&#160;/oauth/login/logout</a>.</p>
 <h4>Request</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>URL</td>
-      <td>[oauth-provider-host]/oauth/login/logout</td>
-    </tr>
-    <tr>
-      <td>Action</td>
-      <td>GET</td>
-      </tr>
-    <tr>
-      <td>Request Headers</td>
-      <td>Accept: application/json</td>
-      </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>URL</td>
+			<td>[oauth-provider-host]/oauth/login/logout</td>
+		</tr>
+		<tr>
+			<td>Action</td>
+			<td>GET</td>
+			</tr>
+		<tr>
+			<td>Request Headers</td>
+			<td>Accept: application/json</td>
+			</tr>
+	</tbody>
 </table>
 
 
@@ -272,81 +272,81 @@ Accept: application/json</td>
 <p>Operation: <a href="../oauth_admin/m_admin_listGrants.htm">GET&#160;/oauth/admin/grants</a></p>
 <h4>Request</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>URL</td>
-      <td>[oauth-provider-host]/oauth/admin/grants</td>
-    </tr>
-    <tr>
-      <td>Action</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>Request Headers</td>
-      <td><p>Accept: application/xml (or application/json)</p>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>URL</td>
+			<td>[oauth-provider-host]/oauth/admin/grants</td>
+		</tr>
+		<tr>
+			<td>Action</td>
+			<td>GET</td>
+		</tr>
+		<tr>
+			<td>Request Headers</td>
+			<td><p>Accept: application/xml (or application/json)</p>
 Cookie set up by the Authentication API</td>
-    </tr>
-  </tbody>
+		</tr>
+	</tbody>
 </table>
 
 
 <h4>Request Query Parameters</h4>
 <p>All query parameters are optional. These query parameters restrict the data returned, and therefore act as a filter to query based on.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>GrantSetupStartDate</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_oauth_GrantSetupStartDate.lbi" -->Date when grant is set up (format: yyyy-MM-dd&rsquo;T&rsquo;HH:mm:ss) value in GMT timezone.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>GrantSetupEndDate</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_oauth_GrantSetupEndDate.lbi" -->Date before grant is set up (format: yyyy-MM-dd&rsquo;T&rsquo;HH:mm:ss) value in GMT timezone.<!-- #EndLibraryItem --></td>
-      </tr>
-    <tr>
-      <td>ClientID</td>
-      <td>client-id of the client to which grants are issued.</td>
-      </tr>
-    <tr>
-      <td>ResourceOwnerUID</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_oauth_ResourceOwnerUID.lbi" -->The unique ID of the resource owner, as set up with the OAuth provider. This can be simply the UID, or can be the DOMAIN\UID if multiple domains are used and the same UID exists in different domains. DOMAIN here is the Resource Owner authentication domain of the Provider.<!-- #EndLibraryItem --></td>
-      </tr>
-    <tr>
-      <td>GrantStatus</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_oauth_GrantStatus.lbi" -->The status of the grant. This parameter can be included multiple times to fetch the grants in different statuses. Valid values: <strong>Pending</strong>, <strong>Active</strong>, <strong>Rejected</strong>, <strong>Revoked</strong>, <strong>Expired</strong>, <strong>Cancelled</strong> (see <a href="Ref_Values.htm#values_oauthgrantstatus">OAuth Grant Status</a>).<!-- #EndLibraryItem --></td>
-      </tr>
-    <tr>
-      <td>SortBy</td>
-      <td><p>Sort criteria for the return list. Default value: Last Modified date descending.</p>
-        <p>Possible values:</p>
-        <ul class="apidoctable_ul">
-          <li>grant.modified.date: Last modified date Descending</li>
-          <li>grant.setup.date: Grant setup date Descending</li>
-          <li>grant.status: Grant Status Ascending alphabetically</li>
-          <li>grant.resource.owner: Resource Owner UID Ascending</li>
-          <li>grant.client: ClientID Ascending</li>
-        </ul></td>
-      </tr>
-    <tr>
-      <td>StartIndex</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_start.lbi" --> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.<!-- #EndLibraryItem --></td>
-      </tr>
-    <tr>
-      <td>Count</td>
-      <td><!-- #BeginLibraryItem "/Library/parm_oauth_Count.lbi" -->The number of results to be returned, from the specified starting point. If not specified, all matching results are returned. Default: 100.<!-- #EndLibraryItem --></td>
-      </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>GrantSetupStartDate</td>
+			<td>Date when grant is set up (format: yyyy-MM-dd&rsquo;T&rsquo;HH:mm:ss) value in GMT timezone.</td>
+		</tr>
+		<tr>
+			<td>GrantSetupEndDate</td>
+			<td>Date before grant is set up (format: yyyy-MM-dd&rsquo;T&rsquo;HH:mm:ss) value in GMT timezone.</td>
+			</tr>
+		<tr>
+			<td>ClientID</td>
+			<td>client-id of the client to which grants are issued.</td>
+			</tr>
+		<tr>
+			<td>ResourceOwnerUID</td>
+			<td>The unique ID of the resource owner, as set up with the OAuth provider. This can be simply the UID, or can be the DOMAIN\UID if multiple domains are used and the same UID exists in different domains. DOMAIN here is the Resource Owner authentication domain of the Provider.</td>
+			</tr>
+		<tr>
+			<td>GrantStatus</td>
+			<td>The status of the grant. This parameter can be included multiple times to fetch the grants in different statuses. Valid values: <strong>Pending</strong>, <strong>Active</strong>, <strong>Rejected</strong>, <strong>Revoked</strong>, <strong>Expired</strong>, <strong>Cancelled</strong> (see <a href="Ref_Values.htm#values_oauthgrantstatus">OAuth Grant Status</a>).</td>
+			</tr>
+		<tr>
+			<td>SortBy</td>
+			<td><p>Sort criteria for the return list. Default value: Last Modified date descending.</p>
+				<p>Possible values:</p>
+				<ul class="apidoctable_ul">
+					<li>grant.modified.date: Last modified date Descending</li>
+					<li>grant.setup.date: Grant setup date Descending</li>
+					<li>grant.status: Grant Status Ascending alphabetically</li>
+					<li>grant.resource.owner: Resource Owner UID Ascending</li>
+					<li>grant.client: ClientID Ascending</li>
+				</ul></td>
+			</tr>
+		<tr>
+			<td>StartIndex</td>
+			<td> An index number indicating the starting point for the results to be returned. If not specified, results start at position 0, the first result.</td>
+			</tr>
+		<tr>
+			<td>Count</td>
+			<td>The number of results to be returned, from the specified starting point. If not specified, all matching results are returned. Default: 100.</td>
+			</tr>
+	</tbody>
 </table>
 
 
@@ -519,7 +519,7 @@ Cookie set up by the Authentication API</td>
 <p>To query for a single grant, use the URLs below to provide different information relating to the grant. </p>
 <p>Returns all the information about the grant (operation: <a href="../oauth_admin/m_admin_getGrantDetails.htm">GET&#160;/oauth/admin/grants/{GrantID}</a>):</p>
 <pre>[oauth-provider-host]/oauth/admin/grants/{GrantID}</pre>
-<p>Returns the clientâs avatar image  (operation: <a href="../oauth_admin/m_admin_getGrantClientAvatar.htm">GET&#160;/oauth/admin/grants/{GrantID}/client/picture</a>):</p>
+<p>Returns the clientâs avatar image (operation: <a href="../oauth_admin/m_admin_getGrantClientAvatar.htm">GET&#160;/oauth/admin/grants/{GrantID}/client/picture</a>):</p>
 <pre>[oauth-provider-host]/oauth/admin/grants/{GrantID}/client/picture</pre>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -530,49 +530,49 @@ Cookie set up by the Authentication API</td>
 <p>Operation: <a href="../oauth_admin/m_admin_getClients.htm">GET&#160;/oauth/admin/clients</a>.</p>
 <h4>Request</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>URL</td>
-      <td>[oauth-provider-host]/oauth/admin/clients</td>
-    </tr>
-    <tr>
-      <td>Action</td>
-      <td>GET</td>
-    </tr>
-    <tr>
-      <td>Request Headers</td>
-      <td><p>Cookie set up by authentication APIs above.</p>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>URL</td>
+			<td>[oauth-provider-host]/oauth/admin/clients</td>
+		</tr>
+		<tr>
+			<td>Action</td>
+			<td>GET</td>
+		</tr>
+		<tr>
+			<td>Request Headers</td>
+			<td><p>Cookie set up by authentication APIs above.</p>
 Accept: application/json or application/xml</td>
-    </tr>
-  </tbody>
+		</tr>
+	</tbody>
 </table>
 
 
 <h4>Request Query Parameters</h4>
 <p>Both parameters are optional. By default this API returns all client-ids with at least one grant in any state.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>IncludeClientsWithActiveGrants</td>
-      <td>Default value true. Use false if you want to not include clients with active grants in the response list</td>
-    </tr>
-    <tr>
-      <td>IncludeClientsWithExpiredGrants</td>
-      <td>Default value true. Use false if you want to not include clients with expired grants in the response list</td>
-      </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>IncludeClientsWithActiveGrants</td>
+			<td>Default value true. Use false if you want to not include clients with active grants in the response list</td>
+		</tr>
+		<tr>
+			<td>IncludeClientsWithExpiredGrants</td>
+			<td>Default value true. Use false if you want to not include clients with expired grants in the response list</td>
+			</tr>
+	</tbody>
 </table>
 <p>If both the above query parameters are false, this API returns all client-ids with at least one grant in any state.</p>
 <h4>Response</h4>
@@ -611,28 +611,28 @@ Accept: application/json or application/xml</td>
 <p class="apidoc_note"><strong>Note</strong>: for more information about revoking a grant, see <a href="Ref_OAuth_RevokingAGrant.htm">OAuth: Revoking a Grant</a>.</p>
 <h4>Request</h4>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>URL</td>
-      <td>[oauth-provider-host]/oauth/admin/grants/{GrantID}/actions</td>
-    </tr>
-    <tr>
-      <td>Action</td>
-      <td>POST</td>
-    </tr>
-    <tr>
-      <td>Request Headers</td>
-      <td><p>Content-Type: application/json<br />
-        Accept: application/json</p>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>URL</td>
+			<td>[oauth-provider-host]/oauth/admin/grants/{GrantID}/actions</td>
+		</tr>
+		<tr>
+			<td>Action</td>
+			<td>POST</td>
+		</tr>
+		<tr>
+			<td>Request Headers</td>
+			<td><p>Content-Type: application/json</p>
+				<p> Accept: application/json</p>
 Cookie set up with any of the authentication APIs above.</td>
-    </tr>
-  </tbody>
+		</tr>
+	</tbody>
 </table>
 
 
@@ -721,7 +721,7 @@ Cookie set up with any of the authentication APIs above.</td>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -731,5 +731,9 @@ Cookie set up with any of the authentication APIs above.</td>
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div>
+
+
+
+
 </div>

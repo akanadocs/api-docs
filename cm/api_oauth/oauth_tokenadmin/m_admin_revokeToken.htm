@@ -17,28 +17,28 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_oauth_admin_token_revokeToken.lbi" -->Revokes an existing OAuth grant.<!-- #EndLibraryItem --></p>
+<p>Revokes an existing OAuth grant.</p>
 <p>You can send the two parameters, <strong>client_id</strong> and <strong>client_secret</strong>, either in form parameters or in the <strong>Basic</strong> authorization header.</p>
 <h4 class="stamp">New in API Platform Version: 2018.0.0</h4>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong><span class="authorizationrole.user">Must be an authorized user for the resource.</span></p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions:</strong> <span class="authorizationrole.user">Must be an authorized user for the resource.</span></p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
-  <li><a href="#httpmethod">HTTP Method</a></li>
-  <li><a href="#endpoint">URL</a></li>
-  <li><a href="#samplerequest">Sample Request</a></li>
-  <li><a href="#requestheaders">Request Headers</a></li>
-  <li><a href="#requestparameters">Request Parameters</a></li>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
 </ul>
 <ul>
-  <li><a href="#response">Response</a></li>
-  <li><a href="#sampleresponse">Sample Response</a></li>
-  <li><a href="#responseheaders">Response Headers</a></li>
-  <li><a href="#responsebody">Response Body</a></li>
-  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">PUT</p>
 <!-- InstanceEndEditable -->
@@ -46,7 +46,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->admin/token/revoke</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/admin/token/revoke</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -55,10 +55,10 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for client information for the OAuth Provider.</p>
 <p><strong>Request URL</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->admin/token/revoke</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/admin/token/revoke</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Accept: application/json
-Cookie:&#160;<!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenID)}<!-- #EndLibraryItem --></pre>
+Cookie:&#160;OAuthToken_{OAuthProviderName}={Cookie value (usually starts with TokenID)}</pre>
 <p><strong>Sample request body</strong></p>
 <p>The example below shows the request parameters sent as Authorization headers.</p>
 <p><img src="../assets/revokeToken.png" alt="Revoke Token API call" /></p>
@@ -70,27 +70,27 @@ Cookie:&#160;<!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToke
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-    	<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
-    	<td><!-- #BeginLibraryItem "/Library/hdrval_form-urlencoded.lbi" --><strong>application/x-www-form-urlencoded</strong><!-- #EndLibraryItem --></td>
-    	</tr>
-    <tr>
-    	<td>Cookie</td>
-    	<td><!-- #BeginLibraryItem "/Library/oauthtoken_cookie.lbi" -->
-<a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a>&#8212;The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&#160;/oauth/login</a></span> operation.<!-- #EndLibraryItem --></td>
-    	</tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td><strong>application/xml</strong></td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_request">Content-Type</a></td>
+			<td><strong>application/x-www-form-urlencoded</strong></td>
+			</tr>
+		<tr>
+			<td>Cookie</td>
+			<td>
+<a href="../aaref/Ref_CookiesOnThePlatform.htm">OAuthToken_{OAuthProviderName}</a>&#8212;The OAuth cookie that identifies the logged-in user with the provider. Depending on the operation being used and the context, the authenticated user could be the resource owner, the administrator, the client app administration, or the OAuth Provider. The cookie is returned after logging in with the <span class="apidoc_code"><a href="../oauth_login/m_oauth_login_login.htm">POST&#160;/oauth/login</a></span> operation.</td>
+			</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -99,44 +99,44 @@ Cookie:&#160;<!-- #BeginLibraryItem "/Library/hdr_cookie_oauth.lbi" -->OAuthToke
 <!-- InstanceBeginEditable name="Request Parameters" -->
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:11%">Parameter</th>
-      <th style="width:9%">Parm Type</th>
-      <th style="width:11%">Data Type</th>
-      <th style="width:11%">Required</th>
-      <th style="width:58%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>client_id</td>
-      <td>Form</td>
-      <td>String</td>
-      <td>Required&#160;as parameter or in header</td>
-      <td><p>The client ID for the OAuth grant that is being revoked.</p>
-      	<p>You could also send this in a Basic Authorization header, a Base64-encoded form of <strong>app_id:shared_secret</strong>. In this context, both values are the app credentials, available from the App <strong>Details</strong> page, <strong>Security</strong> section: <strong>app_id</strong> is the <strong>AppID</strong> value, in the format {tenant}-{uniqueid), and the <strong>shared_secret</strong> value is also in the Security section.</p>
-      	<p>To get the app_id value, called <strong>identity</strong> in the API response: <span class="apidoc_code"><a href="../../api/apps/m_apps_getVersion.htm">GET&#160;/api/apps/versions/{AppVersionID}</a></span> operation.</p>
-      	<p>To get the shared secret: <span class="apidoc_code"><a href="../../api/apps/m_apps_getSharedSecret.htm">GET&#160;/api/apps/versions/{AppVersionID}/secret</a></span> operation.</p>
-      	<p>See example.</p></td>
-    </tr>
-    <tr>
-    	<td>client_secret</td>
-    	<td>Form</td>
-    	<td>String</td>
-    	<td>Required as parameter or in header</td>
-    	<td>The Shared Secret value for the app. Used in the Basic authorization header, see <strong>client_id</strong> and example.</td>
-    	</tr>
-    <tr>
-      <td>access_token</td>
-      <td>Form</td>
-      <td>String</td>
-      <td>Required</td>
-      <td><p>The access token that is being revoked.</p>
-      	<p>You could also send this in a Bearer Authorization header. See example.</p>
-      	<p>If you are not sure of the access_token value, you can use the <span class="apidoc_code"><a href="../oauth_oauth20/m_oauth20_getTokenPOST.htm">POST&#160;/oauth/oauth20/token</a></span> operation to retrieve the value.</p></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:11%">Parameter</th>
+			<th style="width:9%">Parm Type</th>
+			<th style="width:11%">Data Type</th>
+			<th style="width:11%">Required</th>
+			<th style="width:58%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>client_id</td>
+			<td>Form</td>
+			<td>String</td>
+			<td>Required&#160;as parameter or in header</td>
+			<td><p>The client ID for the OAuth grant that is being revoked.</p>
+				<p>You could also send this in a Basic Authorization header, a Base64-encoded form of <strong>app_id:shared_secret</strong>. In this context, both values are the app credentials, available from the App <strong>Details</strong> page, <strong>Security</strong> section: <strong>app_id</strong> is the <strong>AppID</strong> value, in the format {tenant}-{uniqueid), and the <strong>shared_secret</strong> value is also in the Security section.</p>
+				<p>To get the app_id value, called <strong>identity</strong> in the API response: <span class="apidoc_code"><a href="../../api/apps/m_apps_getVersion.htm">GET&#160;/api/apps/versions/{AppVersionID}</a></span> operation.</p>
+				<p>To get the shared secret: <span class="apidoc_code"><a href="../../api/apps/m_apps_getSharedSecret.htm">GET&#160;/api/apps/versions/{AppVersionID}/secret</a></span> operation.</p>
+				<p>See example.</p></td>
+		</tr>
+		<tr>
+			<td>client_secret</td>
+			<td>Form</td>
+			<td>String</td>
+			<td>Required as parameter or in header</td>
+			<td>The Shared Secret value for the app. Used in the Basic authorization header, see <strong>client_id</strong> and example.</td>
+			</tr>
+		<tr>
+			<td>access_token</td>
+			<td>Form</td>
+			<td>String</td>
+			<td>Required</td>
+			<td><p>The access token that is being revoked.</p>
+				<p>You could also send this in a Bearer Authorization header. See example.</p>
+				<p>If you are not sure of the access_token value, you can use the <span class="apidoc_code"><a href="../oauth_oauth20/m_oauth20_getTokenPOST.htm">POST&#160;/oauth/oauth20/token</a></span> operation to retrieve the value.</p></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -170,18 +170,18 @@ Content-Type: application/json</pre>
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_appjson.lbi" --><strong>application/json</strong><!-- #EndLibraryItem -->, <!-- #BeginLibraryItem "/Library/hdrval_appxml.lbi" --><strong>application/xml</strong><!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+			<td><strong>application/xml</strong></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -198,34 +198,34 @@ Content-Type: application/json</pre>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Item</th>
-      <th style="width:80%">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
-      <td>Unauthorized. For example, you would get this response if you didn't include the <strong>OAuthToken_{OAuthProviderName}</strong> cookie, or if you included an invalid cookie.</td>
-    </tr>
-    <tr>
-    	<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
-    	<td><p><!-- #BeginLibraryItem "/Library/http_404.lbi" -->The resource could not be found. For example, you might get this if you have a typo in the URL, or if the Accept header is set to a wrong value.<!-- #EndLibraryItem --></p>
-    		<p>You would also get this if you were using the wrong HTTP verb.</p></td>
-    	</tr>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
-      <td>An error occurred processing the call. </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Item</th>
+			<th style="width:80%">Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http401">401</a></td>
+			<td>Unauthorized. For example, you would get this response if you didn't include the <strong>OAuthToken_{OAuthProviderName}</strong> cookie, or if you included an invalid cookie.</td>
+		</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http404">404</a></td>
+			<td><p>The resource could not be found. For example, you might get this if you have a typo in the URL, or if the Accept header is set to a wrong value.</p>
+				<p>You would also get this if you were using the wrong HTTP verb.</p></td>
+			</tr>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call. </td>
+		</tr>
+	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -235,5 +235,5 @@ Content-Type: application/json</pre>
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div><hr />
 </div>

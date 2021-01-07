@@ -17,28 +17,28 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p><!-- #BeginLibraryItem "/Library/desc_oauth_oauth10_generateAccessTokenGET.lbi" -->Generates an OAuth 1.0a access token using HTTP GET.<!-- #EndLibraryItem --></p>
+<p>Generates an OAuth 1.0a access token using HTTP GET.</p>
 <p class="apidoc_note"><strong>Note</strong>: there is a corresponding operation that performs the same action using HTTP POST: <a href="m_oauth10_generateAccessTokenPOST_.htm"><span class="apidoc_code">POST&#160;/oauth/oauth10/token</span></a>. However, we recommend you use the GET operation. For information on why you might choose one or the other, see <a href="../aaref/Ref_OAuthGETorPOST.htm">OAuth Operations: GET or POST?</a></p>
 <p>For a broader picture of how OAuth 1.0a token management works, and how this operation files into the process flow, see <a href="../aaref/Ref_OAuth_Tokens_10a.htm">OAuth: Using Tokens with OAuth 1.0a</a>.</p>
-<p id="id_roles"><strong>Authorization Roles/Permissions: </strong>Anyone can run this operation.</p>
-<!-- InstanceEndEditable --><!-- #BeginLibraryItem "/Library/_whatdoyouwanttoreadabout.lbi" -->
+<p id="id_roles"><strong>Authorization Roles/Permissions:</strong> Anyone can run this operation.</p>
+<!-- InstanceEndEditable -->
 <p>This topic includes the following sections:</p>
 <div class="relatedlinks">
 <ul>
-  <li><a href="#httpmethod">HTTP Method</a></li>
-  <li><a href="#endpoint">URL</a></li>
-  <li><a href="#samplerequest">Sample Request</a></li>
-  <li><a href="#requestheaders">Request Headers</a></li>
-  <li><a href="#requestparameters">Request Parameters</a></li>
+	<li><a href="#httpmethod">HTTP Method</a></li>
+	<li><a href="#endpoint">URL</a></li>
+	<li><a href="#samplerequest">Sample Request</a></li>
+	<li><a href="#requestheaders">Request Headers</a></li>
+	<li><a href="#requestparameters">Request Parameters</a></li>
 </ul>
 <ul>
-  <li><a href="#response">Response</a></li>
-  <li><a href="#sampleresponse">Sample Response</a></li>
-  <li><a href="#responseheaders">Response Headers</a></li>
-  <li><a href="#responsebody">Response Body</a></li>
-  <li><a href="#errorcodes">Error Codes/Messages</a></li>
+	<li><a href="#response">Response</a></li>
+	<li><a href="#sampleresponse">Sample Response</a></li>
+	<li><a href="#responseheaders">Response Headers</a></li>
+	<li><a href="#responsebody">Response Body</a></li>
+	<li><a href="#errorcodes">Error Codes/Messages</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><h2 id="httpmethod">HTTP Method</h2>
+</div><h2 id="httpmethod">HTTP Method</h2>
 <!-- InstanceBeginEditable name="HTTP Method" -->
 <p class="httpverb">GET</p>
 <!-- InstanceEndEditable -->
@@ -46,7 +46,7 @@ no-catalog: true
 
 <h2 id="endpoint">URL</h2>
 <!-- InstanceBeginEditable name="URL" -->
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->oauth10/token</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/oauth10/token</pre>
 <!-- InstanceEndEditable -->
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
@@ -55,7 +55,7 @@ no-catalog: true
 <h2 id="samplerequest">Sample Request</h2>
 <p id="id_samplerequest">The example below shows a request for an OAuth 1.0a access token.</p>
 <p><strong>Request URL</strong></p>
-<pre class="soaapidoc_endpoint"><!-- #BeginLibraryItem "/Library/_endpointbase_oauth.lbi" -->https://{oauth-provider-url}/oauth/<!-- #EndLibraryItem -->oauth10/token</pre>
+<pre class="soaapidoc_endpoint">https://{oauth-provider-url}/oauth/oauth10/token</pre>
 <p><strong>Sample request headers</strong></p>
 <pre>Content-Type: application/x-www-form-urlencoded (if POST)
 Authorization: OAuth 
@@ -78,22 +78,22 @@ oauth_timestamp=&quot;1444076361"</pre>
 <h2 id="requestheaders">Request Headers</h2>
 <p>For general information on request header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httprequestheaders">HTTP Request Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_accept_textplain.lbi" --> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>Authorization</td>
-      <td>The Authorization request header, which includes the request parameters shown below.</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#acceptheader">Accept</a></td>
+			<td> Any Accept header value that supports a response Content-Type of <strong>text/plain</strong> is valid; for example, <strong>*/*</strong>.</td>
+		</tr>
+		<tr>
+			<td>Authorization</td>
+			<td>The Authorization request header, which includes the request parameters shown below.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -102,54 +102,54 @@ oauth_timestamp=&quot;1444076361"</pre>
 <!-- InstanceBeginEditable name="Request Parameters" -->
 <h2 id="requestparameters">Request Parameters</h2>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>oauth_token</td>
-      <td>The temporary token (request token) received from the OAuth server.</td>
-    </tr>
-    <tr>
-      <td>oauth_consumer_key</td>
-      <td>The client identifier.</td>
-    </tr>
-    <tr>
-      <td>oauth_signature_method</td>
-      <td>The signature method. For valid values, see <a href="../aaref/Ref_Values.htm#values_oauth_signature_method">OAuth Signature Method (1.0a) values</a>.</td>
-    </tr>
-    <tr>
-      <td>realm</td>
-      <td><!-- #BeginLibraryItem "/Library/oauth_realm.lbi" -->The domain name for the OAuth provider. For more information, see <a href="http://tools.ietf.org/html/rfc2617#section-1.2" target="_blank">http://tools.ietf.org/html/rfc2617#section-1.2</a>.<!-- #EndLibraryItem --></td>
-    </tr>
-    <tr>
-      <td>oauth_nonce</td>
-      <td>The random <a href="../Ref_Glossary_CommunityPlatform.htm#gl_nonce">nonce</a> value. The nonce value <strong>must</strong> be unique across all requests with the same timestamp, client credentials, and token combinations.</td>
-    </tr>
-    <tr>
-      <td>oauth_timestamp</td>
-      <td>The timestamp value. Must be a positive integer. The timestamp is expressed in the number of seconds since January 1, 1970 00:00:00 GMT.</td>
-    </tr>
-    <tr>
-      <td>oauth_verifier</td>
-      <td>The verification code received from the OAuth server in the authorization step.</td>
-    </tr>
-    <tr>
-      <td>oauth_signature</td>
-      <td><p>The signature base string: a consistent, reproducible concatenation of several of the HTTP request elements into a single string. The string is used as an input to the signature method.</p>
-        <p>The signature base string includes the following components of the HTTP request:</p>
-        <ul class="apidoctable_ul">
-        <li>The HTTP request method (GET or POST).</li>
-        <li>The authority, as declared by the HTTP <strong>host</strong> field in the request header.</li>
-        <li>The path and query components of the request resource URI.</li>
-        <li>The protocol parameters, excluding the <strong>oauth_signature</strong>.</li>
-        </ul>
-        <p>The signature base string does not cover the entire HTTP request. Most important, it does not include the entity-body in most requests, nor does it include most HTTP entity-headers. It is important to note that the server cannot verify the authenticity of the excluded request components without using additional protections such as SSL/TLS or other methods.</p></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>oauth_token</td>
+			<td>The temporary token (request token) received from the OAuth server.</td>
+		</tr>
+		<tr>
+			<td>oauth_consumer_key</td>
+			<td>The client identifier.</td>
+		</tr>
+		<tr>
+			<td>oauth_signature_method</td>
+			<td>The signature method. For valid values, see <a href="../aaref/Ref_Values.htm#values_oauth_signature_method">OAuth Signature Method (1.0a) values</a>.</td>
+		</tr>
+		<tr>
+			<td>realm</td>
+			<td>The domain name for the OAuth provider. For more information, see <a href="http://tools.ietf.org/html/rfc2617#section-1.2" target="_blank">http://tools.ietf.org/html/rfc2617#section-1.2</a>.</td>
+		</tr>
+		<tr>
+			<td>oauth_nonce</td>
+			<td>The random <a href="../Ref_Glossary_CommunityPlatform.htm#gl_nonce">nonce</a> value. The nonce value <strong>must</strong> be unique across all requests with the same timestamp, client credentials, and token combinations.</td>
+		</tr>
+		<tr>
+			<td>oauth_timestamp</td>
+			<td>The timestamp value. Must be a positive integer. The timestamp is expressed in the number of seconds since January 1, 1970 00:00:00 GMT.</td>
+		</tr>
+		<tr>
+			<td>oauth_verifier</td>
+			<td>The verification code received from the OAuth server in the authorization step.</td>
+		</tr>
+		<tr>
+			<td>oauth_signature</td>
+			<td><p>The signature base string: a consistent, reproducible concatenation of several of the HTTP request elements into a single string. The string is used as an input to the signature method.</p>
+				<p>The signature base string includes the following components of the HTTP request:</p>
+				<ul class="apidoctable_ul">
+				<li>The HTTP request method (GET or POST).</li>
+				<li>The authority, as declared by the HTTP <strong>host</strong> field in the request header.</li>
+				<li>The path and query components of the request resource URI.</li>
+				<li>The protocol parameters, excluding the <strong>oauth_signature</strong>.</li>
+				</ul>
+				<p>The signature base string does not cover the entire HTTP request. Most important, it does not include the entity-body in most requests, nor does it include most HTTP entity-headers. It is important to note that the server cannot verify the authenticity of the excluded request components without using additional protections such as SSL/TLS or other methods.</p></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -177,18 +177,18 @@ oauth_timestamp=&quot;1444076361"</pre>
 <h2 id="responseheaders">Response Headers</h2>
 <p>For general information on response header values, refer to <a href="../aaref/Ref_HTTPHeaders.htm#ref_httpresponseheaders">HTTP Response Headers</a>.</p>
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
-      <td><!-- #BeginLibraryItem "/Library/hdrval_textplain.lbi" --><strong>text/plain</strong><!-- #EndLibraryItem --></td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPHeaders.htm#contenttype_response">Content-Type</a></td>
+			<td><strong>text/plain</strong></td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -197,22 +197,22 @@ oauth_timestamp=&quot;1444076361"</pre>
 <!-- InstanceBeginEditable name="Response Body" -->
 <h2 id="responsebody">Response Body</h2>
 <table class="tableparmsresponse">
-  <thead>
-    <tr>
-      <th style="width:20%">Header</th>
-      <th style="width:80%">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>oauth_token</td>
-      <td>The token identifier.</td>
-    </tr>
-    <tr>
-      <td>oauth_token_secret</td>
-      <td>The token shared secret value.</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Header</th>
+			<th style="width:80%">Description</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>oauth_token</td>
+			<td>The token identifier.</td>
+		</tr>
+		<tr>
+			<td>oauth_token_secret</td>
+			<td>The token shared secret value.</td>
+		</tr>
+	</tbody>
 </table>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 <!-- InstanceEndEditable -->
@@ -222,25 +222,25 @@ oauth_timestamp=&quot;1444076361"</pre>
 <p>If the call is unsuccessful an error code/message is returned. One or more examples of possible errors for this operation are shown below.</p>
 <!-- InstanceBeginEditable name="Error Messages" -->
 <table class="tableparmsresponse">
-  <thead>
-    <tr bgcolor="#DDDDDD">
-      <th style="width:20%">Item</th>
-      <th style="width:80%">Value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
-      <td>An error occurred processing the call. </td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th style="width:20%">Item</th>
+			<th style="width:80%">Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><a href="../aaref/Ref_HTTPStatusCodes.htm#http500">500</a></td>
+			<td>An error occurred processing the call. </td>
+		</tr>
+	</tbody>
 </table>
 <!-- InstanceEndEditable -->
-<p><a href="../aaref/Ref_ErrorMessages.htm">More information about&#160;<!-- #BeginLibraryItem "/Library/_PlatformName.lbi" -->Akana OAuth<!-- #EndLibraryItem -->&#160;API error messages.</a></p>
+<p><a href="../aaref/Ref_ErrorMessages.htm">More information about Akana OAuth API error messages.</a></p>
 <p class="apidoc_backtotop"><a href="#top">Back to top</a></p>
 
 
-<h2 id="relatedtopics">Related Topics</h2><!-- #BeginLibraryItem "/Library/_RelatedTopics.lbi" -->
+<h2 id="relatedtopics">Related Topics</h2>
 <div class="relatedlinks">
 <ul>
 	<li><a href="../index.htm">OAuth API: Overview</a></li>
@@ -250,5 +250,5 @@ oauth_timestamp=&quot;1444076361"</pre>
 	<li><a href="../Ref_DocConventions.htm">Documentation Conventions</a></li>
 	<li><a href="../Ref_API_Reference.htm">OAuth API: Reference Material</a></li>
 </ul>
-</div><!-- #EndLibraryItem --><hr />
+</div><hr />
 </div>
