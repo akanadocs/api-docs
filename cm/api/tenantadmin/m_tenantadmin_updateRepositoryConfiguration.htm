@@ -17,10 +17,9 @@ no-catalog: true
 <!-- InstanceEndEditable -->
 
 <!-- InstanceBeginEditable name="Intro_AuthRoles" -->
-<p>
-Updates the <a href="../Ref_Glossary_CommunityPlatform.htm#gl_lifecyclerepository">Lifecycle Repository</a> configuration for the specified tenant.</p>
-<p>This operation is used in a scenario where the extended properties and workflow are enabled for the tenant. In most cases it's invoked internally by Lifecycle Coordinator to configure the repository library associated with the tenant (mainly to set up the RuntimeConfiguration assets). It takes a RepositoryConfiguration object which contains an EnvironmentConfiguration (the same structure that shows up in the topology definition) as well as the defined filters for the library.</p>
-<p>&#160;</p>
+<p>Updates the Lifecycle Repository configuration for the specified tenant.</p>
+<!--<p>{<span class="apidoc_red">REF: (ATMO-20827) Note per TG 10/5/18 there is no GET, body has to be put together from scratch if called by a customer}</p>-->
+<p> This operation is used in a scenario where <a href="../Ref_Glossary_CommunityPlatform.htm#gl_lr">Lifecycle Repository</a> is in use; the extended properties and workflow are enabled for the tenant. In most cases it's invoked internally by Lifecycle Coordinator to configure the repository library associated with the tenant (mainly to set up the RuntimeConfiguration assets). It takes a RepositoryConfiguration object which contains an EnvironmentConfiguration (the same structure that shows up in the topology definition) as well as the defined filters for the library.</p>
 <p>For more information about these elements, and examples, refer to these sections of the Lifecycle Coordinator Promotion Guide:</p>
 <ul>
 	<li> <a href="../../promotion/promotion_users_guide.htm#s08_03_environment_config">Environment Configuration</a></li>
